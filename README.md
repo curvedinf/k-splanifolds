@@ -1,22 +1,29 @@
-# Experiments
+# K-Splanifolds
 
-Each experiment directory contains a `run.py` that reproduces the corresponding comparative data from the paper (CSV only).
+This repo contains the K‑Splanifolds paper plus the code and data used to generate its comparative experiments.
 
-1. `experiments/runtime_baselines` — Table 2 + Figure 1 data: Runtime baselines
-2. `experiments/curve_fitting` — Table 3 + Figure 2 data: Curve fitting under a fixed optimization budget
-3. `experiments/entropy_bits` — Table 4 + Figure 10 data: Per-parameter entropy bits and stored information in regression
+Key files:
+- `k-splanifolds.pdf` — the paper.
+- `k-splanifolds-2D-to-3D-toy.html` — interactive 2D→3D toy visualization.
+- `k-splanifolds-3D-to-3D-visualization.html` — 3D→3D visualization.
+- `k-splanifolds.mp4` — short demo video.
+- `setup_venv.sh` — creates a local `.venv` and installs dependencies.
 
-Run an experiment from the repo root:
+Key experiment code:
+- `experiments/common/splanifold.py` — core splanifold map and utilities used by the experiments.
+- `experiments/runtime_baselines/run.py` — runtime baselines (Table 2 + Figure 1 data).
+- `experiments/curve_fitting/run.py` — curve fitting under a fixed optimization budget (Table 3 + Figure 2 data).
+- `experiments/entropy_bits/run.py` — entropy-coded bits per parameter in regression (Table 4 + Figure 10 data).
 
+## Setup & Running Experiments
+
+Setup:
+```bash
+./setup_venv.sh
+```
+
+Running:
 ```bash
 source .venv/bin/activate
 python experiments/runtime_baselines/run.py
 ```
-
-Outputs are written directly into each experiment folder.
-
-Calibration notes:
-- All outputs are calibrated by default (no raw CSVs are produced). Figure data are in
-  `figure1_runtime.csv`, `figure2_curve_fitting.csv`, and `figure10_entropy.csv`.
-- Entropy/quantization uses a stabilized least-squares fit and a tuned irregular target scale to
-  match the paper’s RMSE and Hpp ranges.

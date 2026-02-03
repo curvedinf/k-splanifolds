@@ -71,7 +71,7 @@ def splanifold_map(
 
 
 def weights_regularized(u: torch.Tensor, epsilon: float) -> torch.Tensor:
-    """Eq. (7) weight regularization from the paper."""
+    """Smoothed weight regularization."""
     sigma = u.sum(dim=-1, keepdim=True)
     k = u.shape[-1]
     eps2 = epsilon * epsilon

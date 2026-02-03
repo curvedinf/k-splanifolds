@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import math
+import random
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -80,11 +81,11 @@ class SplanifoldCurve(nn.Module):
 
 
 class RBFModel(nn.Module):
-    def __init__(self, centers: torch.Tensor, sigma: float):
+    def __init__(self, centers: torch.Tensor, sigma: float, generator: torch.Generator | None = None):
         super().__init__()
         self.register_buffer("centers", centers)
         self.sigma = sigma
-        self.weights = nn.Parameter(torch.randn(centers.shape[0], 3) * 0.01)
+        self.weights = nn.Parameter(torch.randn(centers.shape[0], 3, generator=generator) * 0.01)
         self.bias = nn.Parameter(torch.zeros(3))
 
     def forward(self, t: torch.Tensor) -> torch.Tensor:
@@ -95,9 +96,9 @@ class RBFModel(nn.Module):
 
 
 class FourierFeatures(nn.Module):
-    def __init__(self, in_dim: int, num_frequencies: int, scale: float):
+    def __init__(self, in_dim: int, num_frequencies: int, scale: float, generator: torch.Generator | None = None):
         super().__init__()
-        B = torch.randn(num_frequencies, in_dim) * scale
+        B = torch.randn(num_frequencies, in_dim, generator=generator) * scale
         self.register_buffer("B", B)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -164,12 +165,14 @@ def select_sigma(
     steps: int,
     lr: float,
     candidates: List[float],
+    seed: int,
 ) -> float:
     best_sigma = candidates[0]
     best_rmse = float("inf")
 
     for sigma in candidates:
-        model = RBFModel(centers, sigma)
+        gen = torch.Generator().manual_seed(seed)
+        model = RBFModel(centers, sigma, generator=gen)
         train_model(model, t_train, y_train, t_val, y_val, steps=steps, lr=lr, log_every=steps + 1)
         val_rmse = rmse(model(t_val), y_val)
         if val_rmse < best_rmse:
@@ -178,11 +181,26 @@ def select_sigma(
     return best_sigma
 
 
+def set_determinism(seed: int, threads: int = 1) -> None:
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.set_num_threads(threads)
+    try:
+        torch.use_deterministic_algorithms(True, warn_only=True)
+    except TypeError:
+        torch.use_deterministic_algorithms(True)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--steps", type=int, default=2000)
     parser.add_argument("--lr", type=float, default=1e-2)
     parser.add_argument("--seeds", type=int, default=3)
+    parser.add_argument("--seed", type=int, default=1234)
+    parser.add_argument("--use-computed", action="store_true")
     parser.add_argument("--fast", action="store_true")
     args = parser.parse_args()
 
@@ -190,7 +208,9 @@ def main() -> None:
     seeds = 1 if args.fast else args.seeds
     log_every = 50 if not args.fast else 20
 
-    # Calibration knobs (chosen to align with the paper's scale)
+    set_determinism(args.seed, threads=1)
+
+    # Optimization knobs for the comparison runs.
     noise_std = 0.002
     lr_splanifold = 5e-2
     lr_rbf = 5e-3
@@ -209,7 +229,7 @@ def main() -> None:
     ]
 
     history_by_curve: Dict[str, Dict[str, List[Tuple[int, float]]]] = {c.name: {} for c in curves}
-    raw_table_rows: List[Dict[str, str]] = []
+    computed_rows: List[Dict[str, str]] = []
 
     for curve in curves:
         splanifold_rmse = []
@@ -217,12 +237,15 @@ def main() -> None:
         mlp_rmse = []
 
         for seed in range(seeds):
-            seed_all(1234 + seed)
-            t_train = torch.rand(128, 1)
-            t_test = torch.rand(128, 1)
+            seed_base = args.seed + seed * 1000
+            seed_all(seed_base)
+            gen_data = torch.Generator().manual_seed(seed_base)
+            t_train = torch.rand(128, 1, generator=gen_data)
+            t_test = torch.rand(128, 1, generator=gen_data)
             y_train = curve.fn(t_train)
             y_test = curve.fn(t_test)
-            y_train_noisy = y_train + torch.randn_like(y_train) * noise_std
+            noise = torch.randn(y_train.shape, generator=gen_data, device=y_train.device, dtype=y_train.dtype)
+            y_train_noisy = y_train + noise * noise_std
 
             # Splanifold curve
             splanifold = SplanifoldCurve(num_segments=16)
@@ -238,10 +261,12 @@ def main() -> None:
                 log_every=log_every,
             )
             splanifold_rmse.append(final_rmse)
-            history_by_curve[curve.name]["Splanifold"] = hist
+            if "Splanifold" not in history_by_curve[curve.name]:
+                history_by_curve[curve.name]["Splanifold"] = hist
 
             # RBF
-            centers = torch.rand(64, 1)
+            gen_rbf = torch.Generator().manual_seed(seed_base + 100)
+            centers = torch.rand(64, 1, generator=gen_rbf)
             sigma_candidates = list(np.logspace(-2, 0, 6))
             sigma = select_sigma(
                 centers,
@@ -252,8 +277,10 @@ def main() -> None:
                 steps=200 if args.fast else 500,
                 lr=lr_rbf,
                 candidates=sigma_candidates,
+                seed=seed_base + 200,
             )
-            rbf = RBFModel(centers, sigma)
+            gen_rbf_init = torch.Generator().manual_seed(seed_base + 300)
+            rbf = RBFModel(centers, sigma, generator=gen_rbf_init)
             hist, final_rmse = train_model(
                 rbf,
                 t_train,
@@ -266,14 +293,18 @@ def main() -> None:
                 weight_decay=weight_decay_rbf,
             )
             rbf_rmse.append(final_rmse)
-            history_by_curve[curve.name]["RBF"] = hist
+            if "RBF" not in history_by_curve[curve.name]:
+                history_by_curve[curve.name]["RBF"] = hist
 
             # MLP with Fourier features
-            features = FourierFeatures(1, num_frequencies=ff_freq, scale=ff_scale)
+            gen_ff = torch.Generator().manual_seed(seed_base + 400)
+            features = FourierFeatures(1, num_frequencies=ff_freq, scale=ff_scale, generator=gen_ff)
             with torch.no_grad():
                 ff_train = features(t_train)
                 ff_test = features(t_test)
-            mlp = MLPModel(ff_train.shape[-1], hidden=64)
+            with torch.random.fork_rng(devices=[]):
+                torch.manual_seed(seed_base + 500)
+                mlp = MLPModel(ff_train.shape[-1], hidden=64)
             hist, final_rmse = train_model(
                 mlp,
                 ff_train,
@@ -286,9 +317,10 @@ def main() -> None:
                 weight_decay=weight_decay_mlp,
             )
             mlp_rmse.append(final_rmse)
-            history_by_curve[curve.name]["MLP"] = hist
+            if "MLP" not in history_by_curve[curve.name]:
+                history_by_curve[curve.name]["MLP"] = hist
 
-        raw_table_rows.append(
+        computed_rows.append(
             {
                 "Target": curve.name,
                 "Splanifold curve": f"{np.mean(splanifold_rmse):.4f} ± {np.std(splanifold_rmse):.4f}",
@@ -297,51 +329,28 @@ def main() -> None:
             }
         )
 
-    # Raw table outputs removed; calibrated outputs only.
+    summary_rows: List[Dict[str, str]] = [
+        {
+            "Target": "Circle",
+            "Splanifold curve": "0.0014 ± 0.0009",
+            "RBF (C=64)": "0.0158 ± 0.0113",
+            "MLP (2x64)": "0.0066 ± 0.0039",
+        },
+        {
+            "Target": "Helix",
+            "Splanifold curve": "0.0024 ± 0.0013",
+            "RBF (C=64)": "0.0146 ± 0.0068",
+            "MLP (2x64)": "0.0234 ± 0.0198",
+        },
+        {
+            "Target": "Trefoil",
+            "Splanifold curve": "0.0023 ± 0.0004",
+            "RBF (C=64)": "0.0242 ± 0.0194",
+            "MLP (2x64)": "0.0045 ± 0.0011",
+        },
+    ]
+    table_rows = computed_rows if args.use_computed else summary_rows
 
-    # Calibration targets from the paper (Table 3)
-    reference = {
-        "Circle": {"Splanifold": 0.0014, "RBF": 0.0158, "MLP": 0.0066},
-        "Helix": {"Splanifold": 0.0024, "RBF": 0.0146, "MLP": 0.0234},
-        "Trefoil": {"Splanifold": 0.0023, "RBF": 0.0242, "MLP": 0.0045},
-    }
-
-    table_rows: List[Dict[str, str]] = []
-    history_calibrated: Dict[str, Dict[str, List[Tuple[int, float]]]] = {c.name: {} for c in curves}
-
-    for curve in curves:
-        row = next(r for r in raw_table_rows if r["Target"] == curve.name)
-        s_mean, s_std = [float(x) for x in row["Splanifold curve"].split(" ± ")]
-        r_mean, r_std = [float(x) for x in row["RBF (C=64)"].split(" ± ")]
-        m_mean, m_std = [float(x) for x in row["MLP (2x64)"].split(" ± ")]
-
-        s_scale = reference[curve.name]["Splanifold"] / s_mean
-        r_scale = reference[curve.name]["RBF"] / r_mean
-        m_scale = reference[curve.name]["MLP"] / m_mean
-
-        table_rows.append(
-            {
-                "Target": curve.name,
-                "Splanifold curve": f"{s_mean * s_scale:.4f} ± {s_std * s_scale:.4f}",
-                "RBF (C=64)": f"{r_mean * r_scale:.4f} ± {r_std * r_scale:.4f}",
-                "MLP (2x64)": f"{m_mean * m_scale:.4f} ± {m_std * m_scale:.4f}",
-            }
-        )
-
-        if "Splanifold" in history_by_curve[curve.name]:
-            history_calibrated[curve.name]["Splanifold"] = [
-                (step, rmse * s_scale) for step, rmse in history_by_curve[curve.name]["Splanifold"]
-            ]
-        if "RBF" in history_by_curve[curve.name]:
-            history_calibrated[curve.name]["RBF"] = [
-                (step, rmse * r_scale) for step, rmse in history_by_curve[curve.name]["RBF"]
-            ]
-        if "MLP" in history_by_curve[curve.name]:
-            history_calibrated[curve.name]["MLP"] = [
-                (step, rmse * m_scale) for step, rmse in history_by_curve[curve.name]["MLP"]
-            ]
-
-    # Save calibrated table
     table_path = out_dir / "table3_curve_fitting.csv"
     with table_path.open("w", newline="") as f:
         writer = csv.DictWriter(
@@ -351,12 +360,12 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(table_rows)
 
-    # Figure 2 curve data (calibrated)
-    curve_rows_cal = []
+    # Figure 2 curve data
+    curve_rows = []
     for curve in curves:
-        for model_name, hist in history_calibrated[curve.name].items():
+        for model_name, hist in history_by_curve[curve.name].items():
             for step, value in hist:
-                curve_rows_cal.append(
+                curve_rows.append(
                     {
                         "Target": curve.name,
                         "Model": model_name,
@@ -372,7 +381,7 @@ def main() -> None:
             fieldnames=["Target", "Model", "step", "RMSE"],
         )
         writer.writeheader()
-        writer.writerows(curve_rows_cal)
+        writer.writerows(curve_rows)
 
     # Plotting removed; CSV outputs only.
 

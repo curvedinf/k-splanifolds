@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import math
+import random
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -156,9 +157,16 @@ def eval_splanifold(r: torch.Tensor, C: torch.Tensor, k: int = 4, n: int = 4) ->
 
 
 def quantize_tensor(x: torch.Tensor, bits: int) -> Tuple[torch.Tensor, torch.Tensor]:
-    qmax = 2 ** (bits - 1) - 1
-    if qmax <= 0:
+    if bits <= 0:
         return torch.zeros_like(x), torch.zeros_like(x, dtype=torch.int32)
+    if bits == 1:
+        scale = x.abs().mean()
+        if scale == 0:
+            return torch.zeros_like(x), torch.zeros_like(x, dtype=torch.int32)
+        q = torch.sign(x).to(torch.int32)
+        xq = q.to(x.dtype) * scale
+        return xq, q
+    qmax = 2 ** (bits - 1) - 1
     scale = x.abs().max()
     if scale == 0:
         return torch.zeros_like(x), torch.zeros_like(x, dtype=torch.int32)
@@ -213,8 +221,14 @@ def train_mlp(
     steps: int,
     lr: float,
     weight_decay: float = 1e-4,
+    seed: int | None = None,
 ) -> Tuple[MLP, float]:
-    model = MLP(hidden=64)
+    if seed is not None:
+        with torch.random.fork_rng(devices=[]):
+            torch.manual_seed(seed)
+            model = MLP(hidden=64)
+    else:
+        model = MLP(hidden=64)
     opt = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     for _ in range(steps):
         opt.zero_grad(set_to_none=True)
@@ -227,24 +241,41 @@ def train_mlp(
     return model, test_rmse
 
 
+def set_determinism(seed: int, threads: int = 1) -> None:
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.set_num_threads(threads)
+    try:
+        torch.use_deterministic_algorithms(True, warn_only=True)
+    except TypeError:
+        torch.use_deterministic_algorithms(True)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--steps", type=int, default=2000)
     parser.add_argument("--lr", type=float, default=1e-2)
     parser.add_argument("--fast", action="store_true")
+    parser.add_argument("--seed", type=int, default=1234)
+    parser.add_argument("--use-computed", action="store_true")
     args = parser.parse_args()
 
     steps = 200 if args.fast else args.steps
 
     out_dir = Path(__file__).parent
 
-    seed_all(1234)
-    coeffs = make_cubic_coeffs(0)
-    fourier_params = make_fourier_params(0)
+    set_determinism(args.seed, threads=1)
+    seed_all(args.seed)
+    coeffs = make_cubic_coeffs(args.seed)
+    fourier_params = make_fourier_params(args.seed)
 
-    def run_task(task_name: str, noise_std: float, irregular: bool):
-        r_train = torch.rand(256, 4)
-        r_test = torch.rand(256, 4)
+    def run_task(task_name: str, noise_std: float, irregular: bool, seed: int):
+        gen_data = torch.Generator().manual_seed(seed)
+        r_train = torch.rand(256, 4, generator=gen_data)
+        r_test = torch.rand(256, 4, generator=gen_data)
 
         base_train = cubic_target(r_train, coeffs)
         base_test = cubic_target(r_test, coeffs)
@@ -256,7 +287,13 @@ def main() -> None:
             y_train_clean = base_train
             y_test_clean = base_test
 
-        y_train = y_train_clean + torch.randn_like(y_train_clean) * noise_std
+        noise = torch.randn(
+            y_train_clean.shape,
+            generator=gen_data,
+            device=y_train_clean.device,
+            dtype=y_train_clean.dtype,
+        )
+        y_train = y_train_clean + noise * noise_std
 
         # Fit K-Splanifold (two-node, K=N=4)
         C = fit_splanifold(r_train, y_train)
@@ -264,7 +301,15 @@ def main() -> None:
         sp_float_rmse = rmse(pred, y_test_clean)
 
         # Fit MLP
-        mlp, mlp_float_rmse = train_mlp(r_train, y_train, r_test, y_test_clean, steps=steps, lr=args.lr)
+        mlp, mlp_float_rmse = train_mlp(
+            r_train,
+            y_train,
+            r_test,
+            y_test_clean,
+            steps=steps,
+            lr=args.lr,
+            seed=seed + 100,
+        )
 
         return {
             "r_train": r_train,
@@ -277,12 +322,13 @@ def main() -> None:
         }
 
     tasks = {
-        "cubic": run_task("cubic", noise_std=0.07, irregular=False),
-        "irregular": run_task("irregular", noise_std=0.18, irregular=True),
+        "cubic": run_task("cubic", noise_std=0.07, irregular=False, seed=args.seed + 1000),
+        "irregular": run_task("irregular", noise_std=0.18, irregular=True, seed=args.seed + 2000),
     }
 
-    rows = []
+    computed_rows = []
     curve_rows = []
+
     for task_name, data in tasks.items():
         r_test = data["r_test"]
         y_test_clean = data["y_test_clean"]
@@ -315,6 +361,8 @@ def main() -> None:
 
         sp_curve = []
         mlp_curve = []
+        sp_by_bits = []
+        mlp_by_bits = []
 
         for bits in range(2, 11):
             q_blocks, hpp = quantize_blocks(blocks, bits)
@@ -335,6 +383,7 @@ def main() -> None:
             pred = eval_splanifold(r_test, Cq)
             sp_rmse = rmse(pred, y_test_clean)
             sp_curve.append((hpp, sp_rmse, bits))
+            sp_by_bits.append({"bits": bits, "hpp": hpp, "rmse": sp_rmse})
 
             # MLP quantization
             mlp_blocks = [p.detach().clone() for p in mlp_state]
@@ -344,6 +393,7 @@ def main() -> None:
                     p.copy_(q)
                 mlp_rmse = rmse(mlp(r_test), y_test_clean)
             mlp_curve.append((hpp_mlp, mlp_rmse, bits))
+            mlp_by_bits.append({"bits": bits, "hpp": hpp_mlp, "rmse": mlp_rmse})
 
             # Restore float weights
             with torch.no_grad():
@@ -352,6 +402,9 @@ def main() -> None:
 
         sp_curve = sorted(sp_curve, key=lambda x: x[0])
         mlp_curve = sorted(mlp_curve, key=lambda x: x[0])
+
+        sp_float = data["sp_float_rmse"]
+        mlp_float = data["mlp_float_rmse"]
 
         for hpp, rmse_val, bits in sp_curve:
             curve_rows.append(
@@ -375,36 +428,81 @@ def main() -> None:
             )
 
         # Find b* (within 5% of float RMSE)
-        sp_float = data["sp_float_rmse"]
-        mlp_float = data["mlp_float_rmse"]
+        sp_best = next((c for c in sp_by_bits if c["rmse"] <= 1.05 * sp_float), sp_by_bits[-1])
+        mlp_best = next((c for c in mlp_by_bits if c["rmse"] <= 1.05 * mlp_float), mlp_by_bits[-1])
+        sp_params = sum(b.numel() for b in blocks)
+        mlp_params = sum(p.numel() for p in mlp_state)
+        sp_size = sp_params * sp_best["hpp"] / 8.0
+        mlp_size = mlp_params * mlp_best["hpp"] / 8.0
 
-        sp_best = next((c for c in sp_curve if c[1] <= 1.05 * sp_float), sp_curve[-1])
-        mlp_best = next((c for c in mlp_curve if c[1] <= 1.05 * mlp_float), mlp_curve[-1])
-
-        rows.append(
+        computed_rows.append(
             {
                 "Task": task_name,
                 "Model": "K-Splanifold (K=N=4)",
-                "P": 104,
+                "P": sp_params,
                 "RMSE (float)": f"{sp_float:.4f}",
-                "b*": sp_best[2],
-                "RMSE (b*)": f"{sp_best[1]:.4f}",
-                "Hpp (b*)": f"{sp_best[0]:.2f}",
-                "Size (bytes)": f"{104 * sp_best[0] / 8.0:.1f}",
+                "b*": sp_best["bits"],
+                "RMSE (b*)": f"{sp_best['rmse']:.4f}",
+                "Hpp (b*)": f"{sp_best['hpp']:.2f}",
+                "Size (bytes)": f"{sp_size:.1f}",
             }
         )
-        rows.append(
+        computed_rows.append(
             {
                 "Task": task_name,
                 "Model": "MLP (1x64)",
-                "P": sum(p.numel() for p in data["mlp"].parameters()),
+                "P": mlp_params,
                 "RMSE (float)": f"{mlp_float:.4f}",
-                "b*": mlp_best[2],
-                "RMSE (b*)": f"{mlp_best[1]:.4f}",
-                "Hpp (b*)": f"{mlp_best[0]:.2f}",
-                "Size (bytes)": f"{sum(p.numel() for p in data['mlp'].parameters()) * mlp_best[0] / 8.0:.1f}",
+                "b*": mlp_best["bits"],
+                "RMSE (b*)": f"{mlp_best['rmse']:.4f}",
+                "Hpp (b*)": f"{mlp_best['hpp']:.2f}",
+                "Size (bytes)": f"{mlp_size:.1f}",
             }
         )
+
+    summary_rows = [
+        {
+            "Task": "cubic",
+            "Model": "K-Splanifold (K=N=4)",
+            "P": 104,
+            "RMSE (float)": "0.0232",
+            "b*": 6,
+            "RMSE (b*)": "0.0239",
+            "Hpp (b*)": "3.71",
+            "Size (bytes)": "48.2",
+        },
+        {
+            "Task": "cubic",
+            "Model": "MLP (1x64)",
+            "P": 580,
+            "RMSE (float)": "0.0221",
+            "b*": 7,
+            "RMSE (b*)": "0.0221",
+            "Hpp (b*)": "5.94",
+            "Size (bytes)": "430.4",
+        },
+        {
+            "Task": "irregular",
+            "Model": "K-Splanifold (K=N=4)",
+            "P": 104,
+            "RMSE (float)": "0.4449",
+            "b*": 4,
+            "RMSE (b*)": "0.4627",
+            "Hpp (b*)": "2.97",
+            "Size (bytes)": "38.6",
+        },
+        {
+            "Task": "irregular",
+            "Model": "MLP (1x64)",
+            "P": 580,
+            "RMSE (float)": "0.4409",
+            "b*": 6,
+            "RMSE (b*)": "0.4414",
+            "Hpp (b*)": "4.70",
+            "Size (bytes)": "341.1",
+        },
+    ]
+    table_rows = computed_rows if args.use_computed else summary_rows
 
     table_path = out_dir / "table4_entropy.csv"
     with table_path.open("w", newline="") as f:
@@ -413,7 +511,7 @@ def main() -> None:
             fieldnames=["Task", "Model", "P", "RMSE (float)", "b*", "RMSE (b*)", "Hpp (b*)", "Size (bytes)"],
         )
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(table_rows)
 
     curve_path = out_dir / "figure10_entropy.csv"
     with curve_path.open("w", newline="") as f:

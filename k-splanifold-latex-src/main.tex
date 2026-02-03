@@ -1,0 +1,862 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf,skip=3pt]{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{placeins}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\title{K-Splanifold Interpolation: Structured Linear-Time Parametric Manifolds via Spine--Deviation Factorization}
+\author{
+Chase Adams\\
+Taurion Corporation\\
+\texttt{chase.adams@gmail.com}\\
+\href{https://github.com/curvedinf}{github.com/curvedinf} \quad
+\href{https://djangoist.com}{djangoist.com} \quad
+\href{https://x.com/curvedinf}{x.com/curvedinf}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We introduce \emph{K-Splanifold} interpolation, a structured parametric manifold primitive mapping an input coordinate $r\in[0,1]^K$ to an embedding space $\bbR^N$ with $\mathcal{O}(KN)$ evaluation and $\mathcal{O}(KN)$ control storage.
+The construction factorizes the parameter space into a scalar \emph{spine coordinate} $t$ and a zero-sum \emph{deviation} vector $\delta$, then evaluates a cubic Hermite spine curve plus a Hermite-interpolated transverse displacement field that is linear in $\delta$ for fixed $t$.
+Because both the spine and the per-parameter basis trajectories are cubic Hermite splines, the model class contains cubic polynomial trajectories and (via chaining) standard piecewise-cubic splines along the spine direction.
+We use a smooth, globally defined barycentric regularization for tangent blending near $\Sigma=\one^\top u=0$ and provide bounds relating the regularized weights to unregularized normalization.
+An optional radial deviation warp yields bounded transverse magnitude under extrapolation and admits a closed-form inverse on the warped deviation.
+Experiments include control-field visualizations, stability plots, runtime baselines against an RBF interpolator and a coordinate-MLP, and fixed-budget curve fitting on standard 3D parametric curves.
+\end{abstract}
+
+% --- Summary figures (placed inline to ensure they appear on the first page) ---
+\vspace{0.1em}
+
+\noindent\begin{minipage}{\linewidth}
+    \centering
+    \includegraphics[width=0.90\linewidth,height=0.19\textheight,keepaspectratio]{figures/fig7_runtime_baselines.png}
+    \captionof{figure}{Runtime scaling vs.~input dimension $K$ ($N{=}256$), comparing K-Splanifold evaluation to RBF and coordinate-MLP baselines (log scale).}
+    \label{fig:runtime}
+\end{minipage}
+
+\vspace{0.2em}
+
+\noindent\begin{minipage}{\linewidth}
+    \centering
+    \begin{minipage}[t]{0.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth,height=0.18\textheight,keepaspectratio]{figures/fig9_curvefit_circle.png}\\[-0.6em]
+        {\scriptsize (a) Circle}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth,height=0.18\textheight,keepaspectratio]{figures/fig10_curvefit_helix.png}\\[-0.6em]
+        {\scriptsize (b) Helix}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth,height=0.18\textheight,keepaspectratio]{figures/fig11_curvefit_trefoil.png}\\[-0.6em]
+        {\scriptsize (c) Trefoil}
+    \end{minipage}
+    \captionof{figure}{Fixed-budget curve fitting on standard 3D parametric curves (test RMSE vs.~iterations, log scale).}
+    \label{fig:curvefit_rmse}
+\end{minipage}
+
+\FloatBarrier
+
+\section{Introduction}
+
+High-dimensional parameterizations appear in geometric modeling, deformation rigs, reduced simulation controls, and learned latent spaces.
+A common operation is evaluating an embedding map $\Phi:[0,1]^K\rightarrow \bbR^N$ quickly and predictably, often under tight latency budgets (interactive editing, realtime playback, differentiable optimization).
+
+Dense tensor-product spline volumes provide smooth interpolation and local support, but their control lattices scale exponentially with $K$ \cite{deboor2001,schumaker2007,ahlberg1967}.
+Modern alternatives avoid dense grids in different ways: sparse grids (Smolyak constructions) prune interaction terms \cite{smolyak1963,bungartzgriebel2004}; radial basis functions (RBFs) interpolate scattered controls \cite{buhmann2003,wendland2005}; and coordinate MLPs (neural fields) learn a compact parametric map \cite{cybenko1989,hornik1991,sitzmann2020siren,mildenhall2020nerf}.
+Neural fields can be highly expressive, but often rely on architectural choices or input encodings to represent high-frequency structure efficiently \cite{tancik2020fourier}.
+Each approach can be effective, but they introduce practical costs (basis management, global solves, or training and hyperparameters) that can be undesirable in author-driven pipelines.
+
+This paper presents K-Splanifolds as a \emph{structured} primitive aimed at parameter spaces that admit a dominant ``progression'' plus per-axis deviations, in the spirit of representing variation around a one-dimensional curve as in principal curves \cite{hastie1989principal}.
+The central idea is to split the effective coordinate $u$ into:
+(i) a scalar coordinate $t$ that drives a global \emph{spine} curve $\Psi(t)$, and
+(ii) a zero-sum deviation $\delta$ that drives a transverse displacement $\Delta(t,\delta)$.
+For fixed $t$, the displacement is linear in $\delta$, yielding an interpretable control structure and linear-in-$K$ evaluation.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.86\linewidth]{figures/fig1_control_fields_k2.png}
+    \caption{A $K{=}2$ splanifold in $\bbR^3$ visualized as a ribbon surface.
+    The black curve is the spine (the $\delta{=}0$ diagonal), endpoints are anchors, and the translucent planes depict transverse frames spanned by basis vectors.
+    Colored segments show per-parameter endpoint tangent contributions that blend into the spine tangent via weights $w_k(u)$.}
+    \label{fig:concept}
+\end{figure}
+
+\paragraph{Contributions.}
+We contribute: (i) a concise spine--deviation factorization for $[0,1]^K$ controls; (ii) a linear-time evaluation rule combining Hermite spines with Hermite-interpolated transverse basis trajectories; (iii) a smooth tangent-weight regularization with an explicit bias bound; (iv) an optional bounded (and analytically invertible) deviation warp for extrapolation; (v) a linear least-squares formulation for fitting controls and a practical numerical projection procedure; and (vi) experiments and baselines clarifying trade-offs against RBF and neural alternatives.
+
+\FloatBarrier
+
+\section{Preliminaries}
+
+\paragraph{Notation.}
+We will use the following variables throughout:
+\begin{itemize}
+    \item $r\in[0,1]^K$: input parameter vector.
+    \item $u\in\bbR^K$: expanded effective coordinate (Eq.~\eqref{eq:domain_expand}).
+    \item $\Sigma=\one^\top u$: summed coordinate.
+    \item $t=\Sigma/K$: mean coordinate (spine parameter).
+    \item $\delta=u-t\one$: zero-sum deviation with $\one^\top\delta=0$.
+    \item $\tilde{\delta}$: optionally warped deviation (Eq.~\eqref{eq:delta_warp}).
+    \item $w(u)\in\bbR^K$: tangent-blending weights (Eq.~\eqref{eq:weights}).
+\end{itemize}
+
+\paragraph{Cubic Hermite interpolation.}
+Given endpoints $A,B\in\bbR^N$ and endpoint derivatives $A',B'\in\bbR^N$, the cubic Hermite segment $H(A,B,A',B';t)$ for $t\in\bbR$ is \cite{deboor2001,farin2002}
+\begin{equation}
+H(A,B,A',B';t)=h_{00}(t)A+h_{01}(t)B+h_{10}(t)A'+h_{11}(t)B',
+\end{equation}
+with basis functions
+\begin{equation}
+\label{eq:hermite_basis}
+h_{00}=2t^3-3t^2+1,\quad
+h_{01}=-2t^3+3t^2,\quad
+h_{10}=t(t-1)^2,\quad
+h_{11}=t^2(t-1).
+\end{equation}
+On $t\in[0,1]$, $\max(|h_{10}|,|h_{11}|)=4/27$.
+Shape-preserving monotone piecewise-cubic Hermite variants (PCHIP) are described in \cite{fritsch1980monotone,hyman1983monotone}.
+
+\section{K-Splanifold Construction}
+
+\subsection{Control data}
+
+A two-node K-Splanifold is specified by endpoint data at nodes $i\in\{0,1\}$:
+\begin{itemize}
+    \item an anchor point $P_i\in\bbR^N$,
+    \item a transverse basis matrix $E_i\in\bbR^{N\times K}$ whose columns $e_{i,k}$ are basis vectors,
+    \item a spine-derivative contribution matrix $P'_i\in\bbR^{N\times K}$ whose columns $p'_{i,k}$ contribute to the spine tangent,
+    \item a basis-derivative matrix $E'_i\in\bbR^{N\times K}$ whose columns $e'_{i,k}$ contribute to the $t$-derivative of each basis trajectory.
+\end{itemize}
+All control storage is $\mathcal{O}(KN)$.
+
+\subsection{Spine--deviation factorization}
+
+Given $r\in[0,1]^K$, we optionally expand the domain by a scalar $E\ge 0$:
+\begin{equation}
+\label{eq:domain_expand}
+u = (1+2E)r - E\one\in[-E,1+E]^K.
+\end{equation}
+Define
+\begin{equation}
+\label{eq:decompose}
+\Sigma=\one^\top u,\qquad
+t=\frac{\Sigma}{K},\qquad
+\delta=u-t\one.
+\end{equation}
+Then $\one^\top\delta=0$ and the decomposition is unique.
+
+\subsection{Deviation warping for bounded extrapolation}
+
+For extrapolated queries it is sometimes desirable to prevent transverse growth from increasing without bound.
+We use a smooth radial warp
+\begin{equation}
+\label{eq:delta_warp}
+\tilde{\delta}=\mathcal{W}(\delta) \,\triangleq\, \frac{\delta}{\sqrt{1+\left(\norm{\delta}/\delta_{\max}\right)^2}},
+\end{equation}
+where $\delta_{\max}>0$ is a chosen deviation radius.
+For $\norm{\delta}\ll \delta_{\max}$, $\tilde{\delta}\approx \delta$; for $\norm{\delta}\gg \delta_{\max}$, $\norm{\tilde{\delta}}\rightarrow \delta_{\max}$.
+
+\paragraph{Closed-form inverse of the warp.}
+The map $\mathcal{W}$ is a smooth bijection from $\bbR^K$ onto the open ball $\{z: \norm{z}<\delta_{\max}\}$.
+For any $\tilde{\delta}$ with $\norm{\tilde{\delta}}<\delta_{\max}$,
+\begin{equation}
+\label{eq:delta_warp_inverse}
+\delta = \mathcal{W}^{-1}(\tilde{\delta}) \,\triangleq\, \frac{\tilde{\delta}}{\sqrt{1-\left(\norm{\tilde{\delta}}/\delta_{\max}\right)^2}}.
+\end{equation}
+In what follows, the warp is optional; setting $\delta_{\max}\rightarrow\infty$ recovers $\tilde{\delta}=\delta$.
+
+\subsection{Smooth tangent weights}
+
+To blend per-parameter tangent contributions into a single spine tangent, define weights $w(u)\in\bbR^K$ with $\sum_k w_k = 1$.
+The unregularized normalization $w_k=u_k/\Sigma$ is undefined at $\Sigma=0$.
+We instead use a smooth regularization parameter $\varepsilon_\Sigma>0$:
+\begin{equation}
+\label{eq:weights}
+w_k(u)=\frac{\Sigma\,u_k+\varepsilon_\Sigma^2/K}{\Sigma^2+\varepsilon_\Sigma^2}.
+\end{equation}
+This satisfies $\sum_k w_k(u)=1$ for all $u$ and is $C^\infty$ in $\Sigma$.
+
+\paragraph{Relation to unregularized weights.}
+For $\Sigma\neq 0$, define $w_k^{(0)}=u_k/\Sigma$.
+A direct rearrangement of Eq.~\eqref{eq:weights} yields
+\begin{equation}
+\label{eq:weight_difference}
+w(u)=w^{(0)}(u)-\frac{\varepsilon_\Sigma^2}{\Sigma\left(\Sigma^2+\varepsilon_\Sigma^2\right)}\,\delta.
+\end{equation}
+In particular, $w(u)=w^{(0)}(u)$ whenever $\delta=0$ (on the diagonal).
+Moreover,
+\begin{equation}
+\label{eq:weight_bound}
+\norm{w(u)-w^{(0)}(u)}_2\le \frac{\varepsilon_\Sigma^2}{|\Sigma|\left(\Sigma^2+\varepsilon_\Sigma^2\right)}\,\norm{\delta}_2.
+\end{equation}
+Thus for $|\Sigma|\gg\varepsilon_\Sigma$ the bias decays as $\mathcal{O}((\varepsilon_\Sigma/\Sigma)^2)$.
+
+\subsection{Evaluation}
+
+Given $(t,\tilde{\delta},w)$, define endpoint spine derivatives
+\begin{equation}
+V_i(u)=P'_i\,w(u)\in\bbR^N,
+\end{equation}
+and evaluate the spine
+\begin{equation}
+\Psi(t)=H(P_0,P_1,V_0,V_1;t).
+\end{equation}
+For the transverse field, define endpoint displacements
+\begin{equation}
+D_i(t,\tilde{\delta})=E_i\,\tilde{\delta},
+\end{equation}
+and endpoint displacement derivatives
+\begin{equation}
+T_i(t,\tilde{\delta})=E'_i\,\tilde{\delta}.
+\end{equation}
+Then evaluate the transverse displacement
+\begin{equation}
+\Delta(t,\tilde{\delta})=H(D_0,D_1,T_0,T_1;t),
+\end{equation}
+and output
+\begin{equation}
+\label{eq:phi}
+\Phi(r)=\Psi(t)+\Delta(t,\tilde{\delta}).
+\end{equation}
+
+\paragraph{Basis-trajectory view.}
+For fixed $t$, $\Delta(t,\tilde{\delta})$ is linear in $\tilde{\delta}$.
+Defining basis trajectories
+\begin{equation}
+\label{eq:basis_traj}
+b_k(t)=H\!\left(e_{0,k},e_{1,k},e'_{0,k},e'_{1,k};t\right),
+\end{equation}
+the displacement is $\Delta(t,\tilde{\delta})=\sum_{k=1}^K \tilde{\delta}_k\, b_k(t)$.
+
+\paragraph{Complexity and arithmetic intensity.}
+Evaluation uses a small number of $N\times K$ matrix--vector products and costs $\mathcal{O}(KN)$ per query.
+For large $N$, the work is often memory-bandwidth dominated: the dominant cost is streaming the control matrices $E_i,E'_i,P'_i$ from memory rather than arithmetic.
+Practical implementations benefit from contiguous storage, fused kernels, and caching when evaluating many queries against fixed controls.
+
+\begin{algorithm}[t]
+\caption{K-Splanifold evaluation}
+\label{alg:eval}
+\begin{algorithmic}[1]
+\REQUIRE $r\in[0,1]^K$, controls $(P_i,E_i,P'_i,E'_i)_{i\in\{0,1\}}$, expansion $E\ge0$, $\varepsilon_\Sigma>0$, deviation radius $\delta_{\max}$
+\STATE $u \gets (1+2E)r-E\one$
+\STATE $\Sigma \gets \one^\top u$
+\STATE $t \gets \Sigma/K$
+\STATE $\delta \gets u-t\one$
+\STATE $\tilde{\delta} \gets \delta/\sqrt{1+(\norm{\delta}/\delta_{\max})^2}$ \COMMENT{optional; set $\delta_{\max}\to\infty$ to disable}
+\STATE $w_k \gets (\Sigma u_k+\varepsilon_\Sigma^2/K)/(\Sigma^2+\varepsilon_\Sigma^2)$ for $k=1,\dots,K$
+\STATE $V_i \gets P'_i w$, $D_i \gets E_i\tilde{\delta}$, $T_i \gets E'_i\tilde{\delta}$ for $i\in\{0,1\}$
+\STATE $\Psi \gets H(P_0,P_1,V_0,V_1;t)$
+\STATE $\Delta \gets H(D_0,D_1,T_0,T_1;t)$
+\RETURN $\Phi \gets \Psi+\Delta$
+\end{algorithmic}
+\end{algorithm}
+\noindent Algorithm~\ref{alg:eval} summarizes the evaluation pipeline and makes the $\mathcal{O}(KN)$ structure explicit.
+
+\section{Properties}
+
+\paragraph{Diagonal collapse.}
+If all components of $r$ are equal, then $\delta=0$ in Eq.~\eqref{eq:decompose}; by Eq.~\eqref{eq:phi} the transverse term vanishes and $\Phi(r)=\Psi(t)$ lies on the spine.
+
+\paragraph{Affine equivariance.}
+If an affine transform $x\mapsto Ax+b$ is applied to all control vectors $(P_i,E_i,P'_i,E'_i)$, then the evaluated manifold is transformed by the same map. This follows because Hermite interpolation is affine-linear in its endpoint data \cite{deboor2001,farin2002} and all terms in Eq.~\eqref{eq:phi} are sums of such interpolants.
+
+\paragraph{Slice geometry.}
+For fixed $t$, the displacement is linear in $\tilde{\delta}$: by Eq.~\eqref{eq:basis_traj}, $\Delta(t,\tilde{\delta})=\sum_k \tilde{\delta}_k\,b_k(t)$. Each constant-$t$ slice is therefore an affine subspace of dimension at most $K{-}1$ (since $\one^\top\tilde{\delta}=0$).
+
+\paragraph{Smoothness.}
+For $\varepsilon_\Sigma>0$, the weights $w(u)$ in Eq.~\eqref{eq:weights} are smooth for all $u$, hence the blended spine derivatives $V_i(u)$ are smooth. Since $\Psi$ and $\Delta$ are cubic Hermite polynomials in $t$ \cite{deboor2001,farin2002}, Eq.~\eqref{eq:phi} is smooth in $t$. With the deviation warp \eqref{eq:delta_warp}, the full mapping remains smooth for extrapolated queries while transverse magnitude stays bounded in $\tilde{\delta}$.
+
+\paragraph{Weight-induced spine bias bound.}
+Let $\Psi^{(0)}$ denote the spine evaluated with unregularized weights $w^{(0)}$ (defined when $\Sigma\neq 0$).
+For $t\in[0,1]$,
+\begin{equation}
+\label{eq:spine_bias_bound}
+\norm{\Psi(t)-\Psi^{(0)}(t)}_2\le \frac{4}{27}\left(\norm{P'_0}_2+\norm{P'_1}_2\right)\frac{\varepsilon_\Sigma^2}{|\Sigma|(\Sigma^2+\varepsilon_\Sigma^2)}\,\norm{\delta}_2,
+\end{equation}
+where $\norm{\cdot}_2$ is the matrix operator norm.
+This follows from Eq.~\eqref{eq:weight_bound} and the derivative coefficients $h_{10},h_{11}$ in Eq.~\eqref{eq:hermite_basis}.
+
+\paragraph{Cubic reproduction along the spine.}
+Cubic Hermite interpolation exactly reproduces cubic polynomials \cite{deboor2001,farin2002}: if $c(t)$ is a (vector-valued) cubic polynomial, then
+\begin{equation}
+H(c(0),c(1),c'(0),c'(1);t) \equiv c(t).
+\end{equation}
+Consequently, a $K{=}1$ splanifold segment represents any cubic polynomial curve exactly, and piecewise chains represent standard cubic splines.
+The same exactness holds for each basis trajectory $b_k(t)$ in Eq.~\eqref{eq:basis_traj}.
+
+\section{Fitting and projection}
+
+The K-Splanifold map is linear in its control vectors and nonlinear in the input coordinate.
+This split supports two common inverse tasks: (i) fitting controls from example data, and (ii) projecting an embedding point onto the manifold.
+
+\subsection{Fitting controls by linear least squares}
+
+Given sample pairs $\{(r_j,x_j)\}_{j=1}^S$ with $x_j\in\bbR^N$, compute $(t_j,\tilde{\delta}_j,w_j)$ and Hermite scalars
+$\alpha_{0j}=h_{00}(t_j)$, $\alpha_{1j}=h_{01}(t_j)$, $\beta_{0j}=h_{10}(t_j)$, $\beta_{1j}=h_{11}(t_j)$.
+Then Eq.~\eqref{eq:phi} expands to
+\begin{equation}
+\label{eq:linear_fit_expand}
+\begin{aligned}
+\Phi(r_j)=\,&\alpha_{0j}P_0+\alpha_{1j}P_1
++\beta_{0j}(P'_0 w_j)+\beta_{1j}(P'_1 w_j)\\
+&+\alpha_{0j}(E_0\tilde{\delta}_j)+\alpha_{1j}(E_1\tilde{\delta}_j)
++\beta_{0j}(E'_0\tilde{\delta}_j)+\beta_{1j}(E'_1\tilde{\delta}_j).
+\end{aligned}
+\end{equation}
+Collect the unknown controls into a single matrix
+\begin{equation}
+C \triangleq [\,P_0\; P_1\; P'_0\; P'_1\; E_0\; E_1\; E'_0\; E'_1\,]\in\bbR^{N\times(2+6K)},
+\end{equation}
+and define per-sample feature vectors
+\begin{equation}
+\label{eq:fit_features}
+f_j \triangleq [\,\alpha_{0j},\,\alpha_{1j},\,\beta_{0j}w_j^\top,\,\beta_{1j}w_j^\top,\,\alpha_{0j}\tilde{\delta}_j^\top,\,\alpha_{1j}\tilde{\delta}_j^\top,\,\beta_{0j}\tilde{\delta}_j^\top,\,\beta_{1j}\tilde{\delta}_j^\top\,]^\top.
+\end{equation}
+Then $\Phi(r_j)=C f_j$ and fitting controls reduces to the matrix least squares problem
+\begin{equation}
+\min_{C}\sum_{j=1}^S \norm{C f_j - x_j}_2^2 \,=\, \min_{C}\,\norm{C F - X}_F^2,
+\end{equation}
+where $F=[f_1,\dots,f_S]\in\bbR^{(2+6K)\times S}$ and $X=[x_1,\dots,x_S]\in\bbR^{N\times S}$.
+A standard ridge-stabilized (Tikhonov-regularized) solution \cite{tikhonov1963,hoerl1970ridge,golub2013matrix} is
+\begin{equation}
+\label{eq:ridge_fit}
+C = X F^\top (F F^\top + \lambda I)^{-1}.
+\end{equation}
+Forming $F F^\top$ costs $\mathcal{O}(S(2+6K)^2)$; multiplying $X F^\top$ costs $\mathcal{O}(NS(2+6K))$.
+
+\subsection{Projecting an embedding point}
+
+Given $x\in\bbR^N$, a common ``inverse'' operation is to compute a parameter $r^*\in[0,1]^K$ that minimizes
+\begin{equation}
+\label{eq:projection}
+r^*\in\arg\min_{r\in[0,1]^K} \; \norm{\Phi(r)-x}_2^2.
+\end{equation}
+In general Eq.~\eqref{eq:projection} is a small nonlinear least squares problem because $w(u)$ and the factorization $r\mapsto(t,\delta)$ are nonlinear.
+In practice, Gauss--Newton or quasi-Newton methods \cite{nocedal2006numerical} work well because each evaluation of $\Phi$ and its Jacobian is $\mathcal{O}(KN)$, and the inner linear solve is only $K\times K$.
+When the deviation warp is enabled, $\tilde{\delta}$ can be unwarped analytically using Eq.~\eqref{eq:delta_warp_inverse} inside the optimization if a parameterization in terms of $\tilde{\delta}$ is preferred.
+
+\section{Baselines and positioning}
+
+K-Splanifolds are best viewed as a structured, low-rank interpolation primitive rather than a replacement for general-purpose high-dimensional methods.
+The canonical alternatives in Table~\ref{tab:scaling} are well studied: tensor-product splines \cite{deboor2001,schumaker2007}, sparse grids \cite{smolyak1963,bungartzgriebel2004}, RBF interpolation \cite{buhmann2003,wendland2005}, and coordinate MLP/neural-field models \cite{cybenko1989,hornik1991,sitzmann2020siren,mildenhall2020nerf}.
+Table~\ref{tab:scaling} summarizes scaling and common trade-offs.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}lXXX@{}}
+\toprule
+Method & Storage & Per-query cost & Notes \\
+\midrule
+Dense tensor-product spline & $\mathcal{O}(M^K N)$ & $\mathcal{O}(4^K N)$ & Smooth, local support, but grid explosion in $K$. \\
+Sparse grids (Smolyak) & sub-exponential in $K$ & varies & Retains selected interaction terms; basis/level management matters. \\
+RBF interpolation & $\mathcal{O}(C(K{+}N))$ & $\mathcal{O}(C(K{+}N))$ & Scattered controls; global solve or fit; $C$ = centers. \\
+Coordinate MLP / neural field & params depend on width & $\mathcal{O}(\text{FLOPs})$ & Expressive; requires training and hyperparameters. \\
+\textbf{K-Splanifold} & $\mathcal{O}(KN)$ & $\mathcal{O}(KN)$ & Structured spine--deviation geometry; explicit controls. \\
+K-Splanifold + sparse residual & $\mathcal{O}((K{+}C)N)$ & $\mathcal{O}(KN + C(K{+}N))$ & Adds localized corrections when needed. \\
+\bottomrule
+\end{tabularx}
+\caption{Qualitative scaling summary. $M$ = grid resolution per axis for tensor products; $C$ = number of RBF centers or sparse residual centers.}
+\label{tab:scaling}
+\end{table}
+
+\noindent Both splines and neural networks have extensive approximation theory; see, e.g., spline approximation texts \cite{schumaker2007,wahba1990spline} and neural approximation results \cite{barron1993,yarotsky2017}.
+
+\section{Experiments}
+
+All timings were measured in a single CPU thread using vectorized NumPy implementations with $N=256$ output dimensions.
+Stochastic experiments use fixed seeds and single-threaded deterministic execution to control variability.
+
+\subsection{Qualitative visualization}
+
+Figure~\ref{fig:concept} shows the control fields and transverse frames for a $K{=}2$ example.
+Figure~\ref{fig:surface} shows the resulting ribbon surface without overlays.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.86\linewidth]{figures/fig2_surface_k2.png}
+    \caption{A $K{=}2$ example surface (spine in black).
+    The transverse ``breadth'' is produced by basis trajectories $b_k(t)$ blended across the two endpoints.}
+    \label{fig:surface}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Step-by-step evaluation}
+
+Figure~\ref{fig:decomp} illustrates the decomposition $r\mapsto (t,\delta)$ and the embedding-space sum $\Phi=\Psi+\Delta$.
+Figure~\ref{fig:basis_sum} visualizes $\Delta(t,\delta)$ as a weighted sum of basis trajectories at a fixed $t$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig3_decomposition.png}
+    \caption{Decomposition and reconstruction at a sample query point.
+    Left: $r$ decomposes into a diagonal projection (spine coordinate $t$) plus a zero-sum deviation $\delta$.
+    Right: the output splits into a spine point plus a transverse displacement.}
+    \label{fig:decomp}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.86\linewidth]{figures/fig4_displacement_sum.png}
+    \caption{Displacement composition at a fixed $t$: $\Delta(t,\delta)=\sum_k \delta_k\,b_k(t)$.
+    This linear structure is a key source of interpretability and speed.}
+    \label{fig:basis_sum}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Smooth weight regularization}
+
+Figure~\ref{fig:weights} plots $\max_k|w_k|$ as $\Sigma\rightarrow 0$ for the unregularized weights $u_k/\Sigma$ and the smooth regularization \eqref{eq:weights}.
+The regularized weights remain bounded and approach uniform weights at $\Sigma=0$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.86\linewidth]{figures/fig5_weight_regularization.png}
+    \caption{Tangent-weight behavior near $\Sigma=0$.
+    The unregularized normalization diverges for off-diagonal deviations, while the regularized weights remain finite and smooth.}
+    \label{fig:weights}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Deviation warping for bounded extrapolation}
+
+Figure~\ref{fig:warp} shows how the deviation warp \eqref{eq:delta_warp} bounds transverse magnitude as the deviation norm increases.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.86\linewidth]{figures/fig6_extrapolation_bounding.png}
+    \caption{Deviation warping bounds transverse magnitude for large deviations while remaining approximately linear near the origin.}
+    \label{fig:warp}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Runtime baselines}
+
+Figure~\ref{fig:runtime} compares K-Splanifold evaluation time against an RBF interpolator (Gaussian RBF \cite{buhmann2003,wendland2005}, $C{=}256$ centers) and a small coordinate-MLP baseline (two hidden layers of width 256, ReLU).
+We also plot a local cubic tensor-product evaluation cost $\mathcal{O}(4^K N)$ for small $K$ where it is still tractable to materialize the active control set.
+Table~\ref{tab:runtime} reports representative microseconds per query.
+
+
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}rXXX@{}}
+\toprule
+$K$ & K-Splanifold & RBF ($C{=}256$) & MLP (2$\times$256) \\
+\midrule
+2   & 2.73  & 12.18  & 5.40  \\
+4   & 3.00  & 25.51  & 6.58  \\
+8   & 2.83  & 37.23  & 3.98  \\
+16  & 3.44  & 60.37  & 4.46  \\
+32  & 3.43  & 96.42  & 4.75  \\
+64  & 5.20  & 214.85 & 4.93  \\
+128 & 15.39 & 447.35 & 5.38  \\
+256 & 21.74 & 779.06 & 8.29  \\
+\bottomrule
+\end{tabularx}
+\caption{Representative microseconds per query (single CPU thread, $N{=}256$).}
+\label{tab:runtime}
+\end{table}
+
+\FloatBarrier
+
+\paragraph{Notes on neural baselines.}
+We use a plain ReLU coordinate-MLP as a lightweight, widely available reference (universal approximation results in \cite{cybenko1989,hornik1991}).
+Specialized neural field architectures (e.g., periodic activations \cite{sitzmann2020siren} or multiresolution hash-grid encodings \cite{mueller2022instant}) can offer different accuracy/speed trade-offs.
+
+\subsection{Curve fitting under a fixed optimization budget}
+
+To probe the practical behavior of spline-based models under a fixed iteration budget, we fit several standard 3D parametric curves using three lightweight families:
+(i) a \emph{splanifold curve} (the $K{=}1$ special case) implemented as a chain of 16 cubic Hermite segments \cite{deboor2001,farin2002},
+(ii) a Gaussian RBF model with $C{=}64$ centers \cite{buhmann2003,wendland2005}, and
+(iii) a small coordinate-MLP with two hidden layers of width 64, $\tanh$ activations, and Fourier feature inputs \cite{tancik2020fourier}.
+We report trainable parameter counts (float32) to contextualize model memory: the splanifold curve uses 17 knots with positions and tangents in $\bbR^3$ ($102$ scalars, $0.40$~KB), the RBF uses $C{=}64$ centers with 3D weights and bias ($259$ scalars, $1.01$~KB; kernel width selected by validation), and the MLP has $5763$ trainable parameters ($22.5$~KB; fixed Fourier features not counted).
+
+All models were optimized with Adam \cite{kingma2015adam} for 2000 steps on 128 training samples of $t\in[0,1]$ and evaluated on 128 held-out samples.
+For the RBF baseline, the kernel width $\sigma$ was selected per-seed by a log-spaced search on a small validation split of the training set.
+We report mean $\pm$ std test RMSE over three random seeds.
+
+Table~\ref{tab:curvefit} reports test RMSE after 2000 steps, and Fig.~\ref{fig:curvefit_rmse} shows RMSE versus iteration checkpoints for three targets (circle, helix, trefoil knot).
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Target & Splanifold curve & RBF ($C{=}64$) & MLP (2$\times$64) \\
+\midrule
+Circle  & 0.0014 $\pm$ 0.0009 & 0.0158 $\pm$ 0.0113 & 0.0066 $\pm$ 0.0039 \\
+Helix   & 0.0024 $\pm$ 0.0013 & 0.0146 $\pm$ 0.0068 & 0.0234 $\pm$ 0.0198 \\
+Trefoil & 0.0023 $\pm$ 0.0004 & 0.0242 $\pm$ 0.0194 & 0.0045 $\pm$ 0.0011 \\
+\bottomrule
+\end{tabular}
+\caption{Curve-fitting test RMSE after 2000 Adam steps (mean $\pm$ std over 3 seeds).}
+\label{tab:curvefit}
+\end{table}
+
+\FloatBarrier
+
+\subsection{Optional sparse residual layer}
+
+To add localized detail without changing the global spine--deviation structure, we can add a small residual field on parameter space:
+\begin{equation}
+\Phi_{\text{hybrid}}(r)=\Phi(r)+\sum_{j=1}^{C} \kappa\!\left(\norm{r-c_j}\right)a_j,
+\end{equation}
+where $c_j\in[0,1]^K$ are centers, $a_j\in\bbR^N$ are residual vectors, and $\kappa$ is a compactly supported kernel \cite{wendland2005,fasshauer2007}.
+Figure~\ref{fig:residual} shows a single localized bump added to the $K{=}2$ example.
+The added per-query cost is $\mathcal{O}(C(K{+}N))$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig8_local_detail_layer.png}
+    \caption{A localized residual adds corner detail while preserving the base K-Splanifold structure.}
+    \label{fig:residual}
+\end{figure}
+
+\FloatBarrier
+
+\section{Per-parameter entropy bits and stored information in regression}
+
+Parameter count is a useful but coarse proxy for model complexity; description-length viewpoints formalize complexity directly in bits \cite{rissanen1978mdl,cover2006elements}.
+For regression-style uses of K-Splanifolds, it is often helpful to quantify how many \emph{bits} are actually needed to store a fitted model at a given predictive fidelity.
+This section defines a practical \emph{entropy-coded bits per parameter} metric and illustrates it on two synthetic $K{=}4\rightarrow N{=}4$ regression tasks, comparing a two-node K-Splanifold fit to a small coordinate-MLP whose size is adjusted so test RMSE is comparable.
+
+\subsection{Entropy-coded bits per parameter}
+
+Let the trainable parameters be partitioned into $G$ blocks (tensors) $\{\theta^{(g)}\}_{g=1}^G$ with $P_g$ scalars each and total $P=\sum_g P_g$.
+For a given $b$ (bits), we apply a symmetric uniform quantizer independently per block \cite{gersho1992vq,jayant1984digital},
+$q^{(g)} = Q_b(\theta^{(g)})\in\mathbb{Z}^{P_g}$, and form the empirical code distribution
+\begin{equation}
+p_g(k)=\frac{1}{P_g}\,\big|\{i:\; q^{(g)}_i=k\}\big|.
+\end{equation}
+The Shannon entropy of that block's codes,
+\begin{equation}
+H\!\left(q^{(g)}\right)=-\sum_k p_g(k)\log_2 p_g(k),
+\end{equation}
+is the ideal lossless codelength (bits/parameter) for that stream under entropy coding \cite{shannon1948,cover2006elements,mackay2003itila}.
+We report the \emph{entropy-coded bits per parameter}
+\begin{equation}
+\label{eq:hpp}
+H_{\mathrm{pp}}(b)=\frac{1}{P}\sum_{g=1}^G P_g\,H\!\left(q^{(g)}\right),
+\end{equation}
+which is the ideal average codelength (bits/parameter) if each tensor is coded as its own stream (ignoring small headers such as per-tensor scales).
+
+\paragraph{Fidelity-preserving precision.}
+Because $H_{\mathrm{pp}}$ depends on the quantizer, we choose a task-dependent precision by sweeping $b$ and selecting the smallest $b^\star$ such that the quantized model's test RMSE stays within $5\%$ of its unquantized (float) RMSE.\footnote{Any application-specific tolerance can be substituted.}
+We then report $H_{\mathrm{pp}}(b^\star)$ as the \emph{effective entropy bits per parameter} at that fidelity.
+This is a lightweight analogue of ``trainable parameter entropy'' metrics used in neural compression \cite{han2016deepcompression}, but applied equally to spline-structured and MLP models.
+
+\subsection{Examples: smooth cubic vs.\ noisy irregular in 4D}
+
+We consider inputs $r\in[0,1]^4$ and outputs $y\in\mathbb{R}^4$ with the decomposition $t=\frac{1}{4}\one^\top r$ and $\delta=r-t\one$.
+
+\paragraph{Models.}
+\emph{K-Splanifold:} a two-node model with $K{=}N{=}4$ fit by ridge least squares using Eq.~\eqref{eq:ridge_fit}.
+The parameter count is $P=N(2+6K)=104$.
+\emph{MLP:} a coordinate-MLP $r\mapsto y$ with one hidden $\tanh$ layer (universal approximation \cite{cybenko1989,hornik1991}).
+We choose the hidden width (and modest training budget) so the MLP's float test RMSE matches the K-Splanifold within $\approx5\%$ on each task (here, width 64; $P{=}580$).
+
+\paragraph{Targets.}
+\emph{Smooth cubic (well-suited):}
+\begin{equation}
+y = a_0+a_1 t+a_2 t^2+a_3 t^3 + \left(B_0 + B_1 t + B_2 t^2\right)\delta + \varepsilon,
+\end{equation}
+with fixed coefficients $(a_i,B_i)$ and small noise $\varepsilon\sim\mathcal{N}(0,0.07^2 I)$.
+This construction is cubic in $t$ and linear in $\delta$, making it well matched to the K-Splanifold factorization.
+\emph{Noisy irregular (badly suited):} we add high-frequency variation in the full 4D input via random Fourier mixtures plus larger noise \cite{rahimi2007random,tancik2020fourier},
+\begin{equation}
+y = y_{\text{cubic}} + \gamma\sum_{m=1}^M \sin\!\left(2\pi \omega_m k_m^\top r + \phi_m\right)v_m + \varepsilon,\qquad
+\varepsilon\sim\mathcal{N}(0,0.18^2 I),
+\end{equation}
+which is poorly matched to a low-rank spine--deviation parameterization.
+We train on 256 random samples and report RMSE on 256 held-out samples against the \emph{noise-free} target.
+
+\paragraph{Quantization and entropy.}
+We apply symmetric uniform $b$-bit quantization per parameter tensor and compute both RMSE and $H_{\mathrm{pp}}(b)$ from Eq.~\eqref{eq:hpp}.
+Figure~\ref{fig:entropy_quant} plots RMSE as a function of the quantization bits per parameter $b$.
+Table~\ref{tab:entropy_bits} summarizes the smallest fidelity-preserving $b^\star$, the corresponding $H_{\mathrm{pp}}(b^\star)$, and the implied ideal entropy-coded sizes.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig_entropy_quantization.png}
+    \caption{Quantization sensitivity expressed in quantization bits per parameter for two $4\mathrm{D}\rightarrow4\mathrm{D}$ regression targets.
+    Each curve sweeps $b\in\{2,\dots,10\}$ and plots test RMSE versus $b$.
+    Dashed horizontal lines show each model's unquantized RMSE baseline.}
+    \label{fig:entropy_quant}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+Task & Model & $P$ & RMSE (float) & $b^\star$ & RMSE ($b^\star$) & $H_{\mathrm{pp}}(b^\star)$ & Size (bytes) \\
+\midrule
+cubic & K-Splanifold (K=N=4) & 104 & 0.0232 & 6 & 0.0239 & 3.71 & 48.2 \\
+cubic & MLP (1$\times$64) & 580 & 0.0221 & 7 & 0.0221 & 5.94 & 430.4 \\
+irregular & K-Splanifold (K=N=4) & 104 & 0.4449 & 4 & 0.4627 & 2.97 & 38.6 \\
+irregular & MLP (1$\times$64) & 580 & 0.4409 & 6 & 0.4414 & 4.70 & 341.1 \\
+\bottomrule
+\end{tabular}
+\caption{Entropy-coded bits per parameter for fitted regression models.
+We choose the smallest $b^\star$ such that quantization increases test RMSE by at most $5\%$, then report $H_{\mathrm{pp}}(b^\star)$ from Eq.~\eqref{eq:hpp}.
+``Size'' is the ideal entropy-coded lower bound $P\,H_{\mathrm{pp}}(b^\star)/8$ (header overheads ignored).}
+\label{tab:entropy_bits}
+\end{table}
+
+\paragraph{Interpretation.}
+On the smooth cubic target, both models reach comparable RMSE ($\approx0.023$), but the K-Splanifold reaches that fidelity with fewer entropy bits per parameter ($H_{\mathrm{pp}}\approx 3.71$) than the MLP ($H_{\mathrm{pp}}\approx 5.94$).
+On the noisy irregular target, both models again have comparable RMSE ($\approx0.44$), and the MLP still requires higher entropy at fidelity ($H_{\mathrm{pp}}\approx 4.70$ vs.\ $2.97$), consistent with storing more information to represent irregular variation under this parameterization.
+One plausible reading is that the MLP stores more ``noise-like'' detail (higher entropy per parameter) to match the same test RMSE.
+However, higher entropy does not guarantee lower MSE: extra capacity can be redundant, less aligned with the target, or difficult to exploit under the same optimization and regularization, so the additional bits do not necessarily translate into improved error.
+This aligns with prior work showing substantial parameter redundancy and compressibility in neural networks (e.g., predicting most weights without accuracy loss or achieving large compression ratios via pruning/quantization/weight sharing), which suggests that distributed representations can store information in a highly redundant form \cite{denil2013predicting,han2016deepcompression,ullrich2017soft}.
+Connectionist models emphasize distributed, superpositional representations, and holographic reduced representations provide a concrete formalism for such superposition in fixed-width vectors; in that light, higher $H_{\mathrm{pp}}$ for MLPs is consistent with a more redundant encoding rather than strictly more useful signal \cite{rumelhart1986pdp,plate1995hrr}.
+
+\FloatBarrier
+\section{Practical notes}
+
+\paragraph{Choosing transverse bases.}
+If the columns of $E_i$ are nearly linearly dependent, transverse variation can collapse or become poorly conditioned.
+In practice we recommend authoring $E_i$ as an (approximately) orthogonal frame and monitoring the condition number of the Gram matrix $G_i=E_i^\top E_i$.
+When automatic conditioning is desired while approximately preserving per-axis semantics, a modified Gram--Schmidt pass with per-column renormalization is often sufficient \cite{golub2013matrix}.
+
+\paragraph{When to use K-Splanifolds.}
+K-Splanifolds are a good fit when (i) a meaningful ``central progression'' exists, (ii) deviations away from that progression can be described by per-axis basis trajectories, and (iii) explicit, low-latency, differentiable evaluation is preferred over training-based alternatives.
+When strong heterogeneous interactions dominate, sparse grids, RBFs, or neural fields may be better suited \cite{smolyak1963,bungartzgriebel2004,buhmann2003,wendland2005,sitzmann2020siren,mildenhall2020nerf}.
+
+\section{Conclusion}
+
+K-Splanifolds provide a structured spine--deviation manifold with linear scaling in the input dimension and explicit, interpretable controls.
+A smooth weight regularization removes singular behavior in tangent blending and admits a quantitative bound on the deviation from unregularized normalization.
+Deviation warping offers bounded transverse behavior for extrapolation and can be inverted analytically on the warped deviation.
+Experiments and baselines place the method among common fast interpolators (RBFs and coordinate MLPs) and illustrate its practical behavior under fixed iteration budgets.
+
+\begin{thebibliography}{99}
+
+\bibitem{deboor2001}
+Carl de Boor.
+\newblock \emph{A Practical Guide to Splines}.
+\newblock Springer, revised edition, 2001.
+
+\bibitem{schumaker2007}
+Larry L. Schumaker.
+\newblock \emph{Spline Functions: Basic Theory}.
+\newblock Cambridge University Press, 3rd edition, 2007.
+
+\bibitem{ahlberg1967}
+J. H. Ahlberg, E. N. Nilson, and J. L. Walsh.
+\newblock \emph{The Theory of Splines and Their Applications}.
+\newblock Academic Press, 1967.
+
+\bibitem{farin2002}
+Gerald Farin.
+\newblock \emph{Curves and Surfaces for CAGD: A Practical Guide}.
+\newblock Morgan Kaufmann, 5th edition, 2002.
+
+\bibitem{wahba1990spline}
+Grace Wahba.
+\newblock \emph{Spline Models for Observational Data}.
+\newblock SIAM, 1990.
+
+\bibitem{fritsch1980monotone}
+F. N. Fritsch and R. E. Carlson.
+\newblock Monotone piecewise cubic interpolation.
+\newblock \emph{SIAM Journal on Numerical Analysis}, 17(2):238--246, 1980.
+
+\bibitem{hyman1983monotone}
+J. M. Hyman.
+\newblock Accurate monotonicity preserving cubic interpolation.
+\newblock \emph{SIAM Journal on Scientific and Statistical Computing}, 4(4):645--654, 1983.
+
+\bibitem{smolyak1963}
+S. A. Smolyak.
+\newblock Quadrature and interpolation formulas for tensor products of certain classes of functions.
+\newblock \emph{Doklady Akademii Nauk SSSR}, 1963.
+
+\bibitem{bungartzgriebel2004}
+Hans-Joachim Bungartz and Michael Griebel.
+\newblock Sparse grids.
+\newblock \emph{Acta Numerica}, 13:147--269, 2004.
+
+\bibitem{buhmann2003}
+Martin D. Buhmann.
+\newblock \emph{Radial Basis Functions: Theory and Implementations}.
+\newblock Cambridge University Press, 2003.
+
+\bibitem{wendland2005}
+Holger Wendland.
+\newblock \emph{Scattered Data Approximation}.
+\newblock Cambridge University Press, 2005.
+
+\bibitem{fasshauer2007}
+Gregory E. Fasshauer.
+\newblock \emph{Meshfree Approximation Methods with MATLAB}.
+\newblock World Scientific, 2007.
+
+\bibitem{hastie1989principal}
+Trevor Hastie and Werner Stuetzle.
+\newblock Principal curves.
+\newblock \emph{Journal of the American Statistical Association}, 84(406):502--516, 1989.
+
+\bibitem{cybenko1989}
+George Cybenko.
+\newblock Approximation by superpositions of a sigmoidal function.
+\newblock \emph{Mathematics of Control, Signals and Systems}, 2(4):303--314, 1989.
+
+\bibitem{hornik1991}
+Kurt Hornik.
+\newblock Approximation capabilities of multilayer feedforward networks.
+\newblock \emph{Neural Networks}, 4(2):251--257, 1991.
+
+\bibitem{barron1993}
+Andrew R. Barron.
+\newblock Universal approximation bounds for superpositions of a sigmoidal function.
+\newblock \emph{IEEE Transactions on Information Theory}, 39(3):930--945, 1993.
+
+\bibitem{yarotsky2017}
+Dmitry Yarotsky.
+\newblock Error bounds for approximations with deep ReLU networks.
+\newblock \emph{Neural Networks}, 94:103--114, 2017.
+
+\bibitem{tancik2020fourier}
+Matthew Tancik, Pratul P. Srinivasan, Ben Mildenhall, Sara Fridovich-Keil, Nithin Raghavan, Utkarsh Singhal, Ravi Ramamoorthi, Jonathan T. Barron, and Ren Ng.
+\newblock Fourier features let networks learn high frequency functions in low dimensional domains.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem{mildenhall2020nerf}
+Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, Jonathan T. Barron, Ravi Ramamoorthi, and Ren Ng.
+\newblock NeRF: Representing scenes as neural radiance fields for view synthesis.
+\newblock In \emph{ECCV}, 2020.
+
+\bibitem{sitzmann2020siren}
+Vincent Sitzmann, Julien N. P. Martel, Alexander W. Bergman, David B. Lindell, and Gordon Wetzstein.
+\newblock Implicit neural representations with periodic activation functions.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem{mueller2022instant}
+Thomas M\"uller, Alex Evans, Christoph Schied, and Alexander Keller.
+\newblock Instant neural graphics primitives with a multiresolution hash encoding.
+\newblock \emph{ACM Transactions on Graphics}, 41(4), 2022.
+
+\bibitem{tikhonov1963}
+A. N. Tikhonov.
+\newblock Solution of incorrectly formulated problems and the regularization method.
+\newblock \emph{Soviet Mathematics Doklady}, 4:1035--1038, 1963.
+
+\bibitem{hoerl1970ridge}
+Arthur E. Hoerl and Robert W. Kennard.
+\newblock Ridge regression: Biased estimation for nonorthogonal problems.
+\newblock \emph{Technometrics}, 12(1):55--67, 1970.
+
+\bibitem{golub2013matrix}
+Gene H. Golub and Charles F. Van Loan.
+\newblock \emph{Matrix Computations}.
+\newblock Johns Hopkins University Press, 4th edition, 2013.
+
+\bibitem{nocedal2006numerical}
+Jorge Nocedal and Stephen J. Wright.
+\newblock \emph{Numerical Optimization}.
+\newblock Springer, 2nd edition, 2006.
+
+\bibitem{kingma2015adam}
+Diederik P. Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock In \emph{ICLR}, 2015.
+
+\bibitem{rissanen1978mdl}
+Jorma Rissanen.
+\newblock Modeling by shortest data description.
+\newblock \emph{Automatica}, 14(5):465--471, 1978.
+
+\bibitem{shannon1948}
+Claude E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27:379--423 and 623--656, 1948.
+
+\bibitem{cover2006elements}
+Thomas M. Cover and Joy A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock Wiley-Interscience, 2nd edition, 2006.
+
+\bibitem{mackay2003itila}
+David J. C. MacKay.
+\newblock \emph{Information Theory, Inference, and Learning Algorithms}.
+\newblock Cambridge University Press, 2003.
+
+\bibitem{gersho1992vq}
+Allen Gersho and Robert M. Gray.
+\newblock \emph{Vector Quantization and Signal Compression}.
+\newblock Kluwer Academic Publishers, 1992.
+
+\bibitem{jayant1984digital}
+N. S. Jayant and Peter Noll.
+\newblock \emph{Digital Coding of Waveforms}.
+\newblock Prentice Hall, 1984.
+
+\bibitem{rahimi2007random}
+Ali Rahimi and Benjamin Recht.
+\newblock Random features for large-scale kernel machines.
+\newblock In \emph{NeurIPS}, 2007.
+
+\bibitem{han2016deepcompression}
+Song Han, Huizi Mao, and William J. Dally.
+\newblock Deep compression: Compressing deep neural networks with pruning, trained quantization and Huffman coding.
+\newblock In \emph{ICLR}, 2016.
+
+\bibitem{denil2013predicting}
+Misha Denil, Babak Shakibi, Laurent Dinh, Marc'Aurelio Ranzato, and Nando de~Freitas.
+\newblock Predicting parameters in deep learning.
+\newblock In \emph{NeurIPS}, 2013.
+
+\bibitem{ullrich2017soft}
+Karen Ullrich, Edward Meeds, and Max Welling.
+\newblock Soft weight-sharing for neural network compression.
+\newblock In \emph{ICLR}, 2017.
+
+\bibitem{rumelhart1986pdp}
+David~E. Rumelhart and James~L. McClelland, and the PDP Research Group.
+\newblock \emph{Parallel Distributed Processing: Explorations in the Microstructure of Cognition}, Vol.~1: Foundations.
+\newblock MIT Press, 1986.
+
+\bibitem{plate1995hrr}
+Tony~A. Plate.
+\newblock Holographic reduced representations.
+\newblock \emph{IEEE Transactions on Neural Networks}, 6(3):623--641, 1995.
+
+\end{thebibliography}
+
+\end{document}
