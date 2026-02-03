@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>K=3 Splanifold Visualization (Animated)</title>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                background-color: #f0f0f0;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #info {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                pointer-events: none;
+                user-select: none;
+            }
+            h3 {
+                margin: 0 0 10px 0;
+                font-size: 16px;
+                color: #333;
+            }
+            .legend-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 6px;
+                font-size: 13px;
+                color: #555;
+            }
+            .color-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                margin-right: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        <!-- Load Three.js and OrbitControls -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    </head>
+    <body>
+        <script>
+            // --- CONSTANTS (Anchors are fixed) ---
+            const P0 = new THREE.Vector3(-5.0, 0.0, 0.0);
+            const P1 = new THREE.Vector3(5.0, 0.0, 5.0);
+
+            // --- BASE PARAMETERS (Initial State) ---
+            const base_P0_prime = new THREE.Vector3(5.0, 5.0, 0.0);
+            const base_P1_prime = new THREE.Vector3(5.0, -5.0, 0.0);
+
+            const base_E0 = [
+                new THREE.Vector3(5.0, 0.0, 0.0),
+                new THREE.Vector3(0.0, 2.0, 0.0),
+                new THREE.Vector3(0.0, 0.0, 2.0),
+            ];
+            const base_E1 = [
+                new THREE.Vector3(0.0, 5.0, 0.0),
+                new THREE.Vector3(-2.0, 0.0, 0.0),
+                new THREE.Vector3(0.0, 0.0, 1.0),
+            ];
+            const base_E0_prime = [
+                new THREE.Vector3(0.0, 1.0, 0.0),
+                new THREE.Vector3(-1.0, 0.0, 0.0),
+                new THREE.Vector3(0.0, 0.0, 0.5),
+            ];
+            const base_E1_prime = [
+                new THREE.Vector3(0.0, 0.0, -3.0),
+                new THREE.Vector3(0.0, 0.0, -3.0),
+                new THREE.Vector3(0.0, 0.0, 0.0),
+            ];
+
+            // --- CURRENT PARAMETERS (Mutable) ---
+            let curr_P0_prime = base_P0_prime.clone();
+            let curr_P1_prime = base_P1_prime.clone();
+
+            let curr_E0 = base_E0.map((v) => v.clone());
+            let curr_E1 = base_E1.map((v) => v.clone());
+
+            let curr_E0_prime = base_E0_prime.map((v) => v.clone());
+            let curr_E1_prime = base_E1_prime.map((v) => v.clone());
+
+            // --- MATH HELPERS ---
+
+            function getHermitePoint(t) {
+                const t2 = t * t;
+                const t3 = t * t * t;
+                const h00 = 2 * t3 - 3 * t2 + 1;
+                const h10 = t3 - 2 * t2 + t;
+                const h01 = -2 * t3 + 3 * t2;
+                const h11 = t3 - t2;
+
+                const p = new THREE.Vector3()
+                    .copy(P0)
+                    .multiplyScalar(h00)
+                    .add(
+                        new THREE.Vector3()
+                            .copy(curr_P0_prime)
+                            .multiplyScalar(h10),
+                    )
+                    .add(new THREE.Vector3().copy(P1).multiplyScalar(h01))
+                    .add(
+                        new THREE.Vector3()
+                            .copy(curr_P1_prime)
+                            .multiplyScalar(h11),
+                    );
+                return p;
+            }
+
+            function getSplanifoldPoint(r) {
+                const K = 3.0;
+                const sigma = r.x + r.y + r.z;
+                const t = sigma / K;
+                const delta = new THREE.Vector3(r.x - t, r.y - t, r.z - t);
+
+                const psi = getHermitePoint(t);
+
+                const D0 = new THREE.Vector3()
+                    .addScaledVector(curr_E0[0], delta.x)
+                    .addScaledVector(curr_E0[1], delta.y)
+                    .addScaledVector(curr_E0[2], delta.z);
+
+                const D1 = new THREE.Vector3()
+                    .addScaledVector(curr_E1[0], delta.x)
+                    .addScaledVector(curr_E1[1], delta.y)
+                    .addScaledVector(curr_E1[2], delta.z);
+
+                const T0 = new THREE.Vector3()
+                    .addScaledVector(curr_E0_prime[0], delta.x)
+                    .addScaledVector(curr_E0_prime[1], delta.y)
+                    .addScaledVector(curr_E0_prime[2], delta.z);
+
+                const T1 = new THREE.Vector3()
+                    .addScaledVector(curr_E1_prime[0], delta.x)
+                    .addScaledVector(curr_E1_prime[1], delta.y)
+                    .addScaledVector(curr_E1_prime[2], delta.z);
+
+                const t2 = t * t;
+                const t3 = t * t * t;
+                const h00 = 2 * t3 - 3 * t2 + 1;
+                const h10 = t3 - 2 * t2 + t;
+                const h01 = -2 * t3 + 3 * t2;
+                const h11 = t3 - t2;
+
+                const deltaField = new THREE.Vector3()
+                    .copy(D0)
+                    .multiplyScalar(h00)
+                    .add(new THREE.Vector3().copy(T0).multiplyScalar(h10))
+                    .add(new THREE.Vector3().copy(D1).multiplyScalar(h01))
+                    .add(new THREE.Vector3().copy(T1).multiplyScalar(h11));
+
+                return psi.add(deltaField);
+            }
+
+            // --- SCENE SETUP ---
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xf0f0f0);
+            scene.add(new THREE.GridHelper(20, 20, 0xcccccc, 0xe5e5e5));
+            scene.add(new THREE.AxesHelper(2));
+
+            const camera = new THREE.PerspectiveCamera(
+                45,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000,
+            );
+            camera.position.set(5, -15, 10);
+            camera.up.set(0, 0, 1);
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            document.body.appendChild(renderer.domElement);
+
+            scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+            const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            dirLight.position.set(5, 10, 15);
+            scene.add(dirLight);
+
+            const controls = new THREE.OrbitControls(
+                camera,
+                renderer.domElement,
+            );
+            controls.enableDamping = true;
+
+            // --- VISUAL ELEMENTS STORAGE ---
+            let spineLine;
+            let edgeLines = [];
+            let arrows = []; // { type, obj, paramRef }
+
+            // --- INITIALIZATION ---
+
+            // 1. Spine
+            {
+                const points = [];
+                const segments = 100;
+                for (let i = 0; i <= segments; i++)
+                    points.push(new THREE.Vector3());
+                const geometry = new THREE.BufferGeometry().setFromPoints(
+                    points,
+                );
+                const material = new THREE.LineBasicMaterial({
+                    color: 0x000000,
+                    linewidth: 3,
+                });
+                spineLine = new THREE.Line(geometry, material);
+                scene.add(spineLine);
+            }
+
+            // 2. Edges
+            // 12 edges of the hypercube
+            const edgeDefs = [
+                [new THREE.Vector3(0, 0, 0), new THREE.Vector3(1, 0, 0)],
+                [new THREE.Vector3(0, 1, 0), new THREE.Vector3(1, 1, 0)],
+                [new THREE.Vector3(0, 0, 1), new THREE.Vector3(1, 0, 1)],
+                [new THREE.Vector3(0, 1, 1), new THREE.Vector3(1, 1, 1)],
+                [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 1, 0)],
+                [new THREE.Vector3(1, 0, 0), new THREE.Vector3(1, 1, 0)],
+                [new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 1, 1)],
+                [new THREE.Vector3(1, 0, 1), new THREE.Vector3(1, 1, 1)],
+                [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 1)],
+                [new THREE.Vector3(1, 0, 0), new THREE.Vector3(1, 0, 1)],
+                [new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 1, 1)],
+                [new THREE.Vector3(1, 1, 0), new THREE.Vector3(1, 1, 1)],
+            ];
+
+            edgeDefs.forEach((def) => {
+                const points = [];
+                const edgeSegs = 20;
+                for (let i = 0; i <= edgeSegs; i++)
+                    points.push(new THREE.Vector3());
+                const geometry = new THREE.BufferGeometry().setFromPoints(
+                    points,
+                );
+                const material = new THREE.LineBasicMaterial({
+                    color: 0x333333,
+                    transparent: true,
+                    opacity: 0.8,
+                });
+                const line = new THREE.Line(geometry, material);
+                line.userData = { startR: def[0], endR: def[1] };
+                edgeLines.push(line);
+                scene.add(line);
+            });
+
+            // 3. Anchors (Fixed)
+            function createSphere(pos, color) {
+                const geo = new THREE.SphereGeometry(0.3, 16, 16);
+                const mat = new THREE.MeshLambertMaterial({ color: color });
+                const mesh = new THREE.Mesh(geo, mat);
+                mesh.position.copy(pos);
+                scene.add(mesh);
+            }
+            createSphere(P0, 0x000000);
+            createSphere(P1, 0x000000);
+
+            // 4. Arrow Helper System
+            function addArrow(originVec, dirVec, color, id) {
+                // We use a small placeholder direction initially, will be updated in loop
+                const arrow = new THREE.ArrowHelper(
+                    new THREE.Vector3(0, 0, 1),
+                    originVec,
+                    1,
+                    color,
+                    0.2,
+                    0.1,
+                );
+                scene.add(arrow);
+                arrows.push({ id: id, obj: arrow, origin: originVec }); // origin might be fixed or dynamic
+            }
+
+            // Add arrows to system
+            addArrow(P0, curr_P0_prime, 0xff00ff, "P0_prime");
+            addArrow(P1, curr_P1_prime, 0xff00ff, "P1_prime");
+
+            const basisColors = [0xff0000, 0x00aa00, 0x0000ff];
+            for (let k = 0; k < 3; k++) {
+                addArrow(P0, curr_E0[k], basisColors[k], `E0_${k}`);
+                addArrow(P1, curr_E1[k], basisColors[k], `E1_${k}`);
+                // Basis derivs attached to E tips (origin dynamic)
+                // Note: origin will be updated by loop immediately
+                addArrow(
+                    new THREE.Vector3(),
+                    curr_E0_prime[k],
+                    0x00ffff,
+                    `E0_prime_${k}`,
+                );
+                addArrow(
+                    new THREE.Vector3(),
+                    curr_E1_prime[k],
+                    0x00ffff,
+                    `E1_prime_${k}`,
+                );
+            }
+
+            // --- ANIMATION UPDATE LOGIC ---
+            function updateLogic(time) {
+                // 1. Modulate Parameters
+                const t = time * 2.0;
+
+                // Animate Spine Derivatives (Wiggle)
+                curr_P0_prime
+                    .copy(base_P0_prime)
+                    .applyAxisAngle(
+                        new THREE.Vector3(0, 0, 1),
+                        Math.sin(t * 0.5) * 0.5,
+                    );
+                curr_P1_prime
+                    .copy(base_P1_prime)
+                    .applyAxisAngle(
+                        new THREE.Vector3(0, 0, 1),
+                        Math.cos(t * 0.5) * 0.5,
+                    );
+
+                // Animate Basis Vectors (Rotate Frames)
+                const rotZ = new THREE.Vector3(0, 0, 1);
+                const rotX = new THREE.Vector3(1, 0, 0);
+
+                for (let k = 0; k < 3; k++) {
+                    // Rotate E0 around Z
+                    curr_E0[k]
+                        .copy(base_E0[k])
+                        .applyAxisAngle(rotZ, Math.sin(t * 0.3) * 0.5);
+                    // Rotate E1 around X
+                    curr_E1[k]
+                        .copy(base_E1[k])
+                        .applyAxisAngle(rotX, Math.cos(t * 0.3) * 0.5);
+
+                    // Pulse Derivatives
+                    const pulse = 1.0 + Math.sin(t * 2.0 + k) * 0.5;
+                    curr_E0_prime[k]
+                        .copy(base_E0_prime[k])
+                        .multiplyScalar(pulse);
+                    curr_E1_prime[k]
+                        .copy(base_E1_prime[k])
+                        .multiplyScalar(pulse);
+                }
+
+                // 2. Update Spine Geometry
+                const spinePos = spineLine.geometry.attributes.position;
+                const segments = 100;
+                for (let i = 0; i <= segments; i++) {
+                    const p = getHermitePoint(i / segments);
+                    spinePos.setXYZ(i, p.x, p.y, p.z);
+                }
+                spinePos.needsUpdate = true;
+
+                // 3. Update Edges Geometry
+                edgeLines.forEach((line) => {
+                    const pos = line.geometry.attributes.position;
+                    const segs = 20;
+                    for (let i = 0; i <= segs; i++) {
+                        const r = new THREE.Vector3().lerpVectors(
+                            line.userData.startR,
+                            line.userData.endR,
+                            i / segs,
+                        );
+                        const p = getSplanifoldPoint(r);
+                        pos.setXYZ(i, p.x, p.y, p.z);
+                    }
+                    pos.needsUpdate = true;
+                });
+
+                // 4. Update Arrows
+                arrows.forEach((item) => {
+                    const arrow = item.obj;
+                    let vec, origin;
+
+                    // Priority Check for Primes to avoid ID collisions
+                    if (item.id === "P0_prime") {
+                        vec = curr_P0_prime;
+                        origin = P0;
+                    } else if (item.id === "P1_prime") {
+                        vec = curr_P1_prime;
+                        origin = P1;
+                        arrow.position.copy(P1);
+                    } else if (item.id.includes("prime")) {
+                        // Handle E0_prime_k and E1_prime_k
+                        const parts = item.id.split("_"); // e.g. ['E0', 'prime', '0']
+                        const k = parseInt(parts[2]);
+                        const isE0 = parts[0] === "E0";
+
+                        vec = isE0 ? curr_E0_prime[k] : curr_E1_prime[k];
+
+                        // Origin is the tip of the corresponding Basis Vector
+                        const baseE = isE0 ? curr_E0[k] : curr_E1[k];
+                        const baseP = isE0 ? P0 : P1;
+                        origin = new THREE.Vector3().copy(baseP).add(baseE);
+                        arrow.position.copy(origin);
+                    } else if (item.id.startsWith("E")) {
+                        // Handle E0_k and E1_k (Basis Vectors)
+                        const parts = item.id.split("_"); // e.g. ['E0', '0']
+                        const k = parseInt(parts[1]);
+                        const isE0 = parts[0] === "E0";
+
+                        vec = isE0 ? curr_E0[k] : curr_E1[k];
+                        origin = isE0 ? P0 : P1;
+                    }
+
+                    if (vec) {
+                        if (item.id === "P1_prime") {
+                            // Reverse P1 prime for visualization "flow" into the node
+                            const rev = vec.clone().negate();
+                            arrow.setDirection(rev.normalize());
+                            arrow.setLength(rev.length() * 0.6);
+                        } else {
+                            arrow.setDirection(vec.clone().normalize());
+                            // Scale derivatives by 0.6 visually
+                            const scale = item.id.includes("prime") ? 0.6 : 1.0;
+                            arrow.setLength(vec.length() * scale);
+                        }
+                    }
+                });
+            }
+
+            // --- LOOP ---
+            const clock = new THREE.Clock();
+
+            function animate() {
+                requestAnimationFrame(animate);
+                const time = clock.getElapsedTime();
+                updateLogic(time);
+                controls.update();
+                renderer.render(scene, camera);
+            }
+
+            window.addEventListener(
+                "resize",
+                () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                },
+                false,
+            );
+
+            animate();
+        </script>
+    </body>
+</html>

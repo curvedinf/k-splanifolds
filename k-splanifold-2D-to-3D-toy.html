@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Linear-Time DTH Splanifold (Restored)</title>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                background-color: #050505;
+                font-family: "Segoe UI", sans-serif;
+            }
+            #overlay {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                width: 340px;
+                color: #ccc;
+                background: rgba(10, 10, 10, 0.95);
+                padding: 16px;
+                border-radius: 8px;
+                border: 1px solid #333;
+                pointer-events: none;
+                user-select: none;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            }
+            h1 {
+                margin: 0 0 8px 0;
+                font-size: 1.1rem;
+                color: #4af;
+            }
+            p {
+                margin: 4px 0;
+                font-size: 0.85rem;
+                color: #aaa;
+                line-height: 1.4;
+            }
+            .code-block {
+                background: #111;
+                padding: 8px;
+                border-radius: 4px;
+                font-family: monospace;
+                font-size: 0.75rem;
+                color: #8f8;
+                margin-top: 8px;
+                border: 1px solid #222;
+            }
+            .controls-hint {
+                margin-top: 12px;
+                padding-top: 10px;
+                border-top: 1px solid #333;
+                font-size: 0.8rem;
+                color: #888;
+            }
+        </style>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="overlay">
+            <h1>K-Splanifold Interpolation</h1>
+            <p>Linear-time manifold mapping built from a spine plus a displacement field.</p>
+            <div class="code-block">
+                Phi(u) = Spine(t) + Displacement(t)<br />
+                t = mean(u), delta_k = u_k - t<br />
+                w_k = u_k / Sigma (or 1/K when Sigma = 0)
+            </div>
+            <p>Defined and continuous at Sigma = 0.</p>
+
+            <div class="controls-hint">
+                <strong>R Key:</strong> Rotate (Twist Basis)<br />
+                <strong>E Key:</strong> Translate<br />
+                <strong>T Key:</strong> Scale (Shear)<br />
+                <strong>Right Panel:</strong> Expansion Slider
+            </div>
+        </div>
+
+        <script type="module">
+            import * as THREE from "three";
+            import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+            import { TransformControls } from "three/addons/controls/TransformControls.js";
+            import { GUI } from "three/addons/libs/lil-gui.module.min.js";
+
+            // --- Config ---
+            const RES = 80;
+            const VEL_SCALE = 3.0;
+            const WIDTH_SCALE = 0.5;
+
+            // --- Standard Scene Setup ---
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x050505);
+
+            const grid = new THREE.GridHelper(50, 50, 0x222222, 0x111111);
+            grid.position.y = -4;
+            scene.add(grid);
+
+            const camera = new THREE.PerspectiveCamera(
+                55,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                200,
+            );
+            camera.position.set(12, 8, 12);
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            document.body.appendChild(renderer.domElement);
+
+            const orbit = new OrbitControls(camera, renderer.domElement);
+            orbit.enableDamping = true;
+
+            const light = new THREE.DirectionalLight(0xffffff, 2);
+            light.position.set(5, 10, 5);
+            scene.add(light);
+            scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+
+            // --- Mesh ---
+            const geometry = new THREE.PlaneGeometry(1, 1, RES, RES);
+
+            // Texture
+            const cvs = document.createElement("canvas");
+            cvs.width = 512;
+            cvs.height = 512;
+            const ctx = cvs.getContext("2d");
+            ctx.fillStyle = "#111";
+            ctx.fillRect(0, 0, 512, 512);
+            ctx.strokeStyle = "#0af";
+            ctx.lineWidth = 2;
+            for (let i = 0; i <= 512; i += 64) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, 512);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(512, i);
+                ctx.stroke();
+            }
+            ctx.strokeStyle = "#f44";
+            ctx.lineWidth = 4;
+            ctx.strokeRect(2, 2, 508, 508);
+
+            const tex = new THREE.CanvasTexture(cvs);
+            tex.wrapS = THREE.RepeatWrapping;
+            tex.wrapT = THREE.RepeatWrapping;
+
+            const material = new THREE.MeshStandardMaterial({
+                map: tex,
+                side: THREE.DoubleSide,
+                roughness: 0.4,
+                metalness: 0.3,
+                flatShading: false,
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.frustumCulled = false;
+            scene.add(mesh);
+
+            // --- Gizmos ---
+            const gizmos = {};
+
+            function createGizmo(name, color, pos, rot) {
+                const g = new THREE.Group();
+                const box = new THREE.Mesh(
+                    new THREE.BoxGeometry(1.2, 0.05, 1.2),
+                    new THREE.MeshBasicMaterial({
+                        color: color,
+                        transparent: true,
+                        opacity: 0.5,
+                    }),
+                );
+                const axes = new THREE.AxesHelper(1.5);
+                g.add(box, axes);
+                g.position.copy(pos);
+                if (rot) g.rotation.set(rot.x, rot.y, rot.z);
+                scene.add(g);
+                gizmos[name] = g;
+                return g;
+            }
+
+            const startAnchor = createGizmo(
+                "Start Anchor",
+                0x00ff00,
+                new THREE.Vector3(0, -2, 0),
+            );
+            const endAnchor = createGizmo(
+                "End Anchor",
+                0xff0000,
+                new THREE.Vector3(0, 2, 0),
+            );
+
+            // Tangents
+            const tS1 = createGizmo(
+                "Start Tan 1",
+                0xffaa00,
+                new THREE.Vector3(2, 2, 0),
+                { x: 0, y: 0, z: 0.4 },
+            );
+            startAnchor.add(tS1);
+
+            const tS2 = createGizmo(
+                "Start Tan 2",
+                0xffaa00,
+                new THREE.Vector3(-2, 2, 0),
+                { x: 0, y: 0, z: -0.4 },
+            );
+            startAnchor.add(tS2);
+
+            const tE1 = createGizmo(
+                "End Tan 1",
+                0xff5500,
+                new THREE.Vector3(2, -2, 0),
+            );
+            endAnchor.add(tE1);
+
+            const tE2 = createGizmo(
+                "End Tan 2",
+                0xff5500,
+                new THREE.Vector3(-2, -2, 0),
+            );
+            endAnchor.add(tE2);
+
+            // Interaction
+            const tControl = new TransformControls(camera, renderer.domElement);
+            // Persist on drag end
+            tControl.addEventListener("dragging-changed", (e) => {
+                orbit.enabled = !e.value;
+                if (!e.value) saveState();
+            });
+            tControl.setSpace("local");
+            scene.add(tControl);
+
+            const gui = new GUI({ width: 300 });
+            const params = {
+                target: "Start Anchor",
+                mode: "rotate",
+                expansion: 0.0,
+            };
+
+            gui.add(params, "target", Object.keys(gizmos)).onChange((v) =>
+                tControl.attach(gizmos[v]),
+            );
+            gui.add(params, "mode", ["translate", "rotate", "scale"]).onChange(
+                (v) => tControl.setMode(v),
+            );
+
+            // Expansion with save trigger
+            const expCtrl = gui
+                .add(params, "expansion", 0.0, 5.0)
+                .name("Expansion")
+                .onFinishChange(saveState);
+
+            // Reset Button
+            const ops = {
+                reset: () => {
+                    localStorage.removeItem("splanifold_lt_dth_state");
+                    window.location.reload();
+                },
+            };
+            gui.add(ops, "reset").name("Reset / Clear Save");
+
+            tControl.attach(startAnchor);
+            window.addEventListener("keydown", (e) => {
+                if (e.key === "r") tControl.setMode("rotate");
+                if (e.key === "e") tControl.setMode("translate");
+                if (e.key === "t") tControl.setMode("scale");
+            });
+
+            // --- Persistence Functions ---
+            function saveState() {
+                const state = {
+                    expansion: params.expansion,
+                    gizmos: {},
+                };
+                for (const [key, obj] of Object.entries(gizmos)) {
+                    state.gizmos[key] = {
+                        pos: obj.position.toArray(),
+                        rot: obj.quaternion.toArray(),
+                        scl: obj.scale.toArray(),
+                    };
+                }
+                localStorage.setItem(
+                    "splanifold_lt_dth_state",
+                    JSON.stringify(state),
+                );
+            }
+
+            function loadState() {
+                const str = localStorage.getItem("splanifold_lt_dth_state");
+                if (!str) return;
+                try {
+                    const state = JSON.parse(str);
+                    if (state.expansion !== undefined) {
+                        params.expansion = state.expansion;
+                        expCtrl.updateDisplay();
+                    }
+                    if (state.gizmos) {
+                        for (const [key, data] of Object.entries(
+                            state.gizmos,
+                        )) {
+                            if (gizmos[key]) {
+                                gizmos[key].position.fromArray(data.pos);
+                                gizmos[key].quaternion.fromArray(data.rot);
+                                gizmos[key].scale.fromArray(data.scl);
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.warn("Error loading state", e);
+                }
+            }
+
+            // Initialize state
+            loadState();
+
+            // --- LT-DTH MATH ENGINE ---
+
+            // Helper: Extract all basis vectors.
+            // We will select diagonal ones later.
+            function getBasisSet(obj) {
+                obj.updateMatrixWorld();
+                const e = obj.matrixWorld.elements;
+
+                // X Axis (Dimension 0 / k=0)
+                const b0 = new THREE.Vector3(e[0], e[1], e[2])
+                    .normalize()
+                    .multiplyScalar(WIDTH_SCALE * obj.scale.x);
+                // Y Axis (Dimension 1 / k=1)
+                const b1 = new THREE.Vector3(e[4], e[5], e[6])
+                    .normalize()
+                    .multiplyScalar(WIDTH_SCALE * obj.scale.y);
+
+                return [b0, b1];
+            }
+
+            function getWorldPos(obj) {
+                const v = new THREE.Vector3();
+                obj.getWorldPosition(v);
+                return v;
+            }
+
+            // Data Buffers
+            let P_S, P_E;
+            let e_S = [],
+                e_E = [];
+            let P_TS = [],
+                P_TE = [];
+            let e_TS = [],
+                e_TE = [];
+
+            function captureState() {
+                // 1. Anchors
+                P_S = getWorldPos(startAnchor);
+                P_E = getWorldPos(endAnchor);
+                e_S = getBasisSet(startAnchor); // [e_S_0, e_S_1]
+                e_E = getBasisSet(endAnchor); // [e_E_0, e_E_1]
+
+                // 2. Tangents (Diagonal Coupling)
+                // k=0 uses Tangent 1 (tS1/tE1) and extracts Basis 0 (X)
+                // k=1 uses Tangent 2 (tS2/tE2) and extracts Basis 1 (Y)
+
+                // Start Tangents
+                P_TS = [getWorldPos(tS1), getWorldPos(tS2)];
+                const b_tS1 = getBasisSet(tS1);
+                const b_tS2 = getBasisSet(tS2);
+                e_TS = [b_tS1[0], b_tS2[1]]; // Diagonal selection: T1->X, T2->Y
+
+                // End Tangents
+                P_TE = [getWorldPos(tE1), getWorldPos(tE2)];
+                const b_tE1 = getBasisSet(tE1);
+                const b_tE2 = getBasisSet(tE2);
+                e_TE = [b_tE1[0], b_tE2[1]]; // Diagonal selection: T1->X, T2->Y
+            }
+
+            function updateManifold() {
+                captureState();
+
+                const posAttr = mesh.geometry.attributes.position;
+                const uvAttr = mesh.geometry.attributes.uv;
+
+                const K = 2; // Fixed for this vis
+                const EPS = 1e-6;
+
+                for (let i = 0; i < posAttr.count; i++) {
+                    const ix = i % (RES + 1);
+                    const iy = Math.floor(i / (RES + 1));
+
+                    // 1. Domain Expansion
+                    const r = [ix / RES, iy / RES];
+                    const E = params.expansion;
+
+                    // u_k = r_k(1+2E) - E
+                    const u = [r[0] * (1 + 2 * E) - E, r[1] * (1 + 2 * E) - E];
+
+                    uvAttr.setXY(i, u[0], u[1]);
+
+                    // 2. Reduction
+                    let Sigma = 0;
+                    for (let k = 0; k < K; k++) Sigma += u[k];
+
+                    const t = Sigma / K;
+                    const delta = [u[0] - t, u[1] - t];
+
+                    // 3. Weights (with Singularity Fix)
+                    let w = [0, 0];
+                    if (Math.abs(Sigma) >= EPS) {
+                        w[0] = u[0] / Sigma;
+                        w[1] = u[1] / Sigma;
+                    } else {
+                        w[0] = 1.0 / K;
+                        w[1] = 1.0 / K;
+                    }
+
+                    // 4. Hermite Basis
+                    const t2 = t * t;
+                    const t3 = t2 * t;
+                    const h0 = 2 * t3 - 3 * t2 + 1;
+                    const h1 = -2 * t3 + 3 * t2;
+                    const h2 = t3 - 2 * t2 + t;
+                    const h3 = t3 - t2;
+
+                    // 5. Spine Calculation (O(K))
+                    // V_S = sigma * Sum(w_k * (P_TS_k - P_S))
+                    // V_E = sigma * Sum(w_k * (P_TE_k - P_E))
+
+                    const V_S = new THREE.Vector3();
+                    const V_E = new THREE.Vector3();
+
+                    for (let k = 0; k < K; k++) {
+                        const diffS = new THREE.Vector3()
+                            .subVectors(P_TS[k], P_S)
+                            .multiplyScalar(w[k]);
+                        V_S.add(diffS);
+                        const diffE = new THREE.Vector3()
+                            .subVectors(P_TE[k], P_E)
+                            .multiplyScalar(w[k]);
+                        V_E.add(diffE);
+                    }
+                    V_S.multiplyScalar(VEL_SCALE);
+                    V_E.multiplyScalar(VEL_SCALE);
+
+                    // P(t)
+                    const P_spine = new THREE.Vector3()
+                        .addScaledVector(P_S, h0)
+                        .addScaledVector(P_E, h1)
+                        .addScaledVector(V_S, h2)
+                        .addScaledVector(V_E, h3);
+
+                    // 6. Displacement Calculation (O(K))
+                    // D_S = Sum(delta_k * e_S_k)
+                    // T_S = sigma * Sum(delta_k * (e_TS_k - e_S_k))
+
+                    const D_S = new THREE.Vector3();
+                    const D_E = new THREE.Vector3();
+                    const T_S = new THREE.Vector3();
+                    const T_E = new THREE.Vector3();
+
+                    for (let k = 0; k < K; k++) {
+                        // Start Node
+                        D_S.addScaledVector(e_S[k], delta[k]);
+
+                        const diff_basis_S = new THREE.Vector3()
+                            .subVectors(e_TS[k], e_S[k])
+                            .multiplyScalar(delta[k]);
+                        T_S.add(diff_basis_S);
+
+                        // End Node
+                        D_E.addScaledVector(e_E[k], delta[k]);
+
+                        const diff_basis_E = new THREE.Vector3()
+                            .subVectors(e_TE[k], e_E[k])
+                            .multiplyScalar(delta[k]);
+                        T_E.add(diff_basis_E);
+                    }
+                    T_S.multiplyScalar(VEL_SCALE);
+                    T_E.multiplyScalar(VEL_SCALE);
+
+                    // D(t)
+                    const D_disp = new THREE.Vector3()
+                        .addScaledVector(D_S, h0)
+                        .addScaledVector(D_E, h1)
+                        .addScaledVector(T_S, h2)
+                        .addScaledVector(T_E, h3);
+
+                    // 7. Output
+                    const P_out = new THREE.Vector3().addVectors(
+                        P_spine,
+                        D_disp,
+                    );
+
+                    posAttr.setXYZ(i, P_out.x, P_out.y, P_out.z);
+                }
+                posAttr.needsUpdate = true;
+                uvAttr.needsUpdate = true;
+                mesh.geometry.computeVertexNormals();
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+                updateManifold();
+                orbit.update();
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            window.addEventListener("resize", () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        </script>
+    </body>
+</html>
