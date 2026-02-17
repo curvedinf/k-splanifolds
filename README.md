@@ -3,7 +3,7 @@
 This repo contains the K‑Splanifolds paper plus the code and data used to generate its comparative experiments.
 
 Key files:
-- `k-splanifolds.pdf` — the paper.
+- `k-splanifolds.pdf` — the paper ([reference link](https://doi.org/10.5281/zenodo.18673034)).
 - `k-splanifolds-2D-to-3D-toy.html` — interactive 2D→3D toy visualization.
 - `k-splanifolds-3D-to-3D-visualization.html` — 3D→3D visualization.
 - `k-splanifolds.mp4` — short demo video.
