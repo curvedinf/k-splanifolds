@@ -25,10 +25,9 @@
 \newcommand{\one}{\mathbf{1}}
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 
-\title{K-Splanifold Interpolation: Structured Linear-Time Parametric Manifolds via Spine--Deviation Factorization}
+\title{K-Splanifolds: Advancing General Purpose Regression with Linear-Time Parametric Spline Manifolds}
 \author{
 Chase Adams\\
-Taurion Corporation\\
 \texttt{chase.adams@gmail.com}\\
 \href{https://github.com/curvedinf}{github.com/curvedinf} \quad
 \href{https://djangoist.com}{djangoist.com} \quad
@@ -40,12 +39,13 @@ Taurion Corporation\\
 \maketitle
 
 \begin{abstract}
-We introduce \emph{K-Splanifold} interpolation, a structured parametric manifold primitive mapping an input coordinate $r\in[0,1]^K$ to an embedding space $\bbR^N$ with $\mathcal{O}(KN)$ evaluation and $\mathcal{O}(KN)$ control storage.
-The construction factorizes the parameter space into a scalar \emph{spine coordinate} $t$ and a zero-sum \emph{deviation} vector $\delta$, then evaluates a cubic Hermite spine curve plus a Hermite-interpolated transverse displacement field that is linear in $\delta$ for fixed $t$.
-Because both the spine and the per-parameter basis trajectories are cubic Hermite splines, the model class contains cubic polynomial trajectories and (via chaining) standard piecewise-cubic splines along the spine direction.
-We use a smooth, globally defined barycentric regularization for tangent blending near $\Sigma=\one^\top u=0$ and provide bounds relating the regularized weights to unregularized normalization.
-An optional radial deviation warp yields bounded transverse magnitude under extrapolation and admits a closed-form inverse on the warped deviation.
-Experiments include control-field visualizations, stability plots, runtime baselines against an RBF interpolator and a coordinate-MLP, and fixed-budget curve fitting on standard 3D parametric curves.
+Many regression tasks in geometric modeling, deformation control, and reduced simulation require fast, stable mappings from controls in $[0,1]^K$ to outputs in $\bbR^N$.
+K-Splanifolds are structured parametric regression manifolds for this regime and can act as a practical alternative to small coordinate MLPs.
+They construct the map with a cubic spline spine plus transverse deviation components that separate global progression from local variation.
+The approach has $\mathcal{O}(KN)$ storage and evaluation, remains differentiable, supports direct linear least-squares fitting, and includes smooth tangent regularization with bounded extrapolation.
+In reported baselines ($N{=}256$), runtime at $K{=}256$ is $21.74\,\mu$s/query versus $779.06\,\mu$s for RBF ($C{=}256$), while remaining in the same latency regime as a small coordinate MLP ($8.29\,\mu$s).
+At comparable RMSE, entropy-coded bits per parameter are substantially lower than MLPs (smooth cubic: $3.71$ vs.\ $5.94$; noisy irregular: $2.97$ vs.\ $4.70$), indicating higher information density at similar loss.
+These properties may also be useful in selected NLP and LLM components, but that transfer requires dedicated empirical validation.
 \end{abstract}
 
 % --- Summary figures (placed inline to ensure they appear on the first page) ---
