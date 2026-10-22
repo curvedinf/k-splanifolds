@@ -10,6 +10,9 @@ Key files:
 - `setup_venv.sh` — creates a local `.venv` and installs dependencies.
 
 Key experiment code:
+- `experiments/common/ks2.py` — reference KS2 map and projected cell.
+- `experiments/common/ks2_stabilized.py` — trainable KS2 with bounded cubics and energy-based damping.
+- [`experiments/common/ks2_cpu`](experiments/common/ks2_cpu) — fused AVX-512 FP32 Horner and GS128 INT8 VNNI exports.
 - `experiments/common/splanifold.py` — core splanifold map and utilities used by the experiments.
 - `experiments/runtime_baselines/run.py` — runtime baselines (Table 2 + Figure 1 data).
 - `experiments/curve_fitting/run.py` — curve fitting under a fixed optimization budget (Table 3 + Figure 2 data).
@@ -27,3 +30,4 @@ Running:
 source .venv/bin/activate
 python experiments/runtime_baselines/run.py
 ```
+
