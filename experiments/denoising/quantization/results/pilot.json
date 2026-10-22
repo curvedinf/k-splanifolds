@@ -1,0 +1,68 @@
+{
+  "runs": [
+    {
+      "kind": "MLP",
+      "seed": 777,
+      "lr": 0.0001,
+      "steps": 400,
+      "parameters": 435030,
+      "train_seconds": 1.5156996829987293,
+      "best_val_patch_psnr": 22.575127942966215,
+      "best_step": 400
+    },
+    {
+      "kind": "MLP",
+      "seed": 777,
+      "lr": 0.0003,
+      "steps": 400,
+      "parameters": 435030,
+      "train_seconds": 1.513593302998288,
+      "best_val_patch_psnr": 23.97664623193716,
+      "best_step": 400
+    },
+    {
+      "kind": "MLP",
+      "seed": 777,
+      "lr": 0.001,
+      "steps": 400,
+      "parameters": 435030,
+      "train_seconds": 1.6425366339997254,
+      "best_val_patch_psnr": 24.347014738537034,
+      "best_step": 400
+    },
+    {
+      "kind": "KS2",
+      "seed": 777,
+      "lr": 0.0001,
+      "steps": 400,
+      "parameters": 433452,
+      "train_seconds": 10.109830436001857,
+      "best_val_patch_psnr": 24.385371785205308,
+      "best_step": 400
+    },
+    {
+      "kind": "KS2",
+      "seed": 777,
+      "lr": 0.0003,
+      "steps": 400,
+      "parameters": 433452,
+      "train_seconds": 8.402933560001202,
+      "best_val_patch_psnr": 25.237031847252336,
+      "best_step": 400
+    },
+    {
+      "kind": "KS2",
+      "seed": 777,
+      "lr": 0.001,
+      "steps": 400,
+      "parameters": 433452,
+      "train_seconds": 9.229973993997646,
+      "best_val_patch_psnr": 25.156849023971766,
+      "best_step": 400
+    }
+  ],
+  "chosen": {
+    "MLP": 0.001,
+    "KS2": 0.0003
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "original": {
+    "statuses": [
+      "nonfinite_gradients",
+      "nonfinite_gradients",
+      "nonfinite_gradients"
+    ],
+    "completed_updates": [
+      0,
+      0,
+      0
+    ],
+    "val_mean": null,
+    "test_mean": null,
+    "test_std": null
+  },
+  "stable": {
+    "statuses": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "completed_updates": [
+      1000,
+      1000,
+      1000
+    ],
+    "val_mean": 25.120752190390075,
+    "test_mean": 26.71128511428833,
+    "test_std": 0.011979487319142982
+  }
+}

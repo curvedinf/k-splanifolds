@@ -1,0 +1,41 @@
+{
+  "arguments": {
+    "data_dir": "experiment/nanogpt_data",
+    "out": "experiment/nanogpt_fused_training",
+    "steps": 500,
+    "max_seconds": 300,
+    "sequence": 128,
+    "val_tokens": 2048,
+    "eval_every": 100,
+    "width": 96,
+    "rank": 8,
+    "threads": 8,
+    "lr_scale": 0.25,
+    "seeds": [
+      11
+    ],
+    "device": "cpu",
+    "ks2_backend": "fused"
+  },
+  "fixed_steps": 500,
+  "reference_run": "experiment/nanogpt_results",
+  "data_manifest": {
+    "fineweb_train_000001.bin": {
+      "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+      "tokens": 100000000,
+      "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+    },
+    "fineweb_val_000000.bin": {
+      "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+      "tokens": 100000000,
+      "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+    }
+  },
+  "torch": "2.14.1+cpu",
+  "sources": {
+    "/workspace/scratch/9f066479584f/ks_repo/experiments/nanogpt_ks2/train_fused.py": "bf71a5b30178b40d7712f2f53d3d5dabf2c90101e8d162bf5c317463e17003b7",
+    "/workspace/scratch/9f066479584f/ks_repo/experiments/nanogpt_ks2/run.py": "1fc77fdd79835874ffea78ca1586127cf30ba7c27d314d9703bee9daf1ecc073",
+    "/workspace/scratch/9f066479584f/ks_repo/experiments/common/ks2_cpu/training.py": "5ed23acbf18fcb42a0334b7e256b497d984470fd9cd1d679b15514e4249a0d79",
+    "/workspace/scratch/9f066479584f/ks_repo/experiments/common/ks2_cpu/backward.cpp": "e6ee867bf9c2d07d50380254f4954a962ca83eaa5b2ba72ddb46fa22ffeb358a"
+  }
+}

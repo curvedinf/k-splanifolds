@@ -1,0 +1,25 @@
+{
+  "device": "CPU only; numerical emulation, no GPU timing",
+  "torch": "2.14.1+cpu",
+  "model": "R8S32",
+  "parameters": 112768,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "training": "none; frozen existing 1000-step checkpoints",
+  "projections": "FP32 in all cases",
+  "fp8": "E4M3FN; power-of-two static scale per chart and effective coefficient family; dequantize to FP32",
+  "int8": "symmetric signed -127..127, static absmax scale per contiguous GS128 block within each chart/family; final groups zero-padded for scale calculation and sliced back",
+  "family_sizes_per_chart": {
+    "longitudinal": 432,
+    "coordinate": 256,
+    "damping": 128,
+    "warp": 4
+  },
+  "fp16": "explicit half intermediates, serial half edge accumulation; CPU sum/tanh may use higher precision internally before half rounding",
+  "scales": "FP32",
+  "validation": "4096 fixed noisy patches",
+  "test": "12 Set12 images; original fixed noise and stride3 overlap reconstruction"
+}

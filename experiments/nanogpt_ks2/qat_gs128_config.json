@@ -1,0 +1,43 @@
+{
+  "arguments": {
+    "data_dir": "experiment/nanogpt_data",
+    "out": "experiment/nanogpt_qat_gs128",
+    "steps": 500,
+    "max_seconds": 300,
+    "sequence": 128,
+    "val_tokens": 2048,
+    "eval_every": 100,
+    "width": 96,
+    "rank": 8,
+    "threads": 8,
+    "lr_scale": 0.25,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "device": "cpu",
+    "ks2_backend": "fused",
+    "qat": "tq1_gs128"
+  },
+  "fixed_steps": 500,
+  "data_manifest": {
+    "fineweb_train_000001.bin": {
+      "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+      "tokens": 100000000,
+      "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+    },
+    "fineweb_val_000000.bin": {
+      "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+      "tokens": 100000000,
+      "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+    }
+  },
+  "protocol": "From scratch, matched seeds/streams/schedule; all FFN weights GS128 ternary from step zero; identity STE; detached absmax FP16 scales; FP32 masters, optimizer, activations and backward; fused KS2 analytic backward",
+  "torch": "2.14.1+cpu",
+  "sources": {
+    "train_qat.py": "c50713ece721834df83fc0f06012e6a7f3957b81de6ab214b4665a9e314a6620",
+    "run.py": "1fc77fdd79835874ffea78ca1586127cf30ba7c27d314d9703bee9daf1ecc073",
+    "tq1_gs128.py": "0c554efeeeba47c877071c62b38d8cfb5c6fb73b937dcc5265872a7b9cdbfc5b"
+  }
+}

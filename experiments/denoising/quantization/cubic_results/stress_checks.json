@@ -1,0 +1,2030 @@
+[
+  {
+    "seed": 11,
+    "case": "random_0.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.186767578125,
+    "max_input_gradient": 2.682209014892578e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.5751953125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.339111328125
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.06353759765625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.186767578125
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_1e-07",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.18688976764678955,
+    "max_input_gradient": 2.682209014892578e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.172325134277344e-07
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.1920928955078125e-07
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.5751953125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.339111328125
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0341796875
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.06353759765625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.1868896484375
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_1e-05",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.18679547309875488,
+    "max_input_gradient": 2.682209014892578e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.1604042053222656e-05
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.424551010131836e-05
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.5751953125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.339111328125
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.06353759765625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.186767578125
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_0.01",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.1883697509765625,
+    "max_input_gradient": 2.9206275939941406e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.045745849609375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.01277923583984375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.57666015625
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.353515625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.07012939453125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.1883544921875
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_1.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.814453125,
+    "max_input_gradient": 4.1544437408447266e-05,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.3359375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.46484375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 12.7265625
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 2.779296875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.537109375
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.6201171875
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.814453125
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_10.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 32.625,
+    "max_input_gradient": 0.0265045166015625,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 49.34375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 3.990234375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 174.75
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 69.25
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.53759765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 15.28125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 32.625
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_100.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 48.25,
+    "max_input_gradient": 0.03741455078125,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 403.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.49072265625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 16.5625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 48.25
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_1000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 48.375,
+    "max_input_gradient": 0.0257568359375,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4200.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.480224609375
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.033203125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 22.328125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 48.4375
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_10000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 45.0,
+    "max_input_gradient": 0.002780914306640625,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 45824.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.480224609375
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.033203125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 16.625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 45.0625
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "random_60000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 64.0,
+    "max_input_gradient": 0.0006151199340820312,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.480224609375
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 16.59375
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 48.28125
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 11,
+    "case": "positive_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 81.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 32.71875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.480224609375
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.001953125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 7.62890625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 15.890625
+      },
+      "denominator_min": 1.001953125
+    }
+  },
+  {
+    "seed": 11,
+    "case": "negative_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 32.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.42041015625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.001953125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 15.5234375
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 31.734375
+      },
+      "denominator_min": 1.001953125
+    }
+  },
+  {
+    "seed": 11,
+    "case": "cancel_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.5751953125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.480224609375
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.01171875
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.167236328125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.23193359375
+      },
+      "denominator_min": 1.0087890625
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_0.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.145751953125,
+    "max_input_gradient": 3.337860107421875e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.55859375
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.30322265625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.0704345703125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.145751953125
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_1e-07",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.14624035358428955,
+    "max_input_gradient": 3.3974647521972656e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.172325134277344e-07
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.1920928955078125e-07
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.55859375
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.30322265625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0341796875
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.0704345703125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.146240234375
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_1e-05",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.14623188972473145,
+    "max_input_gradient": 3.3974647521972656e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.1604042053222656e-05
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.424551010131836e-05
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.55859375
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.30322265625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.0704345703125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.146240234375
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_0.01",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.14988279342651367,
+    "max_input_gradient": 3.7550926208496094e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.045745849609375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.01277923583984375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.560546875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.304443359375
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.033203125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.07861328125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.14990234375
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_1.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.7828369140625,
+    "max_input_gradient": 2.8789043426513672e-05,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.3359375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.46484375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 12.7265625
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 3.302734375
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.48828125
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.39208984375
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.78271484375
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_10.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 39.4296875,
+    "max_input_gradient": 0.03155517578125,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 49.34375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 3.990234375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 174.75
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 62.78125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.4833984375
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 18.171875
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 39.4375
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_100.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 44.71875,
+    "max_input_gradient": 0.0367431640625,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 403.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.1875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.45263671875
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 18.328125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 44.71875
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_1000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 46.0,
+    "max_input_gradient": 0.010986328125,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4200.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.1875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.45263671875
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.033203125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 18.328125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 45.0
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_10000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 48.0,
+    "max_input_gradient": 0.006649017333984375,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 45824.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.1875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.45263671875
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.033203125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 18.328125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 45.0
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "random_60000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 48.0,
+    "max_input_gradient": 0.0049285888671875,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.1875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.45263671875
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 18.328125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 44.6875
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 22,
+    "case": "positive_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 32.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 81.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 31.5
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.45263671875
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.001953125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 7.74609375
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 19.953125
+      },
+      "denominator_min": 1.001953125
+    }
+  },
+  {
+    "seed": 22,
+    "case": "negative_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 32.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 70.1875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.42041015625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.001953125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 18.296875
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 33.4375
+      },
+      "denominator_min": 1.001953125
+    }
+  },
+  {
+    "seed": 22,
+    "case": "cancel_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.55859375
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.45263671875
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.01171875
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.2041015625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.25341796875
+      },
+      "denominator_min": 1.0087890625
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_0.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.1865234375,
+    "max_input_gradient": 6.198883056640625e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.607421875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.2509765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.07080078125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.1865234375
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_1e-07",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.18627935647964478,
+    "max_input_gradient": 6.258487701416016e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.172325134277344e-07
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.1920928955078125e-07
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.607421875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.2509765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0341796875
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.07080078125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.186279296875
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_1e-05",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.18628501892089844,
+    "max_input_gradient": 6.258487701416016e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.1604042053222656e-05
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.424551010131836e-05
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.607421875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.2509765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.07080078125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.186279296875
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_0.01",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.1977081298828125,
+    "max_input_gradient": 6.496906280517578e-06,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.045745849609375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.01277923583984375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.6103515625
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.25390625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.076904296875
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.19775390625
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_1.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 1.5078125,
+    "max_input_gradient": 9.334087371826172e-05,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4.3359375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 1.46484375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 12.7265625
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 3.119140625
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.5654296875
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.5986328125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 1.5078125
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_10.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 32.2890625,
+    "max_input_gradient": 0.03253173828125,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 49.34375
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 3.990234375
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 174.75
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 63.21875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.56103515625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.033203125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 22.53125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 32.28125
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_100.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 42.0,
+    "max_input_gradient": 0.050994873046875,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 403.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 69.125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.53759765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 28.265625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 42.0
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_1000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 39.0,
+    "max_input_gradient": 0.015472412109375,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 4200.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 69.125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.53759765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.033203125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 23.4375
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 38.65625
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_10000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 40.0,
+    "max_input_gradient": 0.0087890625,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 45824.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 69.125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.53759765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.033203125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 23.4375
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 39.71875
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "random_60000.0",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 40.0,
+    "max_input_gradient": 0.0062408447265625,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 69.125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.53759765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.0322265625
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 23.4375
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 42.0
+      },
+      "denominator_min": 1.0
+    }
+  },
+  {
+    "seed": 33,
+    "case": "positive_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 32.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 81.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 32.90625
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.49951171875
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.001953125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 8.953125
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 18.75
+      },
+      "denominator_min": 1.001953125
+    }
+  },
+  {
+    "seed": 33,
+    "case": "negative_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 32.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 4.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 176.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 69.125
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.53759765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.001953125
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 23.390625
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 36.0
+      },
+      "denominator_min": 1.001953125
+    }
+  },
+  {
+    "seed": 33,
+    "case": "cancel_60000",
+    "output_finite": true,
+    "input_gradient_finite": true,
+    "nonfinite_parameter_gradients": [],
+    "max_output": 0.0,
+    "max_input_gradient": 0.0,
+    "stats": {
+      "coordinates": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 60000.0
+      },
+      "basis_coordinate": {
+        "nonfinite": 0,
+        "elements": 4096,
+        "max_abs": 0.0
+      },
+      "basis": {
+        "nonfinite": 0,
+        "elements": 24576,
+        "max_abs": 1.0
+      },
+      "polynomial": {
+        "nonfinite": 0,
+        "elements": 294912,
+        "max_abs": 0.607421875
+      },
+      "coordinate_edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.53759765625
+      },
+      "denominator": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 1.01171875
+      },
+      "edges": {
+        "nonfinite": 0,
+        "elements": 262144,
+        "max_abs": 0.1790771484375
+      },
+      "geometry": {
+        "nonfinite": 0,
+        "elements": 32768,
+        "max_abs": 0.274169921875
+      },
+      "denominator_min": 1.0087890625
+    }
+  }
+]

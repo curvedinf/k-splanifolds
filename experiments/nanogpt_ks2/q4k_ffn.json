@@ -1,0 +1,2893 @@
+{
+  "protocol": {
+    "quantizer": "llama.cpp quantize_row_q4_K_ref; no importance matrix",
+    "source": {
+      "repository": "https://github.com/ggml-org/llama.cpp",
+      "commit": "e197cef4554d466e0becac20e453a355daba8e5d",
+      "source": "ggml/src/ggml-quants.c",
+      "source_sha256": "5574a2dccf7c07e75b143733e04a5412d3d8c819e7945f5217a7b83a2b2ff8ab",
+      "functions": [
+        "static inline int nearest_int(",
+        "static float make_qkx2_quants(",
+        "static inline void get_scale_min_k4(",
+        "void quantize_row_q4_K_ref(",
+        "void dequantize_row_q4_K("
+      ],
+      "shim": "IEEE _Float16 conversion, Q4_K struct, assertion and min/max macros; reference function bodies unchanged"
+    },
+    "block_weights": 256,
+    "subblock_weights": 32,
+    "block_bytes": 144,
+    "scales_minima_bits": 6,
+    "superblock_scales": "FP16",
+    "layout": "packed geometry rows per chart; projection rows per output; zero-pad each row to a multiple of 256, then discard padding after dequantization",
+    "execution": "actual packed Q4_K roundtrip then FP32 PyTorch arithmetic; no INT4 runtime, INT8 activation quantization or retraining",
+    "retained_fp32": "all activations, geometry damping/warp parameters, attention, embeddings and vocabulary head",
+    "validation_tokens": 2048,
+    "sequence": 128,
+    "threads": 8,
+    "calibration": "none",
+    "torch": "2.14.1+cpu",
+    "verification": "independent NumPy decoder matches C dequantization bitwise for every quantized tensor"
+  },
+  "results": [
+    {
+      "checkpoint": "original_seed_11",
+      "variant": "fp32",
+      "val_ce": 7.813319265842438,
+      "delta_ce": 0.0
+    },
+    {
+      "checkpoint": "original_seed_11",
+      "variant": "q4k_geometry",
+      "val_ce": 7.811078429222107,
+      "delta_ce": -0.0022408366203308105
+    },
+    {
+      "checkpoint": "original_seed_11",
+      "variant": "q4k_projections",
+      "val_ce": 7.8047125190496445,
+      "delta_ce": -0.008606746792793274
+    },
+    {
+      "checkpoint": "original_seed_11",
+      "variant": "q4k_geometry_projections",
+      "val_ce": 7.8027307242155075,
+      "delta_ce": -0.010588541626930237
+    },
+    {
+      "checkpoint": "original_seed_22",
+      "variant": "fp32",
+      "val_ce": 7.883992493152618,
+      "delta_ce": 0.0
+    },
+    {
+      "checkpoint": "original_seed_22",
+      "variant": "q4k_geometry",
+      "val_ce": 7.884373426437378,
+      "delta_ce": 0.0003809332847595215
+    },
+    {
+      "checkpoint": "original_seed_22",
+      "variant": "q4k_projections",
+      "val_ce": 7.882596135139465,
+      "delta_ce": -0.0013963580131530762
+    },
+    {
+      "checkpoint": "original_seed_22",
+      "variant": "q4k_geometry_projections",
+      "val_ce": 7.882888913154602,
+      "delta_ce": -0.0011035799980163574
+    },
+    {
+      "checkpoint": "original_seed_33",
+      "variant": "fp32",
+      "val_ce": 7.771770969033241,
+      "delta_ce": 0.0
+    },
+    {
+      "checkpoint": "original_seed_33",
+      "variant": "q4k_geometry",
+      "val_ce": 7.771834298968315,
+      "delta_ce": 6.332993507385254e-05
+    },
+    {
+      "checkpoint": "original_seed_33",
+      "variant": "q4k_projections",
+      "val_ce": 7.773696079850197,
+      "delta_ce": 0.0019251108169555664
+    },
+    {
+      "checkpoint": "original_seed_33",
+      "variant": "q4k_geometry_projections",
+      "val_ce": 7.773846417665482,
+      "delta_ce": 0.0020754486322402954
+    },
+    {
+      "checkpoint": "fused_training_seed_11",
+      "variant": "fp32",
+      "val_ce": 7.81366166472435,
+      "delta_ce": 0.0
+    },
+    {
+      "checkpoint": "fused_training_seed_11",
+      "variant": "q4k_geometry",
+      "val_ce": 7.812653794884682,
+      "delta_ce": -0.001007869839668274
+    },
+    {
+      "checkpoint": "fused_training_seed_11",
+      "variant": "q4k_projections",
+      "val_ce": 7.817477494478226,
+      "delta_ce": 0.0038158297538757324
+    },
+    {
+      "checkpoint": "fused_training_seed_11",
+      "variant": "q4k_geometry_projections",
+      "val_ce": 7.816469177603722,
+      "delta_ce": 0.002807512879371643
+    }
+  ],
+  "diagnostics": {
+    "original_seed_11": {
+      "q4k_geometry": {
+        "0": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003536091186106205,
+            "max_error": 0.009372481144964695
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0034922959748655558,
+            "max_error": 0.00892640370875597
+          }
+        },
+        "1": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036679664626717567,
+            "max_error": 0.010460112243890762
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003642963245511055,
+            "max_error": 0.009130537509918213
+          }
+        },
+        "2": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003726166905835271,
+            "max_error": 0.009796581231057644
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037590316496789455,
+            "max_error": 0.010763965547084808
+          }
+        },
+        "3": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035304652992635965,
+            "max_error": 0.010889824479818344
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003553127171471715,
+            "max_error": 0.010254912078380585
+          }
+        },
+        "4": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036388069856911898,
+            "max_error": 0.011908620595932007
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035704963374882936,
+            "max_error": 0.009003110229969025
+          }
+        },
+        "5": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003740471787750721,
+            "max_error": 0.01049275416880846
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0034949048422276974,
+            "max_error": 0.009197481907904148
+          }
+        },
+        "6": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036523668095469475,
+            "max_error": 0.009890936315059662
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003691405290737748,
+            "max_error": 0.00983391422778368
+          }
+        },
+        "8": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003566651837900281,
+            "max_error": 0.009756965562701225
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003666037693619728,
+            "max_error": 0.010031447745859623
+          }
+        },
+        "9": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037417171988636255,
+            "max_error": 0.009884496219456196
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037384743336588144,
+            "max_error": 0.009578594006597996
+          }
+        },
+        "10": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035532829351723194,
+            "max_error": 0.00902450829744339
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035857718903571367,
+            "max_error": 0.00940011441707611
+          }
+        },
+        "11": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003608301281929016,
+            "max_error": 0.009628787636756897
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003571008099243045,
+            "max_error": 0.0090322345495224
+          }
+        }
+      },
+      "q4k_projections": {
+        "0": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004377106670290232,
+            "max_error": 0.01261475682258606
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006672215647995472,
+            "max_error": 0.01946762204170227
+          }
+        },
+        "1": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004523437935858965,
+            "max_error": 0.011757630854845047
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007134867832064629,
+            "max_error": 0.021349651739001274
+          }
+        },
+        "2": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004334550350904465,
+            "max_error": 0.012540049850940704
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006839226931333542,
+            "max_error": 0.020966682583093643
+          }
+        },
+        "3": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004403893835842609,
+            "max_error": 0.015100158751010895
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006786592770367861,
+            "max_error": 0.020021609961986542
+          }
+        },
+        "4": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004444818012416363,
+            "max_error": 0.011977381072938442
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00686066597700119,
+            "max_error": 0.0199536494910717
+          }
+        },
+        "5": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004479566123336554,
+            "max_error": 0.011886956170201302
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006862407084554434,
+            "max_error": 0.0224493145942688
+          }
+        },
+        "6": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004387645982205868,
+            "max_error": 0.011487839743494987
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006585751194506884,
+            "max_error": 0.020985540002584457
+          }
+        },
+        "8": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0036464189179241657,
+            "max_error": 0.010460587218403816
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00552732590585947,
+            "max_error": 0.015203839167952538
+          }
+        },
+        "9": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004159889183938503,
+            "max_error": 0.01217871904373169
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00562650803476572,
+            "max_error": 0.01651688665151596
+          }
+        },
+        "10": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004475172143429518,
+            "max_error": 0.0118984654545784
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005635365843772888,
+            "max_error": 0.017035841941833496
+          }
+        },
+        "11": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0037273773923516273,
+            "max_error": 0.010984182357788086
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.0055304174311459064,
+            "max_error": 0.016537215560674667
+          }
+        }
+      },
+      "q4k_geometry_projections": {
+        "0": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003536091186106205,
+            "max_error": 0.009372481144964695
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0034922959748655558,
+            "max_error": 0.00892640370875597
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004377106670290232,
+            "max_error": 0.01261475682258606
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006672215647995472,
+            "max_error": 0.01946762204170227
+          }
+        },
+        "1": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036679664626717567,
+            "max_error": 0.010460112243890762
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003642963245511055,
+            "max_error": 0.009130537509918213
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004523437935858965,
+            "max_error": 0.011757630854845047
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007134867832064629,
+            "max_error": 0.021349651739001274
+          }
+        },
+        "2": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003726166905835271,
+            "max_error": 0.009796581231057644
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037590316496789455,
+            "max_error": 0.010763965547084808
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004334550350904465,
+            "max_error": 0.012540049850940704
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006839226931333542,
+            "max_error": 0.020966682583093643
+          }
+        },
+        "3": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035304652992635965,
+            "max_error": 0.010889824479818344
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003553127171471715,
+            "max_error": 0.010254912078380585
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004403893835842609,
+            "max_error": 0.015100158751010895
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006786592770367861,
+            "max_error": 0.020021609961986542
+          }
+        },
+        "4": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036388069856911898,
+            "max_error": 0.011908620595932007
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035704963374882936,
+            "max_error": 0.009003110229969025
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004444818012416363,
+            "max_error": 0.011977381072938442
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00686066597700119,
+            "max_error": 0.0199536494910717
+          }
+        },
+        "5": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003740471787750721,
+            "max_error": 0.01049275416880846
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0034949048422276974,
+            "max_error": 0.009197481907904148
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004479566123336554,
+            "max_error": 0.011886956170201302
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006862407084554434,
+            "max_error": 0.0224493145942688
+          }
+        },
+        "6": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036523668095469475,
+            "max_error": 0.009890936315059662
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003691405290737748,
+            "max_error": 0.00983391422778368
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004387645982205868,
+            "max_error": 0.011487839743494987
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006585751194506884,
+            "max_error": 0.020985540002584457
+          }
+        },
+        "8": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003566651837900281,
+            "max_error": 0.009756965562701225
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003666037693619728,
+            "max_error": 0.010031447745859623
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0036464189179241657,
+            "max_error": 0.010460587218403816
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00552732590585947,
+            "max_error": 0.015203839167952538
+          }
+        },
+        "9": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037417171988636255,
+            "max_error": 0.009884496219456196
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037384743336588144,
+            "max_error": 0.009578594006597996
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004159889183938503,
+            "max_error": 0.01217871904373169
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00562650803476572,
+            "max_error": 0.01651688665151596
+          }
+        },
+        "10": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035532829351723194,
+            "max_error": 0.00902450829744339
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035857718903571367,
+            "max_error": 0.00940011441707611
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004475172143429518,
+            "max_error": 0.0118984654545784
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005635365843772888,
+            "max_error": 0.017035841941833496
+          }
+        },
+        "11": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003608301281929016,
+            "max_error": 0.009628787636756897
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003571008099243045,
+            "max_error": 0.0090322345495224
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0037273773923516273,
+            "max_error": 0.010984182357788086
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.0055304174311459064,
+            "max_error": 0.016537215560674667
+          }
+        }
+      }
+    },
+    "original_seed_22": {
+      "q4k_geometry": {
+        "0": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003661832306534052,
+            "max_error": 0.010512873530387878
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035855858586728573,
+            "max_error": 0.009229255840182304
+          }
+        },
+        "1": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037253638729453087,
+            "max_error": 0.011975808069109917
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035930464509874582,
+            "max_error": 0.010966762900352478
+          }
+        },
+        "2": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003690514713525772,
+            "max_error": 0.01297248899936676
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036243717186152935,
+            "max_error": 0.011121511459350586
+          }
+        },
+        "3": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036824645940214396,
+            "max_error": 0.010339587926864624
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003570158965885639,
+            "max_error": 0.009474147111177444
+          }
+        },
+        "4": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035628003533929586,
+            "max_error": 0.01086360216140747
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037619813811033964,
+            "max_error": 0.010876933112740517
+          }
+        },
+        "5": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037326873280107975,
+            "max_error": 0.00941430777311325
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003677099710330367,
+            "max_error": 0.009415598586201668
+          }
+        },
+        "6": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036948672495782375,
+            "max_error": 0.010973310098052025
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003673893865197897,
+            "max_error": 0.010286235250532627
+          }
+        },
+        "8": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035439254716038704,
+            "max_error": 0.009511811658740044
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003610252635553479,
+            "max_error": 0.009390562772750854
+          }
+        },
+        "9": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003594247391447425,
+            "max_error": 0.01157093234360218
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037896456196904182,
+            "max_error": 0.010490663349628448
+          }
+        },
+        "10": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003591943299397826,
+            "max_error": 0.010508663952350616
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035045098047703505,
+            "max_error": 0.011884227395057678
+          }
+        },
+        "11": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003671820741146803,
+            "max_error": 0.01097271591424942
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035374248400330544,
+            "max_error": 0.008679039776325226
+          }
+        }
+      },
+      "q4k_projections": {
+        "0": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004062571097165346,
+            "max_error": 0.012166410684585571
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006548701319843531,
+            "max_error": 0.02042791247367859
+          }
+        },
+        "1": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004170828964561224,
+            "max_error": 0.011784553527832031
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006759296171367168,
+            "max_error": 0.020217884331941605
+          }
+        },
+        "2": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004262936767190695,
+            "max_error": 0.011367684230208397
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007081754505634308,
+            "max_error": 0.020347371697425842
+          }
+        },
+        "3": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004389002453535795,
+            "max_error": 0.013364210724830627
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007035927381366491,
+            "max_error": 0.020696528255939484
+          }
+        },
+        "4": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.00449853390455246,
+            "max_error": 0.013663798570632935
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006985005922615528,
+            "max_error": 0.022298723459243774
+          }
+        },
+        "5": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004367366433143616,
+            "max_error": 0.012420415878295898
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006857447791844606,
+            "max_error": 0.01997995376586914
+          }
+        },
+        "6": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004501065704971552,
+            "max_error": 0.0126524418592453
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006729359272867441,
+            "max_error": 0.018635131418704987
+          }
+        },
+        "8": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.003725773189216852,
+            "max_error": 0.009499850682914257
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005355770234018564,
+            "max_error": 0.018868356943130493
+          }
+        },
+        "9": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004169197287410498,
+            "max_error": 0.012188345193862915
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005383985582739115,
+            "max_error": 0.015691682696342468
+          }
+        },
+        "10": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004378946032375097,
+            "max_error": 0.015611544251441956
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00539806904271245,
+            "max_error": 0.017287947237491608
+          }
+        },
+        "11": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0037551068235188723,
+            "max_error": 0.010751977562904358
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005214872304350138,
+            "max_error": 0.015455082058906555
+          }
+        }
+      },
+      "q4k_geometry_projections": {
+        "0": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003661832306534052,
+            "max_error": 0.010512873530387878
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035855858586728573,
+            "max_error": 0.009229255840182304
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004062571097165346,
+            "max_error": 0.012166410684585571
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006548701319843531,
+            "max_error": 0.02042791247367859
+          }
+        },
+        "1": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037253638729453087,
+            "max_error": 0.011975808069109917
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035930464509874582,
+            "max_error": 0.010966762900352478
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004170828964561224,
+            "max_error": 0.011784553527832031
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006759296171367168,
+            "max_error": 0.020217884331941605
+          }
+        },
+        "2": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003690514713525772,
+            "max_error": 0.01297248899936676
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036243717186152935,
+            "max_error": 0.011121511459350586
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004262936767190695,
+            "max_error": 0.011367684230208397
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007081754505634308,
+            "max_error": 0.020347371697425842
+          }
+        },
+        "3": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036824645940214396,
+            "max_error": 0.010339587926864624
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003570158965885639,
+            "max_error": 0.009474147111177444
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004389002453535795,
+            "max_error": 0.013364210724830627
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007035927381366491,
+            "max_error": 0.020696528255939484
+          }
+        },
+        "4": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035628003533929586,
+            "max_error": 0.01086360216140747
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037619813811033964,
+            "max_error": 0.010876933112740517
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.00449853390455246,
+            "max_error": 0.013663798570632935
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006985005922615528,
+            "max_error": 0.022298723459243774
+          }
+        },
+        "5": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037326873280107975,
+            "max_error": 0.00941430777311325
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003677099710330367,
+            "max_error": 0.009415598586201668
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004367366433143616,
+            "max_error": 0.012420415878295898
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006857447791844606,
+            "max_error": 0.01997995376586914
+          }
+        },
+        "6": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036948672495782375,
+            "max_error": 0.010973310098052025
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003673893865197897,
+            "max_error": 0.010286235250532627
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004501065704971552,
+            "max_error": 0.0126524418592453
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006729359272867441,
+            "max_error": 0.018635131418704987
+          }
+        },
+        "8": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035439254716038704,
+            "max_error": 0.009511811658740044
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003610252635553479,
+            "max_error": 0.009390562772750854
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.003725773189216852,
+            "max_error": 0.009499850682914257
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005355770234018564,
+            "max_error": 0.018868356943130493
+          }
+        },
+        "9": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003594247391447425,
+            "max_error": 0.01157093234360218
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037896456196904182,
+            "max_error": 0.010490663349628448
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004169197287410498,
+            "max_error": 0.012188345193862915
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005383985582739115,
+            "max_error": 0.015691682696342468
+          }
+        },
+        "10": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003591943299397826,
+            "max_error": 0.010508663952350616
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035045098047703505,
+            "max_error": 0.011884227395057678
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004378946032375097,
+            "max_error": 0.015611544251441956
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00539806904271245,
+            "max_error": 0.017287947237491608
+          }
+        },
+        "11": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003671820741146803,
+            "max_error": 0.01097271591424942
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035374248400330544,
+            "max_error": 0.008679039776325226
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0037551068235188723,
+            "max_error": 0.010751977562904358
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005214872304350138,
+            "max_error": 0.015455082058906555
+          }
+        }
+      }
+    },
+    "original_seed_33": {
+      "q4k_geometry": {
+        "0": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037149793934077024,
+            "max_error": 0.010267448611557484
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003710947697982192,
+            "max_error": 0.011811234056949615
+          }
+        },
+        "1": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003610234707593918,
+            "max_error": 0.009911841712892056
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035369580145925283,
+            "max_error": 0.009524250403046608
+          }
+        },
+        "2": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003594090696424246,
+            "max_error": 0.009889224544167519
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036745734978467226,
+            "max_error": 0.008899785578250885
+          }
+        },
+        "3": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036348372232168913,
+            "max_error": 0.012407056987285614
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0033731935545802116,
+            "max_error": 0.009144015610218048
+          }
+        },
+        "4": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003629695624113083,
+            "max_error": 0.01028411090373993
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003711810801178217,
+            "max_error": 0.010159144178032875
+          }
+        },
+        "5": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003529586363583803,
+            "max_error": 0.009211819618940353
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036933966912329197,
+            "max_error": 0.010867837816476822
+          }
+        },
+        "6": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036911419592797756,
+            "max_error": 0.01134207472205162
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003571855602785945,
+            "max_error": 0.010601259768009186
+          }
+        },
+        "8": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003592804307118058,
+            "max_error": 0.010310947895050049
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003584064543247223,
+            "max_error": 0.00991300493478775
+          }
+        },
+        "9": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035662674345076084,
+            "max_error": 0.009357619099318981
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003600228810682893,
+            "max_error": 0.009650414809584618
+          }
+        },
+        "10": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036976300179958344,
+            "max_error": 0.01120535284280777
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036713466979563236,
+            "max_error": 0.010437564924359322
+          }
+        },
+        "11": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036095669493079185,
+            "max_error": 0.00923129916191101
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035570699255913496,
+            "max_error": 0.009715825319290161
+          }
+        }
+      },
+      "q4k_projections": {
+        "0": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004407158587127924,
+            "max_error": 0.011455371975898743
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007353692315518856,
+            "max_error": 0.02213982120156288
+          }
+        },
+        "1": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004638586193323135,
+            "max_error": 0.016874656081199646
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007731032557785511,
+            "max_error": 0.024455249309539795
+          }
+        },
+        "2": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004706844687461853,
+            "max_error": 0.012851178646087646
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007806556764990091,
+            "max_error": 0.02181849628686905
+          }
+        },
+        "3": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004682617727667093,
+            "max_error": 0.0131085105240345
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00750513281673193,
+            "max_error": 0.02158336713910103
+          }
+        },
+        "4": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0047454251907765865,
+            "max_error": 0.014865502715110779
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.0078814085572958,
+            "max_error": 0.02197425812482834
+          }
+        },
+        "5": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004722484853118658,
+            "max_error": 0.013238444924354553
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007391924969851971,
+            "max_error": 0.023159511387348175
+          }
+        },
+        "6": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.00475270627066493,
+            "max_error": 0.013199929147958755
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007416442967951298,
+            "max_error": 0.027013838291168213
+          }
+        },
+        "8": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.003843668382614851,
+            "max_error": 0.010499335825443268
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005650678649544716,
+            "max_error": 0.019749879837036133
+          }
+        },
+        "9": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004389618989080191,
+            "max_error": 0.012672215700149536
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005748371127992868,
+            "max_error": 0.020313918590545654
+          }
+        },
+        "10": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.00455716485157609,
+            "max_error": 0.015072673559188843
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005518372170627117,
+            "max_error": 0.015624694526195526
+          }
+        },
+        "11": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.003955284133553505,
+            "max_error": 0.010056372731924057
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005512859206646681,
+            "max_error": 0.016563795506954193
+          }
+        }
+      },
+      "q4k_geometry_projections": {
+        "0": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037149793934077024,
+            "max_error": 0.010267448611557484
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003710947697982192,
+            "max_error": 0.011811234056949615
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004407158587127924,
+            "max_error": 0.011455371975898743
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007353692315518856,
+            "max_error": 0.02213982120156288
+          }
+        },
+        "1": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003610234707593918,
+            "max_error": 0.009911841712892056
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035369580145925283,
+            "max_error": 0.009524250403046608
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004638586193323135,
+            "max_error": 0.016874656081199646
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007731032557785511,
+            "max_error": 0.024455249309539795
+          }
+        },
+        "2": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003594090696424246,
+            "max_error": 0.009889224544167519
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036745734978467226,
+            "max_error": 0.008899785578250885
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004706844687461853,
+            "max_error": 0.012851178646087646
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007806556764990091,
+            "max_error": 0.02181849628686905
+          }
+        },
+        "3": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036348372232168913,
+            "max_error": 0.012407056987285614
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0033731935545802116,
+            "max_error": 0.009144015610218048
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004682617727667093,
+            "max_error": 0.0131085105240345
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.00750513281673193,
+            "max_error": 0.02158336713910103
+          }
+        },
+        "4": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003629695624113083,
+            "max_error": 0.01028411090373993
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003711810801178217,
+            "max_error": 0.010159144178032875
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0047454251907765865,
+            "max_error": 0.014865502715110779
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.0078814085572958,
+            "max_error": 0.02197425812482834
+          }
+        },
+        "5": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003529586363583803,
+            "max_error": 0.009211819618940353
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036933966912329197,
+            "max_error": 0.010867837816476822
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004722484853118658,
+            "max_error": 0.013238444924354553
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007391924969851971,
+            "max_error": 0.023159511387348175
+          }
+        },
+        "6": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036911419592797756,
+            "max_error": 0.01134207472205162
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003571855602785945,
+            "max_error": 0.010601259768009186
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.00475270627066493,
+            "max_error": 0.013199929147958755
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007416442967951298,
+            "max_error": 0.027013838291168213
+          }
+        },
+        "8": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003592804307118058,
+            "max_error": 0.010310947895050049
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003584064543247223,
+            "max_error": 0.00991300493478775
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.003843668382614851,
+            "max_error": 0.010499335825443268
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005650678649544716,
+            "max_error": 0.019749879837036133
+          }
+        },
+        "9": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035662674345076084,
+            "max_error": 0.009357619099318981
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003600228810682893,
+            "max_error": 0.009650414809584618
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004389618989080191,
+            "max_error": 0.012672215700149536
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005748371127992868,
+            "max_error": 0.020313918590545654
+          }
+        },
+        "10": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036976300179958344,
+            "max_error": 0.01120535284280777
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036713466979563236,
+            "max_error": 0.010437564924359322
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.00455716485157609,
+            "max_error": 0.015072673559188843
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005518372170627117,
+            "max_error": 0.015624694526195526
+          }
+        },
+        "11": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036095669493079185,
+            "max_error": 0.00923129916191101
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035570699255913496,
+            "max_error": 0.009715825319290161
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.003955284133553505,
+            "max_error": 0.010056372731924057
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005512859206646681,
+            "max_error": 0.016563795506954193
+          }
+        }
+      }
+    },
+    "fused_training_seed_11": {
+      "q4k_geometry": {
+        "0": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035424879752099514,
+            "max_error": 0.009427577257156372
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003474173601716757,
+            "max_error": 0.008314798586070538
+          }
+        },
+        "1": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036634663119912148,
+            "max_error": 0.010554473847150803
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036641901824623346,
+            "max_error": 0.01069459319114685
+          }
+        },
+        "2": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037270733155310154,
+            "max_error": 0.00979994609951973
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037502599880099297,
+            "max_error": 0.010911963880062103
+          }
+        },
+        "3": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035424218513071537,
+            "max_error": 0.010937938466668129
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035745997447520494,
+            "max_error": 0.009978599846363068
+          }
+        },
+        "4": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036156948190182447,
+            "max_error": 0.012091532349586487
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003589968429878354,
+            "max_error": 0.009248338639736176
+          }
+        },
+        "5": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037330258637666702,
+            "max_error": 0.010747121647000313
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0034668121952563524,
+            "max_error": 0.009039048105478287
+          }
+        },
+        "6": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003631647676229477,
+            "max_error": 0.011596858501434326
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003706021001562476,
+            "max_error": 0.009500943124294281
+          }
+        },
+        "8": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036022639833390713,
+            "max_error": 0.01025586761534214
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036821740213781595,
+            "max_error": 0.009679200127720833
+          }
+        },
+        "9": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003753555938601494,
+            "max_error": 0.010074310004711151
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003749907249584794,
+            "max_error": 0.009436793625354767
+          }
+        },
+        "10": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035283074248582125,
+            "max_error": 0.009749948978424072
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003560981946066022,
+            "max_error": 0.009367195889353752
+          }
+        },
+        "11": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036209982354193926,
+            "max_error": 0.009516499936580658
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003555591683834791,
+            "max_error": 0.008520040661096573
+          }
+        }
+      },
+      "q4k_projections": {
+        "0": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004317105282098055,
+            "max_error": 0.012208031490445137
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006640450097620487,
+            "max_error": 0.02021580934524536
+          }
+        },
+        "1": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004479995463043451,
+            "max_error": 0.011847645044326782
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007179556880146265,
+            "max_error": 0.02159896492958069
+          }
+        },
+        "2": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0042802938260138035,
+            "max_error": 0.012409970164299011
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006871357560157776,
+            "max_error": 0.02027979865670204
+          }
+        },
+        "3": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004424319602549076,
+            "max_error": 0.012032094411551952
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006775561720132828,
+            "max_error": 0.01947668194770813
+          }
+        },
+        "4": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004468472208827734,
+            "max_error": 0.011822745203971863
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006855243816971779,
+            "max_error": 0.020186670124530792
+          }
+        },
+        "5": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004478889051824808,
+            "max_error": 0.012673523277044296
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006816502194851637,
+            "max_error": 0.0207179207354784
+          }
+        },
+        "6": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.00437397975474596,
+            "max_error": 0.013153716921806335
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006565946154296398,
+            "max_error": 0.019244961440563202
+          }
+        },
+        "8": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0036564755719155073,
+            "max_error": 0.01052067056298256
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005415273830294609,
+            "max_error": 0.017375171184539795
+          }
+        },
+        "9": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004157595802098513,
+            "max_error": 0.010906006209552288
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005605173762887716,
+            "max_error": 0.01915276050567627
+          }
+        },
+        "10": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004438403062522411,
+            "max_error": 0.013069100677967072
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005697161424905062,
+            "max_error": 0.01629503443837166
+          }
+        },
+        "11": {
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0037395970430225134,
+            "max_error": 0.011091179214417934
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005529182031750679,
+            "max_error": 0.016762476414442062
+          }
+        }
+      },
+      "q4k_geometry_projections": {
+        "0": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035424879752099514,
+            "max_error": 0.009427577257156372
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003474173601716757,
+            "max_error": 0.008314798586070538
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004317105282098055,
+            "max_error": 0.012208031490445137
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006640450097620487,
+            "max_error": 0.02021580934524536
+          }
+        },
+        "1": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036634663119912148,
+            "max_error": 0.010554473847150803
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036641901824623346,
+            "max_error": 0.01069459319114685
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004479995463043451,
+            "max_error": 0.011847645044326782
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.007179556880146265,
+            "max_error": 0.02159896492958069
+          }
+        },
+        "2": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037270733155310154,
+            "max_error": 0.00979994609951973
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0037502599880099297,
+            "max_error": 0.010911963880062103
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0042802938260138035,
+            "max_error": 0.012409970164299011
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006871357560157776,
+            "max_error": 0.02027979865670204
+          }
+        },
+        "3": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035424218513071537,
+            "max_error": 0.010937938466668129
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0035745997447520494,
+            "max_error": 0.009978599846363068
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004424319602549076,
+            "max_error": 0.012032094411551952
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006775561720132828,
+            "max_error": 0.01947668194770813
+          }
+        },
+        "4": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036156948190182447,
+            "max_error": 0.012091532349586487
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003589968429878354,
+            "max_error": 0.009248338639736176
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004468472208827734,
+            "max_error": 0.011822745203971863
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006855243816971779,
+            "max_error": 0.020186670124530792
+          }
+        },
+        "5": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0037330258637666702,
+            "max_error": 0.010747121647000313
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0034668121952563524,
+            "max_error": 0.009039048105478287
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004478889051824808,
+            "max_error": 0.012673523277044296
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006816502194851637,
+            "max_error": 0.0207179207354784
+          }
+        },
+        "6": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003631647676229477,
+            "max_error": 0.011596858501434326
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003706021001562476,
+            "max_error": 0.009500943124294281
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.00437397975474596,
+            "max_error": 0.013153716921806335
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.006565946154296398,
+            "max_error": 0.019244961440563202
+          }
+        },
+        "8": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036022639833390713,
+            "max_error": 0.01025586761534214
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.0036821740213781595,
+            "max_error": 0.009679200127720833
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0036564755719155073,
+            "max_error": 0.01052067056298256
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005415273830294609,
+            "max_error": 0.017375171184539795
+          }
+        },
+        "9": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.003753555938601494,
+            "max_error": 0.010074310004711151
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003749907249584794,
+            "max_error": 0.009436793625354767
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004157595802098513,
+            "max_error": 0.010906006209552288
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005605173762887716,
+            "max_error": 0.01915276050567627
+          }
+        },
+        "10": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0035283074248582125,
+            "max_error": 0.009749948978424072
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003560981946066022,
+            "max_error": 0.009367195889353752
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.004438403062522411,
+            "max_error": 0.013069100677967072
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005697161424905062,
+            "max_error": 0.01629503443837166
+          }
+        },
+        "11": {
+          "geo_t": {
+            "weights": 3024,
+            "packed_bytes": 2016,
+            "padded_values": 3584,
+            "rms_error": 0.0036209982354193926,
+            "max_error": 0.009516499936580658
+          },
+          "geo_x": {
+            "weights": 1792,
+            "packed_bytes": 1008,
+            "padded_values": 1792,
+            "rms_error": 0.003555591683834791,
+            "max_error": 0.008520040661096573
+          },
+          "down": {
+            "weights": 5376,
+            "packed_bytes": 8064,
+            "padded_values": 14336,
+            "rms_error": 0.0037395970430225134,
+            "max_error": 0.011091179214417934
+          },
+          "up": {
+            "weights": 5376,
+            "packed_bytes": 13824,
+            "padded_values": 24576,
+            "rms_error": 0.005529182031750679,
+            "max_error": 0.016762476414442062
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "arguments": {
+    "data_dir": "experiment/nanogpt_data",
+    "out": "experiment/nanogpt_results",
+    "steps": 500,
+    "max_seconds": 300,
+    "sequence": 128,
+    "val_tokens": 2048,
+    "eval_every": 100,
+    "width": 96,
+    "rank": 8,
+    "threads": 8,
+    "lr_scale": 0.25,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "device": "cpu"
+  },
+  "fixed_steps": 500,
+  "tokens_per_step": 128,
+  "precision": "FP32 throughout; TF32 off",
+  "upstream_commit": "4ea6b937337a4889b8cfe3f38a93d120048d8f71",
+  "data_revision": "889765ea1f903759787add96995d81171b632d0c",
+  "data_manifest": {
+    "fineweb_train_000001.bin": {
+      "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+      "tokens": 100000000,
+      "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+    },
+    "fineweb_val_000000.bin": {
+      "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+      "tokens": 100000000,
+      "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+    }
+  },
+  "pilots": {
+    "mlp": {
+      "step_seconds": 0.24419952599964745,
+      "validation_seconds": 0.47794196199902217,
+      "setup_seconds": 0.1630948759993771
+    },
+    "ks2": {
+      "step_seconds": 0.2660839290001604,
+      "validation_seconds": 0.6817120699997758,
+      "setup_seconds": 0.14162322099946323
+    }
+  },
+  "torch": "2.14.1+cpu",
+  "numpy": "2.3.5",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "sources": {
+    "test_experiment.py": "fb0725f5d840894b698518fc694b936885f4b4dd881246e173b5468842ca29e3",
+    "optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+    "run.py": "d75e57a2fbad980867afb1857340c71c7851a070f61027ef9ff4e21edc9991cd",
+    "model.py": "2bd0de84a9619aa46c2eed81a0e1b39483bf495be2847ef5a913a7f96d6e19f7"
+  }
+}

@@ -1,0 +1,188 @@
+[
+  {
+    "kind": "ks2",
+    "seed": 11,
+    "steps": 500,
+    "counts": {
+      "total": 24966423,
+      "ffn": 181412
+    },
+    "final_val_loss": 7.821915656328201,
+    "initial_val_loss": 10.826746493577957,
+    "seconds": 120.66209926400188,
+    "train_seconds": 115.72154852202948,
+    "history": [
+      {
+        "step": 0,
+        "tokens": 0,
+        "val_loss": 10.826746493577957,
+        "wall_seconds": 0.82520227400164,
+        "train_seconds": 0.0
+      },
+      {
+        "step": 100,
+        "tokens": 12800,
+        "val_loss": 8.714967012405396,
+        "wall_seconds": 27.054325560999132,
+        "train_seconds": 25.125522883994563
+      },
+      {
+        "step": 200,
+        "tokens": 25600,
+        "val_loss": 8.28208826482296,
+        "wall_seconds": 50.32984641599978,
+        "train_seconds": 47.72903488400334
+      },
+      {
+        "step": 300,
+        "tokens": 38400,
+        "val_loss": 8.059340804815292,
+        "wall_seconds": 72.9278943069985,
+        "train_seconds": 69.60060045003047
+      },
+      {
+        "step": 400,
+        "tokens": 51200,
+        "val_loss": 7.965017527341843,
+        "wall_seconds": 95.97008551899853,
+        "train_seconds": 91.72284824204326
+      },
+      {
+        "step": 500,
+        "tokens": 64000,
+        "val_loss": 7.821915656328201,
+        "wall_seconds": 120.61906451100003,
+        "train_seconds": 115.72154852202948
+      }
+    ],
+    "packed_ffn_bytes": 65296,
+    "packed_export_ce": 7.8219156712293625,
+    "export_minus_qat_ce": 1.4901161193847656e-08,
+    "reference_fp32_ce": 7.813319265842438,
+    "delta_from_fp32": 0.008596405386924744
+  },
+  {
+    "kind": "ks2",
+    "seed": 22,
+    "steps": 500,
+    "counts": {
+      "total": 24966423,
+      "ffn": 181412
+    },
+    "final_val_loss": 7.885529786348343,
+    "initial_val_loss": 10.826983034610748,
+    "seconds": 120.69840097400083,
+    "train_seconds": 116.33968095999808,
+    "history": [
+      {
+        "step": 0,
+        "tokens": 0,
+        "val_loss": 10.826983034610748,
+        "wall_seconds": 0.9015702559991041,
+        "train_seconds": 0.0
+      },
+      {
+        "step": 100,
+        "tokens": 12800,
+        "val_loss": 8.582502737641335,
+        "wall_seconds": 24.16117639300137,
+        "train_seconds": 22.63273043798472
+      },
+      {
+        "step": 200,
+        "tokens": 25600,
+        "val_loss": 8.301766157150269,
+        "wall_seconds": 47.016174824999325,
+        "train_seconds": 44.82600189797813
+      },
+      {
+        "step": 300,
+        "tokens": 38400,
+        "val_loss": 8.095221742987633,
+        "wall_seconds": 69.73226313299892,
+        "train_seconds": 66.70339144098762
+      },
+      {
+        "step": 400,
+        "tokens": 51200,
+        "val_loss": 7.93501552939415,
+        "wall_seconds": 95.54048507799962,
+        "train_seconds": 91.83232302098622
+      },
+      {
+        "step": 500,
+        "tokens": 64000,
+        "val_loss": 7.885529786348343,
+        "wall_seconds": 120.6551336199991,
+        "train_seconds": 116.33968095999808
+      }
+    ],
+    "packed_ffn_bytes": 65296,
+    "packed_export_ce": 7.885529801249504,
+    "export_minus_qat_ce": 1.4901161193847656e-08,
+    "reference_fp32_ce": 7.883992493152618,
+    "delta_from_fp32": 0.0015373080968856812
+  },
+  {
+    "kind": "ks2",
+    "seed": 33,
+    "steps": 500,
+    "counts": {
+      "total": 24966423,
+      "ffn": 181412
+    },
+    "final_val_loss": 7.800403729081154,
+    "initial_val_loss": 10.824697077274323,
+    "seconds": 115.00388926000232,
+    "train_seconds": 110.76125322401276,
+    "history": [
+      {
+        "step": 0,
+        "tokens": 0,
+        "val_loss": 10.824697077274323,
+        "wall_seconds": 0.766909542002395,
+        "train_seconds": 0.0
+      },
+      {
+        "step": 100,
+        "tokens": 12800,
+        "val_loss": 8.500532925128937,
+        "wall_seconds": 23.24151342299956,
+        "train_seconds": 21.821309177004878
+      },
+      {
+        "step": 200,
+        "tokens": 25600,
+        "val_loss": 8.308085605502129,
+        "wall_seconds": 45.5834573630018,
+        "train_seconds": 43.4821234200208
+      },
+      {
+        "step": 300,
+        "tokens": 38400,
+        "val_loss": 8.04691606760025,
+        "wall_seconds": 68.0772611909997,
+        "train_seconds": 65.2889602830146
+      },
+      {
+        "step": 400,
+        "tokens": 51200,
+        "val_loss": 7.956444665789604,
+        "wall_seconds": 90.8840293409994,
+        "train_seconds": 87.38471919098083
+      },
+      {
+        "step": 500,
+        "tokens": 64000,
+        "val_loss": 7.800403729081154,
+        "wall_seconds": 114.9631552000028,
+        "train_seconds": 110.76125322401276
+      }
+    ],
+    "packed_ffn_bytes": 65296,
+    "packed_export_ce": 7.800403714179993,
+    "export_minus_qat_ce": -1.4901161193847656e-08,
+    "reference_fp32_ce": 7.771770969033241,
+    "delta_from_fp32": 0.028632745146751404
+  }
+]

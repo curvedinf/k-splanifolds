@@ -1,0 +1,13 @@
+{
+  "steps": 500,
+  "tokens_per_run": 64000,
+  "mlp_mean_loss": 7.819335674246152,
+  "ks2_mean_loss": 7.823027576009433,
+  "paired_ks2_minus_mlp": [
+    -0.005640476942062378,
+    0.015421897172927856,
+    0.0012942850589752197
+  ],
+  "ffn_ratio": 0.24402225378787878,
+  "note": "Reduced FP32 ablation, not a world-record claim; negative paired delta favors KS2"
+}

@@ -1,0 +1,11 @@
+{
+  "checkpoints": "bounded cubic FP16 variant, seeds11/22/33, 1000 steps; no retraining",
+  "parameters": 112768,
+  "device": "CPU numerical implementation; no GPU performance claim",
+  "calibration": "1024 train-split patches seed9876, Gaussian noise seed9877; separate from validation/test",
+  "weight_quant": "symmetric INT8 GS128 within each chart, static FP32 absmax scales",
+  "activation_quant": "symmetric INT8; static absmax per chart for longitudinal basis, attenuated longitudinal edge and coordinate edge; known [-1,1] scale for coordinate Chebyshev basis",
+  "accumulation": "INT32 inside dot-product weight groups and across eight edge products; FP32 rescaling across groups",
+  "remaining_float": "projection GEMMs, tanh, bounded damping predicates, division, basis linear combinations, requantization scales, residual addition",
+  "tests": "4096 fixed validation patches and all Set12 images, 3 existing checkpoints"
+}

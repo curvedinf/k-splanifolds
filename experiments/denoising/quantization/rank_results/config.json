@@ -1,0 +1,42 @@
+{
+  "steps": 1000,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "lr": 0.0003,
+  "batch_size": 64,
+  "threads": 8,
+  "models": [
+    "R8S32",
+    "R8S64",
+    "R16S50",
+    "R32S18"
+  ],
+  "lr_policy": "Reuse original KS2 chosen LR, no new tuning trials",
+  "torch": "2.14.1+cpu",
+  "source_sha256": "c658f02fd3452d0803abb341a663b2da048b4155b3beb2886bcf20ee21029cea",
+  "benchmark": "Same splits, clean patch pool, augmentation, fresh per-step noise, optimizer, clipping, normalization and test reconstruction as prior run",
+  "architectures": {
+    "R8S32": {
+      "rank": 8,
+      "subspaces": 32
+    },
+    "R8S64": {
+      "rank": 8,
+      "subspaces": 64
+    },
+    "R16S50": {
+      "rank": 16,
+      "subspaces": 50
+    },
+    "R32S18": {
+      "rank": 32,
+      "subspaces": 18
+    }
+  },
+  "training_backend": "packed eager",
+  "inference_backend": "compiled exact Horner, fixed batch128",
+  "inductor_cpp_threads": 1
+}

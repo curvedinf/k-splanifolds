@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "MLP",
+    "seed": 11,
+    "lr": 0.001,
+    "steps": 3000,
+    "parameters": 435030,
+    "train_seconds": 11.878372896997462,
+    "best_val_patch_psnr": 24.955606457094014,
+    "best_step": 3000
+  },
+  {
+    "kind": "KS2",
+    "seed": 11,
+    "lr": 0.0003,
+    "steps": 3000,
+    "parameters": 433452,
+    "train_seconds": 71.47511970699497,
+    "best_val_patch_psnr": 25.77614458018781,
+    "best_step": 3000
+  },
+  {
+    "kind": "MLP",
+    "seed": 22,
+    "lr": 0.001,
+    "steps": 3000,
+    "parameters": 435030,
+    "train_seconds": 11.813183040002286,
+    "best_val_patch_psnr": 24.9569129864891,
+    "best_step": 2750
+  },
+  {
+    "kind": "KS2",
+    "seed": 22,
+    "lr": 0.0003,
+    "steps": 3000,
+    "parameters": 433452,
+    "train_seconds": 68.20549599200672,
+    "best_val_patch_psnr": 25.771011016736544,
+    "best_step": 3000
+  },
+  {
+    "kind": "MLP",
+    "seed": 33,
+    "lr": 0.001,
+    "steps": 3000,
+    "parameters": 435030,
+    "train_seconds": 11.721706744995572,
+    "best_val_patch_psnr": 24.997288834168284,
+    "best_step": 3000
+  },
+  {
+    "kind": "KS2",
+    "seed": 33,
+    "lr": 0.0003,
+    "steps": 3000,
+    "parameters": 433452,
+    "train_seconds": 68.52634206500102,
+    "best_val_patch_psnr": 25.740556577430517,
+    "best_step": 3000
+  }
+]

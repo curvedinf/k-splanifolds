@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/ggml-org/llama.cpp",
+  "commit": "e197cef4554d466e0becac20e453a355daba8e5d",
+  "source": "ggml/src/ggml-quants.c",
+  "source_sha256": "5574a2dccf7c07e75b143733e04a5412d3d8c819e7945f5217a7b83a2b2ff8ab",
+  "functions": [
+    "void quantize_row_tq1_0_ref(",
+    "void dequantize_row_tq1_0("
+  ],
+  "shim": "block declaration, IEEE FP16 conversion, assertion and max macro; reference function bodies unchanged"
+}

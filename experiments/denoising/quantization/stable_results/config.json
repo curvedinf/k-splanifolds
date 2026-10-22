@@ -1,0 +1,28 @@
+{
+  "model": "rank8,32 charts,one geometry step",
+  "parameters": 112768,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "steps": 1000,
+  "lr": 0.0003,
+  "optimizer": "Adam, FP32 master parameters and state, no loss scaling",
+  "gradient_clip": 1,
+  "batch_size": 64,
+  "threads": 8,
+  "device": "CPU; numerical low-precision experiment, not GPU benchmark",
+  "precision": "FP32 projections and small predicate reductions; FP16 geometric basis/coefficient contractions, damping construction, edge arithmetic, accumulation, residual",
+  "initialization": "Same seeds and coefficients; stable sigmoid strengths initialized to softplus(-4)",
+  "damping": "1 + bounded_strength_distance * bounded_relative_distance + bounded_strength_importance * bounded_energy_share",
+  "strength_max": 8,
+  "theoretical_denominator_range": [
+    1,
+    17
+  ],
+  "cancellation_gate": false,
+  "polynomial_basis": "unchanged unbounded Hermite plus warped Chebyshev",
+  "original_control": "new FP16 training control; historical FP32 results reused",
+  "protocol": "same 360/40 split, 120000 augmented clean patches, 4096 validation patches, sigma25/255, Set12 noise and reconstruction"
+}
