@@ -10,6 +10,7 @@ Key files:
 - `setup_venv.sh` — creates a local `.venv` and installs dependencies.
 
 Key experiment code:
+- [`experiments/denoising`](experiments/denoising) — single-file MLP/KS1/KS2 denoising control, citation, and recorded results.
 - `experiments/common/ks2.py` — reference KS2 map and projected cell.
 - `experiments/common/ks2_stabilized.py` — trainable KS2 with bounded cubics and energy-based damping.
 - [`experiments/common/ks2_cpu`](experiments/common/ks2_cpu) — fused AVX-512 FP32 Horner and GS128 INT8 VNNI exports.
