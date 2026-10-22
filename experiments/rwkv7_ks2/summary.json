@@ -1,0 +1,35 @@
+{
+  "mlp": {
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "parameters": 537856,
+    "controller_parameters": 32768,
+    "loss_mean": 2.0976549685001373,
+    "loss_sd": 0.0030747717966959427,
+    "training_seconds": 89.09961037332202,
+    "inference_ms": 13.401645666211456,
+    "peak_rss_mib": 460.1705729166667
+  },
+  "ks2": {
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "parameters": 516560,
+    "controller_parameters": 11472,
+    "loss_mean": 2.0980904437601566,
+    "loss_sd": 0.007084285207296211,
+    "training_seconds": 89.49034330770519,
+    "inference_ms": 13.060641832756422,
+    "peak_rss_mib": 460.3125
+  },
+  "paired_loss_differences": {
+    "11": -0.005030535161495209,
+    "22": -0.0002460405230522156,
+    "33": 0.006583001464605331
+  }
+}

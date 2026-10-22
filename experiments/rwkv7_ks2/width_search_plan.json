@@ -1,0 +1,18 @@
+{
+  "screen_seed": 11,
+  "confirmation_seeds": [
+    22,
+    33
+  ],
+  "steps": 1000,
+  "initial_ffn_subspaces": 11,
+  "next_candidates": [
+    22,
+    44,
+    88
+  ],
+  "target": "Mean final validation loss no worse than saved original RWKV-7 (2.0976549685001373); screen against original seed 11 loss (2.0991611033678055).",
+  "selection": "Double FFN subspaces until seed-11 target reached, then confirm two remaining seeds; increase further if three-seed mean misses target.",
+  "unchanged": "One-subspace KS2 controllers, data, batches, precision, optimizer, schedule, sequence length, architecture outside FFNs.",
+  "caveat": "Adaptive selection on same validation set; no independent test set and no proof of minimum sufficient width."
+}

@@ -1,0 +1,32 @@
+{
+  "mlp": {
+    "parameters": 537856,
+    "controller_parameters": 32768,
+    "ffn_parameters": 262144,
+    "loss_mean": 2.0976549685001373,
+    "loss_sd": 0.0030747717966959427,
+    "training_seconds": 89.09961037332202,
+    "inference_ms": 13.401645666211456,
+    "peak_rss_mib": 460.1705729166667
+  },
+  "ks2": {
+    "parameters": 516560,
+    "controller_parameters": 11472,
+    "ffn_parameters": 262144,
+    "loss_mean": 2.0980904437601566,
+    "loss_sd": 0.007084285207296211,
+    "training_seconds": 89.49034330770519,
+    "inference_ms": 13.060641832756422,
+    "peak_rss_mib": 460.3125
+  },
+  "ks2_ffn": {
+    "parameters": 317512,
+    "controller_parameters": 11472,
+    "ffn_parameters": 63096,
+    "loss_mean": 2.1735497750341892,
+    "loss_sd": 0.002201359850366872,
+    "training_seconds": 91.16253683430598,
+    "inference_ms": 14.66091233305633,
+    "peak_rss_mib": 460.3307291666667
+  }
+}
