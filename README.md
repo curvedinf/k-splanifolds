@@ -10,6 +10,7 @@ Key files:
 - `setup_venv.sh` — creates a local `.venv` and installs dependencies.
 
 Key experiment code:
+- [`experiments/rwkv7_ks2`](experiments/rwkv7_ks2) — FP32 RWKV-7 controller/FFN ablations, width sweeps, update-scale diagnostics, and recorded CPU loss/speed/memory results.
 - [`experiments/nanogpt_ks2`](experiments/nanogpt_ks2) — FP32 modded-nanoGPT controls, fused backward, memory/inference measurements, and INT8/Q4_K/IQ2_XXS/TQ1 quantization and QAT.
 - [`experiments/denoising`](experiments/denoising) — MLP/KS1/KS2 controls, 3,000-step ternary QAT, and historical FP16/FP8/INT8 ablations.
 - `experiments/common/ks2.py` — reference KS2 map and projected cell.

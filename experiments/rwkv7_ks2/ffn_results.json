@@ -1,0 +1,329 @@
+[
+  {
+    "arguments": {
+      "data": "experiment/nanogpt_data",
+      "out": "experiment/rwkv7_ffn_results",
+      "variant": "ks2_ffn",
+      "seed": 11,
+      "steps": 1000,
+      "charts": 1,
+      "ffn_charts": 11,
+      "threads": 2
+    },
+    "parameters": 317512,
+    "controller_parameters": 11472,
+    "ffn_parameters": 63096,
+    "history": [
+      {
+        "step": 0,
+        "val_loss": 5.686668485403061
+      },
+      {
+        "step": 100,
+        "train_loss": 2.436298370361328,
+        "val_loss": 2.6344108954072,
+        "training_seconds": 9.699375142037752,
+        "gradient_norm": 3.0969014167785645
+      },
+      {
+        "step": 200,
+        "train_loss": 2.2011759281158447,
+        "val_loss": 2.4855636283755302,
+        "training_seconds": 19.07463815504161,
+        "gradient_norm": 38.97442626953125
+      },
+      {
+        "step": 300,
+        "train_loss": 2.1806468963623047,
+        "val_loss": 2.420291431248188,
+        "training_seconds": 28.55489048400341,
+        "gradient_norm": 2.6373066902160645
+      },
+      {
+        "step": 400,
+        "train_loss": 2.156285285949707,
+        "val_loss": 2.35456795245409,
+        "training_seconds": 37.710871281000436,
+        "gradient_norm": 2.4038286209106445
+      },
+      {
+        "step": 500,
+        "train_loss": 2.0664587020874023,
+        "val_loss": 2.30624508112669,
+        "training_seconds": 47.40934753701731,
+        "gradient_norm": 2.3860397338867188
+      },
+      {
+        "step": 600,
+        "train_loss": 2.1776857376098633,
+        "val_loss": 2.2717854753136635,
+        "training_seconds": 57.03223566406086,
+        "gradient_norm": 2.460000991821289
+      },
+      {
+        "step": 700,
+        "train_loss": 2.3470137119293213,
+        "val_loss": 2.2292738296091557,
+        "training_seconds": 67.11388956105657,
+        "gradient_norm": 2.6987853050231934
+      },
+      {
+        "step": 800,
+        "train_loss": 2.141427755355835,
+        "val_loss": 2.204800769686699,
+        "training_seconds": 77.41558241406892,
+        "gradient_norm": 2.3250317573547363
+      },
+      {
+        "step": 900,
+        "train_loss": 2.2182703018188477,
+        "val_loss": 2.193412009626627,
+        "training_seconds": 86.5272137710781,
+        "gradient_norm": 2.8049044609069824
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.9538544416427612,
+        "val_loss": 2.171209439635277,
+        "training_seconds": 96.15253770809795,
+        "gradient_norm": 2.1268534660339355
+      }
+    ],
+    "training_seconds": 96.15253770809795,
+    "inference_ms": 14.832657001534244,
+    "peak_rss_mib": 460.34375,
+    "data": {
+      "train": {
+        "source": "experiment/nanogpt_data/fineweb_train_000001.bin",
+        "source_tokens": 1000000,
+        "bytes": 4468985,
+        "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+      },
+      "val": {
+        "source": "experiment/nanogpt_data/fineweb_val_000000.bin",
+        "source_tokens": 100000,
+        "bytes": 444316,
+        "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+      }
+    },
+    "torch": "2.14.1+cpu"
+  },
+  {
+    "arguments": {
+      "data": "experiment/nanogpt_data",
+      "out": "experiment/rwkv7_ffn_results",
+      "variant": "ks2_ffn",
+      "seed": 22,
+      "steps": 1000,
+      "charts": 1,
+      "ffn_charts": 11,
+      "threads": 2
+    },
+    "parameters": 317512,
+    "controller_parameters": 11472,
+    "ffn_parameters": 63096,
+    "history": [
+      {
+        "step": 0,
+        "val_loss": 5.694660618901253
+      },
+      {
+        "step": 100,
+        "train_loss": 2.384232521057129,
+        "val_loss": 2.6407913491129875,
+        "training_seconds": 9.306321044023207,
+        "gradient_norm": 2.5097429752349854
+      },
+      {
+        "step": 200,
+        "train_loss": 2.3408994674682617,
+        "val_loss": 2.5154009014368057,
+        "training_seconds": 17.877733933069976,
+        "gradient_norm": 2.471313953399658
+      },
+      {
+        "step": 300,
+        "train_loss": 2.079416036605835,
+        "val_loss": 2.423263281583786,
+        "training_seconds": 27.419697595061734,
+        "gradient_norm": 2.1954493522644043
+      },
+      {
+        "step": 400,
+        "train_loss": 2.122192144393921,
+        "val_loss": 2.3624089285731316,
+        "training_seconds": 36.9462089519875,
+        "gradient_norm": 2.2747483253479004
+      },
+      {
+        "step": 500,
+        "train_loss": 2.7234928607940674,
+        "val_loss": 2.3122374564409256,
+        "training_seconds": 45.074421184945095,
+        "gradient_norm": 16.302854537963867
+      },
+      {
+        "step": 600,
+        "train_loss": 2.18569278717041,
+        "val_loss": 2.2630461417138577,
+        "training_seconds": 53.56091141299112,
+        "gradient_norm": 2.202390432357788
+      },
+      {
+        "step": 700,
+        "train_loss": 2.263240337371826,
+        "val_loss": 2.2412029951810837,
+        "training_seconds": 61.73349340999266,
+        "gradient_norm": 2.443284273147583
+      },
+      {
+        "step": 800,
+        "train_loss": 2.154094696044922,
+        "val_loss": 2.2083181999623775,
+        "training_seconds": 70.96758146396314,
+        "gradient_norm": 2.424801826477051
+      },
+      {
+        "step": 900,
+        "train_loss": 2.2880139350891113,
+        "val_loss": 2.1828231886029243,
+        "training_seconds": 80.39731245300209,
+        "gradient_norm": 2.444166421890259
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.8841233253479004,
+        "val_loss": 2.1738608106970787,
+        "training_seconds": 89.37715430397657,
+        "gradient_norm": 2.7944176197052
+      }
+    ],
+    "training_seconds": 89.37715430397657,
+    "inference_ms": 13.282474497827934,
+    "peak_rss_mib": 460.33203125,
+    "data": {
+      "train": {
+        "source": "experiment/nanogpt_data/fineweb_train_000001.bin",
+        "source_tokens": 1000000,
+        "bytes": 4468985,
+        "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+      },
+      "val": {
+        "source": "experiment/nanogpt_data/fineweb_val_000000.bin",
+        "source_tokens": 100000,
+        "bytes": 444316,
+        "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+      }
+    },
+    "torch": "2.14.1+cpu"
+  },
+  {
+    "arguments": {
+      "data": "experiment/nanogpt_data",
+      "out": "experiment/rwkv7_ffn_results",
+      "variant": "ks2_ffn",
+      "seed": 33,
+      "steps": 1000,
+      "charts": 1,
+      "ffn_charts": 11,
+      "threads": 2
+    },
+    "parameters": 317512,
+    "controller_parameters": 11472,
+    "ffn_parameters": 63096,
+    "history": [
+      {
+        "step": 0,
+        "val_loss": 5.73099410533905
+      },
+      {
+        "step": 100,
+        "train_loss": 2.457582473754883,
+        "val_loss": 2.659766860306263,
+        "training_seconds": 9.205776042988873,
+        "gradient_norm": 2.8461403846740723
+      },
+      {
+        "step": 200,
+        "train_loss": 2.3810746669769287,
+        "val_loss": 2.522930644452572,
+        "training_seconds": 18.038121600926388,
+        "gradient_norm": 2.1419272422790527
+      },
+      {
+        "step": 300,
+        "train_loss": 2.4242844581604004,
+        "val_loss": 2.4357025250792503,
+        "training_seconds": 26.59942984792724,
+        "gradient_norm": 2.250493288040161
+      },
+      {
+        "step": 400,
+        "train_loss": 2.367230176925659,
+        "val_loss": 2.363888591527939,
+        "training_seconds": 35.14747036994231,
+        "gradient_norm": 2.2419283390045166
+      },
+      {
+        "step": 500,
+        "train_loss": 2.1474668979644775,
+        "val_loss": 2.3118701353669167,
+        "training_seconds": 43.7515743289041,
+        "gradient_norm": 2.0790226459503174
+      },
+      {
+        "step": 600,
+        "train_loss": 2.1619527339935303,
+        "val_loss": 2.264322876930237,
+        "training_seconds": 52.66402149085479,
+        "gradient_norm": 2.2247068881988525
+      },
+      {
+        "step": 700,
+        "train_loss": 2.174649477005005,
+        "val_loss": 2.2383996918797493,
+        "training_seconds": 61.4701451288347,
+        "gradient_norm": 2.3643085956573486
+      },
+      {
+        "step": 800,
+        "train_loss": 2.081902027130127,
+        "val_loss": 2.2154493927955627,
+        "training_seconds": 70.43835566980124,
+        "gradient_norm": 2.135857105255127
+      },
+      {
+        "step": 900,
+        "train_loss": 2.3709747791290283,
+        "val_loss": 2.191484585404396,
+        "training_seconds": 79.10459799383534,
+        "gradient_norm": 2.9906935691833496
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.9779366254806519,
+        "val_loss": 2.175579074770212,
+        "training_seconds": 87.95791849084344,
+        "gradient_norm": 2.2330048084259033
+      }
+    ],
+    "training_seconds": 87.95791849084344,
+    "inference_ms": 15.867605499806814,
+    "peak_rss_mib": 460.31640625,
+    "data": {
+      "train": {
+        "source": "experiment/nanogpt_data/fineweb_train_000001.bin",
+        "source_tokens": 1000000,
+        "bytes": 4468985,
+        "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+      },
+      "val": {
+        "source": "experiment/nanogpt_data/fineweb_val_000000.bin",
+        "source_tokens": 100000,
+        "bytes": 444316,
+        "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+      }
+    },
+    "torch": "2.14.1+cpu"
+  }
+]
