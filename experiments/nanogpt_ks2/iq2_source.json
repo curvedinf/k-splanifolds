@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/ggml-org/llama.cpp",
+  "commit": "e197cef4554d466e0becac20e453a355daba8e5d",
+  "sources": {
+    "ggml/src/ggml-quants.c": "5574a2dccf7c07e75b143733e04a5412d3d8c819e7945f5217a7b83a2b2ff8ab",
+    "ggml/src/ggml-common.h": "0061131b615c5721fc88a78feeb22c1f8c450f1c2646a317d80796a653bf595c"
+  },
+  "functions": [
+    "static inline int nearest_int(",
+    "static float make_qp_quants(",
+    "static inline int iq2_data_index(",
+    "static inline int iq2_grid_size(",
+    "static int iq2_compare_func(",
+    "void iq2xs_init_impl(",
+    "void iq2xs_free_impl(",
+    "static int iq2_find_best_neighbour(",
+    "static void quantize_row_iq2_xxs_impl(",
+    "size_t quantize_iq2_xxs(",
+    "void dequantize_row_iq2_xxs("
+  ],
+  "shim": "block/enum declarations, FP16 conversion, assertion macros, OpenMP initialization; extracted function bodies and codebook tables unchanged"
+}

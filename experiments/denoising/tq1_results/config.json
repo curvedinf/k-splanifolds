@@ -1,0 +1,26 @@
+{
+  "arguments": {
+    "data_dir": "experiment/data",
+    "out": "experiment/denoising_tq1_gs128",
+    "steps": 3000,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "threads": 8,
+    "lr": 0.0003
+  },
+  "protocol": "Train400/Set12 original split/noise/normalization; batch64; Adam constant LR .0003, gradient clip1; from scratch; no control reruns",
+  "model": "32 charts, rank8, one stabilized geometry step; 112768 parameters; historical packed initialization",
+  "quantization": "All learned weights: GS128 ternary, FP16 absmax scales, row padding; identity STE; FP32 masters/activations/backward; fused analytic backward",
+  "validation": "4096 fixed patches; every250 steps and step1; pixel MSE",
+  "test": "Set12 fixed checkpoints at1000/final; no best-checkpoint substitution; original stride3 reconstruction",
+  "source_hashes": {
+    "/workspace/scratch/9f066479584f/ks_repo/experiments/denoising/train_tq1.py": "84945a1b63aa2309999e1ed9b6fabc7a7b055ea6bec007bb5b53ce9617ea1639",
+    "/workspace/scratch/9f066479584f/ks_repo/experiments/denoising/run.py": "d797fa22ef501afc2c0781eb4a2465687b14a71d4dff69bdebe4575f9ba163d7",
+    "/workspace/scratch/9f066479584f/ks_repo/experiments/nanogpt_ks2/train_qat.py": "c50713ece721834df83fc0f06012e6a7f3957b81de6ab214b4665a9e314a6620"
+  },
+  "dataset_sha256": "788c7ece1f859db24954968d341da994f7a6185437e6a3116b34fb4a3a4aa6a9",
+  "torch": "2.14.1+cpu"
+}

@@ -1,0 +1,353 @@
+[
+  {
+    "seed": 11,
+    "mode": "fp32",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.122119903564453,
+    "output_rmse": 0.0,
+    "max_error": 0.0
+  },
+  {
+    "seed": 11,
+    "mode": "fp16",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.12213706970215,
+    "output_rmse": 0.00020531685731839389,
+    "max_error": 0.0018258094787597656
+  },
+  {
+    "seed": 11,
+    "mode": "fp16",
+    "target": "safe",
+    "finite": true,
+    "val_psnr": 25.12212371826172,
+    "output_rmse": 0.00012441311264410615,
+    "max_error": 0.0015454292297363281
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "longitudinal",
+    "finite": true,
+    "val_psnr": 25.121767044067383,
+    "output_rmse": 0.001166213653050363,
+    "max_error": 0.007294178009033203
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "coordinate",
+    "finite": true,
+    "val_psnr": 25.121776580810547,
+    "output_rmse": 0.001768615678884089,
+    "max_error": 0.028892874717712402
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "damping",
+    "finite": true,
+    "val_psnr": 25.12211799621582,
+    "output_rmse": 3.986055889981799e-05,
+    "max_error": 0.0003236532211303711
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "warp",
+    "finite": true,
+    "val_psnr": 25.121986389160156,
+    "output_rmse": 0.0009501502499915659,
+    "max_error": 0.007767140865325928
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.12130355834961,
+    "output_rmse": 0.002288223709911108,
+    "max_error": 0.031116724014282227
+  },
+  {
+    "seed": 22,
+    "mode": "fp32",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.111188888549805,
+    "output_rmse": 0.0,
+    "max_error": 0.0
+  },
+  {
+    "seed": 22,
+    "mode": "fp16",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.111202239990234,
+    "output_rmse": 0.00029680991428904235,
+    "max_error": 0.020596623420715332
+  },
+  {
+    "seed": 22,
+    "mode": "fp16",
+    "target": "safe",
+    "finite": true,
+    "val_psnr": 25.11119842529297,
+    "output_rmse": 0.0002495591470506042,
+    "max_error": 0.020382046699523926
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "longitudinal",
+    "finite": true,
+    "val_psnr": 25.110788345336914,
+    "output_rmse": 0.0011715975124388933,
+    "max_error": 0.00922536849975586
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "coordinate",
+    "finite": true,
+    "val_psnr": 25.11083984375,
+    "output_rmse": 0.0015472079394385219,
+    "max_error": 0.011721491813659668
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "damping",
+    "finite": true,
+    "val_psnr": 25.1112003326416,
+    "output_rmse": 4.21528602601029e-05,
+    "max_error": 0.0003644227981567383
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "warp",
+    "finite": true,
+    "val_psnr": 25.110816955566406,
+    "output_rmse": 0.0011392225278541446,
+    "max_error": 0.009018421173095703
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.11007308959961,
+    "output_rmse": 0.0022857231087982655,
+    "max_error": 0.017951369285583496
+  },
+  {
+    "seed": 33,
+    "mode": "fp32",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.100841522216797,
+    "output_rmse": 0.0,
+    "max_error": 0.0
+  },
+  {
+    "seed": 33,
+    "mode": "fp16",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.10085105895996,
+    "output_rmse": 0.00020870391745120287,
+    "max_error": 0.0074370503425598145
+  },
+  {
+    "seed": 33,
+    "mode": "fp16",
+    "target": "safe",
+    "finite": true,
+    "val_psnr": 25.10085105895996,
+    "output_rmse": 0.00012926688941661268,
+    "max_error": 0.00726318359375
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "longitudinal",
+    "finite": true,
+    "val_psnr": 25.100818634033203,
+    "output_rmse": 0.001218619174323976,
+    "max_error": 0.00870370864868164
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "coordinate",
+    "finite": true,
+    "val_psnr": 25.100669860839844,
+    "output_rmse": 0.0014484968269243836,
+    "max_error": 0.012818098068237305
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "damping",
+    "finite": true,
+    "val_psnr": 25.100852966308594,
+    "output_rmse": 4.318813807913102e-05,
+    "max_error": 0.00037911534309387207
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "warp",
+    "finite": true,
+    "val_psnr": 25.100433349609375,
+    "output_rmse": 0.001120368717238307,
+    "max_error": 0.009801387786865234
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.100261688232422,
+    "output_rmse": 0.0021657433826476336,
+    "max_error": 0.020866870880126953
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "longitudinal",
+    "finite": true,
+    "val_psnr": 25.12202262878418,
+    "output_rmse": 0.0008580588619224727,
+    "max_error": 0.0038299560546875
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "coordinate",
+    "finite": true,
+    "val_psnr": 25.122163772583008,
+    "output_rmse": 0.0005471545155160129,
+    "max_error": 0.007825355976819992
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "damping",
+    "finite": true,
+    "val_psnr": 25.122119903564453,
+    "output_rmse": 4.034648100059712e-06,
+    "max_error": 3.7550926208496094e-05
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "warp",
+    "finite": true,
+    "val_psnr": 25.122106552124023,
+    "output_rmse": 0.00026249789516441524,
+    "max_error": 0.0012385845184326172
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.122051239013672,
+    "output_rmse": 0.001068863901309669,
+    "max_error": 0.009634766727685928
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "longitudinal",
+    "finite": true,
+    "val_psnr": 25.1112060546875,
+    "output_rmse": 0.0007919225608929992,
+    "max_error": 0.004494667053222656
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "coordinate",
+    "finite": true,
+    "val_psnr": 25.11124610900879,
+    "output_rmse": 0.0004746725026052445,
+    "max_error": 0.004210233688354492
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "damping",
+    "finite": true,
+    "val_psnr": 25.111188888549805,
+    "output_rmse": 4.3008085413021035e-06,
+    "max_error": 3.528594970703125e-05
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "warp",
+    "finite": true,
+    "val_psnr": 25.111164093017578,
+    "output_rmse": 0.0003047384670935571,
+    "max_error": 0.0014151334762573242
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.111236572265625,
+    "output_rmse": 0.0009872583905234933,
+    "max_error": 0.005754232406616211
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "longitudinal",
+    "finite": true,
+    "val_psnr": 25.100915908813477,
+    "output_rmse": 0.0007944274111650884,
+    "max_error": 0.005655765533447266
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "coordinate",
+    "finite": true,
+    "val_psnr": 25.10084342956543,
+    "output_rmse": 0.0004915223107673228,
+    "max_error": 0.006171703338623047
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "damping",
+    "finite": true,
+    "val_psnr": 25.100841522216797,
+    "output_rmse": 4.1856478674162645e-06,
+    "max_error": 4.127621650695801e-05
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "warp",
+    "finite": true,
+    "val_psnr": 25.100818634033203,
+    "output_rmse": 0.0003830084460787475,
+    "max_error": 0.0019804835319519043
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "all",
+    "finite": true,
+    "val_psnr": 25.100889205932617,
+    "output_rmse": 0.0010308772325515747,
+    "max_error": 0.004848003387451172
+  }
+]

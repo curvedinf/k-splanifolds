@@ -1,0 +1,119 @@
+[
+  {
+    "mode": "fp32",
+    "target": "all",
+    "val_mean": 25.11138343811035,
+    "val_std": 0.010640524674220867,
+    "test_mean": 26.69657548268636,
+    "test_std": 0.01279691043362625,
+    "max_error": 0
+  },
+  {
+    "mode": "fp16",
+    "target": "all",
+    "val_mean": 25.11139678955078,
+    "val_std": 0.010644338893410063,
+    "test_mean": 26.696577495998806,
+    "test_std": 0.012792771766030893,
+    "max_error": 0.020596623420715332
+  },
+  {
+    "mode": "fp16",
+    "target": "safe",
+    "val_mean": 25.111391067504883,
+    "val_std": 0.010637637976004078,
+    "test_mean": 26.696575694613983,
+    "test_std": 0.012791620075412565,
+    "max_error": 0.020382046699523926
+  },
+  {
+    "mode": "fp8",
+    "target": "longitudinal",
+    "val_mean": 25.111124674479168,
+    "val_std": 0.010478254086868496,
+    "test_mean": null,
+    "test_std": null,
+    "max_error": 0.00922536849975586
+  },
+  {
+    "mode": "fp8",
+    "target": "coordinate",
+    "val_mean": 25.111095428466797,
+    "val_std": 0.010555680917923516,
+    "test_mean": null,
+    "test_std": null,
+    "max_error": 0.028892874717712402
+  },
+  {
+    "mode": "fp8",
+    "target": "damping",
+    "val_mean": 25.111390431722004,
+    "val_std": 0.01063378942259474,
+    "test_mean": null,
+    "test_std": null,
+    "max_error": 0.00037911534309387207
+  },
+  {
+    "mode": "fp8",
+    "target": "warp",
+    "val_mean": 25.11107889811198,
+    "val_std": 0.010778907128845258,
+    "test_mean": null,
+    "test_std": null,
+    "max_error": 0.009801387786865234
+  },
+  {
+    "mode": "fp8",
+    "target": "all",
+    "val_mean": 25.110546112060547,
+    "val_std": 0.010528907217444771,
+    "test_mean": 26.695377720726864,
+    "test_std": 0.012648782492607319,
+    "max_error": 0.031116724014282227
+  },
+  {
+    "mode": "int8",
+    "target": "longitudinal",
+    "val_mean": 25.11131985982259,
+    "val_std": 0.010668570112622407,
+    "test_mean": null,
+    "test_std": null,
+    "max_error": 0.008214712142944336
+  },
+  {
+    "mode": "int8",
+    "target": "coordinate",
+    "val_mean": 25.11146291097005,
+    "val_std": 0.010600482314506198,
+    "test_mean": null,
+    "test_std": null,
+    "max_error": 0.008438348770141602
+  },
+  {
+    "mode": "int8",
+    "target": "damping",
+    "val_mean": 25.11138343811035,
+    "val_std": 0.010640524674220867,
+    "test_mean": null,
+    "test_std": null,
+    "max_error": 4.127621650695801e-05
+  },
+  {
+    "mode": "int8",
+    "target": "warp",
+    "val_mean": 25.11136309305827,
+    "val_std": 0.010645354147350603,
+    "test_mean": null,
+    "test_std": null,
+    "max_error": 0.0019804835319519043
+  },
+  {
+    "mode": "int8",
+    "target": "all",
+    "val_mean": 25.111385981241863,
+    "val_std": 0.010635873382937266,
+    "test_mean": 26.69658862219916,
+    "test_std": 0.012774746650918633,
+    "max_error": 0.010546445846557617
+  }
+]

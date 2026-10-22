@@ -1,0 +1,356 @@
+[
+  {
+    "seed": 11,
+    "kind": "qat_combined",
+    "integer_export_max_error": 0.0,
+    "grad_enabled_forward_max_error": 0.0,
+    "gradient_groups": {
+      "geo_t": {
+        "present": true,
+        "finite": true,
+        "nonzero": 13824
+      },
+      "geo_x": {
+        "present": true,
+        "finite": true,
+        "nonzero": 8190
+      },
+      "den_delta": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1945
+      },
+      "den_weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1714
+      },
+      "raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "down.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      },
+      "up.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      }
+    },
+    "scales_frozen_in_eval": true
+  },
+  {
+    "seed": 11,
+    "kind": "qat_powers",
+    "integer_export_max_error": 0.0,
+    "grad_enabled_forward_max_error": 0.0,
+    "gradient_groups": {
+      "geo_t": {
+        "present": true,
+        "finite": true,
+        "nonzero": 13824
+      },
+      "geo_x": {
+        "present": true,
+        "finite": true,
+        "nonzero": 8189
+      },
+      "den_delta": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1943
+      },
+      "den_weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1707
+      },
+      "raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "down.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      },
+      "up.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      }
+    },
+    "scales_frozen_in_eval": true
+  },
+  {
+    "seed": 22,
+    "kind": "qat_combined",
+    "integer_export_max_error": 0.0,
+    "grad_enabled_forward_max_error": 0.0,
+    "gradient_groups": {
+      "geo_t": {
+        "present": true,
+        "finite": true,
+        "nonzero": 13824
+      },
+      "geo_x": {
+        "present": true,
+        "finite": true,
+        "nonzero": 8187
+      },
+      "den_delta": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1938
+      },
+      "den_weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1728
+      },
+      "raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "down.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      },
+      "up.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      }
+    },
+    "scales_frozen_in_eval": true
+  },
+  {
+    "seed": 22,
+    "kind": "qat_powers",
+    "integer_export_max_error": 0.0,
+    "grad_enabled_forward_max_error": 0.0,
+    "gradient_groups": {
+      "geo_t": {
+        "present": true,
+        "finite": true,
+        "nonzero": 13823
+      },
+      "geo_x": {
+        "present": true,
+        "finite": true,
+        "nonzero": 8189
+      },
+      "den_delta": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1941
+      },
+      "den_weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1715
+      },
+      "raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "down.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      },
+      "up.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      }
+    },
+    "scales_frozen_in_eval": true
+  },
+  {
+    "seed": 33,
+    "kind": "qat_combined",
+    "integer_export_max_error": 0.0,
+    "grad_enabled_forward_max_error": 0.0,
+    "gradient_groups": {
+      "geo_t": {
+        "present": true,
+        "finite": true,
+        "nonzero": 13824
+      },
+      "geo_x": {
+        "present": true,
+        "finite": true,
+        "nonzero": 8189
+      },
+      "den_delta": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1926
+      },
+      "den_weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1722
+      },
+      "raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "down.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      },
+      "up.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      }
+    },
+    "scales_frozen_in_eval": true
+  },
+  {
+    "seed": 33,
+    "kind": "qat_powers",
+    "integer_export_max_error": 0.0,
+    "grad_enabled_forward_max_error": 0.0,
+    "gradient_groups": {
+      "geo_t": {
+        "present": true,
+        "finite": true,
+        "nonzero": 13824
+      },
+      "geo_x": {
+        "present": true,
+        "finite": true,
+        "nonzero": 8191
+      },
+      "den_delta": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1931
+      },
+      "den_weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 1764
+      },
+      "raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_scale": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "edge_raw_shift": {
+        "present": true,
+        "finite": true,
+        "nonzero": 32
+      },
+      "down.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      },
+      "up.weight": {
+        "present": true,
+        "finite": true,
+        "nonzero": 43264
+      }
+    },
+    "scales_frozen_in_eval": true
+  }
+]

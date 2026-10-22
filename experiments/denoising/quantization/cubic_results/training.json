@@ -1,0 +1,125 @@
+[
+  {
+    "kind": "bounded",
+    "seed": 11,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.133554162993804,
+    "train_seconds": 13.422909257988067,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.217064044096064,
+        "train_seconds": 0.023793354999725125,
+        "loss": 2.0749893188476562
+      },
+      {
+        "step": 250,
+        "val_psnr": 23.107953586329877,
+        "train_seconds": 2.905909339997379,
+        "loss": 0.13428597152233124
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.30349547573517,
+        "train_seconds": 6.164097616000618,
+        "loss": 0.08983929455280304
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.840562752656666,
+        "train_seconds": 9.73810798199338,
+        "loss": 0.08317729830741882
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.133554162993804,
+        "train_seconds": 13.422909257988067,
+        "loss": 0.08331131190061569
+      }
+    ]
+  },
+  {
+    "kind": "bounded",
+    "seed": 22,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.119103439566103,
+    "train_seconds": 13.122430212013569,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.126530983537657,
+        "train_seconds": 0.01164041499941959,
+        "loss": 1.510703206062317
+      },
+      {
+        "step": 250,
+        "val_psnr": 22.998419923734666,
+        "train_seconds": 3.4739941030047703,
+        "loss": 0.08757492154836655
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.23224023466679,
+        "train_seconds": 6.779063978005979,
+        "loss": 0.09956785291433334
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.810217795579238,
+        "train_seconds": 9.99861741901168,
+        "loss": 0.10459864139556885
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.119103439566103,
+        "train_seconds": 13.122430212013569,
+        "loss": 0.06793984025716782
+      }
+    ]
+  },
+  {
+    "kind": "bounded",
+    "seed": 33,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.110506992316367,
+    "train_seconds": 12.418197759019677,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.466031650551388,
+        "train_seconds": 0.01257902900033514,
+        "loss": 1.6069732904434204
+      },
+      {
+        "step": 250,
+        "val_psnr": 23.0004026456446,
+        "train_seconds": 3.1973300580129944,
+        "loss": 0.1011345311999321
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.24535786353207,
+        "train_seconds": 6.407208979014285,
+        "loss": 0.10262256860733032
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.81353723627206,
+        "train_seconds": 9.405677445020956,
+        "loss": 0.07170447707176208
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.110506992316367,
+        "train_seconds": 12.418197759019677,
+        "loss": 0.0793549120426178
+      }
+    ]
+  }
+]

@@ -31,7 +31,7 @@ integer coefficient contractions and edge products, with floating nonlinearities
 
 Linux x86-64, GCC/OpenMP and PyTorch. Both exports require AVX-512F/BW/DQ/VL and FMA;
 VNNI additionally requires AVX-512 VNNI. The wrapper checks CPU capabilities before native calls.
-Build locally with explicit ISA flags; no `-ffast-math` or external vector-math dependency.
+Build locally with explicit ISA flags and no `-ffast-math`. The inference kernels have no external vector-math dependency; the training kernel links glibc `libmvec` for vector tanh.
 
 ```bash
 python -m experiments.common.ks2_cpu.build
@@ -83,3 +83,23 @@ Stability checks cover zero, tiny values, cancellation and inputs up to 1e30. Th
 is bounded for the tested finite parameters; this does not promise faithful extreme extrapolation,
 finite projections near FP32 overflow, or stability for arbitrary parameter values. Tests also cover
 trainable forward/backward, calibration, autocast, SIMD tails and invalid export configurations.
+
+
+## Fused training backward
+
+`training.fuse_training` replaces a stabilized rank-8, one-step cell's forward and backward while preserving its parameters, state-dict keys and optimizer ownership. It supports CPU FP32 and first-order autograd. It does not support higher-order derivatives or autocast; it is separate from the frozen inference exports.
+
+```python
+from experiments.common.ks2_cpu.training import fuse_training
+fuse_training(model, threads=8)
+loss = model(patches).square().mean()
+loss.backward()
+```
+
+`backward.cpp` uses sixteen tokens per AVX-512 vector, chart-owned parameter-gradient accumulators, a final SIMD reduction, shared mean/energy adjoints, and fused edge/predicate derivatives. No parameter-gradient atomics or edge-sized activation tensors are needed. Geometry is recomputed in backward from saved coordinates; projections use PyTorch GEMMs with explicit input/weight gradients. Forward and backward use vector-library tanh and FP32 division, preserving the stabilized function and complete gradient rather than differentiating the inference approximations. Floating-point evaluation and reduction order differ from PyTorch.
+
+```bash
+python -m unittest experiments.common.ks2_cpu.test_training -v
+```
+
+Tests cover every geometry parameter and input gradient, full-cell projection gradients, zero/tiny/extreme coordinates, a SIMD tail, and a twenty-step Adam trajectory. See the [nanoGPT experiment](../../nanogpt_ks2/README.md) for measured backward timings and the 500-step training check.

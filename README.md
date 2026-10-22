@@ -10,7 +10,8 @@ Key files:
 - `setup_venv.sh` — creates a local `.venv` and installs dependencies.
 
 Key experiment code:
-- [`experiments/denoising`](experiments/denoising) — single-file MLP/KS1/KS2 denoising control, citation, and recorded results.
+- [`experiments/nanogpt_ks2`](experiments/nanogpt_ks2) — FP32 modded-nanoGPT controls, fused backward, memory/inference measurements, and INT8/Q4_K/IQ2_XXS/TQ1 quantization and QAT.
+- [`experiments/denoising`](experiments/denoising) — MLP/KS1/KS2 controls, 3,000-step ternary QAT, and historical FP16/FP8/INT8 ablations.
 - `experiments/common/ks2.py` — reference KS2 map and projected cell.
 - `experiments/common/ks2_stabilized.py` — trainable KS2 with bounded cubics and energy-based damping.
 - [`experiments/common/ks2_cpu`](experiments/common/ks2_cpu) — fused AVX-512 FP32 Horner and GS128 INT8 VNNI exports.

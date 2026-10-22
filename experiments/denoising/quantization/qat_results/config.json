@@ -1,0 +1,21 @@
+{
+  "model": "bounded damping/cubic rank8 32charts,112768 trainable parameters",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "steps": 1000,
+  "from_scratch": true,
+  "lr": 0.0003,
+  "batch_size": 64,
+  "optimizer": "Adam, FP32 masters/state; gradient clip1; no loss scaling",
+  "forward": "INT8-quantized operands widened to INT32 for selected CPU integer products/reductions; floating point between integer stages",
+  "backward": "floating-point straight-through surrogate; no integer gradient arithmetic",
+  "weight_scales": "GS128 symmetric absmax, refreshed from FP32 masters every forward; scales detached",
+  "activation_scales": "per-chart training absmax with20% headroom, EMA0.95; initialized first use, frozen in eval",
+  "projections": "FP32",
+  "other_float": "FP16 geometry outside integer stages; FP32 chart predicates/scales and loss",
+  "device": "CPU only, not GPU throughput experiment",
+  "baseline": "previous completed FP16-geometry training reused; no FP16 rerun"
+}

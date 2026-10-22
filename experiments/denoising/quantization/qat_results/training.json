@@ -1,0 +1,248 @@
+[
+  {
+    "kind": "qat_combined",
+    "seed": 11,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.134459586198044,
+    "train_seconds": 17.451663012998324,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.217043374822886,
+        "train_seconds": 0.02627945299991552,
+        "loss": 2.0750293731689453
+      },
+      {
+        "step": 250,
+        "val_psnr": 23.10623526273654,
+        "train_seconds": 4.199966028001654,
+        "loss": 0.1343226283788681
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.302262081499716,
+        "train_seconds": 8.020561613002428,
+        "loss": 0.08989651501178741
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.840309180765217,
+        "train_seconds": 12.86208019699825,
+        "loss": 0.0831720307469368
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.134459586198044,
+        "train_seconds": 17.451663012998324,
+        "loss": 0.08333058655261993
+      }
+    ]
+  },
+  {
+    "kind": "qat_powers",
+    "seed": 11,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.134605022608337,
+    "train_seconds": 17.631272426977375,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.214597508644838,
+        "train_seconds": 0.0330095640001673,
+        "loss": 2.0758519172668457
+      },
+      {
+        "step": 250,
+        "val_psnr": 23.104834861671563,
+        "train_seconds": 4.286608312992939,
+        "loss": 0.13436631858348846
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.301583883744826,
+        "train_seconds": 8.968495064988929,
+        "loss": 0.08987045288085938
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.840124793666327,
+        "train_seconds": 13.41299084397906,
+        "loss": 0.08317747712135315
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.134605022608337,
+        "train_seconds": 17.631272426977375,
+        "loss": 0.08336083590984344
+      }
+    ]
+  },
+  {
+    "kind": "qat_combined",
+    "seed": 22,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.11934277680728,
+    "train_seconds": 17.41624437300652,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.126493393153346,
+        "train_seconds": 0.03984104900064267,
+        "loss": 1.5106409788131714
+      },
+      {
+        "step": 250,
+        "val_psnr": 22.995480716866012,
+        "train_seconds": 4.333907763007119,
+        "loss": 0.08765483647584915
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.229971328094205,
+        "train_seconds": 8.774158966012692,
+        "loss": 0.09950445592403412
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.809179228974116,
+        "train_seconds": 13.27798520901888,
+        "loss": 0.10462271422147751
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.11934277680728,
+        "train_seconds": 17.41624437300652,
+        "loss": 0.0679587796330452
+      }
+    ]
+  },
+  {
+    "kind": "qat_powers",
+    "seed": 22,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.11934534579376,
+    "train_seconds": 17.342942470999333,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.12612951905615,
+        "train_seconds": 0.017060839999430755,
+        "loss": 1.5107249021530151
+      },
+      {
+        "step": 250,
+        "val_psnr": 22.99500839571421,
+        "train_seconds": 4.646826359991792,
+        "loss": 0.08763871341943741
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.229410774493118,
+        "train_seconds": 8.909365983999123,
+        "loss": 0.09949085116386414
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.808929995108016,
+        "train_seconds": 13.068295078001029,
+        "loss": 0.10467709600925446
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.11934534579376,
+        "train_seconds": 17.342942470999333,
+        "loss": 0.06792567670345306
+      }
+    ]
+  },
+  {
+    "kind": "qat_combined",
+    "seed": 33,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.111503635922862,
+    "train_seconds": 16.144628448008007,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.465819763669465,
+        "train_seconds": 0.01586725299966929,
+        "loss": 1.6069984436035156
+      },
+      {
+        "step": 250,
+        "val_psnr": 22.999926207155873,
+        "train_seconds": 4.061604702004843,
+        "loss": 0.10116248577833176
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.24518631008429,
+        "train_seconds": 7.959337407009116,
+        "loss": 0.10252632945775986
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.814011317792136,
+        "train_seconds": 11.837117357000352,
+        "loss": 0.07171668112277985
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.111503635922862,
+        "train_seconds": 16.144628448008007,
+        "loss": 0.07935216277837753
+      }
+    ]
+  },
+  {
+    "kind": "qat_powers",
+    "seed": 33,
+    "status": "completed",
+    "failure_step": null,
+    "completed_updates": 1000,
+    "best_val_psnr": 25.111843475662766,
+    "train_seconds": 18.047212151007443,
+    "history": [
+      {
+        "step": 1,
+        "val_psnr": 12.465831395083931,
+        "train_seconds": 0.017571231000147236,
+        "loss": 1.6067142486572266
+      },
+      {
+        "step": 250,
+        "val_psnr": 22.998264485078188,
+        "train_seconds": 4.268533567999839,
+        "loss": 0.10122478753328323
+      },
+      {
+        "step": 500,
+        "val_psnr": 24.24416338319307,
+        "train_seconds": 8.828045282007224,
+        "loss": 0.10250122100114822
+      },
+      {
+        "step": 750,
+        "val_psnr": 24.81318549049997,
+        "train_seconds": 13.385062877002383,
+        "loss": 0.07173239439725876
+      },
+      {
+        "step": 1000,
+        "val_psnr": 25.111843475662766,
+        "train_seconds": 18.047212151007443,
+        "loss": 0.07936041802167892
+      }
+    ]
+  }
+]

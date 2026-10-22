@@ -1,0 +1,3832 @@
+{
+  "protocol": {
+    "quantizer": "actual llama.cpp TQ1_0 packed roundtrip, 256 weights/54 bytes",
+    "source": {
+      "repository": "https://github.com/ggml-org/llama.cpp",
+      "commit": "e197cef4554d466e0becac20e453a355daba8e5d",
+      "source": "ggml/src/ggml-quants.c",
+      "source_sha256": "5574a2dccf7c07e75b143733e04a5412d3d8c819e7945f5217a7b83a2b2ff8ab",
+      "functions": [
+        "void quantize_row_tq1_0_ref(",
+        "void dequantize_row_tq1_0("
+      ],
+      "shim": "block declaration, IEEE FP16 conversion, assertion and max macro; reference function bodies unchanged"
+    },
+    "scope": "every learned FFN parameter; KS2 includes raw damping and warp parameters before their FP32 transforms",
+    "grouping": "KS2 coefficients packed per chart as prior experiments; damping per family/chart; warp per family across charts; both models projections per output row",
+    "padding": "each row zero-padded to a multiple of 256 and cropped after decode",
+    "activations_and_arithmetic": "FP32; non-FFN parameters unchanged; no native ternary execution",
+    "validation_tokens": 2048,
+    "sequence": 128,
+    "threads": 8,
+    "baseline": "reused recorded FP32 loss; no FP32 reruns",
+    "calibration": false,
+    "retraining": false,
+    "verification": "all named FFN parameters covered; exact counts; independent NumPy decoder matches C decoder"
+  },
+  "results": [
+    {
+      "kind": "mlp",
+      "seed": 11,
+      "source": "original",
+      "fp32_ce": 7.8189597427845,
+      "tq1_ce": 7.912082806229591,
+      "delta_ce": 0.09312306344509125,
+      "perplexity_increase_percent": 9.759680100073663,
+      "ffn_parameters": 743424,
+      "quantized_parameters": 743424,
+      "packed_ffn_bytes": 323136,
+      "zero_fraction": 0.8224297305440771
+    },
+    {
+      "kind": "ks2",
+      "seed": 11,
+      "source": "original",
+      "fp32_ce": 7.813319265842438,
+      "tq1_ce": 7.926008611917496,
+      "delta_ce": 0.11268934607505798,
+      "perplexity_increase_percent": 11.9284168914053,
+      "ffn_parameters": 181412,
+      "quantized_parameters": 181412,
+      "packed_ffn_bytes": 113454,
+      "zero_fraction": 0.762727934205014
+    },
+    {
+      "kind": "mlp",
+      "seed": 22,
+      "source": "original",
+      "fp32_ce": 7.8685705959796906,
+      "tq1_ce": 8.07929015159607,
+      "delta_ce": 0.21071955561637878,
+      "perplexity_increase_percent": 23.456607938495683,
+      "ffn_parameters": 743424,
+      "quantized_parameters": 743424,
+      "packed_ffn_bytes": 323136,
+      "zero_fraction": 0.8272452866735537
+    },
+    {
+      "kind": "ks2",
+      "seed": 22,
+      "source": "original",
+      "fp32_ce": 7.883992493152618,
+      "tq1_ce": 8.005956798791885,
+      "delta_ce": 0.12196430563926697,
+      "perplexity_increase_percent": 12.971377664956426,
+      "ffn_parameters": 181412,
+      "quantized_parameters": 181412,
+      "packed_ffn_bytes": 113454,
+      "zero_fraction": 0.7618845500848896
+    },
+    {
+      "kind": "mlp",
+      "seed": 33,
+      "source": "original",
+      "fp32_ce": 7.770476683974266,
+      "tq1_ce": 7.977943733334541,
+      "delta_ce": 0.20746704936027527,
+      "perplexity_increase_percent": 23.055716852612886,
+      "ffn_parameters": 743424,
+      "quantized_parameters": 743424,
+      "packed_ffn_bytes": 323136,
+      "zero_fraction": 0.8264409004820936
+    },
+    {
+      "kind": "ks2",
+      "seed": 33,
+      "source": "original",
+      "fp32_ce": 7.771770969033241,
+      "tq1_ce": 7.883630305528641,
+      "delta_ce": 0.11185933649539948,
+      "perplexity_increase_percent": 11.835553777117891,
+      "ffn_parameters": 181412,
+      "quantized_parameters": 181412,
+      "packed_ffn_bytes": 113454,
+      "zero_fraction": 0.7644588009613477
+    },
+    {
+      "kind": "ks2",
+      "seed": 11,
+      "source": "fused_training",
+      "fp32_ce": 7.813661694526672,
+      "tq1_ce": 7.933982998132706,
+      "delta_ce": 0.12032130360603333,
+      "perplexity_increase_percent": 12.785917858894964,
+      "ffn_parameters": 181412,
+      "quantized_parameters": 181412,
+      "packed_ffn_bytes": 113454,
+      "zero_fraction": 0.7630641853901616
+    }
+  ],
+  "diagnostics": {
+    "original_mlp_11": {
+      "0": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05735199525952339,
+          "max_error": 0.18335331976413727
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.077494315803051,
+          "max_error": 0.24886725842952728
+        }
+      },
+      "1": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.052387431263923645,
+          "max_error": 0.15695619583129883
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.07778312265872955,
+          "max_error": 0.26260074973106384
+        }
+      },
+      "2": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05487709864974022,
+          "max_error": 0.1482180804014206
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08577938377857208,
+          "max_error": 0.27753394842147827
+        }
+      },
+      "3": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05438132584095001,
+          "max_error": 0.15201395750045776
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08515025675296783,
+          "max_error": 0.3188254237174988
+        }
+      },
+      "4": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05648073926568031,
+          "max_error": 0.16110347211360931
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.09184855967760086,
+          "max_error": 0.31646764278411865
+        }
+      },
+      "5": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05644407495856285,
+          "max_error": 0.1739533543586731
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.09110081940889359,
+          "max_error": 0.31108924746513367
+        }
+      },
+      "6": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.057053498923778534,
+          "max_error": 0.18793658912181854
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08966276794672012,
+          "max_error": 0.2901422381401062
+        }
+      },
+      "8": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.048063524067401886,
+          "max_error": 0.16295921802520752
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06568169593811035,
+          "max_error": 0.3535305857658386
+        }
+      },
+      "9": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.04953760653734207,
+          "max_error": 0.1480896919965744
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06757444143295288,
+          "max_error": 0.32411348819732666
+        }
+      },
+      "10": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05194734036922455,
+          "max_error": 0.15875190496444702
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06805442273616791,
+          "max_error": 0.23782163858413696
+        }
+      },
+      "11": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.047053854912519455,
+          "max_error": 0.1355525404214859
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06415610760450363,
+          "max_error": 0.297214537858963
+        }
+      }
+    },
+    "original_ks2_11": {
+      "0": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.040543489158153534,
+          "max_error": 0.09224018454551697
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040987078100442886,
+          "max_error": 0.08253505825996399
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04721273109316826,
+          "max_error": 0.11917624622583389
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06966940313577652,
+          "max_error": 0.18272118270397186
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.014718636870384216,
+          "max_error": 0.03569841384887695
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.015758922323584557,
+          "max_error": 0.03752398490905762
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.00574192451313138,
+          "max_error": 0.008508086204528809
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0037652102764695883,
+          "max_error": 0.006032776087522507
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010729466564953327,
+          "max_error": 0.016251742839813232
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0025018174201250076,
+          "max_error": 0.004353257827460766
+        }
+      },
+      "1": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.0408613346517086,
+          "max_error": 0.0967840626835823
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040894001722335815,
+          "max_error": 0.08136728405952454
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04868258163332939,
+          "max_error": 0.12254726886749268
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07400619238615036,
+          "max_error": 0.22658874094486237
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.013334796763956547,
+          "max_error": 0.03215932846069336
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.013577669858932495,
+          "max_error": 0.03659200668334961
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010681604966521263,
+          "max_error": 0.017980873584747314
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0026981434784829617,
+          "max_error": 0.0054358248598873615
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.014261169359087944,
+          "max_error": 0.020799219608306885
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0024376949295401573,
+          "max_error": 0.00483700493350625
+        }
+      },
+      "2": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.040912918746471405,
+          "max_error": 0.09570429474115372
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04305616393685341,
+          "max_error": 0.09612709283828735
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04580135643482208,
+          "max_error": 0.10676309466362
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.0700988620519638,
+          "max_error": 0.19268818199634552
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016869794577360153,
+          "max_error": 0.03424191474914551
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01694132387638092,
+          "max_error": 0.03364133834838867
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007362941280007362,
+          "max_error": 0.011873185634613037
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004070436116307974,
+          "max_error": 0.0060496143996715546
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.013754073530435562,
+          "max_error": 0.0189591646194458
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.002365671331062913,
+          "max_error": 0.0038753924891352654
+        }
+      },
+      "3": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.039593566209077835,
+          "max_error": 0.08409249782562256
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.041563212871551514,
+          "max_error": 0.08982643485069275
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04616493359208107,
+          "max_error": 0.11103280633687973
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07048773765563965,
+          "max_error": 0.18667501211166382
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016585949808359146,
+          "max_error": 0.03447079658508301
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.015770958736538887,
+          "max_error": 0.035019874572753906
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.023296965286135674,
+          "max_error": 0.02841508388519287
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0038078005891293287,
+          "max_error": 0.0074504707008600235
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.01266453880816698,
+          "max_error": 0.019955337047576904
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005377078428864479,
+          "max_error": 0.007011422421783209
+        }
+      },
+      "4": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.040280599147081375,
+          "max_error": 0.08756846934556961
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04090593755245209,
+          "max_error": 0.08922306448221207
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04716060683131218,
+          "max_error": 0.12420056015253067
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07007036358118057,
+          "max_error": 0.19866934418678284
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01713818497955799,
+          "max_error": 0.03535628318786621
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01721947453916073,
+          "max_error": 0.03411054611206055
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0097171226516366,
+          "max_error": 0.01273488998413086
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0030947260092943907,
+          "max_error": 0.0043918900191783905
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.01683114655315876,
+          "max_error": 0.028101086616516113
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004723736550658941,
+          "max_error": 0.006416535936295986
+        }
+      },
+      "5": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04213805869221687,
+          "max_error": 0.10749168694019318
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.038081247359514236,
+          "max_error": 0.07341674715280533
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04766758531332016,
+          "max_error": 0.10882740467786789
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.0697065070271492,
+          "max_error": 0.186039000749588
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01616196148097515,
+          "max_error": 0.035192251205444336
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016320297494530678,
+          "max_error": 0.036045074462890625
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.012421256862580776,
+          "max_error": 0.015668630599975586
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003856796771287918,
+          "max_error": 0.005874257534742355
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.011924909427762032,
+          "max_error": 0.022128641605377197
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0031100688502192497,
+          "max_error": 0.004896377678960562
+        }
+      },
+      "6": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.03961651399731636,
+          "max_error": 0.08573389798402786
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.042593102902173996,
+          "max_error": 0.09094515442848206
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.047630175948143005,
+          "max_error": 0.11165803670883179
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06799744069576263,
+          "max_error": 0.17780260741710663
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.019070178270339966,
+          "max_error": 0.03782367706298828
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017923744395375252,
+          "max_error": 0.03695106506347656
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010018553584814072,
+          "max_error": 0.01653844118118286
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005573241040110588,
+          "max_error": 0.008798151277005672
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.006008316297084093,
+          "max_error": 0.009445786476135254
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0030853759963065386,
+          "max_error": 0.004460871685296297
+        }
+      },
+      "8": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.041218917816877365,
+          "max_error": 0.10010554641485214
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04156053438782692,
+          "max_error": 0.09053819626569748
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.03879721090197563,
+          "max_error": 0.08892691880464554
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05737900361418724,
+          "max_error": 0.15819792449474335
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01935100182890892,
+          "max_error": 0.041687965393066406
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01856142282485962,
+          "max_error": 0.040752410888671875
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.015181541442871094,
+          "max_error": 0.019702672958374023
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005060890689492226,
+          "max_error": 0.007430826313793659
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.015588348731398582,
+          "max_error": 0.023095548152923584
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003505034139379859,
+          "max_error": 0.005074537359178066
+        }
+      },
+      "9": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04024166613817215,
+          "max_error": 0.08825992047786713
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04196939989924431,
+          "max_error": 0.09764740616083145
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.0446358360350132,
+          "max_error": 0.091913141310215
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.059383030980825424,
+          "max_error": 0.1514253318309784
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01961054652929306,
+          "max_error": 0.04352402687072754
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.020787786692380905,
+          "max_error": 0.03991127014160156
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004220143426209688,
+          "max_error": 0.00915449857711792
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0035761594772338867,
+          "max_error": 0.005913269240409136
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007559080608189106,
+          "max_error": 0.013105332851409912
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007807189133018255,
+          "max_error": 0.012395053170621395
+        }
+      },
+      "10": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04064355045557022,
+          "max_error": 0.08626009523868561
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04009653255343437,
+          "max_error": 0.08472733199596405
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04823460802435875,
+          "max_error": 0.11285577714443207
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05784769356250763,
+          "max_error": 0.15657971799373627
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.020416734740138054,
+          "max_error": 0.0467677116394043
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.020916465669870377,
+          "max_error": 0.0556950569152832
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.01354257669299841,
+          "max_error": 0.019726336002349854
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0020158851984888315,
+          "max_error": 0.00468233460560441
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.009216723963618279,
+          "max_error": 0.020004212856292725
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003092702478170395,
+          "max_error": 0.005575339309871197
+        }
+      },
+      "11": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04109525680541992,
+          "max_error": 0.10048342496156693
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04283749684691429,
+          "max_error": 0.08984038978815079
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.03942771628499031,
+          "max_error": 0.10475239902734756
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.056131768971681595,
+          "max_error": 0.1569850742816925
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.02197178639471531,
+          "max_error": 0.04649066925048828
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01999243162572384,
+          "max_error": 0.04114556312561035
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.014012312516570091,
+          "max_error": 0.020511925220489502
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007111960556358099,
+          "max_error": 0.013199783861637115
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.01128381583839655,
+          "max_error": 0.018673241138458252
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005381321534514427,
+          "max_error": 0.007616960443556309
+        }
+      }
+    },
+    "original_mlp_22": {
+      "0": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05525663495063782,
+          "max_error": 0.16620950400829315
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.07718005776405334,
+          "max_error": 0.2377185970544815
+        }
+      },
+      "1": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.051794204860925674,
+          "max_error": 0.1717238873243332
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.0779646560549736,
+          "max_error": 0.27043259143829346
+        }
+      },
+      "2": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05346575379371643,
+          "max_error": 0.16298921406269073
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08830241113901138,
+          "max_error": 0.30031055212020874
+        }
+      },
+      "3": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.054661452770233154,
+          "max_error": 0.15845151245594025
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08891259878873825,
+          "max_error": 0.3251667022705078
+        }
+      },
+      "4": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05607438087463379,
+          "max_error": 0.17543497681617737
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.09209879487752914,
+          "max_error": 0.37877216935157776
+        }
+      },
+      "5": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05642024427652359,
+          "max_error": 0.18649080395698547
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.09266968071460724,
+          "max_error": 0.36755555868148804
+        }
+      },
+      "6": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05672163516283035,
+          "max_error": 0.18012404441833496
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.09113503247499466,
+          "max_error": 0.38431254029273987
+        }
+      },
+      "8": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.04625414311885834,
+          "max_error": 0.1526995599269867
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06609908491373062,
+          "max_error": 0.327994704246521
+        }
+      },
+      "9": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.04852947220206261,
+          "max_error": 0.14656157791614532
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06764336675405502,
+          "max_error": 0.2806307077407837
+        }
+      },
+      "10": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.04998672381043434,
+          "max_error": 0.19261164963245392
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06658343225717545,
+          "max_error": 0.30529242753982544
+        }
+      },
+      "11": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.04582449048757553,
+          "max_error": 0.1366596221923828
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06517049670219421,
+          "max_error": 0.2600833773612976
+        }
+      }
+    },
+    "original_ks2_22": {
+      "0": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.041367512196302414,
+          "max_error": 0.09283888339996338
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040925901383161545,
+          "max_error": 0.09617353230714798
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.044086359441280365,
+          "max_error": 0.09969326853752136
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06624685972929001,
+          "max_error": 0.16673944890499115
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017899731174111366,
+          "max_error": 0.03557991981506348
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01729809120297432,
+          "max_error": 0.03638458251953125
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.008047785609960556,
+          "max_error": 0.013554871082305908
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004706437699496746,
+          "max_error": 0.006645663175731897
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010325592942535877,
+          "max_error": 0.015400826930999756
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0037099604960530996,
+          "max_error": 0.006238552741706371
+        }
+      },
+      "1": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.042744230479002,
+          "max_error": 0.11141745746135712
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040482182055711746,
+          "max_error": 0.08164658397436142
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04560859873890877,
+          "max_error": 0.10465899109840393
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06950651854276657,
+          "max_error": 0.18199917674064636
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017058352008461952,
+          "max_error": 0.0345458984375
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017011672258377075,
+          "max_error": 0.03518557548522949
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.015475254505872726,
+          "max_error": 0.02353280782699585
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003926632925868034,
+          "max_error": 0.007314864546060562
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.023224182426929474,
+          "max_error": 0.03455305099487305
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0030220146290957928,
+          "max_error": 0.005107627250254154
+        }
+      },
+      "2": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.042647067457437515,
+          "max_error": 0.10606592893600464
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.042190082371234894,
+          "max_error": 0.09002415090799332
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.045563239604234695,
+          "max_error": 0.10109005123376846
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07311704754829407,
+          "max_error": 0.19388453662395477
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.015919627621769905,
+          "max_error": 0.03373575210571289
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.015475115738809109,
+          "max_error": 0.03630495071411133
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.015464029274880886,
+          "max_error": 0.01960843801498413
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003983457572758198,
+          "max_error": 0.006789119448512793
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.023671157658100128,
+          "max_error": 0.034767210483551025
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0022040721960365772,
+          "max_error": 0.004281235858798027
+        }
+      },
+      "3": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04007081314921379,
+          "max_error": 0.08820794522762299
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.042166367173194885,
+          "max_error": 0.1069326251745224
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04639826714992523,
+          "max_error": 0.1137377992272377
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07203823328018188,
+          "max_error": 0.17665338516235352
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01785661280155182,
+          "max_error": 0.034893035888671875
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017792953178286552,
+          "max_error": 0.03520512580871582
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0065659224055707455,
+          "max_error": 0.013910531997680664
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005402935203164816,
+          "max_error": 0.008517097681760788
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005808370187878609,
+          "max_error": 0.008173704147338867
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003714250633493066,
+          "max_error": 0.006655053701251745
+        }
+      },
+      "4": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.041335899382829666,
+          "max_error": 0.08970419317483902
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.042410917580127716,
+          "max_error": 0.09500031173229218
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04758378490805626,
+          "max_error": 0.11541728675365448
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.0723201334476471,
+          "max_error": 0.18300321698188782
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01589750312268734,
+          "max_error": 0.033640146255493164
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016783125698566437,
+          "max_error": 0.034995079040527344
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010984472930431366,
+          "max_error": 0.015866518020629883
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004431178327649832,
+          "max_error": 0.007504644803702831
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.019294805824756622,
+          "max_error": 0.028340041637420654
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003732261946424842,
+          "max_error": 0.006412934977561235
+        }
+      },
+      "5": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04061697795987129,
+          "max_error": 0.08891091495752335
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04248843714594841,
+          "max_error": 0.1078513115644455
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04721638560295105,
+          "max_error": 0.11418996006250381
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06920386105775833,
+          "max_error": 0.17889404296875
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016876986250281334,
+          "max_error": 0.03767538070678711
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016864188015460968,
+          "max_error": 0.036672115325927734
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004125616978853941,
+          "max_error": 0.0076978206634521484
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004274671897292137,
+          "max_error": 0.0059937345795333385
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010779574513435364,
+          "max_error": 0.021531105041503906
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003025498241186142,
+          "max_error": 0.005097275134176016
+        }
+      },
+      "6": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.040232110768556595,
+          "max_error": 0.08864697068929672
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04173263534903526,
+          "max_error": 0.09820426255464554
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04744432494044304,
+          "max_error": 0.11791147291660309
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06927011162042618,
+          "max_error": 0.1846025586128235
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01738518476486206,
+          "max_error": 0.036416053771972656
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01622423529624939,
+          "max_error": 0.03161334991455078
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0074088079854846,
+          "max_error": 0.014509379863739014
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003358233254402876,
+          "max_error": 0.005896387621760368
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.01811821758747101,
+          "max_error": 0.023657023906707764
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.00413299398496747,
+          "max_error": 0.005748840980231762
+        }
+      },
+      "8": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.039957500994205475,
+          "max_error": 0.08844174444675446
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.039880696684122086,
+          "max_error": 0.08342165499925613
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.039454974234104156,
+          "max_error": 0.08749617636203766
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05434095114469528,
+          "max_error": 0.13796614110469818
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.020877698436379433,
+          "max_error": 0.04250073432922363
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.020390795543789864,
+          "max_error": 0.04019021987915039
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.006526229903101921,
+          "max_error": 0.010111987590789795
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003854643553495407,
+          "max_error": 0.0058960700407624245
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010456220246851444,
+          "max_error": 0.018440067768096924
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004325066693127155,
+          "max_error": 0.007131469901651144
+        }
+      },
+      "9": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.0411810465157032,
+          "max_error": 0.11928927153348923
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04112521559000015,
+          "max_error": 0.09005597978830338
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04353861138224602,
+          "max_error": 0.13711927831172943
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05477048456668854,
+          "max_error": 0.14887820184230804
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01846260577440262,
+          "max_error": 0.03782963752746582
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01935184933245182,
+          "max_error": 0.04076981544494629
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.00776247400790453,
+          "max_error": 0.012336909770965576
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0018962329486384988,
+          "max_error": 0.0028054816648364067
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.019311359152197838,
+          "max_error": 0.02398836612701416
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0022328910417854786,
+          "max_error": 0.003916000481694937
+        }
+      },
+      "10": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.041686050593853,
+          "max_error": 0.1020556390285492
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04177810996770859,
+          "max_error": 0.08823002129793167
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04821178317070007,
+          "max_error": 0.13104990124702454
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05540473386645317,
+          "max_error": 0.16321364045143127
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.019675765186548233,
+          "max_error": 0.042711734771728516
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.0185011588037014,
+          "max_error": 0.04313921928405762
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005800655111670494,
+          "max_error": 0.011095762252807617
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0026876728516072035,
+          "max_error": 0.005134258419275284
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.014208328910171986,
+          "max_error": 0.025755763053894043
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0052403854206204414,
+          "max_error": 0.009106120094656944
+        }
+      },
+      "11": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04170941188931465,
+          "max_error": 0.08289989084005356
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040519844740629196,
+          "max_error": 0.08560512214899063
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.0410800464451313,
+          "max_error": 0.09210127592086792
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05377429351210594,
+          "max_error": 0.1433441936969757
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.018855297937989235,
+          "max_error": 0.03644442558288574
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01731540448963642,
+          "max_error": 0.03493475914001465
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.011084552854299545,
+          "max_error": 0.01858210563659668
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004823609255254269,
+          "max_error": 0.00649644248187542
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005659087561070919,
+          "max_error": 0.009766995906829834
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.001978861400857568,
+          "max_error": 0.0032878918573260307
+        }
+      }
+    },
+    "original_mlp_33": {
+      "0": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05637336149811745,
+          "max_error": 0.19013115763664246
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08145004510879517,
+          "max_error": 0.2965717613697052
+        }
+      },
+      "1": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05251820385456085,
+          "max_error": 0.16894394159317017
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.07987374067306519,
+          "max_error": 0.3074847161769867
+        }
+      },
+      "2": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.053439851850271225,
+          "max_error": 0.17449894547462463
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08491936326026917,
+          "max_error": 0.29810038208961487
+        }
+      },
+      "3": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05411816015839577,
+          "max_error": 0.15469378232955933
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08472882956266403,
+          "max_error": 0.32397061586380005
+        }
+      },
+      "4": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.055158816277980804,
+          "max_error": 0.17330986261367798
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.0878390446305275,
+          "max_error": 0.3812313377857208
+        }
+      },
+      "5": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.055473677814006805,
+          "max_error": 0.16130603849887848
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.0879921168088913,
+          "max_error": 0.3222871720790863
+        }
+      },
+      "6": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.05455667898058891,
+          "max_error": 0.16539940237998962
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.08733974397182465,
+          "max_error": 0.3203158676624298
+        }
+      },
+      "8": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.04777408391237259,
+          "max_error": 0.15922629833221436
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.068529412150383,
+          "max_error": 0.26734551787376404
+        }
+      },
+      "9": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.0497896708548069,
+          "max_error": 0.16152437031269073
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06957311183214188,
+          "max_error": 0.33607181906700134
+        }
+      },
+      "10": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.049416590481996536,
+          "max_error": 0.17175912857055664
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06448595225811005,
+          "max_error": 0.29765084385871887
+        }
+      },
+      "11": {
+        "down.weight": {
+          "weights": 33792,
+          "packed_bytes": 19008,
+          "padded_values": 90112,
+          "rms_error": 0.04674955829977989,
+          "max_error": 0.14584030210971832
+        },
+        "up.weight": {
+          "weights": 33792,
+          "packed_bytes": 10368,
+          "padded_values": 49152,
+          "rms_error": 0.06838662177324295,
+          "max_error": 0.2861977517604828
+        }
+      }
+    },
+    "original_ks2_33": {
+      "0": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.0415806844830513,
+          "max_error": 0.09770779311656952
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.042341891676187515,
+          "max_error": 0.08875136822462082
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04725329577922821,
+          "max_error": 0.10930100083351135
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07647483050823212,
+          "max_error": 0.19888870418071747
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.014562311582267284,
+          "max_error": 0.030303239822387695
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.015265286900103092,
+          "max_error": 0.03311491012573242
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.015477155335247517,
+          "max_error": 0.02044963836669922
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003064284333959222,
+          "max_error": 0.004757619928568602
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010041451081633568,
+          "max_error": 0.015718042850494385
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.002848845673725009,
+          "max_error": 0.005476047284901142
+        }
+      },
+      "1": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.041021380573511124,
+          "max_error": 0.08671934902667999
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040528442710638046,
+          "max_error": 0.10338658839464188
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04940103739500046,
+          "max_error": 0.11961785703897476
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.08002156019210815,
+          "max_error": 0.20147821307182312
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.014324924908578396,
+          "max_error": 0.03114795684814453
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.014636490494012833,
+          "max_error": 0.03093242645263672
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.002980584977194667,
+          "max_error": 0.006263792514801025
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.002723251935094595,
+          "max_error": 0.005225880537182093
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.013060415163636208,
+          "max_error": 0.0213547945022583
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003985539544373751,
+          "max_error": 0.005695734638720751
+        }
+      },
+      "2": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04024810343980789,
+          "max_error": 0.091886006295681
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040019143372774124,
+          "max_error": 0.08575932681560516
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.051917701959609985,
+          "max_error": 0.12430252134799957
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.0791582241654396,
+          "max_error": 0.21256643533706665
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01502873096615076,
+          "max_error": 0.033476829528808594
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01404558401554823,
+          "max_error": 0.030973196029663086
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.009296316653490067,
+          "max_error": 0.01563352346420288
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0030666878446936607,
+          "max_error": 0.004608601797372103
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.014269604347646236,
+          "max_error": 0.021226882934570312
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0037546074017882347,
+          "max_error": 0.006004106253385544
+        }
+      },
+      "3": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04011670500040054,
+          "max_error": 0.09061398357152939
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.03826317563652992,
+          "max_error": 0.07784275710582733
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04983127489686012,
+          "max_error": 0.12502992153167725
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07748066633939743,
+          "max_error": 0.22836606204509735
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016672492027282715,
+          "max_error": 0.03586530685424805
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.014636802487075329,
+          "max_error": 0.03669881820678711
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007164252921938896,
+          "max_error": 0.010988831520080566
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0054469420574605465,
+          "max_error": 0.008220702409744263
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.01474008895456791,
+          "max_error": 0.026383519172668457
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0024957649875432253,
+          "max_error": 0.003688371041789651
+        }
+      },
+      "4": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.041916050016880035,
+          "max_error": 0.09845893830060959
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.043638426810503006,
+          "max_error": 0.09740830957889557
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.05050262063741684,
+          "max_error": 0.12371831387281418
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07756660133600235,
+          "max_error": 0.2227449268102646
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01735711470246315,
+          "max_error": 0.03853344917297363
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.0182878989726305,
+          "max_error": 0.03675365447998047
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005951735191047192,
+          "max_error": 0.008096873760223389
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0043986146338284016,
+          "max_error": 0.007550317328423262
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.01601221039891243,
+          "max_error": 0.026243627071380615
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0031301970593631268,
+          "max_error": 0.0049546873196959496
+        }
+      },
+      "5": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04198724403977394,
+          "max_error": 0.08965031057596207
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04138117656111717,
+          "max_error": 0.09055598080158234
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.05106855928897858,
+          "max_error": 0.11842332035303116
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07401904463768005,
+          "max_error": 0.19878028333187103
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016898533329367638,
+          "max_error": 0.03572416305541992
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017810199409723282,
+          "max_error": 0.036063432693481445
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.017791399732232094,
+          "max_error": 0.025573670864105225
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005900166928768158,
+          "max_error": 0.009160468354821205
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.017897693440318108,
+          "max_error": 0.02427661418914795
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004833385348320007,
+          "max_error": 0.007360972464084625
+        }
+      },
+      "6": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.040891364216804504,
+          "max_error": 0.09758558869361877
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04057089611887932,
+          "max_error": 0.08139050751924515
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.0501173660159111,
+          "max_error": 0.12407298386096954
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07634405046701431,
+          "max_error": 0.20742763578891754
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017290029674768448,
+          "max_error": 0.03591609001159668
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017964879050850868,
+          "max_error": 0.037935495376586914
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007805284578353167,
+          "max_error": 0.011164963245391846
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004930128809064627,
+          "max_error": 0.008203363046050072
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.01588135026395321,
+          "max_error": 0.021010637283325195
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003775570308789611,
+          "max_error": 0.0062082670629024506
+        }
+      },
+      "8": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04048021510243416,
+          "max_error": 0.09363219887018204
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040531907230615616,
+          "max_error": 0.08716373890638351
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04064026474952698,
+          "max_error": 0.10315655916929245
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.057368215173482895,
+          "max_error": 0.16154564917087555
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017451807856559753,
+          "max_error": 0.036925554275512695
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.015626413747668266,
+          "max_error": 0.03427600860595703
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004733876790851355,
+          "max_error": 0.007930636405944824
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0024613626301288605,
+          "max_error": 0.0049911425448954105
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.015324688516557217,
+          "max_error": 0.02450507879257202
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0030356147326529026,
+          "max_error": 0.005554588045924902
+        }
+      },
+      "9": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04012710228562355,
+          "max_error": 0.0953560397028923
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04091954603791237,
+          "max_error": 0.08839620649814606
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04701458662748337,
+          "max_error": 0.1287502944469452
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.058872539550065994,
+          "max_error": 0.1498996764421463
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.0170143973082304,
+          "max_error": 0.03638935089111328
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017808064818382263,
+          "max_error": 0.03805994987487793
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.006657416466623545,
+          "max_error": 0.01023244857788086
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0029336626175791025,
+          "max_error": 0.005942958407104015
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.019301462918519974,
+          "max_error": 0.027987778186798096
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0035310278180986643,
+          "max_error": 0.006043063476681709
+        }
+      },
+      "10": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04141705110669136,
+          "max_error": 0.08952606469392776
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04217248782515526,
+          "max_error": 0.09758294373750687
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04940035939216614,
+          "max_error": 0.12679091095924377
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05658344924449921,
+          "max_error": 0.1483651101589203
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01874607801437378,
+          "max_error": 0.03743863105773926
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016463490203022957,
+          "max_error": 0.03402900695800781
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007031530141830444,
+          "max_error": 0.009850621223449707
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0033569401130080223,
+          "max_error": 0.005051250569522381
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.016419468447566032,
+          "max_error": 0.022095441818237305
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.00558384507894516,
+          "max_error": 0.009184421971440315
+        }
+      },
+      "11": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.040856219828128815,
+          "max_error": 0.09679108113050461
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.03824625164270401,
+          "max_error": 0.07933329790830612
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.042323023080825806,
+          "max_error": 0.09978461265563965
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.0569603331387043,
+          "max_error": 0.18302924931049347
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01765061728656292,
+          "max_error": 0.03359508514404297
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016539571806788445,
+          "max_error": 0.03327298164367676
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007364737335592508,
+          "max_error": 0.011669933795928955
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0032858976628631353,
+          "max_error": 0.005010094493627548
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.013851076364517212,
+          "max_error": 0.020934879779815674
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003144744783639908,
+          "max_error": 0.004950615111738443
+        }
+      }
+    },
+    "fused_training_ks2_11": {
+      "0": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04054770618677139,
+          "max_error": 0.09226708114147186
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04099907726049423,
+          "max_error": 0.0826236754655838
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04721226543188095,
+          "max_error": 0.1137024313211441
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06893059611320496,
+          "max_error": 0.17638610303401947
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.014683065935969353,
+          "max_error": 0.03553462028503418
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01572214439511299,
+          "max_error": 0.03685593605041504
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005683508701622486,
+          "max_error": 0.008427083492279053
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.00379164214245975,
+          "max_error": 0.006180612836033106
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010785743594169617,
+          "max_error": 0.016515254974365234
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0026437051128596067,
+          "max_error": 0.004669572692364454
+        }
+      },
+      "1": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.040818121284246445,
+          "max_error": 0.0970725268125534
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04090159013867378,
+          "max_error": 0.08127281069755554
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04883107542991638,
+          "max_error": 0.1244087964296341
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07305465638637543,
+          "max_error": 0.19492869079113007
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.013832410797476768,
+          "max_error": 0.032293081283569336
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.014058798551559448,
+          "max_error": 0.0368962287902832
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.010733474977314472,
+          "max_error": 0.018054485321044922
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0026060608215630054,
+          "max_error": 0.005535849370062351
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.014171039685606956,
+          "max_error": 0.020445168018341064
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0025676616933196783,
+          "max_error": 0.0046140761114656925
+        }
+      },
+      "2": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04091881960630417,
+          "max_error": 0.09582079946994781
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04302523657679558,
+          "max_error": 0.09623520821332932
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04608491063117981,
+          "max_error": 0.10568805038928986
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06978892534971237,
+          "max_error": 0.1944139003753662
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016896240413188934,
+          "max_error": 0.0336611270904541
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01651756651699543,
+          "max_error": 0.03331804275512695
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007414155174046755,
+          "max_error": 0.012190043926239014
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003930471371859312,
+          "max_error": 0.0060071139596402645
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.013720383867621422,
+          "max_error": 0.01890420913696289
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0024751985911279917,
+          "max_error": 0.003994587808847427
+        }
+      },
+      "3": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.03958120197057724,
+          "max_error": 0.08438494801521301
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.041532889008522034,
+          "max_error": 0.08969660103321075
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04625648632645607,
+          "max_error": 0.1079140305519104
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07036906480789185,
+          "max_error": 0.1967722773551941
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016594642773270607,
+          "max_error": 0.03495621681213379
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.014163120649755001,
+          "max_error": 0.031018733978271484
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.023724643513560295,
+          "max_error": 0.02916240692138672
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003873639041557908,
+          "max_error": 0.007384191267192364
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.011695807799696922,
+          "max_error": 0.018922746181488037
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005202434957027435,
+          "max_error": 0.006708811968564987
+        }
+      },
+      "4": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04025060683488846,
+          "max_error": 0.0873575210571289
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.040857017040252686,
+          "max_error": 0.08909203112125397
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.046910952776670456,
+          "max_error": 0.12392285466194153
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.07003051042556763,
+          "max_error": 0.18442367017269135
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017139721661806107,
+          "max_error": 0.03501462936401367
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.01647168956696987,
+          "max_error": 0.03262615203857422
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.009376072324812412,
+          "max_error": 0.012231588363647461
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0032301524188369513,
+          "max_error": 0.004543428309261799
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.016478123143315315,
+          "max_error": 0.027599692344665527
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004243094474077225,
+          "max_error": 0.005858191289007664
+        }
+      },
+      "5": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04210332781076431,
+          "max_error": 0.10725750029087067
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.038023386150598526,
+          "max_error": 0.07332012802362442
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.047303456813097,
+          "max_error": 0.10991379618644714
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06951845437288284,
+          "max_error": 0.1752929538488388
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016168344765901566,
+          "max_error": 0.03529644012451172
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.016310667619109154,
+          "max_error": 0.035541534423828125
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.011981773190200329,
+          "max_error": 0.015375494956970215
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0036913687363266945,
+          "max_error": 0.005648388061672449
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.011971469037234783,
+          "max_error": 0.02221381664276123
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.002938750898465514,
+          "max_error": 0.004479347728192806
+        }
+      },
+      "6": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.03957539424300194,
+          "max_error": 0.08565767109394073
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04261227697134018,
+          "max_error": 0.09056250751018524
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04759548231959343,
+          "max_error": 0.11441345512866974
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.06844817101955414,
+          "max_error": 0.18032214045524597
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.018680328503251076,
+          "max_error": 0.03777813911437988
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017074566334486008,
+          "max_error": 0.03672480583190918
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.00992264598608017,
+          "max_error": 0.016067922115325928
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005595707334578037,
+          "max_error": 0.008715388365089893
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.005957136861979961,
+          "max_error": 0.009401082992553711
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0031449480447918177,
+          "max_error": 0.00466556753963232
+        }
+      },
+      "8": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04123207926750183,
+          "max_error": 0.10066395252943039
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.041575390845537186,
+          "max_error": 0.0907452180981636
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.038937535136938095,
+          "max_error": 0.08780863881111145
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.056515518575906754,
+          "max_error": 0.15022562444210052
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.019341453909873962,
+          "max_error": 0.04202008247375488
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.017688121646642685,
+          "max_error": 0.04069972038269043
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.014715101569890976,
+          "max_error": 0.018889784812927246
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004945992026478052,
+          "max_error": 0.00712110660970211
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0160470400005579,
+          "max_error": 0.023585915565490723
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.003437967738136649,
+          "max_error": 0.005202188156545162
+        }
+      },
+      "9": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04023328050971031,
+          "max_error": 0.08814748376607895
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04194504767656326,
+          "max_error": 0.09858069568872452
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04454465210437775,
+          "max_error": 0.09576693922281265
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05931878462433815,
+          "max_error": 0.15471003949642181
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.019619440659880638,
+          "max_error": 0.04309582710266113
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.020787062123417854,
+          "max_error": 0.040010690689086914
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.004392398055642843,
+          "max_error": 0.009174108505249023
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0035907465498894453,
+          "max_error": 0.005762991961091757
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0076071410439908504,
+          "max_error": 0.013631880283355713
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007849903777241707,
+          "max_error": 0.01190442405641079
+        }
+      },
+      "10": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.040639478713274,
+          "max_error": 0.08617299050092697
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04008840397000313,
+          "max_error": 0.08525290340185165
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.04809749871492386,
+          "max_error": 0.116576187312603
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.057910699397325516,
+          "max_error": 0.14901100099086761
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.021275078877806664,
+          "max_error": 0.04734683036804199
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.020918898284435272,
+          "max_error": 0.057289838790893555
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.013394223526120186,
+          "max_error": 0.019300103187561035
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0017512572230771184,
+          "max_error": 0.004402163904160261
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.009561053477227688,
+          "max_error": 0.02112448215484619
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.0029464184772223234,
+          "max_error": 0.005456624552607536
+        }
+      },
+      "11": {
+        "geo_t": {
+          "weights": 3024,
+          "packed_bytes": 756,
+          "padded_values": 3584,
+          "rms_error": 0.04109750688076019,
+          "max_error": 0.10006791353225708
+        },
+        "geo_x": {
+          "weights": 1792,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.04278263449668884,
+          "max_error": 0.09074148535728455
+        },
+        "down": {
+          "weights": 5376,
+          "packed_bytes": 3024,
+          "padded_values": 14336,
+          "rms_error": 0.03943049535155296,
+          "max_error": 0.10572561621665955
+        },
+        "up": {
+          "weights": 5376,
+          "packed_bytes": 5184,
+          "padded_values": 24576,
+          "rms_error": 0.05615459382534027,
+          "max_error": 0.1469770222902298
+        },
+        "geo_den_delta": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.021950678899884224,
+          "max_error": 0.046716928482055664
+        },
+        "geo_den_weight": {
+          "weights": 448,
+          "packed_bytes": 378,
+          "padded_values": 1792,
+          "rms_error": 0.019994040951132774,
+          "max_error": 0.040836334228515625
+        },
+        "geo_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.014388126321136951,
+          "max_error": 0.021053850650787354
+        },
+        "geo_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.007223223336040974,
+          "max_error": 0.013685544952750206
+        },
+        "geo_edge_raw_scale": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.011632726527750492,
+          "max_error": 0.018925607204437256
+        },
+        "geo_edge_raw_shift": {
+          "weights": 7,
+          "packed_bytes": 54,
+          "padded_values": 256,
+          "rms_error": 0.00547547172755003,
+          "max_error": 0.0076151820831000805
+        }
+      }
+    }
+  }
+}

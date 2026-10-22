@@ -1,0 +1,404 @@
+[
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "longitudinal",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.027243420481681824,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "coordinate",
+    "groups": {
+      "coordinate": {
+        "relative_rmse": 0.026611775159835815,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "damping",
+    "groups": {
+      "damping": {
+        "relative_rmse": 0.030516179278492928,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "warp",
+    "groups": {
+      "warp": {
+        "relative_rmse": 0.026777509599924088,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "fp8",
+    "target": "all",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.027243420481681824,
+        "new_zero_fraction": 0.0
+      },
+      "coordinate": {
+        "relative_rmse": 0.026611775159835815,
+        "new_zero_fraction": 0.0
+      },
+      "damping": {
+        "relative_rmse": 0.030516179278492928,
+        "new_zero_fraction": 0.0
+      },
+      "warp": {
+        "relative_rmse": 0.026777509599924088,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "longitudinal",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.026221485808491707,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "coordinate",
+    "groups": {
+      "coordinate": {
+        "relative_rmse": 0.02624610997736454,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "damping",
+    "groups": {
+      "damping": {
+        "relative_rmse": 0.030188221484422684,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "warp",
+    "groups": {
+      "warp": {
+        "relative_rmse": 0.031432539224624634,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "fp8",
+    "target": "all",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.026221485808491707,
+        "new_zero_fraction": 0.0
+      },
+      "coordinate": {
+        "relative_rmse": 0.02624610997736454,
+        "new_zero_fraction": 0.0
+      },
+      "damping": {
+        "relative_rmse": 0.030188221484422684,
+        "new_zero_fraction": 0.0
+      },
+      "warp": {
+        "relative_rmse": 0.031432539224624634,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "longitudinal",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.026161732152104378,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "coordinate",
+    "groups": {
+      "coordinate": {
+        "relative_rmse": 0.026969799771904945,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "damping",
+    "groups": {
+      "damping": {
+        "relative_rmse": 0.030922966077923775,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "warp",
+    "groups": {
+      "warp": {
+        "relative_rmse": 0.031061485409736633,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "fp8",
+    "target": "all",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.026161732152104378,
+        "new_zero_fraction": 0.0
+      },
+      "coordinate": {
+        "relative_rmse": 0.026969799771904945,
+        "new_zero_fraction": 0.0
+      },
+      "damping": {
+        "relative_rmse": 0.030922966077923775,
+        "new_zero_fraction": 0.0
+      },
+      "warp": {
+        "relative_rmse": 0.031061485409736633,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "longitudinal",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.008302368223667145,
+        "new_zero_fraction": 0.015480323694646358
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "coordinate",
+    "groups": {
+      "coordinate": {
+        "relative_rmse": 0.011773254722356796,
+        "new_zero_fraction": 0.022705078125
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "damping",
+    "groups": {
+      "damping": {
+        "relative_rmse": 0.002366820117458701,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "warp",
+    "groups": {
+      "warp": {
+        "relative_rmse": 0.0027571781538426876,
+        "new_zero_fraction": 0.1484375
+      }
+    }
+  },
+  {
+    "seed": 11,
+    "mode": "int8",
+    "target": "all",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.008302368223667145,
+        "new_zero_fraction": 0.015480323694646358
+      },
+      "coordinate": {
+        "relative_rmse": 0.011773254722356796,
+        "new_zero_fraction": 0.022705078125
+      },
+      "damping": {
+        "relative_rmse": 0.002366820117458701,
+        "new_zero_fraction": 0.0
+      },
+      "warp": {
+        "relative_rmse": 0.0027571781538426876,
+        "new_zero_fraction": 0.1484375
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "longitudinal",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.008177687413990498,
+        "new_zero_fraction": 0.014684606343507767
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "coordinate",
+    "groups": {
+      "coordinate": {
+        "relative_rmse": 0.011053613387048244,
+        "new_zero_fraction": 0.022705078125
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "damping",
+    "groups": {
+      "damping": {
+        "relative_rmse": 0.0023488171864300966,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "warp",
+    "groups": {
+      "warp": {
+        "relative_rmse": 0.002664759522303939,
+        "new_zero_fraction": 0.1484375
+      }
+    }
+  },
+  {
+    "seed": 22,
+    "mode": "int8",
+    "target": "all",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.008177687413990498,
+        "new_zero_fraction": 0.014684606343507767
+      },
+      "coordinate": {
+        "relative_rmse": 0.011053613387048244,
+        "new_zero_fraction": 0.022705078125
+      },
+      "damping": {
+        "relative_rmse": 0.0023488171864300966,
+        "new_zero_fraction": 0.0
+      },
+      "warp": {
+        "relative_rmse": 0.002664759522303939,
+        "new_zero_fraction": 0.1484375
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "longitudinal",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.008219117298722267,
+        "new_zero_fraction": 0.015914352610707283
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "coordinate",
+    "groups": {
+      "coordinate": {
+        "relative_rmse": 0.011339198797941208,
+        "new_zero_fraction": 0.024169921875
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "damping",
+    "groups": {
+      "damping": {
+        "relative_rmse": 0.002393552102148533,
+        "new_zero_fraction": 0.0
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "warp",
+    "groups": {
+      "warp": {
+        "relative_rmse": 0.0031377922277897596,
+        "new_zero_fraction": 0.15625
+      }
+    }
+  },
+  {
+    "seed": 33,
+    "mode": "int8",
+    "target": "all",
+    "groups": {
+      "longitudinal": {
+        "relative_rmse": 0.008219117298722267,
+        "new_zero_fraction": 0.015914352610707283
+      },
+      "coordinate": {
+        "relative_rmse": 0.011339198797941208,
+        "new_zero_fraction": 0.024169921875
+      },
+      "damping": {
+        "relative_rmse": 0.002393552102148533,
+        "new_zero_fraction": 0.0
+      },
+      "warp": {
+        "relative_rmse": 0.0031377922277897596,
+        "new_zero_fraction": 0.15625
+      }
+    }
+  }
+]

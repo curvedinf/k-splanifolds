@@ -1,0 +1,20 @@
+{
+  "model": "rank8 / 32 charts, 112768 parameters",
+  "steps": 1000,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "lr": 0.0003,
+  "optimizer": "Adam, FP32 parameters/state, gradient clipping1",
+  "batch_size": 64,
+  "device": "CPU, FP16 geometry numerical experiment; not GPU performance",
+  "new_math": "longitudinal basis input = 4*tanh(chart_mean/4), computed in FP32 then cast to FP16",
+  "bound": 4,
+  "cubic_abs_bound": 64,
+  "damping": "previous bounded energy/distance predicates; denominator1..17",
+  "unchanged": "coordinates used by damping and coordinate warp, latent residual, projections, initialization, dataset and train/test protocol",
+  "stress_domain": "geometry coordinates in [-60000,60000]; random large-scale values clipped to this domain; 13 cases per seed",
+  "precision": "FP32 projections, optimizer and chart reductions/predicates; FP16 basis, polynomial contractions, geometric edges and accumulation"
+}

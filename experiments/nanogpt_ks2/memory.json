@@ -1,0 +1,317 @@
+{
+  "protocol": {
+    "checkpoint_seed": 11,
+    "precision": "FP32",
+    "threads": 8,
+    "batch": 1,
+    "warmup": 3,
+    "measured_forwards": 5,
+    "rss_full_forward_processes_per_model_length": 3,
+    "rss_excludes_profiler": true,
+    "peak_process_bytes": "max(lifetime_peak, after.VmHWM)",
+    "temporary_tensors": "peak cumulative allocation/free bytes during separately profiled forward",
+    "inputs": "synthetic token IDs; random isolated FFN inputs"
+  },
+  "records": [
+    {
+      "kind": "mlp",
+      "length": 128,
+      "scope": "body",
+      "baseline": {
+        "VmHWM": 393752576,
+        "VmRSS": 393752576
+      },
+      "after": {
+        "VmHWM": 398311424,
+        "VmRSS": 398311424
+      },
+      "lifetime_peak": 541233152,
+      "peak_tensor_activation_bytes": 3723520
+    },
+    {
+      "kind": "mlp",
+      "length": 128,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 413634560,
+        "VmRSS": 413634560
+      },
+      "after": {
+        "VmHWM": 494047232,
+        "VmRSS": 417452032
+      },
+      "lifetime_peak": 541175808,
+      "peak_tensor_activation_bytes": 51512332
+    },
+    {
+      "kind": "mlp",
+      "length": 512,
+      "scope": "body",
+      "baseline": {
+        "VmHWM": 395956224,
+        "VmRSS": 395956224
+      },
+      "after": {
+        "VmHWM": 446570496,
+        "VmRSS": 408064000
+      },
+      "lifetime_peak": 541306880,
+      "peak_tensor_activation_bytes": 45577216
+    },
+    {
+      "kind": "mlp",
+      "length": 512,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 417460224,
+        "VmRSS": 417460224
+      },
+      "after": {
+        "VmHWM": 672153600,
+        "VmRSS": 466751488
+      },
+      "lifetime_peak": 668033024,
+      "peak_tensor_activation_bytes": 206049292
+    },
+    {
+      "kind": "ks2",
+      "length": 128,
+      "scope": "body",
+      "baseline": {
+        "VmHWM": 393658368,
+        "VmRSS": 393658368
+      },
+      "after": {
+        "VmHWM": 398065664,
+        "VmRSS": 398065664
+      },
+      "lifetime_peak": 538554368,
+      "peak_tensor_activation_bytes": 3723520
+    },
+    {
+      "kind": "ks2",
+      "length": 128,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 413532160,
+        "VmRSS": 413532160
+      },
+      "after": {
+        "VmHWM": 467329024,
+        "VmRSS": 416587776
+      },
+      "lifetime_peak": 538554368,
+      "peak_tensor_activation_bytes": 51512332
+    },
+    {
+      "kind": "ks2",
+      "length": 512,
+      "scope": "body",
+      "baseline": {
+        "VmHWM": 395665408,
+        "VmRSS": 395665408
+      },
+      "after": {
+        "VmHWM": 447524864,
+        "VmRSS": 445128704
+      },
+      "lifetime_peak": 538546176,
+      "peak_tensor_activation_bytes": 45577216
+    },
+    {
+      "kind": "ks2",
+      "length": 512,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 417181696,
+        "VmRSS": 417181696
+      },
+      "after": {
+        "VmHWM": 635203584,
+        "VmRSS": 428630016
+      },
+      "lifetime_peak": 635289600,
+      "peak_tensor_activation_bytes": 206049292
+    },
+    {
+      "kind": "mlp",
+      "length": 128,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 413659136,
+        "VmRSS": 413659136
+      },
+      "after": {
+        "VmHWM": 494997504,
+        "VmRSS": 418373632
+      },
+      "lifetime_peak": 541306880,
+      "peak_tensor_activation_bytes": 51512332
+    },
+    {
+      "kind": "ks2",
+      "length": 128,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 413593600,
+        "VmRSS": 413593600
+      },
+      "after": {
+        "VmHWM": 467419136,
+        "VmRSS": 416571392
+      },
+      "lifetime_peak": 538558464,
+      "peak_tensor_activation_bytes": 51512332
+    },
+    {
+      "kind": "mlp",
+      "length": 512,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 417669120,
+        "VmRSS": 417669120
+      },
+      "after": {
+        "VmHWM": 636108800,
+        "VmRSS": 430968832
+      },
+      "lifetime_peak": 669818880,
+      "peak_tensor_activation_bytes": 206049292
+    },
+    {
+      "kind": "ks2",
+      "length": 512,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 417390592,
+        "VmRSS": 417390592
+      },
+      "after": {
+        "VmHWM": 635133952,
+        "VmRSS": 429711360
+      },
+      "lifetime_peak": 668889088,
+      "peak_tensor_activation_bytes": 206049292
+    },
+    {
+      "kind": "mlp",
+      "length": 128,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 413708288,
+        "VmRSS": 413708288
+      },
+      "after": {
+        "VmHWM": 494678016,
+        "VmRSS": 418291712
+      },
+      "lifetime_peak": 541343744,
+      "peak_tensor_activation_bytes": 51512332
+    },
+    {
+      "kind": "ks2",
+      "length": 128,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 413605888,
+        "VmRSS": 413605888
+      },
+      "after": {
+        "VmHWM": 467427328,
+        "VmRSS": 416595968
+      },
+      "lifetime_peak": 538505216,
+      "peak_tensor_activation_bytes": 51512332
+    },
+    {
+      "kind": "mlp",
+      "length": 512,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 417656832,
+        "VmRSS": 417656832
+      },
+      "after": {
+        "VmHWM": 635109376,
+        "VmRSS": 429735936
+      },
+      "lifetime_peak": 668831744,
+      "peak_tensor_activation_bytes": 206049292
+    },
+    {
+      "kind": "ks2",
+      "length": 512,
+      "scope": "full",
+      "baseline": {
+        "VmHWM": 417423360,
+        "VmRSS": 417423360
+      },
+      "after": {
+        "VmHWM": 635404288,
+        "VmRSS": 429830144
+      },
+      "lifetime_peak": 668856320,
+      "peak_tensor_activation_bytes": 206049292
+    },
+    {
+      "kind": "mlp",
+      "length": 128,
+      "scope": "ffn",
+      "baseline": {
+        "VmHWM": 374759424,
+        "VmRSS": 374759424
+      },
+      "after": {
+        "VmHWM": 375169024,
+        "VmRSS": 375169024
+      },
+      "lifetime_peak": 541257728,
+      "peak_tensor_activation_bytes": 360448
+    },
+    {
+      "kind": "mlp",
+      "length": 512,
+      "scope": "ffn",
+      "baseline": {
+        "VmHWM": 376983552,
+        "VmRSS": 376983552
+      },
+      "after": {
+        "VmHWM": 379342848,
+        "VmRSS": 379342848
+      },
+      "lifetime_peak": 541089792,
+      "peak_tensor_activation_bytes": 1441792
+    },
+    {
+      "kind": "ks2",
+      "length": 128,
+      "scope": "ffn",
+      "baseline": {
+        "VmHWM": 380014592,
+        "VmRSS": 380014592
+      },
+      "after": {
+        "VmHWM": 380121088,
+        "VmRSS": 380121088
+      },
+      "lifetime_peak": 538513408,
+      "peak_tensor_activation_bytes": 106496
+    },
+    {
+      "kind": "ks2",
+      "length": 512,
+      "scope": "ffn",
+      "baseline": {
+        "VmHWM": 381140992,
+        "VmRSS": 381140992
+      },
+      "after": {
+        "VmHWM": 381562880,
+        "VmRSS": 381562880
+      },
+      "lifetime_peak": 538558464,
+      "peak_tensor_activation_bytes": 425984
+    }
+  ]
+}
