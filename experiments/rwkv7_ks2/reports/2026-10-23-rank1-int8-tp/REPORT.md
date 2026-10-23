@@ -16,7 +16,7 @@ Weights are not included in this report.
 - [GS32 export layout and FP16 scale metadata](gs32_export_manifest.json)
 - [GS32 full-model TP4 reload checks](gs32_export_reload_check.json)
 - [GS32 trained-checkpoint conversion checks](gs32_checkpoint_checks.json)
-- [Configurable GS32 forward/backward and TP tests](../../../common/test_ks3_int8.py)
+- [Configurable GS32 forward/backward and TP tests](../../../common/tests/test_ks3_int8.py)
 
 
 The selected rank-1 KS2 algorithm is now named **KS3**. The architecture,
@@ -39,7 +39,7 @@ TP4 shard tensors also match exactly. The full-model reload check passes on all
 four GPUs in all three modes. These verify the rename/reference; no new loss or
 latency measurement is claimed.
 
-- [Portable Torch tests](../../../common/test_ks3.py)
+- [Portable Torch tests](../../../common/tests/test_ks3.py)
 - [Trained checkpoint check script](../../check_ks3.py) and [results](ks3_checkpoint_checks.json)
 - [Full-model TP4 reload results](ks3_export_reload_check.json)
 

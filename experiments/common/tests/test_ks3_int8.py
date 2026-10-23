@@ -1,8 +1,8 @@
 """GPU VJP, optimizer and TP checks for KS3 W8A8 training.
 
-Run unit checks with ``python -m unittest experiments.common.test_ks3_int8``.
+Run unit checks with ``python -m unittest experiments.common.tests.test_ks3_int8``.
 Run TP checks with ``torchrun --standalone --nproc-per-node=4 -m
-experiments.common.test_ks3_int8 --tp``.
+experiments.common.tests.test_ks3_int8 --tp``.
 """
 import os
 import sys
@@ -14,8 +14,8 @@ import torch.distributed as dist
 import triton as tr
 from torch.nn import functional as F
 
-from .ks3 import KS3
-from .ks3_int8 import (KS3Int8, Int8Linear, Int8Controller, Int8Embedding,
+from experiments.common.ks3 import KS3
+from experiments.common.ks3_int8 import (KS3Int8, Int8Linear, Int8Controller, Int8Embedding,
                       quantize, pack_weight, pack_spine, _project_features, chart_range)
 
 
