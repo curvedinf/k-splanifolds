@@ -1,0 +1,32 @@
+{
+  "steps": 500,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "tokens_per_run": 64000,
+  "mlp": {
+    "final_val_loss": 7.801634028553963,
+    "step_ms": 72.0771660672035,
+    "seconds": 37.56263279429792,
+    "train_seconds": 36.03858303360175,
+    "loss_sample_std": 0.05698572951677038,
+    "ffn_params": 743424
+  },
+  "ks3": {
+    "final_val_loss": 7.840189814567566,
+    "step_ms": 92.23197832672547,
+    "seconds": 48.706992934651986,
+    "train_seconds": 46.115989163362734,
+    "loss_sample_std": 0.06439819863421793,
+    "ffn_params": 741400
+  },
+  "ks3_minus_mlp_loss": 0.03855578601360321,
+  "ks3_over_mlp_step_time": 1.279628256204329,
+  "historical_cpu_mlp": {
+    "final_val_loss": 7.819335674246152,
+    "seconds": 112.85579482466649,
+    "train_seconds": 109.39995726400655
+  }
+}

@@ -23,11 +23,21 @@ from experiments.nanogpt_ks2.run import schedule, documents, save
 from experiments.common.ks2_cpu.inference import KS2Horner, _state
 
 
-def load_checkpoint(path):
+def load_checkpoint(path, device=None):
+    path = Path(path)
     checkpoint = torch.load(path, map_location='cpu', weights_only=False)
     args = checkpoint['args']
-    kind = 'mlp' if path.stem.startswith('mlp') else 'ks2'
-    model = GPT(kind, args['width'], rank=args['rank'])
+    kind = checkpoint.get('kind', 'mlp' if path.stem.startswith('mlp') else
+                          'ks3' if path.stem.startswith('ks3') else 'ks2')
+    cfg = checkpoint.get('model_config', dict(kind=kind, width=args['width'], rank=args['rank'],
+                         ks3_subspaces=args.get('ks3_subspaces'), ks3_rank=args.get('ks3_rank',1),
+                         ks3_backend=args.get('ks3_backend','fused'), ks3_nonlinear=args.get('ks3_nonlinear','fp16')))
+    fused_ks3 = kind == 'ks3' and cfg.get('ks3_backend','fused') == 'fused'
+    if device is None:
+        device = 'cuda' if fused_ks3 else 'cpu'
+    if fused_ks3 and (torch.device(device).type != 'cuda' or not torch.cuda.is_available()):
+        raise ValueError('This fused KS3 checkpoint requires a CUDA/ROCm GPU')
+    model = GPT(**cfg)
     model.load_state_dict(checkpoint['model'])
     # Frequencies are checkpoint buffers; the original YaRN scale is a Python float.
     # Reconstruct only that scalar from the saved run length, without rotating twice.
@@ -41,7 +51,7 @@ def load_checkpoint(path):
                 import math
                 yarn.attn_scale *= 1 + .2*math.log(b/a)
         old = new
-    return model.eval(), checkpoint
+    return model.to(device).eval(), checkpoint
 
 
 class NativeFP32(nn.Module):

@@ -92,6 +92,8 @@ def documents(x):
 
 
 def loss(model, tokens, prefix, step, steps, seed, windows):
+    if getattr(model, '_ks3_compile', False):
+        torch.compiler.cudagraph_mark_step_begin()
     window, mtp, prefix_weight, lr, candidates = schedule(step, steps)
     for yarn, old, new in zip((model.yarn, model.yarn_paired_head, model.yarn_wide), windows, (window[0], window[0], window[1])):
         if old != new: yarn.apply_window(old, new)
@@ -127,6 +129,8 @@ def validate(model, batches):
     model.eval()
     total, count = 0., 0
     for tokens in batches:
+        if getattr(model, '_ks3_compile', False):
+            torch.compiler.cudagraph_mark_step_begin()
         x, y = tokens[:-1], tokens[1:]
         hidden = model(x, 80, 176, documents(x))
         for lo in range(0, len(x), 64):
@@ -139,16 +143,35 @@ def validate(model, batches):
 
 def make(kind, seed, args):
     torch.manual_seed(seed)
-    model = GPT(kind, args.width, rank=args.rank).to(args.device)
+    if kind == 'ks3' and getattr(args, 'ks3_backend', 'fused') == 'fused' and torch.device(args.device).type != 'cuda':
+        raise ValueError('Fused KS3 needs a GPU; use --device cuda or --ks3-backend torch')
+    model = GPT(kind, args.width, rank=args.rank,
+                ks3_subspaces=getattr(args, 'ks3_subspaces', None),
+                ks3_rank=getattr(args, 'ks3_rank', 1),
+                ks3_backend=getattr(args, 'ks3_backend', 'fused'),
+                ks3_nonlinear=getattr(args, 'ks3_nonlinear', 'fp16')).to(args.device)
     if kind == 'ks2' and getattr(args, 'ks2_backend', 'torch') == 'fused':
         from experiments.common.ks2_cpu.training import fuse_training
         for ff in model.ff.values(): fuse_training(ff, args.threads)
     assert all(p.dtype == torch.float32 for p in model.parameters())
+    mode = getattr(args, 'ks3_compile', 'off')
+    if kind == 'ks3' and getattr(args, 'ks3_graph', False):
+        if mode != 'off':
+            raise ValueError('Choose graph replay or torch.compile, not both')
+        from experiments.common.ks3_int8 import capture_training
+        for cell in model.ff.values():
+            sample = torch.zeros(1,args.sequence,args.width,device=args.device,requires_grad=True)
+            capture_training(cell, sample)
+    if kind == 'ks3' and mode != 'off':
+        for cell in model.ff.values():
+            cell.compile(mode=mode, fullgraph=True, dynamic=False)
+        model._ks3_compile = True
     return model, Optimizer(model, args.lr_scale)
 
 
 def sync(args):
-    if args.device == 'cuda': torch.cuda.synchronize()
+    device = torch.device(args.device)
+    if device.type == 'cuda': torch.cuda.synchronize(device)
 
 
 def pilot(kind, args, batch, prefix, validation):
@@ -193,7 +216,8 @@ def train(kind, seed, args, steps, stream, prefix, val, offsets):
         value.backward()
         opt.step(step/steps, lr)
         sync(args); train_seconds += time.perf_counter()-t
-    torch.save(dict(model=model.state_dict(), args=vars(args), history=history), args.out/f'{kind}_{seed}.pt')
+    torch.save(dict(kind=kind, model_config=model.config, model=model.state_dict(),
+                    args=vars(args), history=history), args.out/f'{kind}_{seed}.pt')
     elapsed = time.perf_counter()-start
     if elapsed > args.max_seconds: raise RuntimeError('Run exceeded time cap; lower common step count')
     return dict(kind=kind, seed=seed, steps=steps, counts=counts, final_val_loss=history[-1]['val_loss'],
@@ -215,11 +239,26 @@ def main():
     ap.add_argument('--threads', type=int, default=8)
     ap.add_argument('--lr-scale', type=float, default=.25)
     ap.add_argument('--seeds', nargs='+', type=int, default=[11, 22, 33])
-    ap.add_argument('--device', choices=['cpu','cuda'], default='cpu')
+    ap.add_argument('--device', default='cpu', help='cpu, cuda, or cuda:N')
     ap.add_argument('--ks2-backend', choices=['torch','fused'], default='torch')
+    ap.add_argument('--models', nargs='+', choices=['mlp','ks2','ks3'], default=['mlp','ks2'])
+    ap.add_argument('--ks3-backend', choices=['torch','fused'], default='fused')
+    ap.add_argument('--ks3-rank', type=int, default=1)
+    ap.add_argument('--ks3-subspaces', type=int, default=None,
+                    help='Default: largest chart count within this port\'s full MLP FFN budget')
+    ap.add_argument('--ks3-nonlinear', choices=['fp32','fp16','int8'], default='fp16')
+    ap.add_argument('--ks3-compile', choices=['off','default','reduce-overhead'], default='off',
+                    help='Compile KS3 FFNs only; reduce-overhead also enables GPU graph replay')
+    ap.add_argument('--ks3-graph', action='store_true', help='Replay captured KS3 FFN training kernels')
     args = ap.parse_args()
     if min(args.steps,args.sequence,args.val_tokens,args.eval_every,args.threads) < 1 or args.max_seconds <= 30:
         ap.error('Positive budgets required; max-seconds must exceed 30')
+    if args.ks3_rank < 1 or (args.ks3_subspaces is not None and args.ks3_subspaces < 1):
+        ap.error('KS3 rank and subspace count must be positive')
+    if len(args.models) != len(set(args.models)):
+        ap.error('--models must not contain duplicates')
+    if 'ks3' in args.models and args.ks3_backend == 'fused' and torch.device(args.device).type != 'cuda':
+        ap.error('Fused KS3 needs --device cuda (or cuda:N)')
     args.out.mkdir(parents=True, exist_ok=False)
     torch.set_num_threads(args.threads); torch.set_num_interop_threads(1)
     torch.set_float32_matmul_precision('highest')
@@ -233,7 +272,7 @@ def main():
            for i in range(0, args.val_tokens, args.sequence)]
     stream, _ = batches(train_tokens, 1, args.sequence, 777)
     probe = stream[0].to(args.device)
-    pilots = {kind:pilot(kind,args,probe,prefix,val) for kind in ('mlp','ks2')}
+    pilots = {kind:pilot(kind,args,probe,prefix,val) for kind in args.models}
     safe = args.steps
     while safe > 0:
         evals = 1 + math.ceil(safe/args.eval_every)
@@ -247,21 +286,34 @@ def main():
                   upstream_commit=UPSTREAM, data_revision=DATA_REVISION, data_manifest=manifest,
                   pilots=pilots, torch=torch.__version__, numpy=np.__version__, python=platform.python_version(),
                   platform=platform.platform(), sources={p.name:sha(p) for p in Path(__file__).parent.glob('*.py')})
+    if 'ks3' in args.models:
+        config['ks3_precision'] = ('GS32 W8A8, FP16 quantization scales; FP32 masters/gradients; '
+                                   + args.ks3_nonlinear + ' forward nonlinearities') if args.ks3_backend == 'fused' else 'Torch FP32 reference'
+        if args.ks3_backend == 'fused':
+            config['precision'] = 'Shared network/optimizer FP32; KS3 FFNs: ' + config['ks3_precision']
+        for name in ('ks3.py','ks3_int8.py'):
+            path=Path(__file__).parents[1]/'common'/name
+            config['sources']['experiments/common/'+name]=sha(path)
     save(args.out/'config.json',config)
     print('FIXED_STEPS',steps,'TOKENS_PER_RUN',steps*args.sequence,flush=True)
     results=[]
     for seed in args.seeds:
         stream, offset=batches(train_tokens, steps, args.sequence,seed)
         stream=[t.to(args.device) for t in stream]
-        for kind in ('mlp','ks2'):
+        for kind in args.models:
             results.append(train(kind,seed,args,steps,stream,prefix,val,dict(train=offset,validation=0)))
             save(args.out/'results.json',results)
-    m=[r for r in results if r['kind']=='mlp'];k=[r for r in results if r['kind']=='ks2']
-    delta=[b['final_val_loss']-a['final_val_loss'] for a,b in zip(m,k)]
-    summary=dict(steps=steps,tokens_per_run=steps*args.sequence,mlp_mean_loss=float(np.mean([r['final_val_loss'] for r in m])),
-                 ks2_mean_loss=float(np.mean([r['final_val_loss'] for r in k])),paired_ks2_minus_mlp=delta,
-                 ffn_ratio=k[0]['counts']['ffn']/m[0]['counts']['ffn'],
-                 note='Reduced FP32 ablation, not a world-record claim; negative paired delta favors KS2')
+    grouped={kind:[r for r in results if r['kind']==kind] for kind in args.models}
+    summary=dict(steps=steps,tokens_per_run=steps*args.sequence,
+                 note='Reduced-model comparison; negative paired deltas favor the compared FFN.')
+    for kind,rows in grouped.items():
+        summary[kind+'_mean_loss']=float(np.mean([r['final_val_loss'] for r in rows]))
+        if kind!='mlp' and 'mlp' in grouped:
+            controls={r['seed']:r for r in grouped['mlp']}
+            summary['paired_'+kind+'_minus_mlp']=[r['final_val_loss']-controls[r['seed']]['final_val_loss'] for r in rows]
+            summary[kind+'_ffn_ratio']=rows[0]['counts']['ffn']/grouped['mlp'][0]['counts']['ffn']
+    if 'ks2_ffn_ratio' in summary:
+        summary['ffn_ratio']=summary['ks2_ffn_ratio']  # Historical summary key.
     save(args.out/'summary.json',summary); print('SUMMARY',json.dumps(summary),flush=True)
 
 

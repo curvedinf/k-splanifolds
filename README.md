@@ -87,6 +87,19 @@ smooth FP32 KS3 geometry, including for the FP16 and INT8 forward modes.
 TP sums input gradients and keeps parameter gradients local to each shard.
 The training API covers the FFN; full RWKV conversion remains inference-only.
 
+For an existing model, `fuse_training(cell)` in `ks3_int8.py` enables the same
+kernel on a Torch KS3 cell while preserving its parameter objects, optimizer
+groups and checkpoint keys. It accepts FP32/FP16/BF16 inputs, supports autocast,
+activation checkpointing and `cell.compile(fullgraph=True, dynamic=False)`, and
+keeps master parameters FP32. The [nanoGPT integration](experiments/nanogpt_ks2/README.md)
+uses this interface with `--models mlp ks3 --device cuda`.
+
+For that nanoGPT harness, `--ks3-graph` enables captured FFN training replay;
+other shapes and evaluation use the ordinary fused path. The kernel batches
+weight/activation packing and backward calculations, and the harness fuses its
+existing KS3 geometry Adam updates. See the [matched MLP control comparison](experiments/nanogpt_ks2/reports/2026-10-23-ks3-control/REPORT.md)
+for measured training timing and loss.
+
 Key files:
 - `k-splanifolds.pdf` — the paper ([reference link](https://doi.org/10.5281/zenodo.18673034)).
 - `k-splanifolds-2D-to-3D-toy.html` — interactive 2D→3D toy visualization.

@@ -1,0 +1,10 @@
+{
+  "common_unit_tests": 18,
+  "nanogpt_control_and_integration_tests": 7,
+  "tp4": "Passed all 4 shapes x 3 nonlinear modes: output, input gradient, every parameter gradient",
+  "control_validation": "Every GPU MLP validation checkpoint exactly equal across all six comparisons",
+  "graph_validation": "Every graph-replayed validation checkpoint exactly equal to optimized eager training across all three seeds, both repeats",
+  "initialization": "Original HEAD 34b5027 MLP initial state exactly equal for seeds 11/22/33 before integration",
+  "geometry_optimizer": "50 update steps compared with original Adam equations for ranks 1/3/16, moments and weights; missing-gradient fallback",
+  "quantization": "Exact CPU-reference codes and FP16 scales, partial GS32 groups and half-way ties"
+}

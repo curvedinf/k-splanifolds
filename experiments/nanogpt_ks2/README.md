@@ -1,5 +1,78 @@
 # Small FP32 modded-nanoGPT: MLP vs quarter-budget fast KS2
 
+## KS3 GPU backend
+
+The runner also supports the shared [fused KS3 kernel](../common/ks3_int8.py):
+GS32 W8A8 with FP16 quantization scales, FP16 nonlinearities by default, and a
+fused first-order FP32 surrogate backward. This replaces every FFN, including
+the parallel layer-8 FFN, while retaining the port's shared model and optimizer.
+The historical MLP and KS2 settings below remain the runner's defaults.
+
+```bash
+python experiments/nanogpt_ks2/run.py \
+  --data-dir data/fineweb10B --out runs/nanogpt-ks3 \
+  --models mlp ks3 --device cuda --ks3-backend fused \
+  --ks3-rank 1 --ks3-graph --steps 500 --seeds 11 22 33
+```
+
+Use `--models ks3` for a KS3-only run. `--ks3-subspaces N` sets an explicit chart
+count; otherwise the runner chooses the largest count within the full MLP FFN
+budget. At width 96, that is 337 rank-1 charts: 67,400 parameters per FFN versus
+67,584 for this port's MLP. Use `--ks3-subspaces 368` to reproduce the earlier
+73,600-parameter KS3 cell. `--ks3-rank` supports other positive ranks, and
+`--ks3-nonlinear fp32|fp16|int8` selects the nonlinear mode.
+`--ks3-backend torch` provides the unquantized reference and can run on CPU.
+The transformer's existing multiple-of-48 width constraint still applies;
+the standalone KS3 FFN accepts arbitrary positive input/output dimensions.
+
+Both projection pairs keep the original initialization, including a zero output
+projection. Fusing preserves `down.weight`/`up.weight` parameter identities and
+names, so ANVIL still handles both projections with its existing output LR rule;
+geometry uses the existing Adam group. MLP and KS2 controls retain their previous
+architecture, budget and initialization. Checkpoints save the resolved KS3
+configuration and ordinary Torch KS3 weights; the derived INT8 lookup table is
+rebuilt. `bench_forward.load_checkpoint(path, device="cuda")` reconstructs the
+fused KS3 backend without inferring it from a renamed checkpoint file.
+
+The shared kernel accepts FP32, FP16 and BF16 activations and preserves FP32
+master parameters and gradients. Its output follows autocast's dtype, or the
+input dtype outside autocast. The nanoGPT runner keeps its shared network FP32.
+For compilation, call `cell.compile(fullgraph=True, dynamic=False)` on each FFN;
+this preserves parameter names and checkpoint keys. The kernel also supports
+non-reentrant activation checkpointing. `fuse_training(cell)` must run before
+compilation or wrapping a model in DDP; it adds no tensor-parallel collectives.
+The existing runner is single-device; this change does not add a distributed
+training launcher.
+
+`--ks3-graph` captures each FFN's forward/backward kernels for the configured
+training sequence. Graph replay uses the same parameters and arithmetic;
+evaluation, autocast and other input shapes fall back to the ordinary fused
+kernel. Each FFN must be called once before its backward on the captured lane,
+as it is in this model. Capture happens after device placement. The standalone
+`capture_training(cell, sample_input)` helper is optional; ordinary
+`fuse_training` supports multiple outstanding forwards.
+
+The optimized kernel packs inputs, projections and geometry together and
+combines independent backward calculations. Rank-1 forward/backward takes five
+GPU launches. KS3 geometry Adam updates also use a fused kernel with the port's
+existing equations, moments and hyperparameters; projection ANVIL and the MLP
+optimizer path retain their original calculations. `Optimizer(...,
+fuse_ks3_geometry=False)` selects the ordinary geometry updates for checks.
+`--ks3-compile default|reduce-overhead` is an alternative experimental execution
+path and cannot be combined with `--ks3-graph`.
+
+Validation covers the existing control tests, KS3 initialization/budget,
+optimizer ownership, full-model training steps, causality, checkpoint reload,
+AMP, compilation and activation checkpointing. The matched 500-step GPU
+comparison against this directory's original MLP control is recorded in the
+[KS3 control report](reports/2026-10-23-ks3-control/REPORT.md). Run the integration tests with:
+
+```bash
+python -m unittest discover -s experiments/common/tests -v
+python -m unittest discover -s experiments/nanogpt_ks2/tests -v
+```
+
+
 A fixed-step convergence experiment derived from the current modded-nanoGPT speedrun. Only the feed-forward modules differ between the two experimental arms. The question is whether KS2 reaches lower **held-out next-token cross-entropy at the same optimizer step and token count**, with approximately one-quarter of the feed-forward parameters.
 
 ## Source and scope

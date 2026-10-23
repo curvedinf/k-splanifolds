@@ -90,6 +90,32 @@ class MLP(nn.Module):
         return self.up(F.relu(self.down(x)).square())
 
 
+def make_ks3(width, hidden, subspaces=None, rank=1, backend='fused', nonlinear='fp16'):
+    """KS3 at up to the full MLP parameter budget, or an explicit chart count.
+
+    Preserve the port's projection initialization, zero residual output, and
+    optimizer/checkpoint parameter names for both Torch and fused backends.
+    """
+    from experiments.common.ks3 import KS3
+    if not isinstance(rank, int) or rank < 1:
+        raise ValueError('KS3 rank must be a positive integer')
+    if backend not in ('torch', 'fused'):
+        raise ValueError('KS3 backend must be torch or fused')
+    if subspaces is None:
+        per_chart = rank*(2*width+6)+2
+        subspaces = (2*width*hidden)//per_chart
+        if subspaces < 1:
+            raise ValueError('KS3 rank exceeds the MLP budget; set an explicit subspace count')
+    cell = KS3(width, width, subspaces, rank)
+    bound = math.sqrt(3/width)*.5
+    nn.init.uniform_(cell.down.weight, -bound, bound)
+    nn.init.zeros_(cell.up.weight)
+    if backend == 'fused':
+        from experiments.common.ks3_int8 import fuse_training
+        fuse_training(cell, nonlinear=nonlinear)
+    return cell
+
+
 class Ngrams(nn.Module):
     def __init__(self, width, rows):
         super().__init__()
@@ -182,8 +208,14 @@ class Attention(nn.Module):
 
 
 class GPT(nn.Module):
-    def __init__(self, kind='mlp', width=96, vocab=50257, ngram_rows=4096, rank=8):
+    def __init__(self, kind='mlp', width=96, vocab=50257, ngram_rows=4096, rank=8,
+                 *, ks3_subspaces=None, ks3_rank=1, ks3_backend='fused', ks3_nonlinear='fp16'):
         super().__init__()
+        if kind not in ('mlp', 'ks2', 'ks3'):
+            raise ValueError('kind must be mlp, ks2 or ks3')
+        self.config = dict(kind=kind, width=width, vocab=vocab, ngram_rows=ngram_rows, rank=rank,
+                           ks3_subspaces=ks3_subspaces, ks3_rank=ks3_rank,
+                           ks3_backend=ks3_backend, ks3_nonlinear=ks3_nonlinear)
         global NARROW_HEAD_DIM
         if width % 48:
             raise ValueError('Width must be a multiple of 48')
@@ -214,7 +246,15 @@ class GPT(nn.Module):
         self.init_mudd_gate(width)
         # All shared parameters are created before the interchangeable FFNs.
         hidden = width * 11 // 3
-        self.ff = nn.ModuleDict({str(i): MLP(width, hidden) if kind == 'mlp' else FastKS2(width, hidden, rank) for i in range(12) if i != 7})
+        def make_ffn():
+            if kind == 'mlp':
+                return MLP(width, hidden)
+            if kind == 'ks2':
+                return FastKS2(width, hidden, rank)
+            return make_ks3(width, hidden, ks3_subspaces, ks3_rank, ks3_backend, ks3_nonlinear)
+        self.ff = nn.ModuleDict({str(i): make_ffn() for i in range(12) if i != 7})
+        if kind == 'ks3':
+            self.config['ks3_subspaces'] = next(iter(self.ff.values())).num_subspaces
 
     def attn_qk_dim(self, i):
         return self.head_dim if i in WIDE_QK_LAYERS else NARROW_HEAD_DIM

@@ -1,0 +1,2240 @@
+{
+  "initial": {
+    "mlp_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_20261023/mlp_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.09652093495242298,
+        "validation_seconds": 0.21766473597381264,
+        "setup_seconds": 0.30899532011244446
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "570ebb2013e1f3ffdd5a2d356b08918931218985a00f95c8234d356c9aa65038"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_20261023/ks3_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.10357820091303438,
+        "validation_seconds": 0.41150146001018584,
+        "setup_seconds": 0.3172786640934646
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "570ebb2013e1f3ffdd5a2d356b08918931218985a00f95c8234d356c9aa65038"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_20261023/mlp_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:2",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08257479104213417,
+        "validation_seconds": 0.2211780649377033,
+        "setup_seconds": 0.30334389000199735
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "570ebb2013e1f3ffdd5a2d356b08918931218985a00f95c8234d356c9aa65038"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_20261023/ks3_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:3",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.10215973400045186,
+        "validation_seconds": 0.40172537905164063,
+        "setup_seconds": 0.3191637968411669
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "570ebb2013e1f3ffdd5a2d356b08918931218985a00f95c8234d356c9aa65038"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_20261023/mlp_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08382786007132381,
+        "validation_seconds": 0.23126395500730723,
+        "setup_seconds": 0.27910591079853475
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "570ebb2013e1f3ffdd5a2d356b08918931218985a00f95c8234d356c9aa65038"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_20261023/ks3_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.11431686498690397,
+        "validation_seconds": 0.4032427469501272,
+        "setup_seconds": 0.29569928790442646
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "570ebb2013e1f3ffdd5a2d356b08918931218985a00f95c8234d356c9aa65038"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    }
+  },
+  "packing_backward": {
+    "mlp_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt1_20261023/mlp_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08187145495321602,
+        "validation_seconds": 0.23118831997271627,
+        "setup_seconds": 0.2896570438751951
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd7909041f193161ae67f4806c49fb8655fe639a70d5785f3f456e6c2a9e5678"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt1_20261023/ks3_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.09236110106576234,
+        "validation_seconds": 0.30520111706573516,
+        "setup_seconds": 0.30455456383060664
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd7909041f193161ae67f4806c49fb8655fe639a70d5785f3f456e6c2a9e5678"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt1_20261023/mlp_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:2",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08464009291492403,
+        "validation_seconds": 0.23426093603484333,
+        "setup_seconds": 0.28570855513680726
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd7909041f193161ae67f4806c49fb8655fe639a70d5785f3f456e6c2a9e5678"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt1_20261023/ks3_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:3",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.0925706890411675,
+        "validation_seconds": 0.3007874129107222,
+        "setup_seconds": 0.3025880791246891
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd7909041f193161ae67f4806c49fb8655fe639a70d5785f3f456e6c2a9e5678"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt1_20261023/mlp_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.09550022904295474,
+        "validation_seconds": 0.2323941319482401,
+        "setup_seconds": 0.27690443489700556
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd7909041f193161ae67f4806c49fb8655fe639a70d5785f3f456e6c2a9e5678"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt1_20261023/ks3_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.09297212795354426,
+        "validation_seconds": 0.30159002100117505,
+        "setup_seconds": 0.29469162807799876
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "93f08e3c9f565f40d5c3723122243fb9a5504160f23fb063bd8ff1fd42d2012c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd7909041f193161ae67f4806c49fb8655fe639a70d5785f3f456e6c2a9e5678"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    }
+  },
+  "geometry_adam": {
+    "mlp_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt2_20261023/mlp_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08102979697287083,
+        "validation_seconds": 0.24532441201154143,
+        "setup_seconds": 0.2936571348691359
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt2_20261023/ks3_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.19997742399573326,
+        "validation_seconds": 0.301507206982933,
+        "setup_seconds": 0.32704163412563503
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt2_20261023/mlp_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:2",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08414473989978433,
+        "validation_seconds": 0.43954656389541924,
+        "setup_seconds": 0.2814466970739886
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt2_20261023/ks3_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:3",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.2724900619359687,
+        "validation_seconds": 0.3003209170419723,
+        "setup_seconds": 0.3026631789980456
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt2_20261023/mlp_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08427806606050581,
+        "validation_seconds": 0.2311148929875344,
+        "setup_seconds": 0.28018390806391835
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt2_20261023/ks3_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.09204361005686224,
+        "validation_seconds": 0.3040622540283948,
+        "setup_seconds": 0.2925599720329046
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "d35b2f6a217fbd91a60b0f94000d39e4a8a78a317d2e75a34c90bed5e0b8f50e",
+        "experiments/nanogpt_ks2/run.py": "f9e383bf1756cebaaf3fb48c3623e27c4954f6a23ce33b021c9367324e6fd112",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    }
+  },
+  "torch_compile": {
+    "mlp_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt3_20261023/mlp_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "reduce-overhead"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.0812195569742471,
+        "validation_seconds": 0.2380807880545035,
+        "setup_seconds": 0.28628811589442194
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "8bc24f161e3646a52f7c672b844ebbc131750ec2b9a4e60b289884d85ece6706",
+        "experiments/nanogpt_ks2/run.py": "d2d2b15b5a38969bf1c69b2e156fd9ca2f92961e5b90393725997fcbc00f2edb",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt3_20261023/ks3_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "reduce-overhead"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.26715705799870193,
+        "validation_seconds": 1.569177946075797,
+        "setup_seconds": 0.7902955737663433
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "8bc24f161e3646a52f7c672b844ebbc131750ec2b9a4e60b289884d85ece6706",
+        "experiments/nanogpt_ks2/run.py": "d2d2b15b5a38969bf1c69b2e156fd9ca2f92961e5b90393725997fcbc00f2edb",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt3_20261023/mlp_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:2",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "reduce-overhead"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08385270403232425,
+        "validation_seconds": 0.2327494230121374,
+        "setup_seconds": 0.2809586930088699
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "8bc24f161e3646a52f7c672b844ebbc131750ec2b9a4e60b289884d85ece6706",
+        "experiments/nanogpt_ks2/run.py": "d2d2b15b5a38969bf1c69b2e156fd9ca2f92961e5b90393725997fcbc00f2edb",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt3_20261023/ks3_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:3",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "reduce-overhead"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.26607872801832855,
+        "validation_seconds": 1.5764495430048555,
+        "setup_seconds": 0.7955454100156203
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "8bc24f161e3646a52f7c672b844ebbc131750ec2b9a4e60b289884d85ece6706",
+        "experiments/nanogpt_ks2/run.py": "d2d2b15b5a38969bf1c69b2e156fd9ca2f92961e5b90393725997fcbc00f2edb",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt3_20261023/mlp_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "reduce-overhead"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08182809001300484,
+        "validation_seconds": 0.22987855097744614,
+        "setup_seconds": 0.27780116093344986
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "8bc24f161e3646a52f7c672b844ebbc131750ec2b9a4e60b289884d85ece6706",
+        "experiments/nanogpt_ks2/run.py": "d2d2b15b5a38969bf1c69b2e156fd9ca2f92961e5b90393725997fcbc00f2edb",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_opt3_20261023/ks3_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "reduce-overhead"
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.2691618329845369,
+        "validation_seconds": 0.5494078689953312,
+        "setup_seconds": 0.7217236721189693
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "8bc24f161e3646a52f7c672b844ebbc131750ec2b9a4e60b289884d85ece6706",
+        "experiments/nanogpt_ks2/run.py": "d2d2b15b5a38969bf1c69b2e156fd9ca2f92961e5b90393725997fcbc00f2edb",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "bd69f6c7875ba44f55622685222b6a832c7263a89b76037022eb7550e0677acd"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    }
+  },
+  "graph": {
+    "mlp_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_20261023/mlp_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08501661499030888,
+        "validation_seconds": 0.23374148993752897,
+        "setup_seconds": 0.2893276099348441
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_20261023/ks3_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08231529896147549,
+        "validation_seconds": 0.2904368300223723,
+        "setup_seconds": 0.8322807680815458
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_20261023/mlp_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:2",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08426071202848107,
+        "validation_seconds": 0.23157278797589242,
+        "setup_seconds": 0.2877577251056209
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_20261023/ks3_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:3",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.09683776402380317,
+        "validation_seconds": 0.29970645997673273,
+        "setup_seconds": 0.8539178320206702
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_20261023/mlp_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08273241389542818,
+        "validation_seconds": 0.2320007609669119,
+        "setup_seconds": 0.2733861629385501
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_20261023/ks3_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08353621594142169,
+        "validation_seconds": 0.29879750206600875,
+        "setup_seconds": 0.7961794858565554
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    }
+  },
+  "graph_repeat": {
+    "mlp_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_repeat_20261023/mlp_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08453465299680829,
+        "validation_seconds": 0.2324204749893397,
+        "setup_seconds": 0.28268022695556283
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_11": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_repeat_20261023/ks3_11",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 11,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08386533905286342,
+        "validation_seconds": 0.2993975119898096,
+        "setup_seconds": 0.8240453010657802
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_repeat_20261023/mlp_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:3",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08541378600057214,
+        "validation_seconds": 0.2331533789401874,
+        "setup_seconds": 0.28523260285146534
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_22": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_repeat_20261023/ks3_22",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:2",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 22,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08280146890319884,
+        "validation_seconds": 0.28780011204071343,
+        "setup_seconds": 0.8213262861827388
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "mlp_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_repeat_20261023/mlp_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:1",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "mlp",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08602012891788036,
+        "validation_seconds": 0.22837593802250922,
+        "setup_seconds": 0.2755678162211552
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    },
+    "ks3_33": {
+      "arguments": {
+        "data_dir": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B",
+        "out": "experiments/nanogpt_ks2/runs/ks3_control_graph_repeat_20261023/ks3_33",
+        "steps": 500,
+        "max_seconds": 3600,
+        "sequence": 128,
+        "val_tokens": 2048,
+        "eval_every": 100,
+        "width": 96,
+        "rank": 8,
+        "threads": 8,
+        "lr_scale": 0.25,
+        "seeds": [
+          11,
+          22,
+          33
+        ],
+        "device": "cuda:0",
+        "ks3_backend": "fused",
+        "ks3_rank": 1,
+        "ks3_subspaces": null,
+        "ks3_nonlinear": "fp16",
+        "ks3_compile": "off",
+        "ks3_graph": true
+      },
+      "reference_config_sha256": "5541ce962d5f16598b1e53a3d8ec796b47a721a1b5f0bebc5b8684144e8d8f65",
+      "fixed_steps": 500,
+      "seed": 33,
+      "kind": "ks3",
+      "data_manifest": {
+        "fineweb_train_000001.bin": {
+          "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+        },
+        "fineweb_val_000000.bin": {
+          "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+          "tokens": 100000000,
+          "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+        }
+      },
+      "pilot": {
+        "step_seconds": 0.08337865304201841,
+        "validation_seconds": 0.29880833195056766,
+        "setup_seconds": 0.7987153920112178
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "python": "3.12.3",
+      "gpu": "AMD Instinct MI100",
+      "sources": {
+        "experiments/nanogpt_ks2/compare_ks3.py": "9a648d5d21aba794a89d73c6fbcc643bd78324259020294619462f6ddd102f12",
+        "experiments/nanogpt_ks2/run.py": "acb35664ea1b1dc13d5cde1f0b670defbf52458e4bb01188723aebe8c2781ee6",
+        "experiments/nanogpt_ks2/model.py": "1df680dc1812c1941f20546051ce162a365f82cc19b3d0fe4f08360451ca2d80",
+        "experiments/nanogpt_ks2/optim.py": "90d5f1cd25ec7dd7bee9bab0a42e48c2c358681e80f504ef5291a605b42d5c5c",
+        "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080",
+        "experiments/common/ks3_int8.py": "becdb04749963afa8adc39812a61ec3bb14b0ad966c2fc04e1e4edd4ec1ed501"
+      },
+      "precision": "Shared model and optimizer FP32; KS3 GS32 W8A8 / FP16 scales and nonlinearities / FP32 backward",
+      "timing": "Synchronized full training steps; excludes warmup and validation. Wall time includes setup, validation, checkpoint save.",
+      "hardware_note": "Historical control ran on CPU; GPU candidate sampling and floating-point kernels can differ. Both new arms use identical GPU sampling."
+    }
+  }
+}

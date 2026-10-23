@@ -15,7 +15,7 @@ MAPS = [(3.923798038567, -6.095026865488, 3.905234618423),
 
 
 class Optimizer:
-    def __init__(self, model, lr_scale):
+    def __init__(self, model, lr_scale, *, fuse_ks3_geometry=True):
         self.scale, self.matrices, self.adam = lr_scale, [], []
         for name, p in model.named_parameters():
             if name in ('qk_bank', 'vo_bank') or name.startswith('ff.') and name.endswith(('down.weight', 'up.weight')):
@@ -37,6 +37,13 @@ class Optimizer:
                 elif name.startswith('ff.'): mul, wd = .125, 0.
                 self.adam.append(dict(p=p, m=torch.zeros_like(p), v=torch.zeros_like(p), beta=beta, mul=mul, wd=wd))
         self.t = 0
+        self.ks3_geometry = []
+        if fuse_ks3_geometry:
+            by_parameter = {id(s['p']): s for s in self.adam}
+            for cell in model.ff.values():
+                if hasattr(cell, '_ks3_nonlinear'):
+                    self.ks3_geometry.append([by_parameter[id(p)] for p in
+                                              (cell.coefficients, cell.raw_scale, cell.raw_shift)])
 
     def zero_grad(self):
         for s in self.matrices + self.adam:
@@ -71,7 +78,14 @@ class Optimizer:
             p.add_(p*(p*s['slow'] >= 0), alpha=-2.25*lr*lr*s['multiplier'])
             p.add_(update, alpha=-lr*s['multiplier'])
         lr = .008*self.scale*multiplier
+        fused = set()
+        if self.ks3_geometry:
+            from experiments.common.ks3_int8 import geometry_adam_step
+            for groups in self.ks3_geometry:
+                if geometry_adam_step(groups, self.t, lr):
+                    fused.update(id(s['p']) for s in groups)
         for s in self.adam:
+            if id(s['p']) in fused: continue
             p, b = s['p'], s['beta']
             if p.grad is None: continue
             s['m'].lerp_(p.grad, 1-b[0])
