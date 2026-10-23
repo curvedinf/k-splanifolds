@@ -15,7 +15,8 @@ Standalone FFN use (requires PyTorch, Triton and a supported GPU):
 Weights, activations and spine coefficients are INT8; matrix dots accumulate
 in INT32. The input projection fuses Horner geometry, coordinate bypass,
 ReLU-squared and activation requantization. Nonlinearities default to FP16;
-scales and outputs are FP32.
+all quantization scales are stored in FP16 with GS32 grouping. Outputs and
+warp scalars remain FP32. A six-coefficient spine row uses a partial GS32 group.
 
 For training, pass ``trainable=True`` to KS3Int8, then create the optimizer
 from that module's parameters. It owns FP32 master copies and repacks them
@@ -31,9 +32,16 @@ it is not the literal derivative of discrete rounding. Training inputs and
 masters must be FP32. First-order gradients only. ``to_inference()`` packs
 the updated masters into an inference-only module without optimizer state.
 
-The tested configuration has 368 rank-1 charts, partitioned into four groups
-of 92. TP1/TP2/TP4 use the same quantization groups. For TP, construct with
-rank/world and initialize torch.distributed, or supply a sum reducer.
+Input/output dimensions, number of charts, and chart rank are arbitrary
+positive integers. Rank 1 fuses input GEMM and geometry; higher ranks add a
+chart-mean reduction and a fused geometry/requantization kernel. TP partitions
+whole charts and whole GS32 groups. The 368-rank-1 layout splits into
+[96, 96, 96, 80] features on TP4. Tiny layouts may leave some ranks empty.
+Initialize torch.distributed for TP, or supply a sum reducer.
+
+FP16 scales are rounded before quantization, bounded to [2**-24, 65504], and
+promoted to FP32 for arithmetic. Codes saturate to [-127,127]. Groups shorter
+than 32 use a partial group; no learned padding parameters are introduced.
 
 The optional full-RWKV convert() helper needs the repository's attention
 adapter and keeps recurrent state FP32. Standalone KS3Int8 needs neither
@@ -50,12 +58,84 @@ import triton.language as tl
 from triton.language.extra import libdevice
 
 
+GROUP_SIZE = 32
+SCALE_DTYPE = torch.float16
+
+
+def chart_range(charts, subspace_rank, rank=0, world=1):
+    """Assign whole charts and whole GS32 groups; tiny layouts may have idle ranks."""
+    if any(not isinstance(v,int) or isinstance(v,bool) or v < 1 for v in (charts,subspace_rank,world)) or not 0 <= rank < world:
+        raise ValueError('Positive chart count, rank, world size and a valid TP rank are required.')
+    charts_per_group = GROUP_SIZE // math.gcd(GROUP_SIZE,subspace_rank)
+    blocks = tr.cdiv(charts,charts_per_group)
+    first = rank*(blocks//world)+min(rank,blocks%world)
+    count = blocks//world+int(rank < blocks%world)
+    return min(charts,first*charts_per_group),min(charts,(first+count)*charts_per_group)
+
+
+def _rounded_scale(maximum):
+    return (maximum.float()/127.).clamp(2.**-24,65504.).to(SCALE_DTYPE)
+
+
+@tr.jit
+def _half_scale(maximum):
+    # Round BEFORE quantizing so encoding and decoding use the same FP16 scale.
+    return tl.minimum(tl.maximum(maximum/127., 2.**-24), 65504.).to(tl.float16).to(tl.float32)
+
+
+@tr.jit
+def _spine_features(x, mean, c0, c1, c2, c3, c4, c5, ps, scale, shift, LUT,
+                    valid, NL: tl.constexpr):
+    a=2*c0-2*c1+c2+c3;b=-3*c0+3*c1-2*c2-c3
+    if NL==2:
+        # INT8 tanh inputs/outputs, INT32 fixed-point Horner accumulators.
+        # Q6 guard bits keep worst-case polynomial products within INT32.
+        ti=libdevice.nearbyint(tl.minimum(tl.maximum(mean*.25,-3.2),3.2)*(127./3.2)).to(tl.int32)
+        tq=tl.load(LUT+ti+128).to(tl.int32)
+        warp=scale[None,:]*(tq.to(tl.float32)*(4./127.)+shift[None,:])
+        zi=libdevice.nearbyint(tl.minimum(tl.maximum(warp,-3.2),3.2)*(127./3.2)).to(tl.int32)
+        zq=tl.load(LUT+zi+128).to(tl.int32)
+        poly=a[None,:].to(tl.int32)*64
+        poly=_round_div127(poly*tq*4)+b[None,:].to(tl.int32)*64
+        poly=_round_div127(poly*tq*4)+c2[None,:].to(tl.int32)*64
+        poly=_round_div127(poly*tq*4)+c0[None,:].to(tl.int32)*64
+        warped=4*c5[None,:].to(tl.int32)*64
+        warped=_round_div127(warped*zq)+2*c4[None,:].to(tl.int32)*64
+        warped=_round_div127(warped*zq)-3*c5[None,:].to(tl.int32)*64
+        warped=_round_div127(warped*zq)-c4[None,:].to(tl.int32)*64
+        h=x+(poly+warped).to(tl.float32)*(ps[None,:]/64.)
+        h=tl.where(valid[None,:],h,0.)
+        pre_scale=_half_scale(tl.max(tl.abs(h),1))
+        hq=tl.minimum(tl.maximum(libdevice.nearbyint(h/pre_scale[:,None]),-127.),127.).to(tl.int32)
+        hq=tl.maximum(hq,0);h=(hq*hq).to(tl.float32)*(pre_scale[:,None]*pre_scale[:,None])
+    elif NL==1:
+        th=(mean*.25).to(tl.float16)
+        t=(4*libdevice.tanh(th.to(tl.float32))).to(tl.float16)
+        warp=(scale[None,:]*(t.to(tl.float32)+shift[None,:])).to(tl.float16)
+        z=libdevice.tanh(warp.to(tl.float32)).to(tl.float16)
+        # Each polynomial stage rounds to FP16; tanh uses FP32 internally.
+        poly=(a[None,:].to(tl.float16)*t+b[None,:].to(tl.float16)).to(tl.float16)
+        poly=(poly*t+c2[None,:].to(tl.float16)).to(tl.float16)
+        poly=(poly*t+c0[None,:].to(tl.float16)).to(tl.float16)
+        warped=(4*c5[None,:].to(tl.float16)*z+2*c4[None,:].to(tl.float16)).to(tl.float16)
+        warped=(warped*z-3*c5[None,:].to(tl.float16)).to(tl.float16)
+        warped=(warped*z-c4[None,:].to(tl.float16)).to(tl.float16)
+        h=tl.maximum((x+(poly.to(tl.float32)+warped.to(tl.float32))*ps[None,:]).to(tl.float16),0.)
+        h=(h*h).to(tl.float16).to(tl.float32)
+    else:
+        t=4*libdevice.tanh(mean*.25);z=libdevice.tanh(scale[None,:]*(t+shift[None,:]))
+        poly=((a[None,:]*t+b[None,:])*t+c2[None,:])*t+c0[None,:]
+        warped=((4*c5[None,:]*z+2*c4[None,:])*z-3*c5[None,:])*z-c4[None,:]
+        h=tl.maximum(x+(poly+warped)*ps[None,:],0.);h=h*h
+    return tl.where(valid[None,:],h,0.)
+
+
 @tr.jit
 def _quant(X,Q,S,M:tl.constexpr,K:tl.constexpr,G:tl.constexpr,B:tl.constexpr):
     row=tl.program_id(0);group=tl.program_id(1);j=tl.arange(0,B)
-    x=tl.load(X+row*K+group*G+j,(group*G+j<K)&(j<G),other=0.)
-    scale=tl.maximum(tl.max(tl.abs(x),0)/127.,1e-12)
-    q=libdevice.nearbyint(x/scale).to(tl.int8)
+    x=tl.load(X+row*K+group*G+j,(group*G+j<K)&(j<G),other=0.).to(tl.float32)
+    scale=_half_scale(tl.max(tl.abs(x),0))
+    q=tl.minimum(tl.maximum(libdevice.nearbyint(x/scale),-127.),127.).to(tl.int8)
     tl.store(Q+row*K+group*G+j,q,(group*G+j<K)&(j<G))
     tl.store(S+row*tr.cdiv(K,G)+group,scale)
 
@@ -73,21 +153,22 @@ def _gemm(A,AS,W,WS,Y,YS,P,PS,SC,SH,
           LUT,M:tl.constexpr,N:tl.constexpr,K:tl.constexpr,G:tl.constexpr,
           BM:tl.constexpr,BN:tl.constexpr,BK:tl.constexpr,FUSED:tl.constexpr,NL:tl.constexpr,ACT:tl.constexpr,
           COORD=None,SAVE_COORD:tl.constexpr=False):
+    tl.static_assert(not (FUSED or ACT>0) or BN==32, "GS32 fused epilogues require BN=32")
     mi=tl.program_id(0)*BM+tl.arange(0,BM)
-    # Fused output blocks are exactly one 92-feature quantization group.
-    ni=tl.program_id(1)*(92 if FUSED else BN)+tl.arange(0,BN)
+    # Fused output blocks are exactly one GS32 quantization group.
+    ni=tl.program_id(1)*BN+tl.arange(0,BN)
     ki=tl.arange(0,BK);NG=tr.cdiv(K,G)
     result=tl.full((BM,BN),0.,tl.float32)
     for group in range(NG):
         kk=group*G+ki
         av=tl.load(A+mi[:,None]*K+kk[None,:],(mi[:,None]<M)&(kk[None,:]<K)&(ki[None,:]<G),other=0)
-        wv=tl.load(W+ni[None,:]*K+kk[:,None],(ni[None,:]<N)&(kk[:,None]<K)&(ki[:,None]<G)&((tl.arange(0,BN)[None,:]<92) if FUSED else True),other=0)
+        wv=tl.load(W+ni[None,:]*K+kk[:,None],(ni[None,:]<N)&(kk[:,None]<K)&(ki[:,None]<G),other=0)
         acc=tl.dot(av,wv,out_dtype=tl.int32)
-        sa=tl.load(AS+mi*NG+group,mi<M,other=0)
-        sw=tl.load(WS+ni*NG+group,ni<N,other=0)
+        sa=tl.load(AS+mi*NG+group,mi<M,other=0).to(tl.float32)
+        sw=tl.load(WS+ni*NG+group,ni<N,other=0).to(tl.float32)
         result+=acc.to(tl.float32)*sa[:,None]*sw[None,:]
     if FUSED:
-        valid=(ni<N)&(tl.arange(0,BN)<92)
+        valid=ni<N
         if SAVE_COORD:
             tl.store(COORD+mi[:,None]*N+ni[None,:],result,(mi[:,None]<M)&valid[None,:])
         x=tl.minimum(tl.maximum(result,-65504.),65504.)
@@ -97,90 +178,52 @@ def _gemm(A,AS,W,WS,Y,YS,P,PS,SC,SH,
         c3=tl.load(P+ni*6+3,valid,other=0).to(tl.float32)
         c4=tl.load(P+ni*6+4,valid,other=0).to(tl.float32)
         c5=tl.load(P+ni*6+5,valid,other=0).to(tl.float32)
-        ps=tl.load(PS+ni,valid,other=0)
+        ps=tl.load(PS+ni,valid,other=0).to(tl.float32)
         scale=tl.load(SC+ni,valid,other=1);shift=tl.load(SH+ni,valid,other=0)
-        a=2*c0-2*c1+c2+c3;b=-3*c0+3*c1-2*c2-c3
-        if NL==2:
-            # INT8 tanh inputs/outputs, INT32 fixed-point Horner accumulators.
-            # Q6 guard bits keep worst-case polynomial products within INT32.
-            ti=libdevice.nearbyint(tl.minimum(tl.maximum(x*.25,-3.2),3.2)*(127./3.2)).to(tl.int32)
-            tq=tl.load(LUT+ti+128).to(tl.int32)
-            warp=scale[None,:]*(tq.to(tl.float32)*(4./127.)+shift[None,:])
-            zi=libdevice.nearbyint(tl.minimum(tl.maximum(warp,-3.2),3.2)*(127./3.2)).to(tl.int32)
-            zq=tl.load(LUT+zi+128).to(tl.int32)
-            poly=a[None,:].to(tl.int32)*64
-            poly=_round_div127(poly*tq*4)+b[None,:].to(tl.int32)*64
-            poly=_round_div127(poly*tq*4)+c2[None,:].to(tl.int32)*64
-            poly=_round_div127(poly*tq*4)+c0[None,:].to(tl.int32)*64
-            warped=4*c5[None,:].to(tl.int32)*64
-            warped=_round_div127(warped*zq)+2*c4[None,:].to(tl.int32)*64
-            warped=_round_div127(warped*zq)-3*c5[None,:].to(tl.int32)*64
-            warped=_round_div127(warped*zq)-c4[None,:].to(tl.int32)*64
-            h=x+(poly+warped).to(tl.float32)*(ps[None,:]/64.)
-            h=tl.where(valid[None,:],h,0.)
-            pre_scale=tl.maximum(tl.max(tl.abs(h),1)/127.,1e-12)
-            hq=libdevice.nearbyint(h/pre_scale[:,None]).to(tl.int32)
-            hq=tl.maximum(hq,0);h=(hq*hq).to(tl.float32)*(pre_scale[:,None]*pre_scale[:,None])
-        elif NL==1:
-            th=(x*.25).to(tl.float16)
-            t=(4*libdevice.tanh(th.to(tl.float32))).to(tl.float16)
-            warp=(scale[None,:]*(t.to(tl.float32)+shift[None,:])).to(tl.float16)
-            z=libdevice.tanh(warp.to(tl.float32)).to(tl.float16)
-            # Each polynomial stage rounds to FP16; tanh uses FP32 internally.
-            poly=(a[None,:].to(tl.float16)*t+b[None,:].to(tl.float16)).to(tl.float16)
-            poly=(poly*t+c2[None,:].to(tl.float16)).to(tl.float16)
-            poly=(poly*t+c0[None,:].to(tl.float16)).to(tl.float16)
-            warped=(4*c5[None,:].to(tl.float16)*z+2*c4[None,:].to(tl.float16)).to(tl.float16)
-            warped=(warped*z-3*c5[None,:].to(tl.float16)).to(tl.float16)
-            warped=(warped*z-c4[None,:].to(tl.float16)).to(tl.float16)
-            h=tl.maximum((x+(poly.to(tl.float32)+warped.to(tl.float32))*ps[None,:]).to(tl.float16),0.)
-            h=(h*h).to(tl.float16).to(tl.float32)
-        else:
-            t=4*libdevice.tanh(x*.25);z=libdevice.tanh(scale[None,:]*(t+shift[None,:]))
-            poly=((a[None,:]*t+b[None,:])*t+c2[None,:])*t+c0[None,:]
-            warped=((4*c5[None,:]*z+2*c4[None,:])*z-3*c5[None,:])*z-c4[None,:]
-            h=tl.maximum(x+(poly+warped)*ps[None,:],0.);h=h*h
+        h=_spine_features(x,x,c0,c1,c2,c3,c4,c5,ps,scale,shift,LUT,valid,NL)
         h=tl.where(valid[None,:],h,0.)
-        hs=tl.maximum(tl.max(tl.abs(h),1)/127.,1e-12)
-        q=libdevice.nearbyint(h/hs[:,None]).to(tl.int8)
+        hs=_half_scale(tl.max(tl.abs(h),1))
+        q=tl.minimum(tl.maximum(libdevice.nearbyint(h/hs[:,None]),-127.),127.).to(tl.int8)
         tl.store(Y+mi[:,None]*N+ni[None,:],q,(mi[:,None]<M)&valid[None,:])
-        tl.store(YS+mi*tr.cdiv(N,92)+tl.program_id(1),hs,mi<M)
+        tl.store(YS+mi*tr.cdiv(N,32)+tl.program_id(1),hs,mi<M)
     elif ACT>0:
         if ACT==2:result=libdevice.tanh(result)
         elif ACT==3:result=tl.sigmoid(result)
         result=tl.where(ni[None,:]<N,result,0.)
-        scale=tl.maximum(tl.max(tl.abs(result),1)/127.,1e-12)
-        q=libdevice.nearbyint(result/scale[:,None]).to(tl.int8)
+        scale=_half_scale(tl.max(tl.abs(result),1))
+        q=tl.minimum(tl.maximum(libdevice.nearbyint(result/scale[:,None]),-127.),127.).to(tl.int8)
         tl.store(Y+mi[:,None]*N+ni[None,:],q,(mi[:,None]<M)&(ni[None,:]<N))
-        tl.store(YS+mi,scale,mi<M)
+        tl.store(YS+mi*tr.cdiv(N,32)+tl.program_id(1),scale,mi<M)
     else:
         tl.store(Y+mi[:,None]*N+ni[None,:],result,(mi[:,None]<M)&(ni[None,:]<N))
 
 
-def quantize(x,group=128):
-    x=x.contiguous();k=x.shape[-1];m=x.numel()//k
-    q=torch.empty_like(x,dtype=torch.int8);s=torch.empty((m,tr.cdiv(k,group)),device=x.device)
-    _quant[(m,tr.cdiv(k,group))](x,q,s,m,k,group,tr.next_power_of_2(group),num_warps=4)
+def quantize(x,group=32):
+    x=x.contiguous();k=x.shape[-1];m=math.prod(x.shape[:-1])
+    q=torch.empty_like(x,dtype=torch.int8);s=torch.empty((m,tr.cdiv(k,group)),device=x.device,dtype=SCALE_DTYPE)
+    if m and k: _quant[(m,tr.cdiv(k,group))](x,q,s,m,k,group,tr.next_power_of_2(group),num_warps=4)
     return q,s
 
 
 @torch.no_grad()
-def pack_weight(w,group):
+def pack_weight(w,group=32):
     n,k=w.shape;pad=(-k)%group
-    x=torch.nn.functional.pad(w.float(),(0,pad)).reshape(n,-1,group)
-    scales=x.abs().amax(-1).clamp_min(1e-10)/127.
-    q=(x/scales[...,None]).round().clamp(-127,127).to(torch.int8).reshape(n,-1)[:,:k].contiguous()
+    x=torch.nn.functional.pad(w.float(),(0,pad)).reshape(n,tr.cdiv(k,group),group)
+    scales=_rounded_scale(x.abs().amax(-1))
+    q=(x/scales.float()[...,None]).round().clamp(-127,127).to(torch.int8).reshape(n,tr.cdiv(k,group)*group)[:,:k].contiguous()
     return q,scales.contiguous()
 
 
 class Int8Linear(nn.Module):
-    def __init__(self,weight,group=128):
+    def __init__(self,weight,group=32):
         super().__init__();q,s=pack_weight(weight,group)
         self.register_buffer('qweight',q);self.register_buffer('scales',s)
         self.in_features=weight.shape[1];self.out_features=weight.shape[0];self.group=group
     def from_quantized(self,q,s):
-        shape=q.shape[:-1];m=q.numel()//self.in_features
+        shape=q.shape[:-1];m=math.prod(shape)
         y=torch.empty((*shape,self.out_features),device=q.device,dtype=torch.float32)
+        if not self.in_features: return y.zero_()
+        if not m: return y
         _gemm[(tr.cdiv(m,16),tr.cdiv(self.out_features,32))](q,s,self.qweight,self.scales,y,y,y,y,y,y,y,m,self.out_features,self.in_features,self.group,16,32,tr.next_power_of_2(self.group),False,0,0,num_warps=4)
         return y
     def forward(self,x):return self.from_quantized(*quantize(x,self.group))
@@ -193,70 +236,136 @@ class Int8Controller(nn.Module):
         self.activation={'linear':1,'tanh':2,'sigmoid':3}[base.activation]
     def forward(self,x):
         q,s=quantize(x);m=x.numel()//x.shape[-1];n=self.down.out_features;k=x.shape[-1]
-        h=torch.empty((*x.shape[:-1],n),device=x.device,dtype=torch.int8);hs=torch.empty((m,1),device=x.device)
-        _gemm[(tr.cdiv(m,16),1)](q,s,self.down.qweight,self.down.scales,h,hs,h,h,h,h,h,m,n,k,128,16,max(32,tr.next_power_of_2(n)),128,False,0,self.activation,num_warps=4)
+        h=torch.empty((*x.shape[:-1],n),device=x.device,dtype=torch.int8);hs=torch.empty((m,tr.cdiv(n,32)),device=x.device,dtype=SCALE_DTYPE)
+        _gemm[(tr.cdiv(m,16),tr.cdiv(n,32))](q,s,self.down.qweight,self.down.scales,h,hs,h,h,h,h,h,m,n,k,32,16,32,32,False,0,self.activation,num_warps=4)
         return self.up.from_quantized(h,hs)
 
 
 class Int8Embedding(nn.Module):
     def __init__(self,weight):
-        super().__init__();q,s=pack_weight(weight,weight.shape[-1]);self.register_buffer('qweight',q);self.register_buffer('scales',s)
-    def forward(self,tokens):return self.qweight[tokens].float()*self.scales[tokens]
+        super().__init__();q,s=pack_weight(weight,32);self.register_buffer('qweight',q);self.register_buffer('scales',s)
+    def forward(self,tokens):return self.qweight[tokens].float()*self.scales[tokens].float().repeat_interleave(32,-1)[...,:self.qweight.shape[1]]
+
+
+@tr.jit
+def _geometry_quant(C, MEAN, P, PS, SC, SH, LUT, H, HS,
+                    M:tl.constexpr, N:tl.constexpr, RANK:tl.constexpr,
+                    NL:tl.constexpr, BM:tl.constexpr=16, BN:tl.constexpr=32):
+    rows=tl.program_id(0)*BM+tl.arange(0,BM)
+    cols=tl.program_id(1)*BN+tl.arange(0,BN)
+    valid=cols<N
+    original=tl.load(C+rows[:,None]*N+cols[None,:],(rows[:,None]<M)&valid[None,:],other=0.)
+    x=tl.minimum(tl.maximum(original,-65504.),65504.)
+    mean=tl.load(MEAN+rows[:,None]*(N//RANK)+cols[None,:]//RANK,
+                 (rows[:,None]<M)&valid[None,:],other=0.)
+    c0=tl.load(P+cols*6,valid,other=0).to(tl.float32)
+    c1=tl.load(P+cols*6+1,valid,other=0).to(tl.float32)
+    c2=tl.load(P+cols*6+2,valid,other=0).to(tl.float32)
+    c3=tl.load(P+cols*6+3,valid,other=0).to(tl.float32)
+    c4=tl.load(P+cols*6+4,valid,other=0).to(tl.float32)
+    c5=tl.load(P+cols*6+5,valid,other=0).to(tl.float32)
+    ps=tl.load(PS+cols,valid,other=0).to(tl.float32)
+    scale=tl.load(SC+cols//RANK,valid,other=1).to(tl.float32)
+    shift=tl.load(SH+cols//RANK,valid,other=0).to(tl.float32)
+    h=_spine_features(x,mean,c0,c1,c2,c3,c4,c5,ps,scale,shift,LUT,valid,NL)
+    hs=_half_scale(tl.max(tl.abs(h),1))
+    q=tl.minimum(tl.maximum(libdevice.nearbyint(h/hs[:,None]),-127.),127.).to(tl.int8)
+    tl.store(H+rows[:,None]*N+cols[None,:],q,(rows[:,None]<M)&valid[None,:])
+    tl.store(HS+rows*tr.cdiv(N,32)+tl.program_id(1),hs,rows<M)
+
+
+def pack_spine(coefficients):
+    # Six coefficients per output coordinate form a partial GS32 row.
+    q, scales=pack_weight(coefficients.reshape(-1,6),32)
+    return q, scales.flatten()
+
+
+def _project_features(qx,sx,qd,sd,p,ps,scale,shift,lut,subspace_rank,nonlinear,save=False):
+    m=math.prod(qx.shape[:-1]);n,k=qd.shape
+    h=torch.empty((m,n),device=qx.device,dtype=torch.int8)
+    hs=torch.empty((m,tr.cdiv(n,32)),device=qx.device,dtype=SCALE_DTYPE)
+    coords=torch.empty((m,n),device=qx.device,dtype=torch.float32) if save or subspace_rank>1 else None
+    if not m or not n:
+        return h,hs,coords,None
+    if subspace_rank==1:
+        _gemm[(tr.cdiv(m,16),tr.cdiv(n,32))](
+            qx,sx,qd,sd,h,hs,p,ps,scale,shift,lut,m,n,k,32,16,32,32,True,nonlinear,0,
+            COORD=coords,SAVE_COORD=save,num_warps=4)
+        mean=coords
+    else:
+        _gemm[(tr.cdiv(m,16),tr.cdiv(n,32))](
+            qx,sx,qd,sd,coords,coords,coords,coords,coords,coords,coords,
+            m,n,k,32,16,32,32,False,0,0,num_warps=4)
+        mean=coords.clamp(-65504.,65504.).reshape(m,n//subspace_rank,subspace_rank).mean(-1)
+        _geometry_quant[(tr.cdiv(m,16),tr.cdiv(n,32))](
+            coords,mean,p,ps,scale,shift,lut,h,hs,m,n,subspace_rank,nonlinear,num_warps=4)
+    return h,hs,coords,mean
 
 
 class KS3Int8(nn.Module):
-    """Fused KS3 W8A8 inference or training, optionally sharded across GPUs.
+    """GS32/FP16-scale KS3 inference or training with arbitrary widths and chart rank.
 
-    ``cell`` can be the standalone KS3 reference or the legacy rank-1 cell.
-    Load its trained weights before constructing this module. The packed
-    buffers support state_dict/save/load; conversion does not mutate the cell.
+    ``cell`` supplies positive input/output widths, num_subspaces and subspace_rank.
     With ``trainable=True``, optimize this module's FP32 ``master_*`` parameters.
-    ``eval()`` keeps those masters current; use ``to_inference()`` to freeze them.
+    ``eval()`` keeps those masters current; ``to_inference()`` freezes them.
 
-    TP assumes a replicated input and replicated loss/upstream gradient.
-    Forward sums output partials; backward sums input-gradient partials only.
-    Each rank owns its local parameter gradients. A custom reducer must return
-    an FP32 sum tensor and support both forward and backward calls. Whole-model
-    ``convert()`` remains an inference export; this training API covers the FFN.
+    TP assigns whole charts and whole quantization groups. Replicated input and
+    upstream gradients are required; only output/input partials are all-reduced.
+    Small configurations can leave ranks without a chart; they still participate
+    in collectives. The optional full-model convert() helper targets the historical
+    RWKV harness; this FFN itself is independent of its width/head restrictions.
     """
     def __init__(self,cell,rank=0,world=1,nonlinear='fp16',reducer=None,*,trainable=False):
-        assert nonlinear in ('fp32','fp16','int8')
-        super().__init__();assert cell.subspace_rank==1 and cell.num_subspaces==368
-        assert world in (1,2,4) and 0<=rank<world;local=368//world;start=rank*local;end=start+local
-        self.down=Int8Linear(cell.down.weight[start:end],128)
-        self.up=Int8Linear(cell.up.weight[:,start:end],92)
-        if hasattr(cell, 'coefficients'):
-            coefficients, raw_scale, raw_shift = cell.coefficients, cell.raw_scale, cell.raw_shift
+        super().__init__()
+        if nonlinear not in ('fp32','fp16','int8'):
+            raise ValueError('nonlinear must be fp32, fp16 or int8')
+        self.num_subspaces=cell.num_subspaces
+        self.subspace_rank=cell.subspace_rank
+        self.chart_start,self.chart_end=chart_range(self.num_subspaces,self.subspace_rank,rank,world)
+        start,end=self.chart_start*self.subspace_rank,self.chart_end*self.subspace_rank
+        self.local_subspaces=self.chart_end-self.chart_start
+        self.local=end-start
+        self.in_features=cell.down.weight.shape[1];self.out_features=cell.up.weight.shape[0]
+        features=self.num_subspaces*self.subspace_rank
+        if cell.down.weight.shape[0]!=features or cell.up.weight.shape[1]!=features:
+            raise ValueError('Projection shapes do not match subspace count and rank')
+        if hasattr(cell,'coefficients'):
+            coefficients=cell.coefficients.reshape(self.num_subspaces,self.subspace_rank,6)
+            raw_scale,raw_shift=cell.raw_scale,cell.raw_shift
         else:
-            coefficients, raw_scale, raw_shift = cell.geo_spine, cell.geo_raw_scale, cell.geo_raw_shift
-        spine=coefficients.detach().reshape(368,6)[start:end]
-        ps=spine.abs().amax(-1).clamp_min(1e-10)/127.
-        self.register_buffer('spine',(spine/ps[:,None]).round().clamp(-127,127).to(torch.int8))
-        self.register_buffer('spine_scale',ps)
-        self.register_buffer('warp_scale',torch.nn.functional.softplus(raw_scale.detach().reshape(-1)[start:end])+1e-4)
-        self.register_buffer('warp_shift',.5*torch.tanh(raw_shift.detach().reshape(-1)[start:end]))
-        self.world=world;self.local=local;self.reducer=reducer;self.nonlinear={'fp32':0,'fp16':1,'int8':2}[nonlinear]
+            coefficients=cell.geo_spine.permute(0,2,1)
+            raw_scale,raw_shift=cell.geo_raw_scale,cell.geo_raw_shift
+        coeff=coefficients.detach()[self.chart_start:self.chart_end].contiguous()
+        if self.subspace_rank==1:coeff=coeff.reshape(self.local_subspaces,6)
+        raw_scale=raw_scale.detach().reshape(self.num_subspaces)[self.chart_start:self.chart_end]
+        raw_shift=raw_shift.detach().reshape(self.num_subspaces)[self.chart_start:self.chart_end]
+        down=cell.down.weight.detach()[start:end];up=cell.up.weight.detach()[:,start:end]
+        self.down=Int8Linear(down);self.up=Int8Linear(up)
+        spine,ps=pack_spine(coeff)
+        self.register_buffer('spine',spine);self.register_buffer('spine_scale',ps)
+        self.register_buffer('warp_scale',torch.nn.functional.softplus(raw_scale.float())+1e-4)
+        self.register_buffer('warp_shift',.5*torch.tanh(raw_shift.float()))
+        self.world=world;self.tp_rank=rank;self.reducer=reducer
+        self.nonlinear={'fp32':0,'fp16':1,'int8':2}[nonlinear]
         self.register_buffer('tanh_lut',(torch.tanh(torch.arange(-128,128,device=spine.device).float()*(3.2/127.))*127).round().clamp(-127,127).to(torch.int8))
-        self.trainable = trainable
+        self.trainable=trainable
         if trainable:
-            # FP32 optimizer-owned masters; forward repacks after every update.
-            self.master_down = nn.Parameter(cell.down.weight[start:end].detach().float().clone())
-            self.master_up = nn.Parameter(cell.up.weight[:,start:end].detach().float().clone())
-            self.master_coefficients = nn.Parameter(coefficients.detach().reshape(368,6)[start:end].float().clone())
-            self.master_raw_scale = nn.Parameter(raw_scale.detach().reshape(-1)[start:end].float().clone())
-            self.master_raw_shift = nn.Parameter(raw_shift.detach().reshape(-1)[start:end].float().clone())
+            for name,value in (('down',down),('up',up),('coefficients',coeff),
+                               ('raw_scale',raw_scale),('raw_shift',raw_shift)):
+                setattr(self,'master_'+name,nn.Parameter(value.float().clone()))
+
     def forward(self,x):
+        if x.shape[-1]!=self.in_features:
+            raise ValueError('Input feature width does not match this KS3 cell')
         if self.trainable:
-            return _KS3Train.apply(
-                x, self.master_down, self.master_up, self.master_coefficients,
-                self.master_raw_scale, self.master_raw_shift, self.tanh_lut,
-                self.nonlinear, self.world, self.reducer)
-        q,s=quantize(x,128);m=x.numel()//x.shape[-1]
-        h=torch.empty((*x.shape[:-1],self.local),device=x.device,dtype=torch.int8)
-        hs=torch.empty((m,self.local//92),device=x.device)
-        _gemm[(tr.cdiv(m,16),self.local//92)](q,s,self.down.qweight,self.down.scales,h,hs,self.spine,self.spine_scale,self.warp_scale,self.warp_shift,self.tanh_lut,m,self.local,x.shape[-1],128,16,128,128,True,self.nonlinear,0,num_warps=4)
-        y=self.up.from_quantized(h,hs)
-        if self.world>1:
+            return _KS3Train.apply(x,self.master_down,self.master_up,self.master_coefficients,
+                self.master_raw_scale,self.master_raw_shift,self.tanh_lut,
+                self.nonlinear,self.world,self.reducer,self.subspace_rank)
+        q,s=quantize(x)
+        h,hs,_,_=_project_features(q,s,self.down.qweight,self.down.scales,self.spine,
+            self.spine_scale,self.warp_scale,self.warp_shift,self.tanh_lut,self.subspace_rank,self.nonlinear)
+        y=self.up.from_quantized(h,hs).reshape(*x.shape[:-1],self.out_features)
+        if self.world>1 and y.numel():
             if self.reducer is None:dist.all_reduce(y)
             else:y=self.reducer(y)
         return y
@@ -264,26 +373,21 @@ class KS3Int8(nn.Module):
     @torch.no_grad()
     def to_inference(self):
         """Return a frozen copy, packing the latest master weights on each rank."""
-        result = copy.deepcopy(self)
-        if not self.trainable:
-            return result.eval()
-        result.down = Int8Linear(self.master_down, 128)
-        result.up = Int8Linear(self.master_up, 92)
-        coeff = self.master_coefficients
-        result.spine_scale = coeff.abs().amax(-1).clamp_min(1e-10)/127.
-        result.spine = (coeff/result.spine_scale[:, None]).round().clamp(-127,127).to(torch.int8)
-        result.warp_scale = torch.nn.functional.softplus(self.master_raw_scale)+1e-4
-        result.warp_shift = .5*torch.tanh(self.master_raw_shift)
-        for name in ('master_down', 'master_up', 'master_coefficients',
-                     'master_raw_scale', 'master_raw_shift'):
-            delattr(result, name)
-        result.trainable = False
+        result=copy.deepcopy(self)
+        if not self.trainable:return result.eval()
+        result.down=Int8Linear(self.master_down);result.up=Int8Linear(self.master_up)
+        result.spine,result.spine_scale=pack_spine(self.master_coefficients)
+        result.warp_scale=torch.nn.functional.softplus(self.master_raw_scale)+1e-4
+        result.warp_shift=.5*torch.tanh(self.master_raw_shift)
+        for name in ('down','up','coefficients','raw_scale','raw_shift'):
+            delattr(result,'master_'+name)
+        result.trainable=False
         return result.eval()
 
 
 @tr.jit
 def _backward_mm(A, B, BS, OUT, COORD, P, PS, SCALE, SHIFT, RAW_SCALE,
-                 RAW_SHIFT, PARTIAL,
+                 RAW_SHIFT, PARTIAL, MEAN, DMEAN, RANK: tl.constexpr,
                  M: tl.constexpr, N: tl.constexpr, K: tl.constexpr,
                  A0: tl.constexpr, A1: tl.constexpr, GROUP: tl.constexpr,
                  GEOMETRY: tl.constexpr,
@@ -313,16 +417,20 @@ def _backward_mm(A, B, BS, OUT, COORD, P, PS, SCALE, SHIFT, RAW_SCALE,
         mask = (rows[:, None] < M) & (cols[None, :] < N)
         original = tl.load(COORD + rows[:, None] * N + cols[None, :], mask, other=0)
         x = tl.minimum(tl.maximum(original, -65504.), 65504.)
-        scale = tl.load(SCALE + cols, cols < N, other=1)
-        shift = tl.load(SHIFT + cols, cols < N, other=0)
-        ps = tl.load(PS + cols, cols < N, other=0)
+        scale = tl.load(SCALE + cols//RANK, cols < N, other=1).to(tl.float32)
+        shift = tl.load(SHIFT + cols//RANK, cols < N, other=0).to(tl.float32)
+        ps = tl.load(PS + cols, cols < N, other=0).to(tl.float32)
         c0 = tl.load(P + cols * 6, cols < N, other=0).to(tl.float32) * ps
         c1 = tl.load(P + cols * 6 + 1, cols < N, other=0).to(tl.float32) * ps
         c2 = tl.load(P + cols * 6 + 2, cols < N, other=0).to(tl.float32) * ps
         c3 = tl.load(P + cols * 6 + 3, cols < N, other=0).to(tl.float32) * ps
         c4 = tl.load(P + cols * 6 + 4, cols < N, other=0).to(tl.float32) * ps
         c5 = tl.load(P + cols * 6 + 5, cols < N, other=0).to(tl.float32) * ps
-        t = 4. * libdevice.tanh(x * .25)
+        if RANK == 1:
+            mean = x
+        else:
+            mean = tl.load(MEAN+rows[:,None]*(N//RANK)+cols[None,:]//RANK,mask,other=0.)
+        t = 4. * libdevice.tanh(mean * .25)
         z = libdevice.tanh(scale[None, :] * (t + shift[None, :]))
         cubic = 2*c0 - 2*c1 + c2 + c3
         quadratic = -3*c0 + 3*c1 - 2*c2 - c3
@@ -334,9 +442,12 @@ def _backward_mm(A, B, BS, OUT, COORD, P, PS, SCALE, SHIFT, RAW_SCALE,
         dpoly = (3*cubic*t + 2*quadratic)*t + c2
         dwarp = (12*c5*z + 4*c4)*z - 3*c5
         dz = dwarp * (1. - z*z)
-        dx = dpre * (1. + (dpoly + dz*scale) * (1. - t*t*.0625))
-        dx = tl.where((original >= -65504.) & (original <= 65504.), dx, 0.)
-        value = dx
+        dmean = dpre*(dpoly+dz*scale)*(1.-t*t*.0625)
+        if RANK == 1:
+            value = tl.where((original>=-65504.) & (original<=65504.),dpre+dmean,0.)
+        else:
+            value = dpre
+            tl.store(DMEAN+rows[:,None]*N+cols[None,:],dmean,mask)
 
         # One deterministic partial per row tile, chart and learned scalar.
         offset = (tl.program_id(0) * N + cols) * 8
@@ -348,8 +459,8 @@ def _backward_mm(A, B, BS, OUT, COORD, P, PS, SCALE, SHIFT, RAW_SCALE,
         tl.store(PARTIAL + offset+3, tl.sum(dpre*(t3-t2), 0), cols < N)
         tl.store(PARTIAL + offset+4, tl.sum(dpre*(2*z*z-1), 0), cols < N)
         tl.store(PARTIAL + offset+5, tl.sum(dpre*(4*z*z*z-3*z), 0), cols < N)
-        raw_scale = tl.load(RAW_SCALE + cols, cols < N, other=0)
-        raw_shift = tl.load(RAW_SHIFT + cols, cols < N, other=0)
+        raw_scale = tl.load(RAW_SCALE + cols//RANK, cols < N, other=0)
+        raw_shift = tl.load(RAW_SHIFT + cols//RANK, cols < N, other=0)
         dscale = dpre*dz*(t+shift)*tl.sigmoid(raw_scale)
         shift_tanh = libdevice.tanh(raw_shift)
         dshift = dpre*dz*scale*.5*(1.-shift_tanh*shift_tanh)
@@ -377,83 +488,97 @@ def _gradient_mm(a, packed_b, scales, group):
     """Multiply an FP32 gradient by an INT8 saved operand without unpacking it."""
     out = torch.empty((a.shape[0], packed_b.shape[1]), device=a.device, dtype=torch.float32)
     _backward_mm[(tr.cdiv(out.shape[0], 16), tr.cdiv(out.shape[1], 32))](
-        a, packed_b, scales, out, out, out, out, out, out, out, out, out,
+        a, packed_b, scales, out, out, out, out, out, out, out, out, out, out, out, 1,
         out.shape[0], out.shape[1], a.shape[1], *a.stride(), group, False,
         num_warps=4)
     return out
 
 
-class _KS3Train(torch.autograd.Function):
-    """W8A8 forward, identity quantization STE, and fused first-order FP32 VJP."""
+@tr.jit
+def _finish_coordinate_gradient(C, DC, DM, M:tl.constexpr, N:tl.constexpr,
+                                RANK:tl.constexpr, BLOCK:tl.constexpr=256):
+    i=tl.program_id(0)*BLOCK+tl.arange(0,BLOCK)
+    row=i//N;col=i%N
+    x=tl.load(C+i,i<M*N,other=0.)
+    direct=tl.load(DC+i,i<M*N,other=0.)
+    shared=tl.load(DM+row*(N//RANK)+col//RANK,i<M*N,other=0.)
+    result=tl.where((x>=-65504.)&(x<=65504.),direct+shared,0.)
+    tl.store(DC+i,result,i<M*N)
 
+
+class _KS3Train(torch.autograd.Function):
+    """GS32 W8A8 forward and fused first-order FP32 surrogate VJP."""
     @staticmethod
-    def forward(ctx, inputs, down, up, coefficients, raw_scale, raw_shift,
-                lut, nonlinear, world, reducer):
-        tensors = (inputs, down, up, coefficients, raw_scale, raw_shift)
-        if any(t.device != inputs.device or t.dtype != torch.float32 for t in tensors):
+    def forward(ctx,inputs,down,up,coefficients,raw_scale,raw_shift,
+                lut,nonlinear,world,reducer,subspace_rank):
+        tensors=(inputs,down,up,coefficients,raw_scale,raw_shift)
+        if any(t.device!=inputs.device or t.dtype!=torch.float32 for t in tensors):
             raise ValueError('KS3 training requires FP32 inputs and master parameters on one device.')
-        if not inputs.is_cuda or inputs.shape[-1] != down.shape[1]:
+        if not inputs.is_cuda or inputs.shape[-1]!=down.shape[1]:
             raise ValueError('KS3 training requires GPU inputs with the configured feature width.')
-        if not inputs.numel():
-            raise ValueError('KS3 fused training requires at least one input token.')
-        x = inputs.reshape(-1, inputs.shape[-1]).contiguous()
-        m, local = x.shape[0], down.shape[0]
-        qx, sx = quantize(x, 128)
-        qd, sd = pack_weight(down, 128)
-        qu, su = pack_weight(up, 92)
-        ps = coefficients.abs().amax(-1).clamp_min(1e-10)/127.
-        p = (coefficients/ps[:, None]).round().clamp(-127,127).to(torch.int8)
-        scale = torch.nn.functional.softplus(raw_scale)+1e-4
-        shift = .5*torch.tanh(raw_shift)
-        h = torch.empty((m, local), device=x.device, dtype=torch.int8)
-        hs = torch.empty((m, local//92), device=x.device, dtype=torch.float32)
-        coords = torch.empty((m, local), device=x.device, dtype=torch.float32)
-        _gemm[(tr.cdiv(m,16),local//92)](
-            qx,sx,qd,sd,h,hs,p,ps,scale,shift,lut,
-            m,local,x.shape[1],128,16,128,128,True,nonlinear,0,
-            COORD=coords,SAVE_COORD=True,num_warps=4)
-        y = torch.empty((m,up.shape[0]), device=x.device, dtype=torch.float32)
-        _gemm[(tr.cdiv(m,16),tr.cdiv(up.shape[0],32))](
-            h,hs,qu,su,y,y,y,y,y,y,y,
-            m,up.shape[0],local,92,16,32,128,False,0,0,num_warps=4)
-        if world > 1:
-            if reducer is None:
-                dist.all_reduce(y)
-            else:
-                y = reducer(y)
-        ctx.save_for_backward(qx,sx,qd,sd,qu,su,h,hs,coords,p,ps,scale,shift,
-                              raw_scale,raw_shift)
-        ctx.input_shape, ctx.world, ctx.reducer = inputs.shape, world, reducer
-        return y.reshape(*inputs.shape[:-1], up.shape[0])
+        x=inputs.reshape(-1,inputs.shape[-1]).contiguous()
+        m,local=x.shape[0],down.shape[0]
+        ctx.input_shape,ctx.world,ctx.reducer=inputs.shape,world,reducer
+        ctx.subspace_rank,ctx.coefficient_shape=subspace_rank,coefficients.shape
+        ctx.empty=not m or not local
+        if ctx.empty:
+            ctx.save_for_backward(inputs,down,up,coefficients,raw_scale,raw_shift)
+            y=torch.zeros((m,up.shape[0]),device=x.device,dtype=torch.float32)
+        else:
+            qx,sx=quantize(x)
+            qd,sd=pack_weight(down);qu,su=pack_weight(up)
+            p,ps=pack_spine(coefficients)
+            scale=torch.nn.functional.softplus(raw_scale)+1e-4
+            shift=.5*torch.tanh(raw_shift)
+            h,hs,coords,mean=_project_features(qx,sx,qd,sd,p,ps,scale,shift,lut,
+                                              subspace_rank,nonlinear,save=True)
+            y=torch.empty((m,up.shape[0]),device=x.device,dtype=torch.float32)
+            _gemm[(tr.cdiv(m,16),tr.cdiv(up.shape[0],32))](
+                h,hs,qu,su,y,y,y,y,y,y,y,
+                m,up.shape[0],local,32,16,32,32,False,0,0,num_warps=4)
+            ctx.save_for_backward(qx,sx,qd,sd,qu,su,h,hs,coords,p,ps,scale,shift,
+                                  raw_scale,raw_shift,mean)
+        if world>1 and y.numel():
+            if reducer is None:dist.all_reduce(y)
+            else:y=reducer(y)
+        return y.reshape(*inputs.shape[:-1],up.shape[0])
 
     @staticmethod
     @once_differentiable
-    def backward(ctx, grad):
-        (qx,sx,qd,sd,qu,su,h,hs,coords,p,ps,scale,shift,
-         raw_scale,raw_shift) = ctx.saved_tensors
-        grad = grad.reshape(-1,qu.shape[0]).contiguous()
-        m, local = coords.shape
-        dc = torch.empty_like(coords)
-        partial = torch.empty((tr.cdiv(m,16),local,8), device=grad.device, dtype=torch.float32)
-        _backward_mm[(tr.cdiv(m,16),tr.cdiv(local,32))](
-            grad,qu,su,dc,coords,p,ps,scale,shift,raw_scale,raw_shift,partial,
-            m,local,qu.shape[0],*grad.stride(),92,True,num_warps=4)
-        dcoeff = torch.empty((local,6), device=grad.device, dtype=torch.float32)
-        dscale, dshift = torch.empty_like(raw_scale), torch.empty_like(raw_shift)
-        _reduce_geometry[(local,)](
-            partial,dcoeff,dscale,dshift,local,partial.shape[0],
-            tr.next_power_of_2(partial.shape[0]),num_warps=4)
-        dup = _gradient_mm(grad.T,h,hs,92)
-        ddown = _gradient_mm(dc.T,qx,sx,128)
-        dx = _gradient_mm(dc,qd,sd,128)
-        # Output gradients are replicated, so the forward sum has identity VJP.
-        # Only the contributions to the replicated input must be summed here.
-        if ctx.world > 1:
-            if ctx.reducer is None:
-                dist.all_reduce(dx)
-            else:
-                dx = ctx.reducer(dx)
-        return dx.reshape(ctx.input_shape),ddown,dup,dcoeff,dscale,dshift,None,None,None,None
+    def backward(ctx,grad):
+        rank=ctx.subspace_rank
+        if ctx.empty:
+            grads=[torch.zeros_like(t) for t in ctx.saved_tensors]
+            dx,ddown,dup,dcoeff,dscale,dshift=grads
+        else:
+            (qx,sx,qd,sd,qu,su,h,hs,coords,p,ps,scale,shift,
+             raw_scale,raw_shift,mean)=ctx.saved_tensors
+            grad=grad.reshape(-1,qu.shape[0]).contiguous()
+            m,local=coords.shape
+            dc=torch.empty_like(coords)
+            dmean=torch.empty_like(coords) if rank>1 else dc
+            partial=torch.empty((tr.cdiv(m,16),local,8),device=grad.device,dtype=torch.float32)
+            _backward_mm[(tr.cdiv(m,16),tr.cdiv(local,32))](
+                grad,qu,su,dc,coords,p,ps,scale,shift,raw_scale,raw_shift,partial,mean,dmean,rank,
+                m,local,qu.shape[0],*grad.stride(),32,True,num_warps=4)
+            dcoeff=torch.empty((local,6),device=grad.device,dtype=torch.float32)
+            dscale=torch.empty((local,),device=grad.device,dtype=torch.float32)
+            dshift=torch.empty_like(dscale)
+            _reduce_geometry[(local,)](partial,dcoeff,dscale,dshift,local,
+                partial.shape[0],tr.next_power_of_2(partial.shape[0]),num_warps=4)
+            if rank>1:
+                shared=dmean.reshape(m,local//rank,rank).mean(-1)
+                _finish_coordinate_gradient[(tr.cdiv(m*local,256),)](coords,dc,shared,m,local,rank)
+                dscale=dscale.reshape(-1,rank).sum(-1)
+                dshift=dshift.reshape(-1,rank).sum(-1)
+            dcoeff=dcoeff.reshape(ctx.coefficient_shape)
+            dup=_gradient_mm(grad.T,h,hs,32)
+            ddown=_gradient_mm(dc.T,qx,sx,32)
+            dx=_gradient_mm(dc,qd,sd,32).reshape(ctx.input_shape)
+        if ctx.world>1 and dx.numel():
+            if ctx.reducer is None:dist.all_reduce(dx)
+            else:dx=ctx.reducer(dx)
+        return dx,ddown,dup,dcoeff,dscale,dshift,None,None,None,None,None
 
 
 def convert(model,rank=0,world=1,nonlinear='fp16',reducer=None):

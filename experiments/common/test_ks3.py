@@ -10,9 +10,10 @@ from experiments.common.ks3 import KS3
 
 def basis_reference(cell, inputs):
     x = F.linear(inputs, cell.down.weight).clamp(-65504.0, 65504.0)
-    t = 4 * torch.tanh(x / 4)
-    z = torch.tanh((F.softplus(cell.raw_scale) + 1e-4) *
-                   (t + 0.5 * torch.tanh(cell.raw_shift)))
+    x=x.reshape(*inputs.shape[:-1],cell.num_subspaces,cell.subspace_rank)
+    t = 4 * torch.tanh(x.mean(-1,keepdim=True) / 4)
+    z = torch.tanh((F.softplus(cell.raw_scale)[:,None] + 1e-4) *
+                   (t + 0.5 * torch.tanh(cell.raw_shift)[:,None]))
     basis = torch.stack((
         2 * t**3 - 3 * t**2 + 1,
         -2 * t**3 + 3 * t**2,
@@ -21,8 +22,8 @@ def basis_reference(cell, inputs):
         2 * z**2 - 1,
         4 * z**3 - 3 * z,
     ), dim=-1)
-    geometry = (basis * cell.coefficients).sum(-1)
-    return F.linear(F.relu(x + geometry).square(), cell.up.weight)
+    geometry = (basis * cell.coefficients.reshape(cell.num_subspaces,cell.subspace_rank,6)).sum(-1)
+    return F.linear(F.relu(x + geometry).square().flatten(-2), cell.up.weight)
 
 
 class TestKS3(unittest.TestCase):
@@ -39,6 +40,17 @@ class TestKS3(unittest.TestCase):
             expected_grads = torch.autograd.grad(expected, targets, upstream)
             for left, right in zip(actual_grads, expected_grads):
                 torch.testing.assert_close(left, right, rtol=1e-10, atol=1e-10)
+
+    def test_arbitrary_subspace_ranks(self):
+        for d,o,s,r in ((1,1,1,1),(7,13,5,3),(33,17,3,16),(5,9,2,65)):
+            cell=KS3(d,o,s,r,dtype=torch.float64)
+            self.assertEqual(sum(p.numel() for p in cell.parameters()),s*(r*(d+o+6)+2))
+            x=torch.randn(2,d,dtype=torch.float64,requires_grad=True)*.2
+            a,b=cell(x),basis_reference(cell,x)
+            torch.testing.assert_close(a,b,atol=1e-11,rtol=1e-11)
+            g=torch.randn_like(a);targets=(x,*cell.parameters())
+            for l,v in zip(torch.autograd.grad(a,targets,g),torch.autograd.grad(b,targets,g)):
+                torch.testing.assert_close(l,v,atol=1e-10,rtol=1e-10)
 
     def test_winning_budget_and_arbitrary_leading_dimensions(self):
         cell = KS3(96)

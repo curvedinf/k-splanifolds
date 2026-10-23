@@ -1,8 +1,7 @@
-"""Head-sharded RWKV-7 for the unchanged three-head, 96D model.
+"""Head-sharded RWKV adapter for the harness's 32D attention heads.
 
-Three heads are assigned contiguously over TP ranks. At TP4 rank 3 has no
-attention head but still participates in reduction and owns 92 FFN features.
-Recurrent state and normalization remain FP32. No model padding or retraining.
+The model width and number of heads come from the source block. Ranks without
+an attention head still participate in reductions. Recurrent state stays FP32.
 """
 import copy,math
 from types import SimpleNamespace
@@ -18,8 +17,9 @@ else:
 
 class HeadParallelAttention(nn.Module):
     def __init__(self,base,rank,world,reducer=None):
-        super().__init__();assert base.width==96 and base.heads==3
-        count=3//world+int(rank<3%world);start=(rank*(3//world)+min(rank,3%world))*32;end=start+count*32
+        super().__init__();assert base.width==base.heads*32 and base.heads>0
+        heads=base.heads
+        count=heads//world+int(rank<heads%world);start=(rank*(heads//world)+min(rank,heads%world))*32;end=start+count*32
         self.head_start=start;self.head_end=end;self.heads=count;self.width=count*32;self.world=world;self.reducer=reducer
         if not count:return
         for name in ('read','decay','key','value','rate','gate'):

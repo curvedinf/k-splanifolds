@@ -1,5 +1,24 @@
 # KS3: integrated INT8, Horner, fusion and tensor parallelism
 
+**Current code update:** KS3 now uses **GS32 with FP16 quantization scales** and
+supports configurable positive input/output widths, subspace counts and ranks,
+including fused first-order backward. The rank-1 fast path is preserved; higher
+ranks use the chart mean and an additional geometry/requantization kernel.
+The 368-chart rank-1 TP4 layout is now **96/96/96/80**. Recurrent state remains FP32.
+The quality and timing tables below are historical measurements of the earlier
+mixed-group format; they are **not new GS32 measurements**.
+
+The GS32 export format is version 2. Regenerate older exports from the original
+floating-point checkpoint. A verified local export is at
+`experiments/rwkv7_ks2/gpu_runs/rank1_int8_tp/export_tp4_gs32_fp16_seed11/`.
+Weights are not included in this report.
+
+- [GS32 export layout and FP16 scale metadata](gs32_export_manifest.json)
+- [GS32 full-model TP4 reload checks](gs32_export_reload_check.json)
+- [GS32 trained-checkpoint conversion checks](gs32_checkpoint_checks.json)
+- [Configurable GS32 forward/backward and TP tests](../../../common/test_ks3_int8.py)
+
+
 The selected rank-1 KS2 algorithm is now named **KS3**. The architecture,
 checkpoint weights and measurements below are unchanged. The standalone
 [PyTorch reference](../../../common/ks3.py) provides the same floating-point FFN

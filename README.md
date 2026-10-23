@@ -2,13 +2,13 @@
 
 This repo contains the K‑Splanifolds paper plus the code and data used to generate its comparative experiments.
 
-**KS3** is the selected rank-1 spine FFN: learned input/output projections,
+**KS3** generalizes the selected spine FFN to configurable subspace ranks: learned input/output projections,
 a bounded Hermite cubic plus two warped Chebyshev terms, a coordinate bypass,
-and ReLU². At width 96 with 368 subspaces it has **73,600 parameters per FFN**.
+and ReLU². At width 96 with 368 rank-1 subspaces it has **73,600 parameters per FFN**.
 
 - [ks3.py](experiments/common/ks3.py) — standalone, readable PyTorch implementation with autograd.
 - [ks3_int8.py](experiments/common/ks3_int8.py) — integrated W8A8,
-  fused Horner evaluation and tensor parallelism; FP16 nonlinearities by default,
+  GS32 with FP16 quantization scales, fused Horner evaluation and tensor parallelism; FP16 nonlinearities by default,
   with FP32 RWKV recurrent state.
 - [Measurements and export instructions](experiments/rwkv7_ks2/reports/2026-10-23-rank1-int8-tp/REPORT.md)
   — historical results originally labeled rank-1 KS2; the KS3 rename does not change the algorithm.
@@ -36,9 +36,34 @@ with torch.inference_mode():
     y = quantized_ffn(torch.randn(2, 64, 96, device="cuda"))
 ```
 
-The fused implementation supports the tested 368-chart layout with TP1, TP2 or
-TP4. `KS3Int8` is standalone; full RWKV conversion uses the repository's
-attention adapter. FP32 and INT8 nonlinear modes remain available explicitly.
+Both implementations accept arbitrary positive integer input/output widths,
+subspace counts and subspace ranks. For example:
+
+```python
+ffn = KS3(in_features=129, out_features=65, num_subspaces=37, subspace_rank=2)
+```
+
+Each chart's spine uses its mean input coordinate and learns six coefficients
+per output coordinate. Parameter count is
+`num_subspaces * (subspace_rank * (in_features + out_features + 6) + 2)`.
+Rank 1 keeps the fused input-GEMM/geometry kernel; higher ranks add a chart-mean
+reduction and a fused geometry/requantization kernel. The coordinate clamp,
+bounded cubic coordinate and tanh warp are preserved. KS3 has no edge terms,
+so KS2's edge-energy damping is not part of this spine-only algorithm.
+
+All INT8 matrices, activations, embeddings and coefficient rows use GS32 with
+FP16 quantization scales. Rows shorter than 32 (including six-coefficient rows)
+use partial groups. Scales are rounded before encoding and promoted to FP32 for
+arithmetic, with bounds `[2**-24, 65504]`; codes saturate to `[-127,127]`.
+Warp scalars, optimizer masters/gradients and recurrent state remain FP32.
+
+TP keeps whole charts and whole quantization groups together. The default
+368-chart rank-1 model uses `[96, 96, 96, 80]` features at TP4. Other positive TP
+world sizes are accepted; tiny layouts can leave ranks without charts, and those
+ranks still join reductions. `KS3Int8` is standalone; full RWKV conversion uses
+the repository's attention adapter. FP32 and INT8 nonlinear modes remain available.
+The GS32 export format is version 2; older mixed-group exports must be regenerated
+from their original floating-point checkpoints.
 
 The same file also implements fused first-order backward for INT8 FFN training:
 
