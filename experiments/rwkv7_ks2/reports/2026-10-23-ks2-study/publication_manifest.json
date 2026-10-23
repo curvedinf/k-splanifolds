@@ -2,8 +2,8 @@
   "status": "PASS",
   "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213",
   "destination": "experiments/rwkv7_ks2/reports/2026-10-23-ks2-study",
-  "files": 603,
-  "bytes": 19088112,
+  "files": 604,
+  "bytes": 19309667,
   "all_report_links_resolve": true,
   "excluded": "Datasets, checkpoints, bulk runtime logs; raw JSON provenance paths remain unchanged.",
   "relocated_historical_links": {
@@ -13,14 +13,14 @@
   "source_report_sha256": "b757cd2cbc9e8d19849ebef5359dc6f71aecb6bbe00dc14c11da4aba6cdaf116",
   "records": [
     {
-      "path": "prior_context/experiments/denoising/README.md",
-      "bytes": 13075,
-      "sha256": "7798f0bbd82fe83d902297f72c64a19fbe6452da8c0fbe967f0007fc817ec877"
+      "path": "README.md",
+      "bytes": 2825,
+      "sha256": "fc36e5c5201448c3bb6628922ce3064e20a6e1aaa3de3919141cd55e7a9bc0ac"
     },
     {
-      "path": "prior_context/experiments/rwkv7_ks2/rwkv8_summary.json",
-      "bytes": 9073,
-      "sha256": "6b374df95192fe3cb4c0000a7aa3d3b46b89b6583c79630d1a3273314229a08e"
+      "path": "REPORT.md",
+      "bytes": 221493,
+      "sha256": "2a3b09814f9c5f925baf1b50ff431c5f3e88885111b6f29ef8609e7d4823c4ad"
     },
     {
       "path": "additional_speed_configs.json",
@@ -616,6 +616,16 @@
       "path": "prior_additional/rhac_source/train.py",
       "bytes": 40267,
       "sha256": "10ad490d4082f0caa65b730aeba414ba52733dab6b0ce9e4fead5c5078d972f3"
+    },
+    {
+      "path": "prior_context/experiments/denoising/README.md",
+      "bytes": 13075,
+      "sha256": "7798f0bbd82fe83d902297f72c64a19fbe6452da8c0fbe967f0007fc817ec877"
+    },
+    {
+      "path": "prior_context/experiments/rwkv7_ks2/rwkv8_summary.json",
+      "bytes": 9073,
+      "sha256": "6b374df95192fe3cb4c0000a7aa3d3b46b89b6583c79630d1a3273314229a08e"
     },
     {
       "path": "projection_work.json",
@@ -3021,11 +3031,15 @@
       "path": "wave9_geometry_learning_manifest.json",
       "bytes": 4117,
       "sha256": "d15e428d9bc5e1e48461f499c97183f970f95acc3a34ffe983d8cceb0d62679d"
-    },
-    {
-      "path": "README.md",
-      "bytes": 2763,
-      "sha256": "4fbd01af1705f89f8b2f2ad2a5a3820bf765f8c6775bb1ce1d47f9dc93d3be8a"
     }
-  ]
+  ],
+  "markdown_report": {
+    "path": "REPORT.md",
+    "source": "report.html",
+    "sections": 60,
+    "tables": 60,
+    "table_rows": 1026,
+    "figures": 16,
+    "note": "All report sections and tables retained; embedded SVG images replaced by linked PNG versions for GitHub Markdown preview."
+  }
 }

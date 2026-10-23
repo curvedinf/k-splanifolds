@@ -1,6 +1,6 @@
 # KS2 language-model study — 23 October 2026
 
-[Download/open the full HTML report](report.html). The HTML embeds its figures; download this directory to use all local evidence links.
+[Read the full report on GitHub](REPORT.md). It includes all 60 sections, tables and figures. The [standalone HTML version](report.html) is also available.
 
 The study completed **428 training runs**, **259 fresh reserved evaluations**, and five randomized timing rounds for 23 configurations. Four MI100 GPUs ran independent experiments. The original MLP remained the primary control.
 
@@ -15,7 +15,7 @@ These are results for a four-layer, 96-dimensional, byte-level model. They do no
 
 ## Evidence
 
-- [Full report](report.html)
+- [Full report (Markdown)](REPORT.md) · [Standalone HTML](report.html)
 - [Run ledger CSV](all_runs.csv) and [JSON](all_runs.json)
 - [Fresh reserved scores](final_checks/holdout_results.json)
 - [Controlled timings](final_checks/speed_results.json)
