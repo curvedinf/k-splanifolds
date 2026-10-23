@@ -1,4 +1,4 @@
-"""KS3 fused W8A8 inference: INT8 dots, Horner evaluation and tensor parallelism.
+"""KS3 fused W8A8 forward and fused straight-through backward, with TP support.
 
 Standalone FFN use (requires PyTorch, Triton and a supported GPU):
 
@@ -15,7 +15,21 @@ Standalone FFN use (requires PyTorch, Triton and a supported GPU):
 Weights, activations and spine coefficients are INT8; matrix dots accumulate
 in INT32. The input projection fuses Horner geometry, coordinate bypass,
 ReLU-squared and activation requantization. Nonlinearities default to FP16;
-scales and outputs are FP32. This is an inference-only implementation.
+scales and outputs are FP32.
+
+For training, pass ``trainable=True`` to KS3Int8, then create the optimizer
+from that module's parameters. It owns FP32 master copies and repacks them
+on every forward. Backward fuses the output-projection VJP with the geometry
+VJP, reduces all eight geometry gradients, and computes both projection
+gradients and the input gradient. Packed operands are dequantized inside
+the backward GEMMs; backward products and accumulators are FP32, not INT8.
+
+Quantization uses an identity straight-through estimator with detached scales.
+All modes differentiate smooth FP32 KS3 geometry at the quantized coordinates
+and coefficients. This is also the surrogate for FP16 rounding and INT8 LUTs;
+it is not the literal derivative of discrete rounding. Training inputs and
+masters must be FP32. First-order gradients only. ``to_inference()`` packs
+the updated masters into an inference-only module without optimizer state.
 
 The tested configuration has 368 rank-1 charts, partitioned into four groups
 of 92. TP1/TP2/TP4 use the same quantization groups. For TP, construct with
@@ -29,6 +43,7 @@ import copy
 import math
 import torch
 from torch import nn
+from torch.autograd.function import once_differentiable
 import torch.distributed as dist
 import triton as tr
 import triton.language as tl
@@ -56,7 +71,8 @@ def _round_div127(value):
 @tr.jit
 def _gemm(A,AS,W,WS,Y,YS,P,PS,SC,SH,
           LUT,M:tl.constexpr,N:tl.constexpr,K:tl.constexpr,G:tl.constexpr,
-          BM:tl.constexpr,BN:tl.constexpr,BK:tl.constexpr,FUSED:tl.constexpr,NL:tl.constexpr,ACT:tl.constexpr):
+          BM:tl.constexpr,BN:tl.constexpr,BK:tl.constexpr,FUSED:tl.constexpr,NL:tl.constexpr,ACT:tl.constexpr,
+          COORD=None,SAVE_COORD:tl.constexpr=False):
     mi=tl.program_id(0)*BM+tl.arange(0,BM)
     # Fused output blocks are exactly one 92-feature quantization group.
     ni=tl.program_id(1)*(92 if FUSED else BN)+tl.arange(0,BN)
@@ -72,6 +88,8 @@ def _gemm(A,AS,W,WS,Y,YS,P,PS,SC,SH,
         result+=acc.to(tl.float32)*sa[:,None]*sw[None,:]
     if FUSED:
         valid=(ni<N)&(tl.arange(0,BN)<92)
+        if SAVE_COORD:
+            tl.store(COORD+mi[:,None]*N+ni[None,:],result,(mi[:,None]<M)&valid[None,:])
         x=tl.minimum(tl.maximum(result,-65504.),65504.)
         c0=tl.load(P+ni*6+0,valid,other=0).to(tl.float32)
         c1=tl.load(P+ni*6+1,valid,other=0).to(tl.float32)
@@ -187,16 +205,24 @@ class Int8Embedding(nn.Module):
 
 
 class KS3Int8(nn.Module):
-    """Pack a trained KS3 cell for fused inference, optionally sharded across GPUs.
+    """Fused KS3 W8A8 inference or training, optionally sharded across GPUs.
 
     ``cell`` can be the standalone KS3 reference or the legacy rank-1 cell.
     Load its trained weights before constructing this module. The packed
     buffers support state_dict/save/load; conversion does not mutate the cell.
+    With ``trainable=True``, optimize this module's FP32 ``master_*`` parameters.
+    ``eval()`` keeps those masters current; use ``to_inference()`` to freeze them.
+
+    TP assumes a replicated input and replicated loss/upstream gradient.
+    Forward sums output partials; backward sums input-gradient partials only.
+    Each rank owns its local parameter gradients. A custom reducer must return
+    an FP32 sum tensor and support both forward and backward calls. Whole-model
+    ``convert()`` remains an inference export; this training API covers the FFN.
     """
-    def __init__(self,cell,rank=0,world=1,nonlinear='fp16',reducer=None):
+    def __init__(self,cell,rank=0,world=1,nonlinear='fp16',reducer=None,*,trainable=False):
         assert nonlinear in ('fp32','fp16','int8')
         super().__init__();assert cell.subspace_rank==1 and cell.num_subspaces==368
-        assert world in (1,2,4);local=368//world;start=rank*local;end=start+local
+        assert world in (1,2,4) and 0<=rank<world;local=368//world;start=rank*local;end=start+local
         self.down=Int8Linear(cell.down.weight[start:end],128)
         self.up=Int8Linear(cell.up.weight[:,start:end],92)
         if hasattr(cell, 'coefficients'):
@@ -211,7 +237,20 @@ class KS3Int8(nn.Module):
         self.register_buffer('warp_shift',.5*torch.tanh(raw_shift.detach().reshape(-1)[start:end]))
         self.world=world;self.local=local;self.reducer=reducer;self.nonlinear={'fp32':0,'fp16':1,'int8':2}[nonlinear]
         self.register_buffer('tanh_lut',(torch.tanh(torch.arange(-128,128,device=spine.device).float()*(3.2/127.))*127).round().clamp(-127,127).to(torch.int8))
+        self.trainable = trainable
+        if trainable:
+            # FP32 optimizer-owned masters; forward repacks after every update.
+            self.master_down = nn.Parameter(cell.down.weight[start:end].detach().float().clone())
+            self.master_up = nn.Parameter(cell.up.weight[:,start:end].detach().float().clone())
+            self.master_coefficients = nn.Parameter(coefficients.detach().reshape(368,6)[start:end].float().clone())
+            self.master_raw_scale = nn.Parameter(raw_scale.detach().reshape(-1)[start:end].float().clone())
+            self.master_raw_shift = nn.Parameter(raw_shift.detach().reshape(-1)[start:end].float().clone())
     def forward(self,x):
+        if self.trainable:
+            return _KS3Train.apply(
+                x, self.master_down, self.master_up, self.master_coefficients,
+                self.master_raw_scale, self.master_raw_shift, self.tanh_lut,
+                self.nonlinear, self.world, self.reducer)
         q,s=quantize(x,128);m=x.numel()//x.shape[-1]
         h=torch.empty((*x.shape[:-1],self.local),device=x.device,dtype=torch.int8)
         hs=torch.empty((m,self.local//92),device=x.device)
@@ -221,6 +260,200 @@ class KS3Int8(nn.Module):
             if self.reducer is None:dist.all_reduce(y)
             else:y=self.reducer(y)
         return y
+
+    @torch.no_grad()
+    def to_inference(self):
+        """Return a frozen copy, packing the latest master weights on each rank."""
+        result = copy.deepcopy(self)
+        if not self.trainable:
+            return result.eval()
+        result.down = Int8Linear(self.master_down, 128)
+        result.up = Int8Linear(self.master_up, 92)
+        coeff = self.master_coefficients
+        result.spine_scale = coeff.abs().amax(-1).clamp_min(1e-10)/127.
+        result.spine = (coeff/result.spine_scale[:, None]).round().clamp(-127,127).to(torch.int8)
+        result.warp_scale = torch.nn.functional.softplus(self.master_raw_scale)+1e-4
+        result.warp_shift = .5*torch.tanh(self.master_raw_shift)
+        for name in ('master_down', 'master_up', 'master_coefficients',
+                     'master_raw_scale', 'master_raw_shift'):
+            delattr(result, name)
+        result.trainable = False
+        return result.eval()
+
+
+@tr.jit
+def _backward_mm(A, B, BS, OUT, COORD, P, PS, SCALE, SHIFT, RAW_SCALE,
+                 RAW_SHIFT, PARTIAL,
+                 M: tl.constexpr, N: tl.constexpr, K: tl.constexpr,
+                 A0: tl.constexpr, A1: tl.constexpr, GROUP: tl.constexpr,
+                 GEOMETRY: tl.constexpr,
+                 BM: tl.constexpr = 16, BN: tl.constexpr = 32,
+                 BK: tl.constexpr = 32):
+    """FP32 VJP GEMM with tiled INT8 dequantization and optional KS3 epilogue.
+
+    B is a row-major K x N packed tensor, grouped along N. A may be a
+    transpose view. The geometry epilogue avoids materializing d(features).
+    """
+    rows = tl.program_id(0) * BM + tl.arange(0, BM)
+    cols = tl.program_id(1) * BN + tl.arange(0, BN)
+    inner = tl.arange(0, BK)
+    value = tl.full((BM, BN), 0., tl.float32)
+    for start in range(tr.cdiv(K, BK)):
+        kk = start * BK + inner
+        a = tl.load(A + rows[:, None] * A0 + kk[None, :] * A1,
+                    (rows[:, None] < M) & (kk[None, :] < K), other=0)
+        b = tl.load(B + kk[:, None] * N + cols[None, :],
+                    (kk[:, None] < K) & (cols[None, :] < N), other=0)
+        bs = tl.load(BS + kk[:, None] * tr.cdiv(N, GROUP) + cols[None, :] // GROUP,
+                     (kk[:, None] < K) & (cols[None, :] < N), other=0)
+        value += tl.dot(a.to(tl.float32), b.to(tl.float32) * bs,
+                        input_precision="ieee")
+
+    if GEOMETRY:
+        mask = (rows[:, None] < M) & (cols[None, :] < N)
+        original = tl.load(COORD + rows[:, None] * N + cols[None, :], mask, other=0)
+        x = tl.minimum(tl.maximum(original, -65504.), 65504.)
+        scale = tl.load(SCALE + cols, cols < N, other=1)
+        shift = tl.load(SHIFT + cols, cols < N, other=0)
+        ps = tl.load(PS + cols, cols < N, other=0)
+        c0 = tl.load(P + cols * 6, cols < N, other=0).to(tl.float32) * ps
+        c1 = tl.load(P + cols * 6 + 1, cols < N, other=0).to(tl.float32) * ps
+        c2 = tl.load(P + cols * 6 + 2, cols < N, other=0).to(tl.float32) * ps
+        c3 = tl.load(P + cols * 6 + 3, cols < N, other=0).to(tl.float32) * ps
+        c4 = tl.load(P + cols * 6 + 4, cols < N, other=0).to(tl.float32) * ps
+        c5 = tl.load(P + cols * 6 + 5, cols < N, other=0).to(tl.float32) * ps
+        t = 4. * libdevice.tanh(x * .25)
+        z = libdevice.tanh(scale[None, :] * (t + shift[None, :]))
+        cubic = 2*c0 - 2*c1 + c2 + c3
+        quadratic = -3*c0 + 3*c1 - 2*c2 - c3
+        spine = ((cubic*t + quadratic)*t + c2)*t + c0
+        warped = ((4*c5*z + 2*c4)*z - 3*c5)*z - c4
+        # Smooth FP32 surrogate for FP16 rounding and the INT8 lookup path.
+        dpre = value * 2. * tl.maximum(x + spine + warped, 0.)
+        dpre = tl.where(mask, dpre, 0.)
+        dpoly = (3*cubic*t + 2*quadratic)*t + c2
+        dwarp = (12*c5*z + 4*c4)*z - 3*c5
+        dz = dwarp * (1. - z*z)
+        dx = dpre * (1. + (dpoly + dz*scale) * (1. - t*t*.0625))
+        dx = tl.where((original >= -65504.) & (original <= 65504.), dx, 0.)
+        value = dx
+
+        # One deterministic partial per row tile, chart and learned scalar.
+        offset = (tl.program_id(0) * N + cols) * 8
+        t2 = t*t
+        t3 = t2*t
+        tl.store(PARTIAL + offset, tl.sum(dpre*(2*t3-3*t2+1), 0), cols < N)
+        tl.store(PARTIAL + offset+1, tl.sum(dpre*(-2*t3+3*t2), 0), cols < N)
+        tl.store(PARTIAL + offset+2, tl.sum(dpre*(t3-2*t2+t), 0), cols < N)
+        tl.store(PARTIAL + offset+3, tl.sum(dpre*(t3-t2), 0), cols < N)
+        tl.store(PARTIAL + offset+4, tl.sum(dpre*(2*z*z-1), 0), cols < N)
+        tl.store(PARTIAL + offset+5, tl.sum(dpre*(4*z*z*z-3*z), 0), cols < N)
+        raw_scale = tl.load(RAW_SCALE + cols, cols < N, other=0)
+        raw_shift = tl.load(RAW_SHIFT + cols, cols < N, other=0)
+        dscale = dpre*dz*(t+shift)*tl.sigmoid(raw_scale)
+        shift_tanh = libdevice.tanh(raw_shift)
+        dshift = dpre*dz*scale*.5*(1.-shift_tanh*shift_tanh)
+        tl.store(PARTIAL + offset+6, tl.sum(dscale, 0), cols < N)
+        tl.store(PARTIAL + offset+7, tl.sum(dshift, 0), cols < N)
+    tl.store(OUT + rows[:, None] * N + cols[None, :], value,
+             (rows[:, None] < M) & (cols[None, :] < N))
+
+
+@tr.jit
+def _reduce_geometry(PARTIAL, DC, DS, DH, N: tl.constexpr, TILES: tl.constexpr,
+                     BLOCK: tl.constexpr):
+    chart = tl.program_id(0)
+    rows = tl.arange(0, BLOCK)
+    component = tl.arange(0, 8)
+    values = tl.load(PARTIAL + (rows[:, None]*N+chart)*8+component[None, :],
+                     rows[:, None] < TILES, other=0)
+    total = tl.sum(values, 0)
+    tl.store(DC + chart*6+component, total, component < 6)
+    tl.store(DS + chart, tl.sum(tl.where(component == 6, total, 0.), 0))
+    tl.store(DH + chart, tl.sum(tl.where(component == 7, total, 0.), 0))
+
+
+def _gradient_mm(a, packed_b, scales, group):
+    """Multiply an FP32 gradient by an INT8 saved operand without unpacking it."""
+    out = torch.empty((a.shape[0], packed_b.shape[1]), device=a.device, dtype=torch.float32)
+    _backward_mm[(tr.cdiv(out.shape[0], 16), tr.cdiv(out.shape[1], 32))](
+        a, packed_b, scales, out, out, out, out, out, out, out, out, out,
+        out.shape[0], out.shape[1], a.shape[1], *a.stride(), group, False,
+        num_warps=4)
+    return out
+
+
+class _KS3Train(torch.autograd.Function):
+    """W8A8 forward, identity quantization STE, and fused first-order FP32 VJP."""
+
+    @staticmethod
+    def forward(ctx, inputs, down, up, coefficients, raw_scale, raw_shift,
+                lut, nonlinear, world, reducer):
+        tensors = (inputs, down, up, coefficients, raw_scale, raw_shift)
+        if any(t.device != inputs.device or t.dtype != torch.float32 for t in tensors):
+            raise ValueError('KS3 training requires FP32 inputs and master parameters on one device.')
+        if not inputs.is_cuda or inputs.shape[-1] != down.shape[1]:
+            raise ValueError('KS3 training requires GPU inputs with the configured feature width.')
+        if not inputs.numel():
+            raise ValueError('KS3 fused training requires at least one input token.')
+        x = inputs.reshape(-1, inputs.shape[-1]).contiguous()
+        m, local = x.shape[0], down.shape[0]
+        qx, sx = quantize(x, 128)
+        qd, sd = pack_weight(down, 128)
+        qu, su = pack_weight(up, 92)
+        ps = coefficients.abs().amax(-1).clamp_min(1e-10)/127.
+        p = (coefficients/ps[:, None]).round().clamp(-127,127).to(torch.int8)
+        scale = torch.nn.functional.softplus(raw_scale)+1e-4
+        shift = .5*torch.tanh(raw_shift)
+        h = torch.empty((m, local), device=x.device, dtype=torch.int8)
+        hs = torch.empty((m, local//92), device=x.device, dtype=torch.float32)
+        coords = torch.empty((m, local), device=x.device, dtype=torch.float32)
+        _gemm[(tr.cdiv(m,16),local//92)](
+            qx,sx,qd,sd,h,hs,p,ps,scale,shift,lut,
+            m,local,x.shape[1],128,16,128,128,True,nonlinear,0,
+            COORD=coords,SAVE_COORD=True,num_warps=4)
+        y = torch.empty((m,up.shape[0]), device=x.device, dtype=torch.float32)
+        _gemm[(tr.cdiv(m,16),tr.cdiv(up.shape[0],32))](
+            h,hs,qu,su,y,y,y,y,y,y,y,
+            m,up.shape[0],local,92,16,32,128,False,0,0,num_warps=4)
+        if world > 1:
+            if reducer is None:
+                dist.all_reduce(y)
+            else:
+                y = reducer(y)
+        ctx.save_for_backward(qx,sx,qd,sd,qu,su,h,hs,coords,p,ps,scale,shift,
+                              raw_scale,raw_shift)
+        ctx.input_shape, ctx.world, ctx.reducer = inputs.shape, world, reducer
+        return y.reshape(*inputs.shape[:-1], up.shape[0])
+
+    @staticmethod
+    @once_differentiable
+    def backward(ctx, grad):
+        (qx,sx,qd,sd,qu,su,h,hs,coords,p,ps,scale,shift,
+         raw_scale,raw_shift) = ctx.saved_tensors
+        grad = grad.reshape(-1,qu.shape[0]).contiguous()
+        m, local = coords.shape
+        dc = torch.empty_like(coords)
+        partial = torch.empty((tr.cdiv(m,16),local,8), device=grad.device, dtype=torch.float32)
+        _backward_mm[(tr.cdiv(m,16),tr.cdiv(local,32))](
+            grad,qu,su,dc,coords,p,ps,scale,shift,raw_scale,raw_shift,partial,
+            m,local,qu.shape[0],*grad.stride(),92,True,num_warps=4)
+        dcoeff = torch.empty((local,6), device=grad.device, dtype=torch.float32)
+        dscale, dshift = torch.empty_like(raw_scale), torch.empty_like(raw_shift)
+        _reduce_geometry[(local,)](
+            partial,dcoeff,dscale,dshift,local,partial.shape[0],
+            tr.next_power_of_2(partial.shape[0]),num_warps=4)
+        dup = _gradient_mm(grad.T,h,hs,92)
+        ddown = _gradient_mm(dc.T,qx,sx,128)
+        dx = _gradient_mm(dc,qd,sd,128)
+        # Output gradients are replicated, so the forward sum has identity VJP.
+        # Only the contributions to the replicated input must be summed here.
+        if ctx.world > 1:
+            if ctx.reducer is None:
+                dist.all_reduce(dx)
+            else:
+                dx = ctx.reducer(dx)
+        return dx.reshape(ctx.input_shape),ddown,dup,dcoeff,dscale,dshift,None,None,None,None
 
 
 def convert(model,rank=0,world=1,nonlinear='fp16',reducer=None):

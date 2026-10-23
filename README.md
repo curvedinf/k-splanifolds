@@ -40,6 +40,28 @@ The fused implementation supports the tested 368-chart layout with TP1, TP2 or
 TP4. `KS3Int8` is standalone; full RWKV conversion uses the repository's
 attention adapter. FP32 and INT8 nonlinear modes remain available explicitly.
 
+The same file also implements fused first-order backward for INT8 FFN training:
+
+```python
+qat_ffn = KS3Int8(ffn.cuda(), trainable=True)
+optimizer = torch.optim.AdamW(qat_ffn.parameters(), lr=1e-3)
+x = torch.randn(2, 64, 96, device="cuda", requires_grad=True)
+optimizer.zero_grad(set_to_none=True)
+loss = qat_ffn(x).square().mean()  # Replace with the model's training objective.
+loss.backward()
+optimizer.step()
+frozen_ffn = qat_ffn.to_inference()
+```
+
+Training keeps FP32 master parameters and gradients, with the same fused W8A8
+forward and FP16 nonlinear default. The backward fuses the output-projection
+gradient with the KS3 geometry derivative; its GEMMs dequantize saved INT8 operands
+inside the kernel and accumulate in FP32. Quantization scales are detached and
+rounding uses an identity straight-through estimator. Nonlinear derivatives use
+smooth FP32 KS3 geometry, including for the FP16 and INT8 forward modes.
+TP sums input gradients and keeps parameter gradients local to each shard.
+The training API covers the FFN; full RWKV conversion remains inference-only.
+
 Key files:
 - `k-splanifolds.pdf` — the paper ([reference link](https://doi.org/10.5281/zenodo.18673034)).
 - `k-splanifolds-2D-to-3D-toy.html` — interactive 2D→3D toy visualization.
