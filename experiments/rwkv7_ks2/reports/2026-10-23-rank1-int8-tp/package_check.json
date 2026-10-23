@@ -9,8 +9,13 @@
     },
     {
       "path": "REPORT.md",
-      "bytes": 8013,
-      "sha256": "ec4ab7af79c2a7983c3d541f51ff0468ae0db91b70431fa59a9f9e122bf2e065"
+      "bytes": 8084,
+      "sha256": "197c35bbf68d16d73359352251906d98bfdc039b7d437fb33d12524067a256df"
+    },
+    {
+      "path": "benchmark_sources/rank1_int8_tp.py",
+      "bytes": 12445,
+      "sha256": "ab1c969684864e9342eec3399e7db75654dd23ce2dc601e4df2b0d13073d926e"
     },
     {
       "path": "code/check_rank1_int8_export.py",
@@ -25,7 +30,7 @@
     {
       "path": "code/export_rank1_int8_tp.py",
       "bytes": 3822,
-      "sha256": "f8a3a9c787f42e0e75ed2ffd29b630142139c3ceda882040001a43ba79db2c2d"
+      "sha256": "e5b5537ba5ef5b71bbc4e14dd2bf55e72a51b625ca7290d1de42c3a868473218"
     },
     {
       "path": "code/rank1_int8_attention_tp.py",
@@ -35,12 +40,12 @@
     {
       "path": "code/rank1_int8_tp.py",
       "bytes": 12445,
-      "sha256": "ab1c969684864e9342eec3399e7db75654dd23ce2dc601e4df2b0d13073d926e"
+      "sha256": "30d7eb3743aecc6aa07225b40898065c28fb26d904b2ac02c4be0264fa5cb366"
     },
     {
       "path": "code/report_rank1_int8_tp.py",
-      "bytes": 12898,
-      "sha256": "fa1b9a5f76d96e48e40af56f16a213914bec79348150ad2175e02117dfa335e4"
+      "bytes": 13301,
+      "sha256": "9039dd5c1edce5a46a048a1c5316adecfdcef98de0937918789d6b44eb24563f"
     },
     {
       "path": "code/validate_rank1_int8.py",
@@ -49,8 +54,8 @@
     },
     {
       "path": "export_manifest.json",
-      "bytes": 2806,
-      "sha256": "2aa55a0fd68e503aa04adfdb91144b03191ce1cf92570d752cb6d6d707f085c3"
+      "bytes": 3003,
+      "sha256": "af5cb478c8156131d05f7a907173ca12fa3529d74c04a301cfdc4df7078c327c"
     },
     {
       "path": "export_reload_check.json",
@@ -109,13 +114,13 @@
     },
     {
       "path": "source_bundle.tar.gz",
-      "bytes": 422509,
-      "sha256": "76be4a23dc719164abdb1a86c272ca0914d64175db95fb12ea2de25582dcbd4b"
+      "bytes": 422615,
+      "sha256": "3080dc3967fd6ff3caffbf7ded7a5945891fa885d96ceabde6c27df58a568323"
     },
     {
       "path": "summary.json",
-      "bytes": 5610,
-      "sha256": "534f375a2b563fb75597819a9277554c510b5fcbcdd11f3caeb84af9c9f42da9"
+      "bytes": 5817,
+      "sha256": "380bab70a2e26f1ef9b6696096740798b579d9d36d1013b888d870f546d5db1e"
     }
   ],
   "excluded": "Checkpoint weights, optimizer states and validation/training text."

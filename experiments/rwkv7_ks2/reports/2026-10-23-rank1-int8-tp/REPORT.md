@@ -13,7 +13,7 @@ The three original 100k checkpoints (seeds 11, 22, 33; larger training pool) are
 | W8A8 + FP16 nonlinearities | 1.457696 | 0.001392 | +0.000137 | -0.005345 | 3/3 |
 | W8A8 + INT8 nonlinearities | 1.458469 | 0.001362 | +0.000909 | -0.004573 | 3/3 |
 
-INT8 nonlinearities retain the sub-MLP loss result. FP16 is effectively tied with FP32 here; INT8 has a small additional loss cost. FP32 nonlinearities are the default because they offer the best measured speed/quality tradeoff. This default still uses INT8 weights, activations and integer matrix dots.
+INT8 nonlinearities retain the sub-MLP loss result. FP16 is effectively tied with FP32 here; INT8 has a small additional loss cost. FP16 nonlinearities are the hardcoded default, as requested by the user. The reported benchmark settings were selected explicitly and their measurements are unchanged. This default still uses INT8 weights, activations and integer matrix dots.
 
 ## Measured inference latency
 

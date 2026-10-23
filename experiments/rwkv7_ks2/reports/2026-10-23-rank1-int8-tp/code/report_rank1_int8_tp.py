@@ -24,7 +24,12 @@ def main():
   row['tp4_speedup_vs_original']=row['baseline']/row['tp4_fp32'];row['tp4_speedup_vs_tp1']=row['tp1']/row['tp4_fp32'];speeds.append(row)
  manifest=read('export_tp4_seed11/manifest.json')
  for d in results.values():
-  for name,digest in d['source_sha256'].items():assert hashlib.sha256((code/name).read_bytes()).hexdigest()==digest,name
+  for name,digest in d['source_sha256'].items():
+   current=(code/name).read_bytes()
+   if hashlib.sha256(current).hexdigest()!=digest:
+    original=(r/'benchmark_sources'/name).read_bytes()
+    assert hashlib.sha256(original).hexdigest()==digest,name
+    assert original.decode().replace("nonlinear='fp32'","nonlinear='fp16'")==current.decode(),name
   assert all(c['status']=='PASS' for c in d['cases']) and d['state_dtype']=='float32'
  summary=dict(status='PASS',quality=quality,mlp_loss=mlpmean,speeds=speeds,export=manifest,epoch=time.time(),scope='Inference/export only; no training update timings or new training runs. All three precisions share the same W8A8/Horner/fusion/head+FFN TP implementation.')
  (r/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
@@ -33,7 +38,7 @@ def main():
  '## Quality on the earlier reserved interval\n',
  'The three original 100k checkpoints (seeds 11, 22, 33; larger training pool) are exported without retraining. Loss is nats/byte, using four overlapping T64 tilings of the same reserved interval used by the previous report. The unchanged matched MLP mean is **1.463041**.\n',
  table(['Implementation','Mean loss','Seed SD','Change vs original KS2','Change vs MLP','Wins vs MLP'],[[labels[q['mode']],f"{q['loss']:.6f}",f"{q['sd']:.6f}",f"{q['delta_from_ks2']:+.6f}",f"{q['delta_from_mlp']:+.6f}",f"{q['mlp_seed_wins']}/3"] for q in quality]),
- 'INT8 nonlinearities retain the sub-MLP loss result. FP16 is effectively tied with FP32 here; INT8 has a small additional loss cost. FP32 nonlinearities are the default because they offer the best measured speed/quality tradeoff. This default still uses INT8 weights, activations and integer matrix dots.\n',
+ 'INT8 nonlinearities retain the sub-MLP loss result. FP16 is effectively tied with FP32 here; INT8 has a small additional loss cost. FP16 nonlinearities are the hardcoded default, as requested by the user. The reported benchmark settings were selected explicitly and their measurements are unchanged. This default still uses INT8 weights, activations and integer matrix dots.\n',
  '## Measured inference latency\n',
  table(['Batch × context','Original FP32, TP1 ms','W8A8 TP1 ms','W8A8 TP4, FP32 nonlinear ms','TP4, FP16 nonlinear ms','TP4, INT8 nonlinear ms','TP4 / original speedup'],[[f"{v['batch']} × 64",f"{v['baseline']:.3f}",f"{v['tp1']:.3f}",f"{v['tp4_fp32']:.3f}",f"{v['tp4_fp16']:.3f}",f"{v['tp4_int8']:.3f}",f"{v['tp4_speedup_vs_original']:.2f}×"] for v in speeds]),
  'These are captured **forward + cross-entropy evaluation** times, not optimizer steps, autoregressive serving/decode latency, or the earlier ~8 ms training timings. Each sequence starts with zero recurrent state. Five consecutive rounds of 100 graph replays exclude compilation, batch copies and process startup; TP4 records the slowest rank. Cases are not randomized and clocks are not locked, so small differences should not be overinterpreted. Raw rounds remain in the JSON records.\n',
@@ -55,6 +60,7 @@ def main():
  '```bash\n# Export the trained checkpoint into four INT8 shards.\npython experiments/rwkv7_ks2/export_rank1_int8_tp.py \\\n  --checkpoint-run PATH_TO_TRAINED_RUN --out NEW_EXPORT_DIRECTORY --tp 4\n\n# Check the integrated implementation against a trained run.\nTORCH_NCCL_ASYNC_ERROR_HANDLING=0 torchrun --standalone --nproc-per-node=4 \\\n  experiments/rwkv7_ks2/check_rank1_int8_tp.py \\\n  --checkpoint-run PATH_TO_TRAINED_RUN --out NEW_RESULTS_DIRECTORY \\\n  --batch 64 --collective custom --full-eval --validation VALIDATION_BYTES\n```\n']
  a.out.mkdir(parents=True,exist_ok=False);(a.out/'REPORT.md').write_text('\n'.join(text));(a.out/'README.md').write_text('[Read the integrated INT8/Horner/fusion/TP report](REPORT.md).\n')
  for f in ['summary.json','operator_checks.json','export_reload_check.json']:shutil.copyfile(r/f,a.out/f)
+ if (r/'benchmark_sources').exists():shutil.copytree(r/'benchmark_sources',a.out/'benchmark_sources')
  shutil.copyfile(r/'export_tp4_seed11/manifest.json',a.out/'export_manifest.json');shutil.copytree(r/'final',a.out/'measurements',ignore=shutil.ignore_patterns('*.log'))
  names=['rank1_int8_tp.py','rank1_int8_attention_tp.py','export_rank1_int8_tp.py','check_rank1_int8_tp.py','check_rank1_int8_export.py','validate_rank1_int8.py','report_rank1_int8_tp.py'];(a.out/'code').mkdir()
  for name in names:shutil.copyfile(code/name,a.out/'code'/name)

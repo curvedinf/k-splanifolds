@@ -167,7 +167,7 @@ class Int8Embedding(nn.Module):
 
 
 class Int8Rank1FFN(nn.Module):
-    def __init__(self,cell,rank=0,world=1,nonlinear='fp32',reducer=None):
+    def __init__(self,cell,rank=0,world=1,nonlinear='fp16',reducer=None):
         assert nonlinear in ('fp32','fp16','int8')
         super().__init__();assert cell.subspace_rank==1 and cell.num_subspaces==368
         assert world in (1,2,4);local=368//world;start=rank*local;end=start+local
@@ -193,7 +193,7 @@ class Int8Rank1FFN(nn.Module):
         return y
 
 
-def convert(model,rank=0,world=1,nonlinear='fp32',reducer=None):
+def convert(model,rank=0,world=1,nonlinear='fp16',reducer=None):
     """Export W8A8 maps, shard KS2 subspaces and assign the three RWKV heads."""
     model=copy.deepcopy(model).eval()
     from rank1_int8_attention_tp import HeadParallelAttention

@@ -28,7 +28,7 @@
   "checkpoint_sha256": "76667662a3025384b9c3512ada364af588640d1ced2b7a7531cb1ba76b966b8b",
   "trained_parameters_per_ffn": 73600,
   "recurrent_state_dtype": "float32",
-  "default_nonlinear": "fp32",
+  "default_nonlinear": "fp16",
   "nonlinear_options": [
     "fp32",
     "fp16",
@@ -86,5 +86,10 @@
       "linear_matrices": 10,
       "ffn_tensor_bytes": 81312
     }
-  ]
+  ],
+  "default_update": {
+    "epoch": 1792790855.005186,
+    "reason": "User requested FP16 nonlinearities as the hardcoded default; recurrent state remains FP32.",
+    "weights_unchanged": true
+  }
 }
