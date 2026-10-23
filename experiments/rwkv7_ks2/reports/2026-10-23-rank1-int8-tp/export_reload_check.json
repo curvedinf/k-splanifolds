@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "ranks": [
+    {
+      "rank": 0,
+      "checks": [
+        {
+          "precision": "fp32",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        },
+        {
+          "precision": "fp16",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        },
+        {
+          "precision": "int8",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "checks": [
+        {
+          "precision": "fp32",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        },
+        {
+          "precision": "fp16",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        },
+        {
+          "precision": "int8",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "checks": [
+        {
+          "precision": "fp32",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        },
+        {
+          "precision": "fp16",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        },
+        {
+          "precision": "int8",
+          "state_tensors": 212,
+          "max_logit_error": 0.0
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "checks": [
+        {
+          "precision": "fp32",
+          "state_tensors": 64,
+          "max_logit_error": 0.0
+        },
+        {
+          "precision": "fp16",
+          "state_tensors": 64,
+          "max_logit_error": 0.0
+        },
+        {
+          "precision": "int8",
+          "state_tensors": 64,
+          "max_logit_error": 0.0
+        }
+      ]
+    }
+  ]
+}

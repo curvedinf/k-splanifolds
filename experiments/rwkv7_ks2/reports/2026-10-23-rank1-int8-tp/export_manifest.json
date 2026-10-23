@@ -1,0 +1,90 @@
+{
+  "format_version": 1,
+  "seed": 11,
+  "study_config": {
+    "name": "spine_rank1_fused_repeat",
+    "family": "dense_ks2",
+    "cell": "ks2_relu2",
+    "geometry_terms": "spine",
+    "charts": 368,
+    "subspace_rank": 1,
+    "output_lr": 1.0,
+    "fused_general": true
+  },
+  "tensor_parallel_size": 4,
+  "attention_heads_by_rank": [
+    1,
+    1,
+    1,
+    0
+  ],
+  "ffn_subspaces_by_rank": [
+    92,
+    92,
+    92,
+    92
+  ],
+  "checkpoint_source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave13_selected_long/larger_spine_rank1_fused_repeat_11/checkpoint.pt",
+  "checkpoint_sha256": "76667662a3025384b9c3512ada364af588640d1ced2b7a7531cb1ba76b966b8b",
+  "trained_parameters_per_ffn": 73600,
+  "recurrent_state_dtype": "float32",
+  "default_nonlinear": "fp32",
+  "nonlinear_options": [
+    "fp32",
+    "fp16",
+    "int8"
+  ],
+  "quantization": "All learned linear maps and embeddings INT8; KS2 coefficients INT8; per-token/group activation quantization; INT32 matrix dots. Scales, warp scalars, normalization, time mixing, residuals and RWKV state remain FP32.",
+  "nonlinear_scope": "KS2 geometry and ReLU-squared. RWKV controller activation fusion uses FP32 nonlinearities.",
+  "code_sha256": {
+    "rank1_int8_tp.py": "ab1c969684864e9342eec3399e7db75654dd23ce2dc601e4df2b0d13073d926e",
+    "rank1_int8_attention_tp.py": "ef38e90a7a3d5ff686a3ad63ef3362df344cf0d5528230a42070332e0a185d57",
+    "export_rank1_int8_tp.py": "f8a3a9c787f42e0e75ed2ffd29b630142139c3ceda882040001a43ba79db2c2d"
+  },
+  "shards": [
+    {
+      "rank": 0,
+      "file": "rank_0.pt",
+      "sha256": "891dde88e123292d57b5e326211e724f0e0380849da207fc0293399abcc4dbc7",
+      "bytes": 347517,
+      "tensor_bytes": 289440,
+      "int8_elements": 250016,
+      "float32_elements": 9856,
+      "linear_matrices": 56,
+      "ffn_tensor_bytes": 81312
+    },
+    {
+      "rank": 1,
+      "file": "rank_1.pt",
+      "sha256": "46446423b504319e7155dddcc5d5f53f33dc70b25c7ecbf71a12b5d1c65c7c49",
+      "bytes": 347517,
+      "tensor_bytes": 289440,
+      "int8_elements": 250016,
+      "float32_elements": 9856,
+      "linear_matrices": 56,
+      "ffn_tensor_bytes": 81312
+    },
+    {
+      "rank": 2,
+      "file": "rank_2.pt",
+      "sha256": "67cd7123d17673be58eed30d6d3bfd4c8dff2aa2f5c44e887b4a0897f9eefb0c",
+      "bytes": 347517,
+      "tensor_bytes": 289440,
+      "int8_elements": 250016,
+      "float32_elements": 9856,
+      "linear_matrices": 56,
+      "ffn_tensor_bytes": 81312
+    },
+    {
+      "rank": 3,
+      "file": "rank_3.pt",
+      "sha256": "d5fd19710403f146db8be53abf335a3bb0a708f3d20b52dc2e669ed5cb565de0",
+      "bytes": 157213,
+      "tensor_bytes": 141728,
+      "int8_elements": 123040,
+      "float32_elements": 4672,
+      "linear_matrices": 10,
+      "ffn_tensor_bytes": 81312
+    }
+  ]
+}

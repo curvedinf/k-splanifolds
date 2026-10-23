@@ -1,0 +1,111 @@
+{
+  "nonlinear_scope": "KS2 warp, Horner polynomial and ReLU-squared; RWKV controller nonlinearities remain FP32",
+  "source_sha256": {
+    "check_rank1_int8_tp.py": "d1393d54868c673a9b6c828ac5a8a2b18b83d0785762c32ec1a33e483acee50f",
+    "rank1_int8_tp.py": "ab1c969684864e9342eec3399e7db75654dd23ce2dc601e4df2b0d13073d926e",
+    "rank1_int8_attention_tp.py": "ef38e90a7a3d5ff686a3ad63ef3362df344cf0d5528230a42070332e0a185d57"
+  },
+  "torch_version": "2.11.0+rocm7.1",
+  "hip_version": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "collective": "custom",
+  "world": 1,
+  "batch": 256,
+  "context": 64,
+  "seed": 11,
+  "checkpoint": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave13_selected_long/larger_spine_rank1_fused_repeat_11/checkpoint.pt",
+  "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+  "windows": 256,
+  "state_dtype": "float32",
+  "cases": [
+    {
+      "nonlinear": "baseline",
+      "status": "PASS",
+      "loss": 1.4632773399353027,
+      "max_logit_error": 0.0,
+      "rms_logit_error": 0.0,
+      "tp_vs_same_quant_tp1_max_error": null,
+      "tp_vs_same_quant_tp1_rms": null,
+      "ffn_partition_errors": [],
+      "attention_partition_errors": [],
+      "graph_vs_eager_max_error": 0.0,
+      "ms": [
+        21.387310028076172,
+        21.491500854492188,
+        21.525550842285156,
+        21.574546813964844,
+        21.60881805419922
+      ],
+      "trainable_parameters": 615424,
+      "int8_buffers": 0,
+      "float_parameters": 615424
+    },
+    {
+      "nonlinear": "fp32",
+      "status": "PASS",
+      "loss": 1.4634102582931519,
+      "max_logit_error": 0.6559066772460938,
+      "rms_logit_error": 0.06048395112156868,
+      "tp_vs_same_quant_tp1_max_error": null,
+      "tp_vs_same_quant_tp1_rms": null,
+      "ffn_partition_errors": [],
+      "attention_partition_errors": [],
+      "graph_vs_eager_max_error": 0.0,
+      "ms": [
+        17.144689559936523,
+        17.187877655029297,
+        17.214344024658203,
+        17.23723602294922,
+        17.276281356811523
+      ],
+      "trainable_parameters": 0,
+      "int8_buffers": 605824,
+      "float_parameters": 3072
+    },
+    {
+      "nonlinear": "fp16",
+      "status": "PASS",
+      "loss": 1.4632644653320312,
+      "max_logit_error": 0.6534085273742676,
+      "rms_logit_error": 0.06055551394820213,
+      "tp_vs_same_quant_tp1_max_error": null,
+      "tp_vs_same_quant_tp1_rms": null,
+      "ffn_partition_errors": [],
+      "attention_partition_errors": [],
+      "graph_vs_eager_max_error": 0.0,
+      "ms": [
+        17.348730087280273,
+        17.36862564086914,
+        17.409019470214844,
+        17.438419342041016,
+        17.478015899658203
+      ],
+      "trainable_parameters": 0,
+      "int8_buffers": 605824,
+      "float_parameters": 3072
+    },
+    {
+      "nonlinear": "int8",
+      "status": "PASS",
+      "loss": 1.4642688035964966,
+      "max_logit_error": 1.735372543334961,
+      "rms_logit_error": 0.11884254962205887,
+      "tp_vs_same_quant_tp1_max_error": null,
+      "tp_vs_same_quant_tp1_rms": null,
+      "ffn_partition_errors": [],
+      "attention_partition_errors": [],
+      "graph_vs_eager_max_error": 0.0,
+      "ms": [
+        18.000486373901367,
+        18.037765502929688,
+        18.062253952026367,
+        18.098222732543945,
+        18.115137100219727
+      ],
+      "trainable_parameters": 0,
+      "int8_buffers": 605824,
+      "float_parameters": 3072
+    }
+  ],
+  "status": "PASS"
+}

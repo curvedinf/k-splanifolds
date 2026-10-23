@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "kind": "W8A8",
+      "shape": [
+        1,
+        96,
+        96,
+        128
+      ],
+      "max_error": 0.0
+    },
+    {
+      "kind": "W8A8",
+      "shape": [
+        256,
+        368,
+        96,
+        128
+      ],
+      "max_error": 0.0
+    },
+    {
+      "kind": "W8A8",
+      "shape": [
+        256,
+        96,
+        368,
+        92
+      ],
+      "max_error": 7.62939453125e-06
+    },
+    {
+      "kind": "W8A8",
+      "shape": [
+        7,
+        32,
+        96,
+        128
+      ],
+      "max_error": 0.0
+    },
+    {
+      "kind": "fused_Horner",
+      "layer": 0,
+      "max_code_difference": 0,
+      "different_codes": 0,
+      "native_int8_instructions": true
+    },
+    {
+      "kind": "INT8_LUT_integer_Horner",
+      "layer": 0,
+      "max_code_difference": 0,
+      "different_codes": 0,
+      "native_int8_instructions": true
+    },
+    {
+      "kind": "fused_Horner",
+      "layer": 1,
+      "max_code_difference": 0,
+      "different_codes": 0,
+      "native_int8_instructions": true
+    },
+    {
+      "kind": "INT8_LUT_integer_Horner",
+      "layer": 1,
+      "max_code_difference": 0,
+      "different_codes": 0,
+      "native_int8_instructions": true
+    },
+    {
+      "kind": "fused_Horner",
+      "layer": 2,
+      "max_code_difference": 0,
+      "different_codes": 0,
+      "native_int8_instructions": true
+    },
+    {
+      "kind": "INT8_LUT_integer_Horner",
+      "layer": 2,
+      "max_code_difference": 0,
+      "different_codes": 0,
+      "native_int8_instructions": true
+    },
+    {
+      "kind": "fused_Horner",
+      "layer": 3,
+      "max_code_difference": 0,
+      "different_codes": 0,
+      "native_int8_instructions": true
+    },
+    {
+      "kind": "INT8_LUT_integer_Horner",
+      "layer": 3,
+      "max_code_difference": 0,
+      "different_codes": 0,
+      "native_int8_instructions": true
+    }
+  ]
+}

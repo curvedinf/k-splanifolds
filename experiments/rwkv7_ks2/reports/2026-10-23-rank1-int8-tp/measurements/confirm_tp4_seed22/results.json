@@ -1,0 +1,141 @@
+{
+  "nonlinear_scope": "KS2 warp, Horner polynomial and ReLU-squared; RWKV controller nonlinearities remain FP32",
+  "source_sha256": {
+    "check_rank1_int8_tp.py": "d1393d54868c673a9b6c828ac5a8a2b18b83d0785762c32ec1a33e483acee50f",
+    "rank1_int8_tp.py": "ab1c969684864e9342eec3399e7db75654dd23ce2dc601e4df2b0d13073d926e",
+    "rank1_int8_attention_tp.py": "ef38e90a7a3d5ff686a3ad63ef3362df344cf0d5528230a42070332e0a185d57"
+  },
+  "torch_version": "2.11.0+rocm7.1",
+  "hip_version": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "collective": "custom",
+  "world": 4,
+  "batch": 64,
+  "context": 64,
+  "seed": 22,
+  "checkpoint": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave13_selected_long/larger_spine_rank1_fused_repeat_22/checkpoint.pt",
+  "validation_sha256": "5b7ab4e791f0b4fcbd51c9fe16a7cb7e63ac5c0aea751db7f124d2b6b4bb9aa7",
+  "windows": 27348,
+  "state_dtype": "float32",
+  "cases": [
+    {
+      "nonlinear": "baseline",
+      "status": "PASS",
+      "loss": 1.4560178518295288,
+      "max_logit_error": 0.0,
+      "rms_logit_error": 0.0,
+      "tp_vs_same_quant_tp1_max_error": null,
+      "tp_vs_same_quant_tp1_rms": null,
+      "ffn_partition_errors": [],
+      "attention_partition_errors": [],
+      "graph_vs_eager_max_error": 0.0,
+      "ms": [
+        5.465971946716309,
+        5.4789958000183105,
+        5.494510650634766,
+        5.486255645751953,
+        5.4968037605285645
+      ],
+      "trainable_parameters": 615424,
+      "int8_buffers": 0,
+      "float_parameters": 615424
+    },
+    {
+      "nonlinear": "fp32",
+      "status": "PASS",
+      "loss": 1.4562188386917114,
+      "max_logit_error": 0.6262302398681641,
+      "rms_logit_error": 0.06266887485980988,
+      "tp_vs_same_quant_tp1_max_error": 0.20900535583496094,
+      "tp_vs_same_quant_tp1_rms": 0.011008751578629017,
+      "ffn_partition_errors": [
+        0.000244140625,
+        0.0001220703125,
+        0.0001220703125,
+        6.103515625e-05
+      ],
+      "attention_partition_errors": [
+        1.9073486328125e-06,
+        1.9073486328125e-06,
+        1.9073486328125e-06,
+        1.9073486328125e-06
+      ],
+      "graph_vs_eager_max_error": 0.0,
+      "ms": [
+        3.9175868034362793,
+        3.9198267459869385,
+        3.921719551086426,
+        3.926980972290039,
+        3.9278299808502197
+      ],
+      "trainable_parameters": 0,
+      "int8_buffers": 250016,
+      "float_parameters": 2560
+    },
+    {
+      "nonlinear": "fp16",
+      "status": "PASS",
+      "loss": 1.4562088251113892,
+      "max_logit_error": 0.5356483459472656,
+      "rms_logit_error": 0.062250666320323944,
+      "tp_vs_same_quant_tp1_max_error": 0.2578754425048828,
+      "tp_vs_same_quant_tp1_rms": 0.014118042774498463,
+      "ffn_partition_errors": [
+        0.000244140625,
+        6.103515625e-05,
+        0.0001220703125,
+        6.103515625e-05
+      ],
+      "attention_partition_errors": [
+        1.9073486328125e-06,
+        1.9073486328125e-06,
+        1.9073486328125e-06,
+        1.9073486328125e-06
+      ],
+      "graph_vs_eager_max_error": 0.0,
+      "ms": [
+        3.9425406455993652,
+        3.948895215988159,
+        3.950791597366333,
+        3.951185703277588,
+        3.9521210193634033
+      ],
+      "trainable_parameters": 0,
+      "int8_buffers": 250016,
+      "float_parameters": 2560
+    },
+    {
+      "nonlinear": "int8",
+      "status": "PASS",
+      "loss": 1.4569698572158813,
+      "max_logit_error": 1.1425209045410156,
+      "rms_logit_error": 0.12248853594064713,
+      "tp_vs_same_quant_tp1_max_error": 0.43239879608154297,
+      "tp_vs_same_quant_tp1_rms": 0.013749741017818451,
+      "ffn_partition_errors": [
+        0.000244140625,
+        6.103515625e-05,
+        0.0001220703125,
+        6.103515625e-05
+      ],
+      "attention_partition_errors": [
+        1.9073486328125e-06,
+        1.9073486328125e-06,
+        1.9073486328125e-06,
+        1.9073486328125e-06
+      ],
+      "graph_vs_eager_max_error": 0.0,
+      "ms": [
+        4.016932010650635,
+        4.022436141967773,
+        4.0226826667785645,
+        4.02559757232666,
+        4.026200294494629
+      ],
+      "trainable_parameters": 0,
+      "int8_buffers": 250016,
+      "float_parameters": 2560
+    }
+  ],
+  "status": "PASS"
+}
