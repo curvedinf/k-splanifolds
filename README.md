@@ -7,7 +7,7 @@ a bounded Hermite cubic plus two warped Chebyshev terms, a coordinate bypass,
 and ReLU². At width 96 with 368 subspaces it has **73,600 parameters per FFN**.
 
 - [ks3.py](ks3.py) — standalone, readable PyTorch implementation with autograd.
-- [KS3 GPU implementation](experiments/rwkv7_ks2/ks3_gpu.py) — integrated W8A8,
+- [ks3_int8.py](ks3_int8.py) — integrated W8A8,
   fused Horner evaluation and tensor parallelism; FP16 nonlinearities by default,
   with FP32 RWKV recurrent state.
 - [Measurements and export instructions](experiments/rwkv7_ks2/reports/2026-10-23-rank1-int8-tp/REPORT.md)
@@ -24,6 +24,21 @@ y = ffn(torch.randn(2, 64, 96))  # (batch, time, model width)
 The Torch reference uses floating-point weights and supports training. The GPU
 export is quantized inference. Normalization, attention and the outer residual
 connection are supplied by the enclosing model.
+
+Convert a trained cell to fused INT8 inference (PyTorch + Triton on GPU):
+
+```python
+from ks3_int8 import KS3Int8
+
+# Load the trained weights into ffn before packing them.
+quantized_ffn = KS3Int8(ffn.cuda().eval())
+with torch.inference_mode():
+    y = quantized_ffn(torch.randn(2, 64, 96, device="cuda"))
+```
+
+The fused implementation supports the tested 368-chart layout with TP1, TP2 or
+TP4. `KS3Int8` is standalone; full RWKV conversion uses the repository's
+attention adapter. FP32 and INT8 nonlinear modes remain available explicitly.
 
 Key files:
 - `k-splanifolds.pdf` — the paper ([reference link](https://doi.org/10.5281/zenodo.18673034)).

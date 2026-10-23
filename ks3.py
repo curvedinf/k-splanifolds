@@ -1,7 +1,7 @@
 """KS3: learned rank-1 charts with a bounded, warped Hermite spine.
 
 A standalone, differentiable PyTorch reference for the winning RWKV FFN.
-The optimized W8A8 implementation lives in experiments/rwkv7_ks2/ks3_gpu.py.
+The optimized W8A8 implementation lives alongside this file in ks3_int8.py.
 This reference uses ordinary floating-point tensors, without quantization.
 
 Example:
