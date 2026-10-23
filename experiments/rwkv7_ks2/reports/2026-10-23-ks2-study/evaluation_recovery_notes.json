@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "finished_epoch": 1792733442.1574547,
+  "rows": [
+    {
+      "job": "full_original_equation_11",
+      "checkpoint_sha256": "14f29f6a6a26f6308d38dddf68c96ec0f021bd1c68df59d2031f16a514281404",
+      "training_restarted": false,
+      "old_batch64_loss": null,
+      "batch4_loss": 1.6399046182632446,
+      "max_probe_batch_error": 0.0004010200500488281,
+      "exceptions": 1
+    },
+    {
+      "job": "full_original_equation_22",
+      "checkpoint_sha256": "4374a20e7d1c54b4c96d9ab56e7e66c7a7e4793d2379d735241799c6c4892d69",
+      "training_restarted": false,
+      "old_batch64_loss": 1.6425426006317139,
+      "batch4_loss": 1.6425426006317139,
+      "max_probe_batch_error": 4.76837158203125e-07,
+      "exceptions": 0
+    },
+    {
+      "job": "full_original_equation_33",
+      "checkpoint_sha256": "f04ce3a6fabf4777117774542eea167e77e2ecacdccc06a9ad8bccda7821c29a",
+      "training_restarted": false,
+      "old_batch64_loss": 1.6423871517181396,
+      "batch4_loss": 1.6423871517181396,
+      "max_probe_batch_error": 3.5762786865234375e-07,
+      "exceptions": 0
+    }
+  ],
+  "reason": "Original signed coordinate-sum geometry amplifies batch-dependent FP32 reductions. All three signed-original-equation runs use evaluation batch4, matching training. Fixed validation windows/targets, all weights, training steps and optimizer states are unchanged. Other model families retain the existing evaluator batch size and strict check. Original failed batch64 evaluations are retained beside each run."
+}

@@ -1,0 +1,314 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_fused_repeat_22",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 22,
+    "ffn_charts": 92,
+    "control_update_scale": false,
+    "steps": 15000,
+    "batch_size": 4,
+    "sequence_length": 64,
+    "gpu": 0
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.722241401672363
+    },
+    {
+      "step": 100,
+      "train_loss": 2.322875499725342,
+      "gradient_norm": 2.7281951904296875,
+      "val_loss": 2.5638859272003174,
+      "training_seconds": 0.8503402279457077
+    },
+    {
+      "step": 200,
+      "train_loss": 2.257680654525757,
+      "gradient_norm": 2.509246587753296,
+      "val_loss": 2.427072286605835,
+      "training_seconds": 1.7017625459702685
+    },
+    {
+      "step": 500,
+      "train_loss": 2.7054929733276367,
+      "gradient_norm": 82.28518676757812,
+      "val_loss": 2.2135725021362305,
+      "training_seconds": 4.256802255986258
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.8563332557678223,
+      "gradient_norm": 1.6940276622772217,
+      "val_loss": 2.108090400695801,
+      "training_seconds": 8.517614674055949
+    },
+    {
+      "step": 2000,
+      "train_loss": 1.6652415990829468,
+      "gradient_norm": 1.2781442403793335,
+      "val_loss": 1.9665162563323975,
+      "training_seconds": 17.04589799104724
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.9632885456085205,
+      "gradient_norm": 1.4228742122650146,
+      "val_loss": 1.8938186168670654,
+      "training_seconds": 25.58165066805668
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.6691741943359375,
+      "gradient_norm": 1.2769595384597778,
+      "val_loss": 1.8382563591003418,
+      "training_seconds": 34.121493885992095
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.5484278202056885,
+      "gradient_norm": 1.3949943780899048,
+      "val_loss": 1.805330514907837,
+      "training_seconds": 42.66741660796106
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.530455470085144,
+      "gradient_norm": 1.4163581132888794,
+      "val_loss": 1.770517110824585,
+      "training_seconds": 51.219699527020566
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.044325828552246,
+      "gradient_norm": 1.2343999147415161,
+      "val_loss": 1.7535555362701416,
+      "training_seconds": 59.77563383302186
+    },
+    {
+      "step": 8000,
+      "train_loss": 1.4112200736999512,
+      "gradient_norm": 1.2253769636154175,
+      "val_loss": 1.7300580739974976,
+      "training_seconds": 68.33570455899462
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.5135886669158936,
+      "gradient_norm": 1.2524992227554321,
+      "val_loss": 1.7161071300506592,
+      "training_seconds": 76.89737654407509
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.5081244707107544,
+      "gradient_norm": 1.0808806419372559,
+      "val_loss": 1.694817304611206,
+      "training_seconds": 85.46231571515091
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.4723435640335083,
+      "gradient_norm": 1.2202531099319458,
+      "val_loss": 1.6782844066619873,
+      "training_seconds": 94.03047482611146
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.467118263244629,
+      "gradient_norm": 1.3310627937316895,
+      "val_loss": 1.6695362329483032,
+      "training_seconds": 102.60021625214722
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.4186336994171143,
+      "gradient_norm": 1.3343926668167114,
+      "val_loss": 1.6612871885299683,
+      "training_seconds": 111.17294289113488
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.5695850849151611,
+      "gradient_norm": 1.1534488201141357,
+      "val_loss": 1.6548569202423096,
+      "training_seconds": 119.7489781541517
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.5307118892669678,
+      "gradient_norm": 1.4249722957611084,
+      "val_loss": 1.6424601078033447,
+      "training_seconds": 128.32572148321196
+    }
+  ],
+  "parameters": 613216,
+  "ffn_parameters_by_layer": [
+    73048,
+    73048,
+    73048,
+    73048
+  ],
+  "ffn_types": [
+    "ks2_relu2",
+    "ks2_relu2",
+    "ks2_relu2",
+    "ks2_relu2"
+  ],
+  "training_seconds": 128.32572148321196,
+  "wall_seconds": 133.4546389710158,
+  "benchmark_ms_per_step": 8.471033060923219,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "study_models_v14.py": "b734a859a6690c10c3e8e2de0975ab3f4f043c852de1958f86718eb778f1f218",
+    "ks2_general_gpu.py": "2d948fc0d72fe38ae7cb30947a32766dbeede6a0dc3a34703627f17d585f05b8",
+    "study_models_v13.py": "ec28e62a413f7d7347583db9de8bb47be97f3d5c096841a717e0a1443c8cd0a1",
+    "structured_codes.py": "931ed0b24a2c9af08035d257c939fb0b2ba95960be3a7416da17d9704937f12c",
+    "structured_codes_gpu.py": "47cb003208b7a25e713c4a71f399e9ecce63e365991ac50620392663c3a26377",
+    "study_models_v11.py": "a31e49231381973be61e1bbf3d3ead1472afe4c4fa77cc11d601abc9b106d384",
+    "study_models_v12.py": "0974064a51e52671a56cb79936af15bd45bb18c26f80fcbb1505231d4802bbd6",
+    "study_models_v10.py": "ef560118e7980f537ccc5c3d8273091c5b5c8aaa5532835526810e063ee5d8e3",
+    "history_final_prune.py": "4daaea6383e833f71c35748b03dec0eb388310207984d31a26ef422f147d59a8",
+    "study_models.py": "4dd46590c73265207ae16ceca0117afeaeb3b748e1d4778e12c26874ac56fc1d",
+    "study_models_v2.py": "0e4db807fffefaa17280b33156fc22cc23524b0bc2a0817e93f5426858d60f98",
+    "study_models_v3.py": "054e3829e95bd0bab1cbc7507f2c4f5355e7755f791b7cea8a35ecc67e08212f",
+    "study_models_v4.py": "307068cbf81222ef40e53466ccb972e3be4dfc096de75a4b5a6cc788c28649dd",
+    "study_models_v5.py": "606a14935134e6b945cd9a47fa4e2c846e26b3e0a514eabb50cf2aca36e98a2b",
+    "study_models_v6.py": "2f868e454db6771be3e5259f61e50069c8455fea83b10895d5de1e3aec2bb655",
+    "study_models_v7.py": "03d750776a7f2144b3ed181a9b323981d9b1815463c01655b8285b0c54279ddd",
+    "study_models_v8.py": "7f6e1498ea4b99a962fb70db9f7e5bcf4b2cd1b259ef98126729ec11d00b8b59",
+    "study_models_v9.py": "53bad8eed5cd3cd644eb898f9ddae53cb8cae5f473a227342ab1d52ccda7040e",
+    "study_train_v14.py": "a51e5a3bc1a8cf3aba9b259ed01d211dccadf17caaa341f395620240baee4432",
+    "study_full_eval_v14.py": "b675b80a31868cf5aa210d56b87a5bb0fbc592895913fbacafdf4cd186204fad",
+    "study_wave_v14.py": "9b24d5f997f50c7b206e7694879a5da0f05b7ba5d78f41c5e72fafc53a79b3d2",
+    "study_train_v8.py": "024b88f9513f1479886c2097c7f05271ea33a61fede36f882b506b14f78bfd89",
+    "study_full_eval_v8.py": "11ec0090c3148421a0b3fd65ebffab76840bd3afcffe316c34455fbcebfd9292",
+    "study_wave_v8.py": "dab9a97b93265ca288ff1d5703a9234ea4e77fc28dee1972521b612ad5bde955",
+    "study_train_v7.py": "eb9604b65118aa1bed2c6cef7d6fe19fd53188e011c916d0f0cae59496072101",
+    "study_full_eval_v7.py": "b37f7c5d31acf9091fdeff3082fc83eeb023eccaca18f6305945adab441507aa",
+    "study_wave_v7.py": "6ed9ea5d767231b0e477e187ff8450b84fb6c568b2aa1ec8a3a982660ad5353b",
+    "study_train_v6.py": "679e0dd119907ae47d87ab014c7490af52ecb79ff29dd85ecfe71ad24c0a771c",
+    "study_full_eval_v6.py": "b84d8e7744ee556843cf99a3f86c8950b420d3a23288712cd053b6f8aba09ee4",
+    "study_wave_v6.py": "1697dfb0a94ad40c392275849c9ddc764010d4cb0de23a3f42f3f48dd86c9fde",
+    "study_train_v5.py": "e2c7bc6b6292e1b38e8188d4504d8c44dcde4b6114bb56ba18f22a655e7a7562",
+    "study_full_eval_v5.py": "ad3b8825944c6d8b784e526315d72242df4b6bcf8b1fb45af11c405c29d0200a",
+    "study_wave_v5.py": "10ee554e8c7a01c7b04d253c2894e2a4bd178475c124a99a0a0f7ec1b9dc9ce9",
+    "rwkv_mux.py": "6edfd62b6d009c582040623fe3b23f5d2a527f050f72b27a3097e666aa982892",
+    "study_train.py": "c8cd6f33a65140303f1aa93ca8b8a39aa9a6d21df8ce38b5859fa2da10dddf1f",
+    "study_train_v3.py": "c22e20d6e3f36e4ad3cdbbc577675139bb50b443c294750eeeac9154f6d01a44",
+    "study_train_v4.py": "10f7843a35f9ef6b85466c8b19cc0f94763c72b9107df3983981882434de3fc9",
+    "study_train_core_v4.py": "64d616d05680c1e81e61e8fcd398a39f7ff86f38f9479c4b54eb93ed1cb8310e",
+    "study_full_eval_v4.py": "e547ac1fad2213470cad55b2f528f41923c6bc8db87662773ebe9ecb676e86e8",
+    "study_wave_v4.py": "d30a81fc12b9bfefc3a38cd89f6f84447a384a93ac977afe6b140e3303b56720",
+    "study_train_core.py": "4dc62261dfa08f1a144a53558079729e258f23e7cf131492e24b0e363d84d1a3",
+    "study_full_eval.py": "c785f93f0d86104bcb173ab5d6040993a1e5f4a06fc8af021e0f8f17a247405f",
+    "study_full_eval_v3.py": "caec4cc781618699309a5d3f70eb73f00f85b31ab6772032a0d95bbb513e5517",
+    "study_wave_v2.py": "607f26c18f925b7a829e9f06de70d351c6593403e5c57dfab237b67546207ba9",
+    "study_wave_v3.py": "3f1c94f7ee240a4b1e922cb0d443aaf88c523875c6c2414162fe4111251596a1",
+    "ks2_geometry_gpu.py": "555b03ccb06e63c82b26a7a68fba72987ad480290b04ca234412425451a09635",
+    "ks2_partial_gpu.py": "0c816f78a7dd0398e21402ed2f9fdb18568a671fb59bc4fb4422ea38b6db1274",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "side_history.py": "a5144fa43c9c5791a3014449c26e0a9b8257b2fa64aeaee2c6e0b6f0938414e7",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411"
+  },
+  "peak_allocated_bytes": 214064640,
+  "peak_reserved_bytes": 291504128,
+  "parameter_bytes": 2452864,
+  "buffer_bytes": 4416,
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "evaluation": {
+    "original_val": 1.6424601078033447,
+    "expanded_val": 1.6343045234680176,
+    "sampled_train": 1.521895408630371
+  },
+  "study_config": {
+    "name": "spine_rank4_fused_repeat",
+    "family": "dense_ks2",
+    "cell": "ks2_relu2",
+    "geometry_terms": "spine",
+    "charts": 92,
+    "subspace_rank": 4,
+    "output_lr": 1.0,
+    "fused_general": true
+  },
+  "parameter_breakdown": {
+    "total": 613216,
+    "rwkv": 269568,
+    "embedding_head": 49152,
+    "geometry": 9568,
+    "decoder_readout": 141312,
+    "decoder_input": 141312,
+    "other": 2304
+  },
+  "architecture": "Timed KS2 study: spine_rank4_fused_repeat",
+  "coding": "fixed_both",
+  "intermediate_evaluations": [],
+  "context_evaluations": [],
+  "tiled_evaluation": {
+    "evaluation_step": 15000,
+    "training_sequence_length": 64,
+    "loss": 1.6152194738388062,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.6151127815246582,
+        "batch4_vs_eval_max_error": 4.76837158203125e-07
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.6150250434875488,
+        "batch4_vs_eval_max_error": 2.384185791015625e-07
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.615355372428894,
+        "batch4_vs_eval_max_error": 2.384185791015625e-07
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.615384817123413,
+        "batch4_vs_eval_max_error": 3.5762786865234375e-07
+      }
+    ],
+    "sequence_length": 64,
+    "note": "Four overlapping tilings of one held-out shard; state resets each window. Not four independent test sets.",
+    "validation_source": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data/val.bytes",
+    "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+  },
+  "physical_gpu": 3,
+  "study_job_id": "spine_rank4_fused_repeat_22",
+  "status": "complete"
+}

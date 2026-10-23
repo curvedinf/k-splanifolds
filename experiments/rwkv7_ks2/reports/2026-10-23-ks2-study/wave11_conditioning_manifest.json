@@ -1,0 +1,680 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave11_conditioning",
+  "deadline_epoch": 1792740133,
+  "jobs": [
+    {
+      "id": "spine_eager_reference_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_eager_reference"
+      }
+    },
+    {
+      "id": "full_eager_reference_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_eager_reference"
+      }
+    },
+    {
+      "id": "spine_powers_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_powers",
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "spine_taylor_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_taylor",
+        "geometry_basis": "taylor"
+      }
+    },
+    {
+      "id": "spine_geo_rms_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_geo_rms",
+        "geometry_input_norm": "rms"
+      }
+    },
+    {
+      "id": "spine_parallel_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_parallel",
+        "geometry_placement": "parallel"
+      }
+    },
+    {
+      "id": "spine_after_activation_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_after_activation",
+        "geometry_placement": "after_activation"
+      }
+    },
+    {
+      "id": "full_powers_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_powers",
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "full_taylor_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_taylor",
+        "geometry_basis": "taylor"
+      }
+    },
+    {
+      "id": "full_geo_rms_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_geo_rms",
+        "geometry_input_norm": "rms"
+      }
+    },
+    {
+      "id": "full_parallel_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_parallel",
+        "geometry_placement": "parallel"
+      }
+    },
+    {
+      "id": "full_after_activation_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_after_activation",
+        "geometry_placement": "after_activation"
+      }
+    },
+    {
+      "id": "spine_rank1_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 368,
+        "geometry_terms": "spine",
+        "name": "spine_rank1",
+        "subspace_rank": 1
+      }
+    },
+    {
+      "id": "spine_rank2_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 184,
+        "geometry_terms": "spine",
+        "name": "spine_rank2",
+        "subspace_rank": 2
+      }
+    },
+    {
+      "id": "spine_rank4_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 92,
+        "geometry_terms": "spine",
+        "name": "spine_rank4",
+        "subspace_rank": 4
+      }
+    },
+    {
+      "id": "spine_rank16_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 23,
+        "geometry_terms": "spine",
+        "name": "spine_rank16",
+        "subspace_rank": 16
+      }
+    },
+    {
+      "id": "full_rank2_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 164,
+        "name": "full_rank2",
+        "subspace_rank": 2
+      }
+    },
+    {
+      "id": "full_rank4_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 74,
+        "name": "full_rank4",
+        "subspace_rank": 4
+      }
+    },
+    {
+      "id": "spine_eager_reference_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_eager_reference"
+      }
+    },
+    {
+      "id": "full_eager_reference_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_eager_reference"
+      }
+    },
+    {
+      "id": "spine_powers_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_powers",
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "spine_taylor_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_taylor",
+        "geometry_basis": "taylor"
+      }
+    },
+    {
+      "id": "spine_geo_rms_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_geo_rms",
+        "geometry_input_norm": "rms"
+      }
+    },
+    {
+      "id": "spine_parallel_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_parallel",
+        "geometry_placement": "parallel"
+      }
+    },
+    {
+      "id": "spine_after_activation_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_after_activation",
+        "geometry_placement": "after_activation"
+      }
+    },
+    {
+      "id": "full_powers_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_powers",
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "full_taylor_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_taylor",
+        "geometry_basis": "taylor"
+      }
+    },
+    {
+      "id": "full_geo_rms_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_geo_rms",
+        "geometry_input_norm": "rms"
+      }
+    },
+    {
+      "id": "full_parallel_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_parallel",
+        "geometry_placement": "parallel"
+      }
+    },
+    {
+      "id": "full_after_activation_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_after_activation",
+        "geometry_placement": "after_activation"
+      }
+    },
+    {
+      "id": "spine_rank1_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 368,
+        "geometry_terms": "spine",
+        "name": "spine_rank1",
+        "subspace_rank": 1
+      }
+    },
+    {
+      "id": "spine_rank2_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 184,
+        "geometry_terms": "spine",
+        "name": "spine_rank2",
+        "subspace_rank": 2
+      }
+    },
+    {
+      "id": "spine_rank4_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 92,
+        "geometry_terms": "spine",
+        "name": "spine_rank4",
+        "subspace_rank": 4
+      }
+    },
+    {
+      "id": "spine_rank16_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 23,
+        "geometry_terms": "spine",
+        "name": "spine_rank16",
+        "subspace_rank": 16
+      }
+    },
+    {
+      "id": "full_rank2_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 164,
+        "name": "full_rank2",
+        "subspace_rank": 2
+      }
+    },
+    {
+      "id": "full_rank4_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 74,
+        "name": "full_rank4",
+        "subspace_rank": 4
+      }
+    },
+    {
+      "id": "spine_eager_reference_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_eager_reference"
+      }
+    },
+    {
+      "id": "full_eager_reference_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_eager_reference"
+      }
+    },
+    {
+      "id": "spine_powers_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_powers",
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "spine_taylor_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_taylor",
+        "geometry_basis": "taylor"
+      }
+    },
+    {
+      "id": "spine_geo_rms_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_geo_rms",
+        "geometry_input_norm": "rms"
+      }
+    },
+    {
+      "id": "spine_parallel_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_parallel",
+        "geometry_placement": "parallel"
+      }
+    },
+    {
+      "id": "spine_after_activation_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_after_activation",
+        "geometry_placement": "after_activation"
+      }
+    },
+    {
+      "id": "full_powers_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_powers",
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "full_taylor_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_taylor",
+        "geometry_basis": "taylor"
+      }
+    },
+    {
+      "id": "full_geo_rms_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_geo_rms",
+        "geometry_input_norm": "rms"
+      }
+    },
+    {
+      "id": "full_parallel_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_parallel",
+        "geometry_placement": "parallel"
+      }
+    },
+    {
+      "id": "full_after_activation_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_after_activation",
+        "geometry_placement": "after_activation"
+      }
+    },
+    {
+      "id": "spine_rank1_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 368,
+        "geometry_terms": "spine",
+        "name": "spine_rank1",
+        "subspace_rank": 1
+      }
+    },
+    {
+      "id": "spine_rank2_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 184,
+        "geometry_terms": "spine",
+        "name": "spine_rank2",
+        "subspace_rank": 2
+      }
+    },
+    {
+      "id": "spine_rank4_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 92,
+        "geometry_terms": "spine",
+        "name": "spine_rank4",
+        "subspace_rank": 4
+      }
+    },
+    {
+      "id": "spine_rank16_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 23,
+        "geometry_terms": "spine",
+        "name": "spine_rank16",
+        "subspace_rank": 16
+      }
+    },
+    {
+      "id": "full_rank2_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 164,
+        "name": "full_rank2",
+        "subspace_rank": 2
+      }
+    },
+    {
+      "id": "full_rank4_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 74,
+        "name": "full_rank4",
+        "subspace_rank": 4
+      }
+    }
+  ],
+  "predeclared_epoch": 1792726139.4838977,
+  "rationale": "KS2-only: equivalent-function basis reparameterization, chart rank, geometry-only RMS normalization, geometry placement. All models within unchanged original MLP615936 budget. Three seeds; original MLP15k reference reused."
+}

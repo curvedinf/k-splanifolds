@@ -1,0 +1,35 @@
+{
+  "recorded_epoch": 1792734853.8813412,
+  "reason": "New42model-state training-only probe shows strongrank-dependent basis scale/conditioning atinitialization. Testgeometryinputscale without changingcoordinatebypass orlearnedparametercount. Adaptivefollow-up, noholdoutscores.",
+  "comparators": "Original unchanged MLP remains primary. WithinKS2 usecompleted wave11 all3seed eager rank1,rank8reference,powers cohorts; no newcontroltuning.",
+  "implementation": "v17factory eager geometry only; new wrapper multiplies geometryinput beforeexisting spine equation. Projections,rawcoordinatebypass,attention,initializedtensors andoptimizer unchanged. Scale affects function,notfunction-preservingbasis reparameterization.",
+  "schedule": "Onlyafterwave13releasesphysicalGPUs. Config-major order tocompleteall3seeds ofeachintervention. No dispatchafter07:22:13UTC; finishinflight.",
+  "models": [
+    {
+      "name": "spine_rank8_scaled",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "spine_input_scale": 2.8284271247461903
+    },
+    {
+      "name": "spine_rank1_compressed",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "spine_input_scale": 0.35355339059327373
+    },
+    {
+      "name": "spine_rank8_powers_scaled",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "geometry_basis": "powers",
+      "spine_input_scale": 2.8284271247461903
+    }
+  ]
+}

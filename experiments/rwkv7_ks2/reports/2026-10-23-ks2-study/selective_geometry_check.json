@@ -1,0 +1,30 @@
+[
+  {
+    "mode": "warps",
+    "parameters": 604016,
+    "trainable_geometry": [
+      "blocks.0.ffn.geo_raw_scale",
+      "blocks.0.ffn.geo_raw_shift",
+      "blocks.1.ffn.geo_raw_scale",
+      "blocks.1.ffn.geo_raw_shift",
+      "blocks.2.ffn.geo_raw_scale",
+      "blocks.2.ffn.geo_raw_shift",
+      "blocks.3.ffn.geo_raw_scale",
+      "blocks.3.ffn.geo_raw_shift"
+    ],
+    "initial_state": "All tensors exactly equal to learned-spine reference; only requires_grad / buffer registration differs.",
+    "status": "PASS"
+  },
+  {
+    "mode": "coefficients",
+    "parameters": 612480,
+    "trainable_geometry": [
+      "blocks.0.ffn.geo_spine",
+      "blocks.1.ffn.geo_spine",
+      "blocks.2.ffn.geo_spine",
+      "blocks.3.ffn.geo_spine"
+    ],
+    "initial_state": "All tensors exactly equal to learned-spine reference; only requires_grad / buffer registration differs.",
+    "status": "PASS"
+  }
+]

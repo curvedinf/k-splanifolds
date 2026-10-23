@@ -1,0 +1,265 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave1/mux_affine/fixed_both_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 64,
+    "control_update_scale": true,
+    "steps": 15000,
+    "gpu": 0
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.645017623901367
+    },
+    {
+      "step": 100,
+      "train_loss": 2.431870460510254,
+      "gradient_norm": 3.118253707885742,
+      "val_loss": 2.634674310684204,
+      "training_seconds": 1.6165664730360731
+    },
+    {
+      "step": 200,
+      "train_loss": 2.201256275177002,
+      "gradient_norm": 47.090736389160156,
+      "val_loss": 2.470743179321289,
+      "training_seconds": 3.2358861340908334
+    },
+    {
+      "step": 500,
+      "train_loss": 2.0902223587036133,
+      "gradient_norm": 2.410090684890747,
+      "val_loss": 2.306356430053711,
+      "training_seconds": 8.101912343176082
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.9306387901306152,
+      "gradient_norm": 1.725297451019287,
+      "val_loss": 2.156592607498169,
+      "training_seconds": 16.235755029134452
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.394096851348877,
+      "gradient_norm": 196.26768493652344,
+      "val_loss": 2.0127065181732178,
+      "training_seconds": 32.573704379145056
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.8445229530334473,
+      "gradient_norm": 1.491849422454834,
+      "val_loss": 1.9438328742980957,
+      "training_seconds": 48.98458579916041
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.7312690019607544,
+      "gradient_norm": 1.339390516281128,
+      "val_loss": 1.8977901935577393,
+      "training_seconds": 65.45611283206381
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.9125034809112549,
+      "gradient_norm": 1.4067341089248657,
+      "val_loss": 1.867243766784668,
+      "training_seconds": 81.98040202900302
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.742250919342041,
+      "gradient_norm": 1.3615511655807495,
+      "val_loss": 1.8209984302520752,
+      "training_seconds": 98.56460875808261
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.057175874710083,
+      "gradient_norm": 1.5444071292877197,
+      "val_loss": 1.804858684539795,
+      "training_seconds": 115.20872709003743
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.1234917640686035,
+      "gradient_norm": 2.1369404792785645,
+      "val_loss": 1.7754476070404053,
+      "training_seconds": 131.90984286007006
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.5465757846832275,
+      "gradient_norm": 1.3107048273086548,
+      "val_loss": 1.7581284046173096,
+      "training_seconds": 148.66941377706826
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.8595691919326782,
+      "gradient_norm": 1.5774898529052734,
+      "val_loss": 1.744575023651123,
+      "training_seconds": 165.47473030700348
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.8809477090835571,
+      "gradient_norm": 1.803078055381775,
+      "val_loss": 1.7345396280288696,
+      "training_seconds": 182.44176236807834
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.6341911554336548,
+      "gradient_norm": 1.6779321432113647,
+      "val_loss": 1.7182594537734985,
+      "training_seconds": 199.4439048850909
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.4114787578582764,
+      "gradient_norm": 1.5884525775909424,
+      "val_loss": 1.7138196229934692,
+      "training_seconds": 216.47485363506712
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.4681652784347534,
+      "gradient_norm": 1.5609683990478516,
+      "val_loss": 1.7023992538452148,
+      "training_seconds": 233.53255527711008
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.6639931201934814,
+      "gradient_norm": 1.5767029523849487,
+      "val_loss": 1.703919768333435,
+      "training_seconds": 250.62030320812482
+    }
+  ],
+  "parameters": 571648,
+  "ffn_parameters_by_layer": [
+    55648,
+    55648,
+    55648,
+    55648
+  ],
+  "ffn_types": [
+    "ks2",
+    "ks2",
+    "ks2",
+    "ks2"
+  ],
+  "training_seconds": 250.62030320812482,
+  "wall_seconds": 265.7823666520417,
+  "benchmark_ms_per_step": 16.112345129949972,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+    "study_models.py": "4dd46590c73265207ae16ceca0117afeaeb3b748e1d4778e12c26874ac56fc1d",
+    "study_run_gpu.py": "7621eb41a096afd9860423f9a400bec68998f5efef17317a7f8a8651ab1099e0",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "side_history.py": "a5144fa43c9c5791a3014449c26e0a9b8257b2fa64aeaee2c6e0b6f0938414e7"
+  },
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "coding": "fixed_both",
+  "coding_protocol": {
+    "baseline": "demuxed_history_64_rank8_side2048",
+    "config": {
+      "name": "mux_affine",
+      "mux_affine": true
+    },
+    "original_attention": true,
+    "input_coverage": "Unchanged RHAC all-input fixed codes unless explicitly stated.",
+    "output": "Current main, side, and separate previous attention/decoder history remain baseline.",
+    "training": "Same paired data, seed, FP32, AdamW, global norm clipping and 15k cosine schedule; changed optimizer scales are explicit in configuration."
+  },
+  "rhac_reference": {
+    "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+    "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+  },
+  "evaluation": {
+    "original_val": 1.703919768333435,
+    "expanded_val": 1.6869843006134033,
+    "sampled_train": 1.573067307472229
+  },
+  "study_config": {
+    "name": "mux_affine",
+    "mux_affine": true
+  },
+  "parameter_breakdown": {
+    "total": 571648,
+    "rwkv": 269568,
+    "embedding_head": 49152,
+    "geometry": 209920,
+    "decoder_readout": 8576,
+    "decoder_input": 4096,
+    "other": 30336
+  },
+  "architecture": "Timed KS2 study: mux_affine",
+  "tiled_evaluation": {
+    "arm": "fixed_both",
+    "seed": 11,
+    "loss": 1.6682368516921997,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.6681201457977295
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.6681253910064697
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.6678370237350464
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.6688649654388428
+      }
+    ],
+    "batch4_vs_batch64_max_loss_error": 7.152557373046875e-07
+  },
+  "physical_gpu": 0,
+  "study_job_id": "mux_affine",
+  "status": "complete"
+}

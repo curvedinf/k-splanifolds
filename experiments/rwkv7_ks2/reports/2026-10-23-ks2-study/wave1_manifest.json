@@ -1,0 +1,153 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave1",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "ks2_main_readout40",
+      "config": {
+        "name": "ks2_main_readout40",
+        "charts": 40,
+        "readout": "learned"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "relu2_main_readout80",
+      "config": {
+        "name": "relu2_main_readout80",
+        "charts": 80,
+        "cell": "relu2",
+        "readout": "learned"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "geometry_only",
+      "config": {
+        "name": "geometry_only",
+        "coord_skip": 0.0
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "ks2_relu2",
+      "config": {
+        "name": "ks2_relu2",
+        "cell": "ks2_relu2"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "fixed_identity",
+      "config": {
+        "name": "fixed_identity",
+        "cell": "identity"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "fixed_relu2",
+      "config": {
+        "name": "fixed_relu2",
+        "cell": "relu2"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "coordinates_quarter",
+      "config": {
+        "name": "coordinates_quarter",
+        "coord_scale": 0.25
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "coordinates_four",
+      "config": {
+        "name": "coordinates_four",
+        "coord_scale": 4.0
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "main_lora16",
+      "config": {
+        "name": "main_lora16",
+        "readout": "lora",
+        "readout_rank": 16
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "mux_affine",
+      "config": {
+        "name": "mux_affine",
+        "mux_affine": true
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "geometry_lr4",
+      "config": {
+        "name": "geometry_lr4",
+        "geometry_lr": 4.0
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "geometry_lr_quarter",
+      "config": {
+        "name": "geometry_lr_quarter",
+        "geometry_lr": 0.25
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "input_rotation",
+      "config": {
+        "name": "input_rotation",
+        "input_rotation": true
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "output_rotation",
+      "config": {
+        "name": "output_rotation",
+        "readout": "rotation"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "baseline_repeat",
+      "config": {
+        "name": "baseline_repeat"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "coordinate_rms",
+      "config": {
+        "name": "coordinate_rms",
+        "coord_norm": true
+      },
+      "seed": 11,
+      "steps": 15000
+    }
+  ]
+}

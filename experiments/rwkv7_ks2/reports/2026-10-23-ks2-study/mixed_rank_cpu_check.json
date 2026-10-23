@@ -1,0 +1,161 @@
+{
+  "status": "PASS",
+  "original_mlp_all_three_seeds_unchanged": true,
+  "homogeneous_rank1_equivalence_all_seeds": true,
+  "rows": [
+    {
+      "job": "mixed_rank1_heavy_11",
+      "status": "PASS",
+      "learned_per_ffn": 73380,
+      "parameters": {
+        "total": 614544,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 10896,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    },
+    {
+      "job": "mixed_balanced_11",
+      "status": "PASS",
+      "learned_per_ffn": 73172,
+      "parameters": {
+        "total": 613712,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 10064,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    },
+    {
+      "job": "mixed_balanced_mlp32_11",
+      "status": "PASS",
+      "learned_per_ffn": 72916,
+      "parameters": {
+        "total": 612688,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 9040,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    },
+    {
+      "job": "mixed_rank1_heavy_22",
+      "status": "PASS",
+      "learned_per_ffn": 73380,
+      "parameters": {
+        "total": 614544,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 10896,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    },
+    {
+      "job": "mixed_balanced_22",
+      "status": "PASS",
+      "learned_per_ffn": 73172,
+      "parameters": {
+        "total": 613712,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 10064,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    },
+    {
+      "job": "mixed_balanced_mlp32_22",
+      "status": "PASS",
+      "learned_per_ffn": 72916,
+      "parameters": {
+        "total": 612688,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 9040,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    },
+    {
+      "job": "mixed_rank1_heavy_33",
+      "status": "PASS",
+      "learned_per_ffn": 73380,
+      "parameters": {
+        "total": 614544,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 10896,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    },
+    {
+      "job": "mixed_balanced_33",
+      "status": "PASS",
+      "learned_per_ffn": 73172,
+      "parameters": {
+        "total": 613712,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 10064,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    },
+    {
+      "job": "mixed_balanced_mlp32_33",
+      "status": "PASS",
+      "learned_per_ffn": 72916,
+      "parameters": {
+        "total": 612688,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 9040,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "shared_initialized_tensors_identical": true,
+      "all_ffn_parameter_gradients_finite_nonzero": true,
+      "causal": true
+    }
+  ],
+  "source_sha256": "5f6251a94fee16d7ef9c8560d470b14443d1f2fd6827b997e617c46568123e2b"
+}

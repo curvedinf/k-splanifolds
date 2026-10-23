@@ -1,0 +1,774 @@
+{
+  "protocol": "CPU inference on1024 fixed training targets,seed7124; uncentered per-chart1024x6 design SVD, float64. Same sampled coordinates for every equivalent basis; descriptive rather than an optimizer Hessian.",
+  "source_sha256": "795972f46aa2ef46f9436991e10684be59bfabf0907eafae609052c7bd79e08e",
+  "rows": [
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 0,
+      "basis": "hermite",
+      "condition_median": 684.7655079432988,
+      "condition_max": 1651.0021305617965,
+      "rms_balanced_condition_median": 387.67172189611784,
+      "basis_rms_median": [
+        1.1607656819781804,
+        1.430624748882854,
+        1.2615634935616418,
+        0.5634278443900756,
+        0.7201291010558085,
+        0.7423599102756865
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 0,
+      "basis": "powers",
+      "condition_median": 174.91128813411578,
+      "condition_max": 415.75227108523114,
+      "rms_balanced_condition_median": 125.75285659469692,
+      "basis_rms_median": [
+        1.0,
+        0.4435373292199788,
+        0.30648181814435577,
+        0.26439720828553653,
+        0.7201291010558085,
+        0.7423599102756865
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 0,
+      "basis": "taylor",
+      "condition_median": 607.8375748018913,
+      "condition_max": 1720.9861751119968,
+      "rms_balanced_condition_median": 125.75286532887935,
+      "basis_rms_median": [
+        1.0,
+        0.4435373292199788,
+        0.15324090907217788,
+        0.04406620154609426,
+        0.7201291010558085,
+        0.7423599102756865
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 1,
+      "basis": "hermite",
+      "condition_median": 1150.24609448377,
+      "condition_max": 3532.345167876363,
+      "rms_balanced_condition_median": 681.3420560082603,
+      "basis_rms_median": [
+        1.6917079842744094,
+        2.2120056015884897,
+        1.8861061507866679,
+        0.8765551522666031,
+        0.6168790905780399,
+        0.7452545438359606
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 1,
+      "basis": "powers",
+      "condition_median": 154.13173666363903,
+      "condition_max": 616.2509760255859,
+      "rms_balanced_condition_median": 132.84789166648673,
+      "basis_rms_median": [
+        1.0,
+        0.580521229333495,
+        0.46181925905132676,
+        0.42246652195618944,
+        0.6168790905780399,
+        0.7452545438359606
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 1,
+      "basis": "taylor",
+      "condition_median": 464.2737589389211,
+      "condition_max": 1771.158210135199,
+      "rms_balanced_condition_median": 132.84789914799632,
+      "basis_rms_median": [
+        1.0,
+        0.580521229333495,
+        0.23090962952566338,
+        0.07041108701167882,
+        0.6168790905780399,
+        0.7452545438359606
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 2,
+      "basis": "hermite",
+      "condition_median": 1758.3517208647368,
+      "condition_max": 11186.076816043844,
+      "rms_balanced_condition_median": 1177.7006324132196,
+      "basis_rms_median": [
+        3.197022566500451,
+        3.869447115003764,
+        3.0430629120901105,
+        1.5614591396086674,
+        0.55578530090203,
+        0.7138870458232718
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 2,
+      "basis": "powers",
+      "condition_median": 193.88448840099616,
+      "condition_max": 1424.5361888074106,
+      "rms_balanced_condition_median": 182.4220255049062,
+      "basis_rms_median": [
+        1.0,
+        0.7288115927283639,
+        0.7501123191449433,
+        0.8198513343914539,
+        0.55578530090203,
+        0.7138870458232718
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 2,
+      "basis": "taylor",
+      "condition_median": 405.88701232765357,
+      "condition_max": 3739.2298745301646,
+      "rms_balanced_condition_median": 182.4220262265374,
+      "basis_rms_median": [
+        1.0,
+        0.7288115927283639,
+        0.3750561595724716,
+        0.1366418889649696,
+        0.55578530090203,
+        0.7138870458232718
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 3,
+      "basis": "hermite",
+      "condition_median": 1295.956944184821,
+      "condition_max": 3189.0518134236045,
+      "rms_balanced_condition_median": 795.104626775381,
+      "basis_rms_median": [
+        4.175630079363244,
+        4.721064161370879,
+        3.472987996732136,
+        1.9418224102885846,
+        0.5603559211780891,
+        0.7007518094639659
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 3,
+      "basis": "powers",
+      "condition_median": 124.45572169458127,
+      "condition_max": 542.2648191041447,
+      "rms_balanced_condition_median": 115.49633094566028,
+      "basis_rms_median": [
+        1.0,
+        0.7586884193149583,
+        0.8398887532417735,
+        1.1134460578989114,
+        0.5603559211780891,
+        0.7007518094639659
+      ]
+    },
+    {
+      "job": "wave3/dense_relu_seed33",
+      "layer": 3,
+      "basis": "taylor",
+      "condition_median": 263.57686576211813,
+      "condition_max": 1532.9039653768662,
+      "rms_balanced_condition_median": 115.4963278408318,
+      "basis_rms_median": [
+        1.0,
+        0.7586884193149583,
+        0.41994437662088674,
+        0.18557434309161008,
+        0.5603559211780891,
+        0.7007518094639659
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 0,
+      "basis": "hermite",
+      "condition_median": 1575.1904494493265,
+      "condition_max": 4733.705007579308,
+      "rms_balanced_condition_median": 943.5679488356061,
+      "basis_rms_median": [
+        1.6923621648647793,
+        2.1678768578090373,
+        1.8357505281848978,
+        0.8607406129779789,
+        0.6349747874563659,
+        0.7536057101995818
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 0,
+      "basis": "powers",
+      "condition_median": 232.72518348809993,
+      "condition_max": 1053.91190567079,
+      "rms_balanced_condition_median": 199.3874302433993,
+      "basis_rms_median": [
+        1.0,
+        0.565741798289391,
+        0.44967560335595774,
+        0.4196312691026025,
+        0.6349747874563659,
+        0.7536057101995818
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 0,
+      "basis": "taylor",
+      "condition_median": 674.5928917333626,
+      "condition_max": 3143.9504371323305,
+      "rms_balanced_condition_median": 199.38742811423506,
+      "basis_rms_median": [
+        1.0,
+        0.565741798289391,
+        0.22483780167797887,
+        0.06993854476720206,
+        0.6349747874563659,
+        0.7536057101995818
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 1,
+      "basis": "hermite",
+      "condition_median": 2177.9979883916835,
+      "condition_max": 5095.882159044697,
+      "rms_balanced_condition_median": 1421.8052239837587,
+      "basis_rms_median": [
+        2.786538218123177,
+        3.3169671488921177,
+        2.6710845524939213,
+        1.3421128355606156,
+        0.57723830477508,
+        0.7313274383959104
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 1,
+      "basis": "powers",
+      "condition_median": 228.51953444398015,
+      "condition_max": 666.246286964805,
+      "rms_balanced_condition_median": 212.81565460437253,
+      "basis_rms_median": [
+        1.0,
+        0.6966751534975374,
+        0.6590158658001034,
+        0.715143451303219,
+        0.57723830477508,
+        0.7313274383959104
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 1,
+      "basis": "taylor",
+      "condition_median": 570.4194067630747,
+      "condition_max": 1872.3033886208013,
+      "rms_balanced_condition_median": 212.81566781552064,
+      "basis_rms_median": [
+        1.0,
+        0.6966751534975374,
+        0.3295079329000517,
+        0.119190575296698,
+        0.57723830477508,
+        0.7313274383959104
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 2,
+      "basis": "hermite",
+      "condition_median": 1906.0035669930605,
+      "condition_max": 5920.15282392861,
+      "rms_balanced_condition_median": 1312.1016732154333,
+      "basis_rms_median": [
+        5.542560591152384,
+        6.175755972905614,
+        4.517968751772075,
+        2.5524775985500368,
+        0.5360145088194473,
+        0.660802082289712
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 2,
+      "basis": "powers",
+      "condition_median": 159.37001382964291,
+      "condition_max": 655.4498085422824,
+      "rms_balanced_condition_median": 144.42330177007193,
+      "basis_rms_median": [
+        1.0,
+        0.9173951340421225,
+        1.0949030025896787,
+        1.4895461041351572,
+        0.5360145088194473,
+        0.660802082289712
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 2,
+      "basis": "taylor",
+      "condition_median": 223.2202385458568,
+      "condition_max": 1594.7577444310082,
+      "rms_balanced_condition_median": 144.42330978329372,
+      "basis_rms_median": [
+        1.0,
+        0.9173951340421225,
+        0.5474515012948393,
+        0.24825768381110924,
+        0.5360145088194473,
+        0.660802082289712
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 3,
+      "basis": "hermite",
+      "condition_median": 1866.3095473579103,
+      "condition_max": 5687.197121126011,
+      "rms_balanced_condition_median": 1288.5877383209038,
+      "basis_rms_median": [
+        5.128326345443697,
+        5.872497265991533,
+        4.370926780673404,
+        2.403899165122432,
+        0.5333528914881815,
+        0.6583922779618763
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 3,
+      "basis": "powers",
+      "condition_median": 167.52764149492938,
+      "condition_max": 612.369784797933,
+      "rms_balanced_condition_median": 156.53393103700176,
+      "basis_rms_median": [
+        1.0,
+        0.9011959229613633,
+        1.0701139382945646,
+        1.3456587319110629,
+        0.5333528914881815,
+        0.6583922779618763
+      ]
+    },
+    {
+      "job": "wave4_activation/spine_fused_11",
+      "layer": 3,
+      "basis": "taylor",
+      "condition_median": 259.99053613456925,
+      "condition_max": 1599.2014359396444,
+      "rms_balanced_condition_median": 156.5339233842172,
+      "basis_rms_median": [
+        1.0,
+        0.9011959229613633,
+        0.5350569691472823,
+        0.22427645510465477,
+        0.5333528914881815,
+        0.6583922779618763
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 0,
+      "basis": "hermite",
+      "condition_median": 2531.7239704768076,
+      "condition_max": 8848.116575504142,
+      "rms_balanced_condition_median": 1388.3103429744706,
+      "basis_rms_median": [
+        0.8342786759668245,
+        0.8720127396909636,
+        0.8969294361467799,
+        0.33351684162736855,
+        0.8281476469322185,
+        0.6960361395895278
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 0,
+      "basis": "powers",
+      "condition_median": 1015.6385313175788,
+      "condition_max": 3945.970103835376,
+      "rms_balanced_condition_median": 930.692549058691,
+      "basis_rms_median": [
+        1.0,
+        0.3755692534639903,
+        0.20559115138095907,
+        0.13036882327080987,
+        0.8281476469322185,
+        0.6960361395895278
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 0,
+      "basis": "taylor",
+      "condition_median": 3007.0880645800867,
+      "condition_max": 11488.73730074944,
+      "rms_balanced_condition_median": 930.6925322254376,
+      "basis_rms_median": [
+        1.0,
+        0.3755692534639903,
+        0.10279557569047953,
+        0.02172813723582345,
+        0.8281476469322185,
+        0.6960361395895278
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 1,
+      "basis": "hermite",
+      "condition_median": 3093.491786499486,
+      "condition_max": 8119.707134877494,
+      "rms_balanced_condition_median": 1805.1314684986012,
+      "basis_rms_median": [
+        1.3199491390980198,
+        1.7299551264851931,
+        1.527679849303249,
+        0.680603726362485,
+        0.736021931070498,
+        0.7663855997729718
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 1,
+      "basis": "powers",
+      "condition_median": 784.3426015388891,
+      "condition_max": 3431.9813454984387,
+      "rms_balanced_condition_median": 747.3492324509697,
+      "basis_rms_median": [
+        1.0,
+        0.5046003057638242,
+        0.3704746606428892,
+        0.31565453464454146,
+        0.736021931070498,
+        0.7663855997729718
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 1,
+      "basis": "taylor",
+      "condition_median": 1910.3871301693353,
+      "condition_max": 7904.051370505942,
+      "rms_balanced_condition_median": 747.3492381807173,
+      "basis_rms_median": [
+        1.0,
+        0.5046003057638242,
+        0.1852373303214446,
+        0.052609088908985226,
+        0.736021931070498,
+        0.7663855997729718
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 2,
+      "basis": "hermite",
+      "condition_median": 4117.141039393103,
+      "condition_max": 8459.056298301239,
+      "rms_balanced_condition_median": 2511.440390320583,
+      "basis_rms_median": [
+        3.408893328218179,
+        4.04357373298366,
+        3.1045355724209336,
+        1.6448012179449836,
+        0.5430724036964476,
+        0.7849899685402063
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 2,
+      "basis": "powers",
+      "condition_median": 518.0583054079964,
+      "condition_max": 1780.4249219413484,
+      "rms_balanced_condition_median": 498.7388284117731,
+      "basis_rms_median": [
+        1.0,
+        0.7651707457744914,
+        0.7615996194311836,
+        0.8856836368728682,
+        0.5430724036964476,
+        0.7849899685402063
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 2,
+      "basis": "taylor",
+      "condition_median": 942.34408188037,
+      "condition_max": 4163.76380557227,
+      "rms_balanced_condition_median": 498.7388501592788,
+      "basis_rms_median": [
+        1.0,
+        0.7651707457744914,
+        0.3807998097155918,
+        0.14761393942500203,
+        0.5430724036964476,
+        0.7849899685402063
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 3,
+      "basis": "hermite",
+      "condition_median": 1962.9995849723807,
+      "condition_max": 6336.942211017606,
+      "rms_balanced_condition_median": 1186.8713553205673,
+      "basis_rms_median": [
+        3.0577131617328894,
+        3.606744695723339,
+        2.8248044100087677,
+        1.4568220072138491,
+        0.604847450544652,
+        0.7753040877859834
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 3,
+      "basis": "powers",
+      "condition_median": 296.0147906169448,
+      "condition_max": 956.1353601977173,
+      "rms_balanced_condition_median": 283.6098577298371,
+      "basis_rms_median": [
+        1.0,
+        0.7164511518593182,
+        0.6929709484609105,
+        0.7911795426765369,
+        0.604847450544652,
+        0.7753040877859834
+      ]
+    },
+    {
+      "job": "wave8_long/original_spine46_11",
+      "layer": 3,
+      "basis": "taylor",
+      "condition_median": 570.0031661946323,
+      "condition_max": 1801.2603596559995,
+      "rms_balanced_condition_median": 283.6098715824113,
+      "basis_rms_median": [
+        1.0,
+        0.7164511518593182,
+        0.3464854742304552,
+        0.1318632572696901,
+        0.604847450544652,
+        0.7753040877859834
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 0,
+      "basis": "hermite",
+      "condition_median": 7567.338140785127,
+      "condition_max": 20483.48147370207,
+      "rms_balanced_condition_median": 5067.740697791303,
+      "basis_rms_median": [
+        1.8106435079203098,
+        2.4760473269579317,
+        2.1217510870308054,
+        0.9792826713647913,
+        0.4827818325605912,
+        0.7860725628869002
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 0,
+      "basis": "powers",
+      "condition_median": 1055.934571330101,
+      "condition_max": 3658.735509070631,
+      "rms_balanced_condition_median": 808.6928523446396,
+      "basis_rms_median": [
+        1.0,
+        0.6511570628922735,
+        0.5194473828056596,
+        0.4656009738818118,
+        0.4827818325605912,
+        0.7860725628869002
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 0,
+      "basis": "taylor",
+      "condition_median": 2886.694744279675,
+      "condition_max": 10990.368539267738,
+      "rms_balanced_condition_median": 808.692895654317,
+      "basis_rms_median": [
+        1.0,
+        0.6511570628922735,
+        0.2597236914028298,
+        0.0776001621627443,
+        0.4827818325605912,
+        0.7860725628869002
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 1,
+      "basis": "hermite",
+      "condition_median": 8107.817035327497,
+      "condition_max": 23693.83556943007,
+      "rms_balanced_condition_median": 6169.212742046794,
+      "basis_rms_median": [
+        3.2002910897482537,
+        3.900448884089338,
+        3.082859972313569,
+        1.5762413214772404,
+        0.4286722761721096,
+        0.6958508618883846
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 1,
+      "basis": "powers",
+      "condition_median": 687.4932955743204,
+      "condition_max": 1918.191152105121,
+      "rms_balanced_condition_median": 606.0188273150677,
+      "basis_rms_median": [
+        1.0,
+        0.7985734976552185,
+        0.7600758684473938,
+        0.8287734593992132,
+        0.4286722761721096,
+        0.6958508618883846
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 1,
+      "basis": "taylor",
+      "condition_median": 1488.1812401435143,
+      "condition_max": 4147.258474326832,
+      "rms_balanced_condition_median": 606.0188766602829,
+      "basis_rms_median": [
+        1.0,
+        0.7985734976552185,
+        0.3800379342236969,
+        0.1381289095580668,
+        0.4286722761721096,
+        0.6958508618883846
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 2,
+      "basis": "hermite",
+      "condition_median": 5092.985947353322,
+      "condition_max": 13079.46419275985,
+      "rms_balanced_condition_median": 4087.3020908131894,
+      "basis_rms_median": [
+        5.308398784743548,
+        6.067828324332022,
+        4.511974091907584,
+        2.4860057104476896,
+        0.47157525101350256,
+        0.5932199536730679
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 2,
+      "basis": "powers",
+      "condition_median": 344.69207813731185,
+      "condition_max": 950.5732641598808,
+      "rms_balanced_condition_median": 346.6853919719203,
+      "basis_rms_median": [
+        1.0,
+        0.9607438926726658,
+        1.1063802875109616,
+        1.4023164875165093,
+        0.47157525101350256,
+        0.5932199536730679
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 2,
+      "basis": "taylor",
+      "condition_median": 529.4629539823859,
+      "condition_max": 2320.631709980308,
+      "rms_balanced_condition_median": 346.68538409918335,
+      "basis_rms_median": [
+        1.0,
+        0.9607438926726658,
+        0.5531901437554808,
+        0.23371941463367824,
+        0.47157525101350256,
+        0.5932199536730679
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 3,
+      "basis": "hermite",
+      "condition_median": 4412.534699052661,
+      "condition_max": 15800.796738619678,
+      "rms_balanced_condition_median": 3319.760828442601,
+      "basis_rms_median": [
+        4.4447879091476885,
+        5.155104369575613,
+        3.889653534892901,
+        2.103080075955433,
+        0.4885279138341362,
+        0.6401973770065689
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 3,
+      "basis": "powers",
+      "condition_median": 323.5966441196895,
+      "condition_max": 1254.3605105210886,
+      "rms_balanced_condition_median": 320.0335756290182,
+      "basis_rms_median": [
+        1.0,
+        0.8729516647064803,
+        0.953922965103508,
+        1.1602760278836275,
+        0.4885279138341362,
+        0.6401973770065689
+      ]
+    },
+    {
+      "job": "wave8_long/original_frozen46_11",
+      "layer": 3,
+      "basis": "taylor",
+      "condition_median": 563.7268023338826,
+      "condition_max": 2821.984001869886,
+      "rms_balanced_condition_median": 320.03356541331516,
+      "basis_rms_median": [
+        1.0,
+        0.8729516647064803,
+        0.476961482551754,
+        0.19337933819544828,
+        0.4885279138341362,
+        0.6401973770065689
+      ]
+    }
+  ]
+}

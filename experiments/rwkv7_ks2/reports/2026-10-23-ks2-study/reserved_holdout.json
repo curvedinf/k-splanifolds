@@ -1,0 +1,12 @@
+{
+  "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+  "source_token_start": 1000000,
+  "source_token_count": 100000,
+  "bytes": 451714,
+  "sha256": "039c8d9b5136a06225f8308496bc7dcbdabebda3c63581d61cdfd5c78e462545",
+  "purpose": "Reserved disjoint validation token interval. Evaluate only final selected candidates and controls after architecture selection; do not tune against this score.",
+  "prior_validation_token_interval": [
+    0,
+    100000
+  ]
+}

@@ -1,0 +1,2110 @@
+{
+  "status": "PASS",
+  "protocol": "GPU0; three randomized captured timing rounds; trained real-input activations; B4 T64 FP32. Each case includes forward and input/learned-parameter derivatives with random fixed upstream gradients. Attention includes derivatives through its returned first-value tensor. Norms, FFN time mixing, residual additions, embedding/head, loss, clipping and optimizer are excluded. Isolated costs are not exactly additive and are not percentages of full-step time. FFN includes down, geometry/activation and up; do not add its subcomponents to it.",
+  "models": [
+    {
+      "model": "original_mlp",
+      "run": "wave8_long/original_original_mlp_11",
+      "config": {
+        "name": "original_mlp",
+        "family": "mlp",
+        "output_lr": 1.0
+      },
+      "steps": 100000
+    },
+    {
+      "model": "history",
+      "run": "wave8_long/original_history_11",
+      "config": {
+        "name": "history_baseline",
+        "family": "history",
+        "fused_geometry": true
+      },
+      "steps": 100000
+    },
+    {
+      "model": "frozen_spine",
+      "run": "wave8_long/original_frozen46_11",
+      "config": {
+        "name": "frozen46",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "frozen_geometry": true,
+        "output_lr": 1.0,
+        "fused_general": true
+      },
+      "steps": 100000
+    },
+    {
+      "model": "learned_full31",
+      "run": "wave2/dense31_relu2",
+      "config": {
+        "name": "dense31_relu2",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "output_lr": 1.0,
+        "fused_geometry": true
+      },
+      "steps": 15000
+    }
+  ],
+  "rows": [
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.02680120993228186
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.039860175004819545
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.190871213277181
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1914941787719726
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.18552614847819
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.35714559803838314
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.06972180157899857
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1955016199747721
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.03226646241687593
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.17843335377086292
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.03255745616959937
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.12126869393265954
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.0259786639540706
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.13083846823683062
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.016035612126191458
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1904008356730142
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.35748430887858074
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1924637349446614
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.13170752752394904
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.16756879647572837
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.039957149505615235
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.026783373701050626
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.3071561445269668
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1182069554048426
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.032406400597613794
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.188868014017741
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1927560043334962
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1229843812830307
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.14038118498665947
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.1427121629650961
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.03245995845951018
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.02001838953671944
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1941533788045247
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.02000269307270309
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.1790651335435755
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.015906372031227488
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.35803968702043804
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.03487008925407163
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.30832807641280324
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.03494568939208984
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.01615906707345182
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.03491517908432905
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.189144287109375
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.7590238428827542
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.7603899032350571
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.026224404836754242
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.18021171943291084
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.02039319038391113
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.026966023789238684
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.016248711524354188
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.16364914955349144
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.737559619316688
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.07105348801716066
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.1976062657881756
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.026269412679770558
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.040327551930221084
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.027102848276433587
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.07033983991857161
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.19799356834561216
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.1320933277790363
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.2054915269215902
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.02631112662228671
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.3609848327636719
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.035170343845280554
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.19732516793643726
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.7604271083202176
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.2021908283233642
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.13155592679977415
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1236888544900077
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "down",
+      "repeat": 0,
+      "ms": 0.040237256335867874
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.3085021002250805
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "up",
+      "repeat": 0,
+      "ms": 0.020169253920165588
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.07033806352425885
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 0,
+      "ms": 0.31097564356667656
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 0,
+      "ms": 1.1281655255485983
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 0,
+      "ms": 0.1979853035747141
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.1640899935177844
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.03267169774063235
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2015048090616862
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.30935049738202774
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.3092633699115954
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.19803265982527074
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.040230222286716584
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.1247264525469611
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2044711685180665
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.1277824514052448
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.01618696291816426
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.30889452549449187
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.7607875823974609
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.1809665307333303
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2036317189534504
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2049405415852865
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2042920049031576
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.035144057254559595
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.1974408462969926
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.016190393554403427
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.026344954340081467
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.03507953207513804
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.020424805269684904
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.198255909272354
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.18184724447990228
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.03271276180560772
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.04034666445095407
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.026248673528258562
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.04047040067239497
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.026195982986495208
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.02020637785846537
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.016382028051644317
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.027140291649792952
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2073234430948894
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.13083609272451963
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.36277193705240884
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.763757933339765
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.03500951504417759
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.020356095770130988
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2067741139729817
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.1229897568557436
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.02695330900530661
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2037373479207356
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.74076876853829
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2088125228881836
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.14310426300150217
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.128152297524845
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.145743055499968
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.03275270934152131
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.19840385326440785
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.7667917374641664
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.3633070353803963
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.016182807055852746
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.1823144685490467
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.1327593971701229
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2080690892537436
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.04040611745857517
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.3631042618682419
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.3130466183749112
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.13112944456247183
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.17131165321983585
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.02695247031027271
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.13246856437009924
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.026380731980246
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.07034954875707626
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.07043520839590775
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.13175891707925236
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.03278879008110294
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2107410685221354
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.026961373513744724
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "up",
+      "repeat": 1,
+      "ms": 0.020513538661457244
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.07041509704084586
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "down",
+      "repeat": 1,
+      "ms": 0.03518904313533264
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 1,
+      "ms": 0.3635130220956176
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 1,
+      "ms": 0.07081189193124846
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 1,
+      "ms": 1.2086963144938152
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2075539143880207
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.7685144886826024
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.14429818598429361
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.1327829473158892
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.18305763638635197
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.171770736962034
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.02708773528430479
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.13177985864527086
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2127144241333008
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.0707083584712102
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.03527515382909063
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.07035450299580892
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2118589528401693
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2163069661458334
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.1650039357065365
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.14586864628203927
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.13206903373493867
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.032714336464203984
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.1829965305328369
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.016484360450353376
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.36406298850080093
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.016334990491258337
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.02725054295290084
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.01652311344535983
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2129843139648437
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.31107919866388495
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2093074798583985
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.3130104533413
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.07066614077641414
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.020413105648633672
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.03518393206041913
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.135648805954877
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.3116064407207348
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2080829238891602
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.0328346794916068
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2064029439290365
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.136948574290556
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.03294337519749939
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.026498537647480867
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.03534425785520681
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2080253346761067
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.19991182403564453
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.04061030527440513
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.1999771368764613
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.016442536032773594
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.04060250707080582
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.1367857540355009
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.36521572177692996
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.19952551416990136
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.3638570580600707
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.744592777375252
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.1323902891528222
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.7665499092876047
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.19924348847478884
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.12442698500275072
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.3130374523309561
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.18394171610599808
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.7684198687153477
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.035537638587336384
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.027367224051938418
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.04091188795426313
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.026519698824201313
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.020535373829238847
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.040885886691865464
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.027320325620758146
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.026449004086581143
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2082535934448242
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.07093140595442765
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.02060806271550176
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "ffn",
+      "repeat": 2,
+      "ms": 0.13245750455295338
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "geometry",
+      "repeat": 2,
+      "ms": 0.36486229930850245
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.21160400390625
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.026444116452845133
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "attention",
+      "repeat": 2,
+      "ms": 1.2165106709798177
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "down",
+      "repeat": 2,
+      "ms": 0.032914299499697805
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "up",
+      "repeat": 2,
+      "ms": 0.020630536680696997
+    }
+  ],
+  "summary": [
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "attention",
+      "median_ms": 1.1247264525469611
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "ffn",
+      "median_ms": 0.07081189193124846
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "down",
+      "median_ms": 0.03275270934152131
+    },
+    {
+      "model": "original_mlp",
+      "layer": 0,
+      "component": "up",
+      "median_ms": 0.026344954340081467
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "attention",
+      "median_ms": 1.2044711685180665
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "ffn",
+      "median_ms": 0.07041509704084586
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "down",
+      "median_ms": 0.03271276180560772
+    },
+    {
+      "model": "original_mlp",
+      "layer": 1,
+      "component": "up",
+      "median_ms": 0.026269412679770558
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "attention",
+      "median_ms": 1.2037373479207356
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "ffn",
+      "median_ms": 0.07034954875707626
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "down",
+      "median_ms": 0.03267169774063235
+    },
+    {
+      "model": "original_mlp",
+      "layer": 2,
+      "component": "up",
+      "median_ms": 0.026195982986495208
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "attention",
+      "median_ms": 1.2064029439290365
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "ffn",
+      "median_ms": 0.07043520839590775
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "down",
+      "median_ms": 0.03278879008110294
+    },
+    {
+      "model": "original_mlp",
+      "layer": 3,
+      "component": "up",
+      "median_ms": 0.026380731980246
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "attention",
+      "median_ms": 1.1277824514052448
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "ffn",
+      "median_ms": 0.74076876853829
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "down",
+      "median_ms": 0.1229897568557436
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "up",
+      "median_ms": 0.1809665307333303
+    },
+    {
+      "model": "history",
+      "layer": 0,
+      "component": "geometry",
+      "median_ms": 0.3631042618682419
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "attention",
+      "median_ms": 1.2049405415852865
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "ffn",
+      "median_ms": 0.7607875823974609
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "down",
+      "median_ms": 0.14310426300150217
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "up",
+      "median_ms": 0.1823144685490467
+    },
+    {
+      "model": "history",
+      "layer": 1,
+      "component": "geometry",
+      "median_ms": 0.3635130220956176
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "attention",
+      "median_ms": 1.2042920049031576
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "ffn",
+      "median_ms": 0.763757933339765
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "down",
+      "median_ms": 0.145743055499968
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "up",
+      "median_ms": 0.18184724447990228
+    },
+    {
+      "model": "history",
+      "layer": 2,
+      "component": "geometry",
+      "median_ms": 0.36277193705240884
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "attention",
+      "median_ms": 1.2015048090616862
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "ffn",
+      "median_ms": 0.7667917374641664
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "down",
+      "median_ms": 0.1640899935177844
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "up",
+      "median_ms": 0.17131165321983585
+    },
+    {
+      "model": "history",
+      "layer": 3,
+      "component": "geometry",
+      "median_ms": 0.3633070353803963
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "attention",
+      "median_ms": 1.1281655255485983
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "ffn",
+      "median_ms": 0.13175891707925236
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "down",
+      "median_ms": 0.04040611745857517
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "up",
+      "median_ms": 0.027102848276433587
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 0,
+      "component": "geometry",
+      "median_ms": 0.016190393554403427
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "attention",
+      "median_ms": 1.2073234430948894
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "ffn",
+      "median_ms": 0.1320933277790363
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "down",
+      "median_ms": 0.040327551930221084
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "up",
+      "median_ms": 0.026966023789238684
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 1,
+      "component": "geometry",
+      "median_ms": 0.016382028051644317
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "attention",
+      "median_ms": 1.2107410685221354
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "ffn",
+      "median_ms": 0.13155592679977415
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "down",
+      "median_ms": 0.04047040067239497
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "up",
+      "median_ms": 0.026961373513744724
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 2,
+      "component": "geometry",
+      "median_ms": 0.016248711524354188
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "attention",
+      "median_ms": 1.2067741139729817
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "ffn",
+      "median_ms": 0.13177985864527086
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "down",
+      "median_ms": 0.04034666445095407
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "up",
+      "median_ms": 0.027140291649792952
+    },
+    {
+      "model": "frozen_spine",
+      "layer": 3,
+      "component": "geometry",
+      "median_ms": 0.01618696291816426
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "attention",
+      "median_ms": 1.1327593971701229
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "ffn",
+      "median_ms": 0.3130104533413
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "down",
+      "median_ms": 0.035144057254559595
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "up",
+      "median_ms": 0.020424805269684904
+    },
+    {
+      "model": "learned_full31",
+      "layer": 0,
+      "component": "geometry",
+      "median_ms": 0.1974408462969926
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "attention",
+      "median_ms": 1.2086963144938152
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "ffn",
+      "median_ms": 0.3092633699115954
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "down",
+      "median_ms": 0.035170343845280554
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "up",
+      "median_ms": 0.020513538661457244
+    },
+    {
+      "model": "learned_full31",
+      "layer": 1,
+      "component": "geometry",
+      "median_ms": 0.19840385326440785
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "attention",
+      "median_ms": 1.2088125228881836
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "ffn",
+      "median_ms": 0.30889452549449187
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "down",
+      "median_ms": 0.03518393206041913
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "up",
+      "median_ms": 0.02020637785846537
+    },
+    {
+      "model": "learned_full31",
+      "layer": 2,
+      "component": "geometry",
+      "median_ms": 0.198255909272354
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "attention",
+      "median_ms": 1.2036317189534504
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "ffn",
+      "median_ms": 0.30935049738202774
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "down",
+      "median_ms": 0.03507953207513804
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "up",
+      "median_ms": 0.020356095770130988
+    },
+    {
+      "model": "learned_full31",
+      "layer": 3,
+      "component": "geometry",
+      "median_ms": 0.19803265982527074
+    }
+  ]
+}

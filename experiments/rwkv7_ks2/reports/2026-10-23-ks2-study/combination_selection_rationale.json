@@ -1,0 +1,18 @@
+{
+  "combo_rank1_frozen_bias": {
+    "reason": "Best three-seed combination mean; bias improves its same-wave frozen rank1 parent in all three seeds. Tests freezing plus minimal learned offset at the previously strong small-chart setting. It does not beat the fully learned rank1 repeat. Learned FFN71024, plus2944fixed values=73968total,240aboveMLP73728 (about0.33%); explicitly not strict matched-total-coefficient comparison.",
+    "estimated_ms": 8.8
+  },
+  "combo_rank4_powers": {
+    "reason": "Combines smaller charts and function-preserving power-basis parameterization. All three seeds beat fixed MLP; comparison to earlier fused rank4 parent is mixed and mean slightly worse. Tests durability and data-regime interaction at73048learnedFFNparameters, belowMLP73728. No short-run synergy claim.",
+    "estimated_ms": 8.8
+  },
+  "combo_rank1_powers": {
+    "reason": "Directly adds the earlier power-basis intervention to the strongest prior larger-pool100k rank1 architecture, preserving73600learnedFFNparameters. Short screen beats MLPall3 but underperforms the same-wave rank1 mean; long replication tests whether this penalty persists rather than assuming independent wins add.",
+    "estimated_ms": 8.7
+  },
+  "combo_rank4_frozen_bias": {
+    "reason": "Combines earlier larger-pool frozenrank4 long-run advantage with minimal bias adaptation. All three short seeds beat fixed MLP, but the earlier frozenrank4 parent comparison is mixed. Provides a lower-storage counterpart to rank1frozenbias:71024learned+2392fixed=73416perFFN,belowMLP73728.",
+    "estimated_ms": 8.8
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "name": "spine_rank1_fused_repeat",
+      "status": "PASS",
+      "breakdown": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "fixed_buffer_bytes": 17664
+    },
+    {
+      "name": "spine_rank1_frozen",
+      "status": "PASS",
+      "breakdown": {
+        "total": 603648,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "fixed_buffer_bytes": 64768
+    },
+    {
+      "name": "spine_rank4_fused_repeat",
+      "status": "PASS",
+      "breakdown": {
+        "total": 613216,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 9568,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "fixed_buffer_bytes": 4416
+    },
+    {
+      "name": "spine_rank4_frozen",
+      "status": "PASS",
+      "breakdown": {
+        "total": 603648,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "fixed_buffer_bytes": 42688
+    },
+    {
+      "name": "full_rank1",
+      "status": "PASS",
+      "breakdown": {
+        "total": 615488,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 30272,
+        "decoder_readout": 132096,
+        "decoder_input": 132096,
+        "other": 2304
+      },
+      "fixed_buffer_bytes": 16512
+    }
+  ]
+}

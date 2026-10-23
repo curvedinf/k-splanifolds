@@ -1,0 +1,288 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave17_mixed_ranks",
+  "deadline_epoch": 1792776116.8504283,
+  "jobs": [
+    {
+      "id": "mixed_rank1_heavy_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_rank1_heavy",
+        "mixed_ranks": [
+          [
+            1,
+            240
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mixed_balanced_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced",
+        "mixed_ranks": [
+          [
+            1,
+            112
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mixed_balanced_mlp32_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced_mlp32",
+        "mixed_ranks": [
+          [
+            1,
+            80
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "mlp_features": 32
+      }
+    },
+    {
+      "id": "mixed_rank1_heavy_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_rank1_heavy",
+        "mixed_ranks": [
+          [
+            1,
+            240
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mixed_balanced_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced",
+        "mixed_ranks": [
+          [
+            1,
+            112
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mixed_balanced_mlp32_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced_mlp32",
+        "mixed_ranks": [
+          [
+            1,
+            80
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "mlp_features": 32
+      }
+    },
+    {
+      "id": "mixed_rank1_heavy_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_rank1_heavy",
+        "mixed_ranks": [
+          [
+            1,
+            240
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mixed_balanced_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced",
+        "mixed_ranks": [
+          [
+            1,
+            112
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mixed_balanced_mlp32_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced_mlp32",
+        "mixed_ranks": [
+          [
+            1,
+            80
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "mlp_features": 32
+      }
+    }
+  ]
+}

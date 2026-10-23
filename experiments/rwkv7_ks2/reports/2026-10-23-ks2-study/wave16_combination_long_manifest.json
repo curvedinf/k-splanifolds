@@ -1,0 +1,390 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long",
+  "deadline_epoch": 1792776116.8504283,
+  "jobs": [
+    {
+      "id": "original_combo_rank1_frozen_bias_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "original_combo_rank4_powers_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "original_combo_rank1_powers_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "original_combo_rank4_frozen_bias_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "larger_combo_rank1_frozen_bias_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank4_powers_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank1_powers_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank4_frozen_bias_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "original_combo_rank1_frozen_bias_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "original_combo_rank4_powers_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "original_combo_rank1_powers_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "original_combo_rank4_frozen_bias_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "larger_combo_rank1_frozen_bias_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank4_powers_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank1_powers_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank4_frozen_bias_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "original_combo_rank1_frozen_bias_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "original_combo_rank4_powers_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "original_combo_rank1_powers_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "original_combo_rank4_frozen_bias_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "larger_combo_rank1_frozen_bias_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank4_powers_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank1_powers_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_combo_rank4_frozen_bias_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    }
+  ]
+}

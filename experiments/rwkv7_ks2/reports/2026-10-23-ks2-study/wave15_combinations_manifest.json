@@ -1,0 +1,561 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations",
+  "deadline_epoch": 1792776116.8504283,
+  "jobs": [
+    {
+      "id": "combo_rank1_reference_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_reference",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "combo_rank1_powers_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "combo_rank1_warps_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_warps",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "combo_rank1_geo01_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_geo01",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_bias_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_gain_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen_gain",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      }
+    },
+    {
+      "id": "combo_rank1_powers_geo01_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_powers_geo01",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers",
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "combo_rank1_warps_bias_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_warps_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_trainable": "warps",
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank4_frozen_bias_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank4_frozen_gain_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_frozen_gain",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      }
+    },
+    {
+      "id": "combo_rank4_powers_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "combo_rank1_reference_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_reference",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "combo_rank1_powers_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "combo_rank1_warps_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_warps",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "combo_rank1_geo01_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_geo01",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_bias_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_gain_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen_gain",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      }
+    },
+    {
+      "id": "combo_rank1_powers_geo01_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_powers_geo01",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers",
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "combo_rank1_warps_bias_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_warps_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_trainable": "warps",
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank4_frozen_bias_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank4_frozen_gain_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_frozen_gain",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      }
+    },
+    {
+      "id": "combo_rank4_powers_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "combo_rank1_reference_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_reference",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "combo_rank1_powers_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "id": "combo_rank1_warps_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_warps",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "combo_rank1_geo01_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_geo01",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_bias_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank1_frozen_gain_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_frozen_gain",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      }
+    },
+    {
+      "id": "combo_rank1_powers_geo01_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_powers_geo01",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers",
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "combo_rank1_warps_bias_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank1_warps_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_trainable": "warps",
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank4_frozen_bias_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "id": "combo_rank4_frozen_gain_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_frozen_gain",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      }
+    },
+    {
+      "id": "combo_rank4_powers_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    }
+  ]
+}

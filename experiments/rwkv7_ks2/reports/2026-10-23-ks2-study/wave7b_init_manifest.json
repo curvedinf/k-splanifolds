@@ -1,0 +1,140 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave7b_init",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "context_mlp_22",
+      "seed": 22,
+      "steps": 3750,
+      "batch_size": 4,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "context_mlp",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "context_spine_22",
+      "seed": 22,
+      "steps": 3750,
+      "batch_size": 4,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "context_spine",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "id": "context_mlp_33",
+      "seed": 33,
+      "steps": 3750,
+      "batch_size": 4,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "context_mlp",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "context_spine_33",
+      "seed": 33,
+      "steps": 3750,
+      "batch_size": 4,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "context_spine",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "id": "mlp384_inputscale1_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp384_inputscale1",
+        "family": "mlp",
+        "hidden": 384,
+        "mlp_input_scale": 1
+      }
+    },
+    {
+      "id": "mlp384_inputscale2_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp384_inputscale2",
+        "family": "mlp",
+        "hidden": 384,
+        "mlp_input_scale": 2
+      }
+    },
+    {
+      "id": "mlp384_inputscale1_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "mlp384_inputscale1",
+        "family": "mlp",
+        "hidden": 384,
+        "mlp_input_scale": 1
+      }
+    },
+    {
+      "id": "mlp384_inputscale2_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "mlp384_inputscale2",
+        "family": "mlp",
+        "hidden": 384,
+        "mlp_input_scale": 2
+      }
+    },
+    {
+      "id": "mlp384_inputscale1_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "mlp384_inputscale1",
+        "family": "mlp",
+        "hidden": 384,
+        "mlp_input_scale": 1
+      }
+    },
+    {
+      "id": "mlp384_inputscale2_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "mlp384_inputscale2",
+        "family": "mlp",
+        "hidden": 384,
+        "mlp_input_scale": 2
+      }
+    }
+  ]
+}

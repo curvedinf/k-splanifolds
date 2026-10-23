@@ -1,0 +1,170 @@
+{
+  "configs": [
+    {
+      "name": "selected_spine_rank1_fused_repeat",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true
+    },
+    {
+      "name": "selected_spine_rank4_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "frozen_geometry": true,
+      "fused_general": true
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "name": "selected_full46_frozen",
+      "frozen_geometry": true,
+      "fused_general": true
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "geometry_terms": "spine",
+      "name": "selected_spine_powers",
+      "geometry_basis": "powers",
+      "fused_general": true
+    },
+    {
+      "name": "frozen_spine46_skip_gradients",
+      "family": "dense_ks2",
+      "charts": 46,
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "fused_general": true
+    },
+    {
+      "name": "selected_combo_rank1_frozen_bias",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    },
+    {
+      "name": "selected_combo_rank4_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "fused_general": true,
+      "geometry_basis": "powers"
+    },
+    {
+      "name": "selected_combo_rank1_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "geometry_basis": "powers"
+    },
+    {
+      "name": "selected_combo_rank4_frozen_bias",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "fused_general": true,
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_rank1_heavy",
+      "mixed_ranks": [
+        [
+          1,
+          240
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          16,
+          2
+        ]
+      ]
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_balanced",
+      "mixed_ranks": [
+        [
+          1,
+          112
+        ],
+        [
+          4,
+          24
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          16,
+          2
+        ]
+      ]
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_balanced_mlp32",
+      "mixed_ranks": [
+        [
+          1,
+          80
+        ],
+        [
+          4,
+          24
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          16,
+          2
+        ]
+      ],
+      "mlp_features": 32
+    }
+  ]
+}

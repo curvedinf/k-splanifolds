@@ -1,0 +1,227 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave10_selective_long",
+  "deadline_epoch": 1792740133,
+  "jobs": [
+    {
+      "id": "original_warps46_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "warps46",
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "original_spine_geo01_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_geo01",
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "larger_warps46_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "warps46",
+        "geometry_trainable": "warps"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_spine_geo01_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_geo01",
+        "geometry_lr": 0.1
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_frozen46_11",
+      "seed": 11,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "frozen46",
+        "frozen_geometry": true
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "original_warps46_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "warps46",
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "original_spine_geo01_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_geo01",
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "larger_warps46_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "warps46",
+        "geometry_trainable": "warps"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_spine_geo01_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_geo01",
+        "geometry_lr": 0.1
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_frozen46_22",
+      "seed": 22,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "frozen46",
+        "frozen_geometry": true
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "original_warps46_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "warps46",
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "original_spine_geo01_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_geo01",
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "larger_warps46_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "warps46",
+        "geometry_trainable": "warps"
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_spine_geo01_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_geo01",
+        "geometry_lr": 0.1
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    },
+    {
+      "id": "larger_frozen46_33",
+      "seed": 33,
+      "steps": 100000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "frozen46",
+        "frozen_geometry": true
+      },
+      "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+    }
+  ],
+  "predeclared_epoch": 1792725867.1384554,
+  "rationale": "KS2-only replication: warp-only geometry, slow geometry learning, missing frozen larger-pool test. Compare existing unchanged original MLP100k checkpoints; all three seeds retained."
+}

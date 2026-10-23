@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "name": "spine_eager_reference",
+      "status": "PASS",
+      "parameters": 612848,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "full_eager_reference",
+      "status": "PASS",
+      "parameters": 613168,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "spine_powers",
+      "status": "PASS",
+      "parameters": 612848,
+      "equivalent_basis_logit_max_error": 1.2516975402832031e-06
+    },
+    {
+      "name": "spine_taylor",
+      "status": "PASS",
+      "parameters": 612848,
+      "equivalent_basis_logit_max_error": 1.2516975402832031e-06
+    },
+    {
+      "name": "spine_geo_rms",
+      "status": "PASS",
+      "parameters": 612848,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "spine_parallel",
+      "status": "PASS",
+      "parameters": 612848,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "spine_after_activation",
+      "status": "PASS",
+      "parameters": 612848,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "full_powers",
+      "status": "PASS",
+      "parameters": 613168,
+      "equivalent_basis_logit_max_error": 1.3113021850585938e-06
+    },
+    {
+      "name": "full_taylor",
+      "status": "PASS",
+      "parameters": 613168,
+      "equivalent_basis_logit_max_error": 1.3113021850585938e-06
+    },
+    {
+      "name": "full_geo_rms",
+      "status": "PASS",
+      "parameters": 613168,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "full_parallel",
+      "status": "PASS",
+      "parameters": 613168,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "full_after_activation",
+      "status": "PASS",
+      "parameters": 613168,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "spine_rank1",
+      "status": "PASS",
+      "parameters": 615424,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "spine_rank2",
+      "status": "PASS",
+      "parameters": 613952,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "spine_rank4",
+      "status": "PASS",
+      "parameters": 613216,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "spine_rank16",
+      "status": "PASS",
+      "parameters": 612664,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "full_rank2",
+      "status": "PASS",
+      "parameters": 614912,
+      "equivalent_basis_logit_max_error": null
+    },
+    {
+      "name": "full_rank4",
+      "status": "PASS",
+      "parameters": 613472,
+      "equivalent_basis_logit_max_error": null
+    }
+  ],
+  "checks": [
+    "exact zero-readout initial logits and shared attention",
+    "all models within original615936 parameter budget",
+    "nonzero-readout finite gradients and causality",
+    "basis function and coordinate-gradient equivalence",
+    "rank projection initialization preserved",
+    "independent geometry-placement equations",
+    "v9 backward compatibility"
+  ]
+}

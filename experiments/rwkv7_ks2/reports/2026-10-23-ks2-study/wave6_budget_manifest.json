@@ -1,0 +1,378 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "ks2_c2_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c2",
+        "family": "dense_ks2",
+        "charts": 2,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h25_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h25",
+        "family": "mlp",
+        "hidden": 25,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c4_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c4",
+        "family": "dense_ks2",
+        "charts": 4,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h50_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h50",
+        "family": "mlp",
+        "hidden": 50,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c8_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c8",
+        "family": "dense_ks2",
+        "charts": 8,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h99_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h99",
+        "family": "mlp",
+        "hidden": 99,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c16_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c16",
+        "family": "dense_ks2",
+        "charts": 16,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h197_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h197",
+        "family": "mlp",
+        "hidden": 197,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c2_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c2",
+        "family": "dense_ks2",
+        "charts": 2,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h25_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h25",
+        "family": "mlp",
+        "hidden": 25,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c4_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c4",
+        "family": "dense_ks2",
+        "charts": 4,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h50_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h50",
+        "family": "mlp",
+        "hidden": 50,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c8_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c8",
+        "family": "dense_ks2",
+        "charts": 8,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h99_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h99",
+        "family": "mlp",
+        "hidden": 99,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c16_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c16",
+        "family": "dense_ks2",
+        "charts": 16,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h197_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h197",
+        "family": "mlp",
+        "hidden": 197,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c2_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c2",
+        "family": "dense_ks2",
+        "charts": 2,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h25_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h25",
+        "family": "mlp",
+        "hidden": 25,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c4_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c4",
+        "family": "dense_ks2",
+        "charts": 4,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h50_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h50",
+        "family": "mlp",
+        "hidden": 50,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c8_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c8",
+        "family": "dense_ks2",
+        "charts": 8,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h99_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h99",
+        "family": "mlp",
+        "hidden": 99,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "ks2_c16_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_c16",
+        "family": "dense_ks2",
+        "charts": 16,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "mlp_h197_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_h197",
+        "family": "mlp",
+        "hidden": 197,
+        "mlp_input_scale": 2.0
+      }
+    },
+    {
+      "id": "square_mlp248",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "square_mlp248",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "square"
+      }
+    },
+    {
+      "id": "square_mlp384",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "square_mlp384",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "square"
+      }
+    },
+    {
+      "id": "square_ks2_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "square_ks2_22",
+        "family": "dense_ks2",
+        "charts": 31,
+        "outer_activation": "square",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "square_ks2_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "square_ks2_33",
+        "family": "dense_ks2",
+        "charts": 31,
+        "outer_activation": "square",
+        "fused_geometry": true
+      }
+    },
+    {
+      "id": "matched_mlp368_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "matched_mlp368",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "spine_frozen_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_frozen",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "matched_mlp368_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "matched_mlp368",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "spine_frozen_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_frozen",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "frozen_geometry": true
+      }
+    }
+  ]
+}

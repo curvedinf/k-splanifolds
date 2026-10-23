@@ -1,0 +1,725 @@
+{
+  "protocol": "Intermediate checkpoints and final scores from the same100k cosine schedule. Each gap pairs the same seed, data pool and update count with the original unchanged MLP. These are not separately annealed15k runs.",
+  "rows": [
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 11,
+      "step": 15000,
+      "ks2_loss": 1.6512022018432617,
+      "mlp_loss": 1.6536442041397095,
+      "gap": -0.002442002296447754,
+      "source": "wave13_selected_long/larger_full46_frozen_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 11,
+      "step": 50000,
+      "ks2_loss": 1.5284191370010376,
+      "mlp_loss": 1.5301551818847656,
+      "gap": -0.0017360448837280273,
+      "source": "wave13_selected_long/larger_full46_frozen_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 11,
+      "step": 100000,
+      "ks2_loss": 1.4630396366119385,
+      "mlp_loss": 1.4645812511444092,
+      "gap": -0.0015416145324707031,
+      "source": "wave13_selected_long/larger_full46_frozen_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 22,
+      "step": 15000,
+      "ks2_loss": 1.6503361463546753,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.001378774642944336,
+      "source": "wave13_selected_long/larger_full46_frozen_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 22,
+      "step": 50000,
+      "ks2_loss": 1.5324910879135132,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.0008776187896728516,
+      "source": "wave13_selected_long/larger_full46_frozen_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 22,
+      "step": 100000,
+      "ks2_loss": 1.4674574136734009,
+      "mlp_loss": 1.467496633529663,
+      "gap": -3.921985626220703e-05,
+      "source": "wave13_selected_long/larger_full46_frozen_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 33,
+      "step": 15000,
+      "ks2_loss": 1.6494890451431274,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.0033617019653320312,
+      "source": "wave13_selected_long/larger_full46_frozen_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 33,
+      "step": 50000,
+      "ks2_loss": 1.5339170694351196,
+      "mlp_loss": 1.5314937829971313,
+      "gap": 0.0024232864379882812,
+      "source": "wave13_selected_long/larger_full46_frozen_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "seed": 33,
+      "step": 100000,
+      "ks2_loss": 1.4667503833770752,
+      "mlp_loss": 1.465133547782898,
+      "gap": 0.001616835594177246,
+      "source": "wave13_selected_long/larger_full46_frozen_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 11,
+      "step": 15000,
+      "ks2_loss": 1.6553963422775269,
+      "mlp_loss": 1.6536442041397095,
+      "gap": 0.0017521381378173828,
+      "source": "wave13_selected_long/larger_spine_powers_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 11,
+      "step": 50000,
+      "ks2_loss": 1.5328871011734009,
+      "mlp_loss": 1.5301551818847656,
+      "gap": 0.002731919288635254,
+      "source": "wave13_selected_long/larger_spine_powers_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 11,
+      "step": 100000,
+      "ks2_loss": 1.4682761430740356,
+      "mlp_loss": 1.4645812511444092,
+      "gap": 0.003694891929626465,
+      "source": "wave13_selected_long/larger_spine_powers_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 22,
+      "step": 15000,
+      "ks2_loss": 1.6506491899490356,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.0010657310485839844,
+      "source": "wave13_selected_long/larger_spine_powers_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 22,
+      "step": 50000,
+      "ks2_loss": 1.529417872428894,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.003950834274291992,
+      "source": "wave13_selected_long/larger_spine_powers_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 22,
+      "step": 100000,
+      "ks2_loss": 1.4641597270965576,
+      "mlp_loss": 1.467496633529663,
+      "gap": -0.0033369064331054688,
+      "source": "wave13_selected_long/larger_spine_powers_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 33,
+      "step": 15000,
+      "ks2_loss": 1.6482301950454712,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.004620552062988281,
+      "source": "wave13_selected_long/larger_spine_powers_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 33,
+      "step": 50000,
+      "ks2_loss": 1.5316883325576782,
+      "mlp_loss": 1.5314937829971313,
+      "gap": 0.000194549560546875,
+      "source": "wave13_selected_long/larger_spine_powers_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "seed": 33,
+      "step": 100000,
+      "ks2_loss": 1.464526891708374,
+      "mlp_loss": 1.465133547782898,
+      "gap": -0.0006066560745239258,
+      "source": "wave13_selected_long/larger_spine_powers_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 11,
+      "step": 15000,
+      "ks2_loss": 1.6449079513549805,
+      "mlp_loss": 1.6536442041397095,
+      "gap": -0.008736252784729004,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 11,
+      "step": 50000,
+      "ks2_loss": 1.525713562965393,
+      "mlp_loss": 1.5301551818847656,
+      "gap": -0.004441618919372559,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 11,
+      "step": 100000,
+      "ks2_loss": 1.4608609676361084,
+      "mlp_loss": 1.4645812511444092,
+      "gap": -0.0037202835083007812,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 22,
+      "step": 15000,
+      "ks2_loss": 1.6498544216156006,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.001860499382019043,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 22,
+      "step": 50000,
+      "ks2_loss": 1.5279805660247803,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.005388140678405762,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 22,
+      "step": 100000,
+      "ks2_loss": 1.4603043794631958,
+      "mlp_loss": 1.467496633529663,
+      "gap": -0.007192254066467285,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 33,
+      "step": 15000,
+      "ks2_loss": 1.6508904695510864,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.001960277557373047,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 33,
+      "step": 50000,
+      "ks2_loss": 1.5274734497070312,
+      "mlp_loss": 1.5314937829971313,
+      "gap": -0.004020333290100098,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 33,
+      "step": 100000,
+      "ks2_loss": 1.4610687494277954,
+      "mlp_loss": 1.465133547782898,
+      "gap": -0.004064798355102539,
+      "source": "wave13_selected_long/larger_spine_rank1_fused_repeat_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 11,
+      "step": 15000,
+      "ks2_loss": 1.6486538648605347,
+      "mlp_loss": 1.6536442041397095,
+      "gap": -0.004990339279174805,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 11,
+      "step": 50000,
+      "ks2_loss": 1.5311206579208374,
+      "mlp_loss": 1.5301551818847656,
+      "gap": 0.0009654760360717773,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 11,
+      "step": 100000,
+      "ks2_loss": 1.4635882377624512,
+      "mlp_loss": 1.4645812511444092,
+      "gap": -0.0009930133819580078,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_11/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 22,
+      "step": 15000,
+      "ks2_loss": 1.6440207958221436,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.007694125175476074,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 22,
+      "step": 50000,
+      "ks2_loss": 1.5283983945846558,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.0049703121185302734,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 22,
+      "step": 100000,
+      "ks2_loss": 1.4637807607650757,
+      "mlp_loss": 1.467496633529663,
+      "gap": -0.0037158727645874023,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_22/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 33,
+      "step": 15000,
+      "ks2_loss": 1.6452287435531616,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.0076220035552978516,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 33,
+      "step": 50000,
+      "ks2_loss": 1.5303863286972046,
+      "mlp_loss": 1.5314937829971313,
+      "gap": -0.0011074542999267578,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_33/completed.json"
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "seed": 33,
+      "step": 100000,
+      "ks2_loss": 1.4648361206054688,
+      "mlp_loss": 1.465133547782898,
+      "gap": -0.0002974271774291992,
+      "source": "wave13_selected_long/larger_spine_rank4_frozen_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 11,
+      "step": 15000,
+      "ks2_loss": 1.6617943048477173,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.00020778179168701172,
+      "source": "wave13_selected_long/original_full46_frozen_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 11,
+      "step": 50000,
+      "ks2_loss": 1.5548104047775269,
+      "mlp_loss": 1.554654598236084,
+      "gap": 0.0001558065414428711,
+      "source": "wave13_selected_long/original_full46_frozen_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 11,
+      "step": 100000,
+      "ks2_loss": 1.5104761123657227,
+      "mlp_loss": 1.508052110671997,
+      "gap": 0.002424001693725586,
+      "source": "wave13_selected_long/original_full46_frozen_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 22,
+      "step": 15000,
+      "ks2_loss": 1.6662039756774902,
+      "mlp_loss": 1.6630232334136963,
+      "gap": 0.0031807422637939453,
+      "source": "wave13_selected_long/original_full46_frozen_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 22,
+      "step": 50000,
+      "ks2_loss": 1.5552678108215332,
+      "mlp_loss": 1.5539751052856445,
+      "gap": 0.0012927055358886719,
+      "source": "wave13_selected_long/original_full46_frozen_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 22,
+      "step": 100000,
+      "ks2_loss": 1.5082757472991943,
+      "mlp_loss": 1.5072795152664185,
+      "gap": 0.000996232032775879,
+      "source": "wave13_selected_long/original_full46_frozen_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 33,
+      "step": 15000,
+      "ks2_loss": 1.6619142293930054,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.009420275688171387,
+      "source": "wave13_selected_long/original_full46_frozen_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 33,
+      "step": 50000,
+      "ks2_loss": 1.553945779800415,
+      "mlp_loss": 1.5582547187805176,
+      "gap": -0.004308938980102539,
+      "source": "wave13_selected_long/original_full46_frozen_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "seed": 33,
+      "step": 100000,
+      "ks2_loss": 1.5094281435012817,
+      "mlp_loss": 1.5118813514709473,
+      "gap": -0.0024532079696655273,
+      "source": "wave13_selected_long/original_full46_frozen_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 11,
+      "step": 15000,
+      "ks2_loss": 1.6622321605682373,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.0006456375122070312,
+      "source": "wave13_selected_long/original_spine_powers_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 11,
+      "step": 50000,
+      "ks2_loss": 1.5575488805770874,
+      "mlp_loss": 1.554654598236084,
+      "gap": 0.002894282341003418,
+      "source": "wave13_selected_long/original_spine_powers_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 11,
+      "step": 100000,
+      "ks2_loss": 1.5102062225341797,
+      "mlp_loss": 1.508052110671997,
+      "gap": 0.002154111862182617,
+      "source": "wave13_selected_long/original_spine_powers_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 22,
+      "step": 15000,
+      "ks2_loss": 1.6615115404129028,
+      "mlp_loss": 1.6630232334136963,
+      "gap": -0.001511693000793457,
+      "source": "wave13_selected_long/original_spine_powers_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 22,
+      "step": 50000,
+      "ks2_loss": 1.5566493272781372,
+      "mlp_loss": 1.5539751052856445,
+      "gap": 0.0026742219924926758,
+      "source": "wave13_selected_long/original_spine_powers_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 22,
+      "step": 100000,
+      "ks2_loss": 1.5098307132720947,
+      "mlp_loss": 1.5072795152664185,
+      "gap": 0.0025511980056762695,
+      "source": "wave13_selected_long/original_spine_powers_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 33,
+      "step": 15000,
+      "ks2_loss": 1.6663857698440552,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.004948735237121582,
+      "source": "wave13_selected_long/original_spine_powers_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 33,
+      "step": 50000,
+      "ks2_loss": 1.5587354898452759,
+      "mlp_loss": 1.5582547187805176,
+      "gap": 0.0004807710647583008,
+      "source": "wave13_selected_long/original_spine_powers_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "seed": 33,
+      "step": 100000,
+      "ks2_loss": 1.5120389461517334,
+      "mlp_loss": 1.5118813514709473,
+      "gap": 0.0001575946807861328,
+      "source": "wave13_selected_long/original_spine_powers_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 11,
+      "step": 15000,
+      "ks2_loss": 1.6654490232467651,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.0038625001907348633,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 11,
+      "step": 50000,
+      "ks2_loss": 1.5542041063308716,
+      "mlp_loss": 1.554654598236084,
+      "gap": -0.00045049190521240234,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 11,
+      "step": 100000,
+      "ks2_loss": 1.5080184936523438,
+      "mlp_loss": 1.508052110671997,
+      "gap": -3.361701965332031e-05,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 22,
+      "step": 15000,
+      "ks2_loss": 1.6630910634994507,
+      "mlp_loss": 1.6630232334136963,
+      "gap": 6.783008575439453e-05,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 22,
+      "step": 50000,
+      "ks2_loss": 1.5524715185165405,
+      "mlp_loss": 1.5539751052856445,
+      "gap": -0.001503586769104004,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 22,
+      "step": 100000,
+      "ks2_loss": 1.5057705640792847,
+      "mlp_loss": 1.5072795152664185,
+      "gap": -0.001508951187133789,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 33,
+      "step": 15000,
+      "ks2_loss": 1.666184425354004,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.0051500797271728516,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 33,
+      "step": 50000,
+      "ks2_loss": 1.56178617477417,
+      "mlp_loss": 1.5582547187805176,
+      "gap": 0.0035314559936523438,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "seed": 33,
+      "step": 100000,
+      "ks2_loss": 1.5166455507278442,
+      "mlp_loss": 1.5118813514709473,
+      "gap": 0.004764199256896973,
+      "source": "wave13_selected_long/original_spine_rank1_fused_repeat_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 11,
+      "step": 15000,
+      "ks2_loss": 1.6663531064987183,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.004766583442687988,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 11,
+      "step": 50000,
+      "ks2_loss": 1.557889461517334,
+      "mlp_loss": 1.554654598236084,
+      "gap": 0.00323486328125,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 11,
+      "step": 100000,
+      "ks2_loss": 1.509960412979126,
+      "mlp_loss": 1.508052110671997,
+      "gap": 0.0019083023071289062,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_11/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 22,
+      "step": 15000,
+      "ks2_loss": 1.6648571491241455,
+      "mlp_loss": 1.6630232334136963,
+      "gap": 0.0018339157104492188,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 22,
+      "step": 50000,
+      "ks2_loss": 1.5529420375823975,
+      "mlp_loss": 1.5539751052856445,
+      "gap": -0.0010330677032470703,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 22,
+      "step": 100000,
+      "ks2_loss": 1.506654977798462,
+      "mlp_loss": 1.5072795152664185,
+      "gap": -0.000624537467956543,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_22/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 33,
+      "step": 15000,
+      "ks2_loss": 1.660069227218628,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.011265277862548828,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 33,
+      "step": 50000,
+      "ks2_loss": 1.5551410913467407,
+      "mlp_loss": 1.5582547187805176,
+      "gap": -0.0031136274337768555,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_33/completed.json"
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "seed": 33,
+      "step": 100000,
+      "ks2_loss": 1.5098352432250977,
+      "mlp_loss": 1.5118813514709473,
+      "gap": -0.0020461082458496094,
+      "source": "wave13_selected_long/original_spine_rank4_frozen_33/completed.json"
+    }
+  ]
+}

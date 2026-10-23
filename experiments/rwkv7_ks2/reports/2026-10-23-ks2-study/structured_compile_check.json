@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "note": "Compile only; no GPU execution or numerical validation.",
+  "rows": [
+    {
+      "width": 96,
+      "kernel": "mux",
+      "shared": 64,
+      "hash": "d83e755f543f4e3ce0014d0ce25b25e40c2f4aec64f40ac71d26d3f11716cf4e"
+    },
+    {
+      "width": 96,
+      "kernel": "transpose",
+      "shared": 2048,
+      "hash": "1bd9506d768098ce0f3ba4a4179c5eabd13a459c2c9c92484affa3b8f29bb7f3"
+    },
+    {
+      "width": 2144,
+      "kernel": "mux",
+      "shared": 16384,
+      "hash": "24fce87185d4f94bdf36d6f768758d5634e72c6b96d28d689840e370ef034c21"
+    },
+    {
+      "width": 2144,
+      "kernel": "transpose",
+      "shared": 2048,
+      "hash": "d0ce558ddb8b4f3d3f346f271bfcf1197049edfffc43ce7946341b6b88dd7440"
+    },
+    {
+      "width": 2336,
+      "kernel": "mux",
+      "shared": 16384,
+      "hash": "7b6c12f66db6e817cdd7cbf8be8e3ea5400b0733f5dc387b0725ead9d78bb9b7"
+    },
+    {
+      "width": 2336,
+      "kernel": "transpose",
+      "shared": 2048,
+      "hash": "dd528e5c5c7ae0f3de20d85a455dfbe3f03323683c3dce8b1ebf01a9f5cd5c4f"
+    },
+    {
+      "width": 2528,
+      "kernel": "mux",
+      "shared": 16384,
+      "hash": "46624b2da0f2419b71b36cab4f494d836baf86a47a2b488ed09db46dd9f0362e"
+    },
+    {
+      "width": 2528,
+      "kernel": "transpose",
+      "shared": 2048,
+      "hash": "65bf6258ae46b1431619f0e4825542da5876960ccdebda25c652f92112cbefba"
+    },
+    {
+      "width": 2720,
+      "kernel": "mux",
+      "shared": 16384,
+      "hash": "27ff8feb35e7836369584ce9d6410a1be887c5f707299a6dc74b814025b3d71b"
+    },
+    {
+      "width": 2720,
+      "kernel": "transpose",
+      "shared": 2048,
+      "hash": "2e0d3da7eecbe41ffa0f9477282d29f9773e3b10e4d574aba2d977990f4f4218"
+    }
+  ]
+}

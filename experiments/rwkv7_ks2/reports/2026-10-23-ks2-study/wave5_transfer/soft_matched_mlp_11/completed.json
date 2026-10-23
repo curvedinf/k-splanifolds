@@ -1,0 +1,287 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave5_transfer/soft_matched_mlp_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 48,
+    "control_update_scale": false,
+    "steps": 15000,
+    "batch_size": 4,
+    "sequence_length": 64,
+    "gpu": 0
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.645017623901367
+    },
+    {
+      "step": 100,
+      "train_loss": 2.5587151050567627,
+      "gradient_norm": 2.625028133392334,
+      "val_loss": 2.6827783584594727,
+      "training_seconds": 0.2740272009978071
+    },
+    {
+      "step": 200,
+      "train_loss": 2.262693166732788,
+      "gradient_norm": 37.1506462097168,
+      "val_loss": 2.5371041297912598,
+      "training_seconds": 0.5484779279213399
+    },
+    {
+      "step": 500,
+      "train_loss": 2.1500401496887207,
+      "gradient_norm": 1.7385693788528442,
+      "val_loss": 2.3615732192993164,
+      "training_seconds": 1.3719834699295461
+    },
+    {
+      "step": 1000,
+      "train_loss": 2.0183539390563965,
+      "gradient_norm": 1.3131675720214844,
+      "val_loss": 2.2191481590270996,
+      "training_seconds": 2.7441540180006996
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.790283441543579,
+      "gradient_norm": 194.5039825439453,
+      "val_loss": 2.058260440826416,
+      "training_seconds": 5.489528137026355
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.9049383401870728,
+      "gradient_norm": 1.190903663635254,
+      "val_loss": 1.9877139329910278,
+      "training_seconds": 8.23538616206497
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.6956918239593506,
+      "gradient_norm": 1.1716817617416382,
+      "val_loss": 1.9397861957550049,
+      "training_seconds": 10.981435124063864
+    },
+    {
+      "step": 5000,
+      "train_loss": 2.008296251296997,
+      "gradient_norm": 1.1392834186553955,
+      "val_loss": 1.8905963897705078,
+      "training_seconds": 13.728880294016562
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.8200562000274658,
+      "gradient_norm": 1.1720856428146362,
+      "val_loss": 1.8594882488250732,
+      "training_seconds": 16.476858049049042
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.1312005519866943,
+      "gradient_norm": 1.2828669548034668,
+      "val_loss": 1.8262736797332764,
+      "training_seconds": 19.225741556030698
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.1352686882019043,
+      "gradient_norm": 1.5947132110595703,
+      "val_loss": 1.8072595596313477,
+      "training_seconds": 21.975544155109674
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.572991132736206,
+      "gradient_norm": 1.0819894075393677,
+      "val_loss": 1.7791969776153564,
+      "training_seconds": 24.726062178146094
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.9114457368850708,
+      "gradient_norm": 1.5319862365722656,
+      "val_loss": 1.7647697925567627,
+      "training_seconds": 27.47714243514929
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.8580803871154785,
+      "gradient_norm": 1.317304015159607,
+      "val_loss": 1.7552642822265625,
+      "training_seconds": 30.22930343321059
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.677358865737915,
+      "gradient_norm": 1.2419878244400024,
+      "val_loss": 1.7335772514343262,
+      "training_seconds": 32.982140045263804
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.4300681352615356,
+      "gradient_norm": 1.201530933380127,
+      "val_loss": 1.728116512298584,
+      "training_seconds": 35.7352845442947
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.5189093351364136,
+      "gradient_norm": 1.2247856855392456,
+      "val_loss": 1.7109479904174805,
+      "training_seconds": 38.48869248025585
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.6869704723358154,
+      "gradient_norm": 1.294921875,
+      "val_loss": 1.7159483432769775,
+      "training_seconds": 41.241648207302205
+    }
+  ],
+  "parameters": 493440,
+  "ffn_parameters_by_layer": [
+    73728,
+    73728,
+    73728,
+    73728
+  ],
+  "ffn_types": [
+    "relu2",
+    "relu2",
+    "relu2",
+    "relu2"
+  ],
+  "training_seconds": 41.241648207302205,
+  "wall_seconds": 44.50304577697534,
+  "benchmark_ms_per_step": 2.724823319585994,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "study_models.py": "4dd46590c73265207ae16ceca0117afeaeb3b748e1d4778e12c26874ac56fc1d",
+    "study_models_v2.py": "0e4db807fffefaa17280b33156fc22cc23524b0bc2a0817e93f5426858d60f98",
+    "study_models_v3.py": "054e3829e95bd0bab1cbc7507f2c4f5355e7755f791b7cea8a35ecc67e08212f",
+    "study_models_v4.py": "307068cbf81222ef40e53466ccb972e3be4dfc096de75a4b5a6cc788c28649dd",
+    "study_models_v5.py": "606a14935134e6b945cd9a47fa4e2c846e26b3e0a514eabb50cf2aca36e98a2b",
+    "study_train_v5.py": "e2c7bc6b6292e1b38e8188d4504d8c44dcde4b6114bb56ba18f22a655e7a7562",
+    "study_full_eval_v5.py": "ad3b8825944c6d8b784e526315d72242df4b6bcf8b1fb45af11c405c29d0200a",
+    "study_wave_v5.py": "10ee554e8c7a01c7b04d253c2894e2a4bd178475c124a99a0a0f7ec1b9dc9ce9",
+    "rwkv_mux.py": "6edfd62b6d009c582040623fe3b23f5d2a527f050f72b27a3097e666aa982892",
+    "study_train.py": "c8cd6f33a65140303f1aa93ca8b8a39aa9a6d21df8ce38b5859fa2da10dddf1f",
+    "study_train_v3.py": "c22e20d6e3f36e4ad3cdbbc577675139bb50b443c294750eeeac9154f6d01a44",
+    "study_train_v4.py": "10f7843a35f9ef6b85466c8b19cc0f94763c72b9107df3983981882434de3fc9",
+    "study_train_core_v4.py": "64d616d05680c1e81e61e8fcd398a39f7ff86f38f9479c4b54eb93ed1cb8310e",
+    "study_full_eval_v4.py": "e547ac1fad2213470cad55b2f528f41923c6bc8db87662773ebe9ecb676e86e8",
+    "study_wave_v4.py": "d30a81fc12b9bfefc3a38cd89f6f84447a384a93ac977afe6b140e3303b56720",
+    "study_train_core.py": "4dc62261dfa08f1a144a53558079729e258f23e7cf131492e24b0e363d84d1a3",
+    "study_full_eval.py": "c785f93f0d86104bcb173ab5d6040993a1e5f4a06fc8af021e0f8f17a247405f",
+    "study_full_eval_v3.py": "caec4cc781618699309a5d3f70eb73f00f85b31ab6772032a0d95bbb513e5517",
+    "study_wave_v2.py": "607f26c18f925b7a829e9f06de70d351c6593403e5c57dfab237b67546207ba9",
+    "study_wave_v3.py": "3f1c94f7ee240a4b1e922cb0d443aaf88c523875c6c2414162fe4111251596a1",
+    "ks2_geometry_gpu.py": "555b03ccb06e63c82b26a7a68fba72987ad480290b04ca234412425451a09635",
+    "ks2_partial_gpu.py": "0c816f78a7dd0398e21402ed2f9fdb18568a671fb59bc4fb4422ea38b6db1274",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "side_history.py": "a5144fa43c9c5791a3014449c26e0a9b8257b2fa64aeaee2c6e0b6f0938414e7",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411"
+  },
+  "peak_allocated_bytes": 208804352,
+  "peak_reserved_bytes": 224395264,
+  "parameter_bytes": 1973760,
+  "buffer_bytes": 256,
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "evaluation": {
+    "original_val": 1.7159483432769775,
+    "expanded_val": 1.704325795173645,
+    "sampled_train": 1.599530577659607
+  },
+  "study_config": {
+    "name": "soft_matched_mlp",
+    "family": "dense_ks2",
+    "charts": 48,
+    "cell": "relu2",
+    "attention": "softmax",
+    "output_lr": 1.0
+  },
+  "parameter_breakdown": {
+    "total": 493440,
+    "rwkv": 147456,
+    "embedding_head": 49152,
+    "geometry": 0,
+    "decoder_readout": 147456,
+    "decoder_input": 147456,
+    "other": 1920
+  },
+  "architecture": "Timed KS2 study: soft_matched_mlp",
+  "coding": "fixed_both",
+  "intermediate_evaluations": [],
+  "context_evaluations": [],
+  "tiled_evaluation": {
+    "evaluation_step": 15000,
+    "training_sequence_length": 64,
+    "loss": 1.6844134330749512,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.6844524145126343,
+        "batch4_vs_eval_max_error": 2.384185791015625e-07
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.6842273473739624,
+        "batch4_vs_eval_max_error": 2.384185791015625e-07
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.6841859817504883,
+        "batch4_vs_eval_max_error": 4.76837158203125e-07
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.6847878694534302,
+        "batch4_vs_eval_max_error": 2.384185791015625e-07
+      }
+    ],
+    "sequence_length": 64,
+    "note": "Four overlapping tilings of one held-out shard; state resets each window. Not four independent test sets.",
+    "validation_source": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data/val.bytes",
+    "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+  },
+  "physical_gpu": 3,
+  "study_job_id": "soft_matched_mlp_11",
+  "status": "complete"
+}

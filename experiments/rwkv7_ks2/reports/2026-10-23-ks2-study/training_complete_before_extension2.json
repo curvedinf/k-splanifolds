@@ -1,0 +1,21 @@
+{
+  "finished_epoch": 1792739973.5920534,
+  "recorded_epoch": 1792768609.94388,
+  "deadline_epoch": 1792740133,
+  "status": "TRAINING_COMPLETE",
+  "waves": [
+    {
+      "wave": "wave13_selected_long",
+      "jobs": 24,
+      "last_start": 1792738744.7904844,
+      "last_finish": 1792739657.2338197
+    },
+    {
+      "wave": "wave14_spine_scale",
+      "jobs": 9,
+      "last_start": 1792739821.4219937,
+      "last_finish": 1792739973.5920534
+    }
+  ],
+  "note": "All queued training finished before deadline. Completion marker recorded after goal resumed; no new training launched. Reserved final evaluation had not run and begins only now."
+}

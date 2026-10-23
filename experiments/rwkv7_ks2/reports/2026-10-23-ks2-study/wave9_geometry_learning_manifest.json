@@ -1,0 +1,174 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave9_geometry_learning",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "spine_geo01_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_geo01",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "spine_geo001_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_geo001",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_lr": 0.01
+      }
+    },
+    {
+      "id": "spine_warps_only_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_warps_only",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "spine_coefficients_only_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_coefficients_only",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_trainable": "coefficients"
+      }
+    },
+    {
+      "id": "spine_geo01_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_geo01",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "spine_geo001_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_geo001",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_lr": 0.01
+      }
+    },
+    {
+      "id": "spine_warps_only_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_warps_only",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "spine_coefficients_only_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_coefficients_only",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_trainable": "coefficients"
+      }
+    },
+    {
+      "id": "spine_geo01_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_geo01",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_lr": 0.1
+      }
+    },
+    {
+      "id": "spine_geo001_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_geo001",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_lr": 0.01
+      }
+    },
+    {
+      "id": "spine_warps_only_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_warps_only",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_trainable": "warps"
+      }
+    },
+    {
+      "id": "spine_coefficients_only_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_coefficients_only",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "geometry_trainable": "coefficients"
+      }
+    }
+  ]
+}

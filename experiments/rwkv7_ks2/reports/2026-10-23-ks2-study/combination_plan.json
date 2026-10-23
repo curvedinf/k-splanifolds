@@ -1,0 +1,144 @@
+{
+  "recorded_epoch": 1792769075.2879438,
+  "user_request": "Combine wins to see whether they accumulate;2-hour extension.",
+  "primary_reference": "Original unchanged MLP, no newMLPtuning.",
+  "screen": "12KS2configurations x3seeds,15k originalpool. Includesexactrank1replication asKS2reference. Compareall3means,notbestseed.",
+  "mechanisms": [
+    "Smallercharts +powerbasis",
+    "Smallercharts +selectivewarporfrozengeometry",
+    "Smallercharts +slowgeometryLR",
+    "Smallercharts +frozen/warpgeometry +bias/gaincalibration",
+    "Rank1 +powerbasis +slowgeometryLR"
+  ],
+  "excluded_equivalents": "Do not runpowerbasis+fullyfrozengeometry orpowerbasis+warps-only asnewcapacitycombinations: coefficientconversionpreserves thefixedpolynomial andwarptermsareunchanged, so these are equivalent functions/optimizerpaths up to roundoff.",
+  "long_plan": "Chooseup to4combinedfamilies fromall3seedexploratoryscoresandmechanisticvalue. Fresh100k bothoriginal/largerpools all3seeds vsfixedexistingMLP100kcheckpoints, subjecttolastdispatchbeforedeadline. Recordselectionbeforefreshholdout.",
+  "reserved_policy": "Earlierpartialreserved109scores preserveddiagnosticonly; no useforselection. Newtokens2M:2.1Mintervalsealeduntilnewsearchends.",
+  "configs": [
+    {
+      "name": "combo_rank1_reference",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true
+    },
+    {
+      "name": "combo_rank1_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "geometry_basis": "powers"
+    },
+    {
+      "name": "combo_rank1_warps",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "geometry_trainable": "warps"
+    },
+    {
+      "name": "combo_rank1_geo01",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "geometry_lr": 0.1
+    },
+    {
+      "name": "combo_rank1_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "frozen_geometry": true
+    },
+    {
+      "name": "combo_rank1_frozen_bias",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    },
+    {
+      "name": "combo_rank1_frozen_gain",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "frozen_geometry": true,
+      "geometry_calibration": "gain"
+    },
+    {
+      "name": "combo_rank1_powers_geo01",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "geometry_basis": "powers",
+      "geometry_lr": 0.1
+    },
+    {
+      "name": "combo_rank1_warps_bias",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true,
+      "geometry_trainable": "warps",
+      "geometry_calibration": "bias"
+    },
+    {
+      "name": "combo_rank4_frozen_bias",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "fused_general": true,
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    },
+    {
+      "name": "combo_rank4_frozen_gain",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "fused_general": true,
+      "frozen_geometry": true,
+      "geometry_calibration": "gain"
+    },
+    {
+      "name": "combo_rank4_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "fused_general": true,
+      "geometry_basis": "powers"
+    }
+  ],
+  "budget_note": "All learnedFFNcounts<=MLP73728. Rank1frozen/warps+calibration adds368calibrationvalues:totallearned+fixed73968perFFN,240aboveMLP. Rank4frozen+calibration total73416belowMLP. Report both;preferwithin-total-coefficient-budget combinationswhereotherwiseequallysupported. Do notclaimstrictmatchedstorageforrank1calibratedvariants."
+}

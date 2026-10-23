@@ -1,0 +1,144 @@
+{
+  "updated_epoch": 1792733255.1410613,
+  "deadline_epoch": 1792740133,
+  "deadline_utc": "2026-10-23T07:22:13+00:00",
+  "reason": "Explicit user extension: continue working for another4hours. Existing goal staysactive.",
+  "primary_control": "Exact original unchanged MLP only. No further MLP variants or optimization.",
+  "root": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213",
+  "interpreter": "/home/curved/int8-vllm/.venv/bin/python",
+  "live": {
+    "wave10": {
+      "session": 34487,
+      "log": "/tmp/ks2_study_wave10.log",
+      "manifest": "wave10_selective_long_manifest.json",
+      "jobs": 15,
+      "steps": 100000,
+      "status": "COMPLETE all15 runs"
+    },
+    "wave11": {
+      "session": 16761,
+      "log": "/tmp/ks2_study_wave11.log",
+      "manifest": "wave11_conditioning_manifest.json",
+      "jobs": 54,
+      "steps": 15000,
+      "status": "COMPLETE54/54,zero failures"
+    },
+    "engineering": {
+      "session": 79993,
+      "log": "/tmp/ks2_engineering_probe.log",
+      "status": "Firstpassfinished compactPASS/timings;genericcheckFAILED. RetrydiagnosticGPU0reservedafterwave12, session74693. See general_diagnostic."
+    },
+    "wave12": {
+      "session": 68577,
+      "log": "/tmp/ks2_study_wave12.log",
+      "manifest": "wave12_fixed_geometry_manifest.json",
+      "jobs": 18,
+      "steps": 15000,
+      "status": "RUNNINGGPUs1\u20133;GPU0 joins after engineering"
+    },
+    "final_checks": {
+      "session": 90145,
+      "log": "/tmp/ks2_study_final_checks.log",
+      "status": "Waiting session90145; v16 evaluator (originalsignedgeometrybatch4,othersunchanged), v15 benchmarkworker. DeadlineANDtraining_complete gates remain. Reservedintervalsealed."
+    },
+    "telemetry": {
+      "session": 78531,
+      "log": "/tmp/ks2_study_telemetry.log",
+      "status": "append-onlyevery30s;readsnewdeadline+1hdynamically;stoponlyatendvia stop_telemetry"
+    },
+    "wave12b": {
+      "session": 14707,
+      "log": "/tmp/ks2_study_wave12b.log",
+      "manifest": "wave12b_rank_freezing_manifest.json",
+      "status": "session14707 /tmp/ks2_study_wave12b.log; v14; requiresPASS+sourcehash thenperGPUwave12c release;GPU0nowwaits post_canonical_recovery_finished.json."
+    },
+    "wave12c": {
+      "session": 56768,
+      "log": "/tmp/ks2_study_wave12c.log",
+      "manifest": "wave12c_original_geometry_manifest.json",
+      "status": "session56768 /tmp/ks2_study_wave12c.log; v15 originalequations nowhandoffdirectly fromwave12;GPU0waitsgeneral_retry_finished.json. Independentofgenerickernels."
+    },
+    "recovery": {
+      "session": 5734,
+      "log": "/tmp/ks2_original_evaluation_recovery.log",
+      "status": "session5734 /tmp/ks2_original_evaluation_recovery.log; waits wave12c/all_results thenGPU0batch4 evaluation ofALL3originalsigned-equation checkpoints, preservesfailedbatch64records/unchangedweighthashes. Writespost_canonical_recovery_finished.json releasingGPU0torankfreezing. No training restarted."
+    }
+  },
+  "completed_evidence": [
+    "wave9all12complete;warps-only15kmean1.616517862,MLP1.620779316",
+    "conditioning_cpu_check.json:18configsPASSnonzerooutput/gradient/causality/equivbasis/projectionpairing/budget",
+    "fixed_geometry_cpu_check.json:6configsPASSinit/gradient/parameterbudget",
+    "geometry_counterfactual.json:9trainedmodels;constantmeansfromtrainingonly;input-dependentgeometrymatters",
+    "basis_condition_probe.json:powersreducebasisdesignconditionoften4-12xshorttrainedcoords;notoptimizerHessian",
+    "replicated_geometry_terms.json:3full31seeds;edge/spineRMSequallylarge;removingeithercausesloss",
+    "structured_codes_cpu_check.json:matrixvaluesandtransposegradientsPASSallwidths",
+    "structured_compile_check.json:MI100compileonlyPASS",
+    "structured_interpreter_check.json:CPU TritoninterpreterPASS96/2144;notGPUhardware",
+    "structured_model_cpu_check.json and structured_model_cpu_real_check.json:trained100kmodelPASS;sharedcodes3,116,032Bvs37,489,664;real-logit2.86e-5,loss1.19e-7,gradL2max2.62e-6"
+  ],
+  "source_versions": "GenericGPUkernelvalidatedandfrozen. v12fixedgeometrycomplete;v15originalequationsactive;v14rankfreezingqueued;v16evalusestrainingB4onlysignedoriginalequation. SelectedlongMUSTstudy_wave_v16.py (trainingworker15,factory15). Finaleval16/benchmark15.",
+  "next_actions": [
+    "Monitor engineeringGPUchecks, especiallygeneralgeometry, and wave12 training; wave12b blockedonlyonrequiredGPUcheckPASS thenperGPUhandoff.",
+    "Completewave12b thenwave12c;original_geometry_cpu_checkPASS. No newshortscreen afterwave12c.",
+    "Refresh ranking acrossallfourshortscreens. Use study_make_extended_long.py with3\u20134models andrationaleJSON torecordselection, buildwave13manifest, appendholdout/speedconfigs. Launch study_wave_v15 afterwave12c.",
+    "At07:22:13 stopnewdispatch, finishinflight. Onlythen training_complete marker; finalchecksv15session61688; report/audit/telemetry/sourcebundle andlink/rendercheck."
+  ],
+  "report": "report.html draft+report_summary.json;studied216+completedruns currently. Mainreportupdatedextensionendtime;newsectionsin study_extended_report.py;figuresin study_extended_figures.py. Somewordspacingneedspolishbeforefinal.",
+  "reserved_holdout": "Stillsealed;training_complete.json absent;final_checks directoryabsent. Neverusefortuning.",
+  "latest_state": "study_state.json",
+  "general_kernel_update": "PASS450componentcases+20trained/capture cases. Kernelunchanged;3adversarial FP32elementwise failures independentlydiagnosed againstfloat64; documentednormbounds applyonlytiny-inputgradients andclamp-stressforward. Ordinaryinputandparametergradientchecksunchanged. general_geometry_check.json+sourcehash gatepassed. Isolatedtimings andtrainedcomponenttimingscompleted. GPU0releasedvia general_retry_finished.json.",
+  "live_pipeline": {
+    "wave10": "session34487 /tmp/ks2_study_wave10.log;15long runs",
+    "wave11": "session16761 /tmp/ks2_study_wave11.log;54short runs,perGPUhandoff",
+    "engineering": "Compactchecks and5roundtimings COMPLETE; generalkernelcheckFAILED,componenttimingsNOTRUN. Originalengineeringfinishedmarkerstatusfailed is archival. NewGPU0leaseafterwave12 via general_retry_finished.json.",
+    "wave12": "session68577 /tmp/ks2_study_wave12.log;18short runs; GPU0 gated oncompact_code_checks_finished.json",
+    "wave12b": "session14707 /tmp/ks2_study_wave12b.log; v14; requiresPASS+sourcehash thenperGPUwave12c release;GPU0nowwaits post_canonical_recovery_finished.json.",
+    "wave12c": "session56768 /tmp/ks2_study_wave12c.log; v15 originalequations nowhandoffdirectly fromwave12;GPU0waitsgeneral_retry_finished.json. Independentofgenerickernels.",
+    "recovery": "session5734 /tmp/ks2_original_evaluation_recovery.log; waits wave12c/all_results thenGPU0batch4 evaluation ofALL3originalsigned-equation checkpoints, preservesfailedbatch64records/unchangedweighthashes. Writespost_canonical_recovery_finished.json releasingGPU0torankfreezing. No training restarted."
+  },
+  "final_checks": "Waiting session69180 with v14 evaluator/training worker; deadline07:22:13 plus training_complete.json. Reads extended_holdout_plan.json and additional_speed_configs.json afterwait.",
+  "pending_long_selection": {
+    "recorded_epoch": 1792727302.3374655,
+    "policy": "Choose up to four novel KS2 candidates using three-seed mean exploratory15k loss; retain at least one conditioning/rank and one fixed-geometry candidate where useful. No single-seed selection. Run each selected candidate100k on original and larger pools, seeds11/22/33, versus existing exact original MLP checkpoints. Record selection and all rejected screens. Prefer hypotheses with consistent replicated improvement; do not manufacture favorable references.",
+    "planned_max_runs": 24,
+    "schedule": "After wave12 completes or relevant three-seed cohorts finish; per-GPU handoff. Last new training starts before07:22:13UTC; finish in-flight.",
+    "extension_note": "Include wave12b candidates. Choose up to4 families according to three-seed means and mechanistic value, constrained by measured runtimes so all requested runs can start before07:22:13;18runs if24wouldnotfit. Newfusedgeneral kernels may be used only after numericalchecksPASS."
+  },
+  "candidate_ranking": "study_rank_candidates.py generates extended_candidate_ranking.json from exploratory completed.json artifacts only. Incomplete3-seed cohorts ineligible; no reserved scores read. Run after screens complete before selecting up to4long families.",
+  "component_timing": "study_component_speed.py queued on GPU0 after generic numerical checks. Exact trained unchanged MLP, demuxed history, learned full31 KS2 and frozen spine46; forward+required backward for attention/FFN/projections/geometry;3random rounds. Diagnostics not additive whole-step fractions.",
+  "interim_audit": {
+    "session": 84738,
+    "log": "/tmp/ks2_interim_audit.log",
+    "scope": "All currently completed checkpoints: exactstep,finite model/optimizer,optimizersteps,sourcesnapshot hashes,intermediate checkpoints. Remaining queued jobs expected incomplete. Finalaudit stillrequired fornewruns.",
+    "status": "Completed:262 checkpoints and source snapshots pass;zero failures;50jobs fromthreeactive/queuedmanifests notyetcomplete.",
+    "artifact": "interim_checkpoint_audit_0450.json"
+  },
+  "selected_long_preparation": "Refresh ranking afterall4screenscompleteandrecoverydone. Use study_make_extended_long.py --models3or4 --rationaleJSON(reason,estimated_fused_step_ms); runpreparedwave13 with study_wave_v16.py (v15trainingfactory/worker, v16evaluation) afterwave12b. makeraddsmanifestholdoutandselectedspeedconfigs. Lastdispatchbefore07:22:13.",
+  "recent_findings": {
+    "seed11_original_100k": {
+      "original_mlp": 1.508052110671997,
+      "spine46": 1.5127904415130615,
+      "frozen46": 1.5136165618896484,
+      "undamped33": 1.5183086395263672
+    },
+    "seed11_larger_100k": {
+      "original_mlp": 1.4645812511444092,
+      "spine46": 1.4652940034866333,
+      "undamped33": 1.4736100435256958
+    },
+    "geometry_probe": "CPU study_geometry_trajectory.py: learned geometry mainly negative before ReLU\u00b2; no widespread spine-warp saturation. Descriptive seed11 only; rerun after more seed11 long jobs complete to add missing larger undamped.",
+    "report_updates": "Original control retained; parameter breakdown, full-shard 15k/50k/100k gaps, geometry trajectory, schedule caveat added. Final interpretation still needs remaining seeds and holdout.",
+    "extended_cpu": "Compact code model37,489,664\u21925,860,352fixedbuffer bytes; trained CPU real-input logits max2.86e-5, lossdiff1.19e-7. GPUcompile and CPUkernelinterpreter pass; actualGPUchecks/timing pending.",
+    "extended_long_partial": "First seed larger warps1.463365793 versusfixedMLP1.464581251; originalwarps1.511187792 versusMLP1.508052111. Otherseeds pending; no reliablelead yet.",
+    "compact_latest": "Sharing identical codebooks reduces fixedbuffer storage to3,116,032bytes from37,489,664; CPUrealinput gradients relativeL2max2.62e-6. GPUtests pendingafterwave11.",
+    "larger_warps_final": "Mean1.465292851vsoriginalMLP1.465737144;gap\u22120.000444293,2wins1loss. Treatasnear-tie. Originalpoolmean1.508905570vsMLP1.509070992,alsonear-tie.",
+    "larger_frozen_final": "100k3seedmean1.463809292vsfixedMLP1.465737144;gap\u22120.001927853;wins3/3. Pairedsampledtrainmean gap\u22120.0000178 (essentiallyequal). Modestconsistentexploratorylead, reservedholdoutpending.",
+    "wave11_first_seed": "Spinepower1.6170785,matchingKSreference1.6207573;spineRMSgeometry1.6154585. One seed only; all3required.",
+    "spine_power_3seed": "15k full-shard mean1.617574016 versus unchanged MLP1.620779316,3/3wins; versus matching eager spine reference1.620365818,also3/3wins. Same initial function through exact cubic coefficient conversion; candidate for100k follow-up, not yet established long-run advantage.",
+    "rank_three_seeds": "Spine15k means:rank1 1.616360903,rank2 1.616664052,rank4 1.617066900,rank8eager1.620365818,rank16 1.620325724. Ranks1/2/4eachbeatfixedMLPall3seeds. Pending fusedrepeat/freezinginteraction screens.",
+    "power_interaction": "Powercoordinateshelp spine, but full-geometry powermean1.625611663 is behindfixedMLPall3seeds. Better sampled basiscondition number alone is not a universalqualityfix.",
+    "compact_gpu": "GPU individual5width operators/derivatives/capturePASS;trained100k real-input maxlogiterror3.8147e-5,lossdifference0,allgradienttolerancesPASS. Fixedbuffer37,489,664->3,116,032bytes. Isolatedwideoperators are slower(~7\u201310x mux,~26\u201327x transpose); whole-step5rounds nowrunning. Do not equate storage saving with speed."
+  },
+  "general_diagnostic": "COMPLETE. See general_kernel_diagnostic/components.json,fp64_comparison.json; GPUretry450+20PASSandtimingscomplete. GPU0released; generic kernel mustremainunchanged.",
+  "numerical_evaluation_issue": "Signedoriginalequation seed11trainingcompleted15k butbatch64-vs4evaluationcheckfailed one64windowCEby0.000401. All3signedoriginalrunswilluseB4matchingtraining,samewindows/targets; v16recordsB64vs4diagnostics andevaluation-sourcehash. Othermodelchecks/defaultbatchunchanged. Recoveryqueuedafterwave12c; failure.json preservedas evaluation_batch64_failure.json whenresolved."
+}

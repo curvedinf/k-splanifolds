@@ -1,0 +1,1741 @@
+{
+  "recorded_epoch": 1792734127.892139,
+  "selected": [
+    "spine_rank1_fused_repeat",
+    "spine_rank4_frozen",
+    "full46_frozen",
+    "spine_powers"
+  ],
+  "rationale": {
+    "spine_rank1_fused_repeat": {
+      "reason": "Strong rank intervention: all three seeds beat original MLP, and eager/fused equivalent cohorts both support the lead. Selection score averages implementations within seed; fused is chosen for measured speed. Tests whether independent scalar nonlinear responses retain their short-horizon advantage at 100k.",
+      "estimated_fused_step_ms": 8.6
+    },
+    "spine_rank4_frozen": {
+      "reason": "All three seeds beat original MLP with 603648 learned parameters. Tests rank reduction without learning geometry, against earlier frozen rank8 long runs and selected learned rank1. Keeps fixed storage much smaller than full frozen geometry.",
+      "estimated_fused_step_ms": 8.4
+    },
+    "full46_frozen": {
+      "reason": "Best three-seed short mean, all three wins. Tests richer fixed geometry versus learned geometry at long horizon. This is a learned-parameter-budget comparison only: 150880 additional fixed geometry values give greater total coefficient storage than the MLP, and will be reported prominently.",
+      "estimated_fused_step_ms": 8.9
+    },
+    "spine_powers": {
+      "reason": "All three seeds beat original MLP. Initial-function-preserving polynomial reparameterization isolates optimization conditioning from rank/feature changes. Chosen for mechanistic diversity despite a smaller short-run lead than several frozen calibration variants.",
+      "estimated_fused_step_ms": 8.7
+    }
+  },
+  "all_candidates": [
+    {
+      "wave": "wave12_fixed_geometry",
+      "model": "full46_frozen",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "name": "full46_frozen",
+        "frozen_geometry": true,
+        "fused_geometry": true
+      },
+      "mechanism": "fixed_geometry_adaptation",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6158690055211384,
+      "mean_paired_gap": -0.00491031010945638,
+      "paired_gap_sd": 0.002176796326660136,
+      "seed_wins": 3,
+      "learned_parameters": 603648,
+      "fixed_buffer_bytes": 605728,
+      "observed_step_ms": 9.60892673986964,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6170364618301392,
+          "reference": 1.6204967498779297,
+          "run": "wave12_fixed_geometry/full46_frozen_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6155009269714355,
+          "reference": 1.6193581819534302,
+          "run": "wave12_fixed_geometry/full46_frozen_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6150696277618408,
+          "reference": 1.6224830150604248,
+          "run": "wave12_fixed_geometry/full46_frozen_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6158690055211384,
+      "equivalent_architecture": "full46_frozen"
+    },
+    {
+      "wave": "wave12b_rank_freezing",
+      "model": "spine_rank1_fused_repeat",
+      "config": {
+        "name": "spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6161642869313557,
+      "mean_paired_gap": -0.004615028699239095,
+      "paired_gap_sd": 0.002117180167472533,
+      "seed_wins": 3,
+      "learned_parameters": 615424,
+      "fixed_buffer_bytes": 17664,
+      "observed_step_ms": 8.548819725603487,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6136729717254639,
+          "reference": 1.6204967498779297,
+          "run": "wave12b_rank_freezing/spine_rank1_fused_repeat_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6167550086975098,
+          "reference": 1.6193581819534302,
+          "run": "wave12b_rank_freezing/spine_rank1_fused_repeat_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6180648803710938,
+          "reference": 1.6224830150604248,
+          "run": "wave12b_rank_freezing/spine_rank1_fused_repeat_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6162625948588054,
+      "equivalent_architecture": "spine_rank1",
+      "equivalent_cohort_pairs": [
+        {
+          "seed": 11,
+          "eager": 1.6162910461425781,
+          "fused": 1.6136729717254639
+        },
+        {
+          "seed": 22,
+          "eager": 1.6149914264678955,
+          "fused": 1.6167550086975098
+        },
+        {
+          "seed": 33,
+          "eager": 1.617800235748291,
+          "fused": 1.6180648803710938
+        }
+      ],
+      "selection_note": "Three seeds with two floating-point implementations per seed, not six independent seeds. Average both implementations; do not select the more favorable trajectory. Fused backend is chosen for runtime after numerical validation."
+    },
+    {
+      "wave": "wave12_fixed_geometry",
+      "model": "spine_frozen_bias",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_frozen_bias",
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "mechanism": "fixed_geometry_adaptation",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6163603862126668,
+      "mean_paired_gap": -0.00441892941792806,
+      "paired_gap_sd": 0.0026793657023175565,
+      "seed_wins": 3,
+      "learned_parameters": 605120,
+      "fixed_buffer_bytes": 39008,
+      "observed_step_ms": 8.540951140450003,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.616510272026062,
+          "reference": 1.6204967498779297,
+          "run": "wave12_fixed_geometry/spine_frozen_bias_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6120699644088745,
+          "reference": 1.6193581819534302,
+          "run": "wave12_fixed_geometry/spine_frozen_bias_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.620500922203064,
+          "reference": 1.6224830150604248,
+          "run": "wave12_fixed_geometry/spine_frozen_bias_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6163603862126668,
+      "equivalent_architecture": "spine_frozen_bias"
+    },
+    {
+      "wave": "wave12b_rank_freezing",
+      "model": "spine_rank4_frozen",
+      "config": {
+        "name": "spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true
+      },
+      "mechanism": "fixed_geometry_adaptation",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6165176232655842,
+      "mean_paired_gap": -0.004261692365010579,
+      "paired_gap_sd": 0.0034185770705581465,
+      "seed_wins": 3,
+      "learned_parameters": 603648,
+      "fixed_buffer_bytes": 42688,
+      "observed_step_ms": 8.333122528662594,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6201472282409668,
+          "reference": 1.6204967498779297,
+          "run": "wave12b_rank_freezing/spine_rank4_frozen_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6135963201522827,
+          "reference": 1.6193581819534302,
+          "run": "wave12b_rank_freezing/spine_rank4_frozen_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6158093214035034,
+          "reference": 1.6224830150604248,
+          "run": "wave12b_rank_freezing/spine_rank4_frozen_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6165176232655842,
+      "equivalent_architecture": "spine_rank4_frozen"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_rank2",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 184,
+        "geometry_terms": "spine",
+        "name": "spine_rank2",
+        "subspace_rank": 2
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6166640520095825,
+      "mean_paired_gap": -0.00411526362101237,
+      "paired_gap_sd": 0.003534144747045364,
+      "seed_wins": 3,
+      "learned_parameters": 613952,
+      "fixed_buffer_bytes": 8832,
+      "observed_step_ms": 9.579263719939627,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.62040376663208,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_rank2_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6138285398483276,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_rank2_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6157598495483398,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_rank2_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6166640520095825,
+      "equivalent_architecture": "spine_rank2"
+    },
+    {
+      "wave": "wave12b_rank_freezing",
+      "model": "spine_rank4_fused_repeat",
+      "config": {
+        "name": "spine_rank4_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.616269588470459,
+      "mean_paired_gap": -0.004509727160135905,
+      "paired_gap_sd": 0.002120011202753304,
+      "seed_wins": 3,
+      "learned_parameters": 613216,
+      "fixed_buffer_bytes": 4416,
+      "observed_step_ms": 8.497162045538426,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6178970336914062,
+          "reference": 1.6204967498779297,
+          "run": "wave12b_rank_freezing/spine_rank4_fused_repeat_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6152194738388062,
+          "reference": 1.6193581819534302,
+          "run": "wave12b_rank_freezing/spine_rank4_fused_repeat_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6156922578811646,
+          "reference": 1.6224830150604248,
+          "run": "wave12b_rank_freezing/spine_rank4_fused_repeat_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6166682442029316,
+      "equivalent_architecture": "spine_rank4",
+      "equivalent_cohort_pairs": [
+        {
+          "seed": 11,
+          "eager": 1.6184204816818237,
+          "fused": 1.6178970336914062
+        },
+        {
+          "seed": 22,
+          "eager": 1.6159871816635132,
+          "fused": 1.6152194738388062
+        },
+        {
+          "seed": 33,
+          "eager": 1.6167930364608765,
+          "fused": 1.6156922578811646
+        }
+      ],
+      "selection_note": "Three seeds with two floating-point implementations per seed, not six independent seeds. Average both implementations; do not select the more favorable trajectory. Fused backend is chosen for runtime after numerical validation."
+    },
+    {
+      "wave": "wave12_fixed_geometry",
+      "model": "spine_frozen_gain",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_frozen_gain",
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      },
+      "mechanism": "fixed_geometry_adaptation",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6169641415278118,
+      "mean_paired_gap": -0.003815174102783203,
+      "paired_gap_sd": 0.0016809225109450901,
+      "seed_wins": 3,
+      "learned_parameters": 605120,
+      "fixed_buffer_bytes": 39008,
+      "observed_step_ms": 8.571742746412443,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6174798011779785,
+          "reference": 1.6204967498779297,
+          "run": "wave12_fixed_geometry/spine_frozen_gain_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6166760921478271,
+          "reference": 1.6193581819534302,
+          "run": "wave12_fixed_geometry/spine_frozen_gain_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6167365312576294,
+          "reference": 1.6224830150604248,
+          "run": "wave12_fixed_geometry/spine_frozen_gain_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6169641415278118,
+      "equivalent_architecture": "spine_frozen_gain"
+    },
+    {
+      "wave": "wave12_fixed_geometry",
+      "model": "spine_warps_bias",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_warps_bias",
+        "geometry_trainable": "warps",
+        "geometry_calibration": "bias"
+      },
+      "mechanism": "fixed_geometry_adaptation",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6174251635869343,
+      "mean_paired_gap": -0.003354152043660482,
+      "paired_gap_sd": 0.0022532715307072983,
+      "seed_wins": 3,
+      "learned_parameters": 605488,
+      "fixed_buffer_bytes": 37536,
+      "observed_step_ms": 8.613712749405144,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6178946495056152,
+          "reference": 1.6204967498779297,
+          "run": "wave12_fixed_geometry/spine_warps_bias_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.617785096168518,
+          "reference": 1.6193581819534302,
+          "run": "wave12_fixed_geometry/spine_warps_bias_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.61659574508667,
+          "reference": 1.6224830150604248,
+          "run": "wave12_fixed_geometry/spine_warps_bias_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6174251635869343,
+      "equivalent_architecture": "spine_warps_bias"
+    },
+    {
+      "wave": "wave12_fixed_geometry",
+      "model": "full46_warps",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "name": "full46_warps",
+        "geometry_trainable": "warps",
+        "fused_geometry": true
+      },
+      "mechanism": "fixed_geometry_adaptation",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6174376408259075,
+      "mean_paired_gap": -0.0033416748046875,
+      "paired_gap_sd": 0.001037956673774652,
+      "seed_wins": 3,
+      "learned_parameters": 604384,
+      "fixed_buffer_bytes": 602784,
+      "observed_step_ms": 9.411380633401373,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6168262958526611,
+          "reference": 1.6204967498779297,
+          "run": "wave12_fixed_geometry/full46_warps_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.617179036140442,
+          "reference": 1.6193581819534302,
+          "run": "wave12_fixed_geometry/full46_warps_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6183075904846191,
+          "reference": 1.6224830150604248,
+          "run": "wave12_fixed_geometry/full46_warps_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6174376408259075,
+      "equivalent_architecture": "full46_warps"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_powers",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_powers",
+        "geometry_basis": "powers"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6175740162531536,
+      "mean_paired_gap": -0.0032052993774414062,
+      "paired_gap_sd": 0.002012135611161959,
+      "seed_wins": 3,
+      "learned_parameters": 612848,
+      "fixed_buffer_bytes": 2208,
+      "observed_step_ms": 9.38617739751159,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6170785427093506,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_powers_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6182630062103271,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_powers_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6173804998397827,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_powers_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6175740162531536,
+      "equivalent_architecture": "spine_powers"
+    },
+    {
+      "wave": "wave12b_rank_freezing",
+      "model": "spine_rank1_frozen",
+      "config": {
+        "name": "spine_rank1_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true
+      },
+      "mechanism": "fixed_geometry_adaptation",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6179115374883015,
+      "mean_paired_gap": -0.0028677781422932944,
+      "paired_gap_sd": 0.002826000976951126,
+      "seed_wins": 2,
+      "learned_parameters": 603648,
+      "fixed_buffer_bytes": 64768,
+      "observed_step_ms": 8.311524377802076,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6169953346252441,
+          "reference": 1.6204967498779297,
+          "run": "wave12b_rank_freezing/spine_rank1_frozen_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6195794343948364,
+          "reference": 1.6193581819534302,
+          "run": "wave12b_rank_freezing/spine_rank1_frozen_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6171598434448242,
+          "reference": 1.6224830150604248,
+          "run": "wave12b_rank_freezing/spine_rank1_frozen_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6179115374883015,
+      "equivalent_architecture": "spine_rank1_frozen"
+    },
+    {
+      "wave": "wave12_fixed_geometry",
+      "model": "spine_frozen_bias_gain",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "name": "spine_frozen_bias_gain",
+        "frozen_geometry": true,
+        "geometry_calibration": "bias_gain"
+      },
+      "mechanism": "fixed_geometry_adaptation",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6179961760838826,
+      "mean_paired_gap": -0.0027831395467122397,
+      "paired_gap_sd": 0.001709713018387374,
+      "seed_wins": 3,
+      "learned_parameters": 606592,
+      "fixed_buffer_bytes": 39008,
+      "observed_step_ms": 8.65181228000826,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.619685173034668,
+          "reference": 1.6204967498779297,
+          "run": "wave12_fixed_geometry/spine_frozen_bias_gain_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.615500807762146,
+          "reference": 1.6193581819534302,
+          "run": "wave12_fixed_geometry/spine_frozen_bias_gain_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.618802547454834,
+          "reference": 1.6224830150604248,
+          "run": "wave12_fixed_geometry/spine_frozen_bias_gain_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6179961760838826,
+      "equivalent_architecture": "spine_frozen_bias_gain"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_geo_rms",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_geo_rms",
+        "geometry_input_norm": "rms"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6180991331736247,
+      "mean_paired_gap": -0.002680182456970215,
+      "paired_gap_sd": 0.0026368060827891664,
+      "seed_wins": 2,
+      "learned_parameters": 612848,
+      "fixed_buffer_bytes": 2208,
+      "observed_step_ms": 9.866524631103191,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6154584884643555,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_geo_rms_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6195250749588013,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_geo_rms_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6193138360977173,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_geo_rms_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6180991331736247,
+      "equivalent_architecture": "spine_geo_rms"
+    },
+    {
+      "wave": "wave12b_rank_freezing",
+      "model": "full_rank1",
+      "config": {
+        "name": "full_rank1",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 344,
+        "subspace_rank": 1,
+        "fused_general": true
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6183332204818726,
+      "mean_paired_gap": -0.0024460951487223306,
+      "paired_gap_sd": 0.0029790425222674098,
+      "seed_wins": 2,
+      "learned_parameters": 615488,
+      "fixed_buffer_bytes": 16512,
+      "observed_step_ms": 8.73145372782213,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.615289330482483,
+          "reference": 1.6204967498779297,
+          "run": "wave12b_rank_freezing/full_rank1_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6165162324905396,
+          "reference": 1.6193581819534302,
+          "run": "wave12b_rank_freezing/full_rank1_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6231940984725952,
+          "reference": 1.6224830150604248,
+          "run": "wave12b_rank_freezing/full_rank1_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6183332204818726,
+      "equivalent_architecture": "full_rank1"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "full_parallel",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_parallel",
+        "geometry_placement": "parallel"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6184946695963542,
+      "mean_paired_gap": -0.0022846460342407227,
+      "paired_gap_sd": 0.002176177328595748,
+      "seed_wins": 3,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 13.019105244389115,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6159907579421997,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/full_parallel_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6171668767929077,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/full_parallel_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.622326374053955,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/full_parallel_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6184946695963542,
+      "equivalent_architecture": "full_parallel"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "full_rank2",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 164,
+        "name": "full_rank2",
+        "subspace_rank": 2
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6185907125473022,
+      "mean_paired_gap": -0.002188603083292643,
+      "paired_gap_sd": 0.0017357289963482996,
+      "seed_wins": 3,
+      "learned_parameters": 614912,
+      "fixed_buffer_bytes": 7872,
+      "observed_step_ms": 13.024543079951156,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6173195838928223,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/full_rank2_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6161539554595947,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/full_rank2_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6222985982894897,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/full_rank2_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6185907125473022,
+      "equivalent_architecture": "full_rank2"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_taylor",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_taylor",
+        "geometry_basis": "taylor"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6196655829747517,
+      "mean_paired_gap": -0.0011137326558430989,
+      "paired_gap_sd": 0.0023433341593922102,
+      "seed_wins": 2,
+      "learned_parameters": 612848,
+      "fixed_buffer_bytes": 2208,
+      "observed_step_ms": 9.386484442853058,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6212639808654785,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_taylor_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.615619421005249,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_taylor_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6221133470535278,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_taylor_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6196655829747517,
+      "equivalent_architecture": "spine_taylor"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_after_activation",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_after_activation",
+        "geometry_placement": "after_activation"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6199994087219238,
+      "mean_paired_gap": -0.0007799069086710612,
+      "paired_gap_sd": 0.0015474208690415233,
+      "seed_wins": 2,
+      "learned_parameters": 612848,
+      "fixed_buffer_bytes": 2208,
+      "observed_step_ms": 9.645758451855121,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6212992668151855,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_after_activation_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6185057163238525,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_after_activation_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6201932430267334,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_after_activation_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6199994087219238,
+      "equivalent_architecture": "spine_after_activation"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_rank16",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 23,
+        "geometry_terms": "spine",
+        "name": "spine_rank16",
+        "subspace_rank": 16
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6203257242838542,
+      "mean_paired_gap": -0.00045359134674072266,
+      "paired_gap_sd": 0.0007017119017798082,
+      "seed_wins": 2,
+      "learned_parameters": 612664,
+      "fixed_buffer_bytes": 1104,
+      "observed_step_ms": 9.663969990052284,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.620508074760437,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_rank16_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6192468404769897,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_rank16_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6212222576141357,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_rank16_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6203257242838542,
+      "equivalent_architecture": "spine_rank16"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_parallel",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_parallel",
+        "geometry_placement": "parallel"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6211278438568115,
+      "mean_paired_gap": 0.0003485282262166341,
+      "paired_gap_sd": 0.000691895135881396,
+      "seed_wins": 1,
+      "learned_parameters": 612848,
+      "fixed_buffer_bytes": 2208,
+      "observed_step_ms": 9.282068429685507,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6200850009918213,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_parallel_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6198742389678955,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_parallel_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6234242916107178,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_parallel_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6211278438568115,
+      "equivalent_architecture": "spine_parallel"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "full_rank4",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 74,
+        "name": "full_rank4",
+        "subspace_rank": 4
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6223647991816204,
+      "mean_paired_gap": 0.0015854835510253906,
+      "paired_gap_sd": 0.001555099885665611,
+      "seed_wins": 0,
+      "learned_parameters": 613472,
+      "fixed_buffer_bytes": 3552,
+      "observed_step_ms": 12.822392329216624,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6216102838516235,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/full_rank4_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6226800680160522,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/full_rank4_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.622804045677185,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/full_rank4_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6223647991816204,
+      "equivalent_architecture": "full_rank4"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "full_powers",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_powers",
+        "geometry_basis": "powers"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.625611662864685,
+      "mean_paired_gap": 0.004832347234090169,
+      "paired_gap_sd": 0.0017744373719796704,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.710428050789051,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6236679553985596,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/full_powers_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.623982310295105,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/full_powers_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6291847229003906,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/full_powers_33/completed.json"
+        }
+      ],
+      "selection_score": 1.625611662864685,
+      "equivalent_architecture": "full_powers"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "full_taylor",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_taylor",
+        "geometry_basis": "taylor"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.626540184020996,
+      "mean_paired_gap": 0.005760868390401204,
+      "paired_gap_sd": 0.0027987578555984764,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.662727503594942,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.626726746559143,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/full_taylor_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6221153736114502,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/full_taylor_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.630778431892395,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/full_taylor_33/completed.json"
+        }
+      ],
+      "selection_score": 1.626540184020996,
+      "equivalent_architecture": "full_taylor"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "full_geo_rms",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_geo_rms",
+        "geometry_input_norm": "rms"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6275882323582966,
+      "mean_paired_gap": 0.006808916727701823,
+      "paired_gap_sd": 0.001705454898330508,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.729686728849385,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6279091835021973,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/full_geo_rms_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6242419481277466,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/full_geo_rms_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6306135654449463,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/full_geo_rms_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6275882323582966,
+      "equivalent_architecture": "full_geo_rms"
+    },
+    {
+      "wave": "wave12c_original_geometry",
+      "model": "full_original_sigmoid",
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_sigmoid",
+        "geometry_equation": "original",
+        "geometry_input_sigmoid": true
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6278987725575764,
+      "mean_paired_gap": 0.007119456926981608,
+      "paired_gap_sd": 0.0014927221033499982,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.706366076592046,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6278890371322632,
+          "reference": 1.6204967498779297,
+          "run": "wave12c_original_geometry/full_original_sigmoid_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.62486732006073,
+          "reference": 1.6193581819534302,
+          "run": "wave12c_original_geometry/full_original_sigmoid_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6309399604797363,
+          "reference": 1.6224830150604248,
+          "run": "wave12c_original_geometry/full_original_sigmoid_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6278987725575764,
+      "equivalent_architecture": "full_original_sigmoid"
+    },
+    {
+      "wave": "wave12c_original_geometry",
+      "model": "full_stable_sigmoid",
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_stable_sigmoid",
+        "geometry_input_sigmoid": true
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6280356248219807,
+      "mean_paired_gap": 0.007256309191385905,
+      "paired_gap_sd": 0.0029014698893743444,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.505342131418486,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6310924291610718,
+          "reference": 1.6204967498779297,
+          "run": "wave12c_original_geometry/full_stable_sigmoid_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6247103214263916,
+          "reference": 1.6193581819534302,
+          "run": "wave12c_original_geometry/full_stable_sigmoid_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.628304123878479,
+          "reference": 1.6224830150604248,
+          "run": "wave12c_original_geometry/full_stable_sigmoid_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6280356248219807,
+      "equivalent_architecture": "full_stable_sigmoid"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "full_after_activation",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_after_activation",
+        "geometry_placement": "after_activation"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.628368655840556,
+      "mean_paired_gap": 0.0075893402099609375,
+      "paired_gap_sd": 0.0019553714514805266,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.92018586959069,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6293598413467407,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/full_after_activation_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.624696135520935,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/full_after_activation_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6310499906539917,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/full_after_activation_33/completed.json"
+        }
+      ],
+      "selection_score": 1.628368655840556,
+      "equivalent_architecture": "full_after_activation"
+    },
+    {
+      "wave": "wave12c_original_geometry",
+      "model": "full_original_sigmoid_parallel",
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_sigmoid_parallel",
+        "geometry_equation": "original",
+        "geometry_input_sigmoid": true,
+        "geometry_placement": "parallel"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6312816937764485,
+      "mean_paired_gap": 0.010502378145853678,
+      "paired_gap_sd": 0.0020372484992523168,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.219416248860458,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6332108974456787,
+          "reference": 1.6204967498779297,
+          "run": "wave12c_original_geometry/full_original_sigmoid_parallel_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6280608177185059,
+          "reference": 1.6193581819534302,
+          "run": "wave12c_original_geometry/full_original_sigmoid_parallel_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6325733661651611,
+          "reference": 1.6224830150604248,
+          "run": "wave12c_original_geometry/full_original_sigmoid_parallel_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6312816937764485,
+      "equivalent_architecture": "full_original_sigmoid_parallel"
+    },
+    {
+      "wave": "wave12c_original_geometry",
+      "model": "full_original_equation",
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_equation",
+        "geometry_equation": "original"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": true,
+      "exclusion": null,
+      "seeds_complete": 3,
+      "mean_loss": 1.6416114568710327,
+      "mean_paired_gap": 0.020832141240437824,
+      "paired_gap_sd": 0.002052188443588144,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.627688589001385,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6399046182632446,
+          "reference": 1.6204967498779297,
+          "run": "wave12c_original_geometry/full_original_equation_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6425426006317139,
+          "reference": 1.6193581819534302,
+          "run": "wave12c_original_geometry/full_original_equation_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6423871517181396,
+          "reference": 1.6224830150604248,
+          "run": "wave12c_original_geometry/full_original_equation_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6416114568710327,
+      "equivalent_architecture": "full_original_equation"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_rank1",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 368,
+        "geometry_terms": "spine",
+        "name": "spine_rank1",
+        "subspace_rank": 1
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": false,
+      "exclusion": "Equivalent fused backend used for long runs; both cohorts contribute to selection score",
+      "seeds_complete": 3,
+      "mean_loss": 1.6163609027862549,
+      "mean_paired_gap": -0.004418412844340007,
+      "paired_gap_sd": 0.00024269659768851552,
+      "seed_wins": 3,
+      "learned_parameters": 615424,
+      "fixed_buffer_bytes": 17664,
+      "observed_step_ms": 11.221515072664866,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6162910461425781,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_rank1_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6149914264678955,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_rank1_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.617800235748291,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_rank1_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6162625948588054,
+      "equivalent_architecture": "spine_rank1"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_rank4",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 92,
+        "geometry_terms": "spine",
+        "name": "spine_rank4",
+        "subspace_rank": 4
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": false,
+      "exclusion": "Equivalent fused backend used for long runs; both cohorts contribute to selection score",
+      "seeds_complete": 3,
+      "mean_loss": 1.6170668999354045,
+      "mean_paired_gap": -0.0037124156951904297,
+      "paired_gap_sd": 0.0018308875113467367,
+      "seed_wins": 3,
+      "learned_parameters": 613216,
+      "fixed_buffer_bytes": 4416,
+      "observed_step_ms": 9.729924348206259,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6184204816818237,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_rank4_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6159871816635132,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_rank4_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6167930364608765,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_rank4_33/completed.json"
+        }
+      ],
+      "selection_score": 1.6166682442029316,
+      "equivalent_architecture": "spine_rank4"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "spine_eager_reference",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "spine_eager_reference"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": false,
+      "exclusion": "reference repeat",
+      "seeds_complete": 3,
+      "mean_loss": 1.620365818341573,
+      "mean_paired_gap": -0.0004134972890218099,
+      "paired_gap_sd": 0.00061006321900917,
+      "seed_wins": 2,
+      "learned_parameters": 612848,
+      "fixed_buffer_bytes": 2208,
+      "observed_step_ms": 9.658614951612739,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6207573413848877,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/spine_eager_reference_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.618784785270691,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/spine_eager_reference_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6215553283691406,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/spine_eager_reference_33/completed.json"
+        }
+      ],
+      "selection_score": 1.620365818341573,
+      "equivalent_architecture": "spine_eager_reference"
+    },
+    {
+      "wave": "wave11_conditioning",
+      "model": "full_eager_reference",
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 31,
+        "name": "full_eager_reference"
+      },
+      "mechanism": "conditioning_rank_placement",
+      "eligible": false,
+      "exclusion": "reference repeat",
+      "seeds_complete": 3,
+      "mean_loss": 1.625260631243388,
+      "mean_paired_gap": 0.004481315612792969,
+      "paired_gap_sd": 0.0021881673763371455,
+      "seed_wins": 0,
+      "learned_parameters": 613168,
+      "fixed_buffer_bytes": 1488,
+      "observed_step_ms": 12.934888683818281,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6225967407226562,
+          "reference": 1.6204967498779297,
+          "run": "wave11_conditioning/full_eager_reference_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.62576162815094,
+          "reference": 1.6193581819534302,
+          "run": "wave11_conditioning/full_eager_reference_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6274235248565674,
+          "reference": 1.6224830150604248,
+          "run": "wave11_conditioning/full_eager_reference_33/completed.json"
+        }
+      ],
+      "selection_score": 1.625260631243388,
+      "equivalent_architecture": "full_eager_reference"
+    }
+  ],
+  "fused_configs": {
+    "spine_rank1_fused_repeat": {
+      "name": "spine_rank1_fused_repeat",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "fused_general": true
+    },
+    "spine_rank4_frozen": {
+      "name": "spine_rank4_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "frozen_geometry": true,
+      "fused_general": true
+    },
+    "full46_frozen": {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "name": "full46_frozen",
+      "frozen_geometry": true,
+      "fused_general": true
+    },
+    "spine_powers": {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "geometry_terms": "spine",
+      "name": "spine_powers",
+      "geometry_basis": "powers",
+      "fused_general": true
+    }
+  },
+  "protocol": "100k fresh cosine schedule, original and larger training pools, seeds11/22/33. Compare existing exact original MLP100k checkpoints. No MLP changes. Selection used exploratory three-seed means and mechanistic value; reserved interval remains sealed.",
+  "runtime_estimate": {
+    "note": "Greedy four-card estimate from declared fused step times plus90seconds per job for setup and evaluations; approximate, not a dispatch guarantee.",
+    "schedule": [
+      {
+        "job": "original_spine_rank1_fused_repeat_11",
+        "estimated_gpu": 0,
+        "estimated_start": 1792734127.8920226,
+        "estimated_finish": 1792735077.8920226
+      },
+      {
+        "job": "original_spine_rank4_frozen_11",
+        "estimated_gpu": 1,
+        "estimated_start": 1792734127.8920226,
+        "estimated_finish": 1792735057.8920226
+      },
+      {
+        "job": "original_full46_frozen_11",
+        "estimated_gpu": 2,
+        "estimated_start": 1792734127.8920226,
+        "estimated_finish": 1792735107.8920226
+      },
+      {
+        "job": "original_spine_powers_11",
+        "estimated_gpu": 3,
+        "estimated_start": 1792734127.8920226,
+        "estimated_finish": 1792735087.8920226
+      },
+      {
+        "job": "larger_spine_rank1_fused_repeat_11",
+        "estimated_gpu": 1,
+        "estimated_start": 1792735057.8920226,
+        "estimated_finish": 1792736007.8920226
+      },
+      {
+        "job": "larger_spine_rank4_frozen_11",
+        "estimated_gpu": 0,
+        "estimated_start": 1792735077.8920226,
+        "estimated_finish": 1792736007.8920226
+      },
+      {
+        "job": "larger_full46_frozen_11",
+        "estimated_gpu": 3,
+        "estimated_start": 1792735087.8920226,
+        "estimated_finish": 1792736067.8920226
+      },
+      {
+        "job": "larger_spine_powers_11",
+        "estimated_gpu": 2,
+        "estimated_start": 1792735107.8920226,
+        "estimated_finish": 1792736067.8920226
+      },
+      {
+        "job": "original_spine_rank1_fused_repeat_22",
+        "estimated_gpu": 0,
+        "estimated_start": 1792736007.8920226,
+        "estimated_finish": 1792736957.8920226
+      },
+      {
+        "job": "original_spine_rank4_frozen_22",
+        "estimated_gpu": 1,
+        "estimated_start": 1792736007.8920226,
+        "estimated_finish": 1792736937.8920226
+      },
+      {
+        "job": "original_full46_frozen_22",
+        "estimated_gpu": 2,
+        "estimated_start": 1792736067.8920226,
+        "estimated_finish": 1792737047.8920226
+      },
+      {
+        "job": "original_spine_powers_22",
+        "estimated_gpu": 3,
+        "estimated_start": 1792736067.8920226,
+        "estimated_finish": 1792737027.8920226
+      },
+      {
+        "job": "larger_spine_rank1_fused_repeat_22",
+        "estimated_gpu": 1,
+        "estimated_start": 1792736937.8920226,
+        "estimated_finish": 1792737887.8920226
+      },
+      {
+        "job": "larger_spine_rank4_frozen_22",
+        "estimated_gpu": 0,
+        "estimated_start": 1792736957.8920226,
+        "estimated_finish": 1792737887.8920226
+      },
+      {
+        "job": "larger_full46_frozen_22",
+        "estimated_gpu": 3,
+        "estimated_start": 1792737027.8920226,
+        "estimated_finish": 1792738007.8920226
+      },
+      {
+        "job": "larger_spine_powers_22",
+        "estimated_gpu": 2,
+        "estimated_start": 1792737047.8920226,
+        "estimated_finish": 1792738007.8920226
+      },
+      {
+        "job": "original_spine_rank1_fused_repeat_33",
+        "estimated_gpu": 0,
+        "estimated_start": 1792737887.8920226,
+        "estimated_finish": 1792738837.8920226
+      },
+      {
+        "job": "original_spine_rank4_frozen_33",
+        "estimated_gpu": 1,
+        "estimated_start": 1792737887.8920226,
+        "estimated_finish": 1792738817.8920226
+      },
+      {
+        "job": "original_full46_frozen_33",
+        "estimated_gpu": 2,
+        "estimated_start": 1792738007.8920226,
+        "estimated_finish": 1792738987.8920226
+      },
+      {
+        "job": "original_spine_powers_33",
+        "estimated_gpu": 3,
+        "estimated_start": 1792738007.8920226,
+        "estimated_finish": 1792738967.8920226
+      },
+      {
+        "job": "larger_spine_rank1_fused_repeat_33",
+        "estimated_gpu": 1,
+        "estimated_start": 1792738817.8920226,
+        "estimated_finish": 1792739767.8920226
+      },
+      {
+        "job": "larger_spine_rank4_frozen_33",
+        "estimated_gpu": 0,
+        "estimated_start": 1792738837.8920226,
+        "estimated_finish": 1792739767.8920226
+      },
+      {
+        "job": "larger_full46_frozen_33",
+        "estimated_gpu": 3,
+        "estimated_start": 1792738967.8920226,
+        "estimated_finish": 1792739947.8920226
+      },
+      {
+        "job": "larger_spine_powers_33",
+        "estimated_gpu": 2,
+        "estimated_start": 1792738987.8920226,
+        "estimated_finish": 1792739947.8920226
+      }
+    ]
+  }
+}

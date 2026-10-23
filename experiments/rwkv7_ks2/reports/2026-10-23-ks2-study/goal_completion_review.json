@@ -1,0 +1,201 @@
+{
+  "status": "COMPLETE",
+  "reviewed_epoch": 1792777865.493418,
+  "objective": "Timed KS2LLM bottleneck/efficiency research, extended by user with2h combination focus and mixed-rank/rank16/MLPbranch followups; deliver comprehensive report without moving primaryMLPcontrol.",
+  "requirements": [
+    {
+      "id": "collective_knowledge",
+      "requirement": "Review session and prior KS2/RWKV/RHAC evidence and distinguish local tests from full RHAC reproduction.",
+      "evidence": [
+        "report.html",
+        "prior_additional/rhac_source/provenance.json",
+        "prior_snapshots"
+      ],
+      "status": "VERIFIED",
+      "notes": "Reviewed final narrative: prior RWKV/mux/history results, pinned RHAC source, denoising and nanoGPT comparisons remain separately scoped. The local tests are not described as a full RHAC reproduction."
+    },
+    {
+      "id": "targeted_experiments",
+      "requirement": "Finish all planned training and evaluate mechanisms rather than selecting favorable seeds.",
+      "evidence": [
+        "all_runs.json",
+        "audit.json",
+        "protocol_audit.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "All428trainingruns and intermediate checkpoints audited: requestedsteps, finite model/optimizer state, sourcehashes, zero invalidsteps, nofailed/incompletejobs. All259reserved evaluations complete."
+    },
+    {
+      "id": "efficiency_and_bottlenecks",
+      "requirement": "Measure geometry, FFN and RWKV compute, fixed storage and whole-step effects; preserve numerical equivalence evidence.",
+      "evidence": [
+        "compact_code_checks/component_speed.json",
+        "compact_code_checks/general_geometry_check.json",
+        "structured_model_cpu_real_check.json",
+        "final_checks/speed_results.json",
+        "final_checks/history_prune_check.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "450generalgeometry componentcases, trainedstate checks and GPUfinal-sidepruningPASS. All23speedconfigs have5randomizedrounds; componenttimes distinguished fromwhole-step andfixedstorage. Finaltiming drift disclosed withsame-roundratios."
+    },
+    {
+      "id": "unchanged_mlp",
+      "requirement": "Keep the original MLP as the sole primary control; do not tune its width, initialization or optimizer.",
+      "evidence": [
+        "original_reference_check.json",
+        "control_correction.json",
+        "mixed_rank_cpu_check.json",
+        "protocol_audit.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "All3originalMLPstate/optimizerinvariance checksPASS. 48longpairedcomparisons and259reservedcoveragePASS. AlternateMLPdiagnostics are preserved and excluded asprimaryreferences."
+    },
+    {
+      "id": "requested_duration",
+      "requirement": "Honor original timed study and explicit extensions; stop starting training by17:21:56UTC and finish in-flight runs.",
+      "evidence": [
+        "study_state.json",
+        "extension2_start.json",
+        "training_complete.json",
+        "mixed_rank_schedule_after_resume.json",
+        "extension_dispatch_audit.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "All69extensiontrainingstarts verifiedwithin15:21:56\u201317:21:56UTC;latest17:17:17. Inflighttrainingfinished17:32:19. Finalscoringcompleted17:47:21. No newtrainingaftercutoff."
+    },
+    {
+      "id": "four_gpus",
+      "requirement": "Use all four MI100 GPUs and report actual utilization with gaps and scheduling pauses disclosed.",
+      "evidence": [
+        "gpu_telemetry.jsonl",
+        "telemetry_summary.json",
+        "mixed_rank_interleave.json",
+        "mixed_rank_early_resume.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "Independent one-GPUjobs usedall4MI100s. Finaltelemetry1098samples acrossseparateworkwindows;all4>=90% activity80.15%overall and88.89%inextension. Point-sample limitation andinterruptiongapdisclosed."
+    },
+    {
+      "id": "combine_wins",
+      "requirement": "Compare selected combinations with unchanged MLP and simpler KS2 parents, across all3seeds and both training pools at100k.",
+      "evidence": [
+        "combination_long_selection.json",
+        "combination_ranking.json",
+        "report_summary.json",
+        "wave16_combination_long_manifest.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "All36short+24longcombinationtests complete;all3seeds,bothpools100k. Rank1powersreservedMLPgaps\u2212.001364original and\u2212.002809larger,3/3winsboth. PriorHermiterank1largerpoolgap\u2212.005482remainsbetter. No universalaccumulationclaim."
+    },
+    {
+      "id": "mixed_ranks_and_mlp",
+      "requirement": "Test mixed ranks within everyFFN, including two rank16charts, and a separateMLPbranch within the same feature/parameter budget.",
+      "evidence": [
+        "mixed_rank_plan.json",
+        "mixed_rank_cpu_check.json",
+        "mixed_rank_results.json",
+        "wave17_mixed_ranks_manifest.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "All9mixedscreenscomplete;two rank16charts perFFN. Hybrid32plainReLU\u00b2featuresreplace32rank1featurespreservinghigher-rankcoordinates. Reservedhybrid\u2212parent+.000122,1/3wins;exploratory\u2212.000217,2/3. No dependableincrementalgain;no100kmixed/full-cellclaim."
+    },
+    {
+      "id": "ffn_only_budgets",
+      "requirement": "Present FFN-only learned counts and distinguish fixed geometry storage from learned parameters.",
+      "evidence": [
+        "report.html",
+        "combination_ranking.json",
+        "mixed_rank_cpu_check.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "Finalopeninganddedicatedtable prominentlygiveFFN-onlycounts:MLP73728;rank1 73600;mixed73380/73172/hybrid72916. Learnedandfixedcoefficientsseparate;frozenrank1bias73968totalexceedsMLPby240disclosed."
+    },
+    {
+      "id": "reserved_confirmation",
+      "requirement": "Score every predeclared candidate on the fresh disjoint interval after all exploration ends; do not tune from reserved scores.",
+      "evidence": [
+        "final_holdout_plan.json",
+        "reserved_holdout_extension2.json",
+        "final_checks/holdout_results.json",
+        "protocol_audit.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "259predeclareduniqueevaluations onfresh437621byteintervalafteralltraining;SHAand1750272targetvisitcoveragePASS. Old109partialreservedresultskeptdiagnosticonly. No architectureselectionortrainingafterfreshscores."
+    },
+    {
+      "id": "timing_integrity",
+      "requirement": "Preserve interrupted worker state and exclude suspension-contaminated elapsed timings from speed comparisons.",
+      "evidence": [
+        "mixed_rank_interleave.json",
+        "mixed_rank_early_resume.json",
+        "all_runs.json",
+        "final_checks/speed_results.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "All4in-memorysuspendedworkersresumedwithoutrestartandfinished100k. Exactly4ledgerflagsretainrawelapsedmeasurements;reportexcludescontaminatedtimes. Finaltimingsusefreshprocessesandfiveinterleavedrounds."
+    },
+    {
+      "id": "large_report_and_artifacts",
+      "requirement": "Deliver a comprehensive readable report with prior comparisons, all outcomes, exact source versions, limitations and defensible recommendations.",
+      "evidence": [
+        "report.html",
+        "report_summary.json",
+        "all_runs.csv",
+        "source_bundle_check.json",
+        "artifact_finalization.json"
+      ],
+      "status": "VERIFIED",
+      "notes": "Final60-sectionreportand623linksverified. Manuallyreviewedopening, recommendations, mixed/comboreservedtables, FFNbudgets andlimits. Inspectedlearningcurves, pairedgaps andrank-statisticsfigures;fixedoverlappingticklabels. SourcebundlePASScovers428runs/289uniquesourceblobs."
+    }
+  ],
+  "inspected_static_checks": {
+    "original_reference_check.json": {
+      "status": "PASS",
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "model_and_optimizer_exact": true
+    },
+    "combination_cpu_check.json": {
+      "status": "PASS",
+      "original_mlp_all_three_seeds_unchanged": true
+    },
+    "mixed_rank_cpu_check.json": {
+      "status": "PASS",
+      "original_mlp_all_three_seeds_unchanged": true,
+      "homogeneous_rank1_equivalence_all_seeds": true
+    },
+    "compact_code_checks/general_geometry_check.json": {
+      "status": "PASS",
+      "component_cases": 450
+    },
+    "structured_model_cpu_real_check.json": {
+      "status": "PASS"
+    },
+    "rank_input_statistics.json": {
+      "observations": 42,
+      "note": "Descriptive initialized/trained input statistics, not a model-quality pass/fail check."
+    }
+  },
+  "completion_rule": "Do not markgoalcomplete from this checklist alone. Inspectfinal authoritative artifacts for everyrequirement, replacependingstatuseswithjustifiedverification andrecordremaininglimitations. Finalreportmustnotclaim universalKS2advantage without evidence.",
+  "remaining_work": [],
+  "limitations": [
+    "Small four-layer96D byte-levelmodel;64-bytecontext;three seeds. No universalKS2advantage orlargeLLMscalingclaim.",
+    "Mixedrank/MLPbranches screened15konly;rank16benefitnotisolated;spine-onlynotfullgeometry.",
+    "No contemporaneouslongrepeatofolderrank1parent;smallfloating-point/repeatdifferencesremain.",
+    "Controlledtiminghasrounddrift;usepairedratiosandranges,notsustainedthroughputguarantees."
+  ],
+  "final_evidence": {
+    "training_runs": 428,
+    "reserved_evaluations": 259,
+    "timing_configurations": 23,
+    "timing_rounds": 5,
+    "matched_long_pairs": 48,
+    "report_sections": 60,
+    "report_links": 623,
+    "report_sha256": "b757cd2cbc9e8d19849ebef5359dc6f71aecb6bbe00dc14c11da4aba6cdaf116",
+    "source_bundle_sha256": "cefb7cdf5621f55c090fe022c6d60c155ffd49caf48dd1a693d5a27c62108475"
+  }
+}

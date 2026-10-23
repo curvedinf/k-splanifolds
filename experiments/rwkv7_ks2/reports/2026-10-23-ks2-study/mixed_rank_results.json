@@ -1,0 +1,185 @@
+{
+  "configurations": [
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_rank1_heavy",
+      "mixed_ranks": [
+        [
+          1,
+          240
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          16,
+          2
+        ]
+      ]
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_balanced",
+      "mixed_ranks": [
+        [
+          1,
+          112
+        ],
+        [
+          4,
+          24
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          16,
+          2
+        ]
+      ]
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_balanced_mlp32",
+      "mixed_ranks": [
+        [
+          1,
+          80
+        ],
+        [
+          4,
+          24
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          16,
+          2
+        ]
+      ],
+      "mlp_features": 32
+    }
+  ],
+  "short_groups": [
+    {
+      "model": "mixed_rank1_heavy",
+      "n": 3,
+      "mean": 1.6171999375025432,
+      "mlp_gap": -0.003579378128051758,
+      "rank1_gap": 0.003034671147664388,
+      "mlp_wins": 3,
+      "rank1_wins": 1,
+      "parent_gap": null,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6183464527130127,
+          "mlp_gap": -0.002150297164916992,
+          "rank1_gap": 0.0031889677047729492,
+          "parent_gap": null
+        },
+        {
+          "seed": 22,
+          "loss": 1.6122668981552124,
+          "mlp_gap": -0.0070912837982177734,
+          "rank1_gap": -0.0008057355880737305,
+          "parent_gap": null
+        },
+        {
+          "seed": 33,
+          "loss": 1.6209864616394043,
+          "mlp_gap": -0.0014965534210205078,
+          "rank1_gap": 0.006720781326293945,
+          "parent_gap": null
+        }
+      ]
+    },
+    {
+      "model": "mixed_balanced",
+      "n": 3,
+      "mean": 1.6193661292394002,
+      "mlp_gap": -0.0014131863911946614,
+      "rank1_gap": 0.005200862884521484,
+      "mlp_wins": 3,
+      "rank1_wins": 0,
+      "parent_gap": null,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6202858686447144,
+          "mlp_gap": -0.00021088123321533203,
+          "rank1_gap": 0.005128383636474609,
+          "parent_gap": null
+        },
+        {
+          "seed": 22,
+          "loss": 1.6180061101913452,
+          "mlp_gap": -0.001352071762084961,
+          "rank1_gap": 0.004933476448059082,
+          "parent_gap": null
+        },
+        {
+          "seed": 33,
+          "loss": 1.6198064088821411,
+          "mlp_gap": -0.0026766061782836914,
+          "rank1_gap": 0.005540728569030762,
+          "parent_gap": null
+        }
+      ]
+    },
+    {
+      "model": "mixed_balanced_mlp32",
+      "n": 3,
+      "mean": 1.6191493272781372,
+      "mlp_gap": -0.0016299883524576824,
+      "rank1_gap": 0.004984060923258464,
+      "mlp_wins": 3,
+      "rank1_wins": 0,
+      "parent_gap": -0.00021680196126302084,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6194838285446167,
+          "mlp_gap": -0.0010129213333129883,
+          "rank1_gap": 0.004326343536376953,
+          "parent_gap": -0.0008020401000976562
+        },
+        {
+          "seed": 22,
+          "loss": 1.6170761585235596,
+          "mlp_gap": -0.0022820234298706055,
+          "rank1_gap": 0.0040035247802734375,
+          "parent_gap": -0.0009299516677856445
+        },
+        {
+          "seed": 33,
+          "loss": 1.6208879947662354,
+          "mlp_gap": -0.0015950202941894531,
+          "rank1_gap": 0.006622314453125,
+          "parent_gap": 0.0010815858840942383
+        }
+      ]
+    }
+  ],
+  "reserved_groups": []
+}

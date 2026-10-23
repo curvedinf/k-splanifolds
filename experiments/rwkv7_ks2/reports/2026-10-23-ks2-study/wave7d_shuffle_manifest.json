@@ -1,0 +1,66 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave7d_shuffle",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "shuffle_two_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "shuffle_two",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "geometry_steps": 2,
+        "geometry_step_scale": 1.0,
+        "geometry_shuffle": true
+      }
+    },
+    {
+      "id": "shuffle_two_half_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "shuffle_two_half",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "geometry_steps": 2,
+        "geometry_step_scale": 0.5,
+        "geometry_shuffle": true
+      }
+    },
+    {
+      "id": "shuffle_two_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "shuffle_two",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "geometry_steps": 2,
+        "geometry_step_scale": 1.0,
+        "geometry_shuffle": true
+      }
+    },
+    {
+      "id": "shuffle_two_half_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "shuffle_two_half",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "geometry_steps": 2,
+        "geometry_step_scale": 0.5,
+        "geometry_shuffle": true
+      }
+    }
+  ]
+}

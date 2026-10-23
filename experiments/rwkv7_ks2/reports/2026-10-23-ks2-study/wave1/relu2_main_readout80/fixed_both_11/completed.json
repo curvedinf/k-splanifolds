@@ -1,0 +1,269 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave1/relu2_main_readout80/fixed_both_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 80,
+    "control_update_scale": true,
+    "steps": 15000,
+    "gpu": 0
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.645017623901367
+    },
+    {
+      "step": 100,
+      "train_loss": 2.396845817565918,
+      "gradient_norm": 2.8950841426849365,
+      "val_loss": 2.6068875789642334,
+      "training_seconds": 0.9636747310869396
+    },
+    {
+      "step": 200,
+      "train_loss": 2.132828712463379,
+      "gradient_norm": 34.108055114746094,
+      "val_loss": 2.4383342266082764,
+      "training_seconds": 1.9286767621524632
+    },
+    {
+      "step": 500,
+      "train_loss": 2.0119481086730957,
+      "gradient_norm": 2.133603572845459,
+      "val_loss": 2.24296236038208,
+      "training_seconds": 4.824455185211264
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.839455485343933,
+      "gradient_norm": 1.7668991088867188,
+      "val_loss": 2.089461088180542,
+      "training_seconds": 9.656848834245466
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.4733352661132812,
+      "gradient_norm": 313.90313720703125,
+      "val_loss": 1.9628959894180298,
+      "training_seconds": 19.3460250942735
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.7673673629760742,
+      "gradient_norm": 1.7742929458618164,
+      "val_loss": 1.8950085639953613,
+      "training_seconds": 29.068487505312078
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.6712719202041626,
+      "gradient_norm": 1.349700927734375,
+      "val_loss": 1.8439536094665527,
+      "training_seconds": 38.81947241327725
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.9127216339111328,
+      "gradient_norm": 1.3938572406768799,
+      "val_loss": 1.8166851997375488,
+      "training_seconds": 48.59619635832496
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.7259446382522583,
+      "gradient_norm": 1.2968255281448364,
+      "val_loss": 1.7712417840957642,
+      "training_seconds": 58.39793328626547
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.0598349571228027,
+      "gradient_norm": 1.5069876909255981,
+      "val_loss": 1.7699761390686035,
+      "training_seconds": 68.22309519920964
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.1440422534942627,
+      "gradient_norm": 1.989436388015747,
+      "val_loss": 1.738558053970337,
+      "training_seconds": 78.07219810422976
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.511333703994751,
+      "gradient_norm": 1.3070069551467896,
+      "val_loss": 1.7185373306274414,
+      "training_seconds": 87.94348295521922
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.8307900428771973,
+      "gradient_norm": 1.633831262588501,
+      "val_loss": 1.7055387496948242,
+      "training_seconds": 97.83644116611686
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.7780721187591553,
+      "gradient_norm": 1.664786458015442,
+      "val_loss": 1.691725730895996,
+      "training_seconds": 107.75089043017942
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.572568416595459,
+      "gradient_norm": 1.418450951576233,
+      "val_loss": 1.6809109449386597,
+      "training_seconds": 117.68721000419464
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.405240535736084,
+      "gradient_norm": 1.516432523727417,
+      "val_loss": 1.678661584854126,
+      "training_seconds": 127.64301398722455
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.4428246021270752,
+      "gradient_norm": 1.4053692817687988,
+      "val_loss": 1.667914628982544,
+      "training_seconds": 137.61844853928778
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.6223496198654175,
+      "gradient_norm": 1.5182591676712036,
+      "val_loss": 1.6647191047668457,
+      "training_seconds": 147.6141209952766
+    }
+  ],
+  "parameters": 603392,
+  "ffn_parameters_by_layer": [
+    63584,
+    63584,
+    63584,
+    63584
+  ],
+  "ffn_types": [
+    "relu2",
+    "relu2",
+    "relu2",
+    "relu2"
+  ],
+  "training_seconds": 147.6141209952766,
+  "wall_seconds": 163.5956930089742,
+  "benchmark_ms_per_step": 9.64005498914048,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+    "study_models.py": "4dd46590c73265207ae16ceca0117afeaeb3b748e1d4778e12c26874ac56fc1d",
+    "study_run_gpu.py": "7621eb41a096afd9860423f9a400bec68998f5efef17317a7f8a8651ab1099e0",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "side_history.py": "a5144fa43c9c5791a3014449c26e0a9b8257b2fa64aeaee2c6e0b6f0938414e7"
+  },
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "coding": "fixed_both",
+  "coding_protocol": {
+    "baseline": "demuxed_history_64_rank8_side2048",
+    "config": {
+      "name": "relu2_main_readout80",
+      "charts": 80,
+      "cell": "relu2",
+      "readout": "learned"
+    },
+    "original_attention": true,
+    "input_coverage": "Unchanged RHAC all-input fixed codes unless explicitly stated.",
+    "output": "Current main, side, and separate previous attention/decoder history remain baseline.",
+    "training": "Same paired data, seed, FP32, AdamW, global norm clipping and 15k cosine schedule; changed optimizer scales are explicit in configuration."
+  },
+  "rhac_reference": {
+    "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+    "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+  },
+  "evaluation": {
+    "original_val": 1.6647191047668457,
+    "expanded_val": 1.6531131267547607,
+    "sampled_train": 1.536910057067871
+  },
+  "study_config": {
+    "name": "relu2_main_readout80",
+    "charts": 80,
+    "cell": "relu2",
+    "readout": "learned"
+  },
+  "parameter_breakdown": {
+    "total": 603392,
+    "rwkv": 269568,
+    "embedding_head": 49152,
+    "geometry": 0,
+    "decoder_readout": 254336,
+    "decoder_input": 0,
+    "other": 30336
+  },
+  "architecture": "Timed KS2 study: relu2_main_readout80",
+  "tiled_evaluation": {
+    "arm": "fixed_both",
+    "seed": 11,
+    "loss": 1.633885145187378,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.6341438293457031
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.633528709411621
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.6338566541671753
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.6340116262435913
+      }
+    ],
+    "batch4_vs_batch64_max_loss_error": 7.152557373046875e-07
+  },
+  "physical_gpu": 1,
+  "study_job_id": "relu2_main_readout80",
+  "status": "complete"
+}

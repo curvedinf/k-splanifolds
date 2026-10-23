@@ -1,0 +1,14 @@
+{
+  "selected_by": "Complete three-seed exploratory means and mechanistic coverage; selected four highest-mean-performing novel combinations, no reserved data.",
+  "reference_note": "Same-wave rank1 reference mean1.614165 is stronger than all combinations; do not hide it or claim cumulative superiority.",
+  "not_selected": {
+    "combo_rank1_powers_geo01": "Adding slow geometry LR did not improve the power-basis mean; weaker than selected combinations.",
+    "combo_rank1_frozen_gain": "Bias is stronger and more consistent against frozen parent in this screen; prioritize bias within four-family budget.",
+    "combo_rank1_frozen": "Parent replication rather than a new combination; full freezing did not accumulate with rank1 in short mean.",
+    "combo_rank1_geo01": "Worse mean than selected combinations and fully learned rank1 repeat.",
+    "combo_rank4_frozen_gain": "Weaker mean than bias and mixed seed wins versus MLP.",
+    "combo_rank1_warps_bias": "No meaningful mean improvement over warp-only parent; both near MLP and behind selected combinations.",
+    "combo_rank1_warps": "Rank1pluswarp-only did not retain the earlier rank8 warp-only short-run benefit.",
+    "combo_rank1_reference": "Architecture reference, not a new combination; exact earlier100k rank1 checkpoints onbothpools are reused for long comparisons."
+  }
+}

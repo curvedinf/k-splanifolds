@@ -1,0 +1,125 @@
+{
+  "status": "TRAINING_COMPLETE",
+  "deadline_epoch": 1792776116.8504283,
+  "recorded_epoch": 1792776741.3828907,
+  "finished_epoch": 1792776739.4737597,
+  "completed_jobs": 424,
+  "manifests": [
+    {
+      "file": "wave10_selective_long_manifest.json",
+      "sha256": "64c571333d3aaeb5989470543ddc1115a7324823a28a0b63ebb5ca548b420883",
+      "jobs": 15
+    },
+    {
+      "file": "wave11_conditioning_manifest.json",
+      "sha256": "0bca8c58ce544d9d36f4380948d84b138333d89e25081d83f5337184af9c4a0b",
+      "jobs": 54
+    },
+    {
+      "file": "wave12_fixed_geometry_manifest.json",
+      "sha256": "815a5f8706f5478c0f4cd0ecc867e50cf1c3e08949d408085c97f0e7bcd71037",
+      "jobs": 18
+    },
+    {
+      "file": "wave12b_rank_freezing_manifest.json",
+      "sha256": "79cdaa5a799755f2cdb169a7ba6bf26931448a8bd1fc058c1feb7c40da6e7868",
+      "jobs": 15
+    },
+    {
+      "file": "wave12c_original_geometry_manifest.json",
+      "sha256": "9eb784e915624f09775876cc77055068b48050b69c50d92d7a313e725afa1a9e",
+      "jobs": 12
+    },
+    {
+      "file": "wave13_selected_long_manifest.json",
+      "sha256": "e0a499a7bd314d63341bab8536ef9d85e73e0d790dde0d1dddf092921abd66ba",
+      "jobs": 24
+    },
+    {
+      "file": "wave14_spine_scale_manifest.json",
+      "sha256": "b12d65509d843eb5d3e8c628db85edf2eac631edf16696b4bf48492e00ec1441",
+      "jobs": 9
+    },
+    {
+      "file": "wave15_combinations_manifest.json",
+      "sha256": "049eafe3c68ce3a0168d06c7433aafaab45ab42aadfe77cdee64026c34bc92d9",
+      "jobs": 36
+    },
+    {
+      "file": "wave16_combination_long_manifest.json",
+      "sha256": "b1bf2d1bab5ba4765a02df92dbf3468a467c64835e6e468b1fc32fea9bea1d22",
+      "jobs": 24
+    },
+    {
+      "file": "wave17_mixed_ranks_manifest.json",
+      "sha256": "57fa0004adb1a53e5e8eaaa5d6caed584f92bd53cff14ff171c637e4777ed0d3",
+      "jobs": 9
+    },
+    {
+      "file": "wave1_manifest.json",
+      "sha256": "ecfbcc99033d3297cb1802e98e0b9474b6a93c3ebf5ccdb29f29f7ebc61b70c8",
+      "jobs": 16
+    },
+    {
+      "file": "wave2_manifest.json",
+      "sha256": "5dd5735e89ee31cb2f453c73672912916521cc01a56f3c132fed06cffdab2276",
+      "jobs": 17
+    },
+    {
+      "file": "wave3_manifest.json",
+      "sha256": "fb1790bc0f0e68f8ad24c88233911488bb5e8e88e3d11b9dd1f8b8b09d8e0d7a",
+      "jobs": 26
+    },
+    {
+      "file": "wave4_activation_manifest.json",
+      "sha256": "27641eb22b2e922528bacae923ec3e1612e046efc89f70aacfe20d2fee79e5a4",
+      "jobs": 24
+    },
+    {
+      "file": "wave4_fused_manifest.json",
+      "sha256": "951851f974df48d7ede44b53f878b50dcafb485ac025d97e08bd3c8507b60b76",
+      "jobs": 4
+    },
+    {
+      "file": "wave5_transfer_manifest.json",
+      "sha256": "843957e30c6616ee7a164ecb9e4f40d0505a4554be611a5c296a274d3cb215dd",
+      "jobs": 24
+    },
+    {
+      "file": "wave6_budget_manifest.json",
+      "sha256": "2cad3d49fab95bf818f740e9011c017b1ceebcc3f37bcedcc7a3b3df5b1a778c",
+      "jobs": 32
+    },
+    {
+      "file": "wave7_context_manifest.json",
+      "sha256": "a21e6b62c4c73bf5d682bffdecee77cdd5eef2dca1bd2c605d79031016eba7e9",
+      "jobs": 9
+    },
+    {
+      "file": "wave7b_init_manifest.json",
+      "sha256": "6de5bc9587e134441b41f22f2721a80d3cd7643ad0237d0f4d8a400a8b70847f",
+      "jobs": 10
+    },
+    {
+      "file": "wave7c_iteration_manifest.json",
+      "sha256": "b61f81a286966ef143eba2764d111121d56622c1f14a751aa203cf1efd9bca38",
+      "jobs": 8
+    },
+    {
+      "file": "wave7d_shuffle_manifest.json",
+      "sha256": "17ad51aefd12601f38048baa96054e7c4edf3763b02e88d5f00eb5a2c866b81a",
+      "jobs": 4
+    },
+    {
+      "file": "wave8_long_manifest.json",
+      "sha256": "c71d61eb28289d5f22850dff7dd16f038546c74575752f46529bab17000b1d45",
+      "jobs": 22
+    },
+    {
+      "file": "wave9_geometry_learning_manifest.json",
+      "sha256": "d15e428d9bc5e1e48461f499c97183f970f95acc3a34ffe983d8cceb0d62679d",
+      "jobs": 12
+    }
+  ],
+  "note": "Automatically released final scoring after latest deadline and every manifest job completed requested steps with zero invalid steps. Full checkpoint/source audit and report completion remain separate requirements."
+}

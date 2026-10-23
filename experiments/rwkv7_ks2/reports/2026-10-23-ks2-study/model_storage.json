@@ -1,0 +1,72 @@
+[
+  {
+    "config": {
+      "name": "history"
+    },
+    "parameter_bytes": 2270208,
+    "buffer_bytes": 37489664,
+    "parameters": {
+      "total": 567552,
+      "rwkv": 269568,
+      "embedding_head": 49152,
+      "geometry": 209920,
+      "decoder_readout": 8576,
+      "decoder_input": 0,
+      "other": 30336
+    }
+  },
+  {
+    "config": {
+      "name": "mlp",
+      "family": "mlp"
+    },
+    "parameter_bytes": 2463744,
+    "buffer_bytes": 0,
+    "parameters": {
+      "total": 615936,
+      "rwkv": 269568,
+      "embedding_head": 49152,
+      "geometry": 0,
+      "decoder_readout": 0,
+      "decoder_input": 0,
+      "other": 297216
+    }
+  },
+  {
+    "config": {
+      "name": "dense31",
+      "family": "dense_ks2",
+      "charts": 31
+    },
+    "parameter_bytes": 2452672,
+    "buffer_bytes": 1488,
+    "parameters": {
+      "total": 613168,
+      "rwkv": 269568,
+      "embedding_head": 49152,
+      "geometry": 101680,
+      "decoder_readout": 95232,
+      "decoder_input": 95232,
+      "other": 2304
+    }
+  },
+  {
+    "config": {
+      "name": "history_relu_readout80",
+      "cell": "relu2",
+      "charts": 80,
+      "readout": "learned"
+    },
+    "parameter_bytes": 2413568,
+    "buffer_bytes": 46858240,
+    "parameters": {
+      "total": 603392,
+      "rwkv": 269568,
+      "embedding_head": 49152,
+      "geometry": 0,
+      "decoder_readout": 254336,
+      "decoder_input": 0,
+      "other": 30336
+    }
+  }
+]

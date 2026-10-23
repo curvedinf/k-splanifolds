@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "original_control": [
+    {
+      "seed": 11,
+      "status": "PASS",
+      "parameters": 615936,
+      "check": "Exact original MLP state and optimizer groups"
+    },
+    {
+      "seed": 22,
+      "status": "PASS",
+      "parameters": 615936,
+      "check": "Exact original MLP state and optimizer groups"
+    },
+    {
+      "seed": 33,
+      "status": "PASS",
+      "parameters": 615936,
+      "check": "Exact original MLP state and optimizer groups"
+    }
+  ],
+  "fused_factory_state": [
+    {
+      "name": "spine_eager_reference",
+      "parameters": 612848,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "full_eager_reference",
+      "parameters": 613168,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "spine_powers",
+      "parameters": 612848,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "spine_taylor",
+      "parameters": 612848,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "full_powers",
+      "parameters": 613168,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "full_taylor",
+      "parameters": 613168,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "spine_rank1",
+      "parameters": 615424,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "spine_rank2",
+      "parameters": 613952,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "spine_rank4",
+      "parameters": 613216,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "spine_rank16",
+      "parameters": 612664,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "full_rank2",
+      "parameters": 614912,
+      "status": "EXACT_STATE"
+    },
+    {
+      "name": "full_rank4",
+      "parameters": 613472,
+      "status": "EXACT_STATE"
+    }
+  ],
+  "packed_ranks": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "note": "CPU structure/layout only. Actual fused numerical forward/backward/capture checks are still required on GPU.",
+  "source_sha256": {
+    "study_models_v13.py": "ec28e62a413f7d7347583db9de8bb47be97f3d5c096841a717e0a1443c8cd0a1",
+    "ks2_general_gpu.py": "90ea980b2d700284de049bd64e0a691a5585947d99b67835fc3a6018ac334434"
+  }
+}

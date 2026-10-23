@@ -1,0 +1,815 @@
+{
+  "protocol": "Paired-seed gaps at matching checkpoints within100k cosine schedules. Existing rank1 reference frompreviouswave, unchangedMLP fromwave8. No reserved data.",
+  "rows": [
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6528147459030151,
+      "mlp_loss": 1.6536442041397095,
+      "gap": -0.0008294582366943359
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.531735897064209,
+      "mlp_loss": 1.5301551818847656,
+      "gap": 0.0015807151794433594
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.4667844772338867,
+      "mlp_loss": 1.4645812511444092,
+      "gap": 0.002203226089477539
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.6433807611465454,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.008334159851074219
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5282098054885864,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.005158901214599609
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.4630635976791382,
+      "mlp_loss": 1.467496633529663,
+      "gap": -0.004433035850524902
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.6496638059616089,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.003186941146850586
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.5342603921890259,
+      "mlp_loss": 1.5314937829971313,
+      "gap": 0.0027666091918945312
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.466174840927124,
+      "mlp_loss": 1.465133547782898,
+      "gap": 0.0010412931442260742
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6520168781280518,
+      "mlp_loss": 1.6536442041397095,
+      "gap": -0.0016273260116577148
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.5305405855178833,
+      "mlp_loss": 1.5301551818847656,
+      "gap": 0.0003854036331176758
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.4639270305633545,
+      "mlp_loss": 1.4645812511444092,
+      "gap": -0.0006542205810546875
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.6515014171600342,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.00021350383758544922
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5293420553207397,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.004026651382446289
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.464828372001648,
+      "mlp_loss": 1.467496633529663,
+      "gap": -0.0026682615280151367
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.647078514099121,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.005772233009338379
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.5318386554718018,
+      "mlp_loss": 1.5314937829971313,
+      "gap": 0.00034487247467041016
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank1_powers",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.462874412536621,
+      "mlp_loss": 1.465133547782898,
+      "gap": -0.0022591352462768555
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.649046778678894,
+      "mlp_loss": 1.6536442041397095,
+      "gap": -0.00459742546081543
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.5303560495376587,
+      "mlp_loss": 1.5301551818847656,
+      "gap": 0.0002008676528930664
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.4665231704711914,
+      "mlp_loss": 1.4645812511444092,
+      "gap": 0.0019419193267822266
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.6483930349349976,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.0033218860626220703
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5284638404846191,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.0049048662185668945
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.4632015228271484,
+      "mlp_loss": 1.467496633529663,
+      "gap": -0.0042951107025146484
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.6516880989074707,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.0011626482009887695
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.5333852767944336,
+      "mlp_loss": 1.5314937829971313,
+      "gap": 0.001891493797302246
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.4666908979415894,
+      "mlp_loss": 1.465133547782898,
+      "gap": 0.0015573501586914062
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6520767211914062,
+      "mlp_loss": 1.6536442041397095,
+      "gap": -0.0015674829483032227
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.5298997163772583,
+      "mlp_loss": 1.5301551818847656,
+      "gap": -0.0002554655075073242
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.4643278121948242,
+      "mlp_loss": 1.4645812511444092,
+      "gap": -0.00025343894958496094
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.6500271558761597,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.001687765121459961
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5298470258712769,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.0035216808319091797
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.4642826318740845,
+      "mlp_loss": 1.467496633529663,
+      "gap": -0.0032140016555786133
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.648429274559021,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.0044214725494384766
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.532267689704895,
+      "mlp_loss": 1.5314937829971313,
+      "gap": 0.0007739067077636719
+    },
+    {
+      "pool": "larger",
+      "model": "combo_rank4_powers",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.4660096168518066,
+      "mlp_loss": 1.465133547782898,
+      "gap": 0.0008760690689086914
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6667741537094116,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.005187630653381348
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.5536333322525024,
+      "mlp_loss": 1.554654598236084,
+      "gap": -0.001021265983581543
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.5080772638320923,
+      "mlp_loss": 1.508052110671997,
+      "gap": 2.5153160095214844e-05
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.6649585962295532,
+      "mlp_loss": 1.6630232334136963,
+      "gap": 0.0019353628158569336
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5529310703277588,
+      "mlp_loss": 1.5539751052856445,
+      "gap": -0.0010440349578857422
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.508100152015686,
+      "mlp_loss": 1.5072795152664185,
+      "gap": 0.0008206367492675781
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.6613613367080688,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.00997316837310791
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.5571256875991821,
+      "mlp_loss": 1.5582547187805176,
+      "gap": -0.0011290311813354492
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_frozen_bias",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.5092730522155762,
+      "mlp_loss": 1.5118813514709473,
+      "gap": -0.0026082992553710938
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6656492948532104,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.004062771797180176
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.5580459833145142,
+      "mlp_loss": 1.554654598236084,
+      "gap": 0.0033913850784301758
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.507423758506775,
+      "mlp_loss": 1.508052110671997,
+      "gap": -0.000628352165222168
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.668555498123169,
+      "mlp_loss": 1.6630232334136963,
+      "gap": 0.005532264709472656
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5514788627624512,
+      "mlp_loss": 1.5539751052856445,
+      "gap": -0.0024962425231933594
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.5021663904190063,
+      "mlp_loss": 1.5072795152664185,
+      "gap": -0.005113124847412109
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.6669872999191284,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.00434720516204834
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.5583044290542603,
+      "mlp_loss": 1.5582547187805176,
+      "gap": 4.971027374267578e-05
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank1_powers",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.5085896253585815,
+      "mlp_loss": 1.5118813514709473,
+      "gap": -0.0032917261123657227
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6653683185577393,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.0037817955017089844
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.5587267875671387,
+      "mlp_loss": 1.554654598236084,
+      "gap": 0.0040721893310546875
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.5131962299346924,
+      "mlp_loss": 1.508052110671997,
+      "gap": 0.0051441192626953125
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.665596604347229,
+      "mlp_loss": 1.6630232334136963,
+      "gap": 0.002573370933532715
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5554513931274414,
+      "mlp_loss": 1.5539751052856445,
+      "gap": 0.001476287841796875
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.5089279413223267,
+      "mlp_loss": 1.5072795152664185,
+      "gap": 0.0016484260559082031
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.6666016578674316,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.004732847213745117
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.5580228567123413,
+      "mlp_loss": 1.5582547187805176,
+      "gap": -0.00023186206817626953
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_frozen_bias",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.5116242170333862,
+      "mlp_loss": 1.5118813514709473,
+      "gap": -0.00025713443756103516
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6647320985794067,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.003145575523376465
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.553531289100647,
+      "mlp_loss": 1.554654598236084,
+      "gap": -0.0011233091354370117
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.5086324214935303,
+      "mlp_loss": 1.508052110671997,
+      "gap": 0.0005803108215332031
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.662283182144165,
+      "mlp_loss": 1.6630232334136963,
+      "gap": -0.00074005126953125
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5573794841766357,
+      "mlp_loss": 1.5539751052856445,
+      "gap": 0.003404378890991211
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.5082666873931885,
+      "mlp_loss": 1.5072795152664185,
+      "gap": 0.0009871721267700195
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.6621795892715454,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.009154915809631348
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.5591177940368652,
+      "mlp_loss": 1.5582547187805176,
+      "gap": 0.0008630752563476562
+    },
+    {
+      "pool": "original",
+      "model": "combo_rank4_powers",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.5124238729476929,
+      "mlp_loss": 1.5118813514709473,
+      "gap": 0.0005425214767456055
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6449079513549805,
+      "mlp_loss": 1.6536442041397095,
+      "gap": -0.008736252784729004
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.525713562965393,
+      "mlp_loss": 1.5301551818847656,
+      "gap": -0.004441618919372559
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.4608609676361084,
+      "mlp_loss": 1.4645812511444092,
+      "gap": -0.0037202835083007812
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.6498544216156006,
+      "mlp_loss": 1.6517149209976196,
+      "gap": -0.001860499382019043
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5279805660247803,
+      "mlp_loss": 1.533368706703186,
+      "gap": -0.005388140678405762
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.4603043794631958,
+      "mlp_loss": 1.467496633529663,
+      "gap": -0.007192254066467285
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.6508904695510864,
+      "mlp_loss": 1.6528507471084595,
+      "gap": -0.001960277557373047
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.5274734497070312,
+      "mlp_loss": 1.5314937829971313,
+      "gap": -0.004020333290100098
+    },
+    {
+      "pool": "larger",
+      "model": "Existing rank-1 KS2",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.4610687494277954,
+      "mlp_loss": 1.465133547782898,
+      "gap": -0.004064798355102539
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 11,
+      "step": 15000,
+      "loss": 1.6654490232467651,
+      "mlp_loss": 1.6615865230560303,
+      "gap": 0.0038625001907348633
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 11,
+      "step": 50000,
+      "loss": 1.5542041063308716,
+      "mlp_loss": 1.554654598236084,
+      "gap": -0.00045049190521240234
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 11,
+      "step": 100000,
+      "loss": 1.5080184936523438,
+      "mlp_loss": 1.508052110671997,
+      "gap": -3.361701965332031e-05
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 22,
+      "step": 15000,
+      "loss": 1.6630910634994507,
+      "mlp_loss": 1.6630232334136963,
+      "gap": 6.783008575439453e-05
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 22,
+      "step": 50000,
+      "loss": 1.5524715185165405,
+      "mlp_loss": 1.5539751052856445,
+      "gap": -0.001503586769104004
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 22,
+      "step": 100000,
+      "loss": 1.5057705640792847,
+      "mlp_loss": 1.5072795152664185,
+      "gap": -0.001508951187133789
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 33,
+      "step": 15000,
+      "loss": 1.666184425354004,
+      "mlp_loss": 1.6713345050811768,
+      "gap": -0.0051500797271728516
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 33,
+      "step": 50000,
+      "loss": 1.56178617477417,
+      "mlp_loss": 1.5582547187805176,
+      "gap": 0.0035314559936523438
+    },
+    {
+      "pool": "original",
+      "model": "Existing rank-1 KS2",
+      "seed": 33,
+      "step": 100000,
+      "loss": 1.5166455507278442,
+      "mlp_loss": 1.5118813514709473,
+      "gap": 0.004764199256896973
+    }
+  ]
+}

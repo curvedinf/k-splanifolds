@@ -1,0 +1,87 @@
+{
+  "epoch": 1792774273.5507166,
+  "active": [
+    {
+      "job": "larger_combo_rank1_frozen_bias_22",
+      "gpu": 1,
+      "step": 23000,
+      "recent_ms": 8.521980954916216,
+      "finish_estimate": 1792774969.7432501
+    },
+    {
+      "job": "larger_combo_rank4_powers_22",
+      "gpu": 3,
+      "step": 39000,
+      "recent_ms": 8.919272024999373,
+      "finish_estimate": 1792774857.62631
+    },
+    {
+      "job": "larger_combo_rank1_powers_22",
+      "gpu": 0,
+      "step": 37000,
+      "recent_ms": 9.042029270087369,
+      "finish_estimate": 1792774883.1985607
+    },
+    {
+      "job": "larger_combo_rank4_frozen_bias_22",
+      "gpu": 2,
+      "step": 37000,
+      "recent_ms": 8.864896062994376,
+      "finish_estimate": 1792774872.0391686
+    }
+  ],
+  "pending": [
+    {
+      "job": "original_combo_rank1_frozen_bias_33",
+      "gpu": 3,
+      "start_estimate": 1792774857.62631,
+      "finish_estimate": 1792775737.427537
+    },
+    {
+      "job": "original_combo_rank4_powers_33",
+      "gpu": 2,
+      "start_estimate": 1792774872.0391686,
+      "finish_estimate": 1792775775.0022223
+    },
+    {
+      "job": "original_combo_rank1_powers_33",
+      "gpu": 0,
+      "start_estimate": 1792774883.1985607,
+      "finish_estimate": 1792775793.6339478
+    },
+    {
+      "job": "original_combo_rank4_frozen_bias_33",
+      "gpu": 1,
+      "start_estimate": 1792774969.7432501,
+      "finish_estimate": 1792775852.1526475
+    },
+    {
+      "job": "larger_combo_rank1_frozen_bias_33",
+      "gpu": 3,
+      "start_estimate": 1792775737.427537,
+      "finish_estimate": 1792776617.228764
+    },
+    {
+      "job": "larger_combo_rank4_powers_33",
+      "gpu": 2,
+      "start_estimate": 1792775775.0022223,
+      "finish_estimate": 1792776677.965276
+    },
+    {
+      "job": "larger_combo_rank1_powers_33",
+      "gpu": 0,
+      "start_estimate": 1792775793.6339478,
+      "finish_estimate": 1792776704.069335
+    },
+    {
+      "job": "larger_combo_rank4_frozen_bias_33",
+      "gpu": 1,
+      "start_estimate": 1792775852.1526475,
+      "finish_estimate": 1792776734.5620449
+    }
+  ],
+  "last_start": 1792775852.1526475,
+  "deadline": 1792776116.8504283,
+  "all_start_before_deadline": true,
+  "note": "Uses recent unpaused step deltas and seed11 durations; excludes pauseoutliers. Forecastonly; actualdispatchlogis authoritative."
+}

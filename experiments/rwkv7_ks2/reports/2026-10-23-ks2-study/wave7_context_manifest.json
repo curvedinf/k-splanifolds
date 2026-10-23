@@ -1,0 +1,162 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave7_context",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "matched_mlp_b1_t256",
+      "seed": 11,
+      "steps": 15000,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "matched_mlp_b1_t256",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "spine_b1_t256",
+      "seed": 11,
+      "steps": 15000,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "spine_b1_t256",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "id": "undamped_b1_t256",
+      "seed": 11,
+      "steps": 15000,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "undamped_b1_t256",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": true
+      }
+    },
+    {
+      "id": "matched_mlp_b16_t64",
+      "seed": 11,
+      "steps": 3750,
+      "batch_size": 16,
+      "sequence_length": 64,
+      "eval_lengths": [
+        256
+      ],
+      "config": {
+        "name": "matched_mlp_b16_t64",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "spine_b16_t64",
+      "seed": 11,
+      "steps": 3750,
+      "batch_size": 16,
+      "sequence_length": 64,
+      "eval_lengths": [
+        256
+      ],
+      "config": {
+        "name": "spine_b16_t64",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "id": "undamped_b16_t64",
+      "seed": 11,
+      "steps": 3750,
+      "batch_size": 16,
+      "sequence_length": 64,
+      "eval_lengths": [
+        256
+      ],
+      "config": {
+        "name": "undamped_b16_t64",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": true
+      }
+    },
+    {
+      "id": "matched_mlp_b4_t256",
+      "seed": 11,
+      "steps": 3750,
+      "batch_size": 4,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "matched_mlp_b4_t256",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "spine_b4_t256",
+      "seed": 11,
+      "steps": 3750,
+      "batch_size": 4,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "spine_b4_t256",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "id": "undamped_b4_t256",
+      "seed": 11,
+      "steps": 3750,
+      "batch_size": 4,
+      "sequence_length": 256,
+      "eval_lengths": [
+        64
+      ],
+      "config": {
+        "name": "undamped_b4_t256",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "status": "COMPLETE_RESUMED",
+  "started_epoch": 1792773251.921007,
+  "processes": [
+    {
+      "pid": 1440795,
+      "ppid": 1440794,
+      "state": "S",
+      "start_ticks": "77880575",
+      "command": "/home/curved/int8-vllm/.venv/bin/python experiments/rwkv7_ks2/study_wave_v18.py --manifest experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long_manifest.json --after-manifest experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations_manifest.json --after-log /tmp/ks2_study_wave15.log --requires-check experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/compact_code_checks/general_geometry_check.json ",
+      "suspended_epoch": 1792773251.9210281,
+      "resumed_epoch": 1792773883.098009,
+      "pause_seconds": 631.17698097229,
+      "wrapper_final_cont_epoch": 1792774167.0953155,
+      "resumed_as_gpu_released": true,
+      "gpu": null
+    },
+    {
+      "pid": 1453889,
+      "ppid": 1440795,
+      "state": "R",
+      "start_ticks": "78061803",
+      "command": "/home/curved/int8-vllm/.venv/bin/python /home/curved/k-splanifolds/experiments/rwkv7_ks2/study_train_v18.py --config experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long/original_combo_rank4_powers_22/config.json --data /home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data --out experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long/original_combo_rank4_powers_22 --variant inner_ks2_ffn --width 96 --layers 4 --ffn-charts 92 --seed 22 --steps 100000 --batch-size 4 --sequence-length 64 ",
+      "suspended_epoch": 1792773251.9988818,
+      "exited_before_resume": true,
+      "wrapper_final_cont_epoch": null,
+      "resumed_epoch": 1792773883.0977278,
+      "pause_seconds": 631.0988459587097,
+      "resumed_as_gpu_released": true,
+      "gpu": 3
+    },
+    {
+      "pid": 1454185,
+      "ppid": 1440795,
+      "state": "R",
+      "start_ticks": "78062973",
+      "command": "/home/curved/int8-vllm/.venv/bin/python /home/curved/k-splanifolds/experiments/rwkv7_ks2/study_train_v18.py --config experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long/original_combo_rank1_powers_22/config.json --data /home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data --out experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long/original_combo_rank1_powers_22 --variant inner_ks2_ffn --width 96 --layers 4 --ffn-charts 368 --seed 22 --steps 100000 --batch-size 4 --sequence-length 64 ",
+      "suspended_epoch": 1792773251.9996321,
+      "exited_before_resume": true,
+      "wrapper_final_cont_epoch": null,
+      "resumed_epoch": 1792773888.099834,
+      "pause_seconds": 636.1002018451691,
+      "resumed_as_gpu_released": true,
+      "gpu": 2
+    },
+    {
+      "pid": 1454267,
+      "ppid": 1440795,
+      "state": "R",
+      "start_ticks": "78063506",
+      "command": "/home/curved/int8-vllm/.venv/bin/python /home/curved/k-splanifolds/experiments/rwkv7_ks2/study_train_v18.py --config experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long/original_combo_rank4_frozen_bias_22/config.json --data /home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data --out experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long/original_combo_rank4_frozen_bias_22 --variant inner_ks2_ffn --width 96 --layers 4 --ffn-charts 92 --seed 22 --steps 100000 --batch-size 4 --sequence-length 64 ",
+      "suspended_epoch": 1792773252.0000048,
+      "exited_before_resume": true,
+      "wrapper_final_cont_epoch": null,
+      "resumed_epoch": 1792773888.099187,
+      "pause_seconds": 636.0991821289062,
+      "resumed_as_gpu_released": true,
+      "gpu": 0
+    },
+    {
+      "pid": 1459102,
+      "ppid": 1440795,
+      "state": "R",
+      "start_ticks": "78141444",
+      "command": "/home/curved/int8-vllm/.venv/bin/python /home/curved/k-splanifolds/experiments/rwkv7_ks2/study_train_v18.py --config experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long/larger_combo_rank1_frozen_bias_22/config.json --data experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m --out experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave16_combination_long/larger_combo_rank1_frozen_bias_22 --variant inner_ks2_ffn --width 96 --layers 4 --ffn-charts 368 --seed 22 --steps 100000 --batch-size 4 --sequence-length 64 ",
+      "suspended_epoch": 1792773252.0034587,
+      "resumed_epoch": 1792774167.0951152,
+      "pause_seconds": 915.0916564464569
+    }
+  ],
+  "reason": "Late user-requested mixed-rank screen; preserve all long-run steps and in-memory model/optimizer state, with only one active training process per GPU.",
+  "timing_limit": "Elapsed training time for suspended long runs includes the pause and must not be interpreted as active step speed. Controlled final timing is separate.",
+  "screen_finished_epoch": 1792774167.0937696,
+  "resume_finished_epoch": 1792774167.0953162,
+  "per_gpu_resume_monitor_complete": true
+}

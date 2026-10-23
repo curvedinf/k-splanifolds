@@ -1,0 +1,281 @@
+{
+  "note": "Descriptive within-round comparisons. All configurations become faster from first to last round; randomized order reduces order confounding but does not identify the source of drift. Other GPUs concurrently score heldout models during part of this window.",
+  "rows": [
+    {
+      "model": "original_mlp",
+      "first_to_last_change_fraction": -0.04312282580072102,
+      "median_same_round_ratio_to_mlp": 1.0,
+      "same_round_ratios": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "model": "frozen_spine46",
+      "first_to_last_change_fraction": -0.05659758913871005,
+      "median_same_round_ratio_to_mlp": 1.0773126991360424,
+      "same_round_ratios": [
+        1.0821148931636426,
+        1.081065819952552,
+        1.0773126991360424,
+        1.0715570357781925,
+        1.0668765297842515
+      ]
+    },
+    {
+      "model": "history_pruned_fused",
+      "first_to_last_change_fraction": -0.060218952015055005,
+      "median_same_round_ratio_to_mlp": 1.54198027702211,
+      "same_round_ratios": [
+        1.5700313741287268,
+        1.5528850252913942,
+        1.5377832304051127,
+        1.5375640416057976,
+        1.54198027702211
+      ]
+    },
+    {
+      "model": "history_eager",
+      "first_to_last_change_fraction": -0.04360062344441018,
+      "median_same_round_ratio_to_mlp": 2.1155590119981054,
+      "same_round_ratios": [
+        2.116615902179965,
+        2.128536595939267,
+        2.1060888865059604,
+        2.115513360493504,
+        2.1155590119981054
+      ]
+    },
+    {
+      "model": "full31_eager",
+      "first_to_last_change_fraction": -0.08207087361132537,
+      "median_same_round_ratio_to_mlp": 1.6375620302584466,
+      "same_round_ratios": [
+        1.7090277983617046,
+        1.6375620302584466,
+        1.6326639824368476,
+        1.636949475415908,
+        1.6394647465980923
+      ]
+    },
+    {
+      "model": "spine46_eager",
+      "first_to_last_change_fraction": -0.05648456272011393,
+      "median_same_round_ratio_to_mlp": 1.2211481337076495,
+      "same_round_ratios": [
+        1.2358744017738068,
+        1.2211481337076495,
+        1.2274318648160858,
+        1.2201540800206883,
+        1.2186167755421724
+      ]
+    },
+    {
+      "model": "undamped33_eager",
+      "first_to_last_change_fraction": -0.035417422785001595,
+      "median_same_round_ratio_to_mlp": 1.4227489181429251,
+      "same_round_ratios": [
+        1.4160569443343416,
+        1.4306056269426835,
+        1.418364658957619,
+        1.4227489181429251,
+        1.4274599642239474
+      ]
+    },
+    {
+      "model": "history_fused",
+      "first_to_last_change_fraction": -0.07361787807482112,
+      "median_same_round_ratio_to_mlp": 1.5596612845319588,
+      "same_round_ratios": [
+        1.6130278196831058,
+        1.5562050408199841,
+        1.5550634456287027,
+        1.5596612845319588,
+        1.5616216737250563
+      ]
+    },
+    {
+      "model": "full31_fused",
+      "first_to_last_change_fraction": -0.04768819562442739,
+      "median_same_round_ratio_to_mlp": 1.1957882017400385,
+      "same_round_ratios": [
+        1.2020549555354831,
+        1.1885507976899319,
+        1.191901552344241,
+        1.1957882017400385,
+        1.1963198146329628
+      ]
+    },
+    {
+      "model": "spine46_fused",
+      "first_to_last_change_fraction": -0.04343694422536326,
+      "median_same_round_ratio_to_mlp": 1.0811744090511177,
+      "same_round_ratios": [
+        1.0811744090511177,
+        1.0834171724204287,
+        1.0841589027169762,
+        1.0695718200172564,
+        1.0808194870075243
+      ]
+    },
+    {
+      "model": "undamped33_fused",
+      "first_to_last_change_fraction": -0.036845312878880265,
+      "median_same_round_ratio_to_mlp": 1.1400436751593659,
+      "same_round_ratios": [
+        1.13278530448777,
+        1.1377103803974433,
+        1.140730971068396,
+        1.1400436751593659,
+        1.140216848032054
+      ]
+    },
+    {
+      "model": "selected_spine_rank1_fused_repeat",
+      "first_to_last_change_fraction": -0.04163443911752185,
+      "median_same_round_ratio_to_mlp": 1.087504371255851,
+      "same_round_ratios": [
+        1.0858154259408634,
+        1.0882344404895985,
+        1.0867533893949588,
+        1.0885797105299773,
+        1.087504371255851
+      ]
+    },
+    {
+      "model": "selected_spine_rank4_frozen",
+      "first_to_last_change_fraction": -0.045674916397117404,
+      "median_same_round_ratio_to_mlp": 1.0596558108627585,
+      "same_round_ratios": [
+        1.062489580693171,
+        1.0559718459801835,
+        1.0570332527956101,
+        1.063906118513843,
+        1.0596558108627585
+      ]
+    },
+    {
+      "model": "selected_full46_frozen",
+      "first_to_last_change_fraction": -0.042918655671812744,
+      "median_same_round_ratio_to_mlp": 1.1371561471611449,
+      "same_round_ratios": [
+        1.142888344420684,
+        1.130120996369945,
+        1.1371561471611449,
+        1.1333857739362434,
+        1.1431322039952458
+      ]
+    },
+    {
+      "model": "selected_spine_powers",
+      "first_to_last_change_fraction": -0.06954248326817869,
+      "median_same_round_ratio_to_mlp": 1.0806320892965195,
+      "same_round_ratios": [
+        1.1085067497590793,
+        1.0792387474441965,
+        1.082113789588073,
+        1.0806320892965195,
+        1.0779005555487233
+      ]
+    },
+    {
+      "model": "frozen_spine46_skip_gradients",
+      "first_to_last_change_fraction": -0.047893651666421455,
+      "median_same_round_ratio_to_mlp": 1.0576399336721414,
+      "same_round_ratios": [
+        1.0646164958669253,
+        1.0576399336721414,
+        1.0565742091426846,
+        1.0495246406751941,
+        1.059308500177945
+      ]
+    },
+    {
+      "model": "selected_combo_rank1_frozen_bias",
+      "first_to_last_change_fraction": -0.06586227327249583,
+      "median_same_round_ratio_to_mlp": 1.0785370866724162,
+      "same_round_ratios": [
+        1.1035615391453717,
+        1.0798417917401573,
+        1.0750980968337462,
+        1.0785370866724162,
+        1.077336250960118
+      ]
+    },
+    {
+      "model": "selected_combo_rank4_powers",
+      "first_to_last_change_fraction": -0.06712594998134014,
+      "median_same_round_ratio_to_mlp": 1.0832481290315785,
+      "same_round_ratios": [
+        1.1109953833708486,
+        1.0832481290315785,
+        1.0839262460269368,
+        1.080237791748,
+        1.0831262264192676
+      ]
+    },
+    {
+      "model": "selected_combo_rank1_powers",
+      "first_to_last_change_fraction": -0.05173918791219545,
+      "median_same_round_ratio_to_mlp": 1.0882263551862168,
+      "same_round_ratios": [
+        1.0953016700776508,
+        1.0878272278858059,
+        1.0882263551862168,
+        1.0887123464063102,
+        1.085438841216058
+      ]
+    },
+    {
+      "model": "selected_combo_rank4_frozen_bias",
+      "first_to_last_change_fraction": -0.0840675554525957,
+      "median_same_round_ratio_to_mlp": 1.078643867723803,
+      "same_round_ratios": [
+        1.1206325378449662,
+        1.083898469767293,
+        1.078643867723803,
+        1.074671034020728,
+        1.0726807238208178
+      ]
+    },
+    {
+      "model": "mixed_rank1_heavy",
+      "first_to_last_change_fraction": -0.05176942274552032,
+      "median_same_round_ratio_to_mlp": 1.201225592010119,
+      "same_round_ratios": [
+        1.2113016413296804,
+        1.1975747165708506,
+        1.2091298390495635,
+        1.201225592010119,
+        1.2003559971513498
+      ]
+    },
+    {
+      "model": "mixed_balanced",
+      "first_to_last_change_fraction": -0.06980337067466158,
+      "median_same_round_ratio_to_mlp": 1.204946711266981,
+      "same_round_ratios": [
+        1.2291431185567048,
+        1.208054993077588,
+        1.204946711266981,
+        1.192265930104769,
+        1.1948709998194282
+      ]
+    },
+    {
+      "model": "mixed_balanced_mlp32",
+      "first_to_last_change_fraction": -0.04545183523659191,
+      "median_same_round_ratio_to_mlp": 1.2096367520400901,
+      "same_round_ratios": [
+        1.2096367520400901,
+        1.2128514729176476,
+        1.219573659173502,
+        1.197702294920876,
+        1.2066925336122285
+      ]
+    }
+  ]
+}

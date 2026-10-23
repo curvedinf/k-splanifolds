@@ -1,0 +1,128 @@
+{
+  "created_epoch": 1792772710.3288612,
+  "request": "User requested mixed KS2 ranks, a couple rank16 charts, and MLP in its own subspace.",
+  "configs": [
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_rank1_heavy",
+      "mixed_ranks": [
+        [
+          1,
+          240
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          16,
+          2
+        ]
+      ]
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_balanced",
+      "mixed_ranks": [
+        [
+          1,
+          112
+        ],
+        [
+          4,
+          24
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          16,
+          2
+        ]
+      ]
+    },
+    {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 46,
+      "fused_general": true,
+      "name": "mixed_balanced_mlp32",
+      "mixed_ranks": [
+        [
+          1,
+          80
+        ],
+        [
+          4,
+          24
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          16,
+          2
+        ]
+      ],
+      "mlp_features": 32
+    }
+  ],
+  "protocol": "Three seeds each,15k originalpool. Same learned96->368->96 projections, unchangedMLP primaryreference and samewave earlier learnedrank1 reference. Rank16 exactlytwochartsperFFN. MLPbranch uses32ofthe368projectedfeatures, replacing32rank1chartsfrombalancedmix; allbranchoutputs concatenate intoonelearned368->96readout. Learned and totalcoefficientbudgets belowMLP. No heldout basedselection.",
+  "scheduling": "Queueafterwave16 onreleasedGPUsonly; dispatchcutoff17:21:56UTC; finishinflightjobs. Checklastdispatch feasibility aslongqueueprogresses.",
+  "hybrid_coordinate_ranges": {
+    "rank1": [
+      0,
+      80
+    ],
+    "mlp": [
+      80,
+      112
+    ],
+    "rank4": [
+      112,
+      208
+    ],
+    "rank8": [
+      208,
+      336
+    ],
+    "rank16": [
+      336,
+      368
+    ]
+  },
+  "balanced_coordinate_ranges": {
+    "rank1": [
+      0,
+      112
+    ],
+    "rank4": [
+      112,
+      208
+    ],
+    "rank8": [
+      208,
+      336
+    ],
+    "rank16": [
+      336,
+      368
+    ]
+  },
+  "initialization_control": "HybridMLP replacesexactlycoordinates80:112; higher-rank coordinateassignmentandspineinitialcoefficientsremainidenticaltobalancedKS2. Sharedprojectiontensorsidenticalacrossall3variants."
+}

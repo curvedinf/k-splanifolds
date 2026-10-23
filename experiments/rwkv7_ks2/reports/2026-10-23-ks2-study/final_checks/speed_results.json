@@ -1,0 +1,2201 @@
+{
+  "protocol": "GPU 0; five randomized-order rounds, fresh process/model per case; 100 captured training updates after warmup/reset, including batch copies and LR writes; batch 4, sequence 64, FP32. Compilation/evaluation excluded.",
+  "rows": [
+    {
+      "model": "selected_combo_rank4_frozen_bias",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.614609719952568,
+      "config": {
+        "name": "selected_combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "full31_eager",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 13.137765490682796,
+      "config": {
+        "name": "full31_eager",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "history_fused",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 12.399787320755422,
+      "config": {
+        "name": "history_fused",
+        "family": "history",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "selected_combo_rank4_powers",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.540526269935071,
+      "config": {
+        "name": "selected_combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "selected_spine_powers",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.521395460702479,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "selected_spine_powers",
+        "geometry_basis": "powers",
+        "fused_general": true
+      }
+    },
+    {
+      "model": "mixed_balanced",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 9.448760319501162,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced",
+        "mixed_ranks": [
+          [
+            1,
+            112
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "selected_combo_rank1_frozen_bias",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.483380270190537,
+      "config": {
+        "name": "selected_combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "history_pruned_fused",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 12.069261849392205,
+      "config": {
+        "name": "history_pruned_fused",
+        "family": "history",
+        "fused_geometry": true,
+        "prune_final_side": true
+      }
+    },
+    {
+      "model": "spine46_eager",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 9.500505540054291,
+      "config": {
+        "name": "spine46_eager",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "frozen_spine46",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.3185140194837,
+      "config": {
+        "name": "frozen_spine46",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "model": "mixed_rank1_heavy",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 9.311607989948243,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_rank1_heavy",
+        "mixed_ranks": [
+          [
+            1,
+            240
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "selected_combo_rank1_powers",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.419884390896186,
+      "config": {
+        "name": "selected_combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "full31_fused",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 9.240526179783046,
+      "config": {
+        "name": "full31_fused",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "selected_full46_frozen",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.785696210106835,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "name": "selected_full46_frozen",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "frozen_spine46_skip_gradients",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.183999039465562,
+      "config": {
+        "name": "frozen_spine46_skip_gradients",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "spine46_fused",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.31128426012583,
+      "config": {
+        "name": "spine46_fused",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "selected_spine_rank4_frozen",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.16764885908924,
+      "config": {
+        "name": "selected_spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "mixed_balanced_mlp32",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 9.298809529282153,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced_mlp32",
+        "mixed_ranks": [
+          [
+            1,
+            80
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "mlp_features": 32
+      }
+    },
+    {
+      "model": "history_eager",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 16.27100705052726,
+      "config": {
+        "name": "history_eager",
+        "family": "history",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "selected_spine_rank1_fused_repeat",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.346961030038074,
+      "config": {
+        "name": "selected_spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "undamped33_fused",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 8.708031370770186,
+      "config": {
+        "name": "undamped33_fused",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "undamped33_eager",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 10.885618170723319,
+      "config": {
+        "name": "undamped33_eager",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "original_mlp",
+      "repeat": 0,
+      "gpu": 0,
+      "ms": 7.687274310737848,
+      "config": {
+        "name": "original_mlp",
+        "family": "mlp"
+      }
+    },
+    {
+      "model": "frozen_spine46",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.182207240024582,
+      "config": {
+        "name": "frozen_spine46",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "model": "history_pruned_fused",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 11.753240979742259,
+      "config": {
+        "name": "history_pruned_fused",
+        "family": "history",
+        "fused_geometry": true,
+        "prune_final_side": true
+      }
+    },
+    {
+      "model": "selected_combo_rank4_frozen_bias",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.203646570909768,
+      "config": {
+        "name": "selected_combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "undamped33_eager",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 10.827751189935952,
+      "config": {
+        "name": "undamped33_eager",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "mixed_balanced",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 9.14334365981631,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced",
+        "mixed_ranks": [
+          [
+            1,
+            112
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "history_eager",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 16.11014539957978,
+      "config": {
+        "name": "history_eager",
+        "family": "history",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "selected_combo_rank1_frozen_bias",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.172943000681698,
+      "config": {
+        "name": "selected_combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "selected_combo_rank4_powers",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.198724370449781,
+      "config": {
+        "name": "selected_combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "mixed_balanced_mlp32",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 9.17964652995579,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced_mlp32",
+        "mixed_ranks": [
+          [
+            1,
+            80
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "mlp_features": 32
+      }
+    },
+    {
+      "model": "spine46_fused",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.20000380044803,
+      "config": {
+        "name": "spine46_fused",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "full31_eager",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 12.394131469773129,
+      "config": {
+        "name": "full31_eager",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "original_mlp",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 7.568648540182039,
+      "config": {
+        "name": "original_mlp",
+        "family": "mlp"
+      }
+    },
+    {
+      "model": "selected_combo_rank1_powers",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.23338196030818,
+      "config": {
+        "name": "selected_combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "undamped33_fused",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.610930009745061,
+      "config": {
+        "name": "undamped33_fused",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "selected_spine_rank1_fused_repeat",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.236464009387419,
+      "config": {
+        "name": "selected_spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "mixed_rank1_heavy",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 9.064022130332887,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_rank1_heavy",
+        "mixed_ranks": [
+          [
+            1,
+            240
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "selected_spine_powers",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.16837877035141,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "selected_spine_powers",
+        "geometry_basis": "powers",
+        "fused_general": true
+      }
+    },
+    {
+      "model": "full31_fused",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.9957232598681,
+      "config": {
+        "name": "full31_fused",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "spine46_eager",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 9.242441039532423,
+      "config": {
+        "name": "spine46_eager",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "frozen_spine46_skip_gradients",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.004904940025881,
+      "config": {
+        "name": "frozen_spine46_skip_gradients",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "selected_spine_rank4_frozen",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 7.992279770551249,
+      "config": {
+        "name": "selected_spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "history_fused",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 11.778369010426104,
+      "config": {
+        "name": "history_fused",
+        "family": "history",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "selected_full46_frozen",
+      "repeat": 1,
+      "gpu": 0,
+      "ms": 8.553488629404455,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "name": "selected_full46_frozen",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "frozen_spine46",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.051758580841124,
+      "config": {
+        "name": "frozen_spine46",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "model": "mixed_rank1_heavy",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 9.03695052023977,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_rank1_heavy",
+        "mixed_ranks": [
+          [
+            1,
+            240
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "mixed_balanced_mlp32",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 9.115006889915094,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced_mlp32",
+        "mixed_ranks": [
+          [
+            1,
+            80
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "mlp_features": 32
+      }
+    },
+    {
+      "model": "spine46_eager",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 9.173738560639322,
+      "config": {
+        "name": "spine46_eager",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "selected_combo_rank4_frozen_bias",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.061707640299574,
+      "config": {
+        "name": "selected_combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "selected_combo_rank4_powers",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.101187760476023,
+      "config": {
+        "name": "selected_combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "undamped33_fused",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.52574224001728,
+      "config": {
+        "name": "undamped33_fused",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "selected_full46_frozen",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.499024260090664,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "name": "selected_full46_frozen",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "mixed_balanced",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 9.005686120362952,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced",
+        "mixed_ranks": [
+          [
+            1,
+            112
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "spine46_fused",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.102926620049402,
+      "config": {
+        "name": "spine46_fused",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "selected_spine_powers",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.087641589809209,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "selected_spine_powers",
+        "geometry_basis": "powers",
+        "fused_general": true
+      }
+    },
+    {
+      "model": "history_pruned_fused",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 11.493282619630918,
+      "config": {
+        "name": "history_pruned_fused",
+        "family": "history",
+        "fused_geometry": true,
+        "prune_final_side": true
+      }
+    },
+    {
+      "model": "history_fused",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 11.622433720622212,
+      "config": {
+        "name": "history_fused",
+        "family": "history",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "full31_eager",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 12.202414619969204,
+      "config": {
+        "name": "full31_eager",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "frozen_spine46_skip_gradients",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 7.896760579897091,
+      "config": {
+        "name": "frozen_spine46_skip_gradients",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "full31_fused",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.908187529304996,
+      "config": {
+        "name": "full31_fused",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "selected_combo_rank1_powers",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.133326470851898,
+      "config": {
+        "name": "selected_combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "undamped33_eager",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 10.600756700150669,
+      "config": {
+        "name": "undamped33_eager",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "history_eager",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 15.74075872078538,
+      "config": {
+        "name": "history_eager",
+        "family": "history",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "original_mlp",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 7.473928959807381,
+      "config": {
+        "name": "original_mlp",
+        "family": "mlp"
+      }
+    },
+    {
+      "model": "selected_combo_rank1_frozen_bias",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.035206800559536,
+      "config": {
+        "name": "selected_combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "selected_spine_rank1_fused_repeat",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 8.12231762916781,
+      "config": {
+        "name": "selected_spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "selected_spine_rank4_frozen",
+      "repeat": 2,
+      "gpu": 0,
+      "ms": 7.900191439548507,
+      "config": {
+        "name": "selected_spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "mixed_rank1_heavy",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.9267741702497,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_rank1_heavy",
+        "mixed_ranks": [
+          [
+            1,
+            240
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "selected_combo_rank1_powers",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.090644519543275,
+      "config": {
+        "name": "selected_combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "selected_spine_rank4_frozen",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 7.906299800379202,
+      "config": {
+        "name": "selected_spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "frozen_spine46",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 7.963156739715487,
+      "config": {
+        "name": "frozen_spine46",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "model": "history_eager",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 15.721201869891956,
+      "config": {
+        "name": "history_eager",
+        "family": "history",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "selected_combo_rank4_powers",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.027666810667142,
+      "config": {
+        "name": "selected_combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "undamped33_eager",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 10.57300009066239,
+      "config": {
+        "name": "undamped33_eager",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "history_fused",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 11.590449089417234,
+      "config": {
+        "name": "history_fused",
+        "family": "history",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "selected_spine_powers",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.030596988974139,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "selected_spine_powers",
+        "geometry_basis": "powers",
+        "fused_general": true
+      }
+    },
+    {
+      "model": "selected_combo_rank1_frozen_bias",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.015028210356832,
+      "config": {
+        "name": "selected_combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "spine46_eager",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 9.067439120262861,
+      "config": {
+        "name": "spine46_eager",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "full31_fused",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.886366810183972,
+      "config": {
+        "name": "full31_fused",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "selected_spine_rank1_fused_repeat",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.089658850803971,
+      "config": {
+        "name": "selected_spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "original_mlp",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 7.431388599798083,
+      "config": {
+        "name": "original_mlp",
+        "family": "mlp"
+      }
+    },
+    {
+      "model": "selected_combo_rank4_frozen_bias",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 7.986298070754856,
+      "config": {
+        "name": "selected_combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "undamped33_fused",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.472107570851222,
+      "config": {
+        "name": "undamped33_fused",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "full31_eager",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 12.164807670051232,
+      "config": {
+        "name": "full31_eager",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "history_pruned_fused",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 11.42623589024879,
+      "config": {
+        "name": "history_pruned_fused",
+        "family": "history",
+        "fused_geometry": true,
+        "prune_final_side": true
+      }
+    },
+    {
+      "model": "mixed_balanced",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.860191440908238,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced",
+        "mixed_ranks": [
+          [
+            1,
+            112
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "mixed_balanced_mlp32",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.900591180427,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced_mlp32",
+        "mixed_ranks": [
+          [
+            1,
+            80
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "mlp_features": 32
+      }
+    },
+    {
+      "model": "spine46_fused",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 7.948403829941526,
+      "config": {
+        "name": "spine46_fused",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "frozen_spine46_skip_gradients",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 7.799425449920818,
+      "config": {
+        "name": "frozen_spine46_skip_gradients",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "selected_full46_frozen",
+      "repeat": 3,
+      "gpu": 0,
+      "ms": 8.422630119603127,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "name": "selected_full46_frozen",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "history_eager",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 15.561580999055877,
+      "config": {
+        "name": "history_eager",
+        "family": "history",
+        "fused_geometry": false
+      }
+    },
+    {
+      "model": "spine46_eager",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 8.963873639004305,
+      "config": {
+        "name": "spine46_eager",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "spine46_fused",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.950267469277605,
+      "config": {
+        "name": "spine46_fused",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "undamped33_eager",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 10.500077629694715,
+      "config": {
+        "name": "undamped33_eager",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": false
+      }
+    },
+    {
+      "model": "selected_full46_frozen",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 8.40862593962811,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "name": "selected_full46_frozen",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "history_fused",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 11.486941289622337,
+      "config": {
+        "name": "history_fused",
+        "family": "history",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "full31_fused",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 8.79986215964891,
+      "config": {
+        "name": "full31_fused",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true
+      }
+    },
+    {
+      "model": "selected_combo_rank4_powers",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.967235330725089,
+      "config": {
+        "name": "selected_combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "mixed_rank1_heavy",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 8.829551419476047,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_rank1_heavy",
+        "mixed_ranks": [
+          [
+            1,
+            240
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "selected_spine_rank1_fused_repeat",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.999439989216626,
+      "config": {
+        "name": "selected_spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "mixed_balanced_mlp32",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 8.87616157066077,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced_mlp32",
+        "mixed_ranks": [
+          [
+            1,
+            80
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "mlp_features": 32
+      }
+    },
+    {
+      "model": "undamped33_fused",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 8.387181230355054,
+      "config": {
+        "name": "undamped33_fused",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped",
+        "fused_partial": true
+      }
+    },
+    {
+      "model": "selected_combo_rank1_powers",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.984246410196647,
+      "config": {
+        "name": "selected_combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      }
+    },
+    {
+      "model": "selected_combo_rank1_frozen_bias",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.924645560560748,
+      "config": {
+        "name": "selected_combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "selected_spine_rank4_frozen",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.794592180289328,
+      "config": {
+        "name": "selected_spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "frozen_spine46_skip_gradients",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.79203744023107,
+      "config": {
+        "name": "frozen_spine46_skip_gradients",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "frozen_geometry": true,
+        "fused_general": true
+      }
+    },
+    {
+      "model": "selected_spine_powers",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.928796459455043,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 46,
+        "geometry_terms": "spine",
+        "name": "selected_spine_powers",
+        "geometry_basis": "powers",
+        "fused_general": true
+      }
+    },
+    {
+      "model": "original_mlp",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.3557773197535425,
+      "config": {
+        "name": "original_mlp",
+        "family": "mlp"
+      }
+    },
+    {
+      "model": "history_pruned_fused",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 11.342463549226522,
+      "config": {
+        "name": "history_pruned_fused",
+        "family": "history",
+        "fused_geometry": true,
+        "prune_final_side": true
+      }
+    },
+    {
+      "model": "frozen_spine46",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.847706180764362,
+      "config": {
+        "name": "frozen_spine46",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "fused_partial": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "model": "selected_combo_rank4_frozen_bias",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 7.8904005396179855,
+      "config": {
+        "name": "selected_combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      }
+    },
+    {
+      "model": "mixed_balanced",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 8.789205000502989,
+      "config": {
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "fused_general": true,
+        "name": "mixed_balanced",
+        "mixed_ranks": [
+          [
+            1,
+            112
+          ],
+          [
+            4,
+            24
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "model": "full31_eager",
+      "repeat": 4,
+      "gpu": 0,
+      "ms": 12.059537599561736,
+      "config": {
+        "name": "full31_eager",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": false
+      }
+    }
+  ],
+  "summary": [
+    {
+      "model": "original_mlp",
+      "median_ms": 7.473928959807381,
+      "min_ms": 7.3557773197535425,
+      "max_ms": 7.687274310737848,
+      "values": [
+        7.687274310737848,
+        7.568648540182039,
+        7.473928959807381,
+        7.431388599798083,
+        7.3557773197535425
+      ]
+    },
+    {
+      "model": "frozen_spine46",
+      "median_ms": 8.051758580841124,
+      "min_ms": 7.847706180764362,
+      "max_ms": 8.3185140194837,
+      "values": [
+        8.3185140194837,
+        8.182207240024582,
+        8.051758580841124,
+        7.963156739715487,
+        7.847706180764362
+      ]
+    },
+    {
+      "model": "history_pruned_fused",
+      "median_ms": 11.493282619630918,
+      "min_ms": 11.342463549226522,
+      "max_ms": 12.069261849392205,
+      "values": [
+        12.069261849392205,
+        11.753240979742259,
+        11.493282619630918,
+        11.42623589024879,
+        11.342463549226522
+      ]
+    },
+    {
+      "model": "history_eager",
+      "median_ms": 15.74075872078538,
+      "min_ms": 15.561580999055877,
+      "max_ms": 16.27100705052726,
+      "values": [
+        16.27100705052726,
+        16.11014539957978,
+        15.74075872078538,
+        15.721201869891956,
+        15.561580999055877
+      ]
+    },
+    {
+      "model": "full31_eager",
+      "median_ms": 12.202414619969204,
+      "min_ms": 12.059537599561736,
+      "max_ms": 13.137765490682796,
+      "values": [
+        13.137765490682796,
+        12.394131469773129,
+        12.202414619969204,
+        12.164807670051232,
+        12.059537599561736
+      ]
+    },
+    {
+      "model": "spine46_eager",
+      "median_ms": 9.173738560639322,
+      "min_ms": 8.963873639004305,
+      "max_ms": 9.500505540054291,
+      "values": [
+        9.500505540054291,
+        9.242441039532423,
+        9.173738560639322,
+        9.067439120262861,
+        8.963873639004305
+      ]
+    },
+    {
+      "model": "undamped33_eager",
+      "median_ms": 10.600756700150669,
+      "min_ms": 10.500077629694715,
+      "max_ms": 10.885618170723319,
+      "values": [
+        10.885618170723319,
+        10.827751189935952,
+        10.600756700150669,
+        10.57300009066239,
+        10.500077629694715
+      ]
+    },
+    {
+      "model": "history_fused",
+      "median_ms": 11.622433720622212,
+      "min_ms": 11.486941289622337,
+      "max_ms": 12.399787320755422,
+      "values": [
+        12.399787320755422,
+        11.778369010426104,
+        11.622433720622212,
+        11.590449089417234,
+        11.486941289622337
+      ]
+    },
+    {
+      "model": "full31_fused",
+      "median_ms": 8.908187529304996,
+      "min_ms": 8.79986215964891,
+      "max_ms": 9.240526179783046,
+      "values": [
+        9.240526179783046,
+        8.9957232598681,
+        8.908187529304996,
+        8.886366810183972,
+        8.79986215964891
+      ]
+    },
+    {
+      "model": "spine46_fused",
+      "median_ms": 8.102926620049402,
+      "min_ms": 7.948403829941526,
+      "max_ms": 8.31128426012583,
+      "values": [
+        8.31128426012583,
+        8.20000380044803,
+        8.102926620049402,
+        7.948403829941526,
+        7.950267469277605
+      ]
+    },
+    {
+      "model": "undamped33_fused",
+      "median_ms": 8.52574224001728,
+      "min_ms": 8.387181230355054,
+      "max_ms": 8.708031370770186,
+      "values": [
+        8.708031370770186,
+        8.610930009745061,
+        8.52574224001728,
+        8.472107570851222,
+        8.387181230355054
+      ]
+    },
+    {
+      "model": "selected_spine_rank1_fused_repeat",
+      "median_ms": 8.12231762916781,
+      "min_ms": 7.999439989216626,
+      "max_ms": 8.346961030038074,
+      "values": [
+        8.346961030038074,
+        8.236464009387419,
+        8.12231762916781,
+        8.089658850803971,
+        7.999439989216626
+      ]
+    },
+    {
+      "model": "selected_spine_rank4_frozen",
+      "median_ms": 7.906299800379202,
+      "min_ms": 7.794592180289328,
+      "max_ms": 8.16764885908924,
+      "values": [
+        8.16764885908924,
+        7.992279770551249,
+        7.900191439548507,
+        7.906299800379202,
+        7.794592180289328
+      ]
+    },
+    {
+      "model": "selected_full46_frozen",
+      "median_ms": 8.499024260090664,
+      "min_ms": 8.40862593962811,
+      "max_ms": 8.785696210106835,
+      "values": [
+        8.785696210106835,
+        8.553488629404455,
+        8.499024260090664,
+        8.422630119603127,
+        8.40862593962811
+      ]
+    },
+    {
+      "model": "selected_spine_powers",
+      "median_ms": 8.087641589809209,
+      "min_ms": 7.928796459455043,
+      "max_ms": 8.521395460702479,
+      "values": [
+        8.521395460702479,
+        8.16837877035141,
+        8.087641589809209,
+        8.030596988974139,
+        7.928796459455043
+      ]
+    },
+    {
+      "model": "frozen_spine46_skip_gradients",
+      "median_ms": 7.896760579897091,
+      "min_ms": 7.79203744023107,
+      "max_ms": 8.183999039465562,
+      "values": [
+        8.183999039465562,
+        8.004904940025881,
+        7.896760579897091,
+        7.799425449920818,
+        7.79203744023107
+      ]
+    },
+    {
+      "model": "selected_combo_rank1_frozen_bias",
+      "median_ms": 8.035206800559536,
+      "min_ms": 7.924645560560748,
+      "max_ms": 8.483380270190537,
+      "values": [
+        8.483380270190537,
+        8.172943000681698,
+        8.035206800559536,
+        8.015028210356832,
+        7.924645560560748
+      ]
+    },
+    {
+      "model": "selected_combo_rank4_powers",
+      "median_ms": 8.101187760476023,
+      "min_ms": 7.967235330725089,
+      "max_ms": 8.540526269935071,
+      "values": [
+        8.540526269935071,
+        8.198724370449781,
+        8.101187760476023,
+        8.027666810667142,
+        7.967235330725089
+      ]
+    },
+    {
+      "model": "selected_combo_rank1_powers",
+      "median_ms": 8.133326470851898,
+      "min_ms": 7.984246410196647,
+      "max_ms": 8.419884390896186,
+      "values": [
+        8.419884390896186,
+        8.23338196030818,
+        8.133326470851898,
+        8.090644519543275,
+        7.984246410196647
+      ]
+    },
+    {
+      "model": "selected_combo_rank4_frozen_bias",
+      "median_ms": 8.061707640299574,
+      "min_ms": 7.8904005396179855,
+      "max_ms": 8.614609719952568,
+      "values": [
+        8.614609719952568,
+        8.203646570909768,
+        8.061707640299574,
+        7.986298070754856,
+        7.8904005396179855
+      ]
+    },
+    {
+      "model": "mixed_rank1_heavy",
+      "median_ms": 9.03695052023977,
+      "min_ms": 8.829551419476047,
+      "max_ms": 9.311607989948243,
+      "values": [
+        9.311607989948243,
+        9.064022130332887,
+        9.03695052023977,
+        8.9267741702497,
+        8.829551419476047
+      ]
+    },
+    {
+      "model": "mixed_balanced",
+      "median_ms": 9.005686120362952,
+      "min_ms": 8.789205000502989,
+      "max_ms": 9.448760319501162,
+      "values": [
+        9.448760319501162,
+        9.14334365981631,
+        9.005686120362952,
+        8.860191440908238,
+        8.789205000502989
+      ]
+    },
+    {
+      "model": "mixed_balanced_mlp32",
+      "median_ms": 9.115006889915094,
+      "min_ms": 8.87616157066077,
+      "max_ms": 9.298809529282153,
+      "values": [
+        9.298809529282153,
+        9.17964652995579,
+        9.115006889915094,
+        8.900591180427,
+        8.87616157066077
+      ]
+    }
+  ]
+}

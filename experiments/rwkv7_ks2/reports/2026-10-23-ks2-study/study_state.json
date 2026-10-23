@@ -1,0 +1,345 @@
+{
+  "goal_start_epoch": 1792711333,
+  "deadline_epoch": 1792776116.8504283,
+  "start_utc": "2026-10-22T23:22:13+00:00",
+  "deadline_utc": "2026-10-23T17:21:56.850428+00:00",
+  "objective": "Four-hour targeted investigation of KS2/MLP LLM bottlenecks, with replication, efficiency and comprehensive final report.",
+  "baseline": "demuxed_history_64_rank8_side2048",
+  "status": "complete",
+  "waves": [
+    {
+      "name": "initial",
+      "status": "complete",
+      "results": "initial/results.json"
+    },
+    {
+      "name": "wave1",
+      "status": "complete",
+      "manifest": "wave1_manifest.json",
+      "hypotheses": [
+        "fixed main demux readout restricts decoder expression",
+        "linear coordinate bypass dominates geometry",
+        "KS2 basis operates at unsuitable scale",
+        "geometry learning rate differs from projections",
+        "cheap learned basis changes recover adaptive routing"
+      ]
+    },
+    {
+      "name": "wave2",
+      "status": "complete",
+      "manifest": "wave2_manifest.json",
+      "hypotheses": [
+        "Fully learned KS2 projections at total MLP budget",
+        "Nonlinearity vs bypass and trained readout interactions",
+        "Optimizer scale and initialization mismatch"
+      ]
+    },
+    {
+      "name": "wave3",
+      "status": "complete",
+      "manifest": "wave3_manifest.json",
+      "hypotheses": [
+        "Replication of matched-budget KS2 plus ReLU squared",
+        "Geometry learning rate and initialization",
+        "Remove unnecessary output factorization",
+        "Fixed-input versus learned-input budget allocation",
+        "Remove weak damping or other geometry terms",
+        "Wider attention with matched smaller FFNs"
+      ]
+    },
+    {
+      "name": "wave4_fused_controls",
+      "status": "complete",
+      "manifest": "wave4_fused_manifest.json"
+    },
+    {
+      "name": "wave4_activation",
+      "status": "complete",
+      "manifest": "wave4_activation_manifest.json"
+    },
+    {
+      "name": "wave5_transfer",
+      "status": "complete",
+      "manifest": "wave5_transfer_manifest.json"
+    },
+    {
+      "name": "wave6_budget",
+      "status": "complete",
+      "manifest": "wave6_budget_manifest.json"
+    },
+    {
+      "name": "wave7_context",
+      "status": "complete",
+      "manifest": "wave7_context_manifest.json"
+    },
+    {
+      "name": "wave8_long",
+      "status": "complete",
+      "manifest": "wave8_long_manifest.json"
+    },
+    {
+      "name": "wave7b_init",
+      "status": "complete",
+      "manifest": "wave7b_init_manifest.json",
+      "reason": "Isolate input scale with exactly identical random directions; original vs FeatureCell construction changes RNG path."
+    },
+    {
+      "name": "wave7c_iteration",
+      "status": "complete",
+      "manifest": "wave7c_iteration_manifest.json",
+      "reason": "Reference denoising KS2 uses two geometry iterations; test shared-parameter iteration separately from step magnitude.",
+      "note": "Queued MLP368 controls canceled at user instruction. Only KS2 iteration tests remain."
+    },
+    {
+      "name": "wave7d_shuffle",
+      "status": "complete",
+      "manifest": "wave7d_shuffle_manifest.json",
+      "hypothesis": "Cross-chart interaction between shared geometry stages, preserving coordinate residual and parameter count. KS2-only."
+    },
+    {
+      "name": "wave9_geometry_learning",
+      "status": "complete",
+      "manifest": "wave9_geometry_learning_manifest.json",
+      "hypothesis": "Freezing helped; separate warp learning from basis coefficients, and test lower KS2 geometry LR. Original MLP reference stays fixed."
+    },
+    {
+      "name": "wave10_selective_long",
+      "status": "complete",
+      "manifest": "wave10_selective_long_manifest.json"
+    },
+    {
+      "name": "wave11_conditioning",
+      "status": "complete",
+      "manifest": "wave11_conditioning_manifest.json",
+      "reason": "18 KS2 configurations x3 seeds; basis parameterization, rank grouping, geometry normalization/placement. CPU function/gradient/causality checks passed."
+    },
+    {
+      "name": "wave12_fixed_geometry",
+      "status": "complete",
+      "manifest": "wave12_fixed_geometry_manifest.json",
+      "reason": "Matched368 projection features, frozen full versus spine; minimal geometry bias/gain adaptation.18short runs. GPU0 joins only after compact-code probe finishes."
+    },
+    {
+      "name": "wave12b_rank_freezing",
+      "status": "complete",
+      "manifest": "wave12b_rank_freezing_manifest.json",
+      "reason": "15short runs:matched-fused learned/frozen rank1 andrank4 spines plusfullrank1. CPUstructure/function/gradientPASS. Requires actualgeneralGPUcheckPASS with sourcehashmatch;GPU0physicalgate retained."
+    },
+    {
+      "name": "wave12c_original_geometry",
+      "status": "complete",
+      "manifest": "wave12c_original_geometry_manifest.json",
+      "reason": "Read-only RHACsource review identified original geometry equation and sigmoid inputs as distinct from stabilized harness.12KS2-only15k runs,4configs x3seeds. Same613168 parameters and initialized projection/attention tensors. CPUvalues/gradients matchRHACsource;GPUchecks beforedispatch."
+    },
+    {
+      "name": "wave13_selected_long",
+      "status": "complete",
+      "manifest": "wave13_selected_long_manifest.json",
+      "reason": "Explicit selection recorded in extended_long_selection.json; all three seeds on both pools, unchanged original MLP reference."
+    },
+    {
+      "name": "wave14_spine_scale",
+      "status": "complete",
+      "manifest": "wave14_spine_scale_manifest.json",
+      "reason": "Adaptive followup from42state training-only rankprobe: isolatebasisinputscale fromrawcoordinatebypass. Threeconfigs x3seeds,15k;CPU9/9PASS, unchangedMLP all3seeds. Handoffonlyafterwave13physicalGPUrelease."
+    },
+    {
+      "name": "wave15_combinations",
+      "status": "complete",
+      "manifest": "wave15_combinations_manifest.json",
+      "reason": "Userexplicit2hourextension tocombinewins.36shortKS2runs."
+    },
+    {
+      "name": "wave16_combination_long",
+      "status": "complete",
+      "manifest": "wave16_combination_long_manifest.json",
+      "reason": "User-requested accumulation test; recorded complete-three-seed selection."
+    },
+    {
+      "name": "wave17_mixed_ranks",
+      "status": "complete",
+      "manifest": "wave17_mixed_ranks_manifest.json",
+      "reason": "User-requested mixed ranks, two rank16 charts perFFN, and a separateMLPsubspace;9runs."
+    }
+  ],
+  "updated_epoch": 1792777961.3810265,
+  "kernel_status": "PASS numerical and trained-model checks; full and partial fused training completed. Floating-point trajectories differ, so paired repeated final-loss comparisons remain necessary.",
+  "reserved_holdout": "reserved_holdout.json",
+  "next_priorities": [],
+  "partial_kernel_status": "PASS revised checker: initial benchmark shared retained autograd graph across streams and crashed; fresh copied cells fix test harness. All random/extreme, trained-state, and graph tests pass. Undamped geometry 0.685 -> 0.168 ms; spine 0.270 -> 0.073 ms.",
+  "larger_training_pool": "data10m/data_manifest.json",
+  "long_run_plan": {
+    "target_start_utc": "2026-10-23 01:51 after cross-chart screen",
+    "steps": 100000,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "models": [
+      "Original unchanged MLP, both data pools, three seeds",
+      "KS2 undamped33 and spine46, both pools, three seeds",
+      "Frozen KS2 spine46, original pool, three seeds",
+      "Original demuxed-history baseline, original pool, seed 11"
+    ],
+    "first_pool_bytes": 4468985,
+    "second_pool_bytes": 44766641,
+    "same_schedule": "Fresh cosine .001 -> .0002 for each horizon, checkpoints/evaluation at 15k/50k/100k; do not compare the 15k interim to the separately annealed short run as if schedules matched.",
+    "manifest": "wave8_long_manifest.json",
+    "jobs": 22,
+    "factory": "study_models_v8; absent iteration/shuffle flags exactly preserves v6 configurations."
+  },
+  "primary_reference": "Original unchanged MLP remains fixed. New work combines KS2 wins only.",
+  "control_correction": "control_correction.json",
+  "long_dispatch_gate": "long_ready.json created; wave8_long launching under study_checked_v8.",
+  "final_dispatch_gate": "Latestdeadline1792776116.8504283andtraining_complete.json satisfied; scoring released after17:32:19lasttrainingcompletion.",
+  "final_checks": "COMPLETE:259freshreserved scores;23speedconfigs\u00d75rounds;all428runsauditedPASS.",
+  "recent_findings": {
+    "seed11_original_100k": {
+      "original_mlp": 1.508052110671997,
+      "spine46": 1.5127904415130615,
+      "frozen46": 1.5136165618896484,
+      "undamped33": 1.5183086395263672
+    },
+    "seed11_larger_100k": {
+      "original_mlp": 1.4645812511444092,
+      "spine46": 1.4652940034866333,
+      "undamped33": 1.4736100435256958
+    },
+    "geometry_probe": "CPU study_geometry_trajectory.py: learned geometry mainly negative before ReLU\u00b2; no widespread spine-warp saturation. Descriptive seed11 only; rerun after more seed11 long jobs complete to add missing larger undamped.",
+    "report_updates": "Original control retained; parameter breakdown, full-shard 15k/50k/100k gaps, geometry trajectory, schedule caveat added. Final interpretation still needs remaining seeds and holdout.",
+    "extended_cpu": "Compact code model37,489,664\u21925,860,352fixedbuffer bytes; trained CPU real-input logits max2.86e-5, lossdiff1.19e-7. GPUcompile and CPUkernelinterpreter pass; actualGPUchecks/timing pending.",
+    "extended_long_partial": "First seed larger warps1.463365793 versusfixedMLP1.464581251; originalwarps1.511187792 versusMLP1.508052111. Otherseeds pending; no reliablelead yet.",
+    "compact_latest": "Sharing identical codebooks reduces fixedbuffer storage to3,116,032bytes from37,489,664; CPUrealinput gradients relativeL2max2.62e-6. GPUtests pendingafterwave11.",
+    "larger_warps_final": "Mean1.465292851vsoriginalMLP1.465737144;gap\u22120.000444293,2wins1loss. Treatasnear-tie. Originalpoolmean1.508905570vsMLP1.509070992,alsonear-tie.",
+    "larger_frozen_final": "100k3seedmean1.463809292vsfixedMLP1.465737144;gap\u22120.001927853;wins3/3. Pairedsampledtrainmean gap\u22120.0000178 (essentiallyequal). Modestconsistentexploratorylead, reservedholdoutpending.",
+    "wave11_first_seed": "Spinepower1.6170785,matchingKSreference1.6207573;spineRMSgeometry1.6154585. One seed only; all3required.",
+    "spine_power_3seed": "15k full-shard mean1.617574016 versus unchanged MLP1.620779316,3/3wins; versus matching eager spine reference1.620365818,also3/3wins. Same initial function through exact cubic coefficient conversion; candidate for100k follow-up, not yet established long-run advantage.",
+    "rank_three_seeds": "Spine15k means:rank1 1.616360903,rank2 1.616664052,rank4 1.617066900,rank8eager1.620365818,rank16 1.620325724. Ranks1/2/4eachbeatfixedMLPall3seeds. Pending fusedrepeat/freezinginteraction screens.",
+    "power_interaction": "Powercoordinateshelp spine, but full-geometry powermean1.625611663 is behindfixedMLPall3seeds. Better sampled basiscondition number alone is not a universalqualityfix.",
+    "compact_gpu": "GPU individual5width operators/derivatives/capturePASS;trained100k real-input maxlogiterror3.8147e-5,lossdifference0,allgradienttolerancesPASS. Fixedbuffer37,489,664->3,116,032bytes. Isolatedwideoperators are slower(~7\u201310x mux,~26\u201327x transpose); whole-step5rounds nowrunning. Do not equate storage saving with speed.",
+    "compact_speed_final": {
+      "median_ms": {
+        "history_dense": 11.363165159709752,
+        "history_compact": 27.870197049342096,
+        "history_pruned": 11.237529040081427
+      },
+      "compact_over_dense": 2.452679042997733,
+      "interpretation": "Compact fixed-code storage is about12xsmaller but testedB4T64FP32whole-training step is about2.45xslower. Notselectedforlongtraining. Pruning-only effectsmall, finalindependenttimingwillreplicate."
+    },
+    "component_compute": "Trainedisolated4layer fwd+backward totals:RWKV~4.74ms acrossmodels;MLPFFNs0.282ms,frozenKS2spine0.527ms,full31KS21.240ms,history3.032ms. Notadditivewhole-stepprofile; diagnosescomputecost,notlosslimitingcapacity.",
+    "wave13_seed11_partial": {
+      "control": 1.508052110671997,
+      "losses": {
+        "original_spine_rank4_frozen_11": 1.509960412979126,
+        "original_full46_frozen_11": 1.5104761123657227,
+        "original_spine_rank1_fused_repeat_11": 1.5080184936523438,
+        "original_spine_powers_11": 1.5102062225341797
+      },
+      "interpretation": "Seed11original100k:rank1practicaltie;otherthreebehindby.0019-.0024. Three-seedcohortsandlargerpoolpending."
+    }
+  },
+  "wave9_dispatch": "study_wave_v9.py --after-manifest wave8_long_manifest.json --after-log /tmp/ks2_study_wave8_long.log; session31746; /tmp/ks2_study_wave9_overlap.log. Old waiting checked dispatcher stopped before validation/training. New scheduler requires ALL old jobs dispatched and the physical GPU last job fully completed before reuse; validates all follow-up configs on each released GPU. Deadline remains unchanged.",
+  "latest_dispatch_estimate": {
+    "estimated_long_gpu_release_utc": {
+      "2": "03:08:37",
+      "3": "03:13:33",
+      "0": "03:15:57",
+      "1": "03:19:30"
+    },
+    "wave9_last_start_utc": "03:20:29",
+    "wave9_last_finish_utc": "03:22:49",
+    "assumption": "Observed mean long-job durations; 140s per follow-up; estimates only."
+  },
+  "final_pruning": "history_final_prune.py optional cfg prune_final_side; CPU trained100k logits exact, maxgradabsolute2.98e-8. Removes2048deadgains and4194304fixedbufferbytes. No training-model/control changed. v9 workers snapshot this added source.",
+  "remaining_checklist": [
+    "Complete12x3KS2combination screens.",
+    "Selectup to4distinctcombinedfamilies usingall3exploratoryseedsandmechanisticvalue; preservebasiscombo andfreezing/selectivecombo representationwherevalid.",
+    "Run100k bothpools all3seeds perselectedfamily vsunchangedMLP; finaldispatchbefore17:21:56UTC.",
+    "Afternewdeadlineandlastinflighttraining, freshreservedfinalinterval, allspeedchecks, auditandlargereport."
+  ],
+  "latest_results_note": "Wave15all36completezero failures. Noneof11combinationsbeatsrank1repeatmean1.614165266. Bestcombomeansrank1frozenbias1.616543651,rank4powers1.616640965,rank1powers1.617094199,rank4frozenbias1.617301106. Rank1frozenbiasimprovesfrozenparentall3seeds. Fourtopcombosselectedfor100k; totalcoefficientcaveatrecordedforrank1frozenbias.",
+  "extension": {
+    "user_instruction": "continue working for another 4 hours",
+    "recorded_epoch": 1792725849.2373679,
+    "additional_seconds": 14400,
+    "previous_deadline_epoch": 1792725733
+  },
+  "telemetry": "Restarted session20668 /tmp/ks2_telemetry_extension2.log; appendoldtelemetry withgap betweenold/newwindows; summarizeactivewindowshonestly.",
+  "extension_next_tests": "wave11 via per-GPU handoff after all wave10 jobs dispatched and released; no control changes.",
+  "extended_gpu_pipeline": {
+    "wave10": "session34487 /tmp/ks2_study_wave10.log;15long runs",
+    "wave11": "session16761 /tmp/ks2_study_wave11.log;54short runs,perGPUhandoff",
+    "engineering": "COMPLETE: compact equivalence+timing; general450component+20trained/capture checksPASS with documented3stressroundoff exceptions; trainedcomponenttimingsPASS.",
+    "wave12": "session68577 /tmp/ks2_study_wave12.log;18short runs; GPU0 gated oncompact_code_checks_finished.json",
+    "wave12b": "COMPLETE: all15shortmodels trained/evaluated; no failures. Three-seed ranking refreshed before longselection.",
+    "wave12c": "session56768 /tmp/ks2_study_wave12c.log; v15 originalequations nowhandoffdirectly fromwave12;GPU0waitsgeneral_retry_finished.json. Independentofgenerickernels.",
+    "recovery": "COMPLETE PASS: all3signedoriginalequationcheckpoints scoredB4, checkpoint hashes unchanged; no training restarted.",
+    "wave13": "RUNNING session11059 /tmp/ks2_study_wave13.log. All four GPUs validated v15 factory and started100k jobs.24runs,4KS2families x2pools x3seeds; v16evaluator. ExactoriginalMLP100kcheckpoints remain reference.",
+    "wave14": "Queued session44536 /tmp/ks2_study_wave14.log.9short scaleinterventions, v17newfactory, CPU9/9PASS, all3originalMLPstates+optimizergroupsunchanged. Requiresallwave13jobsdispatchedandphysicalGPUsreleased. Noactiveworker sourcesmodified.",
+    "wave15": "ACTIVE session38307 /tmp/ks2_study_wave15.log,36KS2combination15kruns. v18factory supportsrank+freeze/warps+calibration afterfreezing/fusion. All36CPUchecksPASS andall4GPUvalidationpassed. No activeoldGPUjobs.",
+    "wave16": "ACTIVEsession9595 /tmp/ks2_study_wave16.log,24runs100k,4combos x2pools x3seeds. v18worker/factory/eval. All4GPUs validatedandstarted. No more planned training waves."
+  },
+  "next_long_selection_policy": {
+    "recorded_epoch": 1792727302.3374655,
+    "policy": "Choose up to four novel KS2 candidates using three-seed mean exploratory15k loss; retain at least one conditioning/rank and one fixed-geometry candidate where useful. No single-seed selection. Run each selected candidate100k on original and larger pools, seeds11/22/33, versus existing exact original MLP checkpoints. Record selection and all rejected screens. Prefer hypotheses with consistent replicated improvement; do not manufacture favorable references.",
+    "planned_max_runs": 24,
+    "schedule": "After wave12 completes or relevant three-seed cohorts finish; per-GPU handoff. Last new training starts before07:22:13UTC; finish in-flight.",
+    "extension_note": "Include wave12c original-equation/sigmoid-input candidates, after all3seeds. Choose3\u20134families by replicated means and mechanistic value; use measured runtimes to fit lastdispatch before07:22:13. Selectedlongworker/finaleval mustusev15; original/sigmoid local geometry stays eager.",
+    "implementation_repeats": "Rank1/rank4 have eager and fused15kcohorts. Average both losses per seed for selection; usevalidatedfusedbackendforspeed. Do notselect both equivalentimplementations or choosefavorabletrajectory. Threeindependentseeds,not six."
+  },
+  "last_goal_turn_classification": "progress: verifiedlast4longworkersliveat54\u201360k andno failures; verifiedfull/undampedFFNcountsfromactualcompletedrecords73036/73524perlayer andaddedtocomparisonrequestedbyuser. Reportstillworking;final259heldoutandspeedchecksnotyetstarted.",
+  "general_fusion": "PASS450componentcases+20trained/capture cases. Kernelunchanged;3adversarial FP32elementwise failures independentlydiagnosed againstfloat64; documentednormbounds applyonlytiny-inputgradients andclamp-stressforward. Ordinaryinputandparametergradientchecksunchanged. general_geometry_check.json+sourcehash gatepassed. Isolatedtimings andtrainedcomponenttimingscompleted. GPU0releasedvia general_retry_finished.json.",
+  "candidate_ranking": "study_rank_candidates.py generates extended_candidate_ranking.json from exploratory completed.json artifacts only. Incomplete3-seed cohorts ineligible; no reserved scores read. Run after screens complete before selecting up to4long families.",
+  "component_timing": "COMPLETE PASS: component_speed.json,3randomizedrounds usingtrainedrealinputs; notadditivewhole-stepprofile.",
+  "interim_audit": {
+    "artifact": "interim_checkpoint_audit_before_wave13.json",
+    "completed": 326,
+    "failures": 0,
+    "pending": 24,
+    "status": "PASS for allcompleted; onlywave13pending"
+  },
+  "selected_long_preparation": "Refresh ranking afterall4screenscompleteandrecoverydone. Use study_make_extended_long.py --models3or4 --rationaleJSON(reason,estimated_fused_step_ms); runpreparedwave13 with study_wave_v16.py (v15trainingfactory/worker, v16evaluation) afterwave12b. makeraddsmanifestholdoutandselectedspeedconfigs. Lastdispatchbefore07:22:13.",
+  "last_short_screen": "Revised afterrank_input_statistics.json: wave14scale followupislastplannedshortscreen. Rationaleandconfigs frozenbeforeholdout. Longselectionunchanged. No newdispatchafter07:22:13.",
+  "general_diagnostic": "COMPLETE PASS: general_kernel_diagnostic and compact_code_checks/general_geometry_check.json retain3stressroundoffcases+independentfloat64evidence; kernelunchanged,sourcehashgatepasses.",
+  "numerical_evaluation_issue": "RESOLVED: all3signed-original geometryevaluatedB4matchingtraining,same1777024targets,unchangedcheckpointhashes. Mean1.641611457. Onlyseed11 showedbatchsensitivity4.01e-4inonewindow;seeds22/33full-shardB4lossidenticaltoB64. Originalfailurearchived, no trainingrestarted. evaluation_recovery_notes.jsonPASS;GPU0releasedtorankwave.",
+  "source_bundle": "source_bundle.tar.gz +source_bundle_check.json PASS,326runs,254blobs; regenerateafteralltrainingandfinalanalysiscodechanges.",
+  "protocol_audit": "PENDING asintended:190predeclaredheldout runsincluding9scaleonlyfollowups; completedwave13pairs passdata,targets,precision,horizon checks. Rerunafteralltraining/finalchecks.",
+  "rank_statistics": "rank_input_statistics.json PASS42states, all3seeds x7KS2configs xinit/trained, same1024trainingtargetsCPU. Initialrank8basisRMS.181vsrank1.505; trained.771vs.796. Medianbasiscondition2024vs128attrained15k. Descriptive,notcausal; triggeredscale-onlyfollowup.",
+  "extensions_after_training": [
+    {
+      "user_instruction": "start the timer again for goal end to 2 hours. Focus on combining wins to see if they accumulate",
+      "start_epoch": 1792768916.8504283,
+      "previous_deadline_epoch": 1792740133,
+      "deadline_epoch": 1792776116.8504283,
+      "screen_manifest": "wave15_combinations_manifest.json"
+    }
+  ],
+  "combination_long_preparation": "study_combination_selection.py --root ROOT firstgeneratesranking. Onceall36complete, --models2to4 --rationaleJSON mappingreason+estimated_ms prepareswave16_combination_long,addsnewholdout andspeedconfigs. Requirebasiscombo andfreeze/selectivecombo. Launchstudy_wave_v18.py afterwave15manifest+log, requiresgeneralcheck. Samefactoryv18/sourcehashgate.",
+  "automatic_final_handoff": "ACTIVEsession97716 /tmp/ks2_training_handoff.log; study_training_handoff.py requireswave16manifest, readsdeadline dynamically, waitsallmanifestjobscomplete/noinvalid/nofailure anddeadline17:21:56, writestraining_complete.json. Doesnotmarkgoalcomplete.",
+  "telemetry_summary_note": "Summarynowseparatesinitial8hourwindowandexplicit2hourextension, excludesidle/resumptiongapandpost-first-training samples. Point-sampledGPUuse,notpeakFLOPsorcontinuousutilization. Regenerateatfinaltrainingcompletion.",
+  "rank1_repeat_variation": "rank1_repeat_variation.json:all51sharedsources, datahashes,torch/HIPversionsmatch;step0lossexact,step100difference<=1.2e-6;finalrepeatgaps+0.001485,-0.003682,-0.003799,includingfirstsamephysicalGPU. Consistentwithamplifiednumericalvariation;runtimecausenotlocalized. Do notclaimtinycomboimprovementsrobust.",
+  "latest_progress": "8/24combination100krunscomplete; allseed11 original+largerpools. Largerlossesrank1frozenbias1.466784477,rank1powers1.463927031,rank4frozenbias1.466523170,rank4powers1.464327812 vsMLP1.464581251/priorrank11.460860968. Single-seedonly. Freshreservedunread.",
+  "artifact_finalizer": {
+    "session": 99169,
+    "pid_log": "/tmp/ks2_finalize_artifacts.log",
+    "script": "study_finalize_artifacts.py",
+    "status": "Waiting live after final_checks/complete.json. Runs collect/audit/protocol/telemetry/figures/sourcebundle/report sequentially, asserts419coverage andlocalHTMLlinks, stops telemetry. Does not mark goal complete; final evidence/figures/recommendations/manualrequirement audit remain."
+  },
+  "mixed_rank_followup": "UserrequestedwithinFFNmixedranks+two16charts+MLPsubspace. Nine15kruns,3configs3seeds, CPU9PASS, eachbudgetbelow73728/FFN. v19delegate18unchangedforpriorconfigs. Queueafterwave16, nointerruptionoftraining. Newfinalv19 supportsallprior+mixedmodels; finalholdoutexpected259,totaltraining428. Deadlineunchanged17:21:56UTC; monitorlastdispatchfeasibility.",
+  "mixed_followup_sessions": {
+    "wave17": 78361,
+    "wave17_log": "/tmp/ks2_study_wave17.log",
+    "final_checks_v19": 46740,
+    "final_log": "/tmp/ks2_final_checks_extension2_v19.log",
+    "artifact_finalizer": 64178,
+    "artifact_log": "/tmp/ks2_finalize_artifacts_v19.log"
+  },
+  "mixed_scheduling": "Criticalupdate: after-wave16forecastcouldnotstartall9mixedtestsbydeadline. Interleavewrapper70235 suspendedlongdispatcher1440795and4trainchildrenviaSIGSTOP at16:34:11, ranmixedwave19immediatelyall4GPUs, automaticallySIGCONTchildrenanddispatcherinfinallyaftermixedninecomplete. No restart,nostepreset. mixed_rank_interleave.json recordsPIDs/startticks/timestamps. Do not launchotherGPUwork. MixedGPUvalidationall3casesonall4PASS; mixedtrainingactive. Collectorflags4pausedlongrunsandexcludeselapsedmsfromreportledger; finalcontrolledspeedunaffected.",
+  "current_phase": "FINISHING_INFLIGHT_AFTER_CUTOFF; no furthertrainingqueued.",
+  "publication": {
+    "target": "origin/main",
+    "path": "experiments/rwkv7_ks2/reports/2026-10-23-ks2-study",
+    "note": "Report package publication is identified by its Git commit; large training artifacts remain local."
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "status": "DIAGNOSTIC",
+  "cases": 3,
+  "rows": [
+    {
+      "case": {
+        "label": "4_hermite_full_all_tiny_0",
+        "rank": 4,
+        "basis": "hermite",
+        "terms": "full",
+        "trainability": "all",
+        "scenario": "tiny",
+        "gradient_index": 0,
+        "error": "Tensor-likes are not close!\n\nMismatched elements: 1 / 204 (0.5%)\nGreatest absolute difference: 623.96875 at index (10, 2, 2) (up to 7e-05 allowed)\nGreatest relative difference: 0.001988073578104377 at index (10, 2, 2) (up to 0.0005 allowed)",
+        "metrics": {
+          "index": 0,
+          "max_absolute": 131072.0,
+          "relative_l2": 1.9640691335702766e-07
+        }
+      },
+      "comparisons": [
+        {
+          "index": 0,
+          "fp64_norm": 1061846457086.7606,
+          "eager_relative_l2": 1.0690682635270752e-07,
+          "fused_relative_l2": 2.071644240587007e-07,
+          "eager_max_absolute": 58884.14520263672,
+          "fused_max_absolute": 143233.63037109375,
+          "worst_pairwise_component": {
+            "flat_index": 175,
+            "fp64": 637508398977.6304,
+            "eager": 637508386816.0,
+            "fused": 637508255744.0
+          }
+        },
+        {
+          "index": 1,
+          "fp64_norm": 18.684858050299937,
+          "eager_relative_l2": 7.11132948732161e-08,
+          "fused_relative_l2": 6.136264568429588e-08,
+          "eager_max_absolute": 4.731118679046631e-07,
+          "fused_max_absolute": 5.885958671569824e-07,
+          "worst_pairwise_component": {
+            "flat_index": 2,
+            "fp64": -6.581201080232859,
+            "eager": -6.581201553344727,
+            "fused": -6.581201076507568
+          }
+        },
+        {
+          "index": 2,
+          "fp64_norm": 2.3800170895388875,
+          "eager_relative_l2": 9.266271779439135e-08,
+          "fused_relative_l2": 8.664365311301171e-08,
+          "eager_max_absolute": 8.67521270375704e-08,
+          "fused_max_absolute": 6.299714966351289e-08,
+          "worst_pairwise_component": {
+            "flat_index": 0,
+            "fp64": 0.6487756539443028,
+            "eager": 0.6487756371498108,
+            "fused": 0.6487756967544556
+          }
+        },
+        {
+          "index": 3,
+          "fp64_norm": 3.7314492897774927,
+          "eager_relative_l2": 7.821362102535711e-08,
+          "fused_relative_l2": 7.281229485619812e-08,
+          "eager_max_absolute": 1.0920349557963505e-07,
+          "fused_max_absolute": 1.0920349557963505e-07,
+          "worst_pairwise_component": {
+            "flat_index": 143,
+            "fp64": -1.2778825007535788,
+            "eager": -1.27788245677948,
+            "fused": -1.2778825759887695
+          }
+        },
+        {
+          "index": 4,
+          "fp64_norm": 4.0634241546467416e-05,
+          "eager_relative_l2": 1.397001713487198e-07,
+          "fused_relative_l2": 1.7019036001067441e-07,
+          "eager_max_absolute": 4.1361067504720305e-12,
+          "fused_max_absolute": 6.087490822298709e-12,
+          "worst_pairwise_component": {
+            "flat_index": 30,
+            "fp64": 3.380380321074603e-05,
+            "eager": 3.380380439921282e-05,
+            "fused": 3.380379712325521e-05
+          }
+        },
+        {
+          "index": 5,
+          "fp64_norm": 4.6767621628558397e-05,
+          "eager_relative_l2": 1.529688219364571e-07,
+          "fused_relative_l2": 2.7535145215469766e-07,
+          "eager_max_absolute": 5.2797161369079275e-12,
+          "fused_max_absolute": 1.1957499497939478e-11,
+          "worst_pairwise_component": {
+            "flat_index": 30,
+            "fp64": 3.907537497744646e-05,
+            "eager": 3.9075373933883384e-05,
+            "fused": 3.907536301994696e-05
+          }
+        },
+        {
+          "index": 6,
+          "fp64_norm": 8.13186573782146e-17,
+          "eager_relative_l2": 1.1139534388018386e-07,
+          "fused_relative_l2": 8.197063547376408e-08,
+          "eager_max_absolute": 7.974943764614542e-24,
+          "fused_max_absolute": 5.2599460362339005e-24,
+          "worst_pairwise_component": {
+            "flat_index": 2,
+            "fp64": 5.651688509961297e-17,
+            "eager": 5.65168771246692e-17,
+            "fused": 5.6516890359559e-17
+          }
+        },
+        {
+          "index": 7,
+          "fp64_norm": 1.057438003075412,
+          "eager_relative_l2": 1.202966197050955e-07,
+          "fused_relative_l2": 1.0205693696170704e-07,
+          "eager_max_absolute": 9.362742137142277e-08,
+          "fused_max_absolute": 7.993132744577025e-08,
+          "worst_pairwise_component": {
+            "flat_index": 0,
+            "fp64": 0.9826146108393354,
+            "eager": 0.9826145172119141,
+            "fused": 0.9826145768165588
+          }
+        },
+        {
+          "index": 8,
+          "fp64_norm": 3.4523882187132374e-17,
+          "eager_relative_l2": 1.1731642243038795e-07,
+          "fused_relative_l2": 1.2157193019872672e-07,
+          "eager_max_absolute": 4.0207092238349084e-24,
+          "fused_max_absolute": 4.0207092238349084e-24,
+          "worst_pairwise_component": {
+            "flat_index": 0,
+            "fp64": 1.0197353178971016e-17,
+            "eager": 1.0197352724197554e-17,
+            "fused": 1.019735437855878e-17
+          }
+        },
+        {
+          "index": 9,
+          "fp64_norm": 0.10841953371086012,
+          "eager_relative_l2": 1.6437617710923567e-07,
+          "fused_relative_l2": 1.583586699558319e-07,
+          "eager_max_absolute": 1.3149443117699278e-08,
+          "fused_max_absolute": 1.3149443117699278e-08,
+          "worst_pairwise_component": {
+            "flat_index": 0,
+            "fp64": 0.034173465063856115,
+            "eager": 0.03417346999049187,
+            "fused": 0.03417346626520157
+          }
+        }
+      ],
+      "forward": null
+    },
+    {
+      "case": {
+        "label": "4_taylor_full_all_tiny_0",
+        "rank": 4,
+        "basis": "taylor",
+        "terms": "full",
+        "trainability": "all",
+        "scenario": "tiny",
+        "gradient_index": 0,
+        "error": "Tensor-likes are not close!\n\nMismatched elements: 1 / 204 (0.5%)\nGreatest absolute difference: 15312.0 at index (11, 1, 2) (up to 7e-05 allowed)\nGreatest relative difference: 0.0007086301338858902 at index (11, 1, 2) (up to 0.0005 allowed)",
+        "metrics": {
+          "index": 0,
+          "max_absolute": 65536.0,
+          "relative_l2": 1.7660707148617762e-07
+        }
+      },
+      "comparisons": [
+        {
+          "index": 0,
+          "fp64_norm": 1081788962680.7913,
+          "eager_relative_l2": 1.255045894945256e-07,
+          "fused_relative_l2": 1.855029898441054e-07,
+          "eager_max_absolute": 69292.51599121094,
+          "fused_max_absolute": 85913.89770507812,
+          "worst_pairwise_component": {
+            "flat_index": 10,
+            "fp64": -181539999921.77182,
+            "eager": -181540028416.0,
+            "fused": -181539962880.0
+          }
+        },
+        {
+          "index": 1,
+          "fp64_norm": 23.08124374565799,
+          "eager_relative_l2": 7.183794052166422e-08,
+          "fused_relative_l2": 5.167939939442269e-08,
+          "eager_max_absolute": 5.271285772323608e-07,
+          "fused_max_absolute": 5.271285772323608e-07,
+          "worst_pairwise_component": {
+            "flat_index": 27,
+            "fp64": 0.27876849472522736,
+            "eager": 0.2787681519985199,
+            "fused": 0.2787686288356781
+          }
+        },
+        {
+          "index": 2,
+          "fp64_norm": 3.1793516722092643,
+          "eager_relative_l2": 6.988211800757697e-08,
+          "fused_relative_l2": 8.047012062206592e-08,
+          "eager_max_absolute": 7.884106137390212e-08,
+          "fused_max_absolute": 9.919031063176931e-08,
+          "worst_pairwise_component": {
+            "flat_index": 102,
+            "fp64": -1.1604002439188301,
+            "eager": -1.1604002714157104,
+            "fused": -1.160400152206421
+          }
+        },
+        {
+          "index": 3,
+          "fp64_norm": 2.5686740142279434,
+          "eager_relative_l2": 1.0051528438101899e-07,
+          "fused_relative_l2": 7.830051343592406e-08,
+          "eager_max_absolute": 9.203448481098775e-08,
+          "fused_max_absolute": 8.066347589874567e-08,
+          "worst_pairwise_component": {
+            "flat_index": 78,
+            "fp64": 0.43034847696474543,
+            "eager": 0.4303484857082367,
+            "fused": 0.43034839630126953
+          }
+        },
+        {
+          "index": 4,
+          "fp64_norm": 3.7448233424191696e-05,
+          "eager_relative_l2": 1.397633205338083e-07,
+          "fused_relative_l2": 1.917348041766787e-07,
+          "eager_max_absolute": 3.0267200455214114e-12,
+          "fused_max_absolute": 4.845709449067268e-12,
+          "worst_pairwise_component": {
+            "flat_index": 25,
+            "fp64": -1.0583530950422585e-05,
+            "eager": -1.0583531548036262e-05,
+            "fused": -1.0583527910057455e-05
+          }
+        },
+        {
+          "index": 5,
+          "fp64_norm": 5.601870141513618e-05,
+          "eager_relative_l2": 1.1713384158766047e-07,
+          "fused_relative_l2": 1.9322851614890416e-07,
+          "eager_max_absolute": 3.2649918315171998e-12,
+          "fused_max_absolute": 8.56313423760937e-12,
+          "worst_pairwise_component": {
+            "flat_index": 41,
+            "fp64": -3.9594503882895573e-05,
+            "eager": -3.959450623369776e-05,
+            "fused": -3.9594495319761336e-05
+          }
+        },
+        {
+          "index": 6,
+          "fp64_norm": 7.733813090338859e-17,
+          "eager_relative_l2": 1.4999710831120082e-07,
+          "fused_relative_l2": 1.0541575940674002e-07,
+          "eager_max_absolute": 8.780051358786194e-24,
+          "fused_max_absolute": 6.970082389744636e-24,
+          "worst_pairwise_component": {
+            "flat_index": 0,
+            "fp64": 5.79230532413913e-17,
+            "eager": 5.792304446133995e-17,
+            "fused": 5.792305107878485e-17
+          }
+        },
+        {
+          "index": 7,
+          "fp64_norm": 1.6772747328416806,
+          "eager_relative_l2": 8.647552657586234e-08,
+          "fused_relative_l2": 8.749215182150658e-08,
+          "eager_max_absolute": 1.3892535077886237e-07,
+          "fused_max_absolute": 1.3892535077886237e-07,
+          "worst_pairwise_component": {
+            "flat_index": 0,
+            "fp64": -0.06637167006155953,
+            "eager": -0.06637167930603027,
+            "fused": -0.06637169420719147
+          }
+        },
+        {
+          "index": 8,
+          "fp64_norm": 2.52900188454829e-17,
+          "eager_relative_l2": 8.258055965154967e-08,
+          "fused_relative_l2": 6.678357054063158e-08,
+          "eager_max_absolute": 1.6638683764390648e-24,
+          "fused_max_absolute": 1.644854073773046e-24,
+          "worst_pairwise_component": {
+            "flat_index": 2,
+            "fp64": -2.4226485642294927e-17,
+            "eager": -2.422648397842655e-17,
+            "fused": -2.4226487287149e-17
+          }
+        },
+        {
+          "index": 9,
+          "fp64_norm": 0.15262998754454649,
+          "eager_relative_l2": 9.89938657323785e-08,
+          "fused_relative_l2": 1.586374316037689e-07,
+          "eager_max_absolute": 1.385483202470672e-08,
+          "fused_max_absolute": 1.7580122323168634e-08,
+          "worst_pairwise_component": {
+            "flat_index": 0,
+            "fp64": 0.008692333274807493,
+            "eager": 0.008692339062690735,
+            "fused": 0.008692316710948944
+          }
+        }
+      ],
+      "forward": null
+    },
+    {
+      "case": {
+        "label": "8_hermite_spine_frozen_clamp_forward",
+        "rank": 8,
+        "basis": "hermite",
+        "terms": "spine",
+        "trainability": "frozen",
+        "scenario": "clamp",
+        "gradient_index": null,
+        "error": "Tensor-likes are not close!\n\nMismatched elements: 7 / 408 (1.7%)\nGreatest absolute difference: 0.005646467208862305 at index (9, 2, 3) (up to 5e-05 allowed)\nGreatest relative difference: 0.00310224830172956 at index (9, 2, 0) (up to 0.0004 allowed)"
+      },
+      "comparisons": [
+        {
+          "index": 0,
+          "fp64_norm": 0.21147416677194944,
+          "eager_relative_l2": 9.293418842435766e-05,
+          "fused_relative_l2": 0.0001544623505960232,
+          "eager_max_absolute": 9.826590030834192e-06,
+          "fused_max_absolute": 1.6332398444965368e-05,
+          "worst_pairwise_component": {
+            "flat_index": 232,
+            "fp64": -0.10573708338597472,
+            "eager": -0.10574690997600555,
+            "fused": -0.10572075098752975
+          }
+        }
+      ],
+      "forward": {
+        "eager_relative_l2": 1.182417458733018e-05,
+        "fused_relative_l2": 1.9702342725706402e-05,
+        "eager_max_absolute": 0.0021176406252552127,
+        "fused_max_absolute": 0.003528826583607092
+      }
+    }
+  ],
+  "note": "CPU float64 eager-autograd evaluation of the same saved FP32 inputs and parameters. Does not itself authorize any GPU kernel or change tolerances."
+}

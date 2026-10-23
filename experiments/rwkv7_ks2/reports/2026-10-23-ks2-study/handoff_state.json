@@ -1,0 +1,37 @@
+{
+  "updated_epoch": 1792721019.9395232,
+  "deadline_epoch": 1792725733,
+  "primary_user_correction": "Keep ORIGINAL unchanged MLP control. Optimize KS2 only. All further MLP variant training canceled. Do not reinterpret prior alternate controls as primary baseline.",
+  "running": {
+    "wave8_long_session": 88611,
+    "wave8_log": "/tmp/ks2_study_wave8_long.log",
+    "wave9_queued_session": 43020,
+    "wave9_log": "/tmp/ks2_study_wave9_geometry_learning.log",
+    "final_checks_queued_session": 42829,
+    "final_checks_log": "/tmp/ks2_study_final_checks.log",
+    "telemetry_session": 81418
+  },
+  "critical": [
+    "wave8_long has22 jobs, all100k; usesstudy_checked_v8, started01:51:13UTC. Original MLP+learnedspine46+undamped33 each3seeds onoriginalandlargerpool;frozenspine46original3seeds;historyoriginalseed11.",
+    "wave9_geometry_learning automatically followswave8,12 KS2-only15k jobs: geometryLR0.1,0.01,warps-only,coefficients-only,3seedseach. v9 model.",
+    "Final checks WAIT for training_complete.json AND deadline. Must manually create marker only after all training finishes. Final checks usev9 andscorelong22+shortwave9+reusedoriginalMLP/spine/frozen references onreservedholdout,theninterleaved10models\u00d75sameGPUtiming.",
+    "If time remains afterwave9, a selected KS2-only100k confirmation could launch beforedeadline; ifadded,extendfinalevaluation/report anddelaytraining_complete marker. Do not launchafterdeadline.",
+    "Atendstoptelemetrybywritingstop_telemetry. Regeneratecollect/plots/report,auditallcheckpoints/sources,ensureHTMLlinksvalid,reviewfinalnumbers,andcompleteexistinggoalafterdeadline."
+  ],
+  "report_scripts": [
+    "study_collect.py",
+    "study_plot.py",
+    "study_report_figures.py",
+    "study_report.py",
+    "study_audit.py"
+  ],
+  "notes": [
+    "Fullreportdraft exists report.html. Maincomparisonoriginalfixed MLP;alternatecontrolsretaineddiagnosticappendix.",
+    "Added original_reference_check.json exactallstate+optimizer parity3seeds;control_correction.jsonrecords canceledvariants.",
+    "Initial20runsmissingsnapshotsrecovered132files onlyafterexacthashmatch;recovered_source_snapshots.json.",
+    "Iterationvalidatorinitialfailedbecausepassedgeometry_stepsintomlpbaseline;fixedcheck_study_v7 strippingiterationflags. No trainingfailure.",
+    "v7iter8runscomplete:2fullstepsworse,halfstepsroughlymatchesone;v8shuffle4runscomplete:no consistentgain.",
+    "CPU feature_probe.json shows no simple feature-rank/quality correspondence.",
+    "Report needs final interpretation of long, holdout, and geometry-learning outcomes; currentlyonlydynamic tables."
+  ]
+}

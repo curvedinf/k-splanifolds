@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "kind": "undamped",
+  "cases": [
+    {
+      "n": 1,
+      "charts": 1,
+      "scale": 1.0,
+      "output_max_error": 7.450580596923828e-09,
+      "gradient_relative_l2": {
+        "input": 3.9807514440326486e-07,
+        "geo_spine": 1.020218007852236e-07,
+        "geo_t_basis_edge": 1.481761131572057e-07,
+        "geo_x_basis_edge": 1.3568843826305965e-07,
+        "geo_raw_scale": 0.0,
+        "geo_raw_shift": 2.1493943336281518e-07,
+        "geo_edge_raw_scale": 7.523979661527846e-08,
+        "geo_edge_raw_shift": 4.6475463477690937e-07
+      }
+    },
+    {
+      "n": 17,
+      "charts": 3,
+      "scale": 0.01,
+      "output_max_error": 4.470348358154297e-08,
+      "gradient_relative_l2": {
+        "input": 1.5190329349934473e-07,
+        "geo_spine": 1.0735554667462566e-07,
+        "geo_t_basis_edge": 1.1829486368242215e-07,
+        "geo_x_basis_edge": 1.251849681693784e-07,
+        "geo_raw_scale": 1.020222200054377e-07,
+        "geo_raw_shift": 1.1250874365487107e-07,
+        "geo_edge_raw_scale": 2.485991501544049e-07,
+        "geo_edge_raw_shift": 2.5129543246293906e-07
+      }
+    },
+    {
+      "n": 256,
+      "charts": 33,
+      "scale": 1.0,
+      "output_max_error": 3.5762786865234375e-07,
+      "gradient_relative_l2": {
+        "input": 1.6996224871945742e-07,
+        "geo_spine": 1.6091647125904274e-07,
+        "geo_t_basis_edge": 1.8515544297770248e-07,
+        "geo_x_basis_edge": 1.8493544473585644e-07,
+        "geo_raw_scale": 2.8059722012585553e-07,
+        "geo_raw_shift": 2.3180470520856034e-07,
+        "geo_edge_raw_scale": 2.677997485989181e-07,
+        "geo_edge_raw_shift": 2.2785418707371718e-07
+      }
+    },
+    {
+      "n": 33,
+      "charts": 4,
+      "scale": 10.0,
+      "output_max_error": 5.7220458984375e-06,
+      "gradient_relative_l2": {
+        "input": 3.8316815675898397e-07,
+        "geo_spine": 1.3687629518699396e-07,
+        "geo_t_basis_edge": 1.9241021220750554e-07,
+        "geo_x_basis_edge": 1.884378235672557e-07,
+        "geo_raw_scale": 9.527691986477294e-07,
+        "geo_raw_shift": 2.629141135912505e-07,
+        "geo_edge_raw_scale": 1.3924876611781656e-06,
+        "geo_edge_raw_shift": 5.777463911726954e-07
+      }
+    },
+    {
+      "n": 9,
+      "charts": 2,
+      "scale": 0.0,
+      "output_max_error": 7.450580596923828e-09,
+      "gradient_relative_l2": {
+        "input": 1.0843068309895898e-07,
+        "geo_spine": 5.8451252726854364e-08,
+        "geo_t_basis_edge": 1.0403391570434906e-07,
+        "geo_x_basis_edge": 8.109236659947783e-08,
+        "geo_raw_scale": 1.4483611643356653e-08,
+        "geo_raw_shift": 1.3376649121710216e-07,
+        "geo_edge_raw_scale": 1.8943885038424924e-07,
+        "geo_edge_raw_shift": 1.6734219343561563e-07
+      }
+    },
+    {
+      "n": 5,
+      "charts": 2,
+      "scale": 100000.0,
+      "output_max_error": 1.9073486328125e-06,
+      "gradient_relative_l2": {
+        "input": 0.0,
+        "geo_spine": 4.605010772706919e-08,
+        "geo_t_basis_edge": 6.394176210733349e-08,
+        "geo_x_basis_edge": 6.951910336283618e-08,
+        "geo_raw_scale": 6.327537266770378e-05,
+        "geo_raw_shift": 6.602556823054329e-05,
+        "geo_edge_raw_scale": 0.0,
+        "geo_edge_raw_shift": 0.0
+      }
+    }
+  ],
+  "trained": {
+    "logit_max_error": 7.62939453125e-06,
+    "loss_reference": 2.0523459911346436,
+    "loss_fused": 2.0523459911346436,
+    "gradient_max_relative_l2": 1.3126436897437088e-06
+  },
+  "geometry_forward_backward_ms": {
+    "reference": 0.6852316367439926,
+    "fused": 0.1681913734258463
+  },
+  "source_sha256": "0c816f78a7dd0398e21402ed2f9fdb18568a671fb59bc4fb4422ea38b6db1274"
+}

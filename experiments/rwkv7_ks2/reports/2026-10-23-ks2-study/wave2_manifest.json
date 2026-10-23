@@ -1,0 +1,191 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave2",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "dense31",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31",
+        "family": "dense_ks2",
+        "charts": 31
+      }
+    },
+    {
+      "id": "dense31_geometry_only",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_geometry_only",
+        "family": "dense_ks2",
+        "charts": 31,
+        "coord_skip": 0.0
+      }
+    },
+    {
+      "id": "dense31_relu2",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_relu2",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2"
+      }
+    },
+    {
+      "id": "dense31_mlp_init",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_mlp_init",
+        "family": "dense_ks2",
+        "charts": 31,
+        "input_init": "mlp"
+      }
+    },
+    {
+      "id": "dense31_output55",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_output55",
+        "family": "dense_ks2",
+        "charts": 31,
+        "output_lr": 5.5
+      }
+    },
+    {
+      "id": "dense31_geolr4",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_geolr4",
+        "family": "dense_ks2",
+        "charts": 31,
+        "geometry_lr": 4.0
+      }
+    },
+    {
+      "id": "dense31_geolr_quarter",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_geolr_quarter",
+        "family": "dense_ks2",
+        "charts": 31,
+        "geometry_lr": 0.25
+      }
+    },
+    {
+      "id": "mlp248",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp248",
+        "family": "mlp",
+        "hidden": 248
+      }
+    },
+    {
+      "id": "history40_geo_readout",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history40_geo_readout",
+        "charts": 40,
+        "coord_skip": 0.0,
+        "readout": "learned"
+      }
+    },
+    {
+      "id": "history40_relu_readout",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history40_relu_readout",
+        "charts": 40,
+        "cell": "ks2_relu2",
+        "readout": "learned"
+      }
+    },
+    {
+      "id": "history40_random_relu_readout",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history40_random_relu_readout",
+        "charts": 40,
+        "cell": "relu2",
+        "readout": "learned"
+      }
+    },
+    {
+      "id": "history64_geo_lora",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history64_geo_lora",
+        "coord_skip": 0.0,
+        "readout": "lora",
+        "readout_rank": 16
+      }
+    },
+    {
+      "id": "dense31_gelu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_gelu",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_gelu"
+      }
+    },
+    {
+      "id": "dense31_nonlinear_small",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_nonlinear_small",
+        "family": "dense_ks2",
+        "charts": 31,
+        "coord_scale": 0.25,
+        "coord_skip": 0.0
+      }
+    },
+    {
+      "id": "dense31_nonlinear_large",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_nonlinear_large",
+        "family": "dense_ks2",
+        "charts": 31,
+        "coord_scale": 4.0,
+        "coord_skip": 0.0
+      }
+    },
+    {
+      "id": "mlp_control",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_control",
+        "family": "mlp"
+      }
+    },
+    {
+      "id": "dense31_output035",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense31_output035",
+        "family": "dense_ks2",
+        "charts": 31,
+        "output_lr": 0.3548387096774194
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "recorded_epoch": 1792726916.6606686,
+  "initial_elementwise_check": "Two near-zero gradient components exceeded5e-6 absolute+5e-4relative tolerance on random-token stress test. No code equation changed.",
+  "replacement_check": "Per-parameter relativeL2<=1e-4 or maxabsolute<=1e-7, with all absolute/component errors retained. Independently verified individual projection values and gradients.",
+  "observed_cpu": "Max relativeL2 across all parameter gradients4.91e-6; logits maxabsolute1.53e-5. Random-token CE12.48 is a stress input, not a model quality score.",
+  "cpu_stress": "structured_model_cpu_check.json",
+  "real_input_check": "structured_model_cpu_real_check.json"
+}

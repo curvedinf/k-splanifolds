@@ -1,0 +1,160 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12c_original_geometry",
+  "deadline_epoch": 1792740133,
+  "jobs": [
+    {
+      "id": "full_original_equation_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_equation",
+        "geometry_equation": "original"
+      }
+    },
+    {
+      "id": "full_stable_sigmoid_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_stable_sigmoid",
+        "geometry_input_sigmoid": true
+      }
+    },
+    {
+      "id": "full_original_sigmoid_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_sigmoid",
+        "geometry_equation": "original",
+        "geometry_input_sigmoid": true
+      }
+    },
+    {
+      "id": "full_original_sigmoid_parallel_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_sigmoid_parallel",
+        "geometry_equation": "original",
+        "geometry_input_sigmoid": true,
+        "geometry_placement": "parallel"
+      }
+    },
+    {
+      "id": "full_original_equation_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_equation",
+        "geometry_equation": "original"
+      }
+    },
+    {
+      "id": "full_stable_sigmoid_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_stable_sigmoid",
+        "geometry_input_sigmoid": true
+      }
+    },
+    {
+      "id": "full_original_sigmoid_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_sigmoid",
+        "geometry_equation": "original",
+        "geometry_input_sigmoid": true
+      }
+    },
+    {
+      "id": "full_original_sigmoid_parallel_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_sigmoid_parallel",
+        "geometry_equation": "original",
+        "geometry_input_sigmoid": true,
+        "geometry_placement": "parallel"
+      }
+    },
+    {
+      "id": "full_original_equation_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_equation",
+        "geometry_equation": "original"
+      }
+    },
+    {
+      "id": "full_stable_sigmoid_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_stable_sigmoid",
+        "geometry_input_sigmoid": true
+      }
+    },
+    {
+      "id": "full_original_sigmoid_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_sigmoid",
+        "geometry_equation": "original",
+        "geometry_input_sigmoid": true
+      }
+    },
+    {
+      "id": "full_original_sigmoid_parallel_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "name": "full_original_sigmoid_parallel",
+        "geometry_equation": "original",
+        "geometry_input_sigmoid": true,
+        "geometry_placement": "parallel"
+      }
+    }
+  ],
+  "reason": "RHAC-source review: distinguish original KS2 equation from stabilized equation and sigmoid-bounded geometry inputs. Same full31 projections and raw coordinate residual; original MLP unchanged. Original+sigmoid+parallel is an explicitly combined follow-up."
+}

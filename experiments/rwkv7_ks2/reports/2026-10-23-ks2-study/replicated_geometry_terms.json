@@ -1,0 +1,179 @@
+{
+  "protocol": "CPU inference;4096fixed exploratory validation targets; each intervention affects one layer. Positive lossdelta is worse. Three trained15k full31 KS2+ReLU2 seeds; no retraining or reservedvalidation.",
+  "rows": [
+    {
+      "seed": 11,
+      "run": "wave2/dense31_relu2",
+      "base_loss": 1.6985231414437294,
+      "targets": 4096,
+      "layers": [
+        {
+          "spine_rms": 0.3489625137299299,
+          "edge_rms": 0.36133966594934464,
+          "spine_edge_cosine": 0.5422743074595928,
+          "den_delta_mean": 0.024788368493318558,
+          "den_weight_mean": 0.025167053565382957,
+          "spine_coefficient_rms": 0.10457613319158554,
+          "t_edge_coefficient_rms": 0.13855354487895966,
+          "x_edge_coefficient_rms": 0.13547611236572266
+        },
+        {
+          "spine_rms": 0.5372299924492836,
+          "edge_rms": 0.5586869940161705,
+          "spine_edge_cosine": 0.6035739779472351,
+          "den_delta_mean": 0.02494453638792038,
+          "den_weight_mean": 0.025176623836159706,
+          "spine_coefficient_rms": 0.10481446236371994,
+          "t_edge_coefficient_rms": 0.1341741532087326,
+          "x_edge_coefficient_rms": 0.13161852955818176
+        },
+        {
+          "spine_rms": 0.9060225151479244,
+          "edge_rms": 0.8909998647868633,
+          "spine_edge_cosine": 0.6917795687913895,
+          "den_delta_mean": 0.025874093174934387,
+          "den_weight_mean": 0.025849679484963417,
+          "spine_coefficient_rms": 0.1014421135187149,
+          "t_edge_coefficient_rms": 0.11149656772613525,
+          "x_edge_coefficient_rms": 0.10912594944238663
+        },
+        {
+          "spine_rms": 1.0005411766469479,
+          "edge_rms": 1.0688747093081474,
+          "spine_edge_cosine": 0.6549399197101593,
+          "den_delta_mean": 0.02597666159272194,
+          "den_weight_mean": 0.025893447920680046,
+          "spine_coefficient_rms": 0.09529854357242584,
+          "t_edge_coefficient_rms": 0.10612969100475311,
+          "x_edge_coefficient_rms": 0.10526467859745026
+        }
+      ],
+      "inference_ablations": {
+        "layer0_spine_only": 1.7214751914143562,
+        "layer1_spine_only": 1.7141973078250885,
+        "layer2_spine_only": 1.7027861922979355,
+        "layer3_spine_only": 1.7007968798279762,
+        "layer0_edge_only": 1.7116922587156296,
+        "layer1_edge_only": 1.7081604301929474,
+        "layer2_edge_only": 1.7055300027132034,
+        "layer3_edge_only": 1.7068547382950783
+      }
+    },
+    {
+      "seed": 22,
+      "run": "wave3/dense_relu_seed22",
+      "base_loss": 1.690246470272541,
+      "targets": 4096,
+      "layers": [
+        {
+          "spine_rms": 0.3749104104936123,
+          "edge_rms": 0.414163488894701,
+          "spine_edge_cosine": 0.570168986916542,
+          "den_delta_mean": 0.024867484346032143,
+          "den_weight_mean": 0.025208089500665665,
+          "spine_coefficient_rms": 0.10742068290710449,
+          "t_edge_coefficient_rms": 0.13961920142173767,
+          "x_edge_coefficient_rms": 0.13455812633037567
+        },
+        {
+          "spine_rms": 0.5382506214082241,
+          "edge_rms": 0.6099890395998955,
+          "spine_edge_cosine": 0.6052017323672771,
+          "den_delta_mean": 0.024903183802962303,
+          "den_weight_mean": 0.025218071416020393,
+          "spine_coefficient_rms": 0.10808982700109482,
+          "t_edge_coefficient_rms": 0.138353630900383,
+          "x_edge_coefficient_rms": 0.13494658470153809
+        },
+        {
+          "spine_rms": 0.9233254194259644,
+          "edge_rms": 0.9076737128198147,
+          "spine_edge_cosine": 0.6610908731818199,
+          "den_delta_mean": 0.025763794779777527,
+          "den_weight_mean": 0.02575310878455639,
+          "spine_coefficient_rms": 0.10341159999370575,
+          "t_edge_coefficient_rms": 0.11412781476974487,
+          "x_edge_coefficient_rms": 0.11149676144123077
+        },
+        {
+          "spine_rms": 1.0884193554520607,
+          "edge_rms": 1.1082214340567589,
+          "spine_edge_cosine": 0.6868641711771488,
+          "den_delta_mean": 0.02589578367769718,
+          "den_weight_mean": 0.025834793224930763,
+          "spine_coefficient_rms": 0.10067988187074661,
+          "t_edge_coefficient_rms": 0.1096709668636322,
+          "x_edge_coefficient_rms": 0.10890217125415802
+        }
+      ],
+      "inference_ablations": {
+        "layer0_spine_only": 1.7159648388624191,
+        "layer1_spine_only": 1.702848143875599,
+        "layer2_spine_only": 1.695342592895031,
+        "layer3_spine_only": 1.6958718076348305,
+        "layer0_edge_only": 1.703752987086773,
+        "layer1_edge_only": 1.69779072701931,
+        "layer2_edge_only": 1.6978687793016434,
+        "layer3_edge_only": 1.695316843688488
+      }
+    },
+    {
+      "seed": 33,
+      "run": "wave3/dense_relu_seed33",
+      "base_loss": 1.6865253821015358,
+      "targets": 4096,
+      "layers": [
+        {
+          "spine_rms": 0.37070619501173496,
+          "edge_rms": 0.3622601218521595,
+          "spine_edge_cosine": 0.5602964349091053,
+          "den_delta_mean": 0.02503068558871746,
+          "den_weight_mean": 0.025374406948685646,
+          "spine_coefficient_rms": 0.10643458366394043,
+          "t_edge_coefficient_rms": 0.13681188225746155,
+          "x_edge_coefficient_rms": 0.13377876579761505
+        },
+        {
+          "spine_rms": 0.5625343695282936,
+          "edge_rms": 0.651232410222292,
+          "spine_edge_cosine": 0.6093432493507862,
+          "den_delta_mean": 0.025137562304735184,
+          "den_weight_mean": 0.02542470395565033,
+          "spine_coefficient_rms": 0.10164482146501541,
+          "t_edge_coefficient_rms": 0.13408301770687103,
+          "x_edge_coefficient_rms": 0.13080720603466034
+        },
+        {
+          "spine_rms": 1.0926759243011475,
+          "edge_rms": 0.9888521358370781,
+          "spine_edge_cosine": 0.6761900559067726,
+          "den_delta_mean": 0.02589958906173706,
+          "den_weight_mean": 0.025829678401350975,
+          "spine_coefficient_rms": 0.10002114623785019,
+          "t_edge_coefficient_rms": 0.10791129618883133,
+          "x_edge_coefficient_rms": 0.10675321519374847
+        },
+        {
+          "spine_rms": 1.107032410800457,
+          "edge_rms": 1.0865504406392574,
+          "spine_edge_cosine": 0.7045097723603249,
+          "den_delta_mean": 0.025928327813744545,
+          "den_weight_mean": 0.02586682140827179,
+          "spine_coefficient_rms": 0.09769412875175476,
+          "t_edge_coefficient_rms": 0.10682561248540878,
+          "x_edge_coefficient_rms": 0.10614116489887238
+        }
+      ],
+      "inference_ablations": {
+        "layer0_spine_only": 1.7085763663053513,
+        "layer1_spine_only": 1.7041420117020607,
+        "layer2_spine_only": 1.690281257033348,
+        "layer3_spine_only": 1.6920277029275894,
+        "layer0_edge_only": 1.6957994550466537,
+        "layer1_edge_only": 1.6935150921344757,
+        "layer2_edge_only": 1.6936249732971191,
+        "layer3_edge_only": 1.695430263876915
+      }
+    }
+  ]
+}

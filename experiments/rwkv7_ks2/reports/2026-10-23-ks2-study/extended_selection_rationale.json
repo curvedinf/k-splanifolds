@@ -1,0 +1,18 @@
+{
+  "spine_rank1_fused_repeat": {
+    "reason": "Strong rank intervention: all three seeds beat original MLP, and eager/fused equivalent cohorts both support the lead. Selection score averages implementations within seed; fused is chosen for measured speed. Tests whether independent scalar nonlinear responses retain their short-horizon advantage at 100k.",
+    "estimated_fused_step_ms": 8.6
+  },
+  "spine_rank4_frozen": {
+    "reason": "All three seeds beat original MLP with 603648 learned parameters. Tests rank reduction without learning geometry, against earlier frozen rank8 long runs and selected learned rank1. Keeps fixed storage much smaller than full frozen geometry.",
+    "estimated_fused_step_ms": 8.4
+  },
+  "full46_frozen": {
+    "reason": "Best three-seed short mean, all three wins. Tests richer fixed geometry versus learned geometry at long horizon. This is a learned-parameter-budget comparison only: 150880 additional fixed geometry values give greater total coefficient storage than the MLP, and will be reported prominently.",
+    "estimated_fused_step_ms": 8.9
+  },
+  "spine_powers": {
+    "reason": "All three seeds beat original MLP. Initial-function-preserving polynomial reparameterization isolates optimization conditioning from rank/feature changes. Chosen for mechanistic diversity despite a smaller short-run lead than several frozen calibration variants.",
+    "estimated_fused_step_ms": 8.7
+  }
+}

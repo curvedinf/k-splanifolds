@@ -1,0 +1,206 @@
+{
+  "protocol": "Read-only comparison of equivalentfusedrank1 runs at15k before/aftercombinationextension. Sharedsourcehashes, data, softwareversions andearlylosseschecked. Differentfactorywrappernames delegateunchangedforreference. Doesnotidentify numericalruntimecause.",
+  "rows": [
+    {
+      "seed": 11,
+      "old_gpu": 3,
+      "new_gpu": 3,
+      "shared_sources": 51,
+      "changed_shared_sources": [],
+      "old_config": {
+        "name": "spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "output_lr": 1.0,
+        "fused_general": true
+      },
+      "new_config": {
+        "name": "combo_rank1_reference",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "output_lr": 1.0,
+        "fused_general": true
+      },
+      "torch_old": "2.11.0+rocm7.1",
+      "torch_new": "2.11.0+rocm7.1",
+      "hip_old": "7.1.52802",
+      "hip_new": "7.1.52802",
+      "same_train_sha": true,
+      "same_val_sha": true,
+      "history": [
+        {
+          "step": 0,
+          "old_val": 5.645017623901367,
+          "new_val": 5.645017623901367,
+          "delta": 0.0
+        },
+        {
+          "step": 100,
+          "old_val": 2.5543675422668457,
+          "new_val": 2.5543673038482666,
+          "delta": -2.384185791015625e-07
+        },
+        {
+          "step": 1000,
+          "old_val": 2.0774073600769043,
+          "new_val": 2.076390027999878,
+          "delta": -0.0010173320770263672
+        },
+        {
+          "step": 5000,
+          "old_val": 1.8141193389892578,
+          "new_val": 1.811100959777832,
+          "delta": -0.0030183792114257812
+        },
+        {
+          "step": 15000,
+          "old_val": 1.6483312845230103,
+          "new_val": 1.651748538017273,
+          "delta": 0.0034172534942626953
+        }
+      ],
+      "old_final": 1.6136729717254639,
+      "new_final": 1.6151574850082397
+    },
+    {
+      "seed": 22,
+      "old_gpu": 2,
+      "new_gpu": 1,
+      "shared_sources": 51,
+      "changed_shared_sources": [],
+      "old_config": {
+        "name": "spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "output_lr": 1.0,
+        "fused_general": true
+      },
+      "new_config": {
+        "name": "combo_rank1_reference",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "output_lr": 1.0,
+        "fused_general": true
+      },
+      "torch_old": "2.11.0+rocm7.1",
+      "torch_new": "2.11.0+rocm7.1",
+      "hip_old": "7.1.52802",
+      "hip_new": "7.1.52802",
+      "same_train_sha": true,
+      "same_val_sha": true,
+      "history": [
+        {
+          "step": 0,
+          "old_val": 5.722241401672363,
+          "new_val": 5.722241401672363,
+          "delta": 0.0
+        },
+        {
+          "step": 100,
+          "old_val": 2.5626168251037598,
+          "new_val": 2.562617063522339,
+          "delta": 2.384185791015625e-07
+        },
+        {
+          "step": 1000,
+          "old_val": 2.0950870513916016,
+          "new_val": 2.1012773513793945,
+          "delta": 0.006190299987792969
+        },
+        {
+          "step": 5000,
+          "old_val": 1.810344934463501,
+          "new_val": 1.8046178817749023,
+          "delta": -0.005727052688598633
+        },
+        {
+          "step": 15000,
+          "old_val": 1.6423848867416382,
+          "new_val": 1.6378803253173828,
+          "delta": -0.004504561424255371
+        }
+      ],
+      "old_final": 1.6167550086975098,
+      "new_final": 1.6130726337432861
+    },
+    {
+      "seed": 33,
+      "old_gpu": 2,
+      "new_gpu": 1,
+      "shared_sources": 51,
+      "changed_shared_sources": [],
+      "old_config": {
+        "name": "spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "output_lr": 1.0,
+        "fused_general": true
+      },
+      "new_config": {
+        "name": "combo_rank1_reference",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "output_lr": 1.0,
+        "fused_general": true
+      },
+      "torch_old": "2.11.0+rocm7.1",
+      "torch_new": "2.11.0+rocm7.1",
+      "hip_old": "7.1.52802",
+      "hip_new": "7.1.52802",
+      "same_train_sha": true,
+      "same_val_sha": true,
+      "history": [
+        {
+          "step": 0,
+          "old_val": 5.7316083908081055,
+          "new_val": 5.7316083908081055,
+          "delta": 0.0
+        },
+        {
+          "step": 100,
+          "old_val": 2.5935211181640625,
+          "new_val": 2.593522310256958,
+          "delta": 1.1920928955078125e-06
+        },
+        {
+          "step": 1000,
+          "old_val": 2.099386692047119,
+          "new_val": 2.103409767150879,
+          "delta": 0.004023075103759766
+        },
+        {
+          "step": 5000,
+          "old_val": 1.8106646537780762,
+          "new_val": 1.8158830404281616,
+          "delta": 0.005218386650085449
+        },
+        {
+          "step": 15000,
+          "old_val": 1.652526617050171,
+          "new_val": 1.6426165103912354,
+          "delta": -0.009910106658935547
+        }
+      ],
+      "old_final": 1.6180648803710938,
+      "new_final": 1.6142656803131104
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave14_spine_scale",
+  "deadline_epoch": 1792740133,
+  "jobs": [
+    {
+      "id": "spine_rank8_scaled_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank8_scaled",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "spine_input_scale": 2.8284271247461903
+      }
+    },
+    {
+      "id": "spine_rank8_scaled_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank8_scaled",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "spine_input_scale": 2.8284271247461903
+      }
+    },
+    {
+      "id": "spine_rank8_scaled_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank8_scaled",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "spine_input_scale": 2.8284271247461903
+      }
+    },
+    {
+      "id": "spine_rank1_compressed_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_compressed",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "spine_input_scale": 0.35355339059327373
+      }
+    },
+    {
+      "id": "spine_rank1_compressed_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_compressed",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "spine_input_scale": 0.35355339059327373
+      }
+    },
+    {
+      "id": "spine_rank1_compressed_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_compressed",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "spine_input_scale": 0.35355339059327373
+      }
+    },
+    {
+      "id": "spine_rank8_powers_scaled_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank8_powers_scaled",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "geometry_basis": "powers",
+        "spine_input_scale": 2.8284271247461903
+      }
+    },
+    {
+      "id": "spine_rank8_powers_scaled_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank8_powers_scaled",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "geometry_basis": "powers",
+        "spine_input_scale": 2.8284271247461903
+      }
+    },
+    {
+      "id": "spine_rank8_powers_scaled_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank8_powers_scaled",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 46,
+        "geometry_basis": "powers",
+        "spine_input_scale": 2.8284271247461903
+      }
+    }
+  ]
+}

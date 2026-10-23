@@ -1,0 +1,289 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave5_transfer/soft_undamped_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 33,
+    "control_update_scale": false,
+    "steps": 15000,
+    "batch_size": 4,
+    "sequence_length": 64,
+    "gpu": 0
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.645017623901367
+    },
+    {
+      "step": 100,
+      "train_loss": 2.5595335960388184,
+      "gradient_norm": 2.782519578933716,
+      "val_loss": 2.686145305633545,
+      "training_seconds": 0.3542574029415846
+    },
+    {
+      "step": 200,
+      "train_loss": 2.249436855316162,
+      "gradient_norm": 111.73991394042969,
+      "val_loss": 2.534176826477051,
+      "training_seconds": 0.7087892249692231
+    },
+    {
+      "step": 500,
+      "train_loss": 2.19528865814209,
+      "gradient_norm": 1.9539611339569092,
+      "val_loss": 2.3614535331726074,
+      "training_seconds": 1.7719288719817996
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.9965753555297852,
+      "gradient_norm": 1.3549761772155762,
+      "val_loss": 2.2074599266052246,
+      "training_seconds": 3.543619154021144
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.6658079624176025,
+      "gradient_norm": 116.5455093383789,
+      "val_loss": 2.070828437805176,
+      "training_seconds": 7.087571825017221
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.886111855506897,
+      "gradient_norm": 1.2129958868026733,
+      "val_loss": 2.004818916320801,
+      "training_seconds": 10.632394307060167
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.7438746690750122,
+      "gradient_norm": 1.1580172777175903,
+      "val_loss": 1.9502692222595215,
+      "training_seconds": 14.17777001298964
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.9923667907714844,
+      "gradient_norm": 1.145188331604004,
+      "val_loss": 1.913548231124878,
+      "training_seconds": 17.724828405072913
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.8621726036071777,
+      "gradient_norm": 1.1308948993682861,
+      "val_loss": 1.8654435873031616,
+      "training_seconds": 21.27305226610042
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.1370346546173096,
+      "gradient_norm": 1.266480803489685,
+      "val_loss": 1.8476366996765137,
+      "training_seconds": 24.822622515144758
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.158670425415039,
+      "gradient_norm": 1.7757558822631836,
+      "val_loss": 1.8151977062225342,
+      "training_seconds": 28.372984006186016
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.6090586185455322,
+      "gradient_norm": 1.052438497543335,
+      "val_loss": 1.7953133583068848,
+      "training_seconds": 31.924007411231287
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.9003472328186035,
+      "gradient_norm": 1.5179530382156372,
+      "val_loss": 1.7751250267028809,
+      "training_seconds": 35.47702377929818
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.9368106126785278,
+      "gradient_norm": 1.5377812385559082,
+      "val_loss": 1.765221357345581,
+      "training_seconds": 39.030904299230315
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.6921701431274414,
+      "gradient_norm": 1.4509387016296387,
+      "val_loss": 1.7448370456695557,
+      "training_seconds": 42.585949359228835
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.4684923887252808,
+      "gradient_norm": 1.4178158044815063,
+      "val_loss": 1.7437440156936646,
+      "training_seconds": 46.142319797188975
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.5347926616668701,
+      "gradient_norm": 1.3711427450180054,
+      "val_loss": 1.7269521951675415,
+      "training_seconds": 49.699124130187556
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.7692784070968628,
+      "gradient_norm": 1.4865208864212036,
+      "val_loss": 1.73026704788208,
+      "training_seconds": 53.25567338312976
+    }
+  ],
+  "parameters": 492624,
+  "ffn_parameters_by_layer": [
+    73524,
+    73524,
+    73524,
+    73524
+  ],
+  "ffn_types": [
+    "ks2_relu2",
+    "ks2_relu2",
+    "ks2_relu2",
+    "ks2_relu2"
+  ],
+  "training_seconds": 53.25567338312976,
+  "wall_seconds": 57.14409216702916,
+  "benchmark_ms_per_step": 3.526104250922799,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "study_models.py": "4dd46590c73265207ae16ceca0117afeaeb3b748e1d4778e12c26874ac56fc1d",
+    "study_models_v2.py": "0e4db807fffefaa17280b33156fc22cc23524b0bc2a0817e93f5426858d60f98",
+    "study_models_v3.py": "054e3829e95bd0bab1cbc7507f2c4f5355e7755f791b7cea8a35ecc67e08212f",
+    "study_models_v4.py": "307068cbf81222ef40e53466ccb972e3be4dfc096de75a4b5a6cc788c28649dd",
+    "study_models_v5.py": "606a14935134e6b945cd9a47fa4e2c846e26b3e0a514eabb50cf2aca36e98a2b",
+    "study_train_v5.py": "e2c7bc6b6292e1b38e8188d4504d8c44dcde4b6114bb56ba18f22a655e7a7562",
+    "study_full_eval_v5.py": "ad3b8825944c6d8b784e526315d72242df4b6bcf8b1fb45af11c405c29d0200a",
+    "study_wave_v5.py": "10ee554e8c7a01c7b04d253c2894e2a4bd178475c124a99a0a0f7ec1b9dc9ce9",
+    "rwkv_mux.py": "6edfd62b6d009c582040623fe3b23f5d2a527f050f72b27a3097e666aa982892",
+    "study_train.py": "c8cd6f33a65140303f1aa93ca8b8a39aa9a6d21df8ce38b5859fa2da10dddf1f",
+    "study_train_v3.py": "c22e20d6e3f36e4ad3cdbbc577675139bb50b443c294750eeeac9154f6d01a44",
+    "study_train_v4.py": "10f7843a35f9ef6b85466c8b19cc0f94763c72b9107df3983981882434de3fc9",
+    "study_train_core_v4.py": "64d616d05680c1e81e61e8fcd398a39f7ff86f38f9479c4b54eb93ed1cb8310e",
+    "study_full_eval_v4.py": "e547ac1fad2213470cad55b2f528f41923c6bc8db87662773ebe9ecb676e86e8",
+    "study_wave_v4.py": "d30a81fc12b9bfefc3a38cd89f6f84447a384a93ac977afe6b140e3303b56720",
+    "study_train_core.py": "4dc62261dfa08f1a144a53558079729e258f23e7cf131492e24b0e363d84d1a3",
+    "study_full_eval.py": "c785f93f0d86104bcb173ab5d6040993a1e5f4a06fc8af021e0f8f17a247405f",
+    "study_full_eval_v3.py": "caec4cc781618699309a5d3f70eb73f00f85b31ab6772032a0d95bbb513e5517",
+    "study_wave_v2.py": "607f26c18f925b7a829e9f06de70d351c6593403e5c57dfab237b67546207ba9",
+    "study_wave_v3.py": "3f1c94f7ee240a4b1e922cb0d443aaf88c523875c6c2414162fe4111251596a1",
+    "ks2_geometry_gpu.py": "555b03ccb06e63c82b26a7a68fba72987ad480290b04ca234412425451a09635",
+    "ks2_partial_gpu.py": "0c816f78a7dd0398e21402ed2f9fdb18568a671fb59bc4fb4422ea38b6db1274",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "side_history.py": "a5144fa43c9c5791a3014449c26e0a9b8257b2fa64aeaee2c6e0b6f0938414e7",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411"
+  },
+  "peak_allocated_bytes": 208742912,
+  "peak_reserved_bytes": 247463936,
+  "parameter_bytes": 1970496,
+  "buffer_bytes": 1840,
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "evaluation": {
+    "original_val": 1.73026704788208,
+    "expanded_val": 1.7162508964538574,
+    "sampled_train": 1.6161887645721436
+  },
+  "study_config": {
+    "name": "soft_undamped",
+    "family": "dense_ks2",
+    "charts": 33,
+    "cell": "ks2_relu2",
+    "geometry_terms": "undamped",
+    "fused_partial": true,
+    "attention": "softmax",
+    "output_lr": 1.0
+  },
+  "parameter_breakdown": {
+    "total": 492624,
+    "rwkv": 147456,
+    "embedding_head": 49152,
+    "geometry": 91344,
+    "decoder_readout": 101376,
+    "decoder_input": 101376,
+    "other": 1920
+  },
+  "architecture": "Timed KS2 study: soft_undamped",
+  "coding": "fixed_both",
+  "intermediate_evaluations": [],
+  "context_evaluations": [],
+  "tiled_evaluation": {
+    "evaluation_step": 15000,
+    "training_sequence_length": 64,
+    "loss": 1.697743535041809,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.6980459690093994,
+        "batch4_vs_eval_max_error": 2.384185791015625e-07
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.6975252628326416,
+        "batch4_vs_eval_max_error": 2.384185791015625e-07
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.697780966758728,
+        "batch4_vs_eval_max_error": 2.384185791015625e-07
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.6976220607757568,
+        "batch4_vs_eval_max_error": 4.76837158203125e-07
+      }
+    ],
+    "sequence_length": 64,
+    "note": "Four overlapping tilings of one held-out shard; state resets each window. Not four independent test sets.",
+    "validation_source": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data/val.bytes",
+    "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+  },
+  "physical_gpu": 1,
+  "study_job_id": "soft_undamped_11",
+  "status": "complete"
+}

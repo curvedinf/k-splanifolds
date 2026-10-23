@@ -1,0 +1,221 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing",
+  "deadline_epoch": 1792740133,
+  "predeclared_epoch": 1792729275.0391731,
+  "rationale": "Interaction follow-up: frozen versus learned spine at ranks1 and4 with identical368projections and matched fused backend; full rank1 tests scalar nonlinear geometry at the original learned-parameter budget. Kernel check mustPASS beforedispatch.",
+  "jobs": [
+    {
+      "id": "spine_rank1_fused_repeat_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "spine_rank1_frozen_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "spine_rank4_fused_repeat_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank4_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "spine_rank4_frozen_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "full_rank1_11",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "full_rank1",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 344,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "spine_rank1_fused_repeat_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "spine_rank1_frozen_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "spine_rank4_fused_repeat_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank4_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "spine_rank4_frozen_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "full_rank1_22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "full_rank1",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 344,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "spine_rank1_fused_repeat_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "spine_rank1_frozen_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank1_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "spine_rank4_fused_repeat_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank4_fused_repeat",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true
+      }
+    },
+    {
+      "id": "spine_rank4_frozen_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "spine_rank4_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "full_rank1_33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "full_rank1",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "charts": 344,
+        "subspace_rank": 1,
+        "fused_general": true
+      }
+    }
+  ]
+}

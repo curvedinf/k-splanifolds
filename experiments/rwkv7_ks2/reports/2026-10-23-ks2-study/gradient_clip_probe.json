@@ -1,0 +1,728 @@
+{
+  "protocol": "CPU eager gradients; eight fixed B4 T64 training batches (2048 targets), seed8675309. No optimizer updates. Counterfactual norm exclusion changes only which gradient entries enter the global clipping norm. AdamW moment normalization means these factors are not learning-rate multipliers or measured parameter-step effects.",
+  "source_sha256": "14c5c76516efcf4e20847da38b83a173428bf9f59cc72d6e2e2f19dc80175d2c",
+  "rows": [
+    {
+      "run": "wave2/dense31_relu2",
+      "steps": 15000,
+      "batches": [
+        {
+          "loss": 1.4831520318984985,
+          "global_norm": 1.5560580275783387,
+          "geometry_squared_norm_fraction": 0.015043121552169636,
+          "clip_factor": 0.6426491426589894,
+          "clip_factor_excluding_geometry": 0.6475380925859325,
+          "squared_norm_by_group": {
+            "other": 1.1576430664972228,
+            "attention": 0.5145464024515494,
+            "geometry": 0.036424159707312366,
+            "input": 0.43964569025896344,
+            "output": 0.2730572662759421
+          }
+        },
+        {
+          "loss": 1.6702773571014404,
+          "global_norm": 1.5227173317717517,
+          "geometry_squared_norm_fraction": 0.018682351289048476,
+          "clip_factor": 0.6567202739566778,
+          "clip_factor_excluding_geometry": 0.6629421254382053,
+          "squared_norm_by_group": {
+            "other": 1.134825108089398,
+            "attention": 0.4250352475046749,
+            "geometry": 0.043318171452736455,
+            "input": 0.42075949769688725,
+            "output": 0.2947300477343864
+          }
+        },
+        {
+          "loss": 1.3928645849227905,
+          "global_norm": 1.4484543725370511,
+          "geometry_squared_norm_fraction": 0.02073009622382245,
+          "clip_factor": 0.6903906181441019,
+          "clip_factor_excluding_geometry": 0.6976597599200438,
+          "squared_norm_by_group": {
+            "other": 1.0104577687851746,
+            "attention": 0.4227838641691812,
+            "geometry": 0.04349215791654954,
+            "input": 0.37645139697952784,
+            "output": 0.24483488147126928
+          }
+        },
+        {
+          "loss": 1.3614115715026855,
+          "global_norm": 1.184753617256471,
+          "geometry_squared_norm_fraction": 0.016216724527870856,
+          "clip_factor": 0.8440566387626275,
+          "clip_factor_excluding_geometry": 0.8509849303934239,
+          "squared_norm_by_group": {
+            "other": 0.6972491857674864,
+            "attention": 0.23558106996112954,
+            "geometry": 0.02276246159961675,
+            "input": 0.2462092505361094,
+            "output": 0.20183916573795052
+          }
+        },
+        {
+          "loss": 1.7096588611602783,
+          "global_norm": 1.4084989226853826,
+          "geometry_squared_norm_fraction": 0.014142528079263833,
+          "clip_factor": 0.7099751898412924,
+          "clip_factor_excluding_geometry": 0.7150494947904509,
+          "squared_norm_by_group": {
+            "other": 1.0179702706455571,
+            "attention": 0.36042274107595834,
+            "geometry": 0.028056926081636308,
+            "input": 0.3385408717530697,
+            "output": 0.23887840564966162
+          }
+        },
+        {
+          "loss": 1.389695644378662,
+          "global_norm": 1.2966997700124598,
+          "geometry_squared_norm_fraction": 0.017377359821527855,
+          "clip_factor": 0.771187943376012,
+          "clip_factor_excluding_geometry": 0.7779771565648442,
+          "squared_norm_by_group": {
+            "other": 0.8551659947966236,
+            "attention": 0.3146005628982061,
+            "geometry": 0.02921881922584192,
+            "input": 0.28348496627945197,
+            "output": 0.1989599503502425
+          }
+        },
+        {
+          "loss": 1.4021421670913696,
+          "global_norm": 1.6092500865439066,
+          "geometry_squared_norm_fraction": 0.014017035122668305,
+          "clip_factor": 0.6214070683945543,
+          "clip_factor_excluding_geometry": 0.6258085340763442,
+          "squared_norm_by_group": {
+            "other": 1.2476968508503292,
+            "attention": 0.5107598619710556,
+            "geometry": 0.036299717390556506,
+            "input": 0.4789790432016076,
+            "output": 0.3159503676280219
+          }
+        },
+        {
+          "loss": 1.6359913349151611,
+          "global_norm": 1.4325635855351329,
+          "geometry_squared_norm_fraction": 0.01620186659395409,
+          "clip_factor": 0.698048807081498,
+          "clip_factor_excluding_geometry": 0.7037733052793937,
+          "squared_norm_by_group": {
+            "other": 1.00677785810858,
+            "attention": 0.406324038504234,
+            "geometry": 0.033250093206780115,
+            "input": 0.3539295915381083,
+            "output": 0.25195684524357304
+          }
+        }
+      ],
+      "mean_geometry_squared_norm_fraction": 0.016551385401290686,
+      "mean_global_norm": 1.4323744642400618,
+      "clipped_batches": 8,
+      "mean_clip_factor": 0.7043044602769691,
+      "mean_clip_factor_excluding_geometry": 0.7102166748810799
+    },
+    {
+      "run": "wave4_activation/spine_fused_11",
+      "steps": 15000,
+      "batches": [
+        {
+          "loss": 1.4736541509628296,
+          "global_norm": 1.4439459916253519,
+          "geometry_squared_norm_fraction": 0.01338808871143669,
+          "clip_factor": 0.6925461985791935,
+          "clip_factor_excluding_geometry": 0.6972292055186148,
+          "squared_norm_by_group": {
+            "other": 1.063591321132653,
+            "attention": 0.46734548631348866,
+            "geometry": 0.02791389755944721,
+            "input": 0.3136149862982118,
+            "output": 0.21251433542711948
+          }
+        },
+        {
+          "loss": 1.664212703704834,
+          "global_norm": 1.4075834596565622,
+          "geometry_squared_norm_fraction": 0.015916382919736658,
+          "clip_factor": 0.7104369426215397,
+          "clip_factor_excluding_geometry": 0.7161591305110928,
+          "squared_norm_by_group": {
+            "other": 0.9759204881506158,
+            "attention": 0.4085271026238622,
+            "geometry": 0.03153498934942727,
+            "input": 0.3415074454572547,
+            "output": 0.2238011703175769
+          }
+        },
+        {
+          "loss": 1.4197074174880981,
+          "global_norm": 1.4034709996170687,
+          "geometry_squared_norm_fraction": 0.014156867320234889,
+          "clip_factor": 0.7125186681835091,
+          "clip_factor_excluding_geometry": 0.7176163706214519,
+          "squared_norm_by_group": {
+            "other": 0.9736494987014322,
+            "attention": 0.4359429904193373,
+            "geometry": 0.027885218254242075,
+            "input": 0.31740972772117226,
+            "output": 0.21484341166995002
+          }
+        },
+        {
+          "loss": 1.379884958267212,
+          "global_norm": 1.2003791370872037,
+          "geometry_squared_norm_fraction": 0.015496607688535368,
+          "clip_factor": 0.8330694328436338,
+          "clip_factor_excluding_geometry": 0.8396003060877245,
+          "squared_norm_by_group": {
+            "other": 0.7660115353982015,
+            "attention": 0.2545675774513256,
+            "geometry": 0.022329218111931098,
+            "input": 0.23132255342138683,
+            "output": 0.16667918837137455
+          }
+        },
+        {
+          "loss": 1.6599763631820679,
+          "global_norm": 1.395664021620891,
+          "geometry_squared_norm_fraction": 0.01775966493324453,
+          "clip_factor": 0.716504307630082,
+          "clip_factor_excluding_geometry": 0.7229527612848,
+          "squared_norm_by_group": {
+            "other": 0.9989356850144148,
+            "attention": 0.39051550105938676,
+            "geometry": 0.034593661698564676,
+            "input": 0.3150699710342833,
+            "output": 0.2087632424403499
+          }
+        },
+        {
+          "loss": 1.3491902351379395,
+          "global_norm": 1.1847595033156026,
+          "geometry_squared_norm_fraction": 0.015805443326874412,
+          "clip_factor": 0.8440524453688805,
+          "clip_factor_excluding_geometry": 0.8508028776575217,
+          "squared_norm_by_group": {
+            "other": 0.723574924886547,
+            "attention": 0.2777021954009568,
+            "geometry": 0.02218539082842997,
+            "input": 0.2206960495123446,
+            "output": 0.15949652006835485
+          }
+        },
+        {
+          "loss": 1.3723770380020142,
+          "global_norm": 1.339249782707898,
+          "geometry_squared_norm_fraction": 0.012356854123970341,
+          "clip_factor": 0.7466861419173862,
+          "clip_factor_excluding_geometry": 0.7513426841926277,
+          "squared_norm_by_group": {
+            "other": 0.9174488691214647,
+            "attention": 0.37018899764950025,
+            "geometry": 0.02216312974704512,
+            "input": 0.28962985894641113,
+            "output": 0.19415912501873078
+          }
+        },
+        {
+          "loss": 1.6563886404037476,
+          "global_norm": 1.3667617563923058,
+          "geometry_squared_norm_fraction": 0.020732134112649386,
+          "clip_factor": 0.7316558746739564,
+          "clip_factor_excluding_geometry": 0.7393602684625887,
+          "squared_norm_by_group": {
+            "other": 0.9471776551263527,
+            "attention": 0.38934000672484614,
+            "geometry": 0.038728408097691715,
+            "input": 0.28748257089862966,
+            "output": 0.20530905788906026
+          }
+        }
+      ],
+      "mean_geometry_squared_norm_fraction": 0.015701505392085285,
+      "mean_global_norm": 1.3427268315028604,
+      "clipped_batches": 8,
+      "mean_clip_factor": 0.7484337514772726,
+      "mean_clip_factor_excluding_geometry": 0.7543829505420527
+    },
+    {
+      "run": "wave4_activation/spine_frozen",
+      "steps": 15000,
+      "batches": [
+        {
+          "loss": 1.432747483253479,
+          "global_norm": 1.4920500632189901,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.6702183488563547,
+          "clip_factor_excluding_geometry": 0.6702183488563547,
+          "squared_norm_by_group": {
+            "other": 1.1856084629645085,
+            "attention": 0.45343988756448483,
+            "input": 0.36665383569027604,
+            "output": 0.22051120493252307
+          }
+        },
+        {
+          "loss": 1.6795226335525513,
+          "global_norm": 1.4032053875989026,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.7126535403755898,
+          "clip_factor_excluding_geometry": 0.7126535403755898,
+          "squared_norm_by_group": {
+            "other": 1.0476094527175273,
+            "attention": 0.3755576745300378,
+            "input": 0.32703947729025823,
+            "output": 0.21877875524876308
+          }
+        },
+        {
+          "loss": 1.4034398794174194,
+          "global_norm": 1.2621517898181582,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.7922971038586166,
+          "clip_factor_excluding_geometry": 0.7922971038586166,
+          "squared_norm_by_group": {
+            "other": 0.7846866848704661,
+            "attention": 0.34149373512781306,
+            "input": 0.2918684526351738,
+            "output": 0.17497826790772714
+          }
+        },
+        {
+          "loss": 1.3839664459228516,
+          "global_norm": 1.1188197983176196,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.8937981860041471,
+          "clip_factor_excluding_geometry": 0.8937981860041471,
+          "squared_norm_by_group": {
+            "other": 0.6668010433868113,
+            "attention": 0.2209866092735227,
+            "input": 0.21657100582259356,
+            "output": 0.14739908262455106
+          }
+        },
+        {
+          "loss": 1.6940582990646362,
+          "global_norm": 1.3663462411731342,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.731878376057179,
+          "clip_factor_excluding_geometry": 0.731878376057179,
+          "squared_norm_by_group": {
+            "other": 1.0083343415896295,
+            "attention": 0.35298816489352464,
+            "input": 0.30799051548812306,
+            "output": 0.1975890287966754
+          }
+        },
+        {
+          "loss": 1.4056205749511719,
+          "global_norm": 1.2501085390621292,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.7999299011430878,
+          "clip_factor_excluding_geometry": 0.7999299011430878,
+          "squared_norm_by_group": {
+            "other": 0.8126305298773522,
+            "attention": 0.3013743672010425,
+            "input": 0.2709335934911081,
+            "output": 0.17783286886654823
+          }
+        },
+        {
+          "loss": 1.3417500257492065,
+          "global_norm": 1.351210058858988,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.7400768321452584,
+          "clip_factor_excluding_geometry": 0.7400768321452584,
+          "squared_norm_by_group": {
+            "other": 0.9345738873935563,
+            "attention": 0.38871220415302105,
+            "input": 0.30639738487501744,
+            "output": 0.1960851467401151
+          }
+        },
+        {
+          "loss": 1.6568180322647095,
+          "global_norm": 1.5436373698748935,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.6478201238811176,
+          "clip_factor_excluding_geometry": 0.6478201238811176,
+          "squared_norm_by_group": {
+            "other": 1.2134597906873212,
+            "attention": 0.4905768981107873,
+            "input": 0.41422884245986946,
+            "output": 0.264550798416301
+          }
+        }
+      ],
+      "mean_geometry_squared_norm_fraction": 0.0,
+      "mean_global_norm": 1.348441155990352,
+      "clipped_batches": 8,
+      "mean_clip_factor": 0.7485840515401689,
+      "mean_clip_factor_excluding_geometry": 0.7485840515401689
+    },
+    {
+      "run": "wave8_long/original_spine46_11",
+      "steps": 100000,
+      "batches": [
+        {
+          "loss": 1.392473816871643,
+          "global_norm": 1.2551740848093946,
+          "geometry_squared_norm_fraction": 0.02612172145489822,
+          "clip_factor": 0.7967016013163261,
+          "clip_factor_excluding_geometry": 0.8073156022135951,
+          "squared_norm_by_group": {
+            "other": 0.6642419626781609,
+            "attention": 0.4442485421046481,
+            "geometry": 0.04115377908733379,
+            "input": 0.2684210069246566,
+            "output": 0.15739669238230183
+          }
+        },
+        {
+          "loss": 1.5748276710510254,
+          "global_norm": 1.2364415898391306,
+          "geometry_squared_norm_fraction": 0.026712790179629065,
+          "clip_factor": 0.8087718817014438,
+          "clip_factor_excluding_geometry": 0.8197955016841891,
+          "squared_norm_by_group": {
+            "other": 0.6148647039219093,
+            "attention": 0.4072824792523223,
+            "geometry": 0.040838187866382325,
+            "input": 0.28739000104435125,
+            "output": 0.17841243299895163
+          }
+        },
+        {
+          "loss": 1.2803754806518555,
+          "global_norm": 1.0343812196362183,
+          "geometry_squared_norm_fraction": 0.024849569592817436,
+          "clip_factor": 0.9667606238936415,
+          "clip_factor_excluding_geometry": 0.9790010094353877,
+          "squared_norm_by_group": {
+            "other": 0.40807942682033227,
+            "attention": 0.31385062817746984,
+            "geometry": 0.026587660500471358,
+            "input": 0.19675133812313372,
+            "output": 0.1246754539147036
+          }
+        },
+        {
+          "loss": 1.2933043241500854,
+          "global_norm": 0.8887992087293609,
+          "geometry_squared_norm_fraction": 0.02599400256430051,
+          "clip_factor": 1.0,
+          "clip_factor_excluding_geometry": 1.0,
+          "squared_norm_by_group": {
+            "other": 0.36279809095472426,
+            "attention": 0.17569529305102,
+            "geometry": 0.020534327110890937,
+            "input": 0.13531205616032038,
+            "output": 0.09562426616098241
+          }
+        },
+        {
+          "loss": 1.5101666450500488,
+          "global_norm": 1.2020187662051216,
+          "geometry_squared_norm_fraction": 0.02595353356712702,
+          "clip_factor": 0.8319330747422606,
+          "clip_factor_excluding_geometry": 0.8429436594681744,
+          "squared_norm_by_group": {
+            "other": 0.5967592297558681,
+            "attention": 0.3933995528540553,
+            "geometry": 0.03749893998765971,
+            "input": 0.2654168555463212,
+            "output": 0.15177453616537828
+          }
+        },
+        {
+          "loss": 1.2702257633209229,
+          "global_norm": 0.9670217610395656,
+          "geometry_squared_norm_fraction": 0.02542700463296498,
+          "clip_factor": 1.0,
+          "clip_factor_excluding_geometry": 1.0,
+          "squared_norm_by_group": {
+            "other": 0.38328469181359925,
+            "attention": 0.2538785666522895,
+            "geometry": 0.023777582464391517,
+            "input": 0.16351874391038237,
+            "output": 0.11067150148340019
+          }
+        },
+        {
+          "loss": 1.2055164575576782,
+          "global_norm": 1.0804099281206374,
+          "geometry_squared_norm_fraction": 0.030317489690025214,
+          "clip_factor": 0.9255737552928022,
+          "clip_factor_excluding_geometry": 0.9399315860951302,
+          "squared_norm_by_group": {
+            "other": 0.48471613346989384,
+            "attention": 0.29624310456603486,
+            "geometry": 0.03538916953082216,
+            "input": 0.2135672316378676,
+            "output": 0.13736997357702255
+          }
+        },
+        {
+          "loss": 1.5150374174118042,
+          "global_norm": 1.2703419472953097,
+          "geometry_squared_norm_fraction": 0.03469773876725221,
+          "clip_factor": 0.7871890044567119,
+          "clip_factor_excluding_geometry": 0.801211826773808,
+          "squared_norm_by_group": {
+            "other": 0.6755053036311863,
+            "attention": 0.4097247083058827,
+            "geometry": 0.05599412350156571,
+            "input": 0.29674527080342894,
+            "output": 0.17579925681597586
+          }
+        }
+      ],
+      "mean_geometry_squared_norm_fraction": 0.02750923130612683,
+      "mean_global_norm": 1.1168235632093424,
+      "clipped_batches": 6,
+      "mean_clip_factor": 0.8896162426753983,
+      "mean_clip_factor_excluding_geometry": 0.8987748982087855
+    },
+    {
+      "run": "wave8_long/original_frozen46_11",
+      "steps": 100000,
+      "batches": [
+        {
+          "loss": 1.3976197242736816,
+          "global_norm": 1.3281906088213569,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.7529034164636866,
+          "clip_factor_excluding_geometry": 0.7529034164636866,
+          "squared_norm_by_group": {
+            "other": 0.7140014002184728,
+            "attention": 0.5245773569359424,
+            "input": 0.3510473250231032,
+            "output": 0.17446421118372815
+          }
+        },
+        {
+          "loss": 1.5624014139175415,
+          "global_norm": 1.2887543377653221,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.7759424699912254,
+          "clip_factor_excluding_geometry": 0.7759424699912254,
+          "squared_norm_by_group": {
+            "other": 0.6622369721046335,
+            "attention": 0.45504382525022313,
+            "input": 0.3560603095503475,
+            "output": 0.18754663620373008
+          }
+        },
+        {
+          "loss": 1.2830735445022583,
+          "global_norm": 1.0847503686613487,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.9218702357887438,
+          "clip_factor_excluding_geometry": 0.9218702357887438,
+          "squared_norm_by_group": {
+            "other": 0.4551192379893442,
+            "attention": 0.33636783893598854,
+            "input": 0.24685084176682834,
+            "output": 0.1383454436187704
+          }
+        },
+        {
+          "loss": 1.282894253730774,
+          "global_norm": 0.9087890246624784,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 1.0,
+          "clip_factor_excluding_geometry": 1.0,
+          "squared_norm_by_group": {
+            "other": 0.3826532903132771,
+            "attention": 0.18081013067005441,
+            "input": 0.1612389286674411,
+            "output": 0.10119514169620605
+          }
+        },
+        {
+          "loss": 1.568782091140747,
+          "global_norm": 1.2547273478268912,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.7969852611777966,
+          "clip_factor_excluding_geometry": 0.7969852611777966,
+          "squared_norm_by_group": {
+            "other": 0.6248522933324512,
+            "attention": 0.4348263312823725,
+            "input": 0.3312729793379733,
+            "output": 0.1833891134319077
+          }
+        },
+        {
+          "loss": 1.2886111736297607,
+          "global_norm": 0.9400414085942698,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 1.0,
+          "clip_factor_excluding_geometry": 1.0,
+          "squared_norm_by_group": {
+            "other": 0.3555241956152062,
+            "attention": 0.23058375810167736,
+            "input": 0.1875259222462538,
+            "output": 0.11004397390876158
+          }
+        },
+        {
+          "loss": 1.2113672494888306,
+          "global_norm": 1.0190254718484337,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.9813287756755512,
+          "clip_factor_excluding_geometry": 0.9813287756755512,
+          "squared_norm_by_group": {
+            "other": 0.4236905172148369,
+            "attention": 0.2830196262147002,
+            "input": 0.21360161773457798,
+            "output": 0.11810115111180775
+          }
+        },
+        {
+          "loss": 1.549264907836914,
+          "global_norm": 1.2851431382983476,
+          "geometry_squared_norm_fraction": 0.0,
+          "clip_factor": 0.7781228347849718,
+          "clip_factor_excluding_geometry": 0.7781228347849718,
+          "squared_norm_by_group": {
+            "other": 0.6368411010913873,
+            "attention": 0.44587431742112665,
+            "input": 0.36180627750289035,
+            "output": 0.20707118989992118
+          }
+        }
+      ],
+      "mean_geometry_squared_norm_fraction": 0.0,
+      "mean_global_norm": 1.138677713309806,
+      "clipped_batches": 6,
+      "mean_clip_factor": 0.8758941242352469,
+      "mean_clip_factor_excluding_geometry": 0.8758941242352469
+    },
+    {
+      "run": "wave8_long/original_undamped33_11",
+      "steps": 100000,
+      "batches": [
+        {
+          "loss": 1.3983559608459473,
+          "global_norm": 1.3488457925121002,
+          "geometry_squared_norm_fraction": 0.03272599504699211,
+          "clip_factor": 0.74137404303538,
+          "clip_factor_excluding_geometry": 0.7538112468391936,
+          "squared_norm_by_group": {
+            "other": 0.7188766885917931,
+            "attention": 0.5473231938951234,
+            "geometry": 0.05954118358151069,
+            "input": 0.30915315421013845,
+            "output": 0.1844907516990301
+          }
+        },
+        {
+          "loss": 1.5124672651290894,
+          "global_norm": 1.2891186730393929,
+          "geometry_squared_norm_fraction": 0.036016305489343904,
+          "clip_factor": 0.775723170558923,
+          "clip_factor_excluding_geometry": 0.7900815379020288,
+          "squared_norm_by_group": {
+            "other": 0.6481690059621503,
+            "attention": 0.44674390360726296,
+            "geometry": 0.059852867216114894,
+            "input": 0.313079075023049,
+            "output": 0.19398210137026797
+          }
+        },
+        {
+          "loss": 1.28936767578125,
+          "global_norm": 1.0660627509365084,
+          "geometry_squared_norm_fraction": 0.03265278314996911,
+          "clip_factor": 0.938030206093704,
+          "clip_factor_excluding_geometry": 0.9537303947464616,
+          "squared_norm_by_group": {
+            "other": 0.4264184619115295,
+            "attention": 0.34577102801208887,
+            "geometry": 0.03710955463022638,
+            "input": 0.19778663226469145,
+            "output": 0.12940411211577957
+          }
+        },
+        {
+          "loss": 1.332993507385254,
+          "global_norm": 1.2756866199925612,
+          "geometry_squared_norm_fraction": 0.03359654899901465,
+          "clip_factor": 0.7838909654119175,
+          "clip_factor_excluding_geometry": 0.7974003412100882,
+          "squared_norm_by_group": {
+            "other": 0.6022103140041737,
+            "attention": 0.4902500118860697,
+            "geometry": 0.054674229364186554,
+            "input": 0.271316986611559,
+            "output": 0.20892481056205617
+          }
+        },
+        {
+          "loss": 1.5882490873336792,
+          "global_norm": 1.3954075890711162,
+          "geometry_squared_norm_fraction": 0.03660933390464498,
+          "clip_factor": 0.7166359787606522,
+          "clip_factor_excluding_geometry": 0.7301252789234599,
+          "squared_norm_by_group": {
+            "other": 0.7055279030952853,
+            "attention": 0.544038684652896,
+            "geometry": 0.07128431625833037,
+            "input": 0.3998541216934496,
+            "output": 0.2264573139373041
+          }
+        },
+        {
+          "loss": 1.2899436950683594,
+          "global_norm": 1.0069563684430451,
+          "geometry_squared_norm_fraction": 0.03210500534899289,
+          "clip_factor": 0.99309070208821,
+          "clip_factor_excluding_geometry": 1.0,
+          "squared_norm_by_group": {
+            "other": 0.4034800251396279,
+            "attention": 0.27084398192190334,
+            "geometry": 0.03255322743644158,
+            "input": 0.1850188176403542,
+            "output": 0.12206507580967875
+          }
+        },
+        {
+          "loss": 1.2092773914337158,
+          "global_norm": 1.0339987359676146,
+          "geometry_squared_norm_fraction": 0.032368116158819224,
+          "clip_factor": 0.9671182353486796,
+          "clip_factor_excluding_geometry": 0.9831606320958466,
+          "squared_norm_by_group": {
+            "other": 0.42592618737495225,
+            "attention": 0.29098537214496667,
+            "geometry": 0.034606480989080486,
+            "input": 0.18709622439571877,
+            "output": 0.13053912107790683
+          }
+        },
+        {
+          "loss": 1.5675734281539917,
+          "global_norm": 1.3375016445518335,
+          "geometry_squared_norm_fraction": 0.03317606623652538,
+          "clip_factor": 0.7476620730982384,
+          "clip_factor_excluding_geometry": 0.7603816867706692,
+          "squared_norm_by_group": {
+            "other": 0.692149694877531,
+            "attention": 0.4910019220725826,
+            "geometry": 0.059349018188383444,
+            "input": 0.33230862705535363,
+            "output": 0.21410138698500866
+          }
+        }
+      ],
+      "mean_geometry_squared_norm_fraction": 0.033656269291787784,
+      "mean_global_norm": 1.2191972718142714,
+      "clipped_batches": 8,
+      "mean_clip_factor": 0.8329406717994631,
+      "mean_clip_factor_excluding_geometry": 0.8460863898109685
+    }
+  ]
+}

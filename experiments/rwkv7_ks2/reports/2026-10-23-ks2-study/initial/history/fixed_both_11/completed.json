@@ -1,0 +1,269 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/initial/history/fixed_both_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 64,
+    "control_update_scale": true,
+    "steps": 15000,
+    "gpu": 0,
+    "side_width": 2048,
+    "history_mode": "previous_layers_post_attention_and_post_ffn"
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.645017623901367
+    },
+    {
+      "step": 100,
+      "train_loss": 2.460782051086426,
+      "gradient_norm": 3.1262757778167725,
+      "val_loss": 2.6435885429382324,
+      "training_seconds": 1.4870765439700335
+    },
+    {
+      "step": 200,
+      "train_loss": 2.1946518421173096,
+      "gradient_norm": 36.70973205566406,
+      "val_loss": 2.4971117973327637,
+      "training_seconds": 2.976796165923588
+    },
+    {
+      "step": 500,
+      "train_loss": 2.095712184906006,
+      "gradient_norm": 2.1601510047912598,
+      "val_loss": 2.304943323135376,
+      "training_seconds": 7.453139019897208
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.9863038063049316,
+      "gradient_norm": 2.049628734588623,
+      "val_loss": 2.1557211875915527,
+      "training_seconds": 14.93628161191009
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.3804125785827637,
+      "gradient_norm": 241.15277099609375,
+      "val_loss": 2.0178208351135254,
+      "training_seconds": 29.97270878497511
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.8371155261993408,
+      "gradient_norm": 1.4793654680252075,
+      "val_loss": 1.9308710098266602,
+      "training_seconds": 45.11314315989148
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.7304589748382568,
+      "gradient_norm": 1.407163381576538,
+      "val_loss": 1.8885265588760376,
+      "training_seconds": 60.37656875979155
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.921766757965088,
+      "gradient_norm": 1.3881962299346924,
+      "val_loss": 1.848585605621338,
+      "training_seconds": 75.73373670771252
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.7706167697906494,
+      "gradient_norm": 1.4231719970703125,
+      "val_loss": 1.810349702835083,
+      "training_seconds": 91.17005273781251
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.0651259422302246,
+      "gradient_norm": 1.4815977811813354,
+      "val_loss": 1.7952314615249634,
+      "training_seconds": 106.68221416673623
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.1386795043945312,
+      "gradient_norm": 2.202789306640625,
+      "val_loss": 1.7748485803604126,
+      "training_seconds": 122.26989790168591
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.512376308441162,
+      "gradient_norm": 1.341305136680603,
+      "val_loss": 1.750496506690979,
+      "training_seconds": 137.9375974687282
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.8131545782089233,
+      "gradient_norm": 1.673467755317688,
+      "val_loss": 1.737234354019165,
+      "training_seconds": 153.67423460865393
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.8177082538604736,
+      "gradient_norm": 1.761159896850586,
+      "val_loss": 1.7284713983535767,
+      "training_seconds": 169.47333999269176
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.611384391784668,
+      "gradient_norm": 1.6806074380874634,
+      "val_loss": 1.7160059213638306,
+      "training_seconds": 185.32173765765037
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.4041534662246704,
+      "gradient_norm": 1.50351881980896,
+      "val_loss": 1.7119150161743164,
+      "training_seconds": 201.19844604667742
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.4704561233520508,
+      "gradient_norm": 1.6124323606491089,
+      "val_loss": 1.698990821838379,
+      "training_seconds": 217.1137271677144
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.7218362092971802,
+      "gradient_norm": 1.7473256587982178,
+      "val_loss": 1.6977274417877197,
+      "training_seconds": 233.06577237765305
+    }
+  ],
+  "parameters": 567552,
+  "ffn_parameters_by_layer": [
+    54624,
+    54624,
+    54624,
+    54624
+  ],
+  "ffn_types": [
+    "ks2",
+    "ks2",
+    "ks2",
+    "ks2"
+  ],
+  "training_seconds": 233.06577237765305,
+  "wall_seconds": 248.31032183393836,
+  "benchmark_ms_per_step": 14.8332138301339,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "run_side_gpu.py": "f1e3d7e9c5254ab1d19938fa81767be60f9f3888382f52ffc635408738400fa7",
+    "side_history.py": "a5144fa43c9c5791a3014449c26e0a9b8257b2fa64aeaee2c6e0b6f0938414e7",
+    "run_side_history_gpu.py": "94290be0c541cd93da4e72e8393bea573e3e7b384409348f334e1c0acce0b06d"
+  },
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "coding": "fixed_both",
+  "coding_protocol": {
+    "width": 2144,
+    "charts": 64,
+    "rank": 8,
+    "view_seed": 103415,
+    "hadamard_width": 8,
+    "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+    "input_coverage": "Every current main/side feature and every historical 96D feature enters every coordinate of every subspace",
+    "output": "Unchanged baseline fixed output matrix with unit row norms and zero-init learned gains",
+    "note": "History contains post-residual-addition main states from attention and FFN separately, in chronological order for all strictly previous layers. No detach or extra attention. LayerNorm and causal FFN time mix cover the expanded input; current-stream mix initialization is preserved. History is read-only; output updates only current main/side. Width-dependent input codes change; geometry/output initialization matches the baseline.",
+    "input_widths": [
+      2144,
+      2336,
+      2528,
+      2720
+    ],
+    "output_width": 2144
+  },
+  "rhac_reference": {
+    "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+    "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+  },
+  "evaluation": {
+    "original_val": 1.6977274417877197,
+    "expanded_val": 1.6844367980957031,
+    "sampled_train": 1.57467782497406
+  },
+  "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual; separate post-attention and post-FFN main residual history",
+  "output_lr_multiplier": 5.5,
+  "parameter_breakdown": {
+    "total": 567552,
+    "rwkv": 269568,
+    "embedding_and_head": 49152,
+    "ks2_geometry": 209920,
+    "output_gains": 8576,
+    "norms_and_ffn_mix": 30336
+  },
+  "tiled_evaluation": {
+    "arm": "fixed_both",
+    "seed": 11,
+    "loss": 1.6676263809204102,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.6677439212799072
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.66728675365448
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.6673673391342163
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.6681079864501953
+      }
+    ],
+    "batch4_vs_batch64_max_loss_error": 5.960464477539062e-07
+  },
+  "study_mode": "history",
+  "physical_gpu": 2
+}

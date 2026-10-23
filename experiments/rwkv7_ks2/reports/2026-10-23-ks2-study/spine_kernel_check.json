@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "kind": "spine",
+  "cases": [
+    {
+      "n": 1,
+      "charts": 1,
+      "scale": 1.0,
+      "output_max_error": 4.190951585769653e-09,
+      "gradient_relative_l2": {
+        "input": 2.145306723377871e-07,
+        "geo_spine": 3.8819759851094204e-08,
+        "geo_raw_scale": 0.0,
+        "geo_raw_shift": 7.816452551878683e-08
+      }
+    },
+    {
+      "n": 17,
+      "charts": 3,
+      "scale": 0.01,
+      "output_max_error": 2.2351741790771484e-08,
+      "gradient_relative_l2": {
+        "input": 1.4332593423205253e-07,
+        "geo_spine": 8.376404991849995e-08,
+        "geo_raw_scale": 6.499448090835358e-07,
+        "geo_raw_shift": 2.718117571021139e-07
+      }
+    },
+    {
+      "n": 256,
+      "charts": 33,
+      "scale": 1.0,
+      "output_max_error": 2.384185791015625e-07,
+      "gradient_relative_l2": {
+        "input": 1.5165289823926287e-07,
+        "geo_spine": 1.6225604326791654e-07,
+        "geo_raw_scale": 2.553239824010234e-07,
+        "geo_raw_shift": 1.569607377405191e-07
+      }
+    },
+    {
+      "n": 33,
+      "charts": 4,
+      "scale": 10.0,
+      "output_max_error": 5.7220458984375e-06,
+      "gradient_relative_l2": {
+        "input": 1.6785183731826692e-07,
+        "geo_spine": 1.89800772432136e-07,
+        "geo_raw_scale": 8.434026312897913e-07,
+        "geo_raw_shift": 2.001238783577719e-07
+      }
+    },
+    {
+      "n": 9,
+      "charts": 2,
+      "scale": 0.0,
+      "output_max_error": 7.450580596923828e-09,
+      "gradient_relative_l2": {
+        "input": 1.2544751371024176e-07,
+        "geo_spine": 7.287615488849042e-08,
+        "geo_raw_scale": 4.245471885155894e-08,
+        "geo_raw_shift": 1.4002687009906367e-07
+      }
+    },
+    {
+      "n": 5,
+      "charts": 2,
+      "scale": 100000.0,
+      "output_max_error": 4.76837158203125e-07,
+      "gradient_relative_l2": {
+        "input": 0.0,
+        "geo_spine": 5.494164057040507e-08,
+        "geo_raw_scale": 9.19088488444686e-05,
+        "geo_raw_shift": 2.3654656615690328e-05
+      }
+    }
+  ],
+  "trained": {
+    "logit_max_error": 7.152557373046875e-06,
+    "loss_reference": 1.9796462059020996,
+    "loss_fused": 1.9796462059020996,
+    "gradient_max_relative_l2": 1.2248868870301521e-06
+  },
+  "geometry_forward_backward_ms": {
+    "reference": 0.2702301399161418,
+    "fused": 0.07340518990531564
+  },
+  "source_sha256": "0c816f78a7dd0398e21402ed2f9fdb18568a671fb59bc4fb4422ea38b6db1274"
+}

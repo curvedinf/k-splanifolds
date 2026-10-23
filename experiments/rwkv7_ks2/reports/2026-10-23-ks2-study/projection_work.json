@@ -1,0 +1,6 @@
+{
+  "history_projection_macs_per_token": 9371648,
+  "dense31_projection_macs_per_token": 190464,
+  "mlp_projection_macs_per_token": 294912,
+  "scope": "Forward FFN input/output matrix multiply-accumulates only; excludes geometry, attention, normalization, activation, backward and optimizer."
+}

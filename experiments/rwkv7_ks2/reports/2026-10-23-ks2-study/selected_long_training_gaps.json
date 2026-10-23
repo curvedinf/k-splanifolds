@@ -1,0 +1,221 @@
+{
+  "protocol": "Read already-recorded65536target sampled training evaluation and exploratoryfull-shard evaluation. Same training-sample RNGseed98765 within eachpool;pairedagainstunchangedMLPseed and100khorizon. Differenttrain/valtextdifficulty makesabsolutegeneralizationgapinterpretationunsafe; comparepairedmodeldifferences. No reserveddata.",
+  "rows": [
+    {
+      "pool": "original",
+      "model": "spine_rank1_fused_repeat",
+      "mean_train_gap": -0.0005195140838623047,
+      "mean_full_val_gap": 0.0010738770167032878,
+      "mean_sampled_val_gap": 0.0027451117833455405,
+      "individual": [
+        {
+          "seed": 11,
+          "train_gap": -0.0033767223358154297,
+          "full_val_gap": -3.361701965332031e-05,
+          "sampled_val_gap": -0.00022220611572265625
+        },
+        {
+          "seed": 22,
+          "train_gap": -0.00010335445404052734,
+          "full_val_gap": -0.001508951187133789,
+          "sampled_val_gap": 0.00018489360809326172
+        },
+        {
+          "seed": 33,
+          "train_gap": 0.001921534538269043,
+          "full_val_gap": 0.004764199256896973,
+          "sampled_val_gap": 0.008272647857666016
+        }
+      ]
+    },
+    {
+      "pool": "original",
+      "model": "spine_rank4_frozen",
+      "mean_train_gap": -0.0010173718134562175,
+      "mean_full_val_gap": -0.00025411446889241535,
+      "mean_sampled_val_gap": 0.0010446707407633464,
+      "individual": [
+        {
+          "seed": 11,
+          "train_gap": -0.0013486146926879883,
+          "full_val_gap": 0.0019083023071289062,
+          "sampled_val_gap": 0.0012432336807250977
+        },
+        {
+          "seed": 22,
+          "train_gap": -0.0010673999786376953,
+          "full_val_gap": -0.000624537467956543,
+          "sampled_val_gap": 0.0037397146224975586
+        },
+        {
+          "seed": 33,
+          "train_gap": -0.0006361007690429688,
+          "full_val_gap": -0.0020461082458496094,
+          "sampled_val_gap": -0.0018489360809326172
+        }
+      ]
+    },
+    {
+      "pool": "original",
+      "model": "spine_powers",
+      "mean_train_gap": 0.0019543965657552085,
+      "mean_full_val_gap": 0.001620968182881673,
+      "mean_sampled_val_gap": 0.0021452109018961587,
+      "individual": [
+        {
+          "seed": 11,
+          "train_gap": 0.0002155303955078125,
+          "full_val_gap": 0.002154111862182617,
+          "sampled_val_gap": 0.0021331310272216797
+        },
+        {
+          "seed": 22,
+          "train_gap": 0.0018091201782226562,
+          "full_val_gap": 0.0025511980056762695,
+          "sampled_val_gap": 0.0004731416702270508
+        },
+        {
+          "seed": 33,
+          "train_gap": 0.0038385391235351562,
+          "full_val_gap": 0.0001575946807861328,
+          "sampled_val_gap": 0.003829360008239746
+        }
+      ]
+    },
+    {
+      "pool": "original",
+      "model": "full46_frozen",
+      "mean_train_gap": 0.0005091428756713867,
+      "mean_full_val_gap": 0.0003223419189453125,
+      "mean_sampled_val_gap": 0.0010342200597127278,
+      "individual": [
+        {
+          "seed": 11,
+          "train_gap": 0.00025582313537597656,
+          "full_val_gap": 0.002424001693725586,
+          "sampled_val_gap": 0.0024309158325195312
+        },
+        {
+          "seed": 22,
+          "train_gap": 0.0031925439834594727,
+          "full_val_gap": 0.000996232032775879,
+          "sampled_val_gap": 0.0041342973709106445
+        },
+        {
+          "seed": 33,
+          "train_gap": -0.001920938491821289,
+          "full_val_gap": -0.0024532079696655273,
+          "sampled_val_gap": -0.003462553024291992
+        }
+      ]
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank1_fused_repeat",
+      "mean_train_gap": -0.005134105682373047,
+      "mean_full_val_gap": -0.004992445309956868,
+      "mean_sampled_val_gap": -0.005241791407267253,
+      "individual": [
+        {
+          "seed": 11,
+          "train_gap": -0.0035881996154785156,
+          "full_val_gap": -0.0037202835083007812,
+          "sampled_val_gap": -0.006501913070678711
+        },
+        {
+          "seed": 22,
+          "train_gap": -0.007562160491943359,
+          "full_val_gap": -0.007192254066467285,
+          "sampled_val_gap": -0.0050209760665893555
+        },
+        {
+          "seed": 33,
+          "train_gap": -0.004251956939697266,
+          "full_val_gap": -0.004064798355102539,
+          "sampled_val_gap": -0.004202485084533691
+        }
+      ]
+    },
+    {
+      "pool": "larger",
+      "model": "spine_rank4_frozen",
+      "mean_train_gap": -0.0021652777989705405,
+      "mean_full_val_gap": -0.0016687711079915364,
+      "mean_sampled_val_gap": -0.0012469689051310222,
+      "individual": [
+        {
+          "seed": 11,
+          "train_gap": 6.079673767089844e-06,
+          "full_val_gap": -0.0009930133819580078,
+          "sampled_val_gap": -0.0007259845733642578
+        },
+        {
+          "seed": 22,
+          "train_gap": -0.004033088684082031,
+          "full_val_gap": -0.0037158727645874023,
+          "sampled_val_gap": -0.001479029655456543
+        },
+        {
+          "seed": 33,
+          "train_gap": -0.0024688243865966797,
+          "full_val_gap": -0.0002974271774291992,
+          "sampled_val_gap": -0.0015358924865722656
+        }
+      ]
+    },
+    {
+      "pool": "larger",
+      "model": "spine_powers",
+      "mean_train_gap": -0.0005759398142496744,
+      "mean_full_val_gap": -8.289019266764323e-05,
+      "mean_sampled_val_gap": -0.000629583994547526,
+      "individual": [
+        {
+          "seed": 11,
+          "train_gap": 0.003346562385559082,
+          "full_val_gap": 0.003694891929626465,
+          "sampled_val_gap": 0.0031447410583496094
+        },
+        {
+          "seed": 22,
+          "train_gap": -0.0032470226287841797,
+          "full_val_gap": -0.0033369064331054688,
+          "sampled_val_gap": -0.0030128955841064453
+        },
+        {
+          "seed": 33,
+          "train_gap": -0.0018273591995239258,
+          "full_val_gap": -0.0006066560745239258,
+          "sampled_val_gap": -0.002020597457885742
+        }
+      ]
+    },
+    {
+      "pool": "larger",
+      "model": "full46_frozen",
+      "mean_train_gap": -0.0012618303298950195,
+      "mean_full_val_gap": 1.2000401814778646e-05,
+      "mean_sampled_val_gap": -3.3855438232421875e-05,
+      "individual": [
+        {
+          "seed": 11,
+          "train_gap": -0.0014623403549194336,
+          "full_val_gap": -0.0015416145324707031,
+          "sampled_val_gap": -0.002974867820739746
+        },
+        {
+          "seed": 22,
+          "train_gap": -0.001306772232055664,
+          "full_val_gap": -3.921985626220703e-05,
+          "sampled_val_gap": -0.00020873546600341797
+        },
+        {
+          "seed": 33,
+          "train_gap": -0.001016378402709961,
+          "full_val_gap": 0.001616835594177246,
+          "sampled_val_gap": 0.0030820369720458984
+        }
+      ]
+    }
+  ]
+}

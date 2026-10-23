@@ -1,0 +1,1023 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "input_source": "exploratory validation",
+  "trained_steps": 100000,
+  "logit_max_error": 2.86102294921875e-05,
+  "original_loss": 1.4645644426345825,
+  "compact_loss": 1.464564323425293,
+  "original_buffer_bytes": 37489664,
+  "compact_buffer_bytes": 3116032,
+  "parameters": 567552,
+  "gradient_rows": [
+    {
+      "name": "embedding.weight",
+      "max_absolute": 2.384185791015625e-07,
+      "relative_l2": 1.8478936782405252e-06,
+      "max_absolute_relative_to_tensor_max": 1.8299739205841642e-06
+    },
+    {
+      "name": "input_norm.weight",
+      "max_absolute": 1.1548399925231934e-07,
+      "relative_l2": 2.0584753346970107e-06,
+      "max_absolute_relative_to_tensor_max": 2.139586041175022e-06
+    },
+    {
+      "name": "input_norm.bias",
+      "max_absolute": 1.601874828338623e-07,
+      "relative_l2": 1.6958900731143942e-06,
+      "max_absolute_relative_to_tensor_max": 2.360040021887999e-06
+    },
+    {
+      "name": "output_norm.weight",
+      "max_absolute": 6.332993507385254e-08,
+      "relative_l2": 9.897951658175524e-07,
+      "max_absolute_relative_to_tensor_max": 1.0631959281847424e-06
+    },
+    {
+      "name": "output_norm.bias",
+      "max_absolute": 2.2351741790771484e-08,
+      "relative_l2": 8.555107886123496e-07,
+      "max_absolute_relative_to_tensor_max": 9.219850091384081e-07
+    },
+    {
+      "name": "head.weight",
+      "max_absolute": 6.239861249923706e-08,
+      "relative_l2": 9.765245581425946e-07,
+      "max_absolute_relative_to_tensor_max": 6.932724346270997e-07
+    },
+    {
+      "name": "blocks.0.mix",
+      "max_absolute": 1.3783574104309082e-07,
+      "relative_l2": 1.8582403716876606e-06,
+      "max_absolute_relative_to_tensor_max": 3.061475672645508e-06
+    },
+    {
+      "name": "blocks.0.attention.mix_read",
+      "max_absolute": 2.7706846594810486e-08,
+      "relative_l2": 2.171751066653958e-06,
+      "max_absolute_relative_to_tensor_max": 2.8908288914978146e-06
+    },
+    {
+      "name": "blocks.0.attention.mix_decay",
+      "max_absolute": 9.19681042432785e-09,
+      "relative_l2": 2.0730100681025486e-06,
+      "max_absolute_relative_to_tensor_max": 2.7809604324949664e-06
+    },
+    {
+      "name": "blocks.0.attention.mix_key",
+      "max_absolute": 9.220093488693237e-08,
+      "relative_l2": 2.4372698772028625e-06,
+      "max_absolute_relative_to_tensor_max": 5.889642379724876e-06
+    },
+    {
+      "name": "blocks.0.attention.mix_value",
+      "max_absolute": 6.332993507385254e-08,
+      "relative_l2": 1.4860490372758479e-06,
+      "max_absolute_relative_to_tensor_max": 1.2536239872838283e-06
+    },
+    {
+      "name": "blocks.0.attention.mix_rate",
+      "max_absolute": 1.3504177331924438e-08,
+      "relative_l2": 1.5375601562091659e-06,
+      "max_absolute_relative_to_tensor_max": 2.164700409568782e-06
+    },
+    {
+      "name": "blocks.0.attention.mix_gate",
+      "max_absolute": 4.0978193283081055e-08,
+      "relative_l2": 2.1492576783426476e-06,
+      "max_absolute_relative_to_tensor_max": 1.9969464872803587e-06
+    },
+    {
+      "name": "blocks.0.attention.decay_bias",
+      "max_absolute": 4.0745362639427185e-09,
+      "relative_l2": 2.042524887947276e-06,
+      "max_absolute_relative_to_tensor_max": 1.3064189139000509e-06
+    },
+    {
+      "name": "blocks.0.attention.rate_bias",
+      "max_absolute": 4.1763996705412865e-09,
+      "relative_l2": 1.716710927824152e-06,
+      "max_absolute_relative_to_tensor_max": 1.3546805563181207e-06
+    },
+    {
+      "name": "blocks.0.attention.key_scale",
+      "max_absolute": 4.563480615615845e-08,
+      "relative_l2": 2.618560599812542e-06,
+      "max_absolute_relative_to_tensor_max": 3.2959906560682855e-06
+    },
+    {
+      "name": "blocks.0.attention.key_rate",
+      "max_absolute": 4.0512531995773315e-08,
+      "relative_l2": 2.09428890202609e-06,
+      "max_absolute_relative_to_tensor_max": 3.2779880839481444e-06
+    },
+    {
+      "name": "blocks.0.attention.bonus",
+      "max_absolute": 1.2665987014770508e-07,
+      "relative_l2": 1.2353570252733965e-06,
+      "max_absolute_relative_to_tensor_max": 1.4815847727946174e-06
+    },
+    {
+      "name": "blocks.0.attention.decay_control.down.weight",
+      "max_absolute": 5.180481821298599e-09,
+      "relative_l2": 1.9064118832281476e-06,
+      "max_absolute_relative_to_tensor_max": 3.3811809697713305e-06
+    },
+    {
+      "name": "blocks.0.attention.decay_control.up.weight",
+      "max_absolute": 4.307366907596588e-09,
+      "relative_l2": 1.9755939243554427e-06,
+      "max_absolute_relative_to_tensor_max": 1.451936506581118e-06
+    },
+    {
+      "name": "blocks.0.attention.rate_control.down.weight",
+      "max_absolute": 8.731149137020111e-09,
+      "relative_l2": 1.8873278436934784e-06,
+      "max_absolute_relative_to_tensor_max": 3.3427628960449767e-06
+    },
+    {
+      "name": "blocks.0.attention.rate_control.up.weight",
+      "max_absolute": 1.30385160446167e-08,
+      "relative_l2": 1.7910180895804653e-06,
+      "max_absolute_relative_to_tensor_max": 1.5298601937261964e-06
+    },
+    {
+      "name": "blocks.0.attention.gate_control.down.weight",
+      "max_absolute": 7.770722731947899e-09,
+      "relative_l2": 1.9617301243839675e-06,
+      "max_absolute_relative_to_tensor_max": 1.335752723374676e-06
+    },
+    {
+      "name": "blocks.0.attention.gate_control.up.weight",
+      "max_absolute": 3.818422555923462e-08,
+      "relative_l2": 1.937747055580494e-06,
+      "max_absolute_relative_to_tensor_max": 1.6198087598467581e-06
+    },
+    {
+      "name": "blocks.0.attention.read.weight",
+      "max_absolute": 1.909211277961731e-08,
+      "relative_l2": 2.055370342955608e-06,
+      "max_absolute_relative_to_tensor_max": 2.2335205677282426e-06
+    },
+    {
+      "name": "blocks.0.attention.key.weight",
+      "max_absolute": 4.0046870708465576e-08,
+      "relative_l2": 1.997856796450923e-06,
+      "max_absolute_relative_to_tensor_max": 3.137933027460271e-06
+    },
+    {
+      "name": "blocks.0.attention.value.weight",
+      "max_absolute": 8.009374141693115e-08,
+      "relative_l2": 1.792941834224392e-06,
+      "max_absolute_relative_to_tensor_max": 1.8086393908704427e-06
+    },
+    {
+      "name": "blocks.0.attention.output.weight",
+      "max_absolute": 5.494803190231323e-08,
+      "relative_l2": 1.8754785352943728e-06,
+      "max_absolute_relative_to_tensor_max": 1.781678869355045e-06
+    },
+    {
+      "name": "blocks.0.attention.norm.weight",
+      "max_absolute": 9.685754776000977e-08,
+      "relative_l2": 1.912206767224284e-06,
+      "max_absolute_relative_to_tensor_max": 1.7529810960541271e-06
+    },
+    {
+      "name": "blocks.0.attention.norm.bias",
+      "max_absolute": 8.172355592250824e-08,
+      "relative_l2": 1.8849731766577184e-06,
+      "max_absolute_relative_to_tensor_max": 1.9085829027512304e-06
+    },
+    {
+      "name": "blocks.0.norm1.weight",
+      "max_absolute": 1.043081283569336e-07,
+      "relative_l2": 2.152333784401821e-06,
+      "max_absolute_relative_to_tensor_max": 2.234031739527218e-06
+    },
+    {
+      "name": "blocks.0.norm1.bias",
+      "max_absolute": 7.264316082000732e-08,
+      "relative_l2": 1.6822332870954031e-06,
+      "max_absolute_relative_to_tensor_max": 1.8818951552780644e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_spine",
+      "max_absolute": 2.2817403078079224e-08,
+      "relative_l2": 1.841273814405485e-06,
+      "max_absolute_relative_to_tensor_max": 2.3288484148764556e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_t_basis_edge",
+      "max_absolute": 1.0302755981683731e-08,
+      "relative_l2": 1.9444903565811086e-06,
+      "max_absolute_relative_to_tensor_max": 1.911314654483551e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_x_basis_edge",
+      "max_absolute": 2.0954757928848267e-08,
+      "relative_l2": 1.9425794749798186e-06,
+      "max_absolute_relative_to_tensor_max": 1.9284257497805025e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_den_delta",
+      "max_absolute": 2.473825588822365e-10,
+      "relative_l2": 2.0072143108601235e-06,
+      "max_absolute_relative_to_tensor_max": 1.9299774658101655e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_den_weight",
+      "max_absolute": 1.7462298274040222e-10,
+      "relative_l2": 2.0912454274719034e-06,
+      "max_absolute_relative_to_tensor_max": 1.993260619739609e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_raw_scale",
+      "max_absolute": 6.5338099375367165e-09,
+      "relative_l2": 2.1191565807648843e-06,
+      "max_absolute_relative_to_tensor_max": 2.854995043372525e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_raw_shift",
+      "max_absolute": 2.3981556296348572e-08,
+      "relative_l2": 2.11757557371372e-06,
+      "max_absolute_relative_to_tensor_max": 1.3828834155705906e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_edge_raw_scale",
+      "max_absolute": 1.885928213596344e-08,
+      "relative_l2": 2.136708216443966e-06,
+      "max_absolute_relative_to_tensor_max": 2.8063772254658014e-06
+    },
+    {
+      "name": "blocks.0.ffn.geo_edge_raw_shift",
+      "max_absolute": 2.7008354663848877e-08,
+      "relative_l2": 1.750364840503448e-06,
+      "max_absolute_relative_to_tensor_max": 1.7609698401731628e-06
+    },
+    {
+      "name": "blocks.0.ffn.up.weight",
+      "max_absolute": 7.450580596923828e-08,
+      "relative_l2": 1.8633620254983277e-06,
+      "max_absolute_relative_to_tensor_max": 1.90942526681354e-06
+    },
+    {
+      "name": "blocks.0.norm2.weight",
+      "max_absolute": 1.1175870895385742e-07,
+      "relative_l2": 1.8528967778740723e-06,
+      "max_absolute_relative_to_tensor_max": 2.7017977221683763e-06
+    },
+    {
+      "name": "blocks.0.norm2.bias",
+      "max_absolute": 2.8638169169425964e-08,
+      "relative_l2": 2.0241108656666185e-06,
+      "max_absolute_relative_to_tensor_max": 2.5081486282384584e-06
+    },
+    {
+      "name": "blocks.1.mix",
+      "max_absolute": 2.8870999813079834e-08,
+      "relative_l2": 1.90171045078457e-06,
+      "max_absolute_relative_to_tensor_max": 1.661178525784438e-06
+    },
+    {
+      "name": "blocks.1.attention.mix_read",
+      "max_absolute": 1.6996636986732483e-08,
+      "relative_l2": 1.8305907427812502e-06,
+      "max_absolute_relative_to_tensor_max": 1.5688960722837273e-06
+    },
+    {
+      "name": "blocks.1.attention.mix_decay",
+      "max_absolute": 3.3614924177527428e-09,
+      "relative_l2": 1.8281353699426183e-06,
+      "max_absolute_relative_to_tensor_max": 1.4263834956635965e-06
+    },
+    {
+      "name": "blocks.1.attention.mix_key",
+      "max_absolute": 3.818422555923462e-08,
+      "relative_l2": 1.5971094191153645e-06,
+      "max_absolute_relative_to_tensor_max": 2.2992932869721034e-06
+    },
+    {
+      "name": "blocks.1.attention.mix_value",
+      "max_absolute": 3.306195139884949e-08,
+      "relative_l2": 1.7906208476883508e-06,
+      "max_absolute_relative_to_tensor_max": 1.7646752381168262e-06
+    },
+    {
+      "name": "blocks.1.attention.mix_rate",
+      "max_absolute": 5.122274160385132e-09,
+      "relative_l2": 9.728173998716733e-07,
+      "max_absolute_relative_to_tensor_max": 7.288444773764355e-07
+    },
+    {
+      "name": "blocks.1.attention.mix_gate",
+      "max_absolute": 1.1641532182693481e-08,
+      "relative_l2": 1.3298626532366698e-06,
+      "max_absolute_relative_to_tensor_max": 1.1486491701974611e-06
+    },
+    {
+      "name": "blocks.1.attention.decay_bias",
+      "max_absolute": 3.3760443329811096e-09,
+      "relative_l2": 2.388960487777385e-06,
+      "max_absolute_relative_to_tensor_max": 2.6198305999466275e-06
+    },
+    {
+      "name": "blocks.1.attention.rate_bias",
+      "max_absolute": 2.270098775625229e-09,
+      "relative_l2": 2.0134943495767655e-06,
+      "max_absolute_relative_to_tensor_max": 1.848436369758178e-06
+    },
+    {
+      "name": "blocks.1.attention.value_bias",
+      "max_absolute": 7.101334631443024e-09,
+      "relative_l2": 2.5689730561719214e-06,
+      "max_absolute_relative_to_tensor_max": 2.8704272212118735e-06
+    },
+    {
+      "name": "blocks.1.attention.key_scale",
+      "max_absolute": 2.8870999813079834e-08,
+      "relative_l2": 1.9827894292325702e-06,
+      "max_absolute_relative_to_tensor_max": 1.4598116673422613e-06
+    },
+    {
+      "name": "blocks.1.attention.key_rate",
+      "max_absolute": 2.7939677238464355e-08,
+      "relative_l2": 1.669758699237022e-06,
+      "max_absolute_relative_to_tensor_max": 1.8620912849286427e-06
+    },
+    {
+      "name": "blocks.1.attention.bonus",
+      "max_absolute": 1.9371509552001953e-07,
+      "relative_l2": 1.5550530660123834e-06,
+      "max_absolute_relative_to_tensor_max": 9.755676584312497e-07
+    },
+    {
+      "name": "blocks.1.attention.decay_control.down.weight",
+      "max_absolute": 2.1973391994833946e-09,
+      "relative_l2": 1.5878837576904753e-06,
+      "max_absolute_relative_to_tensor_max": 1.671405784649083e-06
+    },
+    {
+      "name": "blocks.1.attention.decay_control.up.weight",
+      "max_absolute": 4.190951585769653e-09,
+      "relative_l2": 2.296677793959684e-06,
+      "max_absolute_relative_to_tensor_max": 2.522484798875981e-06
+    },
+    {
+      "name": "blocks.1.attention.rate_control.down.weight",
+      "max_absolute": 2.7939677238464355e-09,
+      "relative_l2": 1.5016934194159833e-06,
+      "max_absolute_relative_to_tensor_max": 1.0183495557831943e-06
+    },
+    {
+      "name": "blocks.1.attention.rate_control.up.weight",
+      "max_absolute": 6.984919309616089e-09,
+      "relative_l2": 1.935004035408716e-06,
+      "max_absolute_relative_to_tensor_max": 2.103541501436403e-06
+    },
+    {
+      "name": "blocks.1.attention.gate_control.down.weight",
+      "max_absolute": 5.762558430433273e-09,
+      "relative_l2": 1.5811815962986409e-06,
+      "max_absolute_relative_to_tensor_max": 1.484153913536971e-06
+    },
+    {
+      "name": "blocks.1.attention.gate_control.up.weight",
+      "max_absolute": 2.334127202630043e-08,
+      "relative_l2": 1.8914283102964806e-06,
+      "max_absolute_relative_to_tensor_max": 2.1050351432729965e-06
+    },
+    {
+      "name": "blocks.1.attention.value_control.down.weight",
+      "max_absolute": 1.0200892575085163e-08,
+      "relative_l2": 2.4109375643238537e-06,
+      "max_absolute_relative_to_tensor_max": 1.7861609897629177e-06
+    },
+    {
+      "name": "blocks.1.attention.value_control.up.weight",
+      "max_absolute": 2.60770320892334e-08,
+      "relative_l2": 2.1244258049962e-06,
+      "max_absolute_relative_to_tensor_max": 3.5507821770771266e-06
+    },
+    {
+      "name": "blocks.1.attention.read.weight",
+      "max_absolute": 4.0046870708465576e-08,
+      "relative_l2": 1.8155492003259546e-06,
+      "max_absolute_relative_to_tensor_max": 2.7573024912163886e-06
+    },
+    {
+      "name": "blocks.1.attention.key.weight",
+      "max_absolute": 3.3527612686157227e-08,
+      "relative_l2": 1.8464806982513571e-06,
+      "max_absolute_relative_to_tensor_max": 1.4092509338049e-06
+    },
+    {
+      "name": "blocks.1.attention.value.weight",
+      "max_absolute": 3.073364496231079e-08,
+      "relative_l2": 1.8441876397116917e-06,
+      "max_absolute_relative_to_tensor_max": 2.0703027121341946e-06
+    },
+    {
+      "name": "blocks.1.attention.output.weight",
+      "max_absolute": 3.317836672067642e-08,
+      "relative_l2": 1.8157687502363328e-06,
+      "max_absolute_relative_to_tensor_max": 1.9492361456502075e-06
+    },
+    {
+      "name": "blocks.1.attention.norm.weight",
+      "max_absolute": 4.516914486885071e-08,
+      "relative_l2": 1.7810377217049594e-06,
+      "max_absolute_relative_to_tensor_max": 1.304438101856982e-06
+    },
+    {
+      "name": "blocks.1.attention.norm.bias",
+      "max_absolute": 3.4924596548080444e-08,
+      "relative_l2": 1.6600218590084335e-06,
+      "max_absolute_relative_to_tensor_max": 1.3606713864668131e-06
+    },
+    {
+      "name": "blocks.1.norm1.weight",
+      "max_absolute": 5.8673322200775146e-08,
+      "relative_l2": 2.1123594381359136e-06,
+      "max_absolute_relative_to_tensor_max": 2.0709871271384913e-06
+    },
+    {
+      "name": "blocks.1.norm1.bias",
+      "max_absolute": 4.842877388000488e-08,
+      "relative_l2": 1.8836147421309866e-06,
+      "max_absolute_relative_to_tensor_max": 1.6951529513688653e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_spine",
+      "max_absolute": 2.7939677238464355e-08,
+      "relative_l2": 1.7451524848777115e-06,
+      "max_absolute_relative_to_tensor_max": 2.8566455287593742e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_t_basis_edge",
+      "max_absolute": 1.4784745872020721e-08,
+      "relative_l2": 1.9460598211879623e-06,
+      "max_absolute_relative_to_tensor_max": 2.9037167757641074e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_x_basis_edge",
+      "max_absolute": 2.514570951461792e-08,
+      "relative_l2": 1.856292258300855e-06,
+      "max_absolute_relative_to_tensor_max": 2.7012044670718672e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_den_delta",
+      "max_absolute": 2.6557245291769505e-10,
+      "relative_l2": 1.8821307179232978e-06,
+      "max_absolute_relative_to_tensor_max": 1.5275644186470668e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_den_weight",
+      "max_absolute": 2.1464074961841106e-10,
+      "relative_l2": 1.8677556672579626e-06,
+      "max_absolute_relative_to_tensor_max": 1.2748805912265225e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_raw_scale",
+      "max_absolute": 3.899913281202316e-09,
+      "relative_l2": 2.0043890043788856e-06,
+      "max_absolute_relative_to_tensor_max": 1.161165952035458e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_raw_shift",
+      "max_absolute": 1.7345882952213287e-08,
+      "relative_l2": 1.717265673473307e-06,
+      "max_absolute_relative_to_tensor_max": 1.4788821191598647e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_edge_raw_scale",
+      "max_absolute": 2.1420419216156006e-08,
+      "relative_l2": 1.7640903992404277e-06,
+      "max_absolute_relative_to_tensor_max": 2.0222941221054155e-06
+    },
+    {
+      "name": "blocks.1.ffn.geo_edge_raw_shift",
+      "max_absolute": 2.8870999813079834e-08,
+      "relative_l2": 1.8930164611366167e-06,
+      "max_absolute_relative_to_tensor_max": 2.447550377100403e-06
+    },
+    {
+      "name": "blocks.1.ffn.up.weight",
+      "max_absolute": 3.1781382858753204e-08,
+      "relative_l2": 1.836250100339094e-06,
+      "max_absolute_relative_to_tensor_max": 2.061985738490902e-06
+    },
+    {
+      "name": "blocks.1.norm2.weight",
+      "max_absolute": 2.962769940495491e-08,
+      "relative_l2": 1.864692694394786e-06,
+      "max_absolute_relative_to_tensor_max": 1.6679879490656122e-06
+    },
+    {
+      "name": "blocks.1.norm2.bias",
+      "max_absolute": 1.7695128917694092e-08,
+      "relative_l2": 1.9042022354882892e-06,
+      "max_absolute_relative_to_tensor_max": 2.257546890140045e-06
+    },
+    {
+      "name": "blocks.2.mix",
+      "max_absolute": 2.421438694000244e-08,
+      "relative_l2": 1.8418944587374323e-06,
+      "max_absolute_relative_to_tensor_max": 2.10616480107719e-06
+    },
+    {
+      "name": "blocks.2.attention.mix_read",
+      "max_absolute": 2.2351741790771484e-08,
+      "relative_l2": 2.3399217870564647e-06,
+      "max_absolute_relative_to_tensor_max": 1.6947972408135987e-06
+    },
+    {
+      "name": "blocks.2.attention.mix_decay",
+      "max_absolute": 6.05359673500061e-09,
+      "relative_l2": 1.7439935756277167e-06,
+      "max_absolute_relative_to_tensor_max": 2.7697738415740495e-06
+    },
+    {
+      "name": "blocks.2.attention.mix_key",
+      "max_absolute": 3.5390257835388184e-08,
+      "relative_l2": 1.8310111729510914e-06,
+      "max_absolute_relative_to_tensor_max": 1.8223107033994631e-06
+    },
+    {
+      "name": "blocks.2.attention.mix_value",
+      "max_absolute": 2.735760062932968e-08,
+      "relative_l2": 1.5128388923668872e-06,
+      "max_absolute_relative_to_tensor_max": 1.2972906036060217e-06
+    },
+    {
+      "name": "blocks.2.attention.mix_rate",
+      "max_absolute": 1.57160684466362e-08,
+      "relative_l2": 1.705530993387781e-06,
+      "max_absolute_relative_to_tensor_max": 1.3631185438162036e-06
+    },
+    {
+      "name": "blocks.2.attention.mix_gate",
+      "max_absolute": 1.4901161193847656e-08,
+      "relative_l2": 1.4119412829528998e-06,
+      "max_absolute_relative_to_tensor_max": 9.017241303518877e-07
+    },
+    {
+      "name": "blocks.2.attention.decay_bias",
+      "max_absolute": 4.307366907596588e-09,
+      "relative_l2": 1.1371269781476672e-06,
+      "max_absolute_relative_to_tensor_max": 1.2193328720080785e-06
+    },
+    {
+      "name": "blocks.2.attention.rate_bias",
+      "max_absolute": 3.026798367500305e-09,
+      "relative_l2": 1.464558484521436e-06,
+      "max_absolute_relative_to_tensor_max": 1.0126568079592955e-06
+    },
+    {
+      "name": "blocks.2.attention.value_bias",
+      "max_absolute": 4.6566128730773926e-09,
+      "relative_l2": 1.5895626375560812e-06,
+      "max_absolute_relative_to_tensor_max": 1.3774716576597238e-06
+    },
+    {
+      "name": "blocks.2.attention.key_scale",
+      "max_absolute": 2.6542693376541138e-08,
+      "relative_l2": 1.1747950643738975e-06,
+      "max_absolute_relative_to_tensor_max": 8.466579469810317e-07
+    },
+    {
+      "name": "blocks.2.attention.key_rate",
+      "max_absolute": 3.282912075519562e-08,
+      "relative_l2": 1.7166382700261228e-06,
+      "max_absolute_relative_to_tensor_max": 1.6293920320002426e-06
+    },
+    {
+      "name": "blocks.2.attention.bonus",
+      "max_absolute": 2.123415470123291e-07,
+      "relative_l2": 1.8245240963351333e-06,
+      "max_absolute_relative_to_tensor_max": 1.8465672379837715e-06
+    },
+    {
+      "name": "blocks.2.attention.decay_control.down.weight",
+      "max_absolute": 3.958120942115784e-09,
+      "relative_l2": 1.879103823853562e-06,
+      "max_absolute_relative_to_tensor_max": 1.6470443933688442e-06
+    },
+    {
+      "name": "blocks.2.attention.decay_control.up.weight",
+      "max_absolute": 3.768946044147015e-09,
+      "relative_l2": 1.1592464131254455e-06,
+      "max_absolute_relative_to_tensor_max": 1.228886776236932e-06
+    },
+    {
+      "name": "blocks.2.attention.rate_control.down.weight",
+      "max_absolute": 5.587935447692871e-09,
+      "relative_l2": 1.6165518758073394e-06,
+      "max_absolute_relative_to_tensor_max": 1.877556851052398e-06
+    },
+    {
+      "name": "blocks.2.attention.rate_control.up.weight",
+      "max_absolute": 8.352799341082573e-09,
+      "relative_l2": 1.6239058305786988e-06,
+      "max_absolute_relative_to_tensor_max": 1.1087625091590738e-06
+    },
+    {
+      "name": "blocks.2.attention.gate_control.down.weight",
+      "max_absolute": 5.587935447692871e-09,
+      "relative_l2": 1.4792836871203204e-06,
+      "max_absolute_relative_to_tensor_max": 1.3466721206887554e-06
+    },
+    {
+      "name": "blocks.2.attention.gate_control.up.weight",
+      "max_absolute": 1.2631062418222427e-08,
+      "relative_l2": 1.386918088605825e-06,
+      "max_absolute_relative_to_tensor_max": 1.0120172052998436e-06
+    },
+    {
+      "name": "blocks.2.attention.value_control.down.weight",
+      "max_absolute": 1.1059455573558807e-08,
+      "relative_l2": 1.812249109820394e-06,
+      "max_absolute_relative_to_tensor_max": 1.7891199360466839e-06
+    },
+    {
+      "name": "blocks.2.attention.value_control.up.weight",
+      "max_absolute": 2.0256265997886658e-08,
+      "relative_l2": 1.6286383912369846e-06,
+      "max_absolute_relative_to_tensor_max": 1.9527120476946552e-06
+    },
+    {
+      "name": "blocks.2.attention.read.weight",
+      "max_absolute": 5.21540641784668e-08,
+      "relative_l2": 1.918981545098201e-06,
+      "max_absolute_relative_to_tensor_max": 3.0770306039265987e-06
+    },
+    {
+      "name": "blocks.2.attention.key.weight",
+      "max_absolute": 2.7939677238464355e-08,
+      "relative_l2": 1.76766058051114e-06,
+      "max_absolute_relative_to_tensor_max": 1.8351603884300478e-06
+    },
+    {
+      "name": "blocks.2.attention.value.weight",
+      "max_absolute": 3.096647560596466e-08,
+      "relative_l2": 1.5182526273599843e-06,
+      "max_absolute_relative_to_tensor_max": 1.6022155195269353e-06
+    },
+    {
+      "name": "blocks.2.attention.output.weight",
+      "max_absolute": 1.7695128917694092e-08,
+      "relative_l2": 1.5593166454117916e-06,
+      "max_absolute_relative_to_tensor_max": 8.908423655371911e-07
+    },
+    {
+      "name": "blocks.2.attention.norm.weight",
+      "max_absolute": 3.725290298461914e-08,
+      "relative_l2": 1.3829113621734622e-06,
+      "max_absolute_relative_to_tensor_max": 1.4508397460450108e-06
+    },
+    {
+      "name": "blocks.2.attention.norm.bias",
+      "max_absolute": 4.0046870708465576e-08,
+      "relative_l2": 1.419956421754082e-06,
+      "max_absolute_relative_to_tensor_max": 1.2590413811180334e-06
+    },
+    {
+      "name": "blocks.2.norm1.weight",
+      "max_absolute": 6.426125764846802e-08,
+      "relative_l2": 1.6467606460785922e-06,
+      "max_absolute_relative_to_tensor_max": 2.6332651610241646e-06
+    },
+    {
+      "name": "blocks.2.norm1.bias",
+      "max_absolute": 3.864988684654236e-08,
+      "relative_l2": 1.4808146087597188e-06,
+      "max_absolute_relative_to_tensor_max": 1.540891319858443e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_spine",
+      "max_absolute": 9.42964106798172e-09,
+      "relative_l2": 1.508908990722727e-06,
+      "max_absolute_relative_to_tensor_max": 1.7020413906207686e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_t_basis_edge",
+      "max_absolute": 5.238689482212067e-09,
+      "relative_l2": 1.8061395830613329e-06,
+      "max_absolute_relative_to_tensor_max": 1.619090123161667e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_x_basis_edge",
+      "max_absolute": 1.3737007975578308e-08,
+      "relative_l2": 1.645221163619924e-06,
+      "max_absolute_relative_to_tensor_max": 2.069910925768714e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_den_delta",
+      "max_absolute": 1.6370904631912708e-10,
+      "relative_l2": 1.8068631924578705e-06,
+      "max_absolute_relative_to_tensor_max": 1.33411759683322e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_den_weight",
+      "max_absolute": 1.2732925824820995e-10,
+      "relative_l2": 1.7151786101352202e-06,
+      "max_absolute_relative_to_tensor_max": 1.8747997981644103e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_raw_scale",
+      "max_absolute": 3.841705620288849e-09,
+      "relative_l2": 1.9677909854400737e-06,
+      "max_absolute_relative_to_tensor_max": 2.5187084704089536e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_raw_shift",
+      "max_absolute": 1.1292286217212677e-08,
+      "relative_l2": 1.5427625305899562e-06,
+      "max_absolute_relative_to_tensor_max": 1.261470276118937e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_edge_raw_scale",
+      "max_absolute": 1.1292286217212677e-08,
+      "relative_l2": 2.380879627401564e-06,
+      "max_absolute_relative_to_tensor_max": 1.6879159625272912e-06
+    },
+    {
+      "name": "blocks.2.ffn.geo_edge_raw_shift",
+      "max_absolute": 1.6763806343078613e-08,
+      "relative_l2": 1.6914214431626276e-06,
+      "max_absolute_relative_to_tensor_max": 1.5935773873493506e-06
+    },
+    {
+      "name": "blocks.2.ffn.up.weight",
+      "max_absolute": 1.862645149230957e-08,
+      "relative_l2": 1.6613088626169943e-06,
+      "max_absolute_relative_to_tensor_max": 1.8216427738482413e-06
+    },
+    {
+      "name": "blocks.2.norm2.weight",
+      "max_absolute": 2.0489096641540527e-08,
+      "relative_l2": 1.8510937924560481e-06,
+      "max_absolute_relative_to_tensor_max": 1.5515133461178032e-06
+    },
+    {
+      "name": "blocks.2.norm2.bias",
+      "max_absolute": 1.0710209608078003e-08,
+      "relative_l2": 1.6585713689392638e-06,
+      "max_absolute_relative_to_tensor_max": 1.4211684649390942e-06
+    },
+    {
+      "name": "blocks.3.mix",
+      "max_absolute": 1.4901161193847656e-08,
+      "relative_l2": 1.6037515148146099e-06,
+      "max_absolute_relative_to_tensor_max": 9.502406484442185e-07
+    },
+    {
+      "name": "blocks.3.attention.mix_read",
+      "max_absolute": 1.57160684466362e-08,
+      "relative_l2": 1.5457806422674642e-06,
+      "max_absolute_relative_to_tensor_max": 1.4688881652529217e-06
+    },
+    {
+      "name": "blocks.3.attention.mix_decay",
+      "max_absolute": 3.0850060284137726e-09,
+      "relative_l2": 1.5315510239907285e-06,
+      "max_absolute_relative_to_tensor_max": 1.4059442900145805e-06
+    },
+    {
+      "name": "blocks.3.attention.mix_key",
+      "max_absolute": 2.514570951461792e-08,
+      "relative_l2": 1.909750963691044e-06,
+      "max_absolute_relative_to_tensor_max": 2.1895956254798864e-06
+    },
+    {
+      "name": "blocks.3.attention.mix_value",
+      "max_absolute": 1.4901161193847656e-08,
+      "relative_l2": 1.4095281184133412e-06,
+      "max_absolute_relative_to_tensor_max": 1.2821564846346368e-06
+    },
+    {
+      "name": "blocks.3.attention.mix_rate",
+      "max_absolute": 1.210719347000122e-08,
+      "relative_l2": 1.695124026633802e-06,
+      "max_absolute_relative_to_tensor_max": 1.0809680850824992e-06
+    },
+    {
+      "name": "blocks.3.attention.mix_gate",
+      "max_absolute": 1.548323780298233e-08,
+      "relative_l2": 1.6222352447955495e-06,
+      "max_absolute_relative_to_tensor_max": 2.2808004958083003e-06
+    },
+    {
+      "name": "blocks.3.attention.decay_bias",
+      "max_absolute": 3.259629011154175e-09,
+      "relative_l2": 9.166175511470957e-07,
+      "max_absolute_relative_to_tensor_max": 7.168809696982607e-07
+    },
+    {
+      "name": "blocks.3.attention.rate_bias",
+      "max_absolute": 3.14321368932724e-09,
+      "relative_l2": 1.9591212014991736e-06,
+      "max_absolute_relative_to_tensor_max": 1.2042629839174692e-06
+    },
+    {
+      "name": "blocks.3.attention.value_bias",
+      "max_absolute": 4.452886059880257e-09,
+      "relative_l2": 1.8948970229950283e-06,
+      "max_absolute_relative_to_tensor_max": 1.5506444113315987e-06
+    },
+    {
+      "name": "blocks.3.attention.key_scale",
+      "max_absolute": 3.3527612686157227e-08,
+      "relative_l2": 1.4649423499603905e-06,
+      "max_absolute_relative_to_tensor_max": 1.364376537908179e-06
+    },
+    {
+      "name": "blocks.3.attention.key_rate",
+      "max_absolute": 4.470348358154297e-08,
+      "relative_l2": 1.382420795040812e-06,
+      "max_absolute_relative_to_tensor_max": 1.5697334461797266e-06
+    },
+    {
+      "name": "blocks.3.attention.bonus",
+      "max_absolute": 1.9371509552001953e-07,
+      "relative_l2": 2.1161060252980426e-06,
+      "max_absolute_relative_to_tensor_max": 3.183060437931576e-06
+    },
+    {
+      "name": "blocks.3.attention.decay_control.down.weight",
+      "max_absolute": 3.8708094507455826e-09,
+      "relative_l2": 1.4231132718805604e-06,
+      "max_absolute_relative_to_tensor_max": 1.267896792209676e-06
+    },
+    {
+      "name": "blocks.3.attention.decay_control.up.weight",
+      "max_absolute": 3.3760443329811096e-09,
+      "relative_l2": 1.063702355339917e-06,
+      "max_absolute_relative_to_tensor_max": 8.807928301762782e-07
+    },
+    {
+      "name": "blocks.3.attention.rate_control.down.weight",
+      "max_absolute": 6.05359673500061e-09,
+      "relative_l2": 1.8134079614330986e-06,
+      "max_absolute_relative_to_tensor_max": 1.4930901510605246e-06
+    },
+    {
+      "name": "blocks.3.attention.rate_control.up.weight",
+      "max_absolute": 1.4202669262886047e-08,
+      "relative_l2": 1.9015183209923382e-06,
+      "max_absolute_relative_to_tensor_max": 1.9760166006126427e-06
+    },
+    {
+      "name": "blocks.3.attention.gate_control.down.weight",
+      "max_absolute": 7.450580596923828e-09,
+      "relative_l2": 1.5935288720476473e-06,
+      "max_absolute_relative_to_tensor_max": 1.2567936570252527e-06
+    },
+    {
+      "name": "blocks.3.attention.gate_control.up.weight",
+      "max_absolute": 1.257285475730896e-08,
+      "relative_l2": 1.3355496341329935e-06,
+      "max_absolute_relative_to_tensor_max": 9.662694654983824e-07
+    },
+    {
+      "name": "blocks.3.attention.value_control.down.weight",
+      "max_absolute": 8.149072527885437e-09,
+      "relative_l2": 1.6662753794238883e-06,
+      "max_absolute_relative_to_tensor_max": 1.4276314061288298e-06
+    },
+    {
+      "name": "blocks.3.attention.value_control.up.weight",
+      "max_absolute": 1.6298145055770874e-08,
+      "relative_l2": 1.8732324241116353e-06,
+      "max_absolute_relative_to_tensor_max": 2.615082104985684e-06
+    },
+    {
+      "name": "blocks.3.attention.read.weight",
+      "max_absolute": 3.3993273973464966e-08,
+      "relative_l2": 1.8293735812049087e-06,
+      "max_absolute_relative_to_tensor_max": 2.6630289933816068e-06
+    },
+    {
+      "name": "blocks.3.attention.key.weight",
+      "max_absolute": 2.3981556296348572e-08,
+      "relative_l2": 1.6726546266980308e-06,
+      "max_absolute_relative_to_tensor_max": 1.1911253345096255e-06
+    },
+    {
+      "name": "blocks.3.attention.value.weight",
+      "max_absolute": 1.955777406692505e-08,
+      "relative_l2": 1.4998522999361113e-06,
+      "max_absolute_relative_to_tensor_max": 1.2613811871723299e-06
+    },
+    {
+      "name": "blocks.3.attention.output.weight",
+      "max_absolute": 1.3271346688270569e-08,
+      "relative_l2": 1.3886401109008726e-06,
+      "max_absolute_relative_to_tensor_max": 1.1954271764639264e-06
+    },
+    {
+      "name": "blocks.3.attention.norm.weight",
+      "max_absolute": 2.421438694000244e-08,
+      "relative_l2": 1.3075975557751778e-06,
+      "max_absolute_relative_to_tensor_max": 1.412220245958796e-06
+    },
+    {
+      "name": "blocks.3.attention.norm.bias",
+      "max_absolute": 2.421438694000244e-08,
+      "relative_l2": 1.1752124544934842e-06,
+      "max_absolute_relative_to_tensor_max": 1.0365941662075086e-06
+    },
+    {
+      "name": "blocks.3.norm1.weight",
+      "max_absolute": 4.470348358154297e-08,
+      "relative_l2": 1.547399322525097e-06,
+      "max_absolute_relative_to_tensor_max": 1.5381195040666917e-06
+    },
+    {
+      "name": "blocks.3.norm1.bias",
+      "max_absolute": 3.166496753692627e-08,
+      "relative_l2": 1.674351373470361e-06,
+      "max_absolute_relative_to_tensor_max": 1.3179469487589978e-06
+    },
+    {
+      "name": "blocks.3.ffn.geo_spine",
+      "max_absolute": 1.5832483768463135e-08,
+      "relative_l2": 1.2067604501436857e-06,
+      "max_absolute_relative_to_tensor_max": 2.1788667611440384e-06
+    },
+    {
+      "name": "blocks.3.ffn.geo_t_basis_edge",
+      "max_absolute": 6.28642737865448e-09,
+      "relative_l2": 1.484198290450411e-06,
+      "max_absolute_relative_to_tensor_max": 1.4334734527087552e-06
+    },
+    {
+      "name": "blocks.3.ffn.geo_x_basis_edge",
+      "max_absolute": 1.932494342327118e-08,
+      "relative_l2": 1.3762796868694711e-06,
+      "max_absolute_relative_to_tensor_max": 2.369842537382981e-06
+    },
+    {
+      "name": "blocks.3.ffn.geo_den_delta",
+      "max_absolute": 1.964508555829525e-10,
+      "relative_l2": 1.5114771021952553e-06,
+      "max_absolute_relative_to_tensor_max": 8.507876087511384e-07
+    },
+    {
+      "name": "blocks.3.ffn.geo_den_weight",
+      "max_absolute": 1.418811734765768e-10,
+      "relative_l2": 1.3128023233695306e-06,
+      "max_absolute_relative_to_tensor_max": 6.995198997627444e-07
+    },
+    {
+      "name": "blocks.3.ffn.geo_raw_scale",
+      "max_absolute": 3.4924596548080444e-09,
+      "relative_l2": 1.6681434631201954e-06,
+      "max_absolute_relative_to_tensor_max": 1.5510565952632594e-06
+    },
+    {
+      "name": "blocks.3.ffn.geo_raw_shift",
+      "max_absolute": 1.0710209608078003e-08,
+      "relative_l2": 1.3181812939927372e-06,
+      "max_absolute_relative_to_tensor_max": 1.6242592583307374e-06
+    },
+    {
+      "name": "blocks.3.ffn.geo_edge_raw_scale",
+      "max_absolute": 1.979060471057892e-08,
+      "relative_l2": 2.1253293690187414e-06,
+      "max_absolute_relative_to_tensor_max": 2.8376655026674056e-06
+    },
+    {
+      "name": "blocks.3.ffn.geo_edge_raw_shift",
+      "max_absolute": 2.2118911147117615e-08,
+      "relative_l2": 1.5899686967708537e-06,
+      "max_absolute_relative_to_tensor_max": 2.118059098040363e-06
+    },
+    {
+      "name": "blocks.3.ffn.up.weight",
+      "max_absolute": 1.1175870895385742e-08,
+      "relative_l2": 1.295066531309095e-06,
+      "max_absolute_relative_to_tensor_max": 1.2635287071616386e-06
+    },
+    {
+      "name": "blocks.3.norm2.weight",
+      "max_absolute": 2.1420419216156006e-08,
+      "relative_l2": 1.633588714029976e-06,
+      "max_absolute_relative_to_tensor_max": 1.809616823079192e-06
+    },
+    {
+      "name": "blocks.3.norm2.bias",
+      "max_absolute": 9.546056389808655e-09,
+      "relative_l2": 1.528124584429926e-06,
+      "max_absolute_relative_to_tensor_max": 1.4927268522482943e-06
+    }
+  ],
+  "source_sha256": {
+    "structured_codes.py": "931ed0b24a2c9af08035d257c939fb0b2ba95960be3a7416da17d9704937f12c",
+    "structured_codes_gpu.py": "47cb003208b7a25e713c4a71f399e9ecce63e365991ac50620392663c3a26377",
+    "check_structured_model.py": "cf15a9ab9b1a211a3a2868eb4d09096297d3a71d18d448f50b086e9730126bb5"
+  },
+  "gradient_tolerance": "Per-tensor relativeL2 <=1e-4 or maxabsolute <=1e-7; all component projection equations checked independently.",
+  "gradient_failures": []
+}

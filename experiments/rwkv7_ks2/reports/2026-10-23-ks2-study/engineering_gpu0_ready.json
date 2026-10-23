@@ -1,0 +1,15 @@
+{
+  "epoch": 1792731765.0030317,
+  "all_wave11_jobs_dispatched": true,
+  "physical_gpu0_released": true,
+  "last_gpu0_complete": {
+    "event": "complete",
+    "time": 1792731669.2860556,
+    "gpu": 0,
+    "job": "spine_rank4_33",
+    "loss": 1.6167930364608765,
+    "parameters": 613216,
+    "ms": 9.734609282420328
+  },
+  "reason": "Start queued checks on the already released GPU0 while othercardsfinishwave11. Wave12/12b/12cGPU0remain gated on engineeringfinish."
+}

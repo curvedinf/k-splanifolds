@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "original_equation_reference": [
+    {
+      "rank": 1,
+      "scenario": "positive",
+      "forward_max_error": 7.450580596923828e-09,
+      "status": "PASS"
+    },
+    {
+      "rank": 1,
+      "scenario": "signed",
+      "forward_max_error": 2.9802322387695312e-08,
+      "status": "PASS"
+    },
+    {
+      "rank": 1,
+      "scenario": "zero_sum",
+      "forward_max_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "rank": 8,
+      "scenario": "positive",
+      "forward_max_error": 2.9802322387695312e-08,
+      "status": "PASS"
+    },
+    {
+      "rank": 8,
+      "scenario": "signed",
+      "forward_max_error": 5.960464477539063e-08,
+      "status": "PASS"
+    },
+    {
+      "rank": 8,
+      "scenario": "zero_sum",
+      "forward_max_error": 1.4901161193847656e-08,
+      "status": "PASS"
+    }
+  ],
+  "model_cases": [
+    {
+      "name": "full_original_equation",
+      "parameters": 613168,
+      "status": "PASS"
+    },
+    {
+      "name": "full_stable_sigmoid",
+      "parameters": 613168,
+      "status": "PASS"
+    },
+    {
+      "name": "full_original_sigmoid",
+      "parameters": 613168,
+      "status": "PASS"
+    },
+    {
+      "name": "full_original_sigmoid_parallel",
+      "parameters": 613168,
+      "status": "PASS"
+    }
+  ],
+  "original_mlp_state_and_optimizer_seeds": [
+    11,
+    22,
+    33
+  ],
+  "note": "CPU checks. GPU model/gradient/causality validation remains mandatory before training."
+}

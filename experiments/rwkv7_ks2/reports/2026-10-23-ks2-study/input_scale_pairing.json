@@ -1,0 +1,35 @@
+[
+  {
+    "seed": 11,
+    "changed": [
+      "blocks.0.key.weight",
+      "blocks.1.key.weight",
+      "blocks.2.key.weight",
+      "blocks.3.key.weight"
+    ],
+    "status": "PASS",
+    "comparison": "Every other state tensor exactly equal; four FFN input matrices exactly doubled."
+  },
+  {
+    "seed": 22,
+    "changed": [
+      "blocks.0.key.weight",
+      "blocks.1.key.weight",
+      "blocks.2.key.weight",
+      "blocks.3.key.weight"
+    ],
+    "status": "PASS",
+    "comparison": "Every other state tensor exactly equal; four FFN input matrices exactly doubled."
+  },
+  {
+    "seed": 33,
+    "changed": [
+      "blocks.0.key.weight",
+      "blocks.1.key.weight",
+      "blocks.2.key.weight",
+      "blocks.3.key.weight"
+    ],
+    "status": "PASS",
+    "comparison": "Every other state tensor exactly equal; four FFN input matrices exactly doubled."
+  }
+]

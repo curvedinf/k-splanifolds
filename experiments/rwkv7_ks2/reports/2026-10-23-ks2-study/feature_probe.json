@@ -1,0 +1,943 @@
+{
+  "note": "Descriptive, scale-dependent spectra on 1024 fixed validation targets, seed 54321. Participation rank is trace(C)^2/trace(C^2); entropy rank is exp(-sum p log p). Neither quantity establishes causal expressivity or a retraining advantage. History update includes the side stream; dense-model update is 96D.",
+  "rows": [
+    {
+      "run": "initial/history/fixed_both_11",
+      "loss": 1.6868899762630463,
+      "layers": [
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 512,
+            "rms": 0.8013578749468022,
+            "abs_p99": 2.0487900805473327,
+            "positive_fraction": 0.4709644317626953,
+            "covariance_participation_rank": 22.67130146207268,
+            "covariance_entropy_rank": 36.13912404962034,
+            "top10_variance_fraction": 0.5540205898568917
+          },
+          "features": {
+            "samples": 1024,
+            "features": 512,
+            "rms": 0.9491717749481058,
+            "abs_p99": 2.5539671564102178,
+            "positive_fraction": 0.48917198181152344,
+            "covariance_participation_rank": 34.024914137018776,
+            "covariance_entropy_rank": 69.9406043575439,
+            "top10_variance_fraction": 0.44860293676015606
+          },
+          "update": {
+            "samples": 1024,
+            "features": 2144,
+            "rms": 0.47552078477275944,
+            "abs_p99": 1.7194038331508694,
+            "positive_fraction": 0.5036429789528918,
+            "covariance_participation_rank": 31.14528681718885,
+            "covariance_entropy_rank": 62.741076306961844,
+            "top10_variance_fraction": 0.4661248855991932
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 512,
+            "rms": 0.9291892539531514,
+            "abs_p99": 2.3784975957870484,
+            "positive_fraction": 0.4682140350341797,
+            "covariance_participation_rank": 32.8205527172368,
+            "covariance_entropy_rank": 65.96453212712571,
+            "top10_variance_fraction": 0.44915348444154035
+          },
+          "features": {
+            "samples": 1024,
+            "features": 512,
+            "rms": 1.158062006125072,
+            "abs_p99": 3.2961277198791503,
+            "positive_fraction": 0.49337005615234375,
+            "covariance_participation_rank": 54.09343633228984,
+            "covariance_entropy_rank": 112.90415688792045,
+            "top10_variance_fraction": 0.3476985962187418
+          },
+          "update": {
+            "samples": 1024,
+            "features": 2144,
+            "rms": 0.5367822041413783,
+            "abs_p99": 1.9538641154766099,
+            "positive_fraction": 0.5041927508453825,
+            "covariance_participation_rank": 50.400041771324425,
+            "covariance_entropy_rank": 101.06396111027283,
+            "top10_variance_fraction": 0.36228853290429786
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 512,
+            "rms": 0.9989362045357305,
+            "abs_p99": 2.5809851741790775,
+            "positive_fraction": 0.4579010009765625,
+            "covariance_participation_rank": 31.493330055581996,
+            "covariance_entropy_rank": 72.64041436609591,
+            "top10_variance_fraction": 0.44203979897894485
+          },
+          "features": {
+            "samples": 1024,
+            "features": 512,
+            "rms": 1.32685725957522,
+            "abs_p99": 3.9015106344223036,
+            "positive_fraction": 0.4800071716308594,
+            "covariance_participation_rank": 26.782493611183522,
+            "covariance_entropy_rank": 87.0297943493158,
+            "top10_variance_fraction": 0.41552557744604685
+          },
+          "update": {
+            "samples": 1024,
+            "features": 2144,
+            "rms": 0.6560972284610687,
+            "abs_p99": 2.356383037567144,
+            "positive_fraction": 0.49852786847014924,
+            "covariance_participation_rank": 21.2751315194858,
+            "covariance_entropy_rank": 73.15360149335653,
+            "top10_variance_fraction": 0.4427812314027912
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 512,
+            "rms": 1.0576070323347568,
+            "abs_p99": 2.728723180294037,
+            "positive_fraction": 0.4499530792236328,
+            "covariance_participation_rank": 30.4505847687529,
+            "covariance_entropy_rank": 75.15048855430689,
+            "top10_variance_fraction": 0.4423001297837982
+          },
+          "features": {
+            "samples": 1024,
+            "features": 512,
+            "rms": 1.550831581114631,
+            "abs_p99": 5.15175988674164,
+            "positive_fraction": 0.47931861877441406,
+            "covariance_participation_rank": 48.979568045899,
+            "covariance_entropy_rank": 115.22446646491571,
+            "top10_variance_fraction": 0.3530703561104099
+          },
+          "update": {
+            "samples": 1024,
+            "features": 2144,
+            "rms": 0.345925903926786,
+            "abs_p99": 1.0736991584301014,
+            "positive_fraction": 0.023266692659748133,
+            "covariance_participation_rank": 6.4420245554380555,
+            "covariance_entropy_rank": 18.121820449280413,
+            "top10_variance_fraction": 0.6938321774385969
+          }
+        }
+      ]
+    },
+    {
+      "run": "wave2/dense31",
+      "loss": 1.6804920732975006,
+      "layers": [
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.5905898833484123,
+            "abs_p99": 1.5729781258106215,
+            "positive_fraction": 0.4904667023689516,
+            "covariance_participation_rank": 18.702435499495866,
+            "covariance_entropy_rank": 29.723274767007,
+            "top10_variance_fraction": 0.6062213509241432
+          },
+          "features": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.5720829934584849,
+            "abs_p99": 1.6982160735130307,
+            "positive_fraction": 0.49330975932459675,
+            "covariance_participation_rank": 43.08567932121889,
+            "covariance_entropy_rank": 82.11785758007896,
+            "top10_variance_fraction": 0.3954353197597822
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.0015459152303345,
+            "abs_p99": 3.015510966777802,
+            "positive_fraction": 0.4951680501302083,
+            "covariance_participation_rank": 14.16563883253145,
+            "covariance_entropy_rank": 25.034241569767314,
+            "top10_variance_fraction": 0.6738482550982212
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.5464918484225877,
+            "abs_p99": 1.4386700570583344,
+            "positive_fraction": 0.5064067225302419,
+            "covariance_participation_rank": 21.715192122803504,
+            "covariance_entropy_rank": 33.353719541340446,
+            "top10_variance_fraction": 0.5778999256029522
+          },
+          "features": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.4409473482357016,
+            "abs_p99": 1.4056980633735652,
+            "positive_fraction": 0.4852294921875,
+            "covariance_participation_rank": 84.22654990848315,
+            "covariance_entropy_rank": 136.9592462686318,
+            "top10_variance_fraction": 0.2512151126662072
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 0.7355259868140128,
+            "abs_p99": 2.1422224283218396,
+            "positive_fraction": 0.4979349772135417,
+            "covariance_participation_rank": 19.113256615555628,
+            "covariance_entropy_rank": 32.44609363364996,
+            "top10_variance_fraction": 0.6050536397288336
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.5437547053119203,
+            "abs_p99": 1.4227501106262204,
+            "positive_fraction": 0.5017798639112904,
+            "covariance_participation_rank": 22.391796837553375,
+            "covariance_entropy_rank": 33.13796820664426,
+            "top10_variance_fraction": 0.5777849076659174
+          },
+          "features": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.43143263514537455,
+            "abs_p99": 1.3344509816169734,
+            "positive_fraction": 0.4893956338205645,
+            "covariance_participation_rank": 109.69122973777098,
+            "covariance_entropy_rank": 156.64375135082145,
+            "top10_variance_fraction": 0.19989598335982972
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 0.7276512188734319,
+            "abs_p99": 1.9892026865482342,
+            "positive_fraction": 0.5015970865885416,
+            "covariance_participation_rank": 20.878411495921654,
+            "covariance_entropy_rank": 32.03622766306998,
+            "top10_variance_fraction": 0.5904021357415769
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.5553471862197843,
+            "abs_p99": 1.4764254248142226,
+            "positive_fraction": 0.4907502205141129,
+            "covariance_participation_rank": 20.409851706272512,
+            "covariance_entropy_rank": 31.09837572614608,
+            "top10_variance_fraction": 0.5971828083346354
+          },
+          "features": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.4723355101916567,
+            "abs_p99": 1.4945120286941518,
+            "positive_fraction": 0.4985548450100806,
+            "covariance_participation_rank": 61.042227876633376,
+            "covariance_entropy_rank": 122.49584196075669,
+            "top10_variance_fraction": 0.28557093209940965
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.3909263214134102,
+            "abs_p99": 5.519269404411316,
+            "positive_fraction": 0.508270263671875,
+            "covariance_participation_rank": 3.2524894327009357,
+            "covariance_entropy_rank": 8.569847448485671,
+            "top10_variance_fraction": 0.8279154567642506
+          }
+        }
+      ]
+    },
+    {
+      "run": "wave2/dense31_relu2",
+      "loss": 1.6517569720745087,
+      "layers": [
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.8912691949488136,
+            "abs_p99": 2.2598613643646237,
+            "positive_fraction": 0.3639782321068548,
+            "covariance_participation_rank": 21.954210758944,
+            "covariance_entropy_rank": 31.869572326293248,
+            "top10_variance_fraction": 0.5824508740245182
+          },
+          "features": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.675573740671757,
+            "abs_p99": 3.1375799703598006,
+            "positive_fraction": 0.2203369140625,
+            "covariance_participation_rank": 47.928685675514735,
+            "covariance_entropy_rank": 96.31012084465796,
+            "top10_variance_fraction": 0.3464265010162481
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.1445520855660936,
+            "abs_p99": 3.8536833524703984,
+            "positive_fraction": 0.4997049967447917,
+            "covariance_participation_rank": 17.578997577792638,
+            "covariance_entropy_rank": 31.063739899321313,
+            "top10_variance_fraction": 0.6156838638139023
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.9818027304253872,
+            "abs_p99": 2.4888459157943723,
+            "positive_fraction": 0.3220096711189516,
+            "covariance_participation_rank": 25.01079178312305,
+            "covariance_entropy_rank": 36.73181408254537,
+            "top10_variance_fraction": 0.5356930223981808
+          },
+          "features": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.6134270296103844,
+            "abs_p99": 2.8529621505737133,
+            "positive_fraction": 0.19031549269153225,
+            "covariance_participation_rank": 64.98442932555727,
+            "covariance_entropy_rank": 113.80212529683384,
+            "top10_variance_fraction": 0.3038637258443877
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.0173784739185538,
+            "abs_p99": 3.4691924428939833,
+            "positive_fraction": 0.5047098795572916,
+            "covariance_participation_rank": 19.931089929772135,
+            "covariance_entropy_rank": 32.944382358119014,
+            "top10_variance_fraction": 0.5851183228938317
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 1.1175749591003008,
+            "abs_p99": 2.805011553764342,
+            "positive_fraction": 0.24404218119959678,
+            "covariance_participation_rank": 20.56680203185391,
+            "covariance_entropy_rank": 31.72034140643397,
+            "top10_variance_fraction": 0.5928532249314092
+          },
+          "features": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.5607660867679749,
+            "abs_p99": 2.2375307035446057,
+            "positive_fraction": 0.12492518271169355,
+            "covariance_participation_rank": 47.80939301876452,
+            "covariance_entropy_rank": 87.0712201798238,
+            "top10_variance_fraction": 0.3755115007511088
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.0013132892635717,
+            "abs_p99": 3.5965387773513804,
+            "positive_fraction": 0.4988810221354167,
+            "covariance_participation_rank": 13.750327704639028,
+            "covariance_entropy_rank": 23.78339305907436,
+            "top10_variance_fraction": 0.6870191369468249
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 1.242193229047783,
+            "abs_p99": 3.140078046321868,
+            "positive_fraction": 0.25764317666330644,
+            "covariance_participation_rank": 19.777594030695646,
+            "covariance_entropy_rank": 30.272532726385755,
+            "top10_variance_fraction": 0.6086979506027435
+          },
+          "features": {
+            "samples": 1024,
+            "features": 248,
+            "rms": 0.9734763488440281,
+            "abs_p99": 3.7771254873275613,
+            "positive_fraction": 0.14808704007056453,
+            "covariance_participation_rank": 8.520891698326817,
+            "covariance_entropy_rank": 37.04937872053707,
+            "top10_variance_fraction": 0.5723958561305718
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 2.4606716583061963,
+            "abs_p99": 12.749653673172016,
+            "positive_fraction": 0.5006103515625,
+            "covariance_participation_rank": 2.1527311110499885,
+            "covariance_entropy_rank": 5.058623765945509,
+            "top10_variance_fraction": 0.897856948974757
+          }
+        }
+      ]
+    },
+    {
+      "run": "wave3/matched_init_mlp384",
+      "loss": 1.6499090492725372,
+      "layers": [
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 384,
+            "rms": 1.2142238755634287,
+            "abs_p99": 2.848471224308009,
+            "positive_fraction": 0.1951726277669271,
+            "covariance_participation_rank": 22.188722591472274,
+            "covariance_entropy_rank": 34.01629026619751,
+            "top10_variance_fraction": 0.5631781363025045
+          },
+          "features": {
+            "samples": 1024,
+            "features": 384,
+            "rms": 0.49688249937789286,
+            "abs_p99": 2.342543125152581,
+            "positive_fraction": 0.1951726277669271,
+            "covariance_participation_rank": 71.98280305356252,
+            "covariance_entropy_rank": 129.6883977724804,
+            "top10_variance_fraction": 0.2889402189680643
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.153623874951435,
+            "abs_p99": 3.9100872039794954,
+            "positive_fraction": 0.513885498046875,
+            "covariance_participation_rank": 24.943878522398393,
+            "covariance_entropy_rank": 37.8666241477896,
+            "top10_variance_fraction": 0.5451448332993941
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 384,
+            "rms": 1.4697716592178092,
+            "abs_p99": 3.4564609885215756,
+            "positive_fraction": 0.1539459228515625,
+            "covariance_participation_rank": 25.665963874778747,
+            "covariance_entropy_rank": 38.15874274341878,
+            "top10_variance_fraction": 0.5253094115174222
+          },
+          "features": {
+            "samples": 1024,
+            "features": 384,
+            "rms": 0.4846421522146492,
+            "abs_p99": 2.1198794245719856,
+            "positive_fraction": 0.1539459228515625,
+            "covariance_participation_rank": 83.35025323940772,
+            "covariance_entropy_rank": 146.19367002374597,
+            "top10_variance_fraction": 0.2625092778569666
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.1264386727568558,
+            "abs_p99": 4.000173625946045,
+            "positive_fraction": 0.5020243326822916,
+            "covariance_participation_rank": 21.367171900594045,
+            "covariance_entropy_rank": 33.675822482230096,
+            "top10_variance_fraction": 0.5831082968624759
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 384,
+            "rms": 1.716541253380594,
+            "abs_p99": 3.852670717239378,
+            "positive_fraction": 0.11074574788411458,
+            "covariance_participation_rank": 20.583043726066066,
+            "covariance_entropy_rank": 32.68378216316347,
+            "top10_variance_fraction": 0.5841917481378175
+          },
+          "features": {
+            "samples": 1024,
+            "features": 384,
+            "rms": 0.5457471001467291,
+            "abs_p99": 2.0288543105125405,
+            "positive_fraction": 0.11074574788411458,
+            "covariance_participation_rank": 13.219878331444162,
+            "covariance_entropy_rank": 57.571760851583505,
+            "top10_variance_fraction": 0.5120620839658603
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.9014070600511237,
+            "abs_p99": 9.021680946350099,
+            "positive_fraction": 0.49957275390625,
+            "covariance_participation_rank": 2.1559907643744904,
+            "covariance_entropy_rank": 5.271514089195985,
+            "top10_variance_fraction": 0.8858179140020878
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 384,
+            "rms": 1.817557735837699,
+            "abs_p99": 4.202827930450439,
+            "positive_fraction": 0.1202239990234375,
+            "covariance_participation_rank": 19.246433718380576,
+            "covariance_entropy_rank": 31.082269955742735,
+            "top10_variance_fraction": 0.5943104843692698
+          },
+          "features": {
+            "samples": 1024,
+            "features": 384,
+            "rms": 0.5905808267941587,
+            "abs_p99": 2.377814102172846,
+            "positive_fraction": 0.1202239990234375,
+            "covariance_participation_rank": 56.13626530548987,
+            "covariance_entropy_rank": 109.819408972644,
+            "top10_variance_fraction": 0.336487406843351
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.48400533399831,
+            "abs_p99": 5.38807584762574,
+            "positive_fraction": 0.5001322428385416,
+            "covariance_participation_rank": 11.24233533858459,
+            "covariance_entropy_rank": 19.455393721784475,
+            "top10_variance_fraction": 0.7394855948632818
+          }
+        }
+      ]
+    },
+    {
+      "run": "wave4_activation/matched_mlp368",
+      "loss": 1.6580519080162048,
+      "layers": [
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 1.1816574228404617,
+            "abs_p99": 2.7759001660346985,
+            "positive_fraction": 0.19604226817255435,
+            "covariance_participation_rank": 22.643065798433526,
+            "covariance_entropy_rank": 34.458132178599136,
+            "top10_variance_fraction": 0.5459163724715754
+          },
+          "features": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.46322924699258144,
+            "abs_p99": 2.201491839885713,
+            "positive_fraction": 0.19604226817255435,
+            "covariance_participation_rank": 75.18271792469429,
+            "covariance_entropy_rank": 131.27709155623825,
+            "top10_variance_fraction": 0.2755628665561205
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.0305495641421392,
+            "abs_p99": 3.44746488571167,
+            "positive_fraction": 0.49810791015625,
+            "covariance_participation_rank": 23.170926094222118,
+            "covariance_entropy_rank": 36.87702125935895,
+            "top10_variance_fraction": 0.5524629142709302
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 1.4564577725588195,
+            "abs_p99": 3.3718731427192687,
+            "positive_fraction": 0.15519648012907608,
+            "covariance_participation_rank": 25.909578252250473,
+            "covariance_entropy_rank": 38.742499710420596,
+            "top10_variance_fraction": 0.5243965511332054
+          },
+          "features": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.5160135432651312,
+            "abs_p99": 2.265066642761231,
+            "positive_fraction": 0.15519648012907608,
+            "covariance_participation_rank": 62.70220049908629,
+            "covariance_entropy_rank": 129.387495590744,
+            "top10_variance_fraction": 0.3052189423566496
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.1866436361644574,
+            "abs_p99": 4.179569091796875,
+            "positive_fraction": 0.50579833984375,
+            "covariance_participation_rank": 16.16847140630389,
+            "covariance_entropy_rank": 29.04030799868696,
+            "top10_variance_fraction": 0.6358326058232416
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 1.6829543467744237,
+            "abs_p99": 3.8186152553558355,
+            "positive_fraction": 0.10828963569972826,
+            "covariance_participation_rank": 19.695060052980523,
+            "covariance_entropy_rank": 31.614920803399478,
+            "top10_variance_fraction": 0.5989180737818558
+          },
+          "features": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.46495153888138785,
+            "abs_p99": 1.6719573068618785,
+            "positive_fraction": 0.10828963569972826,
+            "covariance_participation_rank": 52.62353066345796,
+            "covariance_entropy_rank": 100.13262176406505,
+            "top10_variance_fraction": 0.34880964053293484
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.0799269988816085,
+            "abs_p99": 4.074282150268557,
+            "positive_fraction": 0.5013427734375,
+            "covariance_participation_rank": 16.05915820819703,
+            "covariance_entropy_rank": 25.965927107622413,
+            "top10_variance_fraction": 0.6713758202919506
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 1.790370863018435,
+            "abs_p99": 4.148544192314148,
+            "positive_fraction": 0.1294502590013587,
+            "covariance_participation_rank": 18.52155509381329,
+            "covariance_entropy_rank": 29.398167036883606,
+            "top10_variance_fraction": 0.6164707867206006
+          },
+          "features": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.727697127181492,
+            "abs_p99": 2.886697139739991,
+            "positive_fraction": 0.1294502590013587,
+            "covariance_participation_rank": 13.886473145466226,
+            "covariance_entropy_rank": 62.45520866871147,
+            "top10_variance_fraction": 0.45923447578729926
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 2.2654528518284476,
+            "abs_p99": 10.363091287612917,
+            "positive_fraction": 0.4990946451822917,
+            "covariance_participation_rank": 2.6038507198557066,
+            "covariance_entropy_rank": 6.709764323931584,
+            "top10_variance_fraction": 0.8601509487626122
+          }
+        }
+      ]
+    },
+    {
+      "run": "wave4_activation/spine_fused_11",
+      "loss": 1.6325399577617645,
+      "layers": [
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.9762842416706636,
+            "abs_p99": 2.4188084316253664,
+            "positive_fraction": 0.2955826469089674,
+            "covariance_participation_rank": 25.74098589413748,
+            "covariance_entropy_rank": 36.957319737435796,
+            "top10_variance_fraction": 0.5264596608324775
+          },
+          "features": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.5103503428230284,
+            "abs_p99": 2.420489401817322,
+            "positive_fraction": 0.20769202190896738,
+            "covariance_participation_rank": 72.77635238021311,
+            "covariance_entropy_rank": 133.17787590589091,
+            "top10_variance_fraction": 0.28152307906311114
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.1107712159544127,
+            "abs_p99": 3.6422165441513075,
+            "positive_fraction": 0.4959818522135417,
+            "covariance_participation_rank": 24.588666958314132,
+            "covariance_entropy_rank": 37.99213998988909,
+            "top10_variance_fraction": 0.541910726602118
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 1.131097064111081,
+            "abs_p99": 2.8115756940841674,
+            "positive_fraction": 0.25001857591711957,
+            "covariance_participation_rank": 25.822647984272805,
+            "covariance_entropy_rank": 39.21082329885931,
+            "top10_variance_fraction": 0.512590388321341
+          },
+          "features": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.5106613503326651,
+            "abs_p99": 2.293670370578766,
+            "positive_fraction": 0.16322923743206522,
+            "covariance_participation_rank": 65.93309738659966,
+            "covariance_entropy_rank": 134.55547474962867,
+            "top10_variance_fraction": 0.29736886146892233
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.160225621177523,
+            "abs_p99": 4.083593344688417,
+            "positive_fraction": 0.5027669270833334,
+            "covariance_participation_rank": 14.242425259980589,
+            "covariance_entropy_rank": 27.192557678327596,
+            "top10_variance_fraction": 0.6400923424031768
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 1.294856329055715,
+            "abs_p99": 3.1510490846633914,
+            "positive_fraction": 0.18348760190217392,
+            "covariance_participation_rank": 20.10308554674035,
+            "covariance_entropy_rank": 32.136117633828434,
+            "top10_variance_fraction": 0.5937704362974409
+          },
+          "features": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.48925721975201736,
+            "abs_p99": 1.8053134095668801,
+            "positive_fraction": 0.10640019955842392,
+            "covariance_participation_rank": 43.59266164477194,
+            "covariance_entropy_rank": 89.09565360220816,
+            "top10_variance_fraction": 0.4065730393023526
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.1822781191275509,
+            "abs_p99": 4.647319612503055,
+            "positive_fraction": 0.5005900065104166,
+            "covariance_participation_rank": 12.314455265859797,
+            "covariance_entropy_rank": 21.2320576049783,
+            "top10_variance_fraction": 0.7309285546067454
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 1.3541748351812075,
+            "abs_p99": 3.400884563922882,
+            "positive_fraction": 0.20149562669836957,
+            "covariance_participation_rank": 19.821719472808898,
+            "covariance_entropy_rank": 31.170277357057195,
+            "top10_variance_fraction": 0.5952842665556867
+          },
+          "features": {
+            "samples": 1024,
+            "features": 368,
+            "rms": 0.6325299066130045,
+            "abs_p99": 2.4439038610458375,
+            "positive_fraction": 0.12032417629076086,
+            "covariance_participation_rank": 34.34473695952078,
+            "covariance_entropy_rank": 86.96951165420911,
+            "top10_variance_fraction": 0.3959019376346387
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.662690198954013,
+            "abs_p99": 6.6335207462310795,
+            "positive_fraction": 0.5006103515625,
+            "covariance_participation_rank": 7.904377669928496,
+            "covariance_entropy_rank": 16.22045605674327,
+            "top10_variance_fraction": 0.7595693061934248
+          }
+        }
+      ]
+    },
+    {
+      "run": "wave4_activation/undamped_fused_11",
+      "loss": 1.6754653453826904,
+      "layers": [
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 264,
+            "rms": 0.882959224137713,
+            "abs_p99": 2.230169129371645,
+            "positive_fraction": 0.3686190518465909,
+            "covariance_participation_rank": 23.180491787091082,
+            "covariance_entropy_rank": 33.27689858192092,
+            "top10_variance_fraction": 0.5661763540545073
+          },
+          "features": {
+            "samples": 1024,
+            "features": 264,
+            "rms": 0.6182467191664515,
+            "abs_p99": 2.971141374111177,
+            "positive_fraction": 0.21701512192234848,
+            "covariance_participation_rank": 62.781527755100946,
+            "covariance_entropy_rank": 109.62522335185868,
+            "top10_variance_fraction": 0.31006601673716383
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.0764303501428185,
+            "abs_p99": 3.5704022121429455,
+            "positive_fraction": 0.5019632975260416,
+            "covariance_participation_rank": 21.935473134842262,
+            "covariance_entropy_rank": 34.97477594948494,
+            "top10_variance_fraction": 0.5778062615511113
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 264,
+            "rms": 0.9437541442998647,
+            "abs_p99": 2.422122240066537,
+            "positive_fraction": 0.3398474491003788,
+            "covariance_participation_rank": 26.356370370637997,
+            "covariance_entropy_rank": 38.12054602399091,
+            "top10_variance_fraction": 0.5199620089176321
+          },
+          "features": {
+            "samples": 1024,
+            "features": 264,
+            "rms": 0.6385943901599058,
+            "abs_p99": 2.950655448436744,
+            "positive_fraction": 0.19504986387310605,
+            "covariance_participation_rank": 61.51600333652842,
+            "covariance_entropy_rank": 113.37538692565754,
+            "top10_variance_fraction": 0.317274061439398
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.1635239283969845,
+            "abs_p99": 3.910957772731782,
+            "positive_fraction": 0.5039571126302084,
+            "covariance_participation_rank": 16.018304692139793,
+            "covariance_entropy_rank": 28.664292030683995,
+            "top10_variance_fraction": 0.6307775717956512
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 264,
+            "rms": 1.0806755179040428,
+            "abs_p99": 2.7040311694145256,
+            "positive_fraction": 0.25798635771780304,
+            "covariance_participation_rank": 20.50727081562387,
+            "covariance_entropy_rank": 31.95719887287429,
+            "top10_variance_fraction": 0.5941712729742885
+          },
+          "features": {
+            "samples": 1024,
+            "features": 264,
+            "rms": 0.5879447447795274,
+            "abs_p99": 2.3590398788452327,
+            "positive_fraction": 0.1403475674715909,
+            "covariance_participation_rank": 33.03050050380906,
+            "covariance_entropy_rank": 73.96087417399093,
+            "top10_variance_fraction": 0.44940895286023136
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.1201215517513945,
+            "abs_p99": 4.0876165914535525,
+            "positive_fraction": 0.4979654947916667,
+            "covariance_participation_rank": 10.367929802778562,
+            "covariance_entropy_rank": 19.51436514188783,
+            "top10_variance_fraction": 0.7502502626881804
+          }
+        },
+        {
+          "coordinates": {
+            "samples": 1024,
+            "features": 264,
+            "rms": 1.2362808584603597,
+            "abs_p99": 3.1515528082847624,
+            "positive_fraction": 0.2520714962121212,
+            "covariance_participation_rank": 19.291047028921028,
+            "covariance_entropy_rank": 29.57335204609463,
+            "top10_variance_fraction": 0.6219274084990172
+          },
+          "features": {
+            "samples": 1024,
+            "features": 264,
+            "rms": 0.8035163140079133,
+            "abs_p99": 3.081668984889985,
+            "positive_fraction": 0.13802453243371213,
+            "covariance_participation_rank": 13.460879958772846,
+            "covariance_entropy_rank": 52.008830850163335,
+            "top10_variance_fraction": 0.5046080514219288
+          },
+          "update": {
+            "samples": 1024,
+            "features": 96,
+            "rms": 1.7895071328404355,
+            "abs_p99": 7.884186077117922,
+            "positive_fraction": 0.5009053548177084,
+            "covariance_participation_rank": 4.4027464521341875,
+            "covariance_entropy_rank": 10.455013215129966,
+            "top10_variance_fraction": 0.8374307974071743
+          }
+        }
+      ]
+    }
+  ]
+}

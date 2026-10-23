@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "seed": 11,
+      "sequence_length": 64,
+      "status": "PASS",
+      "model_state_keys": 136
+    },
+    {
+      "seed": 22,
+      "sequence_length": 64,
+      "status": "PASS",
+      "model_state_keys": 136
+    }
+  ],
+  "note": "Legacy checkpoint metadata fallback and strict state loading; CPU finite forward on synthetic tokens. Reserved holdout not read."
+}

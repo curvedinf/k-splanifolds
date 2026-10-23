@@ -1,0 +1,61 @@
+{
+  "protocol": "About one point sample every30s; monitoring began after the study start. Activity is not measured peak-FLOP utilization. Only samples within the requested exploration windows and before their training completion/deadline are included. The gap between the completed first study and the explicit two-hour extension is excluded; these samples do not establish uninterrupted utilization.",
+  "first_sample_utc": "2026-10-23T00:14:22.713362+00:00",
+  "last_sample_utc": "2026-10-23T17:31:49.562520+00:00",
+  "samples": 1098,
+  "all_four_at_least_90_percent_fraction": 0.8014571948998178,
+  "cards": [
+    {
+      "gpu": 0,
+      "samples": 1098,
+      "mean_reported_use_percent": 91.93806921675774,
+      "fraction_samples_at_least_90_percent_busy": 0.9153005464480874,
+      "busy_clock_median_mhz": 1235,
+      "busy_clock_min_mhz": 300,
+      "busy_clock_max_mhz": 1404
+    },
+    {
+      "gpu": 1,
+      "samples": 1098,
+      "mean_reported_use_percent": 93.4216757741348,
+      "fraction_samples_at_least_90_percent_busy": 0.9316939890710383,
+      "busy_clock_median_mhz": 1283,
+      "busy_clock_min_mhz": 495,
+      "busy_clock_max_mhz": 1472
+    },
+    {
+      "gpu": 2,
+      "samples": 1098,
+      "mean_reported_use_percent": 92.0856102003643,
+      "fraction_samples_at_least_90_percent_busy": 0.9171220400728597,
+      "busy_clock_median_mhz": 1235,
+      "busy_clock_min_mhz": 300,
+      "busy_clock_max_mhz": 1404
+    },
+    {
+      "gpu": 3,
+      "samples": 1098,
+      "mean_reported_use_percent": 89.52367941712204,
+      "fraction_samples_at_least_90_percent_busy": 0.8879781420765027,
+      "busy_clock_median_mhz": 1235,
+      "busy_clock_min_mhz": 495,
+      "busy_clock_max_mhz": 1502
+    }
+  ],
+  "windows": [
+    {
+      "name": "initial_and_four_hour_extension",
+      "start": 1792711333.0,
+      "end": 1792739973.5920534,
+      "samples": 846,
+      "all_four_at_least_90_percent_fraction": 0.7754137115839244
+    },
+    {
+      "name": "two_hour_combination_extension",
+      "start": 1792768916.8504283,
+      "end": 1792776739.4737597,
+      "samples": 252,
+      "all_four_at_least_90_percent_fraction": 0.8888888888888888
+    }
+  ]
+}

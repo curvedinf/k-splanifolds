@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "name": "full46_frozen",
+      "status": "PASS",
+      "parameters": {
+        "total": 603648,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      }
+    },
+    {
+      "name": "full46_warps",
+      "status": "PASS",
+      "parameters": {
+        "total": 604384,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 736,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      }
+    },
+    {
+      "name": "spine_frozen_bias",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      }
+    },
+    {
+      "name": "spine_frozen_gain",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      }
+    },
+    {
+      "name": "spine_frozen_bias_gain",
+      "status": "PASS",
+      "parameters": {
+        "total": 606592,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 2944,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      }
+    },
+    {
+      "name": "spine_warps_bias",
+      "status": "PASS",
+      "parameters": {
+        "total": 605488,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1840,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      }
+    }
+  ]
+}

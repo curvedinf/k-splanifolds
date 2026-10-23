@@ -1,0 +1,248 @@
+{
+  "epoch": 1792719568.781358,
+  "instruction": "User: optimize KS2, keep original control; do not seek cherry-picked MLP comparisons.",
+  "cancelled_or_replaced": [
+    {
+      "wave": "wave7c_iteration",
+      "job": {
+        "id": "context_mlp368_11",
+        "seed": 11,
+        "steps": 3750,
+        "batch_size": 4,
+        "sequence_length": 256,
+        "eval_lengths": [
+          64
+        ],
+        "config": {
+          "name": "context_mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        }
+      }
+    },
+    {
+      "wave": "wave7c_iteration",
+      "job": {
+        "id": "context_mlp368_22",
+        "seed": 22,
+        "steps": 3750,
+        "batch_size": 4,
+        "sequence_length": 256,
+        "eval_lengths": [
+          64
+        ],
+        "config": {
+          "name": "context_mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        }
+      }
+    },
+    {
+      "wave": "wave7c_iteration",
+      "job": {
+        "id": "context_mlp368_33",
+        "seed": 33,
+        "steps": 3750,
+        "batch_size": 4,
+        "sequence_length": 256,
+        "eval_lengths": [
+          64
+        ],
+        "config": {
+          "name": "context_mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        }
+      }
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "original_mlp384_11",
+        "seed": 11,
+        "steps": 100000,
+        "config": {
+          "name": "mlp384",
+          "family": "dense_ks2",
+          "charts": 48,
+          "cell": "relu2"
+        }
+      },
+      "substitution": "Original unchanged MLP at same horizon and data."
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "original_mlp368_11",
+        "seed": 11,
+        "steps": 100000,
+        "config": {
+          "name": "mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        }
+      }
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "larger_mlp384_11",
+        "seed": 11,
+        "steps": 100000,
+        "config": {
+          "name": "mlp384",
+          "family": "dense_ks2",
+          "charts": 48,
+          "cell": "relu2"
+        },
+        "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+      },
+      "substitution": "Original unchanged MLP at same horizon and data."
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "larger_mlp368_11",
+        "seed": 11,
+        "steps": 100000,
+        "config": {
+          "name": "mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        },
+        "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+      }
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "original_mlp384_22",
+        "seed": 22,
+        "steps": 100000,
+        "config": {
+          "name": "mlp384",
+          "family": "dense_ks2",
+          "charts": 48,
+          "cell": "relu2"
+        }
+      },
+      "substitution": "Original unchanged MLP at same horizon and data."
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "original_mlp368_22",
+        "seed": 22,
+        "steps": 100000,
+        "config": {
+          "name": "mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        }
+      }
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "larger_mlp384_22",
+        "seed": 22,
+        "steps": 100000,
+        "config": {
+          "name": "mlp384",
+          "family": "dense_ks2",
+          "charts": 48,
+          "cell": "relu2"
+        },
+        "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+      },
+      "substitution": "Original unchanged MLP at same horizon and data."
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "larger_mlp368_22",
+        "seed": 22,
+        "steps": 100000,
+        "config": {
+          "name": "mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        },
+        "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+      }
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "original_mlp384_33",
+        "seed": 33,
+        "steps": 100000,
+        "config": {
+          "name": "mlp384",
+          "family": "dense_ks2",
+          "charts": 48,
+          "cell": "relu2"
+        }
+      },
+      "substitution": "Original unchanged MLP at same horizon and data."
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "original_mlp368_33",
+        "seed": 33,
+        "steps": 100000,
+        "config": {
+          "name": "mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        }
+      }
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "larger_mlp384_33",
+        "seed": 33,
+        "steps": 100000,
+        "config": {
+          "name": "mlp384",
+          "family": "dense_ks2",
+          "charts": 48,
+          "cell": "relu2"
+        },
+        "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+      },
+      "substitution": "Original unchanged MLP at same horizon and data."
+    },
+    {
+      "wave": "wave8_long",
+      "job": {
+        "id": "larger_mlp368_33",
+        "seed": 33,
+        "steps": 100000,
+        "config": {
+          "name": "mlp368",
+          "family": "dense_ks2",
+          "charts": 46,
+          "cell": "relu2"
+        },
+        "data": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/data10m"
+      }
+    }
+  ],
+  "primary_reference": {
+    "name": "original_mlp",
+    "family": "mlp"
+  },
+  "completed_alternative_controls": "Retain as explicitly labeled diagnostics only; no change to original baseline."
+}

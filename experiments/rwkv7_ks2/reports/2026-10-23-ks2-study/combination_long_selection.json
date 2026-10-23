@@ -1,0 +1,865 @@
+{
+  "recorded_epoch": 1792770547.7822435,
+  "selected": [
+    "combo_rank1_frozen_bias",
+    "combo_rank4_powers",
+    "combo_rank1_powers",
+    "combo_rank4_frozen_bias"
+  ],
+  "rationale": {
+    "combo_rank1_frozen_bias": {
+      "reason": "Best three-seed combination mean; bias improves its same-wave frozen rank1 parent in all three seeds. Tests freezing plus minimal learned offset at the previously strong small-chart setting. It does not beat the fully learned rank1 repeat. Learned FFN71024, plus2944fixed values=73968total,240aboveMLP73728 (about0.33%); explicitly not strict matched-total-coefficient comparison.",
+      "estimated_ms": 8.8
+    },
+    "combo_rank4_powers": {
+      "reason": "Combines smaller charts and function-preserving power-basis parameterization. All three seeds beat fixed MLP; comparison to earlier fused rank4 parent is mixed and mean slightly worse. Tests durability and data-regime interaction at73048learnedFFNparameters, belowMLP73728. No short-run synergy claim.",
+      "estimated_ms": 8.8
+    },
+    "combo_rank1_powers": {
+      "reason": "Directly adds the earlier power-basis intervention to the strongest prior larger-pool100k rank1 architecture, preserving73600learnedFFNparameters. Short screen beats MLPall3 but underperforms the same-wave rank1 mean; long replication tests whether this penalty persists rather than assuming independent wins add.",
+      "estimated_ms": 8.7
+    },
+    "combo_rank4_frozen_bias": {
+      "reason": "Combines earlier larger-pool frozenrank4 long-run advantage with minimal bias adaptation. All three short seeds beat fixed MLP, but the earlier frozenrank4 parent comparison is mixed. Provides a lower-storage counterpart to rank1frozenbias:71024learned+2392fixed=73416perFFN,belowMLP73728.",
+      "estimated_ms": 8.8
+    }
+  },
+  "all_candidates": [
+    {
+      "model": "combo_rank1_frozen_bias",
+      "config": {
+        "name": "combo_rank1_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.6165436506271362,
+      "mean_mlp_gap": -0.004235665003458659,
+      "mean_rank1_gap": 0.002378384272257487,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6167943477630615,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.111727438347105,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_bias_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6155169010162354,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.377723317756317,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_bias_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6173197031021118,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.53449017306945,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_bias_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank4_powers",
+      "config": {
+        "name": "combo_rank4_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.6166409651438396,
+      "mean_mlp_gap": -0.004138350486755371,
+      "mean_rank1_gap": 0.002475698788960775,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6151742935180664,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 613216,
+          "learned_per_ffn": 73048,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73048,
+          "observed_ms": 8.319878264943448,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_powers_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6143732070922852,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 613216,
+          "learned_per_ffn": 73048,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73048,
+          "observed_ms": 8.535942136667048,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_powers_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.620375394821167,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 613216,
+          "learned_per_ffn": 73048,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73048,
+          "observed_ms": 8.592944816065332,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_powers_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank1_powers",
+      "config": {
+        "name": "combo_rank1_powers",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers"
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.6170941988627117,
+      "mean_mlp_gap": -0.0036851167678833008,
+      "mean_rank1_gap": 0.002928932507832845,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6180938482284546,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 7.832075896773798,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6130561828613281,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.37422511294329,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.620132565498352,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.57237146886376,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank4_frozen_bias",
+      "config": {
+        "name": "combo_rank4_frozen_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.617301106452942,
+      "mean_mlp_gap": -0.0034782091776529946,
+      "mean_rank1_gap": 0.003135840098063151,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6172096729278564,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2392,
+          "total_coefficients_per_ffn": 73416,
+          "observed_ms": 8.21921431205701,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_frozen_bias_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6156432628631592,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2392,
+          "total_coefficients_per_ffn": 73416,
+          "observed_ms": 8.43842198033041,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_frozen_bias_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.61905038356781,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2392,
+          "total_coefficients_per_ffn": 73416,
+          "observed_ms": 8.522741386930768,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_frozen_bias_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank1_powers_geo01",
+      "config": {
+        "name": "combo_rank1_powers_geo01",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_basis": "powers",
+        "geometry_lr": 0.1
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.617832620938619,
+      "mean_mlp_gap": -0.0029466946919759116,
+      "mean_rank1_gap": 0.0036673545837402344,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6169297695159912,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.27736775674081,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_geo01_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6154124736785889,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.555326641521727,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_geo01_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6211556196212769,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.674191484336431,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_geo01_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank1_frozen_gain",
+      "config": {
+        "name": "combo_rank1_frozen_gain",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.6180516878763835,
+      "mean_mlp_gap": -0.0027276277542114258,
+      "mean_rank1_gap": 0.00388642152150472,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6171925067901611,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.160985739016905,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_gain_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.616616129875183,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.469909045069167,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_gain_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6203464269638062,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.657576507461878,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_gain_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank1_frozen",
+      "config": {
+        "name": "combo_rank1_frozen",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "frozen_geometry": true
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.6181185245513916,
+      "mean_mlp_gap": -0.0026607910792032876,
+      "mean_rank1_gap": 0.003953258196512858,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6190993785858154,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 603648,
+          "learned_per_ffn": 70656,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 7.80888713952154,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6161137819290161,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 603648,
+          "learned_per_ffn": 70656,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 7.984430907395048,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6191424131393433,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 603648,
+          "learned_per_ffn": 70656,
+          "fixed_geometry_per_ffn": 2944,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.071611613943242,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank1_geo01",
+      "config": {
+        "name": "combo_rank1_geo01",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_lr": 0.1
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.6188625892003377,
+      "mean_mlp_gap": -0.0019167264302571614,
+      "mean_rank1_gap": 0.004697322845458984,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.619166612625122,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 7.944029009582786,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_geo01_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6180510520935059,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.487123533532333,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_geo01_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6193701028823853,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.67035080367544,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_geo01_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank4_frozen_gain",
+      "config": {
+        "name": "combo_rank4_frozen_gain",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 92,
+        "subspace_rank": 4,
+        "fused_general": true,
+        "frozen_geometry": true,
+        "geometry_calibration": "gain"
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.618898630142212,
+      "mean_mlp_gap": -0.0018806854883829753,
+      "mean_rank1_gap": 0.004733363787333171,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.617257833480835,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2392,
+          "total_coefficients_per_ffn": 73416,
+          "observed_ms": 8.271208750984322,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_frozen_gain_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6170626878738403,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2392,
+          "total_coefficients_per_ffn": 73416,
+          "observed_ms": 8.525446403344782,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_frozen_gain_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6223753690719604,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 605120,
+          "learned_per_ffn": 71024,
+          "fixed_geometry_per_ffn": 2392,
+          "total_coefficients_per_ffn": 73416,
+          "observed_ms": 8.649354827598048,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank4_frozen_gain_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank1_warps_bias",
+      "config": {
+        "name": "combo_rank1_warps_bias",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_trainable": "warps",
+        "geometry_calibration": "bias"
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.6204038858413696,
+      "mean_mlp_gap": -0.00037542978922526043,
+      "mean_rank1_gap": 0.006238619486490886,
+      "wins_vs_mlp": 1,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.622146487236023,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 608064,
+          "learned_per_ffn": 71760,
+          "fixed_geometry_per_ffn": 2208,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.126535574540807,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_warps_bias_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6214834451675415,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 608064,
+          "learned_per_ffn": 71760,
+          "fixed_geometry_per_ffn": 2208,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.258091867738404,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_warps_bias_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6175817251205444,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 608064,
+          "learned_per_ffn": 71760,
+          "fixed_geometry_per_ffn": 2208,
+          "total_coefficients_per_ffn": 73968,
+          "observed_ms": 8.325044359918683,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_warps_bias_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank1_warps",
+      "config": {
+        "name": "combo_rank1_warps",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true,
+        "geometry_trainable": "warps"
+      },
+      "seeds": 3,
+      "eligible": true,
+      "mean_loss": 1.6204430262247722,
+      "mean_mlp_gap": -0.0003362894058227539,
+      "mean_rank1_gap": 0.006277759869893392,
+      "wins_vs_mlp": 1,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6186699867248535,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 606592,
+          "learned_per_ffn": 71392,
+          "fixed_geometry_per_ffn": 2208,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 7.901020619350796,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_warps_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.619654893875122,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 606592,
+          "learned_per_ffn": 71392,
+          "fixed_geometry_per_ffn": 2208,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.35598813634521,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_warps_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6230041980743408,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 606592,
+          "learned_per_ffn": 71392,
+          "fixed_geometry_per_ffn": 2208,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.555632832149664,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_warps_33/completed.json"
+        }
+      ]
+    },
+    {
+      "model": "combo_rank1_reference",
+      "config": {
+        "name": "combo_rank1_reference",
+        "family": "dense_ks2",
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine",
+        "charts": 368,
+        "subspace_rank": 1,
+        "fused_general": true
+      },
+      "seeds": 3,
+      "eligible": false,
+      "mean_loss": 1.6141652663548787,
+      "mean_mlp_gap": -0.0066140492757161455,
+      "mean_rank1_gap": 0.0,
+      "wins_vs_mlp": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6151574850082397,
+          "mlp_loss": 1.6204967498779297,
+          "rank1_reference_loss": 1.6151574850082397,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.002502753391552,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6130726337432861,
+          "mlp_loss": 1.6193581819534302,
+          "rank1_reference_loss": 1.6130726337432861,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.13333505752186,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6142656803131104,
+          "mlp_loss": 1.6224830150604248,
+          "rank1_reference_loss": 1.6142656803131104,
+          "parameters": 615424,
+          "learned_per_ffn": 73600,
+          "fixed_geometry_per_ffn": 0,
+          "total_coefficients_per_ffn": 73600,
+          "observed_ms": 8.250311779750822,
+          "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_33/completed.json"
+        }
+      ]
+    }
+  ],
+  "estimated_schedule": [
+    {
+      "job": "original_combo_rank1_frozen_bias_11",
+      "gpu_estimate": 0,
+      "start_estimate": 1792770547.7821078,
+      "finish_estimate": 1792771517.7821078
+    },
+    {
+      "job": "original_combo_rank4_powers_11",
+      "gpu_estimate": 1,
+      "start_estimate": 1792770547.7821078,
+      "finish_estimate": 1792771517.7821078
+    },
+    {
+      "job": "original_combo_rank1_powers_11",
+      "gpu_estimate": 2,
+      "start_estimate": 1792770547.7821078,
+      "finish_estimate": 1792771507.7821078
+    },
+    {
+      "job": "original_combo_rank4_frozen_bias_11",
+      "gpu_estimate": 3,
+      "start_estimate": 1792770547.7821078,
+      "finish_estimate": 1792771517.7821078
+    },
+    {
+      "job": "larger_combo_rank1_frozen_bias_11",
+      "gpu_estimate": 2,
+      "start_estimate": 1792771507.7821078,
+      "finish_estimate": 1792772477.7821078
+    },
+    {
+      "job": "larger_combo_rank4_powers_11",
+      "gpu_estimate": 0,
+      "start_estimate": 1792771517.7821078,
+      "finish_estimate": 1792772487.7821078
+    },
+    {
+      "job": "larger_combo_rank1_powers_11",
+      "gpu_estimate": 1,
+      "start_estimate": 1792771517.7821078,
+      "finish_estimate": 1792772477.7821078
+    },
+    {
+      "job": "larger_combo_rank4_frozen_bias_11",
+      "gpu_estimate": 3,
+      "start_estimate": 1792771517.7821078,
+      "finish_estimate": 1792772487.7821078
+    },
+    {
+      "job": "original_combo_rank1_frozen_bias_22",
+      "gpu_estimate": 1,
+      "start_estimate": 1792772477.7821078,
+      "finish_estimate": 1792773447.7821078
+    },
+    {
+      "job": "original_combo_rank4_powers_22",
+      "gpu_estimate": 2,
+      "start_estimate": 1792772477.7821078,
+      "finish_estimate": 1792773447.7821078
+    },
+    {
+      "job": "original_combo_rank1_powers_22",
+      "gpu_estimate": 0,
+      "start_estimate": 1792772487.7821078,
+      "finish_estimate": 1792773447.7821078
+    },
+    {
+      "job": "original_combo_rank4_frozen_bias_22",
+      "gpu_estimate": 3,
+      "start_estimate": 1792772487.7821078,
+      "finish_estimate": 1792773457.7821078
+    },
+    {
+      "job": "larger_combo_rank1_frozen_bias_22",
+      "gpu_estimate": 0,
+      "start_estimate": 1792773447.7821078,
+      "finish_estimate": 1792774417.7821078
+    },
+    {
+      "job": "larger_combo_rank4_powers_22",
+      "gpu_estimate": 1,
+      "start_estimate": 1792773447.7821078,
+      "finish_estimate": 1792774417.7821078
+    },
+    {
+      "job": "larger_combo_rank1_powers_22",
+      "gpu_estimate": 2,
+      "start_estimate": 1792773447.7821078,
+      "finish_estimate": 1792774407.7821078
+    },
+    {
+      "job": "larger_combo_rank4_frozen_bias_22",
+      "gpu_estimate": 3,
+      "start_estimate": 1792773457.7821078,
+      "finish_estimate": 1792774427.7821078
+    },
+    {
+      "job": "original_combo_rank1_frozen_bias_33",
+      "gpu_estimate": 2,
+      "start_estimate": 1792774407.7821078,
+      "finish_estimate": 1792775377.7821078
+    },
+    {
+      "job": "original_combo_rank4_powers_33",
+      "gpu_estimate": 0,
+      "start_estimate": 1792774417.7821078,
+      "finish_estimate": 1792775387.7821078
+    },
+    {
+      "job": "original_combo_rank1_powers_33",
+      "gpu_estimate": 1,
+      "start_estimate": 1792774417.7821078,
+      "finish_estimate": 1792775377.7821078
+    },
+    {
+      "job": "original_combo_rank4_frozen_bias_33",
+      "gpu_estimate": 3,
+      "start_estimate": 1792774427.7821078,
+      "finish_estimate": 1792775397.7821078
+    },
+    {
+      "job": "larger_combo_rank1_frozen_bias_33",
+      "gpu_estimate": 1,
+      "start_estimate": 1792775377.7821078,
+      "finish_estimate": 1792776347.7821078
+    },
+    {
+      "job": "larger_combo_rank4_powers_33",
+      "gpu_estimate": 2,
+      "start_estimate": 1792775377.7821078,
+      "finish_estimate": 1792776347.7821078
+    },
+    {
+      "job": "larger_combo_rank1_powers_33",
+      "gpu_estimate": 0,
+      "start_estimate": 1792775387.7821078,
+      "finish_estimate": 1792776347.7821078
+    },
+    {
+      "job": "larger_combo_rank4_frozen_bias_33",
+      "gpu_estimate": 3,
+      "start_estimate": 1792775397.7821078,
+      "finish_estimate": 1792776367.7821078
+    }
+  ],
+  "protocol": "Fresh100k schedule, original/larger pools, seeds11/22/33, fixed original MLP checkpoints. Comparisons to prior single-intervention KS2 show whether wins accumulate. No reserved-based selection."
+}

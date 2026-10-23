@@ -1,0 +1,244 @@
+{
+  "steps": 15000,
+  "seed": 11,
+  "batch_size": 4,
+  "sequence_length": 64,
+  "arms": {
+    "baseline": {
+      "parameters": 567552,
+      "parameter_breakdown": {
+        "total": 567552,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 209920,
+        "output_gains": 8576,
+        "norms_and_ffn_mix": 30336,
+        "rosa": 0,
+        "rosa_norm": 0
+      },
+      "full_shard_loss": 1.666922926902771,
+      "loss_delta_vs_baseline": 0.0,
+      "benchmark_ms_per_step": 14.945135209709406,
+      "sustained_ms_per_step": 15.642042025395979,
+      "evaluation": {
+        "original_val": 1.7004508972167969,
+        "expanded_val": 1.6862016916275024,
+        "sampled_train": 1.5761620998382568
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.666922926902771,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6665928363800049
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6667699813842773
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6669087409973145
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6674203872680664
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 5.960464477539062e-07
+      },
+      "physical_gpu": 0
+    },
+    "reduced_control": {
+      "parameters": 515328,
+      "parameter_breakdown": {
+        "total": 515328,
+        "rwkv": 217344,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 209920,
+        "output_gains": 8576,
+        "norms_and_ffn_mix": 30336,
+        "rosa": 0,
+        "rosa_norm": 0
+      },
+      "full_shard_loss": 1.6752105951309204,
+      "loss_delta_vs_baseline": 0.008287668228149414,
+      "benchmark_ms_per_step": 15.148794089909643,
+      "sustained_ms_per_step": 15.523726679144117,
+      "evaluation": {
+        "original_val": 1.711210012435913,
+        "expanded_val": 1.692914605140686,
+        "sampled_train": 1.5876176357269287
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6752105951309204,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.675389289855957
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.674653172492981
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6751904487609863
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6756095886230469
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 7.152557373046875e-07
+      },
+      "physical_gpu": 1
+    },
+    "hybrid_matched": {
+      "parameters": 567296,
+      "parameter_breakdown": {
+        "total": 567296,
+        "rwkv": 217344,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 209920,
+        "output_gains": 8576,
+        "norms_and_ffn_mix": 30336,
+        "rosa": 51200,
+        "rosa_norm": 768
+      },
+      "full_shard_loss": 1.6737627983093262,
+      "loss_delta_vs_baseline": 0.006839871406555176,
+      "benchmark_ms_per_step": 18.729945799568668,
+      "sustained_ms_per_step": 19.734005754138344,
+      "evaluation": {
+        "original_val": 1.7068126201629639,
+        "expanded_val": 1.690891981124878,
+        "sampled_train": 1.5831360816955566
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6737627983093262,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6739027500152588
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.673436164855957
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6735697984695435
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6741427183151245
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 9.5367431640625e-07
+      },
+      "physical_gpu": 2
+    },
+    "hybrid_full": {
+      "parameters": 619520,
+      "parameter_breakdown": {
+        "total": 619520,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 209920,
+        "output_gains": 8576,
+        "norms_and_ffn_mix": 30336,
+        "rosa": 51200,
+        "rosa_norm": 768
+      },
+      "full_shard_loss": 1.6711065769195557,
+      "loss_delta_vs_baseline": 0.004183650016784668,
+      "benchmark_ms_per_step": 19.322201119503006,
+      "sustained_ms_per_step": 20.144030396128073,
+      "evaluation": {
+        "original_val": 1.7010626792907715,
+        "expanded_val": 1.6915102005004883,
+        "sampled_train": 1.5783159732818604
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6711065769195557,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.671216607093811
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.670996904373169
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6710572242736816
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6711556911468506
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 7.152557373046875e-07
+      },
+      "physical_gpu": 3
+    }
+  },
+  "rosa_delta_reduced_ranks": -0.0014477968215942383,
+  "rosa_delta_original_ranks": 0.004183650016784668,
+  "parameter_match_delta": -256,
+  "architecture": "Local width/budget adaptation of BlinkDL RWKV-v8 RWKV7+ROSA parallel hybrid. 96D main, 32 independent binary ROSA streams, original 64x8 KS2 decoders and 2048D side/history. Matched version reduces decay/rate/value ranks to16 and gate rank to40. Full version retains original ranks32/32/32/64.",
+  "provenance": {
+    "source": "BlinkDL/RWKV-LM commit 20be0f8cf0bdf506d8c0030c87a9a3416f95b143, RWKV-v8/251105_reverse_run.py",
+    "architecture": "RWKV-7 recurrence plus parallel 1-bit QKV ROSA, each with its own LayerNorm on the same 96D main input. Add both updates before the unchanged KS2 decoder. History stores the combined post-attention state.",
+    "rosa": "32 binary Q/K/V streams, 96-to-32 biased projections, three 96D time-mix vectors, 32 learned payload scales, biased 32-to-96 output. Longest matching Q suffix in strictly previous K; latest endpoint wins; read successor V. No match and matched zero both map to negative payload, matching the pinned hybrid.",
+    "backward": "Exact single-bit counterfactual Q/K/V credits across the full 64-token window, multiplied by sigmoid(logit)*(1-sigmoid(logit)), tau=1. This is a specified discrete surrogate, not the analytic derivative of hard thresholds. GPU implementation verified against brute force.",
+    "reduced_ranks": {
+      "decay": 16,
+      "rate": 16,
+      "value": 16,
+      "gate": 40
+    },
+    "original_ranks": {
+      "decay": 32,
+      "rate": 32,
+      "value": 32,
+      "gate": 64
+    },
+    "initialization": "Original decoder/embedding/head weights paired. Reduced controllers keep the leading columns/rows of original factors. ROSA QKV use PyTorch Linear initialization, payload scales one, time mix zero, output weight/bias zero to preserve initial logits.",
+    "unchanged": "All four 64-rank8 KS2 decoders, 2048D side residual and both historical main states per previous layer. No Hadamard replacements in RWKV or ROSA. Same 15k-step FP32 data/optimizer schedule.",
+    "implementation": "Short-window GPU bit-packed exact suffix comparisons and full single-bit flip enumeration; not an asymptotically optimized long-context ROSA automaton.",
+    "qualification": "A local width/budget adaptation of the official hybrid demonstration with an explicitly supplied trainable backward, not an official pretrained RWKV-8 model."
+  },
+  "validation": "ROSA hard forward matches pinned official suffix-automaton reference, GPU exact bit-flip credits agree with brute force, GPU graph capture passes. Paired unchanged model parameters, matched initial logits, finite training/nonzero ROSA QKV gradients, causality, source hashes, data, optimizer counters and checkpoint reevaluation checked.",
+  "limits": "One training seed per configuration. The official hybrid demo has no ROSA backward; this experiment uses an explicitly documented discrete counterfactual surrogate with Bernoulli credit mapping. This is an adaptation, not an official full-scale RWKV-8 training recipe. Sequence length64 and state resets match earlier runs; results do not measure long-context benefits."
+}

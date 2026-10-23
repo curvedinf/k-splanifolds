@@ -1,0 +1,974 @@
+[
+  {
+    "run": "wave7_context/undamped_b4_t256",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6529697179794312,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6526576280593872,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6529899835586548,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6530886888504028,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6531420946121216,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 4,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.602298378944397,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6023274660110474,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6023235321044922,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6022838354110718,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6022582054138184,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 4,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave7_context/matched_mlp_b1_t256",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6279999017715454,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6282498836517334,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6281688213348389,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6275606155395508,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.628020167350769,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 1,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.573143482208252,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5731545686721802,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.5731804370880127,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.5731390714645386,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.573099970817566,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 1,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave4_activation/spine_fused_11",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6187866926193237,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6188664436340332,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6186559200286865,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.61842942237854,
+            "batch_error": 3.5762786865234375e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6191946268081665,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 4,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.575245976448059,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5752724409103394,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.5752853155136108,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.5752284526824951,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.575197458267212,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 4,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave7_context/spine_b4_t256",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6452653408050537,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6454094648361206,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.645477533340454,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6447792053222656,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6453943252563477,
+            "batch_error": 4.76837158203125e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 4,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.5938297510147095,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5938504934310913,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.5938550233840942,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.5938407182693481,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.593772053718567,
+            "batch_error": 3.5762786865234375e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 4,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave7_context/spine_b16_t64",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6428252458572388,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6429020166397095,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.642560362815857,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6426341533660889,
+            "batch_error": 3.5762786865234375e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.643203854560852,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 16,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6021558046340942,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6021857261657715,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6021802425384521,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6021356582641602,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6021212339401245,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 16,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave3/matched_init_mlp384",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6174595355987549,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6176949739456177,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6175497770309448,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6173129081726074,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6172797679901123,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 4,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.573303461074829,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5733284950256348,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.5733191967010498,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.573293924331665,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.5732719898223877,
+            "batch_error": 4.76837158203125e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 4,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave7_context/undamped_b16_t64",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.640832781791687,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6408733129501343,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6406084299087524,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6409385204315186,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6409103870391846,
+            "batch_error": 3.5762786865234375e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 16,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.598636507987976,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5986577272415161,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.5986747741699219,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.598629117012024,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.5985841751098633,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 16,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave7_context/matched_mlp_b4_t256",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6491252183914185,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6490072011947632,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6492103338241577,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6491221189498901,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6491612195968628,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 4,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.5980335474014282,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5980573892593384,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.598071813583374,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.5980314016342163,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.5979726314544678,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 4,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave7_context/matched_mlp_b16_t64",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6351304054260254,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6356486082077026,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.634913444519043,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.634774923324585,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.635184407234192,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 16,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.592797040939331,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5928168296813965,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.5928233861923218,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.5927910804748535,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.5927568674087524,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 16,
+        "training_steps": 3750,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave7_context/undamped_b1_t256",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6393150091171265,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6394314765930176,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6392618417739868,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6397262811660767,
+            "batch_error": 4.76837158203125e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6388404369354248,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 1,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.5848907232284546,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5849040746688843,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.584920048713684,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.5848941802978516,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.5848437547683716,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 1,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave7_context/spine_b1_t256",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.629975438117981,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.630149245262146,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.630199909210205,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6298257112503052,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6297262907028198,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 1,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.576085090637207,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.5761184692382812,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.576122760772705,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.5760740041732788,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.5760248899459839,
+            "batch_error": 3.5762786865234375e-07
+          }
+        ],
+        "training_sequence_length": 256,
+        "training_batch_size": 1,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  },
+  {
+    "run": "wave4_activation/undamped_fused_11",
+    "scores": [
+      {
+        "context": 64,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.6252731084823608,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.6256803274154663,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.6252057552337646,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.6250542402267456,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.6251513957977295,
+            "batch_error": 2.384185791015625e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 4,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      },
+      {
+        "context": 256,
+        "scored_suffix": 64,
+        "common_reference_context": 256,
+        "loss": 1.5819460153579712,
+        "targets": 1776256,
+        "offsets": [
+          {
+            "offset": 0,
+            "targets": 444096,
+            "loss": 1.581976294517517,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 16,
+            "targets": 444096,
+            "loss": 1.5819683074951172,
+            "batch_error": 2.384185791015625e-07
+          },
+          {
+            "offset": 32,
+            "targets": 444032,
+            "loss": 1.58193039894104,
+            "batch_error": 1.1920928955078125e-07
+          },
+          {
+            "offset": 48,
+            "targets": 444032,
+            "loss": 1.5819084644317627,
+            "batch_error": 4.76837158203125e-07
+          }
+        ],
+        "training_sequence_length": 64,
+        "training_batch_size": 4,
+        "training_steps": 15000,
+        "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+        "note": "Identical target positions across both context lengths; the extra 192 bytes are causal prefix only."
+      }
+    ]
+  }
+]

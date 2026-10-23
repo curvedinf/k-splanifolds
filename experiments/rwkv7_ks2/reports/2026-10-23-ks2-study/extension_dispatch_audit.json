@@ -1,0 +1,389 @@
+{
+  "status": "PASS",
+  "epoch": 1792776190.56481,
+  "start": 1792768916.8504283,
+  "deadline": 1792776116.8504283,
+  "jobs": 69,
+  "last_start": 1792775837.283241,
+  "waves": [
+    {
+      "wave": "wave15_combinations",
+      "status": "PASS",
+      "jobs": 36,
+      "first_start": 1792769165.2627592,
+      "last_start": 1792770301.8471787,
+      "log": "dispatch_logs/wave15_combinations_dispatch_window.jsonl",
+      "log_sha256": "2765cc29daf2b8473f4b810ae12b63c78687bd312f740910153d823c440fbb18",
+      "starts": [
+        {
+          "job": "combo_rank1_reference_11",
+          "gpu": 3,
+          "epoch": 1792769165.2627592
+        },
+        {
+          "job": "combo_rank1_powers_11",
+          "gpu": 1,
+          "epoch": 1792769165.4251134
+        },
+        {
+          "job": "combo_rank1_warps_11",
+          "gpu": 2,
+          "epoch": 1792769165.5413122
+        },
+        {
+          "job": "combo_rank1_geo01_11",
+          "gpu": 0,
+          "epoch": 1792769165.7890594
+        },
+        {
+          "job": "combo_rank1_frozen_11",
+          "gpu": 1,
+          "epoch": 1792769298.5494263
+        },
+        {
+          "job": "combo_rank1_frozen_bias_11",
+          "gpu": 2,
+          "epoch": 1792769299.762872
+        },
+        {
+          "job": "combo_rank1_frozen_gain_11",
+          "gpu": 0,
+          "epoch": 1792769300.3652396
+        },
+        {
+          "job": "combo_rank1_powers_geo01_11",
+          "gpu": 3,
+          "epoch": 1792769300.6488054
+        },
+        {
+          "job": "combo_rank1_warps_bias_11",
+          "gpu": 1,
+          "epoch": 1792769430.856326
+        },
+        {
+          "job": "combo_rank4_frozen_bias_11",
+          "gpu": 2,
+          "epoch": 1792769437.2523298
+        },
+        {
+          "job": "combo_rank4_frozen_gain_11",
+          "gpu": 0,
+          "epoch": 1792769438.376183
+        },
+        {
+          "job": "combo_rank4_powers_11",
+          "gpu": 3,
+          "epoch": 1792769440.2322044
+        },
+        {
+          "job": "combo_rank1_reference_22",
+          "gpu": 1,
+          "epoch": 1792769568.0637946
+        },
+        {
+          "job": "combo_rank1_powers_22",
+          "gpu": 2,
+          "epoch": 1792769576.3564644
+        },
+        {
+          "job": "combo_rank1_warps_22",
+          "gpu": 0,
+          "epoch": 1792769577.8628216
+        },
+        {
+          "job": "combo_rank1_geo01_22",
+          "gpu": 3,
+          "epoch": 1792769580.780801
+        },
+        {
+          "job": "combo_rank1_frozen_22",
+          "gpu": 1,
+          "epoch": 1792769705.3060858
+        },
+        {
+          "job": "combo_rank1_frozen_bias_22",
+          "gpu": 2,
+          "epoch": 1792769717.7677982
+        },
+        {
+          "job": "combo_rank1_frozen_gain_22",
+          "gpu": 0,
+          "epoch": 1792769718.6998596
+        },
+        {
+          "job": "combo_rank1_powers_geo01_22",
+          "gpu": 3,
+          "epoch": 1792769723.393748
+        },
+        {
+          "job": "combo_rank1_warps_bias_22",
+          "gpu": 1,
+          "epoch": 1792769840.2385886
+        },
+        {
+          "job": "combo_rank4_frozen_bias_22",
+          "gpu": 2,
+          "epoch": 1792769859.4097621
+        },
+        {
+          "job": "combo_rank4_frozen_gain_22",
+          "gpu": 0,
+          "epoch": 1792769861.4577093
+        },
+        {
+          "job": "combo_rank4_powers_22",
+          "gpu": 3,
+          "epoch": 1792769867.1910834
+        },
+        {
+          "job": "combo_rank1_reference_33",
+          "gpu": 1,
+          "epoch": 1792769979.4657137
+        },
+        {
+          "job": "combo_rank1_powers_33",
+          "gpu": 2,
+          "epoch": 1792770001.9824674
+        },
+        {
+          "job": "combo_rank1_warps_33",
+          "gpu": 0,
+          "epoch": 1792770004.9969661
+        },
+        {
+          "job": "combo_rank1_geo01_33",
+          "gpu": 3,
+          "epoch": 1792770010.6367183
+        },
+        {
+          "job": "combo_rank1_frozen_33",
+          "gpu": 1,
+          "epoch": 1792770118.5097346
+        },
+        {
+          "job": "combo_rank1_frozen_bias_33",
+          "gpu": 2,
+          "epoch": 1792770146.68331
+        },
+        {
+          "job": "combo_rank1_frozen_gain_33",
+          "gpu": 0,
+          "epoch": 1792770148.9946342
+        },
+        {
+          "job": "combo_rank1_powers_geo01_33",
+          "gpu": 3,
+          "epoch": 1792770156.174051
+        },
+        {
+          "job": "combo_rank1_warps_bias_33",
+          "gpu": 1,
+          "epoch": 1792770254.849914
+        },
+        {
+          "job": "combo_rank4_frozen_bias_33",
+          "gpu": 2,
+          "epoch": 1792770290.9225795
+        },
+        {
+          "job": "combo_rank4_frozen_gain_33",
+          "gpu": 0,
+          "epoch": 1792770294.7866435
+        },
+        {
+          "job": "combo_rank4_powers_33",
+          "gpu": 3,
+          "epoch": 1792770301.8471787
+        }
+      ]
+    },
+    {
+      "wave": "wave16_combination_long",
+      "status": "PASS",
+      "jobs": 24,
+      "first_start": 1792770559.0876412,
+      "last_start": 1792775837.283241,
+      "log": "dispatch_logs/wave16_combination_long_dispatch_window.jsonl",
+      "log_sha256": "83ec5abc0a197b01c4692c21fdbb8a7cc13cea68efa876aadaea66d26073cee6",
+      "starts": [
+        {
+          "job": "original_combo_rank1_frozen_bias_11",
+          "gpu": 3,
+          "epoch": 1792770559.0876412
+        },
+        {
+          "job": "original_combo_rank4_powers_11",
+          "gpu": 2,
+          "epoch": 1792770559.181957
+        },
+        {
+          "job": "original_combo_rank1_powers_11",
+          "gpu": 0,
+          "epoch": 1792770559.3355055
+        },
+        {
+          "job": "original_combo_rank4_frozen_bias_11",
+          "gpu": 1,
+          "epoch": 1792770559.3984425
+        },
+        {
+          "job": "larger_combo_rank1_frozen_bias_11",
+          "gpu": 1,
+          "epoch": 1792771407.4378757
+        },
+        {
+          "job": "larger_combo_rank4_powers_11",
+          "gpu": 3,
+          "epoch": 1792771446.988678
+        },
+        {
+          "job": "larger_combo_rank1_powers_11",
+          "gpu": 2,
+          "epoch": 1792771451.9744914
+        },
+        {
+          "job": "larger_combo_rank4_frozen_bias_11",
+          "gpu": 0,
+          "epoch": 1792771460.363379
+        },
+        {
+          "job": "original_combo_rank1_frozen_bias_22",
+          "gpu": 1,
+          "epoch": 1792772279.1398535
+        },
+        {
+          "job": "original_combo_rank4_powers_22",
+          "gpu": 3,
+          "epoch": 1792772360.123222
+        },
+        {
+          "job": "original_combo_rank1_powers_22",
+          "gpu": 2,
+          "epoch": 1792772371.818284
+        },
+        {
+          "job": "original_combo_rank4_frozen_bias_22",
+          "gpu": 0,
+          "epoch": 1792772377.1438522
+        },
+        {
+          "job": "larger_combo_rank1_frozen_bias_22",
+          "gpu": 1,
+          "epoch": 1792773156.5332716
+        },
+        {
+          "job": "larger_combo_rank4_powers_22",
+          "gpu": 3,
+          "epoch": 1792773911.98752
+        },
+        {
+          "job": "larger_combo_rank1_powers_22",
+          "gpu": 0,
+          "epoch": 1792773931.8803477
+        },
+        {
+          "job": "larger_combo_rank4_frozen_bias_22",
+          "gpu": 2,
+          "epoch": 1792773933.38594
+        },
+        {
+          "job": "original_combo_rank1_frozen_bias_33",
+          "gpu": 3,
+          "epoch": 1792774838.3869064
+        },
+        {
+          "job": "original_combo_rank4_powers_33",
+          "gpu": 2,
+          "epoch": 1792774856.102753
+        },
+        {
+          "job": "original_combo_rank1_powers_33",
+          "gpu": 0,
+          "epoch": 1792774870.534154
+        },
+        {
+          "job": "original_combo_rank4_frozen_bias_33",
+          "gpu": 1,
+          "epoch": 1792774956.5159802
+        },
+        {
+          "job": "larger_combo_rank1_frozen_bias_33",
+          "gpu": 3,
+          "epoch": 1792775756.3460402
+        },
+        {
+          "job": "larger_combo_rank4_powers_33",
+          "gpu": 2,
+          "epoch": 1792775780.9760249
+        },
+        {
+          "job": "larger_combo_rank1_powers_33",
+          "gpu": 0,
+          "epoch": 1792775804.32531
+        },
+        {
+          "job": "larger_combo_rank4_frozen_bias_33",
+          "gpu": 1,
+          "epoch": 1792775837.283241
+        }
+      ]
+    },
+    {
+      "wave": "wave17_mixed_ranks",
+      "status": "PASS",
+      "jobs": 9,
+      "first_start": 1792773263.70126,
+      "last_start": 1792773864.1043859,
+      "log": "dispatch_logs/wave17_mixed_ranks_dispatch_window.jsonl",
+      "log_sha256": "0e95444a7576446c43dd351c058bd776e10908bb4805dae62cfad744e54f1ac7",
+      "starts": [
+        {
+          "job": "mixed_rank1_heavy_11",
+          "gpu": 1,
+          "epoch": 1792773263.70126
+        },
+        {
+          "job": "mixed_balanced_11",
+          "gpu": 3,
+          "epoch": 1792773263.7241445
+        },
+        {
+          "job": "mixed_balanced_mlp32_11",
+          "gpu": 2,
+          "epoch": 1792773263.7699482
+        },
+        {
+          "job": "mixed_rank1_heavy_22",
+          "gpu": 0,
+          "epoch": 1792773263.7700486
+        },
+        {
+          "job": "mixed_balanced_22",
+          "gpu": 1,
+          "epoch": 1792773564.85406
+        },
+        {
+          "job": "mixed_balanced_mlp32_22",
+          "gpu": 0,
+          "epoch": 1792773571.030719
+        },
+        {
+          "job": "mixed_rank1_heavy_33",
+          "gpu": 3,
+          "epoch": 1792773572.003658
+        },
+        {
+          "job": "mixed_balanced_33",
+          "gpu": 2,
+          "epoch": 1792773577.1012652
+        },
+        {
+          "job": "mixed_balanced_mlp32_33",
+          "gpu": 1,
+          "epoch": 1792773864.1043859
+        }
+      ]
+    }
+  ],
+  "scope": "Dispatch only: every training job in this explicit two-hour extension started within its window. Snapshots include all starts, but last four long runs were still in flight when captured. Completion is checked separately."
+}

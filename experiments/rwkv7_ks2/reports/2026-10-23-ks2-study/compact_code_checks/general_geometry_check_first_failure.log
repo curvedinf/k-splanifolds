@@ -1,0 +1,25 @@
+{"rank": 1, "basis": "hermite", "terms": "full", "status": "PASS"}
+{"rank": 1, "basis": "hermite", "terms": "spine", "status": "PASS"}
+{"rank": 1, "basis": "powers", "terms": "full", "status": "PASS"}
+{"rank": 1, "basis": "powers", "terms": "spine", "status": "PASS"}
+{"rank": 1, "basis": "taylor", "terms": "full", "status": "PASS"}
+{"rank": 1, "basis": "taylor", "terms": "spine", "status": "PASS"}
+{"rank": 2, "basis": "hermite", "terms": "full", "status": "PASS"}
+{"rank": 2, "basis": "hermite", "terms": "spine", "status": "PASS"}
+{"rank": 2, "basis": "powers", "terms": "full", "status": "PASS"}
+{"rank": 2, "basis": "powers", "terms": "spine", "status": "PASS"}
+{"rank": 2, "basis": "taylor", "terms": "full", "status": "PASS"}
+{"rank": 2, "basis": "taylor", "terms": "spine", "status": "PASS"}
+Traceback (most recent call last):
+  File "/home/curved/k-splanifolds/experiments/rwkv7_ks2/check_general_geometry.py", line 119, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/curved/k-splanifolds/experiments/rwkv7_ks2/check_general_geometry.py", line 47, in main
+    torch.testing.assert_close(h,g,atol=7e-5,rtol=5e-4)
+  File "/home/curved/int8-vllm/.venv/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1600, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 1 / 204 (0.5%)
+Greatest absolute difference: 623.96875 at index (10, 2, 2) (up to 7e-05 allowed)
+Greatest relative difference: 0.001988073578104377 at index (10, 2, 2) (up to 0.0005 allowed)

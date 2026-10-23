@@ -1,0 +1,298 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave3",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "dense_relu_geo4",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense_relu_geo4",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "geometry_lr": 4.0
+      }
+    },
+    {
+      "id": "dense_relu_geo8",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense_relu_geo8",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "geometry_lr": 8.0
+      }
+    },
+    {
+      "id": "dense_relu_geo16",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense_relu_geo16",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "geometry_lr": 16.0
+      }
+    },
+    {
+      "id": "dense_relu_seed22",
+      "seed": 22,
+      "steps": 15000,
+      "config": {
+        "name": "dense_relu_seed22",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2"
+      }
+    },
+    {
+      "id": "dense_relu_seed33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "dense_relu_seed33",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2"
+      }
+    },
+    {
+      "id": "mlp_seed33",
+      "seed": 33,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_seed33",
+        "family": "mlp"
+      }
+    },
+    {
+      "id": "history_direct40",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history_direct40",
+        "charts": 40,
+        "direct_main": true
+      }
+    },
+    {
+      "id": "history_direct40_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history_direct40_relu",
+        "charts": 40,
+        "direct_main": true,
+        "cell": "ks2_relu2"
+      }
+    },
+    {
+      "id": "history_direct80_random_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history_direct80_random_relu",
+        "charts": 80,
+        "direct_main": true,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "fixed46_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "fixed46_relu",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "input_fixed": true
+      }
+    },
+    {
+      "id": "fixed46_plain",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "fixed46_plain",
+        "family": "dense_ks2",
+        "charts": 46,
+        "input_fixed": true
+      }
+    },
+    {
+      "id": "fixed96_random_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "fixed96_random_relu",
+        "family": "dense_ks2",
+        "charts": 96,
+        "input_fixed": true,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "undamped33_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "undamped33_relu",
+        "family": "dense_ks2",
+        "charts": 33,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped"
+      }
+    },
+    {
+      "id": "undamped31_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "undamped31_relu",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "geometry_terms": "undamped"
+      }
+    },
+    {
+      "id": "edge31_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "edge31_relu",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "geometry_terms": "edge"
+      }
+    },
+    {
+      "id": "spine46_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "spine46_relu",
+        "family": "dense_ks2",
+        "charts": 46,
+        "cell": "ks2_relu2",
+        "geometry_terms": "spine"
+      }
+    },
+    {
+      "id": "constant_edge31_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "constant_edge31_relu",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "edge_t_constant": true
+      }
+    },
+    {
+      "id": "larger_init31_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "larger_init31_relu",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "geometry_init_scale": 4.0
+      }
+    },
+    {
+      "id": "history_geo16",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history_geo16",
+        "geometry_lr": 16.0
+      }
+    },
+    {
+      "id": "history_geo8",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "history_geo8",
+        "geometry_lr": 8.0
+      }
+    },
+    {
+      "id": "wide128_ks2c10",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "wide128_ks2c10",
+        "family": "dense_ks2",
+        "charts": 10,
+        "cell": "ks2_relu2",
+        "width": 128,
+        "geometry_lr": 4.0
+      }
+    },
+    {
+      "id": "wide128_mlp112",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "wide128_mlp112",
+        "family": "mlp",
+        "width": 128,
+        "hidden": 112
+      }
+    },
+    {
+      "id": "dense_relu_lr2",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "dense_relu_lr2",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "lr": 2.0
+      }
+    },
+    {
+      "id": "mlp_lr2",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "mlp_lr2",
+        "family": "mlp",
+        "lr": 2.0
+      }
+    },
+    {
+      "id": "matched_init_mlp248",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "matched_init_mlp248",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "relu2"
+      }
+    },
+    {
+      "id": "matched_init_mlp384",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "matched_init_mlp384",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2"
+      }
+    }
+  ]
+}

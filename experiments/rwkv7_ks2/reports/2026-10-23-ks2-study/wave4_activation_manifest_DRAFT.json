@@ -1,0 +1,156 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave4_activation",
+  "deadline_epoch": 1792725733,
+  "jobs": [
+    {
+      "id": "relu_geo_quarter",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "relu_geo_quarter",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "geometry_lr": 0.25
+      }
+    },
+    {
+      "id": "relu_geo_half",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "relu_geo_half",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "geometry_lr": 0.5
+      }
+    },
+    {
+      "id": "relu_geo2",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "relu_geo2",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "geometry_lr": 2.0
+      }
+    },
+    {
+      "id": "relu_frozen_geometry",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "relu_frozen_geometry",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "frozen_geometry": true
+      }
+    },
+    {
+      "id": "ks2_then_relu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_then_relu",
+        "family": "dense_ks2",
+        "charts": 31,
+        "fused_geometry": true,
+        "outer_activation": "relu"
+      }
+    },
+    {
+      "id": "ks2_then_square",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_then_square",
+        "family": "dense_ks2",
+        "charts": 31,
+        "fused_geometry": true,
+        "outer_activation": "square"
+      }
+    },
+    {
+      "id": "ks2_then_silu",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_then_silu",
+        "family": "dense_ks2",
+        "charts": 31,
+        "fused_geometry": true,
+        "outer_activation": "silu"
+      }
+    },
+    {
+      "id": "matched_mlp384_out2",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "matched_mlp384_out2",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2",
+        "output_lr": 2.0
+      }
+    },
+    {
+      "id": "matched_mlp384_out_half",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "matched_mlp384_out_half",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2",
+        "output_lr": 0.5
+      }
+    },
+    {
+      "id": "ks2_relu_out2",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_relu_out2",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "output_lr": 2.0
+      }
+    },
+    {
+      "id": "ks2_relu_out_half",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "ks2_relu_out_half",
+        "family": "dense_ks2",
+        "charts": 31,
+        "cell": "ks2_relu2",
+        "fused_geometry": true,
+        "output_lr": 0.5
+      }
+    },
+    {
+      "id": "matched_mlp384_lr2",
+      "seed": 11,
+      "steps": 15000,
+      "config": {
+        "name": "matched_mlp384_lr2",
+        "family": "dense_ks2",
+        "charts": 48,
+        "cell": "relu2",
+        "lr": 2.0
+      }
+    }
+  ]
+}

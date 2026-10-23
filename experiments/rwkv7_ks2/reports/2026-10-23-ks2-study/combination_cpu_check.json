@@ -1,0 +1,655 @@
+{
+  "status": "PASS",
+  "original_mlp_all_three_seeds_unchanged": true,
+  "rows": [
+    {
+      "job": "combo_rank1_reference_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_powers_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_warps_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 606592,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 2944,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_geo01_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 603648,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_bias_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_gain_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_powers_geo01_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_warps_bias_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 608064,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 4416,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_frozen_bias_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_frozen_gain_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_powers_11",
+      "status": "PASS",
+      "parameters": {
+        "total": 613216,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 9568,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_reference_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_powers_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_warps_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 606592,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 2944,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_geo01_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 603648,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_bias_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_gain_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_powers_geo01_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_warps_bias_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 608064,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 4416,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_frozen_bias_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_frozen_gain_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_powers_22",
+      "status": "PASS",
+      "parameters": {
+        "total": 613216,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 9568,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_reference_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_powers_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_warps_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 606592,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 2944,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_geo01_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 603648,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_bias_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_frozen_gain_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_powers_geo01_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 615424,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 11776,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank1_warps_bias_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 608064,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 4416,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_frozen_bias_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_frozen_gain_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 605120,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 1472,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    },
+    {
+      "job": "combo_rank4_powers_33",
+      "status": "PASS",
+      "parameters": {
+        "total": 613216,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 9568,
+        "decoder_readout": 141312,
+        "decoder_input": 141312,
+        "other": 2304
+      },
+      "initialized_base_tensors_identical": true,
+      "nonzero_readout_forward_matches": true,
+      "intended_parameters_trainable": true,
+      "finite_gradients": true,
+      "causal": true
+    }
+  ],
+  "source_sha256": "fe0e6408289868bdff1e9139c775ebe5cc0ab7df21ef8c26423c2c932b1be04d"
+}

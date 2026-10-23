@@ -1,0 +1,967 @@
+{
+  "status": "PASS",
+  "source_sha256": "2d948fc0d72fe38ae7cb30947a32766dbeede6a0dc3a34703627f17d585f05b8",
+  "note": "Compilation only, not GPU execution.",
+  "rows": [
+    {
+      "rank": 1,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 0,
+      "hash": "56097926b70148c90368c729e207599c0f70e4f2246435953ba365aee34cee87"
+    },
+    {
+      "rank": 1,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 8,
+      "hash": "ce84e1f48533ca231ef988f13762fc19d996d726c83679849253b8624226e5b7"
+    },
+    {
+      "rank": 1,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 8,
+      "hash": "c9c2a5b549a272ca48e0f9016231d58e38584b2608c4d1e9c6e574bb80162d14"
+    },
+    {
+      "rank": 1,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 0,
+      "hash": "247882913534c663d1ec12a8446a5625c643870ee213cfc49933ec7c8a978814"
+    },
+    {
+      "rank": 1,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "21f50950f59bc4ab0c9610452f10ad7ae116d96efd20a1dc7a3e6915df870077"
+    },
+    {
+      "rank": 1,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 8,
+      "hash": "f555758997abf392e26050478aea220698b9e0844af1dd095d73e577fb148e84"
+    },
+    {
+      "rank": 1,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 8,
+      "hash": "1b72c597412d6707126d712f7d41d1d2ff4f700cb925f6d66e164be7690af1d8"
+    },
+    {
+      "rank": 1,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "a021a832b4e2663ba3fd10d9e30fe8e971e238b4859c81f991e9914c29e7334b"
+    },
+    {
+      "rank": 1,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 0,
+      "hash": "2c02bb5f6abb4ac6dafbb5f75afbfd103089896a205e9f7a0e851d8d2bc1861d"
+    },
+    {
+      "rank": 1,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 8,
+      "hash": "e13346ca5ded0c66e3b1ddbe89de5131eea04ad92e36b7536289b7d6975ede56"
+    },
+    {
+      "rank": 1,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 8,
+      "hash": "a5c3f8397fe60b34f033da5c46c2ae1d579038bf3b0ed0b39b0e44088ba2853a"
+    },
+    {
+      "rank": 1,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 0,
+      "hash": "1a5af11e281860199359ad8a07b6b6fe766a505db2da8a3c723ffea47194eb56"
+    },
+    {
+      "rank": 1,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "17412d9f284a6748b080a616225d6afe3b8f14cd0af8ef355e94520cfa5fbaa3"
+    },
+    {
+      "rank": 1,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 8,
+      "hash": "bf7efcc62082b0773456ee9ee826c4e839503abb87a3675bdb209b6774a8e448"
+    },
+    {
+      "rank": 1,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 8,
+      "hash": "8669f0225e587bb960801cdff6cb79f728626e0bd96fc751a0283dcf2e1d44fa"
+    },
+    {
+      "rank": 1,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "ac488d2e639933f7c4b0dd7cbcf74b4bfaff1b52b67d3ca21c20a0db26d91cf5"
+    },
+    {
+      "rank": 1,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 0,
+      "hash": "4f21e72fc8eeeefba986bb938bb0b9aeb49e384e96179a4706414ae1cabf675c"
+    },
+    {
+      "rank": 1,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 8,
+      "hash": "46382eed353f0f1c9f569b9d5a74185af6c68dcdb4bc31623285aad80edfad19"
+    },
+    {
+      "rank": 1,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 8,
+      "hash": "a66e114e32d8dfc4911074e4db6be47b45efa975400bde4f6312d8d6c97215ae"
+    },
+    {
+      "rank": 1,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 0,
+      "hash": "ef35cca496ccbb687b9b95eb0c17f9de65116f235985ea4531886f8d1a8a16f6"
+    },
+    {
+      "rank": 1,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "8b69b1ce9da5486d96a53470df49d2c38b11bdc884a75630e5ee838bb50cf6de"
+    },
+    {
+      "rank": 1,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 8,
+      "hash": "55eb44d018dcce76516df6542f051e893ffe1c744a87bf57a402521f28d1bd3a"
+    },
+    {
+      "rank": 1,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 8,
+      "hash": "35648133b67bc46c037001fe214a01b72e01cdfc8181c7841017ef5802db4ea8"
+    },
+    {
+      "rank": 1,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "cd1874b61f638f58cfdb7f640fdc0b093cd405aa3514133cb114e5070ee5772f"
+    },
+    {
+      "rank": 2,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "d834d5e2b099dcd62bd7f2f8794a56e8872353b52e8ebb193d26191b481e71ed"
+    },
+    {
+      "rank": 2,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "5494b0b7dc7fcab6ec1015e6bbca68e12c8bc35c2e4238e5119c58342ba64ff8"
+    },
+    {
+      "rank": 2,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "721b0c8cee38044322801df9c6a24fa88e6b88924c9c156ef232a47bf9b48f5d"
+    },
+    {
+      "rank": 2,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "d1d3935da936fa218643cbe05ba7e1cfab6aa6b113230ed8c2258b46b6fbdf3c"
+    },
+    {
+      "rank": 2,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "2d09a53599a32fd0e128469ceaee0f85eb2fdef590309acbbd7e86654f3598d9"
+    },
+    {
+      "rank": 2,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 256,
+      "hash": "c9a919b61a406fbdb863ed1ad96d4b7e3f6aa0dc132fe0047e439b002a11f94f"
+    },
+    {
+      "rank": 2,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 256,
+      "hash": "a22f5993e9c7d5f1d58a2c1291910b6cc9b6e3ce246b10f7a98e91a7d56865cd"
+    },
+    {
+      "rank": 2,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "b4045436e54e7015e215ba0b1c21cf73f226951bb359a3ee6ab98b653566ff33"
+    },
+    {
+      "rank": 2,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "6decd0db65c586a2e4b25f0bbbcff22835c7d4442d63619191861021cb1fb510"
+    },
+    {
+      "rank": 2,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "1c767ce5b75e2bc7ce965d7b156cca2f9a1fbcd29ab350a774026c3e6369373f"
+    },
+    {
+      "rank": 2,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "88ca6ec974bf75b2b9af87c0c67f8191333882c846931c9b3e1b64d93f04ddbe"
+    },
+    {
+      "rank": 2,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "3dd87b40e180e1866e3ce486f06229dcaaeb1c1766b313ec2ea38e8eacb28a7e"
+    },
+    {
+      "rank": 2,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "22eb0d31c07ed3cb54ffd6bcdaa834f4a67c854282b481824a419ad8a8a11dea"
+    },
+    {
+      "rank": 2,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 256,
+      "hash": "87b09eac686206234922ac7ad28ac7feea1841af8587eb0566b7641e43bb990a"
+    },
+    {
+      "rank": 2,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 256,
+      "hash": "f668b2cb549b8a38832fbad7ff272bf75496376834d05fb20d98c93fd5fbab87"
+    },
+    {
+      "rank": 2,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "a6784049ec4307e14b83a8b193b7249ad78fa55953c23d6d27da5bfec8525098"
+    },
+    {
+      "rank": 2,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "3ab992b73d78277d9916f3788f8e8caa4c17cedcf5f443ba1c5234cc736ab7c4"
+    },
+    {
+      "rank": 2,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "fd1a5ef897081ed888429cba78905d288669b10d28195434db77ce5b922f6ba8"
+    },
+    {
+      "rank": 2,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "da629bee74fb428783921942b7b4505b469f9ecab0ce8ccd90e58726b774336e"
+    },
+    {
+      "rank": 2,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "d4c5bb294db279f7c2278f2406579ed03c1892ac9d428b698fd90b232fe4d506"
+    },
+    {
+      "rank": 2,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "08af6f7953655d816d56896d87bc504a5a29c86362223465db423b6019433f02"
+    },
+    {
+      "rank": 2,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 256,
+      "hash": "7def2d8506d1ca09e31cbdc33310ed4b561032866ca885b728a84a2b730296f2"
+    },
+    {
+      "rank": 2,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 256,
+      "hash": "7bb8f0e02c46615b3c0cca98fc0ac3f0b03c98a8f726e92234afaca27e7672f4"
+    },
+    {
+      "rank": 2,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "73fb8423f3f50d5c7e06624410fc501d3410cdec420a3158d6c36c8e0b872e58"
+    },
+    {
+      "rank": 4,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "f3541629adc2cdbb8b695d78e19fe6e5da29ab1c324984b8d856ce0e0bfc5d25"
+    },
+    {
+      "rank": 4,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "770c52674c29a1f962cae180e7a027e6d95798d51be83e95fe9d8b386c0afe59"
+    },
+    {
+      "rank": 4,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "236e77cd7d44e8e4e7d443072b4e068ca7006b44e85941924049cbb3108e7d8d"
+    },
+    {
+      "rank": 4,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "ee2ae52837f71659e8c70abe77fb13e591a3f40200b57a5fe2a09701602dd226"
+    },
+    {
+      "rank": 4,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "8022d62acd0f9aa2d080fd9c356089e39a1f8c31c57d7edd0d521cd1d76ddd57"
+    },
+    {
+      "rank": 4,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "0896117bd882b9d18d8695bbe6e2c3514a59010d74f9535db30e1fce9dc39616"
+    },
+    {
+      "rank": 4,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "3a22d5bc3b278a384904f7e5e093bc274cc83f9c51d0a99443621f7594cc2f07"
+    },
+    {
+      "rank": 4,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "db067b3b2b012b52e0302a1c781a31f82a2b7df453091abf591f6121ee2ea83d"
+    },
+    {
+      "rank": 4,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "a3df2edc11e711229cd608f9fbe17478ad3e074330ba4d3d37a9974776a1a53e"
+    },
+    {
+      "rank": 4,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "29aafc95cdb598ecf031ab1ecc1edb5ab9f19f51325dc100d1c133b58bf05d7c"
+    },
+    {
+      "rank": 4,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "d6480313aed968309183dd37c29106be30c81ada0cc5e81044681d210638f543"
+    },
+    {
+      "rank": 4,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "b9615f0b949e1ff3b3357350b6750a0b8a31e0a84d823d83f3e9d5c34f21245b"
+    },
+    {
+      "rank": 4,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "1ca9feec2db03bc4b43bfc6b8e1b90a38e6ed63354d07bedf16d25e81d624f20"
+    },
+    {
+      "rank": 4,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "350ce78ca15dea62f49b390fc028efa83a12b0a1f383a692162cd521f3762172"
+    },
+    {
+      "rank": 4,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "b58e7f7c448a6ebf8a5bdbb4878f27961e0c290533eb844302ebff3db7bee4e9"
+    },
+    {
+      "rank": 4,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "4883defbff8a6033ad5aac3b02d462553be5eaa1564480a767cd536b82802a72"
+    },
+    {
+      "rank": 4,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "dc67a729ce67dd0c4a80bc6cbf70ae00968ec2596b2f249dff90c224bed52f53"
+    },
+    {
+      "rank": 4,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "02f3928e08f7326465bd56c4e09ab80d1438585711c01f39f953c440cc4be057"
+    },
+    {
+      "rank": 4,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "c476c87213754143d9b96e6634cca24cd31918affceb85021ed1bd60f3ef0a75"
+    },
+    {
+      "rank": 4,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "5e77d4ff9bebc1f6c6a380ebf8a9e6ed8188065ca14e68fce973f354efc13a65"
+    },
+    {
+      "rank": 4,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "a1bf364e7b6146bb714f16e55a7f12566d4a68390163266755f2d1cb5da452a4"
+    },
+    {
+      "rank": 4,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "51ca73763369a5617b2e14ede3f881da2a73d07c7521537db43df1d536d7949a"
+    },
+    {
+      "rank": 4,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "c0249966b0bbc10a47072359fe1bd2f782622fa41115204d1059364e7dc913dd"
+    },
+    {
+      "rank": 4,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "c349bb908515580bbf8a285e9ddd37d56e037b29cc5c2131a54c16688e602c6e"
+    },
+    {
+      "rank": 8,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "f52f81e20d9fb73f9f0b77354d9569ec6a4096097d2373e19b95bdfe85010acf"
+    },
+    {
+      "rank": 8,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 1024,
+      "hash": "4d87e8a17d902be1db6cc2b93d4a1dc0af3f2cc90536ca7172840da4c36fb5f9"
+    },
+    {
+      "rank": 8,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "bb67fd34247f12b4ca8fc43e37f5d1b73af35ba4ea0d8f7af38561bb76668030"
+    },
+    {
+      "rank": 8,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "3f69f6f0c7fdcf3c69c3263b6e0f0ac9c93910546fa1110ecc9f387abb30465a"
+    },
+    {
+      "rank": 8,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "baf59964dc1e910ee2e32834accd76ea1d5c006fb58ec2e0f0db4e786953f70d"
+    },
+    {
+      "rank": 8,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 64,
+      "hash": "5f40d0fdf4913877cc28ab1ddb80f4615d24b7bc29a4eb2fb408669eed6f0727"
+    },
+    {
+      "rank": 8,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 64,
+      "hash": "70f65961aadce6110adbd1113566c470a973e3ad957d4e24ca78f8792f5b2ee2"
+    },
+    {
+      "rank": 8,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "431821a02ff3828d94fc8e1ede0f57a7c487abd0d1554bedc763dc09f98a1bbf"
+    },
+    {
+      "rank": 8,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "ebd428e7a6b8770758f1a8dfe9d6bee93953552bc917fbeaf154a2829d80d706"
+    },
+    {
+      "rank": 8,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 1024,
+      "hash": "5ab738005e715fdce98c2c72a5537d8fa22081af8f48da81ef84a5bf0c04d897"
+    },
+    {
+      "rank": 8,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "d1528583ea950b86db91ed92470731110c7b3128eb95bc8850c3e94570cd6794"
+    },
+    {
+      "rank": 8,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "0875bc6ededd7f594c8413f174a8a2bf59ca5c195d6127099357c1c5cdbc4276"
+    },
+    {
+      "rank": 8,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "7ac3f711b5ede4f89d98c63ce32677730d6f7d8c2f5a2bdf05d952230ca71e54"
+    },
+    {
+      "rank": 8,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 64,
+      "hash": "7045ec570cba04d58cb53c7ce185130d37bb9fd42dfe686291e899ecdb13f1b0"
+    },
+    {
+      "rank": 8,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 64,
+      "hash": "2acc8a0d9c545dd6e8e1f2adce5f9102ac1e6564e54156430f1f74037cd2b2bb"
+    },
+    {
+      "rank": 8,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "d4c9c85b96877e8ce3f7eb5d58273407d74fa278a0111817c1e85d8a327aef2e"
+    },
+    {
+      "rank": 8,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 512,
+      "hash": "00f8ad70f5b76d6e7b1fca5e082fcdfb43fa4e59fb7bf432c38c5a6f6f44e8e5"
+    },
+    {
+      "rank": 8,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 1024,
+      "hash": "69069f93fa9e9ddc97cae2cd0138527c93bb3cf0fd8fa6478a471ccf2e795d45"
+    },
+    {
+      "rank": 8,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "10cafa89bea80e0489a1b224c708315f291e790307238c48df80d46d493038b7"
+    },
+    {
+      "rank": 8,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "99c76f99a6998189f5f7ec54ee1ae53df4415c428d69169ae431e1447c9a3a56"
+    },
+    {
+      "rank": 8,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "b78d1769db4eb0b3bb230815342a3ac1b4aa2b16d6f60f71ccd3fb8372758f0c"
+    },
+    {
+      "rank": 8,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 64,
+      "hash": "ce3b889fa442c5d0622c7d5b531031f7276c39a081defb08457fa236e12991a6"
+    },
+    {
+      "rank": 8,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 64,
+      "hash": "3efe102fefbea3c3c67644df5493927f0eba75a12217fbd860e2d4f45ab23bd1"
+    },
+    {
+      "rank": 8,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "70f4bdee46e81c60be3992edf21e8b50ced773f4c0e3fcbda8c659a482a9f88a"
+    },
+    {
+      "rank": 16,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 2048,
+      "hash": "7e8e61b2689cae583ed7be3e66c23386e848af4514c347d38d211afe1c9a1283"
+    },
+    {
+      "rank": 16,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "ea4b0da716b92970b3f9ba93905563f7a7ddddcfd0d06d870b497459b5441656"
+    },
+    {
+      "rank": 16,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "bac8e35c6cac69b86d6cc5e2441de6475765ccf1b5bac71908f4f023bfb335a8"
+    },
+    {
+      "rank": 16,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "519834f527881eb449b3024a1dfec498ac3bcc7f9a233ed37e39202f993c5696"
+    },
+    {
+      "rank": 16,
+      "basis": 0,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "e283cb970cf6345294c83101d4ea78a751bf4654054953a3e8cfd4d62765af60"
+    },
+    {
+      "rank": 16,
+      "basis": 0,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "0a498cebaaeb7a079af10117356c385bfc407ee8c896ae407ca6f51c6070903f"
+    },
+    {
+      "rank": 16,
+      "basis": 0,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 32,
+      "hash": "3e1e7525c40597694f965aab18c4c3b2c0eb6276f7875fae46c9124bb009b3d9"
+    },
+    {
+      "rank": 16,
+      "basis": 0,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "f1df9ac69c6e5ac0528cfd33df127a5c1f44bdf1e0dcfbc79bf59c1f9cbeb65d"
+    },
+    {
+      "rank": 16,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 2048,
+      "hash": "7d9cc55e0010b5b9b06730cb406009bd616f6a0dde65d45b21169c1a8c7958dc"
+    },
+    {
+      "rank": 16,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "32b1012ffedf7647a2c91a924a3a31e95f00ca95ea77a9b121063d9843251f41"
+    },
+    {
+      "rank": 16,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "2e4b24a1daa2214b4ffed4a13da1f6f751b680891876a5f182bb3e1fcd8dbdcf"
+    },
+    {
+      "rank": 16,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "8e2a21f19a2bf75d5c4c7e79cfbd7c8ca9fb7122c8dd4b7fada450e3d0d4fb59"
+    },
+    {
+      "rank": 16,
+      "basis": 1,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "54234ab2085b6c82e2ff957dd0e44bda7b678e56d1e43baa2d94b14137a4a1be"
+    },
+    {
+      "rank": 16,
+      "basis": 1,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "77651c0198dbd6564ed8d08a8c6717b30e5166f8bd2110c573f814289b70111c"
+    },
+    {
+      "rank": 16,
+      "basis": 1,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 32,
+      "hash": "d7d060ffd887e5067214bafc872e72d9aa9c75051f65a44f7d50d7d3d7d85bd1"
+    },
+    {
+      "rank": 16,
+      "basis": 1,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "c3499481e97f2bd9a7a6547f83f9dbf65ac945fa25edbd2f3e170d365eebc125"
+    },
+    {
+      "rank": 16,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_geometry_fwd",
+      "shared": 2048,
+      "hash": "d6a968fac34bc4cbae75747f1d66b7d2522583bd968ae6b26c2eb0bc4f3413e2"
+    },
+    {
+      "rank": 16,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "32863cc5427c51a4e1955ac6ac79922e8235dcb8565041886fa63edfb85837fd"
+    },
+    {
+      "rank": 16,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "d0b51e922628a0bb1fefcb3f901ebd226cb82b473c89367cbc4eeaf85b119b6b"
+    },
+    {
+      "rank": 16,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_geometry_bwd",
+      "shared": 512,
+      "hash": "5f359b09983143931a374a659e4a301ae22ae23208e2291fdfe7814ebeadf9f4"
+    },
+    {
+      "rank": 16,
+      "basis": 2,
+      "gradient_mode": null,
+      "kernel": "_spine_fwd",
+      "shared": 0,
+      "hash": "40363ec85a5afc28523c5137f8455d46529079f2d30fed81006944c5391bc03c"
+    },
+    {
+      "rank": 16,
+      "basis": 2,
+      "gradient_mode": 0,
+      "kernel": "_spine_bwd",
+      "shared": 128,
+      "hash": "e1adfce18045585db0205db7be6eddc2da02b4158dd0ffcef67a8671a69c8298"
+    },
+    {
+      "rank": 16,
+      "basis": 2,
+      "gradient_mode": 1,
+      "kernel": "_spine_bwd",
+      "shared": 32,
+      "hash": "668d312e7fd0130333b5d282b89c444847fc539fc021707fd932e585207718da"
+    },
+    {
+      "rank": 16,
+      "basis": 2,
+      "gradient_mode": 2,
+      "kernel": "_spine_bwd",
+      "shared": 0,
+      "hash": "9d43bbcff2dd9cbd43c4a543efcc05aa843e39a2e0a912d849d8d7bc36c9cc7c"
+    }
+  ]
+}

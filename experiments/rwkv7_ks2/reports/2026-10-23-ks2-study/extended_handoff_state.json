@@ -1,0 +1,108 @@
+{
+  "updated_epoch": 1792776417.851507,
+  "deadline_epoch": 1792776116.8504283,
+  "deadline_utc": "2026-10-23 17:21:56 UTC",
+  "reason": "LATESTUSER:restarttimer2hours,focuscombiningwins. Previous8hourtrainingcomplete;thisisnewexplicitextension.",
+  "primary_control": "OriginalunchangedMLP only. FocusFFNparametercounts:MLP73728perlayer,rank1KS273600.",
+  "root": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213",
+  "interpreter": "/home/curved/int8-vllm/.venv/bin/python",
+  "live": {
+    "wave15": {
+      "session": 38307,
+      "log": "/tmp/ks2_study_wave15.log",
+      "manifest": "wave15_combinations_manifest.json",
+      "jobs": 36,
+      "status": "COMPLETE36/36zero failures"
+    },
+    "final_checks": {
+      "session": 46740,
+      "log": "/tmp/ks2_final_checks_extension2_v19.log",
+      "status": "WAITINGv19replacesv18dispatcheronly, noevalyet. Final259heldout and3additionalmixedspeedconfigs."
+    },
+    "telemetry": {
+      "session": 20668,
+      "status": "Restarted session20668 /tmp/ks2_telemetry_extension2.log; appendoldtelemetry withgap betweenold/newwindows; summarizeactivewindowshonestly."
+    },
+    "wave16": {
+      "session": 9595,
+      "log": "/tmp/ks2_study_wave16.log",
+      "manifest": "wave16_combination_long_manifest.json",
+      "jobs": 24,
+      "status": "20/24complete. LAST4largerpoolseed33started17:15:56,17:16:20,17:16:44,17:17:17, allbefore17:21:56. Expectedcomplete~17:31\u201317:32. No furthertrainingqueued."
+    },
+    "training_handoff": {
+      "session": 97716,
+      "log": "/tmp/ks2_training_handoff.log",
+      "status": "ACTIVEsession97716 /tmp/ks2_training_handoff.log; study_training_handoff.py requireswave16manifest, readsdeadline dynamically, waitsallmanifestjobscomplete/noinvalid/nofailure anddeadline17:21:56, writestraining_complete.json. Doesnotmarkgoalcomplete."
+    },
+    "artifact_finalizer": {
+      "session": 64178,
+      "log": "/tmp/ks2_finalize_artifacts_v19.log",
+      "status": "WAITINGfinalcomplete; expected428trainingruns. old99169stoppedbeforework."
+    },
+    "wave17": {
+      "session": "owned by interleave wrapper70235",
+      "log": "/tmp/ks2_study_wave17.log",
+      "manifest": "wave17_mixed_ranks_manifest.json",
+      "jobs": 9,
+      "status": "COMPLETE9/9 nofailures, CPU9andGPUall4checksPASS. Meanheavy1.6171999375,balanced1.6193661292,hybrid1.6191493273; all3variantsbeatMLPall3seeds,nonebeatsuniformrank1mean1.6141652664."
+    },
+    "interleave": {
+      "session": 70235,
+      "log": "/tmp/ks2_mixed_interleave.log",
+      "script": "study_mixed_interleave.py",
+      "status": "COMPLETEterminal0; mixed_rank_interleave.json statusCOMPLETE_RESUMED, allworkersSIGCONT. Pauses3workers~631\u2013636sec; GPU1worker915sec. Collectorflagsaffectedrunelapsedtimes; no model/optimizerrestart."
+    },
+    "early_resume": {
+      "session": 12576,
+      "log": "/tmp/ks2_resume_released_gpus.log",
+      "script": "study_resume_released_gpus.py",
+      "status": "COMPLETEterminal0; per_gpu_resume_monitor_complete true. Corrected3earlyworkertimestampsanddispatchertimestamp; fourthresumedbywrapper. All4verifiedadvancing."
+    }
+  },
+  "completed": "424trainingrunscomplete;wave16 20/24, last4largerpoolseed33active. Allothermanifestscompleteincludingmixed9. Finalexpected428.",
+  "fresh_holdout": "reserved_holdout_extension2.json/bytes:tokens2M:2.1M,437621B,SHA5b7ab4e791f0b4fcbd51c9fe16a7cb7e63ac5c0aea751db7f124d2b6b4bb9aa7. SEALED. final_holdout_plan.json selectsnewmetadata/outputfilename. Oldinterval109scoredmustnotbeusedforselection.",
+  "source_versions": "v18active24longcombosunchanged. v19mixedfactorydelegates18whenmixed_ranksabsent. v19train/eval/wave/check frozen. Do notmutateactiveworkers. Mixed32MLPcoords80:112,higherchartoffsetssameasbalancedparent. CPU9PASS.",
+  "next_actions": [
+    "Monitorlast4wave16largerpoolseed33runs(session9595,/tmp/ks2_study_wave16.log), allstartedbeforecutoffverifiedcombination_dispatch_audit.json. Finishinflight~17:31\u201317:32; noadditionaltraining.",
+    "Finalhandoff97716automaticscansallmanifests includingcompletewave17, releasesonlyafterdeadlineandalltrainingcomplete. Noearlymarker.",
+    "Finalv19session46740 (/tmp/ks2_final_checks_extension2_v19.log) waiting:259heldoutchecks+5roundspeedincludingmixed3. Finalizer64178expected428runs runsallartifactchecks/plots/sourcebundle/report.",
+    "AfterfinalizerPASSreviewfreshheldoutcombinedandmixedresults,allnewfigures,finalrecommendationsandcurrentfirstpagesummary; thenrequirementauditandgoalcomplete. Regeneratesourcebundleifreportcodechanges.",
+    "Preservepausestimingflagsandfreshholdoutprovenance. UserwantsFFN-onlycounts. OriginalMLPunchanged."
+  ],
+  "long_preparation": "study_combination_selection.py --root ROOT firstgeneratesranking. Onceall36complete, --models2to4 --rationaleJSON mappingreason+estimated_ms prepareswave16_combination_long,addsnewholdout andspeedconfigs. Requirebasiscombo andfreeze/selectivecombo. Launchstudy_wave_v18.py afterwave15manifest+log, requiresgeneralcheck. Samefactoryv18/sourcehashgate.",
+  "previous_results": {
+    "larger_rank1_100k_mean": 1.4607446988423665,
+    "larger_original_mlp_100k_mean": 1.4657371441523233,
+    "rank1_larger_gap": -0.004992445309956868,
+    "rank1_original_gap": 0.0010738770167032878,
+    "larger_frozen_rank4_gap": -0.0016687711079915364,
+    "larger_full_frozen_gap": 1.2000401814778646e-05,
+    "larger_power_gap": -8.289019266764323e-05
+  },
+  "last_progress": "Launcheduserrequestedcombinationphase,CPU36/GPUall4PASS, freshreservedintervalcreated, newholdoutdrivergated, reportupdatedfor2hextensionandFFN-onlycounts.",
+  "automatic_final_handoff": "ACTIVEsession97716 /tmp/ks2_training_handoff.log; study_training_handoff.py requireswave16manifest, readsdeadline dynamically, waitsallmanifestjobscomplete/noinvalid/nofailure anddeadline17:21:56, writestraining_complete.json. Doesnotmarkgoalcomplete.",
+  "long_selection": "combination_long_selection.json +combination_selection_tradeoffs.json. Selectedtop4novelmeans; nonebeatnewrank1repeatshortmean. All3seeds preserved. Rank1frozenbiasdoesimprovefrozenparentall3;totalcoefficients73968vsMLP73728 explicitlyaboveby240/FFN.",
+  "latest_progress": "Originalpool3seed:rank1powers1.506059925(-0.003011vsMLP,3/3; -0.004085vspriorrank1,3/3);rank1frozenbias1.508483489(-0.000588,1/3);rank4powers1.509774327(+0.000703,0/3);rank4frozenbias1.511249463(+0.002178,1/3). Powersrank1isfirstconsistentcombinedgainonsmallpool; largerpoolpriorrank1stillaheadsofar. Mainreportclarifiedoriginalbasis vs powerbasis, no universalityclaim.",
+  "additional_evidence": "rank1_repeat_variation.json confirms51sharedsources/software/data unchanged, earlyloss~1e-6 then trajectoriesdiverge; reportcaution. selected_long_training_gaps.json: priorrank1largertrain\u22120.005134,val\u22120.004992 vsMLP. No newtrainingorreservedtuning.",
+  "report_updates": "study_combination_report now adds reserved_long_groups and direct heldout vs prior rank1. study_report now adds complete-cohort short/long/heldout combination headline dynamically. Freshheldoutbranch unexecuted until finalresults exists; verify then. CurrentHTMLlinksPASS472-ish, figures legible.",
+  "last_goal_turn_classification": "progress: verifiedlast4longworkersliveat54\u201360k andno failures; verifiedfull/undampedFFNcountsfromactualcompletedrecords73036/73524perlayer andaddedtocomparisonrequestedbyuser. Reportstillworking;final259heldoutandspeedchecksnotyetstarted.",
+  "artifact_finalizer": {
+    "session": 99169,
+    "pid_log": "/tmp/ks2_finalize_artifacts.log",
+    "script": "study_finalize_artifacts.py",
+    "status": "Waiting live after final_checks/complete.json. Runs collect/audit/protocol/telemetry/figures/sourcebundle/report sequentially, asserts419coverage andlocalHTMLlinks, stops telemetry. Does not mark goal complete; final evidence/figures/recommendations/manualrequirement audit remain."
+  },
+  "mixed_followup_sessions": {
+    "wave17": 78361,
+    "wave17_log": "/tmp/ks2_study_wave17.log",
+    "final_checks_v19": 46740,
+    "final_log": "/tmp/ks2_final_checks_extension2_v19.log",
+    "artifact_finalizer": 64178,
+    "artifact_log": "/tmp/ks2_finalize_artifacts_v19.log"
+  },
+  "latest_user_requests": "TrymixedKS2ranks,includeacouplerank16,alsoMLPinsubspace. Implemented3configs:heavy240r1+8r4+8r8+2r16(73380/FFN);balanced112r1+24r4+16r8+2r16(73172);balancedMLP80r1+32MLP+24r4+16r8+2r16(72916). OriginalMLP73728 unchanged. Shared368features. Three15kseeds each originalpool.",
+  "mixed_scheduling": "Criticalupdate: after-wave16forecastcouldnotstartall9mixedtestsbydeadline. Interleavewrapper70235 suspendedlongdispatcher1440795and4trainchildrenviaSIGSTOP at16:34:11, ranmixedwave19immediatelyall4GPUs, automaticallySIGCONTchildrenanddispatcherinfinallyaftermixedninecomplete. No restart,nostepreset. mixed_rank_interleave.json recordsPIDs/startticks/timestamps. Do not launchotherGPUwork. MixedGPUvalidationall3casesonall4PASS; mixedtrainingactive. Collectorflags4pausedlongrunsandexcludeselapsedmsfromreportledger; finalcontrolledspeedunaffected.",
+  "completion_audit": "goal_completion_review.json nowcontains12requirementsandcurrentlyINCOMPLETE. Afterfinaldataauditrevieweachrequirementsactualevidence, update statusesjustifiablyandrecordlimitsbeforeupdate_goalcomplete; checklistpresencealone notproof.",
+  "current_phase": "FINISHING_INFLIGHT_AFTER_CUTOFF; no furthertrainingqueued."
+}

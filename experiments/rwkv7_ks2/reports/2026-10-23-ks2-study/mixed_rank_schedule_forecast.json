@@ -1,0 +1,212 @@
+{
+  "epoch": 1792773080.3554378,
+  "completed_long": 8,
+  "active_gpu_pids": "See live process checks; forecast uses job start/end events only.",
+  "estimated_gpu_release": [
+    {
+      "gpu": 1,
+      "time": 1792775798.3447618
+    },
+    {
+      "gpu": 2,
+      "time": 1792775957.5078533
+    },
+    {
+      "gpu": 3,
+      "time": 1792775958.8941143
+    },
+    {
+      "gpu": 0,
+      "time": 1792775975.9147444
+    }
+  ],
+  "scenarios": [
+    {
+      "assumed_mixed_ms": 10,
+      "last_start": 1792776180.9147444,
+      "last_finish": 1792776355.9147444,
+      "all_start_before_deadline": false,
+      "records": [
+        {
+          "job": "mixed_rank1_heavy_11",
+          "gpu": 1,
+          "start": 1792775828.3447618,
+          "end": 1792776003.3447618
+        },
+        {
+          "job": "mixed_balanced_11",
+          "gpu": 2,
+          "start": 1792775987.5078533,
+          "end": 1792776162.5078533
+        },
+        {
+          "job": "mixed_balanced_mlp32_11",
+          "gpu": 3,
+          "start": 1792775988.8941143,
+          "end": 1792776163.8941143
+        },
+        {
+          "job": "mixed_rank1_heavy_22",
+          "gpu": 1,
+          "start": 1792776003.3447618,
+          "end": 1792776178.3447618
+        },
+        {
+          "job": "mixed_balanced_22",
+          "gpu": 0,
+          "start": 1792776005.9147444,
+          "end": 1792776180.9147444
+        },
+        {
+          "job": "mixed_balanced_mlp32_22",
+          "gpu": 2,
+          "start": 1792776162.5078533,
+          "end": 1792776337.5078533
+        },
+        {
+          "job": "mixed_rank1_heavy_33",
+          "gpu": 3,
+          "start": 1792776163.8941143,
+          "end": 1792776338.8941143
+        },
+        {
+          "job": "mixed_balanced_33",
+          "gpu": 1,
+          "start": 1792776178.3447618,
+          "end": 1792776353.3447618
+        },
+        {
+          "job": "mixed_balanced_mlp32_33",
+          "gpu": 0,
+          "start": 1792776180.9147444,
+          "end": 1792776355.9147444
+        }
+      ]
+    },
+    {
+      "assumed_mixed_ms": 12,
+      "last_start": 1792776238.3447618,
+      "last_finish": 1792776443.3447618,
+      "all_start_before_deadline": false,
+      "records": [
+        {
+          "job": "mixed_rank1_heavy_11",
+          "gpu": 1,
+          "start": 1792775828.3447618,
+          "end": 1792776033.3447618
+        },
+        {
+          "job": "mixed_balanced_11",
+          "gpu": 2,
+          "start": 1792775987.5078533,
+          "end": 1792776192.5078533
+        },
+        {
+          "job": "mixed_balanced_mlp32_11",
+          "gpu": 3,
+          "start": 1792775988.8941143,
+          "end": 1792776193.8941143
+        },
+        {
+          "job": "mixed_rank1_heavy_22",
+          "gpu": 0,
+          "start": 1792776005.9147444,
+          "end": 1792776210.9147444
+        },
+        {
+          "job": "mixed_balanced_22",
+          "gpu": 1,
+          "start": 1792776033.3447618,
+          "end": 1792776238.3447618
+        },
+        {
+          "job": "mixed_balanced_mlp32_22",
+          "gpu": 2,
+          "start": 1792776192.5078533,
+          "end": 1792776397.5078533
+        },
+        {
+          "job": "mixed_rank1_heavy_33",
+          "gpu": 3,
+          "start": 1792776193.8941143,
+          "end": 1792776398.8941143
+        },
+        {
+          "job": "mixed_balanced_33",
+          "gpu": 0,
+          "start": 1792776210.9147444,
+          "end": 1792776415.9147444
+        },
+        {
+          "job": "mixed_balanced_mlp32_33",
+          "gpu": 1,
+          "start": 1792776238.3447618,
+          "end": 1792776443.3447618
+        }
+      ]
+    },
+    {
+      "assumed_mixed_ms": 14,
+      "last_start": 1792776298.3447618,
+      "last_finish": 1792776533.3447618,
+      "all_start_before_deadline": false,
+      "records": [
+        {
+          "job": "mixed_rank1_heavy_11",
+          "gpu": 1,
+          "start": 1792775828.3447618,
+          "end": 1792776063.3447618
+        },
+        {
+          "job": "mixed_balanced_11",
+          "gpu": 2,
+          "start": 1792775987.5078533,
+          "end": 1792776222.5078533
+        },
+        {
+          "job": "mixed_balanced_mlp32_11",
+          "gpu": 3,
+          "start": 1792775988.8941143,
+          "end": 1792776223.8941143
+        },
+        {
+          "job": "mixed_rank1_heavy_22",
+          "gpu": 0,
+          "start": 1792776005.9147444,
+          "end": 1792776240.9147444
+        },
+        {
+          "job": "mixed_balanced_22",
+          "gpu": 1,
+          "start": 1792776063.3447618,
+          "end": 1792776298.3447618
+        },
+        {
+          "job": "mixed_balanced_mlp32_22",
+          "gpu": 2,
+          "start": 1792776222.5078533,
+          "end": 1792776457.5078533
+        },
+        {
+          "job": "mixed_rank1_heavy_33",
+          "gpu": 3,
+          "start": 1792776223.8941143,
+          "end": 1792776458.8941143
+        },
+        {
+          "job": "mixed_balanced_33",
+          "gpu": 0,
+          "start": 1792776240.9147444,
+          "end": 1792776475.9147444
+        },
+        {
+          "job": "mixed_balanced_mlp32_33",
+          "gpu": 1,
+          "start": 1792776298.3447618,
+          "end": 1792776533.3447618
+        }
+      ]
+    }
+  ],
+  "note": "Scheduling forecast, not measured mixed-model speed. Actual GPUchecks/timings determinedispatch; no trainingcancelled or horizonreduced."
+}

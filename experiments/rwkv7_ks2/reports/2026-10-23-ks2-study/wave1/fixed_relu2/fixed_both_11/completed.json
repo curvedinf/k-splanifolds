@@ -1,0 +1,265 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave1/fixed_relu2/fixed_both_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 64,
+    "control_update_scale": true,
+    "steps": 15000,
+    "gpu": 0
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.645017623901367
+    },
+    {
+      "step": 100,
+      "train_loss": 2.4383044242858887,
+      "gradient_norm": 3.13142991065979,
+      "val_loss": 2.6331892013549805,
+      "training_seconds": 0.9383166659390554
+    },
+    {
+      "step": 200,
+      "train_loss": 2.1763319969177246,
+      "gradient_norm": 27.30197525024414,
+      "val_loss": 2.476107120513916,
+      "training_seconds": 1.8781863800249994
+    },
+    {
+      "step": 500,
+      "train_loss": 2.035123586654663,
+      "gradient_norm": 2.357058048248291,
+      "val_loss": 2.2684710025787354,
+      "training_seconds": 4.70063660107553
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.9162304401397705,
+      "gradient_norm": 1.8801363706588745,
+      "val_loss": 2.1303513050079346,
+      "training_seconds": 9.41187200602144
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.4683666229248047,
+      "gradient_norm": 448.5889892578125,
+      "val_loss": 2.004183769226074,
+      "training_seconds": 18.861815404030494
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.8265659809112549,
+      "gradient_norm": 1.5063502788543701,
+      "val_loss": 1.9330439567565918,
+      "training_seconds": 28.34891806007363
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.6951251029968262,
+      "gradient_norm": 1.4429458379745483,
+      "val_loss": 1.882948637008667,
+      "training_seconds": 37.87800065707415
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.937856912612915,
+      "gradient_norm": 1.419523000717163,
+      "val_loss": 1.850931167602539,
+      "training_seconds": 47.44060587906279
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.8061033487319946,
+      "gradient_norm": 1.5325407981872559,
+      "val_loss": 1.8225038051605225,
+      "training_seconds": 57.02828244911507
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.1006646156311035,
+      "gradient_norm": 2.08868145942688,
+      "val_loss": 1.8131952285766602,
+      "training_seconds": 66.63958976813592
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.223909854888916,
+      "gradient_norm": 2.2762467861175537,
+      "val_loss": 1.7812526226043701,
+      "training_seconds": 76.27560895809438
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.5587260723114014,
+      "gradient_norm": 1.3801292181015015,
+      "val_loss": 1.7684073448181152,
+      "training_seconds": 85.93575639312621
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.8540465831756592,
+      "gradient_norm": 1.836378812789917,
+      "val_loss": 1.751694679260254,
+      "training_seconds": 95.61001367820427
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.8386608362197876,
+      "gradient_norm": 1.9135407209396362,
+      "val_loss": 1.7404886484146118,
+      "training_seconds": 105.2963010291569
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.6865198612213135,
+      "gradient_norm": 1.6486995220184326,
+      "val_loss": 1.7265064716339111,
+      "training_seconds": 114.99978643923532
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.4386874437332153,
+      "gradient_norm": 1.8833725452423096,
+      "val_loss": 1.7286137342453003,
+      "training_seconds": 124.71892146824393
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.4880722761154175,
+      "gradient_norm": 1.687791109085083,
+      "val_loss": 1.7144802808761597,
+      "training_seconds": 134.45106281829067
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.6750264167785645,
+      "gradient_norm": 1.7502385377883911,
+      "val_loss": 1.7150684595108032,
+      "training_seconds": 144.1975260192994
+    }
+  ],
+  "parameters": 357632,
+  "ffn_parameters_by_layer": [
+    2144,
+    2144,
+    2144,
+    2144
+  ],
+  "ffn_types": [
+    "relu2",
+    "relu2",
+    "relu2",
+    "relu2"
+  ],
+  "training_seconds": 144.1975260192994,
+  "wall_seconds": 157.85371687507723,
+  "benchmark_ms_per_step": 9.35550217051059,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+    "study_models.py": "4dd46590c73265207ae16ceca0117afeaeb3b748e1d4778e12c26874ac56fc1d",
+    "study_run_gpu.py": "7621eb41a096afd9860423f9a400bec68998f5efef17317a7f8a8651ab1099e0",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "side_history.py": "a5144fa43c9c5791a3014449c26e0a9b8257b2fa64aeaee2c6e0b6f0938414e7"
+  },
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "coding": "fixed_both",
+  "coding_protocol": {
+    "baseline": "demuxed_history_64_rank8_side2048",
+    "config": {
+      "name": "fixed_relu2",
+      "cell": "relu2"
+    },
+    "original_attention": true,
+    "input_coverage": "Unchanged RHAC all-input fixed codes unless explicitly stated.",
+    "output": "Current main, side, and separate previous attention/decoder history remain baseline.",
+    "training": "Same paired data, seed, FP32, AdamW, global norm clipping and 15k cosine schedule; changed optimizer scales are explicit in configuration."
+  },
+  "rhac_reference": {
+    "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+    "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+  },
+  "evaluation": {
+    "original_val": 1.7150684595108032,
+    "expanded_val": 1.70151948928833,
+    "sampled_train": 1.595078468322754
+  },
+  "study_config": {
+    "name": "fixed_relu2",
+    "cell": "relu2"
+  },
+  "parameter_breakdown": {
+    "total": 357632,
+    "rwkv": 269568,
+    "embedding_head": 49152,
+    "geometry": 0,
+    "decoder_readout": 8576,
+    "decoder_input": 0,
+    "other": 30336
+  },
+  "architecture": "Timed KS2 study: fixed_relu2",
+  "tiled_evaluation": {
+    "arm": "fixed_both",
+    "seed": 11,
+    "loss": 1.6826545000076294,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.6828359365463257
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.682236909866333
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.682458758354187
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.6830863952636719
+      }
+    ],
+    "batch4_vs_batch64_max_loss_error": 8.344650268554688e-07
+  },
+  "physical_gpu": 0,
+  "study_job_id": "fixed_relu2",
+  "status": "complete"
+}
