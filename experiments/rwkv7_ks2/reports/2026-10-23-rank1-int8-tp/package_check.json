@@ -9,8 +9,8 @@
     },
     {
       "path": "REPORT.md",
-      "bytes": 8084,
-      "sha256": "197c35bbf68d16d73359352251906d98bfdc039b7d437fb33d12524067a256df"
+      "bytes": 9612,
+      "sha256": "8c0b8bf1e5f967854f6571b2a000570d151df56a9d18c361939dd014e63f6b97"
     },
     {
       "path": "benchmark_sources/rank1_int8_tp.py",
@@ -59,6 +59,16 @@
     },
     {
       "path": "export_reload_check.json",
+      "bytes": 1661,
+      "sha256": "b6d2715bea35f12868ad824b87268920968749812d36488a6a69a19a83e5082c"
+    },
+    {
+      "path": "ks3_checkpoint_checks.json",
+      "bytes": 1752,
+      "sha256": "4495e3aec090f8e85d66d626650014246d2aa289ce886e09c53f9f5bbe072f75"
+    },
+    {
+      "path": "ks3_export_reload_check.json",
       "bytes": 1661,
       "sha256": "b6d2715bea35f12868ad824b87268920968749812d36488a6a69a19a83e5082c"
     },
@@ -123,5 +133,6 @@
       "sha256": "380bab70a2e26f1ef9b6696096740798b579d9d36d1013b888d870f546d5db1e"
     }
   ],
-  "excluded": "Checkpoint weights, optimizer states and validation/training text."
+  "excluded": "Checkpoint weights, optimizer states and validation/training text.",
+  "ks3_update": "Renamed report, linked canonical KS3 sources and added reference/rename checks; historical measurements and source archive unchanged."
 }

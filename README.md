@@ -2,6 +2,29 @@
 
 This repo contains the K‑Splanifolds paper plus the code and data used to generate its comparative experiments.
 
+**KS3** is the selected rank-1 spine FFN: learned input/output projections,
+a bounded Hermite cubic plus two warped Chebyshev terms, a coordinate bypass,
+and ReLU². At width 96 with 368 subspaces it has **73,600 parameters per FFN**.
+
+- [ks3.py](ks3.py) — standalone, readable PyTorch implementation with autograd.
+- [KS3 GPU implementation](experiments/rwkv7_ks2/ks3_gpu.py) — integrated W8A8,
+  fused Horner evaluation and tensor parallelism; FP16 nonlinearities by default,
+  with FP32 RWKV recurrent state.
+- [Measurements and export instructions](experiments/rwkv7_ks2/reports/2026-10-23-rank1-int8-tp/REPORT.md)
+  — historical results originally labeled rank-1 KS2; the KS3 rename does not change the algorithm.
+
+```python
+import torch
+from ks3 import KS3
+
+ffn = KS3(in_features=96, num_subspaces=368)
+y = ffn(torch.randn(2, 64, 96))  # (batch, time, model width)
+```
+
+The Torch reference uses floating-point weights and supports training. The GPU
+export is quantized inference. Normalization, attention and the outer residual
+connection are supplied by the enclosing model.
+
 Key files:
 - `k-splanifolds.pdf` — the paper ([reference link](https://doi.org/10.5281/zenodo.18673034)).
 - `k-splanifolds-2D-to-3D-toy.html` — interactive 2D→3D toy visualization.

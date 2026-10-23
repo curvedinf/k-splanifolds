@@ -1,4 +1,28 @@
-# Rank-1 KS2: integrated INT8, Horner, fusion and tensor parallelism
+# KS3: integrated INT8, Horner, fusion and tensor parallelism
+
+The selected rank-1 KS2 algorithm is now named **KS3**. The architecture,
+checkpoint weights and measurements below are unchanged. The standalone
+[PyTorch reference](../../../../ks3.py) provides the same floating-point FFN
+with autograd. The canonical optimized implementation is
+[ks3_gpu.py](../../ks3_gpu.py), with [head parallelism](../../ks3_attention_tp.py)
+and [export/load support](../../export_ks3.py). Historical filenames and source
+archives below preserve the measured implementation; legacy live imports remain
+compatible. For the full-model builder dependencies, extract the source archive
+below into a fresh directory, then overlay the canonical KS3 files. The standalone
+Torch reference needs only PyTorch.
+
+KS3 rename checks: the Torch reference passes forward and all-parameter gradient
+comparisons with direct basis evaluation, and all 12 FFNs from the three trained
+checkpoints agree within FP32 rounding error (maximum absolute output difference
+0.000184, gradient difference 0.00000239 on the synthetic probes). Quantized FFN
+outputs are bitwise identical to the measured implementation in all three modes;
+TP4 shard tensors also match exactly. The full-model reload check passes on all
+four GPUs in all three modes. These verify the rename/reference; no new loss or
+latency measurement is claimed.
+
+- [Portable Torch tests](../../../../tests/test_ks3.py)
+- [Trained checkpoint check script](../../check_ks3.py) and [results](ks3_checkpoint_checks.json)
+- [Full-model TP4 reload results](ks3_export_reload_check.json)
 
 One integrated inference export of the strongest replicated KS2 model: four layers, a 96D residual stream, and 368 rank-1 spine charts per FFN. The original trained budget remains **73,600 parameters per FFN**. The three precision settings below change KS2 nonlinear evaluation, not the architecture or training. All learned linear maps, embeddings and KS2 coefficients are INT8. **Recurrent state stays FP32 in every setting.**
 
@@ -64,7 +88,7 @@ Floating-point reduction order can change an INT8 rounding decision downstream, 
 - [Combined kernel implementation](code/rank1_int8_tp.py)
 - [Head-sharded attention](code/rank1_int8_attention_tp.py)
 - [Export/load helper](code/export_rank1_int8_tp.py)
-- [Exact current implementation sources](source_bundle.tar.gz)
+- [Archived implementation sources](source_bundle.tar.gz)
 
 The loadable weights remain in the shared workspace at `experiments/rwkv7_ks2/gpu_runs/rank1_int8_tp/export_tp4_seed11/`. Checkpoints and validation text are not published in this report. The source archive extracts into a fresh directory with the original package paths and includes the model builder dependencies. Use the existing ROCm environment; custom collective timings additionally require the tested vLLM MI100 extension.
 

@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "seed": 11,
+      "layer": 0,
+      "forward_error": 0.0001220703125,
+      "gradient_error": 1.9073486328125e-06
+    },
+    {
+      "seed": 11,
+      "layer": 1,
+      "forward_error": 6.103515625e-05,
+      "gradient_error": 1.9073486328125e-06
+    },
+    {
+      "seed": 11,
+      "layer": 2,
+      "forward_error": 0.0001220703125,
+      "gradient_error": 9.5367431640625e-07
+    },
+    {
+      "seed": 11,
+      "layer": 3,
+      "forward_error": 0.0001220703125,
+      "gradient_error": 1.9073486328125e-06
+    },
+    {
+      "seed": 22,
+      "layer": 0,
+      "forward_error": 0.00018310546875,
+      "gradient_error": 2.384185791015625e-06
+    },
+    {
+      "seed": 22,
+      "layer": 1,
+      "forward_error": 6.103515625e-05,
+      "gradient_error": 2.384185791015625e-06
+    },
+    {
+      "seed": 22,
+      "layer": 2,
+      "forward_error": 0.0001220703125,
+      "gradient_error": 9.5367431640625e-07
+    },
+    {
+      "seed": 22,
+      "layer": 3,
+      "forward_error": 3.814697265625e-05,
+      "gradient_error": 9.5367431640625e-07
+    },
+    {
+      "seed": 33,
+      "layer": 0,
+      "forward_error": 9.1552734375e-05,
+      "gradient_error": 1.9073486328125e-06
+    },
+    {
+      "seed": 33,
+      "layer": 1,
+      "forward_error": 6.103515625e-05,
+      "gradient_error": 1.3113021850585938e-06
+    },
+    {
+      "seed": 33,
+      "layer": 2,
+      "forward_error": 0.000118255615234375,
+      "gradient_error": 1.430511474609375e-06
+    },
+    {
+      "seed": 33,
+      "layer": 3,
+      "forward_error": 6.103515625e-05,
+      "gradient_error": 4.76837158203125e-07
+    }
+  ],
+  "quantized_outputs": "exact in all three modes",
+  "tp4_weights": "exact on all four ranks"
+}
