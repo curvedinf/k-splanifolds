@@ -2,9 +2,24 @@
 
 Final · Generated 2026-10-23T17:48:30+00:00
 
-<details>
-<summary>Contents — 60 sections</summary>
+## Combined size × speed cost versus loss
 
+Updated 2026-10-23 19:23 UTC. This combines the earlier study with completed runs from the ongoing Hadamard follow-up; the new training study is still running.
+
+**X = (learned parameters per FFN ÷ original MLP parameters per FFN) × (milliseconds per update ÷ original MLP milliseconds per update). Y = validation loss.** Lower-left is better. Half the FFN parameters at twice the step time has the same combined cost. The unchanged original MLP reference is at X=1.
+
+![Combined size-speed cost versus loss](efficiency/size_speed_loss.png)
+
+Stars mark the observed cost/loss frontier among configurations with at least three seeds. Open points are provisional. The plot uses sustained worker timings, not a mixture of worker and separately controlled timings; small differences can reflect seed and clock variation. Fixed buffers are recorded separately and are not counted as learned parameters.
+
+[Metric definitions, frontier tables and quality-tolerance winners](efficiency/REPORT.md) · [Interactive chart](efficiency/size_speed_loss.html) (download/open in a browser) · [CSV](efficiency/metrics.csv) · [Raw run measurements](efficiency/run_measurements.json) · [Snapshot checks](efficiency/snapshot_check.json).
+
+The default view compares the same original dataset, 15,000 updates, B4 × T64. Other data/horizon cohorts are selectable in the same interactive chart. Altered MLP ablations are excluded; the original control is unchanged.
+
+<details>
+<summary>Contents — 61 sections</summary>
+
+- [Combined size × speed cost versus loss](#combined-size--speed-cost-versus-loss)
 - [Findings at a glance](#findings-at-a-glance)
 - [Protocol and interpretation](#protocol-and-interpretation)
 - [Two-hour extension to combine improvements](#two-hour-extension-to-combine-improvements)

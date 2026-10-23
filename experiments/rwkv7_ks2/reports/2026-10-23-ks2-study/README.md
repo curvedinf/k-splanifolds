@@ -1,8 +1,12 @@
 # KS2 language-model study — 23 October 2026
 
-[Read the full report on GitHub](REPORT.md). It includes all 60 sections, tables and figures. The [standalone HTML version](report.html) is also available.
+[Read the full report on GitHub](REPORT.md). It includes all 61 sections, tables and figures. The [standalone HTML version](report.html) is also available.
 
 The study completed **428 training runs**, **259 fresh reserved evaluations**, and five randomized timing rounds for 23 configurations. Four MI100 GPUs ran independent experiments. The original MLP remained the primary control.
+
+## New combined efficiency plot
+
+The [updated Markdown report](REPORT.md#combined-size--speed-cost-versus-loss) now plots **(FFN size relative to MLP) × (step time relative to MLP)** against loss. It includes completed Hadamard follow-up results, the three-seed frontier, interactive hover data and downloadable metrics. The Hadamard follow-up is still running. The older standalone HTML report does not include this update.
 
 ## Highlights
 
