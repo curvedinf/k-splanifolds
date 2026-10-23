@@ -1,0 +1,15 @@
+{
+  "primary_objective": "Pareto frontier of combined learned-FFN size times training-step duration versus loss",
+  "x": "(mean learned parameters per FFN / original MLP FFN parameters) * (step milliseconds / original MLP step milliseconds)",
+  "y": "matched held-out loss in nats/byte",
+  "direction": "lower-left",
+  "promotion_rule": "Replicated improvement to cost/loss tradeoffs; do not rank by raw loss alone.",
+  "control": "Original unchanged MLP",
+  "parameter_scope": "FFN module learned parameters only; disclose fixed buffers and external normalization/time-mix separately.",
+  "next_candidates": [
+    "Pruned frozen Hadamard width/side sweep",
+    "Replicate chart-warp-only adaptation",
+    "Combine chart-warp-only adaptation with F2048, judged by frontier movement"
+  ],
+  "no_training_after_cutoff": true
+}

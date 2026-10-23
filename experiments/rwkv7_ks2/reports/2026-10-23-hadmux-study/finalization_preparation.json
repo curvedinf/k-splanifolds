@@ -1,0 +1,81 @@
+{
+  "epoch": 1792782690.430684,
+  "finalizer_session": 46335,
+  "finalizer_log": "/tmp/hadmux_finish_final.log",
+  "long_selector_log": "/tmp/hadmux_select_long_final.log",
+  "reserved_plan": "final_holdout_plan.json",
+  "prepared_scripts": [
+    "hadmux_final_checks.py",
+    "hadmux_finish.py",
+    "hadmux_protocol_audit.py",
+    "hadmux_report.py",
+    "hadmux_figures.py",
+    "hadmux_package.py"
+  ],
+  "validated": [
+    "MLP initialization and optimizer exact across three seeds",
+    "Scaled full1024 final-side pruning CPU logits and gradients",
+    "Python syntax checks",
+    "Preliminary capacity figure visually inspected"
+  ],
+  "remaining": [
+    "Complete wave2 scaling cohorts",
+    "Run automatically selected common-horizon wave3 cohorts",
+    "Final reserved scoring and controlled timings after deadline/training completion",
+    "Run checkpoint/source audit then protocol audit",
+    "Regenerate report/figures with findings and all results",
+    "Build source bundle and Markdown report package",
+    "Verify rendering and publish report",
+    "Only then complete active goal"
+  ],
+  "updated_epoch": 1792786486.3885436,
+  "long_selector_session": 71692,
+  "pareto_dispatch_session": 78362,
+  "expected_training_runs": 84,
+  "expected_reserved_scores": 114,
+  "latest_published_commit": "95100474a5113f29b8bc7aabd27c5a8d65779f42",
+  "main_pursuit": "Combined FFN learned-size ratio \u00d7 step-time ratio versus loss Pareto frontier",
+  "new_scripts": [
+    "hadmux_efficiency.py",
+    "hadmux_efficiency_audit.py"
+  ],
+  "notes": [
+    "Wave3 has six arms \u00d7 three seeds \u00d725k, selected before long training after user metric request;18jobs.",
+    "Wave4 frozenR8 F1024/F2048, learned2144 perFFN,6jobs \u00d715k; starts on released GPUs after long queue dispatch.",
+    "Finalcheck includesall12transfer+7scaling+2pareto+2learnedreferences+4pruned models,5timing rounds.",
+    "Finalfrozenpruning checksonall3seeds;derivedmetricpointsreuseparentquality and useprunedcontrolledtimings.",
+    "Re-run efficiency generator+audit atfinal;primarydefault becomes consistentcontrolledtiming view.",
+    "Finalpackage includesHTML and recursivelyvalidatesMDlinks.",
+    "Metric snapshot already pushedto oldreportfolder; finalshouldrefreshthatplotandpublishnewHadreport.",
+    "Wave5 tests rank8warps-only at2272learned/FFN,3seeds15k; GPU0additionallywaitsforwave3 completion toavoid overlap. Final timing29configs\u00d75rounds and4lowcostprunes (12perseedchecks). Protocolaudit generic5waves; packagevalidationlogcopy mustincludewave5.",
+    "Added21prior checkpoints contributingto already-published15kParetofrontier, beforeanyreservedscoring;30priorreferences total,114plannedreserved scores. Exactoldkernelsettingsarepreservedinpriorbenchmarks."
+  ],
+  "final_command_order": [
+    "Wait for final_checks/complete.json (finalizer session62899; four manifests,81training+9priorreserved=90scores).",
+    "study_collect.py; study_audit.py",
+    "hadmux_efficiency.py; hadmux_efficiency_audit.py (newcontrolledtiming/prunebranchrunswhenfinalspeedexists)",
+    "hadmux_protocol_audit.py (fourwaves); hadmux_figures.py; hadmux_report.py",
+    "Inspect finalmetricsplots and complete findings; update report narrative around combined-cost frontier and reservedvalidation.",
+    "study_source_bundle.py; setstudy_state complete onlyafterchecks; regeneratereport",
+    "hadmux_package.py to reports/2026-10-23-hadmux-study (all local Markdownlinks,includingnestedHTML).",
+    "Refresh already-published oldreport efficiency folder and section tofinalsnapshot, withcorrecttimingdescription.",
+    "Verify Markdown/table/links/figure rendering; stageonlyreportpackages; publishviaGitHubGitdataAPIwithparentlease; fetchverifytreeshapeandsynclocalHEAD preservingdirtyworkspace.",
+    "Completion audit then update_goal complete; do not markgoalcomplete beforepublication."
+  ],
+  "remaining_cautions": [
+    "Final metric default nowcontrolledtiming view, not worker: updateoldreport section whenrefreshing.",
+    "Allthree-seedprunepointsarederivedfromsameparentweights, notnewindependenttrainingruns.",
+    "Freshreserveddataremainsealeduntildeadlineandall4wavescomplete.",
+    "Do not mutate active hadmux_train_v2/v3,models_v2,geometrykernels,orchecks_v2 dependencies.",
+    "Longplannerfirstglobmatchedreluvarianttoo; fixedbeforetraining.30kforecastfailedafteraddingfrontierarms; common25kchosenbeforeanylongtraining.",
+    "The finalreport needs explicitactualfindings andlimitations; currentgeneratormostlytables/protocol.",
+    "Efficiency generator nowadds freshreservedqualityviews afterfinalscoresavailable; defaultreserved+controlled, exploratory/workerstillavailable. Audit recomputesqualityfromreservedfile whenappropriate.",
+    "ffn_metric_scope.json verifiesexternalFFNnorm/mixaverage7296Had2k vs288MLP; scope disclosedwithoutchangingapprovedmetric.",
+    "Genericstudy_audit emits stale source_snapshot_recovery message; afterauditreplacewithno-recovery-required note fornewstudy (therewasnorecovery).",
+    "Metricgenerator nowexports copiesof freshscores,controlledtimings,andprunechecksinto efficiencyfolder forself-contained refreshofoldpublishedreport.",
+    "Finalchecker validatesanyGPU thatdidnotreceivewave4beforecutoff,afteralltrainingandbeforereportingall4GPUchecks.",
+    "Currentrawauditinterim hasCHECK_INCOMPLETE from51runs; rerunfinalaudit,do notreuseinterimstatus."
+  ],
+  "warps_dispatch_session": 42827,
+  "expected_timing_configurations": 34
+}

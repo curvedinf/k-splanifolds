@@ -1,0 +1,524 @@
+{
+  "status": "PASS",
+  "protocol": "One MI100, FP32,256positions;five randomized captured rounds. Input projection2720\u2192F;outputF\u21922144. ExactsameinitialHadamardmatrix in fixed and learned cases. Forward and input gradients included in both; learned case also computes matrix gradients. Fixed output also computes per-output gain gradients. No attention, optimizer or full-model timing; these are not additional quality/control experiments.",
+  "rows": [
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 0,
+      "ms": 0.24042286740073676
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 0,
+      "ms": 0.4516050245496962
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 0,
+      "ms": 0.18794636691573763
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 0,
+      "ms": 0.5038110210712139
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 0,
+      "ms": 3.4133074297223773
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 0,
+      "ms": 0.16049750851913236
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 0,
+      "ms": 0.1766930708648465
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 0,
+      "ms": 2.7195540251555266
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 0,
+      "ms": 0.813083173226619
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 0,
+      "ms": 2.0308950587681363
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 0,
+      "ms": 2.5357995754334985
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 0,
+      "ms": 0.6485510880249556
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 1,
+      "ms": 0.8200737729985663
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 1,
+      "ms": 0.650855080026095
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 1,
+      "ms": 0.1911657946275255
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 1,
+      "ms": 2.052157015916778
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 1,
+      "ms": 3.4628685691139918
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 1,
+      "ms": 2.767167854309082
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 1,
+      "ms": 0.24775824160189241
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 1,
+      "ms": 0.4581916544860576
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 1,
+      "ms": 0.1794191200502457
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 1,
+      "ms": 0.5139405304530882
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 1,
+      "ms": 2.5702889734384966
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 1,
+      "ms": 0.16337464091933776
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 2,
+      "ms": 2.801499720982143
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 2,
+      "ms": 0.24909754996064046
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 2,
+      "ms": 0.46036201409534017
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 2,
+      "ms": 0.5185650654328176
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 2,
+      "ms": 0.19358578739744245
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 2,
+      "ms": 3.4972734114703012
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 2,
+      "ms": 2.1062225341796874
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 2,
+      "ms": 0.6655998715487393
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 2,
+      "ms": 0.18159059623323115
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 2,
+      "ms": 2.595114735194615
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 2,
+      "ms": 0.8471927532251331
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 2,
+      "ms": 0.16426302853752586
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 3,
+      "ms": 0.849038366837935
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 3,
+      "ms": 0.2527446746826172
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 3,
+      "ms": 0.18180933470055177
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 3,
+      "ms": 0.6729018168233747
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 3,
+      "ms": 2.615320215998469
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 3,
+      "ms": 0.1646111352103097
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 3,
+      "ms": 0.46643017578125
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 3,
+      "ms": 3.5407652537027996
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 3,
+      "ms": 0.19515059394557982
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 3,
+      "ms": 2.877859480484672
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 3,
+      "ms": 0.5291195143514604
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 3,
+      "ms": 2.1416338806152346
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 4,
+      "ms": 3.5555411682128906
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 4,
+      "ms": 0.4686769922574361
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 4,
+      "ms": 0.1829033797349387
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 4,
+      "ms": 0.2553558486828701
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "fixed",
+      "repeat": 4,
+      "ms": 2.1500106664804313
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 4,
+      "ms": 2.646926999092102
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 4,
+      "ms": 0.1671890822323886
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 4,
+      "ms": 2.898762080980384
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "fixed",
+      "repeat": 4,
+      "ms": 0.5325109168664733
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "learned",
+      "repeat": 4,
+      "ms": 0.8622116382305439
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 4,
+      "ms": 0.19610256575227195
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "learned",
+      "repeat": 4,
+      "ms": 0.6833870597507643
+    }
+  ],
+  "summary": [
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "fixed",
+      "median_ms": 0.16426302853752586,
+      "min_ms": 0.16049750851913236,
+      "max_ms": 0.1671890822323886
+    },
+    {
+      "features": 512,
+      "direction": "input",
+      "kind": "learned",
+      "median_ms": 0.24909754996064046,
+      "min_ms": 0.24042286740073676,
+      "max_ms": 0.2553558486828701
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "fixed",
+      "median_ms": 0.18159059623323115,
+      "min_ms": 0.1766930708648465,
+      "max_ms": 0.1829033797349387
+    },
+    {
+      "features": 512,
+      "direction": "output",
+      "kind": "learned",
+      "median_ms": 0.19358578739744245,
+      "min_ms": 0.18794636691573763,
+      "max_ms": 0.19610256575227195
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "fixed",
+      "median_ms": 0.5185650654328176,
+      "min_ms": 0.5038110210712139,
+      "max_ms": 0.5325109168664733
+    },
+    {
+      "features": 2048,
+      "direction": "input",
+      "kind": "learned",
+      "median_ms": 0.8471927532251331,
+      "min_ms": 0.813083173226619,
+      "max_ms": 0.8622116382305439
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "fixed",
+      "median_ms": 0.46036201409534017,
+      "min_ms": 0.4516050245496962,
+      "max_ms": 0.4686769922574361
+    },
+    {
+      "features": 2048,
+      "direction": "output",
+      "kind": "learned",
+      "median_ms": 0.6655998715487393,
+      "min_ms": 0.6485510880249556,
+      "max_ms": 0.6833870597507643
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "fixed",
+      "median_ms": 2.595114735194615,
+      "min_ms": 2.5357995754334985,
+      "max_ms": 2.646926999092102
+    },
+    {
+      "features": 6560,
+      "direction": "input",
+      "kind": "learned",
+      "median_ms": 3.4972734114703012,
+      "min_ms": 3.4133074297223773,
+      "max_ms": 3.5555411682128906
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "fixed",
+      "median_ms": 2.1062225341796874,
+      "min_ms": 2.0308950587681363,
+      "max_ms": 2.1500106664804313
+    },
+    {
+      "features": 6560,
+      "direction": "output",
+      "kind": "learned",
+      "median_ms": 2.801499720982143,
+      "min_ms": 2.7195540251555266,
+      "max_ms": 2.898762080980384
+    }
+  ]
+}

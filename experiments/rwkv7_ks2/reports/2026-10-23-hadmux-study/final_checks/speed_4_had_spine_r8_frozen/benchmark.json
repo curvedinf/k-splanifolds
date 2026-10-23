@@ -1,0 +1,17 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/final_checks/speed_4_had_spine_r8_frozen",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 11,
+    "control_update_scale": false,
+    "steps": 0,
+    "batch_size": 4,
+    "sequence_length": 64,
+    "gpu": 0
+  },
+  "benchmark_ms_per_step": 9.446704499423504
+}

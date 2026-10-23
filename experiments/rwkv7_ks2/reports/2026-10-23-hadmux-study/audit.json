@@ -1,0 +1,1276 @@
+{
+  "epoch": 1792786568.6879122,
+  "status": "PASS",
+  "completed": 84,
+  "runs": [
+    {
+      "run": "wave1_transfer/had_full_r8_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "a8f015479d5cb92f09fcddc3d951bc5221a1da83eb5b9bd34713699d62ac9118",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_full_r8_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "0776816f50acc2bac39a3c334610eba4786af134380839dbab0341ba6925ecab",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_full_r8_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "72207597582738e408a25a12a68107bb05ddb1ac747a86b695553f7db39e5cc2",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_full_r8_relu2_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "2b40f940f9e8c43e5edb3c8f721535f77d2565ba01cc634f999256297b3a09ee",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_full_r8_relu2_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "f91e67efb74206e754bbba447a7bf4159912c9d4e08ef3623303e6d07fc2dc1a",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_full_r8_relu2_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "b637af09a67d85850b37ef520f99074e638cbe6d9b761c2f9f72551693ef80cd",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "90bb12173a4e99a185a4bcd2d31be83f6d324fa368daf0ded49012de68645faa",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "2cb1309eea402b2d65f233e59f3faa9172204919680cfa28100cd08b4af4af39",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "5e900254dda3e2856f182d7cd9651fe281e4d41d5fbb237821079770f0d71d19",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_affine_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 151,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "46b941ba43945ac59002e3eb3f99fc6e6c9552625951f0b90bce28616ae75961",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_affine_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 151,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "61fd043ae6564ccb07d6af61ceb53060ae4db28417c78ae71bb8c4bbc74b8e7c",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_affine_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 151,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "bdecd88987241b875f0de0f69ae4105ea3f91004a755c0bdf762415a5bd28e0e",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_frozen_bias_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "ec7f82ed2002286d21d9250622c878d78cc240c1d33600c29825f8bb689dc625",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_frozen_bias_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "075462e9af114f692fb46e3dc96d130d09f72163ce3d3077843093e7fb4ed570",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_frozen_bias_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "22ad74eeec2323bf8cdbbca506c2b0c0a6cb027d261d4fbff86afe55fff281c6",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_powers_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "4b55817385fa8c9a1cb2e0993c2ceefcf00ec0b91b1bb01f7add8d441773388c",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_powers_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "d65f1b7a55ce5e8f217b38596b4dde9e7ca5461fd4f76411f2a987ca7db5ee85",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_powers_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "2c8c6d1d1e3f8e608b76c9d6123c8070e1e5033342bb3e35d8583c9f374856c2",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_relu2_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "0b60392dabbab7c26ef8cb88a18a22333f120288ee63ee22d7c0212b0d3cc8c0",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_relu2_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "a01b8904e75688415fd11e66762a06513638ed431cef7b2fad68264589c17a4a",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_relu2_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "d92b3e3ba34673c412648818dd56142cee943fe34cac598705d142a8dfcd798c",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_slow_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "22ed42ff67a3b58721b6b5233b330f4eaca15da063cf570f837e7b82c4d9c504",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_slow_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "8594955730080d796d17ac2a893ed103be0fe194a7699d8db381c43789eaad6c",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r1_slow_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "1ad0aebc2da8cfebc784f1639f574ddf056e6d48072f3a6867919d77904fc799",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r4_relu2_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "2fa490006d07617ccbfcbf1c2358240f740e2655690b6af15703fed2e1f43c2a",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r4_relu2_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "4d18159464dfe6ff8cd0d22a8732befd7d8f1447308c8a5727074c991a8f4cee",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r4_relu2_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "51b6b866ca5871d484c64de9213081146fe1dc563936b8b7092a8f2ea5c4f2ae",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "eee5e7ebf9bf994d2a344509231e5bcdadd46a7b467b0e87aea3715f493d8985",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "5974208a70a122ca2de40550458f2ae0fadcab660ab2ebe48996fc1dad8f3105",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "2840b3ba8d2725e9c946ff6301ea9343714dbd9d62cad0744f4a10b37dcba632",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_frozen_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "b10987cd459d41a53e3610d080c056491ba5416c77ceab25d288c86348288f8c",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_frozen_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "edc55c85bef7e1629f577aece194c8b418402b73d989dde043287df9d6e9c600",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_frozen_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "0c04cc46d2cdbc1759f2965f7fbbb0090408de8efd854b4601acec551955ecf7",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_relu2_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "592a9b9c37de1307527831c5a2f6a132de5d76c6a706e0d73b964bfa4db67dbc",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_relu2_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "5b850c31263e68bedcfb3f35173faa9bb4648518973bdb3158efcc880ee70d39",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave1_transfer/had_spine_r8_relu2_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 69,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "775328dcc37a6eb0384aec4ba2060b24637c001ffda58028379a7cccbb8ac82b",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/original_mlp_repeat_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "35522cf3190e43ccc4508d7108f2d49c7c2cafb1ef068e4c2c9018361bd4ec00",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/original_mlp_repeat_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "27559c79682ac5601e96ed450e4fd54b083e58085d563cbf0ba8af4467f4d8e6",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/original_mlp_repeat_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "ce6034bc4df03015dcf82d21aa3ebf02a14cbaa185d8f50ec0da435b93f57b8d",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_full_f1024_s2048_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "c938e40b61de410967c0c614a33ca8b6a5cbfef7857b87979bbf3998e22aa0b6",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_full_f1024_s2048_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "cf2fc23e1faa28c73d509b06dcb293f992941382bfce17cabfc82be28fb4be10",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_full_f1024_s2048_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "45ce20888cc594ed071b272607d4300b1e9c26ae740210a23ee92b1f1805ebaf",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_full_f512_s8192_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "1316d6717a5b46e9f81b3cb9b3f3f4b8dc0ead2d34a67ed3f4d92440bce8a338",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_full_f512_s8192_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "00ad70ac87f7c3fa4f381336eb5cf0359b0d89c09e5bdbe15540aeb7a9dc3666",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_full_f512_s8192_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "7880ad9372d8beb7b57b6ba34f039ea53296ea92967599bad923e016ecfbf76d",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r1_f2048_s2048_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "2f49e6c23621b602fe67cad5d1ab60820d2c7e8806c08b96b27ba3e0ce824af7",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r1_f2048_s2048_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "067598bb0a6db7cfb9c0bb805b99ce783ae168e1776ee48c1076f01210d4922d",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r1_f2048_s2048_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "b743ae8e819f6b078e87090774d73e8c8e16fad99cff99c565ab3452b3829003",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r1_matched_s2048_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "3e42f4728985e4ba75c751b5aca5a01a14d078694c48e3f72cd901d608ab493a",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r1_matched_s2048_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "97480762d7b33be34eceb1b136db8454acf2153ebaa2421601462719cd0052ed",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r1_matched_s2048_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "eb69a2b8410936056f217d4d184f3dd3297cf735a8d00b8c838bb63f8db23349",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r8spine_f2048_s2048_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "1639f3c029b55986f5c539a351b038eecb8e9657a88e959e652319754d151111",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r8spine_f2048_s2048_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "34464c9e99327e5e3bf69a30983bf98ecebeedf0c5af6119348a90805293174c",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r8spine_f2048_s2048_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "b7e103808818ff8e4a2ba056084351e335cac7d159ccd455c7b9e585c4515e9e",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r8spine_f2048_s8192_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "9d427c67a095bbec4a29790f993745a402a9361914e5b625b5f7502413a03f68",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r8spine_f2048_s8192_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "7516685e02a8d0eb375bf046c7b2f2fa820fe44e6c9c43765b6a6852c1819309",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave2_scaling/scale_r8spine_f2048_s8192_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "09e2a7c8131d518ac539f9f9cea3fa8b4e27641fd8fea38ac2467a3946d123e5",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave3_long/long_had_full_r8_11",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "c1b6aa8faf1e8a537c95dcef13aa74bcd81dfecad86bfc61584c4d0aeeaddcd5",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "592ca637a513897e8f8ee73342cb7e6cfbe3b2179c862b42a52ed2ecbf7b8bba",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "99371eb671db22da46c62d87e913553b954d03737a4e6714e68820c50b2fa94b",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "f30ccede7f7f518be1b5758d8094753cc8a230cab97b2969f719d87161521070",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_had_full_r8_22",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "02f32fc0200f29b860153d124280753935b013f01a691894b22ad9531d729cea",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "7d491f3a70f945a79123feb84d3a593bddf630e09248acd897145cd21fec8cde",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "e5fd086150c98b421f923d8ba01f310f1219762bae306a9b81b0fcd4d18bc06c",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "e4817a895abaa38c1060c4329429aa52df2fe39a7a8621c879c61ecaec6aeeb2",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_had_full_r8_33",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "36341847b580fba06fa5746c2ecb312c099931b65141f1c8ea52fdb43849dddb",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "a0a739755ee3ade3583a092433f5c56e1f098d11437a9452d9ba4a39bc5e8d08",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "537da1c3176edfbe5b5deedc7ad12fcb2a1b2e008528c3350211ae65bbc56d4f",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "be2166ad63887c32d9b7bb92f3f6cde28fc61f4c93ec1161ad614fb64f354b09",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_had_spine_r4_relu2_11",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "a64c20b4f8427d194e12f5d0a5aa9fb9d26fe5db3d00dfbd4491ae90772a1dac",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "76ffca6d226738354e235265aec25fe9170b3c86f4cc7bbd73b38d5a5a75be17",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "f261467e68e92a8e4dd2cbe94576942b52a7ef5378f28cc6fdf438f919002aa4",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "c6c951da8b419d68ff2925c8cafddbfa602e6b445c8212dfe61d1b49d8996352",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_had_spine_r4_relu2_22",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "4ba07fad1345840c581de4b36bf86bd3c40c05eb2a8d2c8dea0e287367d12124",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "60c792dafce65cea864f98c3595cdfd69a2132103b359bef01271248c8f1e87d",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "c541413c71065172a016bd922432102b7180acde63445878936fe91119ea6925",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "876054af871692d559ae3145de783549946aabb24c5d6b5fb3cd854c6bdbcba0",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_had_spine_r4_relu2_33",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "13130977feb8495f3a52c7b04432b4afa185f21fad8b83a9870ebebee705c749",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "95a0af9f4f920d7256acee6fa88530072286e606b2ae2cd92d8bce022310ec42",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "4790ed3682515c85486d266bdc0455eb52827f5794f30a52e556eada9a8bb84b",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "b4a83e42045d89a24b02cfcb5a4625885cc636a47415f3451da63e3828093f2a",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_had_spine_r8_frozen_11",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "72aa6387192baed4254ab97a95935bd9b1f0dfe541c95af7033ca56a570f0d85",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "bc20d9de9da48b9a417f3366d275316b0abc20a23b093b10fd73b8fb1bd8a070",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "d6e84b91bbea11352cb516c684f6390e8dc1d678fd76efebf2afb5ed392c1190",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "3a7f002bac4449ab6dacbc47c3eaff3a3642d1b78195758d94a31a4743d07cac",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_had_spine_r8_frozen_22",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "b3259f999531470eecf1c7ca760e5720e384fd08ff0e3ef05ef3e1da61caba61",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "d01bcc80ae15ebe2aa7f80dc20b29137168cf251c4c9437a1cfe36b370e8ca07",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "d67627ca1191a3073589a556f1604dc5f4e3ce4997f09407eb3f7e913e9af947",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "0da7758a3398ee7dad5677c5e5ded858dd6938ea57d6d6d5f9fce409d799dfd3",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_had_spine_r8_frozen_33",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "3d8b37115b81648238d2669a173cb7180607ab605fd699338216a14e021e5cb4",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "1249228c84803d94f652b29ad30c7f1a9bcdde4a91c8f7c0277ef810e1a9dcf9",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "81533c17e98c97cf874c4296d687ac0d52465cc60b629b69b967b811088dd127",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "9d7fb4ead02e39ccec8cc52317b933d3a9df2372dc39a1f6ab430ace43d66895",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_original_mlp_repeat_11",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "59162ee4831dc32036c6a85bd74f53207d33f6f7c81cfbedc12d718b6dbb8e4e",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "d4d5b2bc218b6aeec8010d81beaebfdd18df8dc1c7af79c95af6408794352ebf",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "8b85c248d9ceaa1d51761abb46dcc556fdee8a76e021e66abb30e7b78a368ece",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "545ad1d24a77e9c037321be2d088a0bca26e8d68fc3453b0ae7439f34d3086a1",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_original_mlp_repeat_22",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "7163ce27eafc936cfdd100a917ad0c340b8959d6973f636fd8e514be3f7c417e",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "ae16f4738a7de6758511214dc74c9ce21cad48039e92a0a5a1b3785bb3401891",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "22e8d67a0f3c7033cc08d00a5f93cef3c5d485ebf95ed47563407e49add70577",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "e5f684489e87fe672d4b016be5f85b50b4f27ae8d4f3cf6e6a476dd00b633ae9",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_original_mlp_repeat_33",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 135,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "5aedcf8b8e0bcb2922a3a4c345635feccdeb5b5b6d24c1d6f5733a1b18925e4a",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "8c76590c5556cf020ae356abfd36271128ef827dfcc6d8de2b198fefe8d4f140",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "c6a55b736a5f52c12cab959508210b5bfabd8f035816dd2dff806c6199631a0f",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "ab8d6540bceca3537365639714c036fbd8758f9dff7f25f7bfa0eb69c3ddf5d0",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_scale_full_f1024_s2048_11",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "4cb7e3e694db260ea59b4b8c4570b0cbba54a80801d5e676e7d948b178a40edd",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "44372a3892a2a22cc5fb5e653ede2f50bd76b910b54413d8299d521fe6741a02",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "533545366e00642ffa6804f62bf237b8b4aaef11f25eb3d8f5f1ac2c208f340e",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "a335f8671d9d284b5901c3d42d9af4c7a234bba0e3bb61e416514c8c1486a75d",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_scale_full_f1024_s2048_22",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "ed0d35c29f9d407cf46a0bf58bc919d3add71ef4fb2a6dc6c337129f4a0fa752",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "ac4febff748e485cb20790d015717cc1177a9439b2987a6dac7747b5366318c8",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "baa97b6405019fa313444bfdf5fd3390b6266253acbcf03a9c287e41afeea177",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "5b25dfd403b1266e8ee528754a729cef87c3fdbbd198765f8fcefd22ab73ac76",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_scale_full_f1024_s2048_33",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 167,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "93d5fe4c3e98f60bbadd936e4cc93c2bfe0a928fdb82f21b7462d3a601106290",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "e13343a73f5622db07213d3818c532f379ee9e9833357dd1d4bb4994dcc74a79",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "f660fb1e65a9af051bbf170965fe86be62f4eb42148820a9a9500b1aef1d2438",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "3be817a265bfd5b780700bf628377ab3b04d8e3aa877ac31f6ca3af6bf21b6bf",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_scale_r1_matched_s2048_11",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "3f3befaf2152f2b769b348bec9823e56f528de36ad5cc3ab2b79f48bd48c11c8",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "9ae06fa143f0fb591d61bd0ad302cb1576911d7bc804914b3defc59b065a2424",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "d09f610d13630bbc51daf5b7015adbbdee580c25dd05354580e8d88c01219915",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "ff9d270677a840ca7ef63b0b0d914115a01cd9883435d7fb097e8040cb13ba64",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_scale_r1_matched_s2048_22",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "36a2dbc0e953aedfc297545670fd9706a1b849de2e062b8a35c9082a2d24d720",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "a357b67ffd7e68bc0c11d6cc3cc14a2442109fc04a0745d8c6ba8ae6479c099b",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "aa4eddb10d02d7cec6ded802620df2b667ec60904e099e52ae2c4b41651e0249",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "29f14df6e568893dc04754f9352183720d288801384ce18dd4f803202ce562ce",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave3_long/long_scale_r1_matched_s2048_33",
+      "status": "PASS",
+      "steps": 25000,
+      "verified_source_files": 72,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 143,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "539df4d998adfa74e6c976581eec97fdaead359d866726d74ccaacf0a04f5adf",
+      "intermediate_checkpoints": [
+        {
+          "file": "checkpoint_10000.pt",
+          "step": 10000,
+          "sha256": "ed4f2df73f73d44598206cc92e19c6327ceb2861b09bc182bd092658df74b58c",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_15000.pt",
+          "step": 15000,
+          "sha256": "7d8d16f945b49240cdb013735ee4b7bd9a6c841f300fd863e406ab6a452100b6",
+          "status": "PASS"
+        },
+        {
+          "file": "checkpoint_20000.pt",
+          "step": 20000,
+          "sha256": "b45128261f6510509e243a7a0c71941f11aa394f3b8f21209c58950e0f7df0f2",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "run": "wave4_pareto/pareto_frozen_r8_f1024_s2048_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "ec48ec1c70a9d45605665e50501719e4ba9a36f7b24cacac846c8701a4187d74",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave4_pareto/pareto_frozen_r8_f1024_s2048_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "42495b062315ec5df1ead69d840a8be39f19781f10d987aea77b8a6d025c5940",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave4_pareto/pareto_frozen_r8_f1024_s2048_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "b143e89453ec44ba42ced142fd5eb8502d0cf34bfab4dc829badaf37ab89fa6b",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave4_pareto/pareto_frozen_r8_f2048_s2048_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "018d8d450f8abf7a667aff1f3aaaa162d666eacb6e98c5d5092e475002064958",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave4_pareto/pareto_frozen_r8_f2048_s2048_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "c99c393a700204480122faf6a223b72fe82af5cc9b099bdd4bfaa89da552a99e",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave4_pareto/pareto_frozen_r8_f2048_s2048_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 131,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "00f0110aab2d2f1aaae069cb8b66537c31936e3e002c92aabf74d606e6e09818",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave5_warps/pareto_r8_warps_only_f512_s2048_11",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 139,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "2f9c5f72a4db308ac605cc148e685250646ce084f4bb2915dd6ac1d35ba126d4",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave5_warps/pareto_r8_warps_only_f512_s2048_22",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 139,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "6dbdb234f799dfe130ede27491d0639cd2227b1f80dbe9e6f0baf174fd435e38",
+      "intermediate_checkpoints": []
+    },
+    {
+      "run": "wave5_warps/pareto_r8_warps_only_f512_s2048_33",
+      "status": "PASS",
+      "steps": 15000,
+      "verified_source_files": 71,
+      "verified_evaluation_source_files": 1,
+      "optimizer_parameter_states": 139,
+      "finite_model_and_optimizer": true,
+      "checkpoint_sha256": "c65a358c933902c4f5086c70a1b9ecab5c278f868bafb1cc9a44652456689241",
+      "intermediate_checkpoints": []
+    }
+  ],
+  "failures": [],
+  "incomplete_jobs": [],
+  "source_snapshot_recovery": "All executed training and evaluator snapshots verified directly against their recorded hashes; no source snapshot recovery was needed."
+}

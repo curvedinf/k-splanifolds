@@ -1,0 +1,7 @@
+{"status": "PASS", "config": "scale_full_f1024_s2048", "parameters": {"total": 777472, "rwkv": 269568, "embedding_head": 49152, "geometry": 419840, "decoder_readout": 8576, "decoder_input": 0, "other": 30336}}
+{"status": "PASS", "config": "scale_r1_f2048_s2048", "parameters": {"total": 423168, "rwkv": 269568, "embedding_head": 49152, "geometry": 65536, "decoder_readout": 8576, "decoder_input": 0, "other": 30336}}
+{"status": "PASS", "config": "scale_r1_matched_s2048", "parameters": {"total": 567552, "rwkv": 269568, "embedding_head": 49152, "geometry": 209920, "decoder_readout": 8576, "decoder_input": 0, "other": 30336}}
+{"status": "PASS", "config": "scale_r8spine_f2048_s2048", "parameters": {"total": 408832, "rwkv": 269568, "embedding_head": 49152, "geometry": 51200, "decoder_readout": 8576, "decoder_input": 0, "other": 30336}}
+{"status": "PASS", "config": "scale_full_f512_s8192", "parameters": {"total": 665856, "rwkv": 269568, "embedding_head": 49152, "geometry": 209920, "decoder_readout": 33152, "decoder_input": 0, "other": 104064}}
+{"status": "PASS", "config": "scale_r8spine_f2048_s8192", "parameters": {"total": 507136, "rwkv": 269568, "embedding_head": 49152, "geometry": 51200, "decoder_readout": 33152, "decoder_input": 0, "other": 104064}}
+{"status": "PASS", "config": "original_mlp_repeat", "parameters": {"total": 615936, "rwkv": 269568, "embedding_head": 49152, "geometry": 0, "decoder_readout": 0, "decoder_input": 0, "other": 297216}}

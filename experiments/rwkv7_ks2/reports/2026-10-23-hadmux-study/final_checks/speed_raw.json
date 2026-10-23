@@ -1,0 +1,2897 @@
+[
+  {
+    "model": "prior_spine_rank1_fused_repeat",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 8.171175619354472,
+    "config": {
+      "name": "prior_spine_rank1_fused_repeat",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 14.218776019988582,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048_pruned",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 10.45947318081744,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "had_spine_r1_frozen_bias",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 10.040921829640865,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_frozen_bias",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048_pruned",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 13.969019890064374,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048_pruned",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s8192",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 27.9658235097304,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s8192",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_full_f512_s8192",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 27.52467854996212,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f512_s8192"
+    }
+  },
+  {
+    "model": "scale_r1_f2048_s2048",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 13.339601539773867,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_f2048_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 9.748176370048895,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "prior_combo_rank1_powers",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 8.130309310508892,
+    "config": {
+      "name": "prior_combo_rank1_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "geometry_basis": "powers",
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048_pruned",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 12.056950399419293,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "had_spine_r1_relu2",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 10.052468409994617,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s2048",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 12.693320800317451,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s2048",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_spine_r4_relu2",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 9.869792090030387,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 4,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r4_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_full_r8_relu2",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 11.621793260565028,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8_relu2"
+    }
+  },
+  {
+    "model": "prior_spine_rank1_frozen",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 7.869412780273706,
+    "config": {
+      "name": "prior_spine_rank1_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r1_powers",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 10.016809410881251,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_powers",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "prior_ks2_c16",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 8.220108320238069,
+    "config": {
+      "name": "prior_ks2_c16",
+      "family": "dense_ks2",
+      "charts": 16,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "had_spine_r1",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 9.942567800171673,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_spine_r1_slow",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 10.02630254952237,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_slow",
+      "geometry_terms": "spine",
+      "geometry_lr": 0.1
+    }
+  },
+  {
+    "model": "scale_r1_matched_s2048",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 28.3016920206137,
+    "config": {
+      "family": "hadmux",
+      "features": 6560,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_matched_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 10.510504459962249,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r8",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 9.770183640066534,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen_pruned",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 9.468633070355281,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048_pruned",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 9.582355190068483,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048_pruned",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "prior_spine_rank4_frozen",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 7.833527099573985,
+    "config": {
+      "name": "prior_spine_rank4_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "prior_ks2_c8",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 7.929165770765394,
+    "config": {
+      "name": "prior_ks2_c8",
+      "family": "dense_ks2",
+      "charts": 8,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "prior_spine_frozen_bias",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 8.01910096895881,
+    "config": {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "geometry_terms": "spine",
+      "fused_partial": true,
+      "name": "prior_spine_frozen_bias",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias",
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "had_spine_r1_affine",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 10.268305060453713,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_affine",
+      "geometry_terms": "spine",
+      "mux_affine": true
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 12.22887200070545,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r8_relu2",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 9.790091390023008,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 9.66412840061821,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps"
+    }
+  },
+  {
+    "model": "original_mlp_repeat",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 7.356535319704562,
+    "config": {
+      "name": "original_mlp_repeat",
+      "family": "mlp"
+    }
+  },
+  {
+    "model": "had_full_r8",
+    "repeat": 0,
+    "gpu": 0,
+    "ms": 11.428528659744188,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8"
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s2048",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 12.579466720344499,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s2048",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.69599045929499,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps"
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048_pruned",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 13.692176229087636,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048_pruned",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "had_spine_r1_powers",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.938897090032697,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_powers",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "had_spine_r1_slow",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.95965171023272,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_slow",
+      "geometry_terms": "spine",
+      "geometry_lr": 0.1
+    }
+  },
+  {
+    "model": "scale_full_f512_s8192",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 26.551407679216936,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f512_s8192"
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 13.915865200106055,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 10.44711888069287,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "prior_spine_rank1_fused_repeat",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 7.997171629685909,
+    "config": {
+      "name": "prior_spine_rank1_fused_repeat",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "had_spine_r1_frozen_bias",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.845214650267735,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_frozen_bias",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.575537249911577,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_full_r8_relu2",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 11.499189600581303,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8_relu2"
+    }
+  },
+  {
+    "model": "had_spine_r8",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.722015300067142,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048_pruned",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 11.847560130991042,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "prior_ks2_c8",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 7.8800830990076065,
+    "config": {
+      "name": "prior_ks2_c8",
+      "family": "dense_ks2",
+      "charts": 8,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 12.186237730784342,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_full_r8",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 11.395199249964207,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8"
+    }
+  },
+  {
+    "model": "prior_spine_rank4_frozen",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 7.774418650660664,
+    "config": {
+      "name": "prior_spine_rank4_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r8_relu2",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.785898610716686,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "original_mlp_repeat",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 7.354699379066005,
+    "config": {
+      "name": "original_mlp_repeat",
+      "family": "mlp"
+    }
+  },
+  {
+    "model": "had_spine_r1_affine",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 10.24812150048092,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_affine",
+      "geometry_terms": "spine",
+      "mux_affine": true
+    }
+  },
+  {
+    "model": "had_spine_r1_relu2",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.896133920410648,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "prior_combo_rank1_powers",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 7.968834009952843,
+    "config": {
+      "name": "prior_combo_rank1_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "geometry_basis": "powers",
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "prior_spine_rank1_frozen",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 7.793941819109023,
+    "config": {
+      "name": "prior_spine_rank1_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen_pruned",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.413595700170845,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "scale_r1_f2048_s2048",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 12.974651359254494,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_f2048_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "prior_spine_frozen_bias",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 7.94229055987671,
+    "config": {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "geometry_terms": "spine",
+      "fused_partial": true,
+      "name": "prior_spine_frozen_bias",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias",
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "had_spine_r4_relu2",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.77571533061564,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 4,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r4_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "prior_ks2_c16",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 8.067194588948041,
+    "config": {
+      "name": "prior_ks2_c16",
+      "family": "dense_ks2",
+      "charts": 16,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048_pruned",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 10.133797589223832,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048_pruned",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.463131231022999,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048_pruned",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s8192",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 26.479977240087464,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s8192",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_r1_matched_s2048",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 27.409027559915558,
+    "config": {
+      "family": "hadmux",
+      "features": 6560,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_matched_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "had_spine_r1",
+    "repeat": 1,
+    "gpu": 0,
+    "ms": 9.796688449569046,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_spine_r1_powers",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.852350719738752,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_powers",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "scale_full_f512_s8192",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 26.091462769545615,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f512_s8192"
+    }
+  },
+  {
+    "model": "prior_spine_rank1_fused_repeat",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 7.946136080427095,
+    "config": {
+      "name": "prior_spine_rank1_fused_repeat",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "had_spine_r1_relu2",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.844426630297676,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "original_mlp_repeat",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 7.29319179081358,
+    "config": {
+      "name": "original_mlp_repeat",
+      "family": "mlp"
+    }
+  },
+  {
+    "model": "had_full_r8_relu2",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 11.415624419460073,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8_relu2"
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen_pruned",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.35141131049022,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "had_spine_r4_relu2",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.733331910101697,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 4,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r4_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.60459716967307,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps"
+    }
+  },
+  {
+    "model": "prior_ks2_c16",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 8.047461729729548,
+    "config": {
+      "name": "prior_ks2_c16",
+      "family": "dense_ks2",
+      "charts": 16,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 12.048406649846584,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r1_slow",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.876938770757988,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_slow",
+      "geometry_terms": "spine",
+      "geometry_lr": 0.1
+    }
+  },
+  {
+    "model": "prior_spine_rank4_frozen",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 7.7124213392380625,
+    "config": {
+      "name": "prior_spine_rank4_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s8192",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 26.469392740400508,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s8192",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048_pruned",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 13.546952769393101,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048_pruned",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048_pruned",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 10.13617702992633,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "prior_spine_frozen_bias",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 7.895162740023807,
+    "config": {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "geometry_terms": "spine",
+      "fused_partial": true,
+      "name": "prior_spine_frozen_bias",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias",
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "scale_r1_matched_s2048",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 27.367945871083066,
+    "config": {
+      "family": "hadmux",
+      "features": 6560,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_matched_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "had_full_r8",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 11.329666409874335,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8"
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.47748881066218,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "prior_ks2_c8",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 7.81365983071737,
+    "config": {
+      "name": "prior_ks2_c8",
+      "family": "dense_ks2",
+      "charts": 8,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "had_spine_r1",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.781517300289124,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048_pruned",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 11.71140355989337,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048_pruned",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.480014069704339,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048_pruned",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "had_spine_r8",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.631761569762602,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_r1_f2048_s2048",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 12.894248120719567,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_f2048_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 13.757417040178552,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048"
+    }
+  },
+  {
+    "model": "prior_spine_rank1_frozen",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 7.727732369676232,
+    "config": {
+      "name": "prior_spine_rank1_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "prior_combo_rank1_powers",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 7.911803299793974,
+    "config": {
+      "name": "prior_combo_rank1_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "geometry_basis": "powers",
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "had_spine_r1_frozen_bias",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.75210734992288,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_frozen_bias",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    }
+  },
+  {
+    "model": "had_spine_r8_relu2",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 9.717204029439017,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_spine_r1_affine",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 10.140166279161349,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_affine",
+      "geometry_terms": "spine",
+      "mux_affine": true
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s2048",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 12.416985420277342,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s2048",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048",
+    "repeat": 2,
+    "gpu": 0,
+    "ms": 10.341006990056485,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "scale_r1_f2048_s2048",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 12.895106769865379,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_f2048_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s8192",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 26.402055370854214,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s8192",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048_pruned",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 11.695863079512492,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "prior_spine_rank1_frozen",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 7.733320069964975,
+    "config": {
+      "name": "prior_spine_rank1_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r1_powers",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.835276090307161,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_powers",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "had_spine_r1_slow",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.889502699952573,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_slow",
+      "geometry_terms": "spine",
+      "geometry_lr": 0.1
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s2048",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 12.400819159811363,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s2048",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_full_r8_relu2",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 11.415659749181941,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8_relu2"
+    }
+  },
+  {
+    "model": "prior_combo_rank1_powers",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 7.902899460168555,
+    "config": {
+      "name": "prior_combo_rank1_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "geometry_basis": "powers",
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "had_spine_r8",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.618465680396184,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_full_f512_s8192",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 25.97921391017735,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f512_s8192"
+    }
+  },
+  {
+    "model": "had_spine_r8_relu2",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.693368929438293,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 13.75240106950514,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048"
+    }
+  },
+  {
+    "model": "had_spine_r1_relu2",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.830149189801887,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "original_mlp_repeat",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 7.2814469889272,
+    "config": {
+      "name": "original_mlp_repeat",
+      "family": "mlp"
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen_pruned",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.32042676024139,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048_pruned",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 10.107990810647607,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.565369619522244,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps"
+    }
+  },
+  {
+    "model": "prior_spine_rank1_fused_repeat",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 7.92712246067822,
+    "config": {
+      "name": "prior_spine_rank1_fused_repeat",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "scale_r1_matched_s2048",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 27.28109947987832,
+    "config": {
+      "family": "hadmux",
+      "features": 6560,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_matched_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048_pruned",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.453005510149524,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048_pruned",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "had_spine_r1_affine",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 10.108526110416278,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_affine",
+      "geometry_terms": "spine",
+      "mux_affine": true
+    }
+  },
+  {
+    "model": "had_spine_r1_frozen_bias",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.766077509848401,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_frozen_bias",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    }
+  },
+  {
+    "model": "had_full_r8",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 11.286648070672527,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 10.34724198980257,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r1",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.741347680101171,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "prior_spine_frozen_bias",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 7.887271030340344,
+    "config": {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "geometry_terms": "spine",
+      "fused_partial": true,
+      "name": "prior_spine_frozen_bias",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias",
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048_pruned",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 13.496295340592042,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048_pruned",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "prior_spine_rank4_frozen",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 7.669146959669888,
+    "config": {
+      "name": "prior_spine_rank4_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r4_relu2",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.674235460115597,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 4,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r4_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 12.015253739664331,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 9.475601239828393,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "prior_ks2_c16",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 8.029443019768223,
+    "config": {
+      "name": "prior_ks2_c16",
+      "family": "dense_ks2",
+      "charts": 16,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "prior_ks2_c8",
+    "repeat": 3,
+    "gpu": 0,
+    "ms": 7.780051960144192,
+    "config": {
+      "name": "prior_ks2_c8",
+      "family": "dense_ks2",
+      "charts": 8,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "had_spine_r1_frozen_bias",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.741579379187897,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_frozen_bias",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias"
+    }
+  },
+  {
+    "model": "prior_combo_rank1_powers",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 7.85834999056533,
+    "config": {
+      "name": "prior_combo_rank1_powers",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "geometry_basis": "powers",
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "had_spine_r1_relu2",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.792995159514248,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 13.718208930222318,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048"
+    }
+  },
+  {
+    "model": "prior_spine_rank1_fused_repeat",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 7.870692509459332,
+    "config": {
+      "name": "prior_spine_rank1_fused_repeat",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true
+    }
+  },
+  {
+    "model": "scale_r1_f2048_s2048",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 12.89037788985297,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_f2048_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "had_spine_r4_relu2",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.657309660688043,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 4,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r4_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_spine_r1_powers",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.773276790510863,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_powers",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "had_spine_r8",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.60885624983348,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s2048",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 12.3604119499214,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s2048",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048_pruned",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 11.635428870795295,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048_pruned",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.414742169901729,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048_pruned",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "scale_full_f512_s8192",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 25.874413800192997,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f512_s8192"
+    }
+  },
+  {
+    "model": "had_full_r8_relu2",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 11.35652472032234,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8_relu2"
+    }
+  },
+  {
+    "model": "scale_r1_matched_s2048",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 27.146808959078044,
+    "config": {
+      "family": "hadmux",
+      "features": 6560,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r1_matched_s2048",
+      "geometry_terms": "spine",
+      "geometry_basis": "powers"
+    }
+  },
+  {
+    "model": "prior_spine_rank1_frozen",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 7.696456010453403,
+    "config": {
+      "name": "prior_spine_rank1_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 368,
+      "subspace_rank": 1,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "prior_ks2_c16",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 8.008207769598812,
+    "config": {
+      "name": "prior_ks2_c16",
+      "family": "dense_ks2",
+      "charts": 16,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "prior_spine_rank4_frozen",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 7.660773049574345,
+    "config": {
+      "name": "prior_spine_rank4_frozen",
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "geometry_terms": "spine",
+      "charts": 92,
+      "subspace_rank": 4,
+      "output_lr": 1.0,
+      "fused_general": true,
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "prior_ks2_c8",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 7.75531223975122,
+    "config": {
+      "name": "prior_ks2_c8",
+      "family": "dense_ks2",
+      "charts": 8,
+      "cell": "ks2_relu2",
+      "fused_geometry": true,
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "had_full_r8",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 11.254953419556841,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_full_r8"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048_pruned",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 10.075915000634268,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "had_spine_r8_relu2",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.620092120021582,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_relu2",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f1024_s2048",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 10.279572539729998,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f1024_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r1_affine",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 10.07784697925672,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_affine",
+      "geometry_terms": "spine",
+      "mux_affine": true
+    }
+  },
+  {
+    "model": "original_mlp_repeat",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 7.233155099675059,
+    "config": {
+      "name": "original_mlp_repeat",
+      "family": "mlp"
+    }
+  },
+  {
+    "model": "pareto_frozen_r8_f2048_s2048",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 11.988727219868451,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_frozen_r8_f2048_s2048",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "had_spine_r1",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.734037920134142,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "scale_r8spine_f2048_s8192",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 26.17247434100136,
+    "config": {
+      "family": "hadmux",
+      "features": 2048,
+      "side_width": 8192,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_r8spine_f2048_s8192",
+      "geometry_terms": "spine"
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.446704499423504,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen",
+      "geometry_terms": "spine",
+      "frozen_geometry": true
+    }
+  },
+  {
+    "model": "scale_full_f1024_s2048_pruned",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 13.45139937940985,
+    "config": {
+      "family": "hadmux",
+      "features": 1024,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "scale_full_f1024_s2048_pruned",
+      "prune_final_side": true
+    }
+  },
+  {
+    "model": "prior_spine_frozen_bias",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 7.844732590019703,
+    "config": {
+      "family": "dense_ks2",
+      "cell": "ks2_relu2",
+      "charts": 46,
+      "geometry_terms": "spine",
+      "fused_partial": true,
+      "name": "prior_spine_frozen_bias",
+      "frozen_geometry": true,
+      "geometry_calibration": "bias",
+      "output_lr": 1.0
+    }
+  },
+  {
+    "model": "pareto_r8_warps_only_f512_s2048",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.54741592053324,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "pareto_r8_warps_only_f512_s2048",
+      "geometry_terms": "spine",
+      "geometry_trainable": "warps"
+    }
+  },
+  {
+    "model": "had_spine_r1_slow",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.817457459867,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 1,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r1_slow",
+      "geometry_terms": "spine",
+      "geometry_lr": 0.1
+    }
+  },
+  {
+    "model": "had_spine_r8_frozen_pruned",
+    "repeat": 4,
+    "gpu": 0,
+    "ms": 9.293263209983706,
+    "config": {
+      "family": "hadmux",
+      "features": 512,
+      "side_width": 2048,
+      "geometry_rank": 8,
+      "cell": "ks2_relu2",
+      "fused_general": true,
+      "output_lr": 5.5,
+      "name": "had_spine_r8_frozen_pruned",
+      "geometry_terms": "spine",
+      "frozen_geometry": true,
+      "prune_final_side": true
+    }
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "objective": "Spend two hours going back to hadmux and studying combining the strongest KS2 findings with the best Hadamard side/history results.",
+  "start_epoch": 1792779152,
+  "deadline_epoch": 1792786352,
+  "start_utc": "2026-10-23T18:12:32+00:00",
+  "deadline_utc": "2026-10-23T20:12:32+00:00",
+  "status": "complete",
+  "primary_reference": "Original unchanged MLP, same model/optimizer/data. Prior checkpoints reused and contemporaneous original MLP repeats permitted; no control tuning.",
+  "hadamard_reference": "4layers,width96,side2048,64x8fixedcodes,fullKS2,nooutputactivation,historyofpriorpostattention/postdecoder96Dstates.",
+  "invariants": [
+    "All newKS2variants retainfixedHadamardinputANDoutputmaps.",
+    "Attention/embedding/headwidth96;sidebypassesattentionandhead.",
+    "Firstscreen preservesexact512coordinateprojectionmatrices;geometryranksregroupthosecoordinates.",
+    "No claims frombestseedalone;3seedreplication andparentcomparisons.",
+    "ReportlearnedFFNparameters,fixedstorage,lossperstepandpertrainingtime separately.",
+    "No newtrainingstartsafterdeadline;finishinflightthenfinalchecks/report."
+  ],
+  "prior_study": "goal_20261022_232213",
+  "waves": [
+    {
+      "name": "wave1_transfer",
+      "manifest": "wave1_transfer_manifest.json",
+      "jobs": 36,
+      "status": "complete"
+    },
+    {
+      "name": "wave2_scaling",
+      "manifest": "wave2_scaling_manifest.json",
+      "jobs": 21,
+      "status": "complete"
+    },
+    {
+      "name": "wave3_long",
+      "manifest": "wave3_long_manifest.json",
+      "jobs": 18,
+      "status": "complete"
+    },
+    {
+      "name": "wave4_pareto",
+      "manifest": "wave4_pareto_manifest.json",
+      "jobs": 6,
+      "status": "complete"
+    },
+    {
+      "name": "wave5_warps",
+      "manifest": "wave5_warps_manifest.json",
+      "jobs": 3,
+      "status": "complete"
+    }
+  ],
+  "updated_epoch": 1792787784.0583074,
+  "main_pursuit_metric": "(learnedFFNparameters/MLPFFNparameters)*(trainingms/MLPtrainingms) versus loss",
+  "completion": "All 84 runs, 114 fresh reserved scores, five timing rounds for 34 configurations, trained pruning checks and final analysis complete. Report publication is verified separately."
+}

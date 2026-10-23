@@ -1,0 +1,2979 @@
+{
+  "generated_utc": "2026-10-23T20:36:42.075007+00:00",
+  "completed_runs": 84,
+  "status": "complete",
+  "groups": [
+    {
+      "wave": "wave1_transfer",
+      "name": "had_full_r8",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_full_r8"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.665443778038025,
+      "sd": 0.0030974497470342937,
+      "learned_per_ffn": [
+        54624,
+        54624,
+        54624,
+        54624
+      ],
+      "learned_all_ffns": 218496,
+      "mean_ms": 11.796447040187195,
+      "mean_training_seconds": 176.94670560280792,
+      "fixed_buffer_mib": 35.7529296875,
+      "peak_allocated_mib": 270.82568359375,
+      "mean_sampled_train": 1.574503223101298,
+      "mlp_gap": 0.044664462407430015,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6664689779281616,
+          "ms": 11.625146788940764,
+          "source": "wave1_transfer/had_full_r8_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6678986549377441,
+          "ms": 11.885932388544704,
+          "source": "wave1_transfer/had_full_r8_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.661963701248169,
+          "ms": 11.878261943076117,
+          "source": "wave1_transfer/had_full_r8_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_full_r8_relu2",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_full_r8_relu2"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6631741921106975,
+      "sd": 0.002169386757125905,
+      "learned_per_ffn": [
+        54624,
+        54624,
+        54624,
+        54624
+      ],
+      "learned_all_ffns": 218496,
+      "mean_ms": 12.253517325357016,
+      "mean_training_seconds": 183.80275988035524,
+      "fixed_buffer_mib": 35.7529296875,
+      "peak_allocated_mib": 272.82568359375,
+      "mean_sampled_train": 1.571481982866923,
+      "mlp_gap": 0.04239487648010254,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6643961668014526,
+          "ms": 11.80837564447429,
+          "source": "wave1_transfer/had_full_r8_relu2_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6644569635391235,
+          "ms": 12.463921313600926,
+          "source": "wave1_transfer/had_full_r8_relu2_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6606694459915161,
+          "ms": 12.488255017995835,
+          "source": "wave1_transfer/had_full_r8_relu2_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r1",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r1",
+        "geometry_terms": "spine"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6801152626673381,
+      "sd": 0.0019480740778781208,
+      "learned_per_ffn": [
+        6240,
+        6240,
+        6240,
+        6240
+      ],
+      "learned_all_ffns": 24960,
+      "mean_ms": 10.234638207240238,
+      "mean_training_seconds": 153.51957310860357,
+      "fixed_buffer_mib": 35.7734375,
+      "peak_allocated_mib": 267.06201171875,
+      "mean_sampled_train": 1.5913347800572712,
+      "mlp_gap": 0.059335947036743164,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6782684326171875,
+          "ms": 10.131461229121003,
+          "source": "wave1_transfer/had_spine_r1_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6799265146255493,
+          "ms": 10.274398633410843,
+          "source": "wave1_transfer/had_spine_r1_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6821508407592773,
+          "ms": 10.298054759188865,
+          "source": "wave1_transfer/had_spine_r1_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r1_affine",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r1_affine",
+        "geometry_terms": "spine",
+        "mux_affine": true
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6854230960210164,
+      "sd": 0.0025886670176605074,
+      "learned_per_ffn": [
+        7264,
+        7264,
+        7264,
+        7264
+      ],
+      "learned_all_ffns": 29056,
+      "mean_ms": 11.109298106642544,
+      "mean_training_seconds": 166.63947159963814,
+      "fixed_buffer_mib": 35.7734375,
+      "peak_allocated_mib": 271.12841796875,
+      "mean_sampled_train": 1.5948431889216106,
+      "mlp_gap": 0.06464378039042155,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.683686375617981,
+          "ms": 10.984203177799161,
+          "source": "wave1_transfer/had_spine_r1_affine_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6841845512390137,
+          "ms": 11.162015783468572,
+          "source": "wave1_transfer/had_spine_r1_affine_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6883983612060547,
+          "ms": 11.181675358659898,
+          "source": "wave1_transfer/had_spine_r1_affine_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r1_frozen_bias",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r1_frozen_bias",
+        "geometry_terms": "spine",
+        "frozen_geometry": true,
+        "geometry_calibration": "bias"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6838128964106243,
+      "sd": 0.0032437209262898177,
+      "learned_per_ffn": [
+        2656,
+        2656,
+        2656,
+        2656
+      ],
+      "learned_all_ffns": 10624,
+      "mean_ms": 10.24420519097346,
+      "mean_training_seconds": 153.6630778646019,
+      "fixed_buffer_mib": 35.8359375,
+      "peak_allocated_mib": 268.90185546875,
+      "mean_sampled_train": 1.5937501589457195,
+      "mlp_gap": 0.0630335807800293,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.687540054321289,
+          "ms": 10.192498356522993,
+          "source": "wave1_transfer/had_spine_r1_frozen_bias_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6816284656524658,
+          "ms": 10.27635446319667,
+          "source": "wave1_transfer/had_spine_r1_frozen_bias_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6822701692581177,
+          "ms": 10.263762753200718,
+          "source": "wave1_transfer/had_spine_r1_frozen_bias_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r1_powers",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r1_powers",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6796562274297078,
+      "sd": 0.0012821783461670314,
+      "learned_per_ffn": [
+        6240,
+        6240,
+        6240,
+        6240
+      ],
+      "learned_all_ffns": 24960,
+      "mean_ms": 10.690876043303351,
+      "mean_training_seconds": 160.36314064955027,
+      "fixed_buffer_mib": 35.7734375,
+      "peak_allocated_mib": 269.06201171875,
+      "mean_sampled_train": 1.5903284947077434,
+      "mlp_gap": 0.05887691179911295,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6798292398452759,
+          "ms": 10.499229247130764,
+          "source": "wave1_transfer/had_spine_r1_powers_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6782963275909424,
+          "ms": 10.779908394122806,
+          "source": "wave1_transfer/had_spine_r1_powers_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6808431148529053,
+          "ms": 10.793490488656486,
+          "source": "wave1_transfer/had_spine_r1_powers_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r1_relu2",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r1_relu2",
+        "geometry_terms": "spine"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6853798627853394,
+      "sd": 0.0009052363506093787,
+      "learned_per_ffn": [
+        6240,
+        6240,
+        6240,
+        6240
+      ],
+      "learned_all_ffns": 24960,
+      "mean_ms": 10.722050259544307,
+      "mean_training_seconds": 160.8307538931646,
+      "fixed_buffer_mib": 35.7734375,
+      "peak_allocated_mib": 269.06201171875,
+      "mean_sampled_train": 1.5971001784006755,
+      "mlp_gap": 0.06460054715474446,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6846448183059692,
+          "ms": 10.515359922451898,
+          "source": "wave1_transfer/had_spine_r1_relu2_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.686390995979309,
+          "ms": 10.810072609727891,
+          "source": "wave1_transfer/had_spine_r1_relu2_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6851037740707397,
+          "ms": 10.84071824645313,
+          "source": "wave1_transfer/had_spine_r1_relu2_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r1_slow",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r1_slow",
+        "geometry_terms": "spine",
+        "geometry_lr": 0.1
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6816990375518799,
+      "sd": 0.0010189262544795215,
+      "learned_per_ffn": [
+        6240,
+        6240,
+        6240,
+        6240
+      ],
+      "learned_all_ffns": 24960,
+      "mean_ms": 10.725342508640866,
+      "mean_training_seconds": 160.88013762961296,
+      "fixed_buffer_mib": 35.7734375,
+      "peak_allocated_mib": 269.0625,
+      "mean_sampled_train": 1.5924446980158489,
+      "mlp_gap": 0.060919721921284996,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6813089847564697,
+          "ms": 10.540405537063878,
+          "source": "wave1_transfer/had_spine_r1_slow_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6828553676605225,
+          "ms": 10.810615727988383,
+          "source": "wave1_transfer/had_spine_r1_slow_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6809327602386475,
+          "ms": 10.825006260870335,
+          "source": "wave1_transfer/had_spine_r1_slow_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r4_relu2",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 4,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r4_relu2",
+        "geometry_terms": "spine"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6774721542994182,
+      "sd": 0.002599121729313689,
+      "learned_per_ffn": [
+        5472,
+        5472,
+        5472,
+        5472
+      ],
+      "learned_all_ffns": 21888,
+      "mean_ms": 10.58958788237845,
+      "mean_training_seconds": 158.84381823567674,
+      "fixed_buffer_mib": 35.755859375,
+      "peak_allocated_mib": 268.99755859375,
+      "mean_sampled_train": 1.5868836641311646,
+      "mlp_gap": 0.05669283866882324,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6804125308990479,
+          "ms": 10.50349231013097,
+          "source": "wave1_transfer/had_spine_r4_relu2_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6754813194274902,
+          "ms": 10.639344709475214,
+          "source": "wave1_transfer/had_spine_r4_relu2_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6765226125717163,
+          "ms": 10.625926627529164,
+          "source": "wave1_transfer/had_spine_r4_relu2_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r8",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r8",
+        "geometry_terms": "spine"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6914270321528118,
+      "sd": 0.0022095197781399505,
+      "learned_per_ffn": [
+        5344,
+        5344,
+        5344,
+        5344
+      ],
+      "learned_all_ffns": 21376,
+      "mean_ms": 10.358977269859881,
+      "mean_training_seconds": 155.38465904789823,
+      "fixed_buffer_mib": 35.7529296875,
+      "peak_allocated_mib": 266.99755859375,
+      "mean_sampled_train": 1.6019588311513264,
+      "mlp_gap": 0.0706477165222168,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6939023733139038,
+          "ms": 9.906700576810787,
+          "source": "wave1_transfer/had_spine_r8_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6907246112823486,
+          "ms": 10.57541093620627,
+          "source": "wave1_transfer/had_spine_r8_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6896541118621826,
+          "ms": 10.594820296562586,
+          "source": "wave1_transfer/had_spine_r8_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r8_frozen",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r8_frozen",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6800703207651775,
+      "sd": 0.0025580455514281125,
+      "learned_per_ffn": [
+        2144,
+        2144,
+        2144,
+        2144
+      ],
+      "learned_all_ffns": 8576,
+      "mean_ms": 10.354114974867034,
+      "mean_training_seconds": 155.31172462300552,
+      "fixed_buffer_mib": 35.8017578125,
+      "peak_allocated_mib": 268.83935546875,
+      "mean_sampled_train": 1.5918256441752117,
+      "mlp_gap": 0.05929100513458252,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6787153482437134,
+          "ms": 10.280562519918506,
+          "source": "wave1_transfer/had_spine_r8_frozen_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.683020830154419,
+          "ms": 10.405295014606478,
+          "source": "wave1_transfer/had_spine_r8_frozen_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6784747838974,
+          "ms": 10.37648739007612,
+          "source": "wave1_transfer/had_spine_r8_frozen_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave1_transfer",
+      "name": "had_spine_r8_relu2",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r8_relu2",
+        "geometry_terms": "spine"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6776707967122395,
+      "sd": 0.0012689024861088792,
+      "learned_per_ffn": [
+        5344,
+        5344,
+        5344,
+        5344
+      ],
+      "learned_all_ffns": 21376,
+      "mean_ms": 10.341740509099328,
+      "mean_training_seconds": 155.1261076364899,
+      "fixed_buffer_mib": 35.7529296875,
+      "peak_allocated_mib": 268.99755859375,
+      "mean_sampled_train": 1.587234377861023,
+      "mlp_gap": 0.05689148108164469,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.677568793296814,
+          "ms": 9.81114361960596,
+          "source": "wave1_transfer/had_spine_r8_relu2_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6764559745788574,
+          "ms": 10.58120151842013,
+          "source": "wave1_transfer/had_spine_r8_relu2_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6789876222610474,
+          "ms": 10.63287638927189,
+          "source": "wave1_transfer/had_spine_r8_relu2_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave2_scaling",
+      "name": "original_mlp_repeat",
+      "config": {
+        "name": "original_mlp_repeat",
+        "family": "mlp"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6194096406300862,
+      "sd": 0.0014367239102568321,
+      "learned_per_ffn": [
+        73728,
+        73728,
+        73728,
+        73728
+      ],
+      "learned_all_ffns": 294912,
+      "mean_ms": 7.845710964058526,
+      "mean_training_seconds": 117.68566446087789,
+      "fixed_buffer_mib": 0.0,
+      "peak_allocated_mib": 204.1669921875,
+      "mean_sampled_train": 1.5275806585947673,
+      "mlp_gap": -0.0013696750005086262,
+      "mlp_seed_wins": 3,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.619519829750061,
+          "ms": 7.889374271593988,
+          "source": "wave2_scaling/original_mlp_repeat_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.617920994758606,
+          "ms": 7.644421402853913,
+          "source": "wave2_scaling/original_mlp_repeat_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6207880973815918,
+          "ms": 8.003337217727676,
+          "source": "wave2_scaling/original_mlp_repeat_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave2_scaling",
+      "name": "scale_full_f1024_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f1024_s2048"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6518397331237793,
+      "sd": 0.004042641316162403,
+      "learned_per_ffn": [
+        107104,
+        107104,
+        107104,
+        107104
+      ],
+      "learned_all_ffns": 428416,
+      "mean_ms": 14.69784663764553,
+      "mean_training_seconds": 220.46769956468293,
+      "fixed_buffer_mib": 71.505859375,
+      "peak_allocated_mib": 319.2060546875,
+      "mean_sampled_train": 1.5575542847315471,
+      "mlp_gap": 0.031060417493184406,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6564044952392578,
+          "ms": 14.23001992086259,
+          "source": "wave2_scaling/scale_full_f1024_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6504030227661133,
+          "ms": 15.165551995594676,
+          "source": "wave2_scaling/scale_full_f1024_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6487116813659668,
+          "ms": 14.697967996479322,
+          "source": "wave2_scaling/scale_full_f1024_s2048_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave2_scaling",
+      "name": "scale_full_f512_s8192",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f512_s8192"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6524766683578491,
+      "sd": 0.0031293951088815215,
+      "learned_per_ffn": [
+        60768,
+        60768,
+        60768,
+        60768
+      ],
+      "learned_all_ffns": 243072,
+      "mean_ms": 30.530782442770175,
+      "mean_training_seconds": 457.9617366415526,
+      "fixed_buffer_mib": 131.7529296875,
+      "peak_allocated_mib": 480.16162109375,
+      "mean_sampled_train": 1.5588737328847249,
+      "mlp_gap": 0.031697352727254234,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6559332609176636,
+          "ms": 28.22657510805875,
+          "source": "wave2_scaling/scale_full_f512_s8192_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6498361825942993,
+          "ms": 30.93763454326739,
+          "source": "wave2_scaling/scale_full_f512_s8192_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6516605615615845,
+          "ms": 32.428137676984385,
+          "source": "wave2_scaling/scale_full_f512_s8192_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave2_scaling",
+      "name": "scale_r1_f2048_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_f2048_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.671261231104533,
+      "sd": 0.002261727098843571,
+      "learned_per_ffn": [
+        18528,
+        18528,
+        18528,
+        18528
+      ],
+      "learned_all_ffns": 74112,
+      "mean_ms": 14.372078505843982,
+      "mean_training_seconds": 215.5811775876597,
+      "fixed_buffer_mib": 143.09375,
+      "peak_allocated_mib": 399.9052734375,
+      "mean_sampled_train": 1.580690582593282,
+      "mlp_gap": 0.05048191547393799,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6706584692001343,
+          "ms": 14.102934770138624,
+          "source": "wave2_scaling/scale_r1_f2048_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6737632751464844,
+          "ms": 14.345171602652409,
+          "source": "wave2_scaling/scale_r1_f2048_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.66936194896698,
+          "ms": 14.668129144740911,
+          "source": "wave2_scaling/scale_r1_f2048_s2048_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave2_scaling",
+      "name": "scale_r1_matched_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.66129203637441,
+      "sd": 0.0009666300848380716,
+      "learned_per_ffn": [
+        54624,
+        54624,
+        54624,
+        54624
+      ],
+      "learned_all_ffns": 218496,
+      "mean_ms": 33.532383601605474,
+      "mean_training_seconds": 502.98575402408215,
+      "fixed_buffer_mib": 458.34716796875,
+      "peak_allocated_mib": 789.0771484375,
+      "mean_sampled_train": 1.5668553908665974,
+      "mlp_gap": 0.0405127207438151,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6613065004348755,
+          "ms": 31.860835685464554,
+          "source": "wave2_scaling/scale_r1_matched_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.662251353263855,
+          "ms": 37.696528884993555,
+          "source": "wave2_scaling/scale_r1_matched_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6603182554244995,
+          "ms": 31.039786234358324,
+          "source": "wave2_scaling/scale_r1_matched_s2048_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave2_scaling",
+      "name": "scale_r8spine_f2048_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s2048",
+        "geometry_terms": "spine"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6709829171498616,
+      "sd": 0.00041525238623386874,
+      "learned_per_ffn": [
+        14944,
+        14944,
+        14944,
+        14944
+      ],
+      "learned_all_ffns": 59776,
+      "mean_ms": 13.594327584354,
+      "mean_training_seconds": 203.91491376531,
+      "fixed_buffer_mib": 143.01171875,
+      "peak_allocated_mib": 399.6044921875,
+      "mean_sampled_train": 1.5775384108225505,
+      "mlp_gap": 0.05020360151926676,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6708015203475952,
+          "ms": 13.627378866852572,
+          "source": "wave2_scaling/scale_r8spine_f2048_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6706892251968384,
+          "ms": 13.212680097545187,
+          "source": "wave2_scaling/scale_r8spine_f2048_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6714580059051514,
+          "ms": 13.942923788664242,
+          "source": "wave2_scaling/scale_r8spine_f2048_s2048_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave2_scaling",
+      "name": "scale_r8spine_f2048_s8192",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s8192",
+        "geometry_terms": "spine"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6567434072494507,
+      "sd": 0.002006152563076332,
+      "learned_per_ffn": [
+        21088,
+        21088,
+        21088,
+        21088
+      ],
+      "learned_all_ffns": 84352,
+      "mean_ms": 33.20692266838935,
+      "mean_training_seconds": 498.1038400258403,
+      "fixed_buffer_mib": 527.01171875,
+      "peak_allocated_mib": 892.82373046875,
+      "mean_sampled_train": 1.5618213812510173,
+      "mlp_gap": 0.0359640916188558,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6577529907226562,
+          "ms": 31.845314086733076,
+          "source": "wave2_scaling/scale_r8spine_f2048_s8192_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6580442190170288,
+          "ms": 33.030660985503346,
+          "source": "wave2_scaling/scale_r8spine_f2048_s8192_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.654433012008667,
+          "ms": 34.744792932931645,
+          "source": "wave2_scaling/scale_r8spine_f2048_s8192_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave3_long",
+      "name": "long_had_full_r8",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_full_r8"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 25000,
+      "mean": 1.6201397975285847,
+      "sd": 0.0003708690917910275,
+      "learned_per_ffn": [
+        54624,
+        54624,
+        54624,
+        54624
+      ],
+      "learned_all_ffns": 218496,
+      "mean_ms": 12.273235826968836,
+      "mean_training_seconds": 306.8308956742209,
+      "fixed_buffer_mib": 35.7529296875,
+      "peak_allocated_mib": 290.82568359375,
+      "mean_sampled_train": 1.521634578704834,
+      "mlp_gap": 0.04338292280832926,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6205251216888428,
+          "ms": 11.710869711143896,
+          "source": "wave3_long/long_had_full_r8_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6197853088378906,
+          "ms": 12.548658201806248,
+          "source": "wave3_long/long_had_full_r8_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.620108962059021,
+          "ms": 12.560179567956366,
+          "source": "wave3_long/long_had_full_r8_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave3_long",
+      "name": "long_had_spine_r4_relu2",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 4,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_spine_r4_relu2",
+        "geometry_terms": "spine"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 25000,
+      "mean": 1.635356028874715,
+      "sd": 0.000837541362004126,
+      "learned_per_ffn": [
+        5472,
+        5472,
+        5472,
+        5472
+      ],
+      "learned_all_ffns": 21888,
+      "mean_ms": 10.45459542310331,
+      "mean_training_seconds": 261.36488557758275,
+      "fixed_buffer_mib": 35.755859375,
+      "peak_allocated_mib": 288.99755859375,
+      "mean_sampled_train": 1.5361446142196655,
+      "mlp_gap": 0.05859915415445963,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.635799527168274,
+          "ms": 10.05751545004081,
+          "source": "wave3_long/long_had_spine_r4_relu2_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6343899965286255,
+          "ms": 10.98760089311283,
+          "source": "wave3_long/long_had_spine_r4_relu2_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.635878562927246,
+          "ms": 10.31866992615629,
+          "source": "wave3_long/long_had_spine_r4_relu2_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave3_long",
+      "name": "long_had_spine_r8_frozen",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_spine_r8_frozen",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 25000,
+      "mean": 1.6375512679417927,
+      "sd": 0.0005224686313936214,
+      "learned_per_ffn": [
+        2144,
+        2144,
+        2144,
+        2144
+      ],
+      "learned_all_ffns": 8576,
+      "mean_ms": 10.312008590488695,
+      "mean_training_seconds": 257.80021476221737,
+      "fixed_buffer_mib": 35.8017578125,
+      "peak_allocated_mib": 288.83935546875,
+      "mean_sampled_train": 1.5401180585225422,
+      "mlp_gap": 0.06079439322153727,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6369632482528687,
+          "ms": 10.236529717082158,
+          "source": "wave3_long/long_had_spine_r8_frozen_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6379621028900146,
+          "ms": 10.541679857415147,
+          "source": "wave3_long/long_had_spine_r8_frozen_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6377284526824951,
+          "ms": 10.15781619696878,
+          "source": "wave3_long/long_had_spine_r8_frozen_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave3_long",
+      "name": "long_original_mlp_repeat",
+      "config": {
+        "name": "long_original_mlp_repeat",
+        "family": "mlp"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 25000,
+      "mean": 1.5767568747202556,
+      "sd": 0.0041052735973960055,
+      "learned_per_ffn": [
+        73728,
+        73728,
+        73728,
+        73728
+      ],
+      "learned_all_ffns": 294912,
+      "mean_ms": 7.9839864939761656,
+      "mean_training_seconds": 199.59966234940416,
+      "fixed_buffer_mib": 0.0,
+      "peak_allocated_mib": 224.1669921875,
+      "mean_sampled_train": 1.4736066261927288,
+      "mlp_gap": 0.0,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.5799384117126465,
+          "ms": 7.792223182432354,
+          "source": "wave3_long/long_original_mlp_repeat_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.5721228122711182,
+          "ms": 8.069113383917138,
+          "source": "wave3_long/long_original_mlp_repeat_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.578209400177002,
+          "ms": 8.090622915579006,
+          "source": "wave3_long/long_original_mlp_repeat_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave3_long",
+      "name": "long_scale_full_f1024_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_scale_full_f1024_s2048"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 25000,
+      "mean": 1.6114956935246785,
+      "sd": 0.002103128387114115,
+      "learned_per_ffn": [
+        107104,
+        107104,
+        107104,
+        107104
+      ],
+      "learned_all_ffns": 428416,
+      "mean_ms": 14.850237731975504,
+      "mean_training_seconds": 371.2559432993876,
+      "fixed_buffer_mib": 71.505859375,
+      "peak_allocated_mib": 339.2060546875,
+      "mean_sampled_train": 1.5083305438359578,
+      "mlp_gap": 0.03473881880442301,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6138116121292114,
+          "ms": 13.997258586590178,
+          "source": "wave3_long/long_scale_full_f1024_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6109706163406372,
+          "ms": 15.143678445704282,
+          "source": "wave3_long/long_scale_full_f1024_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.609704852104187,
+          "ms": 15.409776163632051,
+          "source": "wave3_long/long_scale_full_f1024_s2048_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave3_long",
+      "name": "long_scale_r1_matched_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 25000,
+      "mean": 1.6195429563522339,
+      "sd": 0.0009506018737391711,
+      "learned_per_ffn": [
+        54624,
+        54624,
+        54624,
+        54624
+      ],
+      "learned_all_ffns": 218496,
+      "mean_ms": 33.63710016849296,
+      "mean_training_seconds": 840.9275042123239,
+      "fixed_buffer_mib": 458.34716796875,
+      "peak_allocated_mib": 809.0771484375,
+      "mean_sampled_train": 1.517313838005066,
+      "mlp_gap": 0.042786081631978355,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6204231977462769,
+          "ms": 34.88807526403573,
+          "source": "wave3_long/long_scale_r1_matched_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6185349225997925,
+          "ms": 30.156083258311263,
+          "source": "wave3_long/long_scale_r1_matched_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6196707487106323,
+          "ms": 35.86714198313188,
+          "source": "wave3_long/long_scale_r1_matched_s2048_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave4_pareto",
+      "name": "pareto_frozen_r8_f1024_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_frozen_r8_f1024_s2048",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.678942084312439,
+      "sd": 0.0033751590048790724,
+      "learned_per_ffn": [
+        2144,
+        2144,
+        2144,
+        2144
+      ],
+      "learned_all_ffns": 8576,
+      "mean_ms": 11.565304228847122,
+      "mean_training_seconds": 173.47956343270684,
+      "fixed_buffer_mib": 71.603515625,
+      "peak_allocated_mib": 310.63623046875,
+      "mean_sampled_train": 1.5886646906534831,
+      "mlp_gap": 0.05816276868184408,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6790684461593628,
+          "ms": 11.555875656652885,
+          "source": "wave4_pareto/pareto_frozen_r8_f1024_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.682252287864685,
+          "ms": 11.549626292940228,
+          "source": "wave4_pareto/pareto_frozen_r8_f1024_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.675505518913269,
+          "ms": 11.590410736948252,
+          "source": "wave4_pareto/pareto_frozen_r8_f1024_s2048_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave4_pareto",
+      "name": "pareto_frozen_r8_f2048_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_frozen_r8_f2048_s2048",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6765657663345337,
+      "sd": 0.0011206965486094795,
+      "learned_per_ffn": [
+        2144,
+        2144,
+        2144,
+        2144
+      ],
+      "learned_all_ffns": 8576,
+      "mean_ms": 13.379015546250674,
+      "mean_training_seconds": 200.68523319376013,
+      "fixed_buffer_mib": 143.20703125,
+      "peak_allocated_mib": 399.0126953125,
+      "mean_sampled_train": 1.5870815912882488,
+      "mlp_gap": 0.055786450703938804,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6755499839782715,
+          "ms": 13.595350544348669,
+          "source": "wave4_pareto/pareto_frozen_r8_f2048_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.6777679920196533,
+          "ms": 12.961085243794757,
+          "source": "wave4_pareto/pareto_frozen_r8_f2048_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.6763793230056763,
+          "ms": 13.580610850608597,
+          "source": "wave4_pareto/pareto_frozen_r8_f2048_s2048_33/completed.json"
+        }
+      ]
+    },
+    {
+      "wave": "wave5_warps",
+      "name": "pareto_r8_warps_only_f512_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_r8_warps_only_f512_s2048",
+        "geometry_terms": "spine",
+        "geometry_trainable": "warps"
+      },
+      "n": 3,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "steps": 15000,
+      "mean": 1.6799102226893108,
+      "sd": 0.0005259569559540109,
+      "learned_per_ffn": [
+        2272,
+        2272,
+        2272,
+        2272
+      ],
+      "learned_all_ffns": 9088,
+      "mean_ms": 10.370558511232957,
+      "mean_training_seconds": 155.55837766849436,
+      "fixed_buffer_mib": 35.7998046875,
+      "peak_allocated_mib": 268.85498046875,
+      "mean_sampled_train": 1.5889084339141846,
+      "mlp_gap": 0.05913090705871582,
+      "mlp_seed_wins": 0,
+      "individual": [
+        {
+          "seed": 11,
+          "loss": 1.6799708604812622,
+          "ms": 10.179853919474407,
+          "source": "wave5_warps/pareto_r8_warps_only_f512_s2048_11/completed.json"
+        },
+        {
+          "seed": 22,
+          "loss": 1.679356575012207,
+          "ms": 10.681146663574813,
+          "source": "wave5_warps/pareto_r8_warps_only_f512_s2048_22/completed.json"
+        },
+        {
+          "seed": 33,
+          "loss": 1.680403232574463,
+          "ms": 10.250674950649652,
+          "source": "wave5_warps/pareto_r8_warps_only_f512_s2048_33/completed.json"
+        }
+      ]
+    }
+  ],
+  "reserved_groups": [
+    {
+      "name": "had_full_r8",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.667868971824646,
+      "sd": 0.002064014136459954,
+      "mlp_gap": 0.042589783668518066,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_full_r8",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.666422724723816,
+          "prior": false
+        },
+        {
+          "name": "had_full_r8",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6669515371322632,
+          "prior": false
+        },
+        {
+          "name": "had_full_r8",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6702326536178589,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_full_r8_relu2",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.666637897491455,
+      "sd": 0.0040241181646273085,
+      "mlp_gap": 0.04135870933532715,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_full_r8_relu2",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6709306240081787,
+          "prior": false
+        },
+        {
+          "name": "had_full_r8_relu2",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6660319566726685,
+          "prior": false
+        },
+        {
+          "name": "had_full_r8_relu2",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.662951111793518,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r1",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6819600264231365,
+      "sd": 0.003360004432568165,
+      "mlp_gap": 0.05668083826700846,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r1",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6800025701522827,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6800377368927002,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6858397722244263,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r1_affine",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6865934530893962,
+      "sd": 0.004417804971983508,
+      "mlp_gap": 0.06131426493326823,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r1_affine",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6892389059066772,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_affine",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6890480518341064,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_affine",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6814934015274048,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r1_frozen_bias",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6851705312728882,
+      "sd": 0.0015965003196567612,
+      "mlp_gap": 0.059891343116760254,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r1_frozen_bias",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6869094371795654,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_frozen_bias",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.684831142425537,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_frozen_bias",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.683771014213562,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r1_powers",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6824040412902832,
+      "sd": 0.0009809166433814873,
+      "mlp_gap": 0.05712485313415527,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r1_powers",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.682533621788025,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_powers",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6833137273788452,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_powers",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6813647747039795,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r1_relu2",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6871326764424641,
+      "sd": 0.0024765253158063076,
+      "mlp_gap": 0.061853488286336265,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r1_relu2",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6875497102737427,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_relu2",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6893742084503174,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_relu2",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6844741106033325,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r1_slow",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6852463483810425,
+      "sd": 0.0012927156440141968,
+      "mlp_gap": 0.05996716022491455,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r1_slow",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6840143203735352,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_slow",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6851325035095215,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r1_slow",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6865922212600708,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r4_relu2",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6798510154088337,
+      "sd": 0.0011500939617827407,
+      "mlp_gap": 0.054571827252705894,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r4_relu2",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.681138038635254,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r4_relu2",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6789239645004272,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r4_relu2",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6794910430908203,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r8",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6921393076578777,
+      "sd": 0.0006502545094132789,
+      "mlp_gap": 0.06686011950174968,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r8",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6926543712615967,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r8",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6923549175262451,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r8",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.691408634185791,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r8_frozen",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6844141085942586,
+      "sd": 0.003719001069908475,
+      "mlp_gap": 0.0591349204381307,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r8_frozen",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6806645393371582,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r8_frozen",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6881017684936523,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r8_frozen",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6844760179519653,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "had_spine_r8_relu2",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6797154347101848,
+      "sd": 0.0014738636442460523,
+      "mlp_gap": 0.0544362465540568,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "had_spine_r8_relu2",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6799863576889038,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r8_relu2",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.681035041809082,
+          "prior": false
+        },
+        {
+          "name": "had_spine_r8_relu2",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6781249046325684,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "learned_rank1",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.62126620610555,
+      "sd": 0.0030293158715797926,
+      "mlp_gap": -0.0040129820505778,
+      "seed_wins": 3,
+      "values": [
+        {
+          "name": "learned_rank1",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6178261041641235,
+          "prior": true
+        },
+        {
+          "name": "learned_rank1",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.623534917831421,
+          "prior": true
+        },
+        {
+          "name": "learned_rank1",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.622437596321106,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "learned_rank1_powers",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6223774751027424,
+      "sd": 0.0024666506124553776,
+      "mlp_gap": -0.0029017130533854165,
+      "seed_wins": 2,
+      "values": [
+        {
+          "name": "learned_rank1_powers",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6195294857025146,
+          "prior": true
+        },
+        {
+          "name": "learned_rank1_powers",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6237685680389404,
+          "prior": true
+        },
+        {
+          "name": "learned_rank1_powers",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6238343715667725,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "long_had_full_r8",
+      "n": 3,
+      "steps": 25000,
+      "mean": 1.626789927482605,
+      "sd": 0.00040506942962284,
+      "mlp_gap": 0.043419082959493004,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "long_had_full_r8",
+          "seed": 22,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6272141933441162,
+          "prior": false
+        },
+        {
+          "name": "long_had_full_r8",
+          "seed": 11,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6267483234405518,
+          "prior": false
+        },
+        {
+          "name": "long_had_full_r8",
+          "seed": 33,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.626407265663147,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "long_had_spine_r4_relu2",
+      "n": 3,
+      "steps": 25000,
+      "mean": 1.6395188172658284,
+      "sd": 0.001239489772822143,
+      "mlp_gap": 0.05614797274271647,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "long_had_spine_r4_relu2",
+          "seed": 22,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6380884647369385,
+          "prior": false
+        },
+        {
+          "name": "long_had_spine_r4_relu2",
+          "seed": 33,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.640277624130249,
+          "prior": false
+        },
+        {
+          "name": "long_had_spine_r4_relu2",
+          "seed": 11,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6401903629302979,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "long_had_spine_r8_frozen",
+      "n": 3,
+      "steps": 25000,
+      "mean": 1.6439743439356487,
+      "sd": 0.001191068354060087,
+      "mlp_gap": 0.06060349941253662,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "long_had_spine_r8_frozen",
+          "seed": 11,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6448317766189575,
+          "prior": false
+        },
+        {
+          "name": "long_had_spine_r8_frozen",
+          "seed": 22,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6426143646240234,
+          "prior": false
+        },
+        {
+          "name": "long_had_spine_r8_frozen",
+          "seed": 33,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6444768905639648,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "long_original_mlp_repeat",
+      "n": 3,
+      "steps": 25000,
+      "mean": 1.583370844523112,
+      "sd": 0.003166276207330476,
+      "mlp_gap": 0.0,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "long_original_mlp_repeat",
+          "seed": 22,
+          "steps": 25000,
+          "family": "mlp",
+          "loss": 1.5799063444137573,
+          "prior": false
+        },
+        {
+          "name": "long_original_mlp_repeat",
+          "seed": 11,
+          "steps": 25000,
+          "family": "mlp",
+          "loss": 1.5861146450042725,
+          "prior": false
+        },
+        {
+          "name": "long_original_mlp_repeat",
+          "seed": 33,
+          "steps": 25000,
+          "family": "mlp",
+          "loss": 1.5840915441513062,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "long_scale_full_f1024_s2048",
+      "n": 3,
+      "steps": 25000,
+      "mean": 1.618286927541097,
+      "sd": 0.002487490061287579,
+      "mlp_gap": 0.034916083017985024,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "long_scale_full_f1024_s2048",
+          "seed": 22,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.617313027381897,
+          "prior": false
+        },
+        {
+          "name": "long_scale_full_f1024_s2048",
+          "seed": 33,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6164337396621704,
+          "prior": false
+        },
+        {
+          "name": "long_scale_full_f1024_s2048",
+          "seed": 11,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6211140155792236,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "long_scale_r1_matched_s2048",
+      "n": 3,
+      "steps": 25000,
+      "mean": 1.626402219136556,
+      "sd": 0.0017056369598485584,
+      "mlp_gap": 0.04303137461344401,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "long_scale_r1_matched_s2048",
+          "seed": 11,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.627527117729187,
+          "prior": false
+        },
+        {
+          "name": "long_scale_r1_matched_s2048",
+          "seed": 33,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6272398233413696,
+          "prior": false
+        },
+        {
+          "name": "long_scale_r1_matched_s2048",
+          "seed": 22,
+          "steps": 25000,
+          "family": "hadmux",
+          "loss": 1.6244397163391113,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "original_mlp",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.625279188156128,
+      "sd": 0.0017922118580653709,
+      "mlp_gap": 0.0,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "original_mlp",
+          "seed": 22,
+          "steps": 15000,
+          "family": "mlp",
+          "loss": 1.6252597570419312,
+          "prior": true
+        },
+        {
+          "name": "original_mlp",
+          "seed": 33,
+          "steps": 15000,
+          "family": "mlp",
+          "loss": 1.627081036567688,
+          "prior": true
+        },
+        {
+          "name": "original_mlp",
+          "seed": 11,
+          "steps": 15000,
+          "family": "mlp",
+          "loss": 1.6234967708587646,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "original_mlp_repeat",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.623064637184143,
+      "sd": 0.002041525053086095,
+      "mlp_gap": -0.0022145509719848633,
+      "seed_wins": 3,
+      "values": [
+        {
+          "name": "original_mlp_repeat",
+          "seed": 22,
+          "steps": 15000,
+          "family": "mlp",
+          "loss": 1.6212327480316162,
+          "prior": false
+        },
+        {
+          "name": "original_mlp_repeat",
+          "seed": 33,
+          "steps": 15000,
+          "family": "mlp",
+          "loss": 1.6252654790878296,
+          "prior": false
+        },
+        {
+          "name": "original_mlp_repeat",
+          "seed": 11,
+          "steps": 15000,
+          "family": "mlp",
+          "loss": 1.6226956844329834,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "pareto_frozen_r8_f1024_s2048",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.682497262954712,
+      "sd": 0.004796045119878372,
+      "mlp_gap": 0.057218074798583984,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "pareto_frozen_r8_f1024_s2048",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6879024505615234,
+          "prior": false
+        },
+        {
+          "name": "pareto_frozen_r8_f1024_s2048",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.680838704109192,
+          "prior": false
+        },
+        {
+          "name": "pareto_frozen_r8_f1024_s2048",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6787506341934204,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "pareto_frozen_r8_f2048_s2048",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6800415913263957,
+      "sd": 0.0018767234207460598,
+      "mlp_gap": 0.05476240317026774,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "pareto_frozen_r8_f2048_s2048",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.67859947681427,
+          "prior": false
+        },
+        {
+          "name": "pareto_frozen_r8_f2048_s2048",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6821634769439697,
+          "prior": false
+        },
+        {
+          "name": "pareto_frozen_r8_f2048_s2048",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6793618202209473,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "pareto_r8_warps_only_f512_s2048",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.682154377301534,
+      "sd": 0.003929077199274377,
+      "mlp_gap": 0.05687518914540609,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "pareto_r8_warps_only_f512_s2048",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6864537000656128,
+          "prior": false
+        },
+        {
+          "name": "pareto_r8_warps_only_f512_s2048",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6812595129013062,
+          "prior": false
+        },
+        {
+          "name": "pareto_r8_warps_only_f512_s2048",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.678749918937683,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.622079571088155,
+      "sd": 0.0020162764639253057,
+      "mlp_gap": -0.003199617067972819,
+      "seed_wins": 3,
+      "values": [
+        {
+          "name": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.624321460723877,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6204147338867188,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6215025186538696,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.622122089068095,
+      "sd": 0.0019911980590033465,
+      "mlp_gap": -0.0031570990880330405,
+      "seed_wins": 3,
+      "values": [
+        {
+          "name": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6216869354248047,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6203844547271729,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6242948770523071,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6210023164749146,
+      "sd": 0.0008778937278830439,
+      "mlp_gap": -0.004276871681213379,
+      "seed_wins": 3,
+      "values": [
+        {
+          "name": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6213375329971313,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.621663212776184,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6200062036514282,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "prior_frontier_wave15_combinations_combo_rank1_frozen",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6212952136993408,
+      "sd": 0.0012454711194393308,
+      "mlp_gap": -0.003983974456787109,
+      "seed_wins": 3,
+      "values": [
+        {
+          "name": "prior_frontier_wave15_combinations_combo_rank1_frozen",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6226359605789185,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave15_combinations_combo_rank1_frozen",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6201742887496948,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave15_combinations_combo_rank1_frozen",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6210753917694092,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "prior_frontier_wave15_combinations_combo_rank1_reference",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.619005521138509,
+      "sd": 0.002547660503693589,
+      "mlp_gap": -0.006273667017618815,
+      "seed_wins": 3,
+      "values": [
+        {
+          "name": "prior_frontier_wave15_combinations_combo_rank1_reference",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6217507123947144,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave15_combinations_combo_rank1_reference",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6167172193527222,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave15_combinations_combo_rank1_reference",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6185486316680908,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "prior_frontier_wave6_budget_ks2_c16",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6482624610265095,
+      "sd": 0.0020927564238632395,
+      "mlp_gap": 0.022983272870381672,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "prior_frontier_wave6_budget_ks2_c16",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6469700336456299,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave6_budget_ks2_c16",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.647140383720398,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave6_budget_ks2_c16",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.650676965713501,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "prior_frontier_wave6_budget_ks2_c8",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.665350357691447,
+      "sd": 0.0035471342589192896,
+      "mlp_gap": 0.04007116953531901,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "prior_frontier_wave6_budget_ks2_c8",
+          "seed": 33,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6679896116256714,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave6_budget_ks2_c8",
+          "seed": 11,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.6613181829452515,
+          "prior": true
+        },
+        {
+          "name": "prior_frontier_wave6_budget_ks2_c8",
+          "seed": 22,
+          "steps": 15000,
+          "family": "dense_ks2",
+          "loss": 1.666743278503418,
+          "prior": true
+        }
+      ]
+    },
+    {
+      "name": "scale_full_f1024_s2048",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6563775936762493,
+      "sd": 0.0026848027624706223,
+      "mlp_gap": 0.031098405520121258,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "scale_full_f1024_s2048",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.656540870666504,
+          "prior": false
+        },
+        {
+          "name": "scale_full_f1024_s2048",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.65361487865448,
+          "prior": false
+        },
+        {
+          "name": "scale_full_f1024_s2048",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6589770317077637,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "scale_full_f512_s8192",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6575979789098103,
+      "sd": 0.001086583711179482,
+      "mlp_gap": 0.03231879075368246,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "scale_full_f512_s8192",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6588523387908936,
+          "prior": false
+        },
+        {
+          "name": "scale_full_f512_s8192",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6569463014602661,
+          "prior": false
+        },
+        {
+          "name": "scale_full_f512_s8192",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6569952964782715,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "scale_r1_f2048_s2048",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6746362447738647,
+      "sd": 0.0037877328794930385,
+      "mlp_gap": 0.049357056617736816,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "scale_r1_f2048_s2048",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6728585958480835,
+          "prior": false
+        },
+        {
+          "name": "scale_r1_f2048_s2048",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.678985834121704,
+          "prior": false
+        },
+        {
+          "name": "scale_r1_f2048_s2048",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6720643043518066,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "scale_r1_matched_s2048",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.6654049158096313,
+      "sd": 0.0014703280877036934,
+      "mlp_gap": 0.04012572765350342,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "scale_r1_matched_s2048",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6637243032455444,
+          "prior": false
+        },
+        {
+          "name": "scale_r1_matched_s2048",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.666036605834961,
+          "prior": false
+        },
+        {
+          "name": "scale_r1_matched_s2048",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6664538383483887,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "scale_r8spine_f2048_s2048",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.673848549524943,
+      "sd": 0.0015691274862845573,
+      "mlp_gap": 0.0485693613688151,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "scale_r8spine_f2048_s2048",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6729010343551636,
+          "prior": false
+        },
+        {
+          "name": "scale_r8spine_f2048_s2048",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6756597757339478,
+          "prior": false
+        },
+        {
+          "name": "scale_r8spine_f2048_s2048",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6729848384857178,
+          "prior": false
+        }
+      ]
+    },
+    {
+      "name": "scale_r8spine_f2048_s8192",
+      "n": 3,
+      "steps": 15000,
+      "mean": 1.660012165705363,
+      "sd": 0.001845265762099862,
+      "mlp_gap": 0.034732977549235024,
+      "seed_wins": 0,
+      "values": [
+        {
+          "name": "scale_r8spine_f2048_s8192",
+          "seed": 11,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6591227054595947,
+          "prior": false
+        },
+        {
+          "name": "scale_r8spine_f2048_s8192",
+          "seed": 22,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6621336936950684,
+          "prior": false
+        },
+        {
+          "name": "scale_r8spine_f2048_s8192",
+          "seed": 33,
+          "steps": 15000,
+          "family": "hadmux",
+          "loss": 1.6587800979614258,
+          "prior": false
+        }
+      ]
+    }
+  ],
+  "rank_activation_interaction": [
+    {
+      "seed": 11,
+      "rank1_gap": -0.01563394069671631,
+      "relu2_gap": -0.016333580017089844,
+      "combined_gap": -0.00925755500793457,
+      "interaction": 0.022709965705871582
+    },
+    {
+      "seed": 22,
+      "rank1_gap": -0.010798096656799316,
+      "relu2_gap": -0.014268636703491211,
+      "combined_gap": -0.004333615303039551,
+      "interaction": 0.020733118057250977
+    },
+    {
+      "seed": 33,
+      "rank1_gap": -0.0075032711029052734,
+      "relu2_gap": -0.010666489601135254,
+      "combined_gap": -0.004550337791442871,
+      "interaction": 0.013619422912597656
+    }
+  ]
+}

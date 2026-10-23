@@ -1,0 +1,232 @@
+{
+  "created_epoch": 1792782132.0462637,
+  "bytes": "reserved_holdout.bytes",
+  "metadata": "reserved_holdout.json",
+  "evaluation_filename": "hadmux_reserved.json",
+  "manifests": [
+    "wave1_transfer_manifest.json",
+    "wave2_scaling_manifest.json",
+    "wave3_long_manifest.json",
+    "wave4_pareto_manifest.json",
+    "wave5_warps_manifest.json"
+  ],
+  "prior_references": [
+    {
+      "label": "original_mlp_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/initial/mlp/fixed_both_11"
+    },
+    {
+      "label": "learned_rank1_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_fused_repeat_11"
+    },
+    {
+      "label": "learned_rank1_powers_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_11"
+    },
+    {
+      "label": "original_mlp_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/initial/mlp/fixed_both_22"
+    },
+    {
+      "label": "learned_rank1_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_fused_repeat_22"
+    },
+    {
+      "label": "learned_rank1_powers_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_22"
+    },
+    {
+      "label": "original_mlp_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave3/mlp_seed33"
+    },
+    {
+      "label": "learned_rank1_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_fused_repeat_33"
+    },
+    {
+      "label": "learned_rank1_powers_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_33"
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c8_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_11"
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c8_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_22"
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c8_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_33"
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c16_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_11"
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c16_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_22"
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c16_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_33"
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_11"
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_22"
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_33"
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_11"
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_22"
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_33"
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_11"
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_22"
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_33"
+    },
+    {
+      "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_11"
+    },
+    {
+      "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_22"
+    },
+    {
+      "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_33"
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_reference_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_11"
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_reference_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_22"
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_reference_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_33"
+    }
+  ],
+  "selection": "All runs from all five new waves, plus the nine predeclared prior reference checkpoints. No selection by reserved score. Final two waves pursue the combined-cost frontier.",
+  "timing": "Five randomized rounds on GPU0 after all training ends: all twelve transfer configs, all seven scaling configs, both Pareto candidates, two learned R1 references, selected full-model final-side prune, and three frozen-model final-side prunes. Per-seed trained equivalence checks precede derived frozen-prune points. Each combined-metric view uses a consistent timing source. Include the rank8 warps-only candidate. Include exact configurations of every prior frontier reference, retaining their recorded kernel settings.",
+  "metric_update_epoch": 1792783620.8085802,
+  "pareto_update_epoch": 1792783866.3908758,
+  "prune_update_epoch": 1792784017.888951,
+  "all_transfer_timing_epoch": 1792784172.7542293,
+  "warp_update_epoch": 1792786041.6296494,
+  "frontier_reference_update": {
+    "epoch": 1792786296.6925259,
+    "source": "Already-published combined-cost frontier, first/original15k view. All prior checkpoints contributing to its non-MLP points are included, without choosing their best seed.",
+    "added": [
+      {
+        "label": "prior_frontier_wave6_budget_ks2_c8_11",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_11"
+      },
+      {
+        "label": "prior_frontier_wave6_budget_ks2_c8_22",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_22"
+      },
+      {
+        "label": "prior_frontier_wave6_budget_ks2_c8_33",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_33"
+      },
+      {
+        "label": "prior_frontier_wave6_budget_ks2_c16_11",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_11"
+      },
+      {
+        "label": "prior_frontier_wave6_budget_ks2_c16_22",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_22"
+      },
+      {
+        "label": "prior_frontier_wave6_budget_ks2_c16_33",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_33"
+      },
+      {
+        "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_11",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_11"
+      },
+      {
+        "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_22",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_22"
+      },
+      {
+        "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_33",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_33"
+      },
+      {
+        "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_11",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_11"
+      },
+      {
+        "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_22",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_22"
+      },
+      {
+        "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_33",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_33"
+      },
+      {
+        "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_11",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_11"
+      },
+      {
+        "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_22",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_22"
+      },
+      {
+        "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_33",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_33"
+      },
+      {
+        "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_11",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_11"
+      },
+      {
+        "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_22",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_22"
+      },
+      {
+        "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_33",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_33"
+      },
+      {
+        "label": "prior_frontier_wave15_combinations_combo_rank1_reference_11",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_11"
+      },
+      {
+        "label": "prior_frontier_wave15_combinations_combo_rank1_reference_22",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_22"
+      },
+      {
+        "label": "prior_frontier_wave15_combinations_combo_rank1_reference_33",
+        "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_33"
+      }
+    ]
+  }
+}

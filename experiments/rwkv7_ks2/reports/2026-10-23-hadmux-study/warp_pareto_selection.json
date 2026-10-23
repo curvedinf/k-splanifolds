@@ -1,0 +1,10 @@
+{
+  "epoch": 1792786041.629523,
+  "parent": "had_spine_r8_frozen",
+  "criterion": "Combined learned-FFN-size times step-time versus loss frontier.",
+  "change": "Learn only chart raw_scale and raw_shift; retain frozen spine coefficients, fixed mux/demux,512features,2k side/history andoriginalattention.",
+  "expected_learned_per_ffn": 2272,
+  "additional_parameters_per_ffn": 128,
+  "reason": "Test inexpensive adaptation of the lowest-cost frozen frontier branch, rather than adding thousands of learned geometry weights.",
+  "scheduling": "After wave4 queue has dispatched every job and each GPU is released. GPU0 additionally waits for wave3/all_results.json because its final large-R1 job overlaps wave4. Hard no-new-start cutoff retained."
+}

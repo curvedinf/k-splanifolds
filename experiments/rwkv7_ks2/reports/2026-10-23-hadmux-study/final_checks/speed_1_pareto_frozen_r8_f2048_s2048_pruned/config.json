@@ -1,0 +1,13 @@
+{
+  "family": "hadmux",
+  "features": 2048,
+  "side_width": 2048,
+  "geometry_rank": 8,
+  "cell": "ks2_relu2",
+  "fused_general": true,
+  "output_lr": 5.5,
+  "name": "pareto_frozen_r8_f2048_s2048_pruned",
+  "geometry_terms": "spine",
+  "frozen_geometry": true,
+  "prune_final_side": true
+}

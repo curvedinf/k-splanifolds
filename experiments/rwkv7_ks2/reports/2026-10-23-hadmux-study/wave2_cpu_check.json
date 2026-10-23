@@ -1,0 +1,428 @@
+{
+  "status": "PASS",
+  "original_mlp_all_three_seeds_unchanged": true,
+  "source_sha256": "3d6bc4d4e72804f72265c9fe0774fb236efc630dd056bbe410e1b6438e447c23",
+  "exact_projection_preservation": true,
+  "records": [
+    {
+      "seed": 11,
+      "config": "scale_full_f1024_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        107104,
+        107104,
+        107104,
+        107104
+      ],
+      "parameters": {
+        "total": 777472,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 419840,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 11,
+      "config": "scale_r1_f2048_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        18528,
+        18528,
+        18528,
+        18528
+      ],
+      "parameters": {
+        "total": 423168,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 65536,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 11,
+      "config": "scale_r1_matched_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        54624,
+        54624,
+        54624,
+        54624
+      ],
+      "parameters": {
+        "total": 567552,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 209920,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 11,
+      "config": "scale_r8spine_f2048_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        14944,
+        14944,
+        14944,
+        14944
+      ],
+      "parameters": {
+        "total": 408832,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 51200,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 11,
+      "config": "scale_full_f512_s8192",
+      "status": "PASS",
+      "learned_per_ffn": [
+        60768,
+        60768,
+        60768,
+        60768
+      ],
+      "parameters": {
+        "total": 665856,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 209920,
+        "decoder_readout": 33152,
+        "decoder_input": 0,
+        "other": 104064
+      }
+    },
+    {
+      "seed": 11,
+      "config": "scale_r8spine_f2048_s8192",
+      "status": "PASS",
+      "learned_per_ffn": [
+        21088,
+        21088,
+        21088,
+        21088
+      ],
+      "parameters": {
+        "total": 507136,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 51200,
+        "decoder_readout": 33152,
+        "decoder_input": 0,
+        "other": 104064
+      }
+    },
+    {
+      "seed": 11,
+      "config": "original_mlp_repeat",
+      "status": "PASS",
+      "learned_per_ffn": [
+        73728,
+        73728,
+        73728,
+        73728
+      ],
+      "parameters": {
+        "total": 615936,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 0,
+        "decoder_input": 0,
+        "other": 297216
+      }
+    },
+    {
+      "seed": 22,
+      "config": "scale_full_f1024_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        107104,
+        107104,
+        107104,
+        107104
+      ],
+      "parameters": {
+        "total": 777472,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 419840,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 22,
+      "config": "scale_r1_f2048_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        18528,
+        18528,
+        18528,
+        18528
+      ],
+      "parameters": {
+        "total": 423168,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 65536,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 22,
+      "config": "scale_r1_matched_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        54624,
+        54624,
+        54624,
+        54624
+      ],
+      "parameters": {
+        "total": 567552,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 209920,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 22,
+      "config": "scale_r8spine_f2048_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        14944,
+        14944,
+        14944,
+        14944
+      ],
+      "parameters": {
+        "total": 408832,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 51200,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 22,
+      "config": "scale_full_f512_s8192",
+      "status": "PASS",
+      "learned_per_ffn": [
+        60768,
+        60768,
+        60768,
+        60768
+      ],
+      "parameters": {
+        "total": 665856,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 209920,
+        "decoder_readout": 33152,
+        "decoder_input": 0,
+        "other": 104064
+      }
+    },
+    {
+      "seed": 22,
+      "config": "scale_r8spine_f2048_s8192",
+      "status": "PASS",
+      "learned_per_ffn": [
+        21088,
+        21088,
+        21088,
+        21088
+      ],
+      "parameters": {
+        "total": 507136,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 51200,
+        "decoder_readout": 33152,
+        "decoder_input": 0,
+        "other": 104064
+      }
+    },
+    {
+      "seed": 22,
+      "config": "original_mlp_repeat",
+      "status": "PASS",
+      "learned_per_ffn": [
+        73728,
+        73728,
+        73728,
+        73728
+      ],
+      "parameters": {
+        "total": 615936,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 0,
+        "decoder_input": 0,
+        "other": 297216
+      }
+    },
+    {
+      "seed": 33,
+      "config": "scale_full_f1024_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        107104,
+        107104,
+        107104,
+        107104
+      ],
+      "parameters": {
+        "total": 777472,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 419840,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 33,
+      "config": "scale_r1_f2048_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        18528,
+        18528,
+        18528,
+        18528
+      ],
+      "parameters": {
+        "total": 423168,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 65536,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 33,
+      "config": "scale_r1_matched_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        54624,
+        54624,
+        54624,
+        54624
+      ],
+      "parameters": {
+        "total": 567552,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 209920,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 33,
+      "config": "scale_r8spine_f2048_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        14944,
+        14944,
+        14944,
+        14944
+      ],
+      "parameters": {
+        "total": 408832,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 51200,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 33,
+      "config": "scale_full_f512_s8192",
+      "status": "PASS",
+      "learned_per_ffn": [
+        60768,
+        60768,
+        60768,
+        60768
+      ],
+      "parameters": {
+        "total": 665856,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 209920,
+        "decoder_readout": 33152,
+        "decoder_input": 0,
+        "other": 104064
+      }
+    },
+    {
+      "seed": 33,
+      "config": "scale_r8spine_f2048_s8192",
+      "status": "PASS",
+      "learned_per_ffn": [
+        21088,
+        21088,
+        21088,
+        21088
+      ],
+      "parameters": {
+        "total": 507136,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 51200,
+        "decoder_readout": 33152,
+        "decoder_input": 0,
+        "other": 104064
+      }
+    },
+    {
+      "seed": 33,
+      "config": "original_mlp_repeat",
+      "status": "PASS",
+      "learned_per_ffn": [
+        73728,
+        73728,
+        73728,
+        73728
+      ],
+      "parameters": {
+        "total": 615936,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 0,
+        "decoder_readout": 0,
+        "decoder_input": 0,
+        "other": 297216
+      }
+    }
+  ]
+}

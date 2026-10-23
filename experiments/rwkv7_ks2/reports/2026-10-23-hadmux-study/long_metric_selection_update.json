@@ -1,0 +1,18 @@
+{
+  "epoch": 1792783559.0437877,
+  "reason": "User approved combined FFN-parameter ratio \u00d7 step-time ratio versus loss; add two complete low-cost Hadamard frontier cohorts to long replication.",
+  "added": [
+    "had_spine_r8_frozen",
+    "had_spine_r4_relu2"
+  ],
+  "no_long_training_started": true,
+  "stopped_waiter_pid": 1551622,
+  "source": "Published efficiency plot, based only on exploratory validation; reserved scores remain sealed.",
+  "horizon_revision": {
+    "epoch": 1792783682.8265073,
+    "minimum_steps": 25000,
+    "reason": "Adding two low-cost frontier arms after the user requested the combined metric makes the measured six-arm 30k forecast exceed the remaining window. Retain all six arms and three seeds with a common 25k horizon. This decision precedes all long training.",
+    "forecast_30k_seconds": 2904.0752504528346,
+    "forecast_25k_seconds": 2457.562708710695
+  }
+}

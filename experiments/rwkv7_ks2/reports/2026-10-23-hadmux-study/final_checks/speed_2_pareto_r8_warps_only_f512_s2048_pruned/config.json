@@ -1,0 +1,13 @@
+{
+  "family": "hadmux",
+  "features": 512,
+  "side_width": 2048,
+  "geometry_rank": 8,
+  "cell": "ks2_relu2",
+  "fused_general": true,
+  "output_lr": 5.5,
+  "name": "pareto_r8_warps_only_f512_s2048_pruned",
+  "geometry_terms": "spine",
+  "geometry_trainable": "warps",
+  "prune_final_side": true
+}

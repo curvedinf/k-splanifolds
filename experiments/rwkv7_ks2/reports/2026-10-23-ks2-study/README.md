@@ -6,7 +6,7 @@ The study completed **428 training runs**, **259 fresh reserved evaluations**, a
 
 ## New combined efficiency plot
 
-The [updated Markdown report](REPORT.md#combined-size--speed-cost-versus-loss) now plots **(FFN size relative to MLP) × (step time relative to MLP)** against loss. It includes completed Hadamard follow-up results, the three-seed frontier, interactive hover data and downloadable metrics. The Hadamard follow-up is still running. The older standalone HTML report does not include this update.
+The [updated Markdown report](REPORT.md#combined-size--speed-cost-versus-loss) now plots **(FFN size relative to MLP) × (step time relative to MLP)** against loss. It includes completed Hadamard follow-up results, the three-seed frontier, interactive hover data and downloadable metrics. The [Hadamard follow-up is complete](../2026-10-23-hadmux-study/REPORT.md): 84 new runs, 114 fresh scores and five controlled timing rounds for 34 configurations. The default plot now uses fresh loss and controlled timing, and its frontier is the main research target. The older standalone HTML report does not include this update.
 
 ## Highlights
 

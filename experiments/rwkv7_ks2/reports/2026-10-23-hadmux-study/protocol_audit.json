@@ -1,0 +1,708 @@
+{
+  "status": "PASS",
+  "epoch": 1792787776.496892,
+  "waves": [
+    {
+      "wave": "wave1_transfer",
+      "runs": 36,
+      "cpu_check": "PASS",
+      "gpu_checks": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "wave": "wave2_scaling",
+      "runs": 21,
+      "cpu_check": "PASS",
+      "gpu_checks": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "wave": "wave3_long",
+      "runs": 18,
+      "cpu_check": "PASS",
+      "gpu_checks": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "wave": "wave4_pareto",
+      "runs": 6,
+      "cpu_check": "PASS",
+      "gpu_checks": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "wave": "wave5_warps",
+      "runs": 3,
+      "cpu_check": "PASS",
+      "gpu_checks": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "training_runs": 84,
+  "reserved_scores": 114,
+  "all_launches_before_deadline": true,
+  "no_overlapping_jobs_per_gpu": true,
+  "all_four_gpus_verified": true,
+  "unchanged_original_mlp": true,
+  "training_intervals": [
+    {
+      "wave": "wave1_transfer",
+      "job": "had_full_r8_11",
+      "gpu": 0,
+      "start": 1792779454.675794,
+      "end": 1792779672.909544
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_full_r8_relu2_11",
+      "gpu": 3,
+      "start": 1792779454.7344031,
+      "end": 1792779675.3495147
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_11",
+      "gpu": 2,
+      "start": 1792779454.7634947,
+      "end": 1792779645.0783148
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_relu2_11",
+      "gpu": 1,
+      "start": 1792779454.783005,
+      "end": 1792779641.968558
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_11",
+      "gpu": 1,
+      "start": 1792779641.968923,
+      "end": 1792779833.9950552
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_relu2_11",
+      "gpu": 2,
+      "start": 1792779645.0786014,
+      "end": 1792779845.4404094
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_powers_11",
+      "gpu": 0,
+      "start": 1792779672.910094,
+      "end": 1792779872.163863
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_slow_11",
+      "gpu": 3,
+      "start": 1792779675.3500824,
+      "end": 1792779874.2114542
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_frozen_bias_11",
+      "gpu": 1,
+      "start": 1792779833.9953609,
+      "end": 1792780026.8117828
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_affine_11",
+      "gpu": 2,
+      "start": 1792779845.4409888,
+      "end": 1792780053.7463136
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_frozen_11",
+      "gpu": 0,
+      "start": 1792779872.1641755,
+      "end": 1792780067.7161775
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r4_relu2_11",
+      "gpu": 3,
+      "start": 1792779874.2117512,
+      "end": 1792780073.1091478
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_full_r8_22",
+      "gpu": 1,
+      "start": 1792780026.8123562,
+      "end": 1792780245.7855878
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_full_r8_relu2_22",
+      "gpu": 2,
+      "start": 1792780053.746609,
+      "end": 1792780285.144137
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_22",
+      "gpu": 0,
+      "start": 1792780067.716762,
+      "end": 1792780267.7228832
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_relu2_22",
+      "gpu": 3,
+      "start": 1792780073.109602,
+      "end": 1792780272.8679245
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_22",
+      "gpu": 1,
+      "start": 1792780245.7858806,
+      "end": 1792780440.1546924
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_relu2_22",
+      "gpu": 0,
+      "start": 1792780267.7231698,
+      "end": 1792780471.8587096
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_powers_22",
+      "gpu": 3,
+      "start": 1792780272.8682227,
+      "end": 1792780475.9665792
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_slow_22",
+      "gpu": 2,
+      "start": 1792780285.1447423,
+      "end": 1792780490.2696474
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_frozen_bias_22",
+      "gpu": 1,
+      "start": 1792780440.1549833,
+      "end": 1792780634.0999315
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_affine_22",
+      "gpu": 0,
+      "start": 1792780471.8589966,
+      "end": 1792780681.4146373
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_frozen_22",
+      "gpu": 3,
+      "start": 1792780475.9672115,
+      "end": 1792780672.5139737
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r4_relu2_22",
+      "gpu": 2,
+      "start": 1792780490.270223,
+      "end": 1792780692.4171176
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_full_r8_33",
+      "gpu": 1,
+      "start": 1792780634.1005034,
+      "end": 1792780852.6943705
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_full_r8_relu2_33",
+      "gpu": 3,
+      "start": 1792780672.5145528,
+      "end": 1792780902.531893
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_33",
+      "gpu": 0,
+      "start": 1792780681.4152498,
+      "end": 1792780881.5059197
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_relu2_33",
+      "gpu": 2,
+      "start": 1792780692.4174168,
+      "end": 1792780894.1309335
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_33",
+      "gpu": 1,
+      "start": 1792780852.6946962,
+      "end": 1792781046.822227
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_relu2_33",
+      "gpu": 0,
+      "start": 1792780881.506285,
+      "end": 1792781085.8193645
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_powers_33",
+      "gpu": 2,
+      "start": 1792780894.13151,
+      "end": 1792781098.829201
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_slow_33",
+      "gpu": 3,
+      "start": 1792780902.5322053,
+      "end": 1792781106.0239809
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_frozen_bias_33",
+      "gpu": 1,
+      "start": 1792781046.822786,
+      "end": 1792781240.5532534
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r1_affine_33",
+      "gpu": 0,
+      "start": 1792781085.8199232,
+      "end": 1792781296.140424
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r8_frozen_33",
+      "gpu": 2,
+      "start": 1792781098.829516,
+      "end": 1792781297.4509988
+    },
+    {
+      "wave": "wave1_transfer",
+      "job": "had_spine_r4_relu2_33",
+      "gpu": 3,
+      "start": 1792781106.024549,
+      "end": 1792781305.9895709
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_full_f1024_s2048_11",
+      "gpu": 1,
+      "start": 1792781337.9710646,
+      "end": 1792781584.5008917
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r1_f2048_s2048_11",
+      "gpu": 2,
+      "start": 1792781338.0339203,
+      "end": 1792781596.4820354
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r1_matched_s2048_11",
+      "gpu": 3,
+      "start": 1792781338.0776117,
+      "end": 1792781912.555322
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r8spine_f2048_s2048_11",
+      "gpu": 0,
+      "start": 1792781338.1039948,
+      "end": 1792781584.7548146
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_full_f512_s8192_11",
+      "gpu": 1,
+      "start": 1792781584.5011911,
+      "end": 1792782060.6795006
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r8spine_f2048_s8192_11",
+      "gpu": 0,
+      "start": 1792781584.755119,
+      "end": 1792782170.7928991
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "original_mlp_repeat_11",
+      "gpu": 2,
+      "start": 1792781596.4823382,
+      "end": 1792781729.7754269
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_full_f1024_s2048_22",
+      "gpu": 2,
+      "start": 1792781729.7759893,
+      "end": 1792781994.0421252
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r1_f2048_s2048_22",
+      "gpu": 3,
+      "start": 1792781912.5558934,
+      "end": 1792782170.3320916
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r1_matched_s2048_22",
+      "gpu": 2,
+      "start": 1792781994.0424306,
+      "end": 1792782674.4342773
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r8spine_f2048_s2048_22",
+      "gpu": 1,
+      "start": 1792782060.679775,
+      "end": 1792782297.3319473
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_full_f512_s8192_22",
+      "gpu": 3,
+      "start": 1792782170.3323822,
+      "end": 1792782693.013152
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r8spine_f2048_s8192_22",
+      "gpu": 0,
+      "start": 1792782170.7934783,
+      "end": 1792782776.791345
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "original_mlp_repeat_22",
+      "gpu": 1,
+      "start": 1792782297.3325143,
+      "end": 1792782426.4497683
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_full_f1024_s2048_33",
+      "gpu": 1,
+      "start": 1792782426.4500608,
+      "end": 1792782679.132042
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r1_f2048_s2048_33",
+      "gpu": 2,
+      "start": 1792782674.434563,
+      "end": 1792782942.0552
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r1_matched_s2048_33",
+      "gpu": 1,
+      "start": 1792782679.1323433,
+      "end": 1792783235.3778358
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r8spine_f2048_s2048_33",
+      "gpu": 3,
+      "start": 1792782693.0137377,
+      "end": 1792782943.524428
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_full_f512_s8192_33",
+      "gpu": 0,
+      "start": 1792782776.791931,
+      "end": 1792783324.4236054
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "scale_r8spine_f2048_s8192_33",
+      "gpu": 2,
+      "start": 1792782942.055572,
+      "end": 1792783580.8513389
+    },
+    {
+      "wave": "wave2_scaling",
+      "job": "original_mlp_repeat_33",
+      "gpu": 3,
+      "start": 1792782943.5248532,
+      "end": 1792783078.266144
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_scale_r1_matched_s2048_11",
+      "gpu": 2,
+      "start": 1792783699.7820354,
+      "end": 1792784931.3834097
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_scale_full_f1024_s2048_11",
+      "gpu": 1,
+      "start": 1792783699.8691006,
+      "end": 1792784138.6787748
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_full_r8_11",
+      "gpu": 3,
+      "start": 1792783699.8696642,
+      "end": 1792784063.5076506
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_spine_r4_relu2_11",
+      "gpu": 0,
+      "start": 1792783699.9392047,
+      "end": 1792784021.4851706
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_spine_r8_frozen_11",
+      "gpu": 0,
+      "start": 1792784021.4854667,
+      "end": 1792784350.2299762
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_original_mlp_repeat_11",
+      "gpu": 3,
+      "start": 1792784063.5079396,
+      "end": 1792784292.5431557
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_scale_r1_matched_s2048_22",
+      "gpu": 1,
+      "start": 1792784138.679082,
+      "end": 1792785178.2493804
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_scale_full_f1024_s2048_22",
+      "gpu": 3,
+      "start": 1792784292.5434556,
+      "end": 1792784772.1002505
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_full_r8_22",
+      "gpu": 0,
+      "start": 1792784350.2303839,
+      "end": 1792784744.3594925
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_spine_r4_relu2_22",
+      "gpu": 0,
+      "start": 1792784744.3597965,
+      "end": 1792785096.8324735
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_spine_r8_frozen_22",
+      "gpu": 3,
+      "start": 1792784772.10055,
+      "end": 1792785109.6370165
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_original_mlp_repeat_22",
+      "gpu": 2,
+      "start": 1792784931.3839543,
+      "end": 1792785170.2547662
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_scale_r1_matched_s2048_33",
+      "gpu": 0,
+      "start": 1792785096.8330398,
+      "end": 1792786341.9463599
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_scale_full_f1024_s2048_33",
+      "gpu": 3,
+      "start": 1792785109.637319,
+      "end": 1792785599.6999857
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_full_r8_33",
+      "gpu": 2,
+      "start": 1792785170.255061,
+      "end": 1792785571.5385735
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_spine_r4_relu2_33",
+      "gpu": 1,
+      "start": 1792785178.249681,
+      "end": 1792785505.9557316
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_had_spine_r8_frozen_33",
+      "gpu": 1,
+      "start": 1792785505.9565125,
+      "end": 1792785830.285609
+    },
+    {
+      "wave": "wave3_long",
+      "job": "long_original_mlp_repeat_33",
+      "gpu": 2,
+      "start": 1792785571.538864,
+      "end": 1792785810.7010088
+    },
+    {
+      "wave": "wave4_pareto",
+      "job": "pareto_frozen_r8_f1024_s2048_11",
+      "gpu": 3,
+      "start": 1792785607.6644757,
+      "end": 1792785812.655502
+    },
+    {
+      "wave": "wave4_pareto",
+      "job": "pareto_frozen_r8_f2048_s2048_11",
+      "gpu": 3,
+      "start": 1792785812.6557987,
+      "end": 1792786058.668337
+    },
+    {
+      "wave": "wave4_pareto",
+      "job": "pareto_frozen_r8_f1024_s2048_22",
+      "gpu": 2,
+      "start": 1792785821.9523864,
+      "end": 1792786028.50914
+    },
+    {
+      "wave": "wave4_pareto",
+      "job": "pareto_frozen_r8_f2048_s2048_22",
+      "gpu": 1,
+      "start": 1792785836.8403254,
+      "end": 1792786069.9150615
+    },
+    {
+      "wave": "wave4_pareto",
+      "job": "pareto_frozen_r8_f1024_s2048_33",
+      "gpu": 2,
+      "start": 1792786028.5094452,
+      "end": 1792786236.1158495
+    },
+    {
+      "wave": "wave4_pareto",
+      "job": "pareto_frozen_r8_f2048_s2048_33",
+      "gpu": 3,
+      "start": 1792786058.6686373,
+      "end": 1792786304.6657577
+    },
+    {
+      "wave": "wave5_warps",
+      "job": "pareto_r8_warps_only_f512_s2048_11",
+      "gpu": 1,
+      "start": 1792786079.9032602,
+      "end": 1792786257.337079
+    },
+    {
+      "wave": "wave5_warps",
+      "job": "pareto_r8_warps_only_f512_s2048_22",
+      "gpu": 2,
+      "start": 1792786244.7542605,
+      "end": 1792786432.8984654
+    },
+    {
+      "wave": "wave5_warps",
+      "job": "pareto_r8_warps_only_f512_s2048_33",
+      "gpu": 1,
+      "start": 1792786257.3375452,
+      "end": 1792786435.9181542
+    }
+  ],
+  "gpus": [
+    {
+      "gpu": 0,
+      "job_count": 18,
+      "job_wall_seconds": 6469.784795045853,
+      "sample_count": 213,
+      "mean_gpu_use": 89.66197183098592,
+      "median_gpu_use": 100.0,
+      "clock_mhz_min": 300,
+      "clock_mhz_max": 1283,
+      "clock_mhz_median": 1029,
+      "junction_temperature_max": 92.0
+    },
+    {
+      "gpu": 1,
+      "job_count": 22,
+      "job_wall_seconds": 6402.676284313202,
+      "sample_count": 212,
+      "mean_gpu_use": 92.45283018867924,
+      "median_gpu_use": 100.0,
+      "clock_mhz_min": 300,
+      "clock_mhz_max": 1319,
+      "clock_mhz_median": 1087.0,
+      "junction_temperature_max": 93.0
+    },
+    {
+      "gpu": 2,
+      "job_count": 22,
+      "job_wall_seconds": 6798.724768161774,
+      "sample_count": 225,
+      "mean_gpu_use": 93.32444444444444,
+      "median_gpu_use": 100.0,
+      "clock_mhz_min": 300,
+      "clock_mhz_max": 1502,
+      "clock_mhz_median": 962,
+      "junction_temperature_max": 89.0
+    },
+    {
+      "gpu": 3,
+      "job_count": 22,
+      "job_wall_seconds": 6188.267933607101,
+      "sample_count": 205,
+      "mean_gpu_use": 92.6780487804878,
+      "median_gpu_use": 100.0,
+      "clock_mhz_min": 300,
+      "clock_mhz_max": 1319,
+      "clock_mhz_median": 962,
+      "junction_temperature_max": 90.0
+    }
+  ],
+  "utilization_note": "Utilization samples cover dispatched jobs including setup/evaluation. These are independent runs on four GPUs, not tensor parallel training. Queue tails and cohort-selection waits are included in the raw telemetry."
+}

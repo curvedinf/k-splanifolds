@@ -4,17 +4,17 @@ Final · Generated 2026-10-23T17:48:30+00:00
 
 ## Combined size × speed cost versus loss
 
-Updated 2026-10-23 19:23 UTC. This combines the earlier study with completed runs from the ongoing Hadamard follow-up; the new training study is still running.
+Updated 2026-10-23 20:36 UTC. The [completed Hadamard follow-up report](../2026-10-23-hadmux-study/REPORT.md) adds 84 training runs, 114 fresh reserved scores and controlled timing for 34 configurations. The combined cost/loss Pareto frontier is the main research pursuit target.
 
 **X = (learned parameters per FFN ÷ original MLP parameters per FFN) × (milliseconds per update ÷ original MLP milliseconds per update). Y = validation loss.** Lower-left is better. Half the FFN parameters at twice the step time has the same combined cost. The unchanged original MLP reference is at X=1.
 
 ![Combined size-speed cost versus loss](efficiency/size_speed_loss.png)
 
-Stars mark the observed cost/loss frontier among configurations with at least three seeds. Open points are provisional. The plot uses sustained worker timings, not a mixture of worker and separately controlled timings; small differences can reflect seed and clock variation. Fixed buffers are recorded separately and are not counted as learned parameters.
+The default view uses fresh reserved loss and five-round controlled same-GPU timing medians at 15,000 updates, B4 × T64, on the original training pool. Stars mark the observed frontier among configurations with at least three seeds. Other matched data/horizon, exploratory-loss and worker-timing views remain selectable in the same chart; timing and validation sources are not mixed within a view. Small differences can reflect seed and timing variation.
 
-[Metric definitions, frontier tables and quality-tolerance winners](efficiency/REPORT.md) · [Interactive chart](efficiency/size_speed_loss.html) (download/open in a browser) · [CSV](efficiency/metrics.csv) · [Raw run measurements](efficiency/run_measurements.json) · [Snapshot checks](efficiency/snapshot_check.json).
+[Metric definitions and frontier tables](efficiency/REPORT.md) · [Interactive chart](efficiency/size_speed_loss.html) (download/open in a browser) · [CSV](efficiency/metrics.csv) · [Raw run measurements](efficiency/run_measurements.json) · [Snapshot checks](efficiency/snapshot_check.json).
 
-The default view compares the same original dataset, 15,000 updates, B4 × T64. Other data/horizon cohorts are selectable in the same interactive chart. Altered MLP ablations are excluded; the original control is unchanged.
+Fixed buffers and external normalization/time-mixing parameters are excluded from the approved FFN-module learned-size metric and disclosed separately. Pruned points reuse parent losses after trained-checkpoint equivalence checks and have independently measured step times. Altered MLP controls are excluded. The original 428-run study below retains its original results and validation interval; the new combined plot uses the follow-up interval when its selector says reserved loss.
 
 <details>
 <summary>Contents — 61 sections</summary>

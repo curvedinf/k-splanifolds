@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "original_mlp_all_three_seeds_unchanged": true,
+  "source_sha256": "3d6bc4d4e72804f72265c9fe0774fb236efc630dd056bbe410e1b6438e447c23",
+  "exact_projection_preservation": true,
+  "records": [
+    {
+      "seed": 11,
+      "config": "pareto_r8_warps_only_f512_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        2272,
+        2272,
+        2272,
+        2272
+      ],
+      "parameters": {
+        "total": 358144,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 512,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 22,
+      "config": "pareto_r8_warps_only_f512_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        2272,
+        2272,
+        2272,
+        2272
+      ],
+      "parameters": {
+        "total": 358144,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 512,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    },
+    {
+      "seed": 33,
+      "config": "pareto_r8_warps_only_f512_s2048",
+      "status": "PASS",
+      "learned_per_ffn": [
+        2272,
+        2272,
+        2272,
+        2272
+      ],
+      "parameters": {
+        "total": 358144,
+        "rwkv": 269568,
+        "embedding_head": 49152,
+        "geometry": 512,
+        "decoder_readout": 8576,
+        "decoder_input": 0,
+        "other": 30336
+      }
+    }
+  ]
+}

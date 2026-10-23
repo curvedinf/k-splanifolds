@@ -1,0 +1,16 @@
+{
+  "epoch": 1792783866.3907452,
+  "user_priority": "Main pursuit is the combined learned-FFN-parameter ratio times step-time ratio versus loss Pareto frontier.",
+  "parent": "had_spine_r8_frozen",
+  "changes": "Increase frozen rank8 feature count from512 to1024/2048; keep2k side/history, learned per-output gains, attention and optimizer unchanged.",
+  "learned_per_ffn": 2144,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "steps": 15000,
+  "rationale": "Parent is the minimum-cost complete Hadamard frontier point. Extra frozen capacity costs fixed storage and computation but no additional learned FFN parameters. Candidate succeeds only if loss improvement justifies combined-cost movement; record all results.",
+  "scheduling": "Use each GPU after the existing long queue has dispatched all jobs and that GPU has completed its final job. Preserve every in-flight and queued long run. No new starts after cutoff.",
+  "stopped_finalizer_waiter": 1555154
+}

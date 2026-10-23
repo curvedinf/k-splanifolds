@@ -2,25 +2,24 @@
   "status": "PASS",
   "source": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213",
   "destination": "experiments/rwkv7_ks2/reports/2026-10-23-ks2-study",
-  "files": 604,
-  "bytes": 19309667,
+  "files": 618,
+  "bytes": 21369630,
   "all_report_links_resolve": true,
   "excluded": "Datasets, checkpoints, bulk runtime logs; raw JSON provenance paths remain unchanged.",
   "relocated_historical_links": {
     "../../../denoising/README.md": "prior_context/experiments/denoising/README.md",
     "../../rwkv8_summary.json": "prior_context/experiments/rwkv7_ks2/rwkv8_summary.json"
   },
-  "source_report_sha256": "b757cd2cbc9e8d19849ebef5359dc6f71aecb6bbe00dc14c11da4aba6cdaf116",
   "records": [
     {
       "path": "README.md",
-      "bytes": 2825,
-      "sha256": "fc36e5c5201448c3bb6628922ce3064e20a6e1aaa3de3919141cd55e7a9bc0ac"
+      "bytes": 3480,
+      "sha256": "cf6cfae94cbe360e45a03dc7243081c7ef6156a1274d679f0632f0060c3f196d"
     },
     {
       "path": "REPORT.md",
-      "bytes": 221493,
-      "sha256": "2a3b09814f9c5f925baf1b50ff431c5f3e88885111b6f29ef8609e7d4823c4ad"
+      "bytes": 223522,
+      "sha256": "4ff22bd73ecfd77291aa132bbeca426c3ca62d30bf5869e426131b9bf1399075"
     },
     {
       "path": "additional_speed_configs.json",
@@ -141,6 +140,76 @@
       "path": "dispatch_logs/wave17_mixed_ranks_dispatch_window.jsonl",
       "bytes": 4766,
       "sha256": "0e95444a7576446c43dd351c058bd776e10908bb4805dae62cfad744e54f1ac7"
+    },
+    {
+      "path": "efficiency/REPORT.md",
+      "bytes": 14268,
+      "sha256": "8dd64a81b15c4a3e2c9c5fddc9587e79afdf5be4e6e3f61e2e6b9ef31d69832c"
+    },
+    {
+      "path": "efficiency/hadmux_efficiency.py",
+      "bytes": 23320,
+      "sha256": "268af3197b9810d518d8a15f5ccd5cbd1ebfe53416f73b2c0499194d0c0cc5eb"
+    },
+    {
+      "path": "efficiency/hadmux_efficiency_audit.py",
+      "bytes": 5558,
+      "sha256": "45ffa018e517f5195cbea605d808a1493cdb265d9ec8dcbc91f9113364305206"
+    },
+    {
+      "path": "efficiency/holdout_results.json",
+      "bytes": 240722,
+      "sha256": "d2d3a01ddd6414bcae68ea1ba5426d196659665bf690125e69e6955332aeb85d"
+    },
+    {
+      "path": "efficiency/metrics.csv",
+      "bytes": 77586,
+      "sha256": "f2fdca5ad71e115012a7724c05fc034336184714a3464a9d87d33f8fffd49d37"
+    },
+    {
+      "path": "efficiency/metrics.json",
+      "bytes": 858375,
+      "sha256": "b385b2f845834d431a83d1346333e044a23c3d207610bb4c0a352d301ac6723d"
+    },
+    {
+      "path": "efficiency/pareto_prune_checks.json",
+      "bytes": 10063,
+      "sha256": "4fce476eba714a82f6068b1e2b35cd8a8049744d6bb829a03c00a522f2a0b6c7"
+    },
+    {
+      "path": "efficiency/publication_files.json",
+      "bytes": 1882,
+      "sha256": "959367618e14177f2e5d3f7a5487923ed4c43eba9ab9ca780d599654c47d214e"
+    },
+    {
+      "path": "efficiency/run_measurements.json",
+      "bytes": 182464,
+      "sha256": "e30e1282945c674a8e674b20c792a6719ffcd183d0271deef26badf7468b6564"
+    },
+    {
+      "path": "efficiency/size_speed_loss.html",
+      "bytes": 266604,
+      "sha256": "d0b8aeab710b02eea07ecc72aeada0a0d53e6adc6d5cf5ad4f708bc88a2e9a4b"
+    },
+    {
+      "path": "efficiency/size_speed_loss.png",
+      "bytes": 192150,
+      "sha256": "ba083d50d905eae62ef75df355af3ca6c08dd248a26884337405c0e38afd3144"
+    },
+    {
+      "path": "efficiency/size_speed_loss.svg",
+      "bytes": 100808,
+      "sha256": "38ceb9948c3ec82e10580ac351eca5450e5c66a1f781870892ef012580ac21de"
+    },
+    {
+      "path": "efficiency/snapshot_check.json",
+      "bytes": 536,
+      "sha256": "88457bea2c6ef9368479ffcafa444066f083f36d6dc656eb2b2e424c8f483f0c"
+    },
+    {
+      "path": "efficiency/speed_results.json",
+      "bytes": 82943,
+      "sha256": "2a86eb8c312555ea033ca2eeefb0abc279c3fafdcbfc340b1337d3de34016644"
     },
     {
       "path": "engineering_gpu0_ready.json",
@@ -3041,5 +3110,8 @@
     "table_rows": 1026,
     "figures": 16,
     "note": "All report sections and tables retained; embedded SVG images replaced by linked PNG versions for GitHub Markdown preview."
-  }
+  },
+  "original_source_report_sha256": "b757cd2cbc9e8d19849ebef5359dc6f71aecb6bbe00dc14c11da4aba6cdaf116",
+  "combined_metric_updated_utc": "2026-10-23 20:36 UTC",
+  "report_sha256": "4ff22bd73ecfd77291aa132bbeca426c3ca62d30bf5869e426131b9bf1399075"
 }

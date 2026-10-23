@@ -1,0 +1,49 @@
+{
+  "evaluation_step": 15000,
+  "training_sequence_length": 64,
+  "loss": 1.6890480518341064,
+  "targets": 1736512,
+  "by_offset": [
+    {
+      "offset": 0,
+      "targets": 434176,
+      "loss": 1.6901154518127441,
+      "batch4_vs_eval_max_error": 2.86102294921875e-06,
+      "batch_check": "PASS",
+      "batch_failure": null
+    },
+    {
+      "offset": 16,
+      "targets": 434112,
+      "loss": 1.6888295412063599,
+      "batch4_vs_eval_max_error": 1.3113021850585938e-06,
+      "batch_check": "PASS",
+      "batch_failure": null
+    },
+    {
+      "offset": 32,
+      "targets": 434112,
+      "loss": 1.6889455318450928,
+      "batch4_vs_eval_max_error": 9.5367431640625e-07,
+      "batch_check": "PASS",
+      "batch_failure": null
+    },
+    {
+      "offset": 48,
+      "targets": 434112,
+      "loss": 1.68830144405365,
+      "batch4_vs_eval_max_error": 1.3113021850585938e-06,
+      "batch_check": "PASS",
+      "batch_failure": null
+    }
+  ],
+  "sequence_length": 64,
+  "evaluation_batch_size": 64,
+  "original_signed_equation_batch4": false,
+  "note": "Four overlapping tilings of one held-out shard; state resets each window. Not four independent test sets.",
+  "validation_source": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/reserved_holdout.bytes",
+  "validation_sha256": "d9aee5b0f53c8e093ca10e7e0c8a73e622f4b3be39ba316815d7a2e80f9c0f7c",
+  "evaluation_source_sha256": {
+    "hadmux_eval_v2.py": "f58daee038068c7e89231989626a50c7ed7556719f6b9d00e1e5d3360a6a2ea2"
+  }
+}

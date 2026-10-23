@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "model": "original_mlp",
+      "external_ffn_norm_and_time_mix_by_layer": [
+        288,
+        288,
+        288,
+        288
+      ],
+      "mean_external_per_layer": 288
+    },
+    {
+      "model": "had_spine_r8_frozen",
+      "external_ffn_norm_and_time_mix_by_layer": [
+        6432,
+        7008,
+        7584,
+        8160
+      ],
+      "mean_external_per_layer": 7296
+    }
+  ],
+  "note": "User-approved metric counts the FFN module only. External LayerNorm/time-mixing weights, attention, embedding/head and fixed buffers are excluded. Do not interpret the FFN cost ratio as whole-model parameter or storage reduction."
+}

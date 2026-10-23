@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "width": 96,
+      "charts": 64,
+      "rank": 8,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 0.0131732109002769,
+      "new_construction_seconds": 0.011916597955860198
+    },
+    {
+      "width": 2144,
+      "charts": 64,
+      "rank": 8,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 1.1667768530314788,
+      "new_construction_seconds": 0.00996165000833571
+    },
+    {
+      "width": 2336,
+      "charts": 64,
+      "rank": 8,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 1.4861256410367787,
+      "new_construction_seconds": 0.008047941024415195
+    },
+    {
+      "width": 2528,
+      "charts": 64,
+      "rank": 8,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 2.13185186102055,
+      "new_construction_seconds": 0.008835245971567929
+    },
+    {
+      "width": 2720,
+      "charts": 64,
+      "rank": 8,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 2.4789183599641547,
+      "new_construction_seconds": 0.00933854398317635
+    },
+    {
+      "width": 96,
+      "charts": 512,
+      "rank": 1,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 0.05931537097785622,
+      "new_construction_seconds": 0.01276849303394556
+    },
+    {
+      "width": 128,
+      "charts": 128,
+      "rank": 4,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 0.023829416022635996,
+      "new_construction_seconds": 0.00350736896507442
+    },
+    {
+      "width": 256,
+      "charts": 32,
+      "rank": 16,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 0.008025221060961485,
+      "new_construction_seconds": 0.0012272130697965622
+    },
+    {
+      "width": 4192,
+      "charts": 8,
+      "rank": 8,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 1.1360367110464722,
+      "new_construction_seconds": 0.0017523190472275019
+    },
+    {
+      "width": 8288,
+      "charts": 4,
+      "rank": 8,
+      "exact": true,
+      "every_input_in_every_coordinate": true,
+      "original_construction_seconds": 2.2739802920259535,
+      "new_construction_seconds": 0.0017227999633178115
+    }
+  ],
+  "source_sha256": "05c0776d3b98aca4def6fc9c421698f1b988c2505abee69815846707dfe3984f",
+  "note": "Exactsame densematrices/permutations/signs; construction-onlyoptimization,notatrainingkernelchange."
+}

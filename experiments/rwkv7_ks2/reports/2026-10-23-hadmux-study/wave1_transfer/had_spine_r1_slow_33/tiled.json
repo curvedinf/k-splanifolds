@@ -1,0 +1,49 @@
+{
+  "evaluation_step": 15000,
+  "training_sequence_length": 64,
+  "loss": 1.6809327602386475,
+  "targets": 1777024,
+  "by_offset": [
+    {
+      "offset": 0,
+      "targets": 444288,
+      "loss": 1.6807681322097778,
+      "batch4_vs_eval_max_error": 1.3113021850585938e-06,
+      "batch_check": "PASS",
+      "batch_failure": null
+    },
+    {
+      "offset": 16,
+      "targets": 444288,
+      "loss": 1.6810531616210938,
+      "batch4_vs_eval_max_error": 1.9073486328125e-06,
+      "batch_check": "PASS",
+      "batch_failure": null
+    },
+    {
+      "offset": 32,
+      "targets": 444224,
+      "loss": 1.6808311939239502,
+      "batch4_vs_eval_max_error": 1.1920928955078125e-06,
+      "batch_check": "PASS",
+      "batch_failure": null
+    },
+    {
+      "offset": 48,
+      "targets": 444224,
+      "loss": 1.681078314781189,
+      "batch4_vs_eval_max_error": 1.6689300537109375e-06,
+      "batch_check": "PASS",
+      "batch_failure": null
+    }
+  ],
+  "sequence_length": 64,
+  "evaluation_batch_size": 64,
+  "original_signed_equation_batch4": false,
+  "note": "Four overlapping tilings of one held-out shard; state resets each window. Not four independent test sets.",
+  "validation_source": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data/val.bytes",
+  "validation_sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737",
+  "evaluation_source_sha256": {
+    "hadmux_eval.py": "33f599c042c3887de529f274c786beb4ea87d21d040021459c8e45f1ba4a1432"
+  }
+}

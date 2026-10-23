@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "checkpoint_step": 15000,
+  "max_logit_error": 0.0,
+  "losses": [
+    2.164820671081543,
+    2.164820671081543
+  ],
+  "max_gradient_absolute_error": 8.940696716308594e-08,
+  "max_gradient_relative_l2": 1.2084761887251476e-07,
+  "original_parameters": 357632,
+  "pruned_parameters": 355584,
+  "original_buffer_bytes": 37540864,
+  "pruned_buffer_bytes": 33346560,
+  "source_sha256": "6837be767356a55005cfccbea46d9859077ccf417eb6e72ca7b36752ba245c79",
+  "implementation_sha256": "4daaea6383e833f71c35748b03dec0eb388310207984d31a26ef422f147d59a8"
+}

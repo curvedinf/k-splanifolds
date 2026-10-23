@@ -1,0 +1,13 @@
+{
+  "family": "hadmux",
+  "features": 512,
+  "side_width": 2048,
+  "geometry_rank": 1,
+  "cell": "ks2_relu2",
+  "fused_general": true,
+  "output_lr": 5.5,
+  "name": "had_spine_r1_frozen_bias",
+  "geometry_terms": "spine",
+  "frozen_geometry": true,
+  "geometry_calibration": "bias"
+}

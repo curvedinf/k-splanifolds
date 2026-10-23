@@ -1,0 +1,54 @@
+{
+  "created_epoch": 1792779686.840261,
+  "objective": "CombinestrongestKS2findingswithbestHadamardarchitecture,andstudyquality/capacity/time tradeoffs.",
+  "stage1": {
+    "manifest": "wave1_transfer_manifest.json",
+    "configs": 12,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "steps": 15000,
+    "features": 512,
+    "side_width": 2048,
+    "history": true,
+    "attention_width": 96,
+    "projection_construction_rank": 8,
+    "geometry_ranks": [
+      1,
+      4,
+      8
+    ],
+    "selection": "Waitforcomplete3seedcohorts;rankbymeanfullshardloss,alsoinspectpairedgaps,timing,andFFNonlybudget. RetainfullR8controlthroughout."
+  },
+  "stage2": {
+    "purpose": "Capacityscalingwhilekeepingfixedinput/outputcodesand96Dattention.",
+    "candidate_axes": {
+      "features": [
+        1024,
+        2048,
+        4096,
+        8192
+      ],
+      "side_width": [
+        2048,
+        4096,
+        8192
+      ]
+    },
+    "selection": "Choosefeasiblerangeafterfirstscreensandtiming,documenteveryselectionbeforedispatch. Preferfullthree-seedreplicationovermanysingle-seedclaims."
+  },
+  "stage3": {
+    "purpose": "CheckselectedcombinationandscaledmodelatlongerhorizonandcomparewithoriginalMLP.",
+    "reference": "ReuseunchangedoriginalMLP15kand100kthree-seedcheckpoints;includecontemporaneoussame-configreferencesasneeded. NoMLPtuning.",
+    "horizons": "Decide100kreplicationsormatchedtrainingtimeaftermeasuredscreenruntime;savelearningcurvesagainstactualtrainingseconds."
+  },
+  "validation": {
+    "cpu": "36casesPASS;allsharedattentionandoriginalMLPtensorsexact;baselineHadamardmodelandfirstscreenfixedprojectionmatricesexact.",
+    "gpu": "Everyconfigonall4GPUs: eager/fusedFFNoutputs,input/parametergradients,4fullmodeloptimizerstepsandcausalityPASS.",
+    "reserved": "FreshFineWebvalidationtokens3M:3.1M;scoreonlyafterallselectionandtrainingends.",
+    "report": "Keepallresults,failures,seedreplicates,sourceversionsandbudget/timinglimits. Markdownreportwithfiguresandrawdata."
+  },
+  "deadline_epoch": 1792786352
+}

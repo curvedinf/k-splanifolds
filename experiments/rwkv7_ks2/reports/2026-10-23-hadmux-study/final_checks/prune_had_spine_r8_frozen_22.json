@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "device": "cuda",
+  "checkpoint_step": 15000,
+  "max_logit_error": 1.239776611328125e-05,
+  "losses": [
+    2.1443514823913574,
+    2.1443512439727783
+  ],
+  "max_gradient_absolute_error": 1.2516975402832031e-06,
+  "max_gradient_relative_l2": 4.186536092180667e-06,
+  "original_parameters": 357632,
+  "pruned_parameters": 355584,
+  "original_buffer_bytes": 37540864,
+  "pruned_buffer_bytes": 33346560,
+  "source_sha256": "6837be767356a55005cfccbea46d9859077ccf417eb6e72ca7b36752ba245c79",
+  "implementation_sha256": "4daaea6383e833f71c35748b03dec0eb388310207984d31a26ef422f147d59a8"
+}

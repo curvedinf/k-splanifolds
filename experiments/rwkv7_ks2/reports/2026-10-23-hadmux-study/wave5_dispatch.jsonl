@@ -1,0 +1,14 @@
+{"event": "gpu_released_by_previous_wave", "time": 1792786074.0497177, "gpu": 1}
+{"event": "validation_complete", "time": 1792786079.9027538, "gpu": 1}
+{"event": "start", "time": 1792786079.9032602, "gpu": 1, "job": {"id": "pareto_r8_warps_only_f512_s2048_11", "config": {"family": "hadmux", "features": 512, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_r8_warps_only_f512_s2048", "geometry_terms": "spine", "geometry_trainable": "warps"}, "seed": 11, "steps": 15000}}
+{"event": "gpu_released_by_previous_wave", "time": 1792786239.0658107, "gpu": 2}
+{"event": "validation_complete", "time": 1792786244.753582, "gpu": 2}
+{"event": "start", "time": 1792786244.7542605, "gpu": 2, "job": {"id": "pareto_r8_warps_only_f512_s2048_22", "config": {"family": "hadmux", "features": 512, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_r8_warps_only_f512_s2048", "geometry_terms": "spine", "geometry_trainable": "warps"}, "seed": 22, "steps": 15000}}
+{"event": "complete", "time": 1792786257.337079, "gpu": 1, "job": "pareto_r8_warps_only_f512_s2048_11", "loss": 1.6799708604812622, "parameters": 358144, "ms": 10.179853919474407}
+{"event": "start", "time": 1792786257.3375452, "gpu": 1, "job": {"id": "pareto_r8_warps_only_f512_s2048_33", "config": {"family": "hadmux", "features": 512, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_r8_warps_only_f512_s2048", "geometry_terms": "spine", "geometry_trainable": "warps"}, "seed": 33, "steps": 15000}}
+{"event": "gpu_released_by_previous_wave", "time": 1792786309.0755672, "gpu": 3}
+{"event": "validation_complete", "time": 1792786314.7612243, "gpu": 3}
+{"event": "gpu_released_by_previous_wave", "time": 1792786344.0564988, "gpu": 0}
+{"event": "validation_complete", "time": 1792786349.728648, "gpu": 0}
+{"event": "complete", "time": 1792786432.8984654, "gpu": 2, "job": "pareto_r8_warps_only_f512_s2048_22", "loss": 1.679356575012207, "parameters": 358144, "ms": 10.681146663574813}
+{"event": "complete", "time": 1792786435.9181542, "gpu": 1, "job": "pareto_r8_warps_only_f512_s2048_33", "loss": 1.680403232574463, "parameters": 358144, "ms": 10.250674950649652}

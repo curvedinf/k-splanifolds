@@ -1,0 +1,576 @@
+{
+  "plan_sha256": "6004d5891bbbcd286413f3b2b1ceaf6e1a4bb40a7cb405eee14d6bd95d723b1b",
+  "runs": [
+    {
+      "label": "wave1_transfer/had_full_r8_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_full_r8_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_full_r8_relu2_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_full_r8_relu2_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_relu2_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_relu2_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_relu2_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_relu2_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_powers_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_powers_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_slow_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_slow_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_frozen_bias_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_frozen_bias_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_affine_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_affine_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_frozen_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_frozen_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r4_relu2_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r4_relu2_11",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_full_r8_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_full_r8_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_full_r8_relu2_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_full_r8_relu2_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_relu2_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_relu2_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_relu2_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_relu2_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_powers_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_powers_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_slow_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_slow_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_frozen_bias_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_frozen_bias_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_affine_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_affine_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_frozen_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_frozen_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r4_relu2_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r4_relu2_22",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_full_r8_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_full_r8_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_full_r8_relu2_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_full_r8_relu2_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_relu2_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_relu2_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_relu2_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_relu2_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_powers_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_powers_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_slow_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_slow_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_frozen_bias_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_frozen_bias_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r1_affine_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r1_affine_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r8_frozen_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r8_frozen_33",
+      "prior": false
+    },
+    {
+      "label": "wave1_transfer/had_spine_r4_relu2_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave1_transfer/had_spine_r4_relu2_33",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_full_f1024_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_full_f1024_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r1_f2048_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r1_f2048_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r1_matched_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r1_matched_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r8spine_f2048_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r8spine_f2048_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_full_f512_s8192_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_full_f512_s8192_11",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r8spine_f2048_s8192_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r8spine_f2048_s8192_11",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/original_mlp_repeat_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/original_mlp_repeat_11",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_full_f1024_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_full_f1024_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r1_f2048_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r1_f2048_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r1_matched_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r1_matched_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r8spine_f2048_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r8spine_f2048_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_full_f512_s8192_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_full_f512_s8192_22",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r8spine_f2048_s8192_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r8spine_f2048_s8192_22",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/original_mlp_repeat_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/original_mlp_repeat_22",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_full_f1024_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_full_f1024_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r1_f2048_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r1_f2048_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r1_matched_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r1_matched_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r8spine_f2048_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r8spine_f2048_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_full_f512_s8192_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_full_f512_s8192_33",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/scale_r8spine_f2048_s8192_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/scale_r8spine_f2048_s8192_33",
+      "prior": false
+    },
+    {
+      "label": "wave2_scaling/original_mlp_repeat_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling/original_mlp_repeat_33",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_scale_r1_matched_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_scale_r1_matched_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_scale_full_f1024_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_scale_full_f1024_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_full_r8_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_full_r8_11",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_spine_r4_relu2_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_spine_r4_relu2_11",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_spine_r8_frozen_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_spine_r8_frozen_11",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_original_mlp_repeat_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_original_mlp_repeat_11",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_scale_r1_matched_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_scale_r1_matched_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_scale_full_f1024_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_scale_full_f1024_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_full_r8_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_full_r8_22",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_spine_r4_relu2_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_spine_r4_relu2_22",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_spine_r8_frozen_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_spine_r8_frozen_22",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_original_mlp_repeat_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_original_mlp_repeat_22",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_scale_r1_matched_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_scale_r1_matched_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_scale_full_f1024_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_scale_full_f1024_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_full_r8_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_full_r8_33",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_spine_r4_relu2_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_spine_r4_relu2_33",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_had_spine_r8_frozen_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_had_spine_r8_frozen_33",
+      "prior": false
+    },
+    {
+      "label": "wave3_long/long_original_mlp_repeat_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long/long_original_mlp_repeat_33",
+      "prior": false
+    },
+    {
+      "label": "wave4_pareto/pareto_frozen_r8_f1024_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave4_pareto/pareto_frozen_r8_f1024_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave4_pareto/pareto_frozen_r8_f2048_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave4_pareto/pareto_frozen_r8_f2048_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave4_pareto/pareto_frozen_r8_f1024_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave4_pareto/pareto_frozen_r8_f1024_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave4_pareto/pareto_frozen_r8_f2048_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave4_pareto/pareto_frozen_r8_f2048_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave4_pareto/pareto_frozen_r8_f1024_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave4_pareto/pareto_frozen_r8_f1024_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "wave4_pareto/pareto_frozen_r8_f2048_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave4_pareto/pareto_frozen_r8_f2048_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "wave5_warps/pareto_r8_warps_only_f512_s2048_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave5_warps/pareto_r8_warps_only_f512_s2048_11",
+      "prior": false
+    },
+    {
+      "label": "wave5_warps/pareto_r8_warps_only_f512_s2048_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave5_warps/pareto_r8_warps_only_f512_s2048_22",
+      "prior": false
+    },
+    {
+      "label": "wave5_warps/pareto_r8_warps_only_f512_s2048_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave5_warps/pareto_r8_warps_only_f512_s2048_33",
+      "prior": false
+    },
+    {
+      "label": "original_mlp_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/initial/mlp/fixed_both_11",
+      "prior": true
+    },
+    {
+      "label": "learned_rank1_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_fused_repeat_11",
+      "prior": true
+    },
+    {
+      "label": "learned_rank1_powers_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_11",
+      "prior": true
+    },
+    {
+      "label": "original_mlp_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/initial/mlp/fixed_both_22",
+      "prior": true
+    },
+    {
+      "label": "learned_rank1_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_fused_repeat_22",
+      "prior": true
+    },
+    {
+      "label": "learned_rank1_powers_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_22",
+      "prior": true
+    },
+    {
+      "label": "original_mlp_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave3/mlp_seed33",
+      "prior": true
+    },
+    {
+      "label": "learned_rank1_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_fused_repeat_33",
+      "prior": true
+    },
+    {
+      "label": "learned_rank1_powers_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_powers_33",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c8_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_11",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c8_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_22",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c8_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c8_33",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c16_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_11",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c16_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_22",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave6_budget_ks2_c16_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave6_budget/ks2_c16_33",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_11",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_22",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank1_frozen_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank1_frozen_33",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_11",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_22",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_frozen_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_frozen_33",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_11",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_22",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12b_rank_freezing_spine_rank4_frozen_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12b_rank_freezing/spine_rank4_frozen_33",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_11",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_22",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave12_fixed_geometry_spine_frozen_bias_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave12_fixed_geometry/spine_frozen_bias_33",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_reference_11",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_11",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_reference_22",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_22",
+      "prior": true
+    },
+    {
+      "label": "prior_frontier_wave15_combinations_combo_rank1_reference_33",
+      "run": "experiments/rwkv7_ks2/gpu_runs/goal_20261022_232213/wave15_combinations/combo_rank1_reference_33",
+      "prior": true
+    }
+  ],
+  "started_epoch": 1792786440.7290158
+}

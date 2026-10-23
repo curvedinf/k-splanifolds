@@ -1,0 +1,108 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave4_pareto",
+  "deadline_epoch": 1792786352,
+  "jobs": [
+    {
+      "id": "pareto_frozen_r8_f1024_s2048_11",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_frozen_r8_f1024_s2048",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "pareto_frozen_r8_f2048_s2048_11",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_frozen_r8_f2048_s2048",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "pareto_frozen_r8_f1024_s2048_22",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_frozen_r8_f1024_s2048",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "pareto_frozen_r8_f2048_s2048_22",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_frozen_r8_f2048_s2048",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "pareto_frozen_r8_f1024_s2048_33",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_frozen_r8_f1024_s2048",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 33,
+      "steps": 15000
+    },
+    {
+      "id": "pareto_frozen_r8_f2048_s2048_33",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "pareto_frozen_r8_f2048_s2048",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 33,
+      "steps": 15000
+    }
+  ]
+}

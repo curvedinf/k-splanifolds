@@ -1,0 +1,20 @@
+{"event": "gpu_released_by_previous_wave", "time": 1792785600.5273619, "gpu": 3}
+{"event": "validation_complete", "time": 1792785607.2550242, "gpu": 3}
+{"event": "start", "time": 1792785607.6644757, "gpu": 3, "job": {"id": "pareto_frozen_r8_f1024_s2048_11", "config": {"family": "hadmux", "features": 1024, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_frozen_r8_f1024_s2048", "geometry_terms": "spine", "frozen_geometry": true}, "seed": 11, "steps": 15000}}
+{"event": "complete", "time": 1792785812.655502, "gpu": 3, "job": "pareto_frozen_r8_f1024_s2048_11", "loss": 1.6790684461593628, "parameters": 357632, "ms": 11.555875656652885}
+{"event": "start", "time": 1792785812.6557987, "gpu": 3, "job": {"id": "pareto_frozen_r8_f2048_s2048_11", "config": {"family": "hadmux", "features": 2048, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_frozen_r8_f2048_s2048", "geometry_terms": "spine", "frozen_geometry": true}, "seed": 11, "steps": 15000}}
+{"event": "gpu_released_by_previous_wave", "time": 1792785815.5604465, "gpu": 2}
+{"event": "validation_complete", "time": 1792785821.951964, "gpu": 2}
+{"event": "start", "time": 1792785821.9523864, "gpu": 2, "job": {"id": "pareto_frozen_r8_f1024_s2048_22", "config": {"family": "hadmux", "features": 1024, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_frozen_r8_f1024_s2048", "geometry_terms": "spine", "frozen_geometry": true}, "seed": 22, "steps": 15000}}
+{"event": "gpu_released_by_previous_wave", "time": 1792785830.5601418, "gpu": 1}
+{"event": "validation_complete", "time": 1792785836.8398333, "gpu": 1}
+{"event": "start", "time": 1792785836.8403254, "gpu": 1, "job": {"id": "pareto_frozen_r8_f2048_s2048_22", "config": {"family": "hadmux", "features": 2048, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_frozen_r8_f2048_s2048", "geometry_terms": "spine", "frozen_geometry": true}, "seed": 22, "steps": 15000}}
+{"event": "complete", "time": 1792786028.50914, "gpu": 2, "job": "pareto_frozen_r8_f1024_s2048_22", "loss": 1.682252287864685, "parameters": 357632, "ms": 11.549626292940228}
+{"event": "start", "time": 1792786028.5094452, "gpu": 2, "job": {"id": "pareto_frozen_r8_f1024_s2048_33", "config": {"family": "hadmux", "features": 1024, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_frozen_r8_f1024_s2048", "geometry_terms": "spine", "frozen_geometry": true}, "seed": 33, "steps": 15000}}
+{"event": "complete", "time": 1792786058.668337, "gpu": 3, "job": "pareto_frozen_r8_f2048_s2048_11", "loss": 1.6755499839782715, "parameters": 357632, "ms": 13.595350544348669}
+{"event": "start", "time": 1792786058.6686373, "gpu": 3, "job": {"id": "pareto_frozen_r8_f2048_s2048_33", "config": {"family": "hadmux", "features": 2048, "side_width": 2048, "geometry_rank": 8, "cell": "ks2_relu2", "fused_general": true, "output_lr": 5.5, "name": "pareto_frozen_r8_f2048_s2048", "geometry_terms": "spine", "frozen_geometry": true}, "seed": 33, "steps": 15000}}
+{"event": "complete", "time": 1792786069.9150615, "gpu": 1, "job": "pareto_frozen_r8_f2048_s2048_22", "loss": 1.6777679920196533, "parameters": 357632, "ms": 12.961085243794757}
+{"event": "complete", "time": 1792786236.1158495, "gpu": 2, "job": "pareto_frozen_r8_f1024_s2048_33", "loss": 1.675505518913269, "parameters": 357632, "ms": 11.590410736948252}
+{"event": "complete", "time": 1792786304.6657577, "gpu": 3, "job": "pareto_frozen_r8_f2048_s2048_33", "loss": 1.6763793230056763, "parameters": 357632, "ms": 13.580610850608597}
+{"event": "gpu_released_by_previous_wave", "time": 1792786345.645585, "gpu": 0}
+{"event": "validation_complete", "time": 1792786352.0366585, "gpu": 0}

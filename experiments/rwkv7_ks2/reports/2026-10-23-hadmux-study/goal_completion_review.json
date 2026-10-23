@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "reviewed_epoch": 1792787784.05851,
+  "objective": "Spend two hours going back to hadmux and studying combining the strongest KS2 findings with the best Hadamard side/history results.",
+  "research_target": "Combined learned-FFN parameter ratio times step-time ratio versus held-out loss Pareto frontier",
+  "training_runs": 84,
+  "replicated_configurations": 28,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "training_window_seconds": 7200,
+  "all_launches_before_cutoff": true,
+  "all_four_gpus": true,
+  "mlp_control_unchanged": true,
+  "reserved_scores": 114,
+  "timing_configurations": 34,
+  "timing_rounds": 5,
+  "trained_pruning_checks": 12,
+  "default_view": "4,468,985 training bytes \u00b7 15,000 updates \u00b7 B4 T64 \u00b7 controlled timing \u00b7 reserved loss",
+  "parameter_scope": "Learned FFN module parameters; frozen storage and external normalization/time-mixing disclosed separately.",
+  "quality_limit": "Observed three-seed frontiers; small neighboring differences are not necessarily distinguishable. No convergence claim at 25k.",
+  "final_scoring_selection": "Reserved scores produced only after training and architecture selection finished.",
+  "publication": "Package prepared next; remote tree verification recorded at publication."
+}

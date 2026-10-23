@@ -1,0 +1,282 @@
+{
+  "epoch": 1792783682.9401262,
+  "criterion": "Original Hadamard baseline, best complete scaled mean, matched-budget scaled R1, and unchanged original MLP. If matched R1 is itself best, include the best scaled R8 candidate as the other family. Also include frozen R8 and learned R4 spine to probe the user-requested combined size-times-speed frontier. Three seeds for every arm.",
+  "all_scaling_groups": [
+    {
+      "name": "original_mlp_repeat",
+      "config": {
+        "name": "original_mlp_repeat",
+        "family": "mlp"
+      },
+      "mean": 1.6194096406300862,
+      "mean_ms": 7.845710964058526,
+      "values": [
+        1.619519829750061,
+        1.617920994758606,
+        1.6207880973815918
+      ]
+    },
+    {
+      "name": "scale_full_f1024_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f1024_s2048"
+      },
+      "mean": 1.6518397331237793,
+      "mean_ms": 14.69784663764553,
+      "values": [
+        1.6564044952392578,
+        1.6504030227661133,
+        1.6487116813659668
+      ]
+    },
+    {
+      "name": "scale_full_f512_s8192",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f512_s8192"
+      },
+      "mean": 1.6524766683578491,
+      "mean_ms": 30.530782442770175,
+      "values": [
+        1.6559332609176636,
+        1.6498361825942993,
+        1.6516605615615845
+      ]
+    },
+    {
+      "name": "scale_r8spine_f2048_s8192",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s8192",
+        "geometry_terms": "spine"
+      },
+      "mean": 1.6567434072494507,
+      "mean_ms": 33.20692266838935,
+      "values": [
+        1.6577529907226562,
+        1.6580442190170288,
+        1.654433012008667
+      ]
+    },
+    {
+      "name": "scale_r1_matched_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "mean": 1.66129203637441,
+      "mean_ms": 33.532383601605474,
+      "values": [
+        1.6613065004348755,
+        1.662251353263855,
+        1.6603182554244995
+      ]
+    },
+    {
+      "name": "scale_r8spine_f2048_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s2048",
+        "geometry_terms": "spine"
+      },
+      "mean": 1.6709829171498616,
+      "mean_ms": 13.594327584354,
+      "values": [
+        1.6708015203475952,
+        1.6706892251968384,
+        1.6714580059051514
+      ]
+    },
+    {
+      "name": "scale_r1_f2048_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_f2048_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "mean": 1.671261231104533,
+      "mean_ms": 14.372078505843982,
+      "values": [
+        1.6706584692001343,
+        1.6737632751464844,
+        1.66936194896698
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "name": "had_full_r8",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_full_r8"
+      },
+      "mean": 1.665443778038025,
+      "mean_ms": 11.796447040187195
+    },
+    {
+      "name": "scale_full_f1024_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f1024_s2048"
+      },
+      "mean": 1.6518397331237793,
+      "mean_ms": 14.69784663764553,
+      "values": [
+        1.6564044952392578,
+        1.6504030227661133,
+        1.6487116813659668
+      ]
+    },
+    {
+      "name": "scale_r1_matched_s2048",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "mean": 1.66129203637441,
+      "mean_ms": 33.532383601605474,
+      "values": [
+        1.6613065004348755,
+        1.662251353263855,
+        1.6603182554244995
+      ]
+    },
+    {
+      "name": "original_mlp_repeat",
+      "config": {
+        "name": "original_mlp_repeat",
+        "family": "mlp"
+      },
+      "mean": 1.6194096406300862,
+      "mean_ms": 7.845710964058526,
+      "values": [
+        1.619519829750061,
+        1.617920994758606,
+        1.6207880973815918
+      ]
+    },
+    {
+      "name": "had_spine_r8_frozen",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r8_frozen",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "mean": 1.6800703207651775,
+      "mean_ms": 10.354114974867034
+    },
+    {
+      "name": "had_spine_r4_relu2",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 4,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "had_spine_r4_relu2",
+        "geometry_terms": "spine"
+      },
+      "mean": 1.6774721542994182,
+      "mean_ms": 10.58958788237845
+    }
+  ],
+  "steps": 25000,
+  "forecasts": [
+    {
+      "steps": 100000,
+      "predicted_seconds": 9052.581408868853,
+      "available_seconds": 2669.059985399246
+    },
+    {
+      "steps": 75000,
+      "predicted_seconds": 6875.68605665164,
+      "available_seconds": 2669.059985399246
+    },
+    {
+      "steps": 50000,
+      "predicted_seconds": 4690.12541742139,
+      "available_seconds": 2669.059985399246
+    },
+    {
+      "steps": 30000,
+      "predicted_seconds": 2904.0752504528346,
+      "available_seconds": 2669.059985399246
+    },
+    {
+      "steps": 25000,
+      "predicted_seconds": 2457.562708710695,
+      "available_seconds": 2669.059985399246
+    }
+  ],
+  "control": "Original MLP architecture/initialization/optimizer, no tuning. All new long arms share the chosen cosine horizon. Historical 15k/100k references remain separately reported.",
+  "timing": "Horizon chosen before long training, from complete short-run times and remaining user window, with15%training-time margin+60sperjob+45svalidation. Final actual completion and utilization are audited separately."
+}

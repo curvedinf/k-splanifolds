@@ -1,0 +1,321 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave2_scaling",
+  "deadline_epoch": 1792786352,
+  "jobs": [
+    {
+      "id": "scale_full_f1024_s2048_11",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f1024_s2048"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r1_f2048_s2048_11",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_f2048_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r1_matched_s2048_11",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r8spine_f2048_s2048_11",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s2048",
+        "geometry_terms": "spine"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "scale_full_f512_s8192_11",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f512_s8192"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r8spine_f2048_s8192_11",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s8192",
+        "geometry_terms": "spine"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "original_mlp_repeat_11",
+      "config": {
+        "name": "original_mlp_repeat",
+        "family": "mlp"
+      },
+      "seed": 11,
+      "steps": 15000
+    },
+    {
+      "id": "scale_full_f1024_s2048_22",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f1024_s2048"
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r1_f2048_s2048_22",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_f2048_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r1_matched_s2048_22",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r8spine_f2048_s2048_22",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s2048",
+        "geometry_terms": "spine"
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "scale_full_f512_s8192_22",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f512_s8192"
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r8spine_f2048_s8192_22",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s8192",
+        "geometry_terms": "spine"
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "original_mlp_repeat_22",
+      "config": {
+        "name": "original_mlp_repeat",
+        "family": "mlp"
+      },
+      "seed": 22,
+      "steps": 15000
+    },
+    {
+      "id": "scale_full_f1024_s2048_33",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f1024_s2048"
+      },
+      "seed": 33,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r1_f2048_s2048_33",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_f2048_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 33,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r1_matched_s2048_33",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 33,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r8spine_f2048_s2048_33",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s2048",
+        "geometry_terms": "spine"
+      },
+      "seed": 33,
+      "steps": 15000
+    },
+    {
+      "id": "scale_full_f512_s8192_33",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_full_f512_s8192"
+      },
+      "seed": 33,
+      "steps": 15000
+    },
+    {
+      "id": "scale_r8spine_f2048_s8192_33",
+      "config": {
+        "family": "hadmux",
+        "features": 2048,
+        "side_width": 8192,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "scale_r8spine_f2048_s8192",
+        "geometry_terms": "spine"
+      },
+      "seed": 33,
+      "steps": 15000
+    },
+    {
+      "id": "original_mlp_repeat_33",
+      "config": {
+        "name": "original_mlp_repeat",
+        "family": "mlp"
+      },
+      "seed": 33,
+      "steps": 15000
+    }
+  ]
+}

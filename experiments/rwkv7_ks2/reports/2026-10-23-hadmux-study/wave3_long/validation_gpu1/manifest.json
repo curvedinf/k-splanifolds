@@ -1,0 +1,273 @@
+{
+  "out": "experiments/rwkv7_ks2/gpu_runs/hadmux_20261023_181232/wave3_long",
+  "deadline_epoch": 1792786352,
+  "jobs": [
+    {
+      "id": "long_scale_r1_matched_s2048_11",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 11,
+      "steps": 25000
+    },
+    {
+      "id": "long_scale_full_f1024_s2048_11",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_scale_full_f1024_s2048"
+      },
+      "seed": 11,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_full_r8_11",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_full_r8"
+      },
+      "seed": 11,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_spine_r4_relu2_11",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 4,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_spine_r4_relu2",
+        "geometry_terms": "spine"
+      },
+      "seed": 11,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_spine_r8_frozen_11",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_spine_r8_frozen",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 11,
+      "steps": 25000
+    },
+    {
+      "id": "long_original_mlp_repeat_11",
+      "config": {
+        "name": "long_original_mlp_repeat",
+        "family": "mlp"
+      },
+      "seed": 11,
+      "steps": 25000
+    },
+    {
+      "id": "long_scale_r1_matched_s2048_22",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 22,
+      "steps": 25000
+    },
+    {
+      "id": "long_scale_full_f1024_s2048_22",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_scale_full_f1024_s2048"
+      },
+      "seed": 22,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_full_r8_22",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_full_r8"
+      },
+      "seed": 22,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_spine_r4_relu2_22",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 4,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_spine_r4_relu2",
+        "geometry_terms": "spine"
+      },
+      "seed": 22,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_spine_r8_frozen_22",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_spine_r8_frozen",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 22,
+      "steps": 25000
+    },
+    {
+      "id": "long_original_mlp_repeat_22",
+      "config": {
+        "name": "long_original_mlp_repeat",
+        "family": "mlp"
+      },
+      "seed": 22,
+      "steps": 25000
+    },
+    {
+      "id": "long_scale_r1_matched_s2048_33",
+      "config": {
+        "family": "hadmux",
+        "features": 6560,
+        "side_width": 2048,
+        "geometry_rank": 1,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_scale_r1_matched_s2048",
+        "geometry_terms": "spine",
+        "geometry_basis": "powers"
+      },
+      "seed": 33,
+      "steps": 25000
+    },
+    {
+      "id": "long_scale_full_f1024_s2048_33",
+      "config": {
+        "family": "hadmux",
+        "features": 1024,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_scale_full_f1024_s2048"
+      },
+      "seed": 33,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_full_r8_33",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_full_r8"
+      },
+      "seed": 33,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_spine_r4_relu2_33",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 4,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_spine_r4_relu2",
+        "geometry_terms": "spine"
+      },
+      "seed": 33,
+      "steps": 25000
+    },
+    {
+      "id": "long_had_spine_r8_frozen_33",
+      "config": {
+        "family": "hadmux",
+        "features": 512,
+        "side_width": 2048,
+        "geometry_rank": 8,
+        "cell": "ks2_relu2",
+        "fused_general": true,
+        "output_lr": 5.5,
+        "name": "long_had_spine_r8_frozen",
+        "geometry_terms": "spine",
+        "frozen_geometry": true
+      },
+      "seed": 33,
+      "steps": 25000
+    },
+    {
+      "id": "long_original_mlp_repeat_33",
+      "config": {
+        "name": "long_original_mlp_repeat",
+        "family": "mlp"
+      },
+      "seed": 33,
+      "steps": 25000
+    }
+  ]
+}
