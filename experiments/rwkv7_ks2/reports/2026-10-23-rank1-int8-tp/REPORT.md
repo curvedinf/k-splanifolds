@@ -2,9 +2,9 @@
 
 The selected rank-1 KS2 algorithm is now named **KS3**. The architecture,
 checkpoint weights and measurements below are unchanged. The standalone
-[PyTorch reference](../../../../ks3.py) provides the same floating-point FFN
+[PyTorch reference](../../../common/ks3.py) provides the same floating-point FFN
 with autograd. The canonical optimized implementation is
-[ks3_gpu.py](../../ks3_gpu.py), with [head parallelism](../../ks3_attention_tp.py)
+[ks3_int8.py](../../../common/ks3_int8.py), with [head parallelism](../../ks3_attention_tp.py)
 and [export/load support](../../export_ks3.py). Historical filenames and source
 archives below preserve the measured implementation; legacy live imports remain
 compatible. For the full-model builder dependencies, extract the source archive
@@ -20,7 +20,7 @@ TP4 shard tensors also match exactly. The full-model reload check passes on all
 four GPUs in all three modes. These verify the rename/reference; no new loss or
 latency measurement is claimed.
 
-- [Portable Torch tests](../../../../tests/test_ks3.py)
+- [Portable Torch tests](../../../common/test_ks3.py)
 - [Trained checkpoint check script](../../check_ks3.py) and [results](ks3_checkpoint_checks.json)
 - [Full-model TP4 reload results](ks3_export_reload_check.json)
 

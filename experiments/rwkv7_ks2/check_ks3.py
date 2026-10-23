@@ -10,7 +10,7 @@ sys.path[:0]=[str(repo),str(repo/'experiments/rwkv7_ks2')]
 import torch
 import run
 from study_models_v19 import build_model
-from ks3 import KS3
+from experiments.common.ks3 import KS3
 from ks3_gpu import KS3Int8
 import rank1_int8_tp,ks3_gpu
 assert rank1_int8_tp is ks3_gpu

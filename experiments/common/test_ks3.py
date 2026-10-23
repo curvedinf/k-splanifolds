@@ -5,7 +5,7 @@ import unittest
 import torch
 from torch.nn import functional as F
 
-from ks3 import KS3
+from experiments.common.ks3 import KS3
 
 
 def basis_reference(cell, inputs):

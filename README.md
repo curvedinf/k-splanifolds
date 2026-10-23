@@ -6,8 +6,8 @@ This repo contains the K‑Splanifolds paper plus the code and data used to gene
 a bounded Hermite cubic plus two warped Chebyshev terms, a coordinate bypass,
 and ReLU². At width 96 with 368 subspaces it has **73,600 parameters per FFN**.
 
-- [ks3.py](ks3.py) — standalone, readable PyTorch implementation with autograd.
-- [ks3_int8.py](ks3_int8.py) — integrated W8A8,
+- [ks3.py](experiments/common/ks3.py) — standalone, readable PyTorch implementation with autograd.
+- [ks3_int8.py](experiments/common/ks3_int8.py) — integrated W8A8,
   fused Horner evaluation and tensor parallelism; FP16 nonlinearities by default,
   with FP32 RWKV recurrent state.
 - [Measurements and export instructions](experiments/rwkv7_ks2/reports/2026-10-23-rank1-int8-tp/REPORT.md)
@@ -15,7 +15,7 @@ and ReLU². At width 96 with 368 subspaces it has **73,600 parameters per FFN**.
 
 ```python
 import torch
-from ks3 import KS3
+from experiments.common.ks3 import KS3
 
 ffn = KS3(in_features=96, num_subspaces=368)
 y = ffn(torch.randn(2, 64, 96))  # (batch, time, model width)
@@ -28,7 +28,7 @@ connection are supplied by the enclosing model.
 Convert a trained cell to fused INT8 inference (PyTorch + Triton on GPU):
 
 ```python
-from ks3_int8 import KS3Int8
+from experiments.common.ks3_int8 import KS3Int8
 
 # Load the trained weights into ffn before packing them.
 quantized_ffn = KS3Int8(ffn.cuda().eval())

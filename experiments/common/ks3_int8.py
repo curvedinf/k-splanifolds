@@ -3,8 +3,8 @@
 Standalone FFN use (requires PyTorch, Triton and a supported GPU):
 
     import torch
-    from ks3 import KS3
-    from ks3_int8 import KS3Int8
+    from experiments.common.ks3 import KS3
+    from experiments.common.ks3_int8 import KS3Int8
 
     trained_cell = KS3(96, num_subspaces=368).cuda().eval()
     # Load trained_cell's weights before conversion.
