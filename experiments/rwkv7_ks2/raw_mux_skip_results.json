@@ -1,0 +1,247 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/raw_mux_skip_64/fixed_both_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 64,
+    "control_update_scale": true,
+    "steps": 15000,
+    "gpu": 0,
+    "history_mode": "embedding_then_each_post_attention_96_and_raw_ks2_coordinates",
+    "attention_skip": true
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.7108612060546875
+    },
+    {
+      "step": 100,
+      "train_loss": 2.404506206512451,
+      "gradient_norm": 3.4234158992767334,
+      "val_loss": 2.6043825149536133,
+      "training_seconds": 1.3680057160090655
+    },
+    {
+      "step": 200,
+      "train_loss": 2.1737852096557617,
+      "gradient_norm": 37.02664566040039,
+      "val_loss": 2.453840732574463,
+      "training_seconds": 2.7379064250271767
+    },
+    {
+      "step": 500,
+      "train_loss": 2.042055130004883,
+      "gradient_norm": 2.892644166946411,
+      "val_loss": 2.287201404571533,
+      "training_seconds": 6.854410286061466
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.8845758438110352,
+      "gradient_norm": 1.7129356861114502,
+      "val_loss": 2.1356074810028076,
+      "training_seconds": 13.73889327805955
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.3929522037506104,
+      "gradient_norm": 375.5716857910156,
+      "val_loss": 2.014953851699829,
+      "training_seconds": 27.590424437075853
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.8099238872528076,
+      "gradient_norm": 1.5433354377746582,
+      "val_loss": 1.9459800720214844,
+      "training_seconds": 41.531432302086614
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.743246078491211,
+      "gradient_norm": 1.6126915216445923,
+      "val_loss": 1.8896594047546387,
+      "training_seconds": 55.53742334502749
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.9588229656219482,
+      "gradient_norm": 1.4351611137390137,
+      "val_loss": 1.8637795448303223,
+      "training_seconds": 69.59567528509069
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.801153302192688,
+      "gradient_norm": 1.502398133277893,
+      "val_loss": 1.826585292816162,
+      "training_seconds": 83.72679877805058
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.063015937805176,
+      "gradient_norm": 1.8139487504959106,
+      "val_loss": 1.8178620338439941,
+      "training_seconds": 97.92175224306993
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.153625726699829,
+      "gradient_norm": 2.085750102996826,
+      "val_loss": 1.7877775430679321,
+      "training_seconds": 112.17952110001352
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.5630693435668945,
+      "gradient_norm": 1.4615989923477173,
+      "val_loss": 1.7681692838668823,
+      "training_seconds": 126.49605670408346
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.8356561660766602,
+      "gradient_norm": 1.6964584589004517,
+      "val_loss": 1.7531020641326904,
+      "training_seconds": 140.87659184308723
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.8667705059051514,
+      "gradient_norm": 1.8679277896881104,
+      "val_loss": 1.7381876707077026,
+      "training_seconds": 155.31467189302202
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.6344465017318726,
+      "gradient_norm": 1.832207202911377,
+      "val_loss": 1.7263565063476562,
+      "training_seconds": 169.8008760359371
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.3905611038208008,
+      "gradient_norm": 1.475795030593872,
+      "val_loss": 1.7254765033721924,
+      "training_seconds": 184.32830826286227
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.5072636604309082,
+      "gradient_norm": 1.5986590385437012,
+      "val_loss": 1.7121800184249878,
+      "training_seconds": 198.89638650184497
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.751784324645996,
+      "gradient_norm": 1.7762577533721924,
+      "val_loss": 1.7090643644332886,
+      "training_seconds": 213.5048631048994
+    }
+  ],
+  "parameters": 543136,
+  "ffn_parameters_by_layer": [
+    52480,
+    52480,
+    52480,
+    52480
+  ],
+  "ffn_types": [
+    "ks2",
+    "ks2",
+    "ks2",
+    "ks2"
+  ],
+  "training_seconds": 213.5048631048994,
+  "wall_seconds": 222.6648839240661,
+  "benchmark_ms_per_step": 13.647983740083873,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "raw_mux.py": "533e7dfcafe193e9249f84034c1b78bc6c92fe52431619b82ca67a9bd06397e2",
+    "run_raw_mux_gpu.py": "47d11270e460e978f8ed1b52bdf7c997bcb9e85660b20ae960e6e958712c29d9",
+    "raw_mux_skip.py": "f9372f41797b5d888d7c2f16ea271988b9c53ff45d694c37f0e234f309ae9248",
+    "run_raw_mux_skip_gpu.py": "15a19a13dd979401143141444ba3d65575ef9a3f552cb669a4df3c96ff5ac81f"
+  },
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "coding": "fixed_both",
+  "coding_protocol": {
+    "charts": 64,
+    "rank": 8,
+    "attention_view_charts": 12,
+    "attention_view_width": 96,
+    "attention_input_widths": [
+      96,
+      704,
+      1312,
+      1920
+    ],
+    "ffn_input_widths": [
+      192,
+      800,
+      1408,
+      2016
+    ],
+    "raw_output_width": 512,
+    "final_output_width": 96,
+    "view_seed": 103415,
+    "hadamard_width": 8,
+    "input_coverage": "Every history input enters every coordinate of every Hadamard view",
+    "output": "No intermediate demux or gains; final-only fixed row-normalized 512-to-96 projection with unit-init learned gains",
+    "note": "Embedding stays in history; append separate post-attention view+RWKV update and raw KS2 coordinates at each layer. KS2 reads history plus current post-attention state. All depth gradients retained. No 2048D side stream. Final head reads only final demux; no residual bypass. Initial logits differ from earlier residual models.",
+    "attention_skip": "Layers 2-4: combined = Hadamard_mux_96(history) + previous_post_attention_state; post_attention_state = combined + RWKV(LayerNorm(combined)). Layer 1 unchanged; coefficient 1; no detach; history still contains the previous state."
+  },
+  "rhac_reference": {
+    "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+    "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+  },
+  "evaluation": {
+    "original_val": 1.7090643644332886,
+    "expanded_val": 1.6971638202667236,
+    "sampled_train": 1.5840771198272705
+  },
+  "architecture": "Raw KS2 coordinate history; 96D Hadamard view before each RWKV; final-only 96D demux; direct previous-attention-state addition before RWKV",
+  "output_lr_multiplier": 5.5,
+  "parameter_breakdown": {
+    "total": 543136,
+    "rwkv": 269568,
+    "embedding_and_head": 49152,
+    "ks2_geometry": 209920,
+    "final_demux_gains": 96,
+    "norms_and_ffn_mix": 14400
+  }
+}

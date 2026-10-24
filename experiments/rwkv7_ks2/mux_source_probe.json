@@ -1,0 +1,161 @@
+{
+  "protocol": "Trained raw-mux no-skip seed11 checkpoint, four validation windows of 64 tokens, sampler seed54321. RMS of raw history and each projected contribution before RWKV LayerNorm. Group energies exclude cross-group covariance; fractions are descriptive, not explained variance.",
+  "layers": [
+    {
+      "layer": 1,
+      "sources": [
+        {
+          "name": "embedding",
+          "width": 96,
+          "rms": 0.9242978692054749,
+          "projected_rms": 1.0880680084228516
+        }
+      ],
+      "group_projected_mean_square": {
+        "embedding": 1.1838921308517456
+      },
+      "group_energy_fraction": {
+        "embedding": 1.0
+      },
+      "actual_mux_mean_square": 1.1838921308517456
+    },
+    {
+      "layer": 2,
+      "sources": [
+        {
+          "name": "embedding",
+          "width": 96,
+          "rms": 0.9242978692054749,
+          "projected_rms": 0.3400585651397705
+        },
+        {
+          "name": "attention1",
+          "width": 96,
+          "rms": 1.1717467308044434,
+          "projected_rms": 0.4349619448184967
+        },
+        {
+          "name": "ks21",
+          "width": 512,
+          "rms": 0.8659012913703918,
+          "projected_rms": 0.7486603856086731
+        }
+      ],
+      "group_projected_mean_square": {
+        "embedding": 0.115639828145504,
+        "attention": 0.18919187784194946,
+        "ks2": 0.5604923963546753
+      },
+      "group_energy_fraction": {
+        "embedding": 0.13363759062356817,
+        "attention": 0.21863701395797647,
+        "ks2": 0.6477253954184554
+      },
+      "actual_mux_mean_square": 0.8929839134216309
+    },
+    {
+      "layer": 3,
+      "sources": [
+        {
+          "name": "embedding",
+          "width": 96,
+          "rms": 0.9242978692054749,
+          "projected_rms": 0.24232237040996552
+        },
+        {
+          "name": "attention1",
+          "width": 96,
+          "rms": 1.1717467308044434,
+          "projected_rms": 0.31109321117401123
+        },
+        {
+          "name": "ks21",
+          "width": 512,
+          "rms": 0.8659012913703918,
+          "projected_rms": 0.5385132431983948
+        },
+        {
+          "name": "attention2",
+          "width": 96,
+          "rms": 1.3854541778564453,
+          "projected_rms": 0.37199297547340393
+        },
+        {
+          "name": "ks22",
+          "width": 512,
+          "rms": 0.9575732946395874,
+          "projected_rms": 0.5781667828559875
+        }
+      ],
+      "group_projected_mean_square": {
+        "embedding": 0.05872013047337532,
+        "attention": 0.22830063104629517,
+        "ks2": 0.6175273656845093
+      },
+      "group_energy_fraction": {
+        "embedding": 0.06491653534773245,
+        "attention": 0.2523919116962163,
+        "ks2": 0.6826915529560512
+      },
+      "actual_mux_mean_square": 0.8954484462738037
+    },
+    {
+      "layer": 4,
+      "sources": [
+        {
+          "name": "embedding",
+          "width": 96,
+          "rms": 0.9242978692054749,
+          "projected_rms": 0.20456519722938538
+        },
+        {
+          "name": "attention1",
+          "width": 96,
+          "rms": 1.1717467308044434,
+          "projected_rms": 0.26793548464775085
+        },
+        {
+          "name": "ks21",
+          "width": 512,
+          "rms": 0.8659012913703918,
+          "projected_rms": 0.43657299876213074
+        },
+        {
+          "name": "attention2",
+          "width": 96,
+          "rms": 1.3854541778564453,
+          "projected_rms": 0.3116452693939209
+        },
+        {
+          "name": "ks22",
+          "width": 512,
+          "rms": 0.9575732946395874,
+          "projected_rms": 0.5004590153694153
+        },
+        {
+          "name": "attention3",
+          "width": 96,
+          "rms": 1.4091694355010986,
+          "projected_rms": 0.3216467499732971
+        },
+        {
+          "name": "ks23",
+          "width": 512,
+          "rms": 1.1068662405014038,
+          "projected_rms": 0.5859500169754028
+        }
+      ],
+      "group_projected_mean_square": {
+        "embedding": 0.04184691607952118,
+        "attention": 0.27549588680267334,
+        "ks2": 0.7897545695304871
+      },
+      "group_energy_fraction": {
+        "embedding": 0.03779876740952315,
+        "attention": 0.2488452178350754,
+        "ks2": 0.7133560147554014
+      },
+      "actual_mux_mean_square": 1.1263551712036133
+    }
+  ]
+}

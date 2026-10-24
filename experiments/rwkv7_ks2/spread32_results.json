@@ -1,0 +1,986 @@
+{
+  "fixed_both_11": {
+    "arguments": {
+      "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+      "out": "experiments/rwkv7_ks2/gpu_runs/spread32_short/fixed_both_11",
+      "variant": "inner_ks2_ffn",
+      "width": 96,
+      "layers": 4,
+      "seed": 11,
+      "ffn_charts": 32,
+      "control_update_scale": true,
+      "steps": 15000,
+      "gpu": 0
+    },
+    "history": [
+      {
+        "step": 0,
+        "val_loss": 5.645017623901367
+      },
+      {
+        "step": 100,
+        "train_loss": 2.3841943740844727,
+        "gradient_norm": 2.9926581382751465,
+        "val_loss": 2.6022353172302246,
+        "training_seconds": 0.9466612110845745
+      },
+      {
+        "step": 200,
+        "train_loss": 2.1925926208496094,
+        "gradient_norm": 41.7340087890625,
+        "val_loss": 2.4456539154052734,
+        "training_seconds": 1.8945544530870393
+      },
+      {
+        "step": 500,
+        "train_loss": 2.0190443992614746,
+        "gradient_norm": 1.9840812683105469,
+        "val_loss": 2.258232593536377,
+        "training_seconds": 4.7433695861836895
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.876601219177246,
+        "gradient_norm": 1.9025397300720215,
+        "val_loss": 2.1168930530548096,
+        "training_seconds": 9.503552807145752
+      },
+      {
+        "step": 2000,
+        "train_loss": 3.487882375717163,
+        "gradient_norm": 322.60601806640625,
+        "val_loss": 1.9984679222106934,
+        "training_seconds": 19.07041922910139
+      },
+      {
+        "step": 3000,
+        "train_loss": 1.818724274635315,
+        "gradient_norm": 1.3918049335479736,
+        "val_loss": 1.9259285926818848,
+        "training_seconds": 28.67987267114222
+      },
+      {
+        "step": 4000,
+        "train_loss": 1.6822850704193115,
+        "gradient_norm": 1.2426581382751465,
+        "val_loss": 1.8675202131271362,
+        "training_seconds": 38.317961084190756
+      },
+      {
+        "step": 5000,
+        "train_loss": 1.9478870630264282,
+        "gradient_norm": 1.237622618675232,
+        "val_loss": 1.8397303819656372,
+        "training_seconds": 48.00081272528041
+      },
+      {
+        "step": 6000,
+        "train_loss": 1.7117152214050293,
+        "gradient_norm": 1.4434363842010498,
+        "val_loss": 1.797183632850647,
+        "training_seconds": 57.723593839327805
+      },
+      {
+        "step": 7000,
+        "train_loss": 2.05790376663208,
+        "gradient_norm": 1.3362637758255005,
+        "val_loss": 1.7900300025939941,
+        "training_seconds": 67.48051377933007
+      },
+      {
+        "step": 8000,
+        "train_loss": 2.0575687885284424,
+        "gradient_norm": 1.9035874605178833,
+        "val_loss": 1.7524176836013794,
+        "training_seconds": 77.26484875637107
+      },
+      {
+        "step": 9000,
+        "train_loss": 1.5509929656982422,
+        "gradient_norm": 1.212902307510376,
+        "val_loss": 1.7306009531021118,
+        "training_seconds": 87.06894760136493
+      },
+      {
+        "step": 10000,
+        "train_loss": 1.8271598815917969,
+        "gradient_norm": 1.602266788482666,
+        "val_loss": 1.7157140970230103,
+        "training_seconds": 96.895415808307
+      },
+      {
+        "step": 11000,
+        "train_loss": 1.802874207496643,
+        "gradient_norm": 1.520530343055725,
+        "val_loss": 1.7016526460647583,
+        "training_seconds": 106.74813287029974
+      },
+      {
+        "step": 12000,
+        "train_loss": 1.5880402326583862,
+        "gradient_norm": 1.4249745607376099,
+        "val_loss": 1.691772222518921,
+        "training_seconds": 116.62851259124
+      },
+      {
+        "step": 13000,
+        "train_loss": 1.4082310199737549,
+        "gradient_norm": 1.3857240676879883,
+        "val_loss": 1.688626766204834,
+        "training_seconds": 126.54705883329734
+      },
+      {
+        "step": 14000,
+        "train_loss": 1.4743919372558594,
+        "gradient_norm": 1.3630443811416626,
+        "val_loss": 1.67179536819458,
+        "training_seconds": 136.50176432426088
+      },
+      {
+        "step": 15000,
+        "train_loss": 1.6613820791244507,
+        "gradient_norm": 1.6252236366271973,
+        "val_loss": 1.675896406173706,
+        "training_seconds": 146.484592947294
+      }
+    ],
+    "parameters": 521152,
+    "ffn_parameters_by_layer": [
+      73728,
+      26336,
+      26336,
+      73728
+    ],
+    "ffn_types": [
+      "mlp",
+      "ks2",
+      "ks2",
+      "mlp"
+    ],
+    "training_seconds": 146.484592947294,
+    "wall_seconds": 152.12291115499102,
+    "benchmark_ms_per_step": 9.476738499943167,
+    "invalid_steps": 0,
+    "data": {
+      "train": {
+        "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+        "source_tokens": 1000000,
+        "bytes": 4468985,
+        "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+      },
+      "val": {
+        "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+        "source_tokens": 100000,
+        "bytes": 444316,
+        "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+      }
+    },
+    "torch": "2.11.0+rocm7.1",
+    "hip": "7.1.52802",
+    "device": "AMD Instinct MI100",
+    "source_hashes": {
+      "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+      "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+      "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+      "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+      "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+      "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+      "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+      "run_spread32_gpu.py": "44195cbc4d3ebe7f4bd598556dd3921a06362116054811ac3acf301131f3e707"
+    },
+    "precision": "FP32",
+    "batch_size": 4,
+    "sequence_length": 64,
+    "training_targets": 3840000,
+    "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+    "coding": "fixed_both",
+    "coding_protocol": {
+      "width": 96,
+      "charts": 32,
+      "rank": 8,
+      "view_seed": 103415,
+      "hadamard_width": 8,
+      "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+      "input_coverage": "all 96 inputs in every coordinate of all 32 charts",
+      "output": "fixed transpose with unit row norms and 96 zero-init learned output gains",
+      "note": "Adaptation of RHAC SpreadViews, not a reproduction of depth-history conditioning; all input gradients retained."
+    },
+    "rhac_reference": {
+      "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+      "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+    },
+    "evaluation": {
+      "original_val": 1.675896406173706,
+      "expanded_val": 1.6617326736450195,
+      "sampled_train": 1.5530357360839844
+    },
+    "output_lr_multiplier": 5.5,
+    "tiled_evaluation": {
+      "arm": "fixed_both",
+      "seed": 11,
+      "loss": 1.6426717042922974,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6427463293075562
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6424827575683594
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6428241729736328
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6426331996917725
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    }
+  },
+  "fixed_both_22": {
+    "arguments": {
+      "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+      "out": "experiments/rwkv7_ks2/gpu_runs/spread32_short/fixed_both_22",
+      "variant": "inner_ks2_ffn",
+      "width": 96,
+      "layers": 4,
+      "seed": 22,
+      "ffn_charts": 32,
+      "control_update_scale": true,
+      "steps": 15000,
+      "gpu": 0
+    },
+    "history": [
+      {
+        "step": 0,
+        "val_loss": 5.722241401672363
+      },
+      {
+        "step": 100,
+        "train_loss": 2.329577922821045,
+        "gradient_norm": 2.7954068183898926,
+        "val_loss": 2.6089978218078613,
+        "training_seconds": 0.9400418740697205
+      },
+      {
+        "step": 200,
+        "train_loss": 2.2711687088012695,
+        "gradient_norm": 2.607717514038086,
+        "val_loss": 2.4621927738189697,
+        "training_seconds": 1.8807802631054074
+      },
+      {
+        "step": 500,
+        "train_loss": 2.68245005607605,
+        "gradient_norm": 183.34056091308594,
+        "val_loss": 2.255159616470337,
+        "training_seconds": 4.7057697110576555
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.8930389881134033,
+        "gradient_norm": 1.8208297491073608,
+        "val_loss": 2.146859645843506,
+        "training_seconds": 9.420303102000616
+      },
+      {
+        "step": 2000,
+        "train_loss": 1.6863107681274414,
+        "gradient_norm": 1.3591101169586182,
+        "val_loss": 1.9991387128829956,
+        "training_seconds": 18.87319076701533
+      },
+      {
+        "step": 3000,
+        "train_loss": 1.9954063892364502,
+        "gradient_norm": 1.7998149394989014,
+        "val_loss": 1.9034842252731323,
+        "training_seconds": 28.360336047015153
+      },
+      {
+        "step": 4000,
+        "train_loss": 1.6515991687774658,
+        "gradient_norm": 1.3117880821228027,
+        "val_loss": 1.8622775077819824,
+        "training_seconds": 37.87655663001351
+      },
+      {
+        "step": 5000,
+        "train_loss": 1.614006757736206,
+        "gradient_norm": 1.8583767414093018,
+        "val_loss": 1.8212261199951172,
+        "training_seconds": 47.415516744949855
+      },
+      {
+        "step": 6000,
+        "train_loss": 1.5747480392456055,
+        "gradient_norm": 1.269311547279358,
+        "val_loss": 1.7900735139846802,
+        "training_seconds": 56.97267173288856
+      },
+      {
+        "step": 7000,
+        "train_loss": 2.1146411895751953,
+        "gradient_norm": 1.3384515047073364,
+        "val_loss": 1.7724452018737793,
+        "training_seconds": 66.5465433858335
+      },
+      {
+        "step": 8000,
+        "train_loss": 1.4536495208740234,
+        "gradient_norm": 1.4204795360565186,
+        "val_loss": 1.746084451675415,
+        "training_seconds": 76.13314043986611
+      },
+      {
+        "step": 9000,
+        "train_loss": 1.552304744720459,
+        "gradient_norm": 1.2460954189300537,
+        "val_loss": 1.7307968139648438,
+        "training_seconds": 85.73456826293841
+      },
+      {
+        "step": 10000,
+        "train_loss": 1.542065978050232,
+        "gradient_norm": 1.2520591020584106,
+        "val_loss": 1.7106884717941284,
+        "training_seconds": 95.35172128491104
+      },
+      {
+        "step": 11000,
+        "train_loss": 1.5026829242706299,
+        "gradient_norm": 1.3004262447357178,
+        "val_loss": 1.6932008266448975,
+        "training_seconds": 104.98778656485956
+      },
+      {
+        "step": 12000,
+        "train_loss": 1.4846150875091553,
+        "gradient_norm": 1.4385992288589478,
+        "val_loss": 1.6869333982467651,
+        "training_seconds": 114.64608758082613
+      },
+      {
+        "step": 13000,
+        "train_loss": 1.405085563659668,
+        "gradient_norm": 1.349195122718811,
+        "val_loss": 1.6697871685028076,
+        "training_seconds": 124.32234163978137
+      },
+      {
+        "step": 14000,
+        "train_loss": 1.6172467470169067,
+        "gradient_norm": 1.3169716596603394,
+        "val_loss": 1.666440725326538,
+        "training_seconds": 134.01660973078106
+      },
+      {
+        "step": 15000,
+        "train_loss": 1.5611317157745361,
+        "gradient_norm": 1.5623059272766113,
+        "val_loss": 1.6609631776809692,
+        "training_seconds": 143.7263637247961
+      }
+    ],
+    "parameters": 521152,
+    "ffn_parameters_by_layer": [
+      73728,
+      26336,
+      26336,
+      73728
+    ],
+    "ffn_types": [
+      "mlp",
+      "ks2",
+      "ks2",
+      "mlp"
+    ],
+    "training_seconds": 143.7263637247961,
+    "wall_seconds": 149.35065258503892,
+    "benchmark_ms_per_step": 9.410376430023462,
+    "invalid_steps": 0,
+    "data": {
+      "train": {
+        "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+        "source_tokens": 1000000,
+        "bytes": 4468985,
+        "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+      },
+      "val": {
+        "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+        "source_tokens": 100000,
+        "bytes": 444316,
+        "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+      }
+    },
+    "torch": "2.11.0+rocm7.1",
+    "hip": "7.1.52802",
+    "device": "AMD Instinct MI100",
+    "source_hashes": {
+      "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+      "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+      "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+      "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+      "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+      "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+      "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+      "run_spread32_gpu.py": "44195cbc4d3ebe7f4bd598556dd3921a06362116054811ac3acf301131f3e707"
+    },
+    "precision": "FP32",
+    "batch_size": 4,
+    "sequence_length": 64,
+    "training_targets": 3840000,
+    "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+    "coding": "fixed_both",
+    "coding_protocol": {
+      "width": 96,
+      "charts": 32,
+      "rank": 8,
+      "view_seed": 103415,
+      "hadamard_width": 8,
+      "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+      "input_coverage": "all 96 inputs in every coordinate of all 32 charts",
+      "output": "fixed transpose with unit row norms and 96 zero-init learned output gains",
+      "note": "Adaptation of RHAC SpreadViews, not a reproduction of depth-history conditioning; all input gradients retained."
+    },
+    "rhac_reference": {
+      "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+      "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+    },
+    "evaluation": {
+      "original_val": 1.6609631776809692,
+      "expanded_val": 1.6579561233520508,
+      "sampled_train": 1.5468804836273193
+    },
+    "output_lr_multiplier": 5.5,
+    "tiled_evaluation": {
+      "arm": "fixed_both",
+      "seed": 22,
+      "loss": 1.64044189453125,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6404376029968262
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6405760049819946
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6402188539505005
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6405352354049683
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    }
+  },
+  "fixed_both_33": {
+    "arguments": {
+      "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+      "out": "experiments/rwkv7_ks2/gpu_runs/spread32_short/fixed_both_33",
+      "variant": "inner_ks2_ffn",
+      "width": 96,
+      "layers": 4,
+      "seed": 33,
+      "ffn_charts": 32,
+      "control_update_scale": true,
+      "steps": 15000,
+      "gpu": 0
+    },
+    "history": [
+      {
+        "step": 0,
+        "val_loss": 5.7316083908081055
+      },
+      {
+        "step": 100,
+        "train_loss": 2.4046132564544678,
+        "gradient_norm": 2.7517900466918945,
+        "val_loss": 2.62857723236084,
+        "training_seconds": 0.9555459480034187
+      },
+      {
+        "step": 200,
+        "train_loss": 2.3231201171875,
+        "gradient_norm": 2.0625500679016113,
+        "val_loss": 2.4836130142211914,
+        "training_seconds": 1.912370445090346
+      },
+      {
+        "step": 500,
+        "train_loss": 2.101344585418701,
+        "gradient_norm": 1.922746181488037,
+        "val_loss": 2.275656223297119,
+        "training_seconds": 4.785327821038663
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.898236870765686,
+        "gradient_norm": 1.4605053663253784,
+        "val_loss": 2.140963077545166,
+        "training_seconds": 9.580418452969752
+      },
+      {
+        "step": 2000,
+        "train_loss": 1.6942764520645142,
+        "gradient_norm": 1.4172369241714478,
+        "val_loss": 2.001333713531494,
+        "training_seconds": 19.201740714954212
+      },
+      {
+        "step": 3000,
+        "train_loss": 1.9501652717590332,
+        "gradient_norm": 1.5064506530761719,
+        "val_loss": 1.9263302087783813,
+        "training_seconds": 28.88098072388675
+      },
+      {
+        "step": 4000,
+        "train_loss": 1.5577478408813477,
+        "gradient_norm": 1.258802056312561,
+        "val_loss": 1.8758680820465088,
+        "training_seconds": 38.606253570877016
+      },
+      {
+        "step": 5000,
+        "train_loss": 1.5789194107055664,
+        "gradient_norm": 1.5474820137023926,
+        "val_loss": 1.837754726409912,
+        "training_seconds": 48.36649726086762
+      },
+      {
+        "step": 6000,
+        "train_loss": 1.5771836042404175,
+        "gradient_norm": 1.2849620580673218,
+        "val_loss": 1.8066740036010742,
+        "training_seconds": 58.15443937992677
+      },
+      {
+        "step": 7000,
+        "train_loss": 1.6815359592437744,
+        "gradient_norm": 1.2490335702896118,
+        "val_loss": 1.7762303352355957,
+        "training_seconds": 67.96785515791271
+      },
+      {
+        "step": 8000,
+        "train_loss": 1.545302152633667,
+        "gradient_norm": 1.5386338233947754,
+        "val_loss": 1.7544822692871094,
+        "training_seconds": 77.80771662387997
+      },
+      {
+        "step": 9000,
+        "train_loss": 1.7617799043655396,
+        "gradient_norm": 1.4798336029052734,
+        "val_loss": 1.742438793182373,
+        "training_seconds": 87.67235980194528
+      },
+      {
+        "step": 10000,
+        "train_loss": 1.6225169897079468,
+        "gradient_norm": 1.2983620166778564,
+        "val_loss": 1.7266488075256348,
+        "training_seconds": 97.56923029094469
+      },
+      {
+        "step": 11000,
+        "train_loss": 1.8428233861923218,
+        "gradient_norm": 1.3622959852218628,
+        "val_loss": 1.713545560836792,
+        "training_seconds": 107.5014791409485
+      },
+      {
+        "step": 12000,
+        "train_loss": 1.379861831665039,
+        "gradient_norm": 1.127248764038086,
+        "val_loss": 1.698214054107666,
+        "training_seconds": 117.46478958090302
+      },
+      {
+        "step": 13000,
+        "train_loss": 1.7361685037612915,
+        "gradient_norm": 1.4616354703903198,
+        "val_loss": 1.6925169229507446,
+        "training_seconds": 127.45569681096822
+      },
+      {
+        "step": 14000,
+        "train_loss": 1.461007833480835,
+        "gradient_norm": 1.3949090242385864,
+        "val_loss": 1.6936575174331665,
+        "training_seconds": 137.4680843979586
+      },
+      {
+        "step": 15000,
+        "train_loss": 1.3218505382537842,
+        "gradient_norm": 1.2549664974212646,
+        "val_loss": 1.6828538179397583,
+        "training_seconds": 147.49987818894442
+      }
+    ],
+    "parameters": 521152,
+    "ffn_parameters_by_layer": [
+      73728,
+      26336,
+      26336,
+      73728
+    ],
+    "ffn_types": [
+      "mlp",
+      "ks2",
+      "ks2",
+      "mlp"
+    ],
+    "training_seconds": 147.49987818894442,
+    "wall_seconds": 153.16433678008616,
+    "benchmark_ms_per_step": 9.558120330329984,
+    "invalid_steps": 0,
+    "data": {
+      "train": {
+        "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+        "source_tokens": 1000000,
+        "bytes": 4468985,
+        "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+      },
+      "val": {
+        "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+        "source_tokens": 100000,
+        "bytes": 444316,
+        "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+      }
+    },
+    "torch": "2.11.0+rocm7.1",
+    "hip": "7.1.52802",
+    "device": "AMD Instinct MI100",
+    "source_hashes": {
+      "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+      "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+      "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+      "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+      "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+      "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+      "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+      "run_spread32_gpu.py": "44195cbc4d3ebe7f4bd598556dd3921a06362116054811ac3acf301131f3e707"
+    },
+    "precision": "FP32",
+    "batch_size": 4,
+    "sequence_length": 64,
+    "training_targets": 3840000,
+    "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+    "coding": "fixed_both",
+    "coding_protocol": {
+      "width": 96,
+      "charts": 32,
+      "rank": 8,
+      "view_seed": 103415,
+      "hadamard_width": 8,
+      "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+      "input_coverage": "all 96 inputs in every coordinate of all 32 charts",
+      "output": "fixed transpose with unit row norms and 96 zero-init learned output gains",
+      "note": "Adaptation of RHAC SpreadViews, not a reproduction of depth-history conditioning; all input gradients retained."
+    },
+    "rhac_reference": {
+      "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+      "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+    },
+    "evaluation": {
+      "original_val": 1.6828538179397583,
+      "expanded_val": 1.6673827171325684,
+      "sampled_train": 1.5595290660858154
+    },
+    "output_lr_multiplier": 5.5,
+    "tiled_evaluation": {
+      "arm": "fixed_both",
+      "seed": 33,
+      "loss": 1.6490309238433838,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.64955472946167
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.648829698562622
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.648715615272522
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6490230560302734
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    }
+  },
+  "learned_11": {
+    "arguments": {
+      "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+      "out": "experiments/rwkv7_ks2/gpu_runs/spread32_short/learned_11",
+      "variant": "inner_ks2_ffn",
+      "width": 96,
+      "layers": 4,
+      "seed": 11,
+      "ffn_charts": 32,
+      "control_update_scale": true,
+      "steps": 15000,
+      "gpu": 0
+    },
+    "history": [
+      {
+        "step": 0,
+        "val_loss": 5.645017623901367
+      },
+      {
+        "step": 100,
+        "train_loss": 2.373551368713379,
+        "gradient_norm": 2.766889810562134,
+        "val_loss": 2.593442678451538,
+        "training_seconds": 0.9728015050059184
+      },
+      {
+        "step": 200,
+        "train_loss": 2.1626322269439697,
+        "gradient_norm": 30.341707229614258,
+        "val_loss": 2.445345878601074,
+        "training_seconds": 1.9464382530422881
+      },
+      {
+        "step": 500,
+        "train_loss": 2.05075740814209,
+        "gradient_norm": 1.897820234298706,
+        "val_loss": 2.2718992233276367,
+        "training_seconds": 4.870658754021861
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.8737602233886719,
+        "gradient_norm": 1.5898470878601074,
+        "val_loss": 2.1366477012634277,
+        "training_seconds": 9.753338810056448
+      },
+      {
+        "step": 2000,
+        "train_loss": 3.5973503589630127,
+        "gradient_norm": 181.86502075195312,
+        "val_loss": 2.006659984588623,
+        "training_seconds": 19.558862767065875
+      },
+      {
+        "step": 3000,
+        "train_loss": 1.8371292352676392,
+        "gradient_norm": 1.4621368646621704,
+        "val_loss": 1.9333351850509644,
+        "training_seconds": 29.40900977200363
+      },
+      {
+        "step": 4000,
+        "train_loss": 1.6781790256500244,
+        "gradient_norm": 1.3234628438949585,
+        "val_loss": 1.8786474466323853,
+        "training_seconds": 39.29677126905881
+      },
+      {
+        "step": 5000,
+        "train_loss": 1.8876276016235352,
+        "gradient_norm": 1.2162203788757324,
+        "val_loss": 1.8430266380310059,
+        "training_seconds": 49.21390625508502
+      },
+      {
+        "step": 6000,
+        "train_loss": 1.7307636737823486,
+        "gradient_norm": 1.21038818359375,
+        "val_loss": 1.7940711975097656,
+        "training_seconds": 59.15789234312251
+      },
+      {
+        "step": 7000,
+        "train_loss": 2.0100677013397217,
+        "gradient_norm": 1.387932538986206,
+        "val_loss": 1.7673320770263672,
+        "training_seconds": 69.12862411118113
+      },
+      {
+        "step": 8000,
+        "train_loss": 2.09902024269104,
+        "gradient_norm": 2.1899728775024414,
+        "val_loss": 1.7420027256011963,
+        "training_seconds": 79.12443867418915
+      },
+      {
+        "step": 9000,
+        "train_loss": 1.535889983177185,
+        "gradient_norm": 1.1969858407974243,
+        "val_loss": 1.720308780670166,
+        "training_seconds": 89.14468939614017
+      },
+      {
+        "step": 10000,
+        "train_loss": 1.7776439189910889,
+        "gradient_norm": 1.5053476095199585,
+        "val_loss": 1.7071566581726074,
+        "training_seconds": 99.19353237620089
+      },
+      {
+        "step": 11000,
+        "train_loss": 1.806201457977295,
+        "gradient_norm": 1.674879789352417,
+        "val_loss": 1.6917788982391357,
+        "training_seconds": 109.27375324815512
+      },
+      {
+        "step": 12000,
+        "train_loss": 1.566821813583374,
+        "gradient_norm": 1.4370173215866089,
+        "val_loss": 1.6811312437057495,
+        "training_seconds": 119.3821527401451
+      },
+      {
+        "step": 13000,
+        "train_loss": 1.3859639167785645,
+        "gradient_norm": 1.4394572973251343,
+        "val_loss": 1.6745178699493408,
+        "training_seconds": 129.518762701191
+      },
+      {
+        "step": 14000,
+        "train_loss": 1.4529508352279663,
+        "gradient_norm": 1.5479604005813599,
+        "val_loss": 1.6588385105133057,
+        "training_seconds": 139.6757613212103
+      },
+      {
+        "step": 15000,
+        "train_loss": 1.6467173099517822,
+        "gradient_norm": 1.552481770515442,
+        "val_loss": 1.661707878112793,
+        "training_seconds": 149.85241329530254
+      }
+    ],
+    "parameters": 619264,
+    "ffn_parameters_by_layer": [
+      73728,
+      75392,
+      75392,
+      73728
+    ],
+    "ffn_types": [
+      "mlp",
+      "ks2",
+      "ks2",
+      "mlp"
+    ],
+    "training_seconds": 149.85241329530254,
+    "wall_seconds": 155.5043163090013,
+    "benchmark_ms_per_step": 9.737190649611875,
+    "invalid_steps": 0,
+    "data": {
+      "train": {
+        "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+        "source_tokens": 1000000,
+        "bytes": 4468985,
+        "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+      },
+      "val": {
+        "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+        "source_tokens": 100000,
+        "bytes": 444316,
+        "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+      }
+    },
+    "torch": "2.11.0+rocm7.1",
+    "hip": "7.1.52802",
+    "device": "AMD Instinct MI100",
+    "source_hashes": {
+      "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+      "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+      "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+      "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+      "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+      "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+      "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+      "run_spread32_gpu.py": "44195cbc4d3ebe7f4bd598556dd3921a06362116054811ac3acf301131f3e707"
+    },
+    "precision": "FP32",
+    "batch_size": 4,
+    "sequence_length": 64,
+    "training_targets": 3840000,
+    "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+    "coding": "learned",
+    "coding_protocol": {
+      "width": 96,
+      "charts": 32,
+      "rank": 8,
+      "view_seed": 103415,
+      "hadamard_width": 8,
+      "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+      "input_coverage": "all 96 inputs in every coordinate of all 32 charts",
+      "output": "zero-init learned dense output",
+      "note": "Adaptation of RHAC SpreadViews, not a reproduction of depth-history conditioning; all input gradients retained."
+    },
+    "rhac_reference": {
+      "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+      "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+    },
+    "evaluation": {
+      "original_val": 1.661707878112793,
+      "expanded_val": 1.6474292278289795,
+      "sampled_train": 1.5314366817474365
+    },
+    "output_lr_multiplier": 0.34375,
+    "tiled_evaluation": {
+      "arm": "learned",
+      "seed": 11,
+      "loss": 1.6282284259796143,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.628117561340332
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6280399560928345
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6280531883239746
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6287027597427368
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    }
+  }
+}

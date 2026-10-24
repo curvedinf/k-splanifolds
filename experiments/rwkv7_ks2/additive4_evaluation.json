@@ -1,0 +1,49 @@
+{
+  "protocol": "Fixed 256 batches x 4 sequences x 64 bytes per expanded split; same original shards, overlapping windows possible. Not an independent test set.",
+  "seeds": {
+    "expanded_val": 54321,
+    "sampled_train": 98765
+  },
+  "added_branch_ablation": "Post-training inference-only intervention: zero added KS2 output projections, retain all learned MLP weights, then restore. Not a retrained MLP control.",
+  "rows": [
+    {
+      "run": "additive_11",
+      "original_val": 1.5703315734863281,
+      "expanded_val": 1.5575895309448242,
+      "sampled_train": 1.4091668128967285,
+      "added_ks2_disabled_at_evaluation": {
+        "original_val": 1.5746362209320068,
+        "expanded_val": 1.5669620037078857,
+        "sampled_train": 1.4245431423187256
+      }
+    },
+    {
+      "run": "additive_22",
+      "original_val": 1.5731573104858398,
+      "expanded_val": 1.560666561126709,
+      "sampled_train": 1.406811237335205,
+      "added_ks2_disabled_at_evaluation": {
+        "original_val": 1.5855200290679932,
+        "expanded_val": 1.5717263221740723,
+        "sampled_train": 1.4214982986450195
+      }
+    },
+    {
+      "run": "additive_33",
+      "original_val": 1.5648753643035889,
+      "expanded_val": 1.5539665222167969,
+      "sampled_train": 1.4083611965179443,
+      "added_ks2_disabled_at_evaluation": {
+        "original_val": 1.5784684419631958,
+        "expanded_val": 1.5644081830978394,
+        "sampled_train": 1.4233438968658447
+      }
+    },
+    {
+      "run": "mlp_replay_11",
+      "original_val": 1.56618332862854,
+      "expanded_val": 1.5584838390350342,
+      "sampled_train": 1.4119150638580322
+    }
+  ]
+}

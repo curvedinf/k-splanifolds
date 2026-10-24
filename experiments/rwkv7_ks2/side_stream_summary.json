@@ -1,0 +1,356 @@
+{
+  "protocol": {
+    "architecture": "four 32-rank8 KS2 FFNs; main 96D; side bypasses attention, embedding and head",
+    "side_widths": [
+      0,
+      32,
+      96,
+      160
+    ],
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "steps": 15000,
+    "targets": 3840000,
+    "side_initialization": "zeros; fully differentiable across depth; final side discarded",
+    "ffn_input": "LayerNorm over concatenated main and side, then original causal FFN time mixing",
+    "initialization": "shared attention, main mix, embedding/head and KS2 geometry exactly paired",
+    "projection": "32 independent fixed permute/8-way Hadamard/sign/fold codes; every FFN input in every chart coordinate",
+    "decoder": "fixed transpose with unit row norms and zero-initialized per-output gains",
+    "optimizer": "AdamW cosine 0.001 -> 0.0002, clip 1; gain LR x5.5 with inverse WD adjustment",
+    "terminal_side_gains": "Final FFN side output is discarded; its side gain entries have zero task gradient and remain counted.",
+    "evaluation": "Same held-out byte shard at four overlapping 64-token context offsets; 1,777,024 target visits/model, not independent test samples."
+  },
+  "arms": {
+    "0": {
+      "parameters": 426368,
+      "parameter_breakdown": {
+        "total": 426368,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 384,
+        "norms_and_ffn_mix": 2304
+      },
+      "main_width": 96,
+      "side_width": 0,
+      "ffn_width": 96,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "original_val": {
+        "mean": 1.7197250922520955,
+        "sd": 0.006600184738476609,
+        "values": [
+          1.7240440845489502,
+          1.7121275663375854,
+          1.723003625869751
+        ]
+      },
+      "expanded_val": {
+        "mean": 1.7044748862584431,
+        "sd": 0.0004768823115507333,
+        "values": [
+          1.7050166130065918,
+          1.7041184902191162,
+          1.7042895555496216
+        ]
+      },
+      "sampled_train": {
+        "mean": 1.5956451892852783,
+        "sd": 0.0031612948498121736,
+        "values": [
+          1.595885157585144,
+          1.5923707485198975,
+          1.5986796617507935
+        ]
+      },
+      "tiled_val": {
+        "mean": 1.6845953067143757,
+        "sd": 0.0013417465598060776,
+        "values": [
+          1.6859052181243896,
+          1.6846568584442139,
+          1.683223843574524
+        ]
+      },
+      "benchmark_ms": {
+        "mean": 11.80330838658847,
+        "sd": 0.4607427204809268,
+        "values": [
+          11.288899870123714,
+          11.942946650087833,
+          12.17807863955386
+        ]
+      },
+      "sustained_ms": {
+        "mean": 12.115596787489226,
+        "sd": 0.36907244822844915,
+        "values": [
+          11.710320458444766,
+          12.204095585977969,
+          12.432374318044943
+        ]
+      },
+      "paired_tiled_gap_vs_no_side": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "32": {
+      "parameters": 426880,
+      "parameter_breakdown": {
+        "total": 426880,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 512,
+        "norms_and_ffn_mix": 2688
+      },
+      "main_width": 96,
+      "side_width": 32,
+      "ffn_width": 128,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "original_val": {
+        "mean": 1.7133192618687947,
+        "sd": 0.0036722437538106796,
+        "values": [
+          1.715332269668579,
+          1.7155448198318481,
+          1.709080696105957
+        ]
+      },
+      "expanded_val": {
+        "mean": 1.6995254357655842,
+        "sd": 0.002867160654173959,
+        "values": [
+          1.702756404876709,
+          1.698535442352295,
+          1.697284460067749
+        ]
+      },
+      "sampled_train": {
+        "mean": 1.5925182898839314,
+        "sd": 0.003921993163453293,
+        "values": [
+          1.5909955501556396,
+          1.5895860195159912,
+          1.5969732999801636
+        ]
+      },
+      "tiled_val": {
+        "mean": 1.682142694791158,
+        "sd": 0.0009713890755791318,
+        "values": [
+          1.6829200983047485,
+          1.682454228401184,
+          1.6810537576675415
+        ]
+      },
+      "benchmark_ms": {
+        "mean": 11.687580747141814,
+        "sd": 0.2791945449625839,
+        "values": [
+          11.378303420497105,
+          11.763414300512522,
+          11.921024520415813
+        ]
+      },
+      "sustained_ms": {
+        "mean": 11.888769576307903,
+        "sd": 0.23727183549357317,
+        "values": [
+          11.62501385755216,
+          11.956439846288413,
+          12.084855025083137
+        ]
+      },
+      "paired_tiled_gap_vs_no_side": {
+        "mean": -0.0024526119232177734,
+        "sd": 0.0004614523540005784,
+        "values": [
+          -0.0029851198196411133,
+          -0.002202630043029785,
+          -0.002170085906982422
+        ]
+      }
+    },
+    "96": {
+      "parameters": 427904,
+      "parameter_breakdown": {
+        "total": 427904,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 768,
+        "norms_and_ffn_mix": 3456
+      },
+      "main_width": 96,
+      "side_width": 96,
+      "ffn_width": 192,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "original_val": {
+        "mean": 1.7116365432739258,
+        "sd": 0.0004501891431062838,
+        "values": [
+          1.7114169597625732,
+          1.7121543884277344,
+          1.7113382816314697
+        ]
+      },
+      "expanded_val": {
+        "mean": 1.699640154838562,
+        "sd": 0.0013391105504746692,
+        "values": [
+          1.6993168592453003,
+          1.7011113166809082,
+          1.6984922885894775
+        ]
+      },
+      "sampled_train": {
+        "mean": 1.5943859020868938,
+        "sd": 0.0022022643953739473,
+        "values": [
+          1.5957071781158447,
+          1.591843605041504,
+          1.5956069231033325
+        ]
+      },
+      "tiled_val": {
+        "mean": 1.6819252173105876,
+        "sd": 0.001134475497425532,
+        "values": [
+          1.681176781654358,
+          1.6832305192947388,
+          1.681368350982666
+        ]
+      },
+      "benchmark_ms": {
+        "mean": 12.011615779871741,
+        "sd": 0.4484029051219586,
+        "values": [
+          11.512045529671013,
+          12.143556349910796,
+          12.379245460033417
+        ]
+      },
+      "sustained_ms": {
+        "mean": 12.307074264398155,
+        "sd": 0.3526335098194221,
+        "values": [
+          11.913762439934848,
+          12.412462719118533,
+          12.594997634141086
+        ]
+      },
+      "paired_tiled_gap_vs_no_side": {
+        "mean": -0.0026700894037882486,
+        "sd": 0.00179544915080103,
+        "values": [
+          -0.004728436470031738,
+          -0.0014263391494750977,
+          -0.0018554925918579102
+        ]
+      }
+    },
+    "160": {
+      "parameters": 428928,
+      "parameter_breakdown": {
+        "total": 428928,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 1024,
+        "norms_and_ffn_mix": 4224
+      },
+      "main_width": 96,
+      "side_width": 160,
+      "ffn_width": 256,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "original_val": {
+        "mean": 1.7107782363891602,
+        "sd": 0.004388056064194497,
+        "values": [
+          1.7149972915649414,
+          1.7062387466430664,
+          1.7110986709594727
+        ]
+      },
+      "expanded_val": {
+        "mean": 1.6989530324935913,
+        "sd": 0.0016385981354433924,
+        "values": [
+          1.7007473707199097,
+          1.6975359916687012,
+          1.698575735092163
+        ]
+      },
+      "sampled_train": {
+        "mean": 1.5926299095153809,
+        "sd": 0.002577162534894431,
+        "values": [
+          1.5912961959838867,
+          1.5909929275512695,
+          1.5956006050109863
+        ]
+      },
+      "tiled_val": {
+        "mean": 1.6824531555175781,
+        "sd": 0.0019812694991370805,
+        "values": [
+          1.684621810913086,
+          1.6819998025894165,
+          1.680737853050232
+        ]
+      },
+      "benchmark_ms": {
+        "mean": 12.090289983122299,
+        "sd": 0.377407802741531,
+        "values": [
+          11.672151879174635,
+          12.193024449516088,
+          12.405693620676175
+        ]
+      },
+      "sustained_ms": {
+        "mean": 12.352918651467188,
+        "sd": 0.29297318338050726,
+        "values": [
+          12.023917960810165,
+          12.449211993192632,
+          12.58562600039877
+        ]
+      },
+      "paired_tiled_gap_vs_no_side": {
+        "mean": -0.002142151196797689,
+        "sd": 0.0007485965277048705,
+        "values": [
+          -0.001283407211303711,
+          -0.0026570558547973633,
+          -0.002485990524291992
+        ]
+      }
+    }
+  }
+}

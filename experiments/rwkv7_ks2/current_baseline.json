@@ -1,0 +1,35 @@
+{
+  "name": "demuxed_history_64_rank8_side2048",
+  "selected_by_user": true,
+  "model_module": "side_history",
+  "model_class": "HistoryModel",
+  "constructor": {
+    "seed": 11,
+    "side_width": 2048,
+    "charts": 64
+  },
+  "layers": 4,
+  "main_width": 96,
+  "parameters": 567552,
+  "architecture": "Sequential RWKV residual update followed by KS2 decoder residual update. Shared 96D main stream plus 2048D decoder-only side stream. Each decoder reads separate post-attention and post-FFN 96D residual states from all previous layers. Fixed Hadamard input mux and output demux at every decoder; learned per-output demux gains.",
+  "rwkv": "Original learned dense projections and controllers.",
+  "decoder_input_widths": [
+    2144,
+    2336,
+    2528,
+    2720
+  ],
+  "decoder_output_width": 2144,
+  "reference_results": "side_history_summary.json",
+  "latest_completed_repeat": "gpu_runs/rwkv8_rosa_ablation/baseline/fixed_both_11/completed.json",
+  "standard_comparison": {
+    "steps": 15000,
+    "batch_size": 4,
+    "sequence_length": 64,
+    "precision": "FP32",
+    "base_lr_start": 0.001,
+    "base_lr_end": 0.0002,
+    "decoder_gain_lr_multiplier": 5.5
+  },
+  "note": "This is the baseline going forward. Historical runners and defaults remain intact to preserve previous experiments."
+}

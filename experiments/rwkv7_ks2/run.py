@@ -113,12 +113,19 @@ class Block(nn.Module):
         hidden = self.norm2(inputs)
         hidden = hidden + (F.pad(hidden[:, :-1], (0, 0, 1, 0)) - hidden) * self.mix
         update = self.ffn(hidden) if hasattr(self, 'ffn') else self.value(F.relu(self.key(hidden)).square())
+        if hasattr(self, 'ffn_extra'):
+            update = update + self.ffn_extra(hidden)
         return inputs + update, first_value
 
 
 class Model(nn.Module):
-    def __init__(self, seed, variant, charts=1, width=128, layers=2, ffn_charts=11):
+    def __init__(self, seed, variant, charts=1, width=128, layers=2, ffn_charts=11,
+                 fused_cpu=True):
         super().__init__()
+        if width % 32 or layers < 2:
+            raise ValueError('Width must be divisible by 32 and layers must be at least two')
+        if variant in ('inner_ks2_ffn', 'inner_mlp_plus_ks2') and layers < 3:
+            raise ValueError('Inner KS2 FFNs require at least three layers')
         torch.manual_seed(seed)
         self.embedding = nn.Embedding(256, width)
         self.input_norm = nn.LayerNorm(width)
@@ -133,14 +140,20 @@ class Model(nn.Module):
                     cell = KS2StabilizedCell(width, width, num_subspaces=charts, geo_steps=1)
                     # Zero output preserves the original initial control signals.
                     nn.init.zeros_(cell.up.weight)
-                    setattr(block.attention, name, fuse_training(cell, threads=1))
-        if variant == 'ks2_ffn':
+                    setattr(block.attention, name, fuse_training(cell, threads=1) if fused_cpu else cell)
+        if variant in ('ks2_ffn', 'inner_ks2_ffn', 'inner_mlp_plus_ks2'):
             torch.manual_seed(seed + 2000)
-            for block in self.blocks:
+            for index, block in enumerate(self.blocks):
+                if variant in ('inner_ks2_ffn', 'inner_mlp_plus_ks2') and index in (0, layers - 1):
+                    continue
                 cell = KS2StabilizedCell(width, width, num_subspaces=ffn_charts, geo_steps=1)
                 nn.init.zeros_(cell.up.weight)
-                block.ffn = fuse_training(cell, threads=1)
-                del block.key, block.value
+                module = fuse_training(cell, threads=1) if fused_cpu else cell
+                if variant == 'inner_mlp_plus_ks2':
+                    block.ffn_extra = module
+                else:
+                    block.ffn = module
+                    del block.key, block.value
 
     def forward(self, tokens):
         hidden, first_value = self.input_norm(self.embedding(tokens)), None
@@ -174,7 +187,10 @@ def prepare_data(root, out):
 def make_optimizer(model, control_update_scale=False, ffn_charts=11):
     scale = 11 / ffn_charts if control_update_scale else 1.
     if control_update_scale:
-        outputs = [block.ffn.up.weight for block in model.blocks]
+        outputs = [getattr(block, name).up.weight for block in model.blocks
+                   for name in ('ffn', 'ffn_extra') if hasattr(block, name)]
+        if not outputs:
+            raise ValueError('Update scaling requires at least one KS2 FFN')
         output_ids = {id(p) for p in outputs}
         groups = [dict(params=[p for p in model.parameters() if id(p) not in output_ids], lr_scale=1., weight_decay=.01),
                   dict(params=outputs, lr_scale=scale, weight_decay=.01 / scale)]

@@ -1,0 +1,81 @@
+{
+  "protocol": "Fixed 256 batches x 4 sequences x 64 bytes per expanded split; same original shards, overlapping windows possible. Not an independent test set.",
+  "seeds": {
+    "expanded_val": 54321,
+    "sampled_train": 98765
+  },
+  "rows": [
+    {
+      "run": "ffn11_11",
+      "original_val": 1.7311694622039795,
+      "expanded_val": 1.7229877710342407,
+      "sampled_train": 1.613338828086853
+    },
+    {
+      "run": "ffn11_22",
+      "original_val": 1.7241601943969727,
+      "expanded_val": 1.7167229652404785,
+      "sampled_train": 1.610187292098999
+    },
+    {
+      "run": "ffn11_33",
+      "original_val": 1.7275009155273438,
+      "expanded_val": 1.7192473411560059,
+      "sampled_train": 1.6142247915267944
+    },
+    {
+      "run": "ffn22_scaled_11",
+      "original_val": 1.7010164260864258,
+      "expanded_val": 1.695887804031372,
+      "sampled_train": 1.5894172191619873
+    },
+    {
+      "run": "ffn22_scaled_22",
+      "original_val": 1.7095682621002197,
+      "expanded_val": 1.6950751543045044,
+      "sampled_train": 1.5879051685333252
+    },
+    {
+      "run": "ffn22_scaled_33",
+      "original_val": 1.7181141376495361,
+      "expanded_val": 1.7022829055786133,
+      "sampled_train": 1.596964955329895
+    },
+    {
+      "run": "ks2_11",
+      "original_val": 1.6680450439453125,
+      "expanded_val": 1.6586830615997314,
+      "sampled_train": 1.54831862449646
+    },
+    {
+      "run": "ks2_22",
+      "original_val": 1.663181185722351,
+      "expanded_val": 1.6549817323684692,
+      "sampled_train": 1.5425528287887573
+    },
+    {
+      "run": "ks2_33",
+      "original_val": 1.6612862348556519,
+      "expanded_val": 1.6568498611450195,
+      "sampled_train": 1.5485360622406006
+    },
+    {
+      "run": "mlp_11",
+      "original_val": 1.6699824333190918,
+      "expanded_val": 1.6609759330749512,
+      "sampled_train": 1.547210931777954
+    },
+    {
+      "run": "mlp_22",
+      "original_val": 1.6503177881240845,
+      "expanded_val": 1.6490318775177002,
+      "sampled_train": 1.5387604236602783
+    },
+    {
+      "run": "mlp_33",
+      "original_val": 1.663905382156372,
+      "expanded_val": 1.6538242101669312,
+      "sampled_train": 1.5480821132659912
+    }
+  ]
+}

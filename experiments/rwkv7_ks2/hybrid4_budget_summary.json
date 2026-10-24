@@ -1,0 +1,146 @@
+{
+  "mlp": {
+    "label": "All MLP",
+    "parameters": 615936,
+    "per_middle_ffn_parameters": 73728,
+    "middle_ffn_fraction": 1.0,
+    "mean_loss": 1.6520976622899373,
+    "std_loss": 0.001977037467642898,
+    "losses": [
+      1.653487205505371,
+      1.6498342752456665,
+      1.6529715061187744
+    ],
+    "paired_gaps": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gap_mean": 0.0,
+    "gap_std": 0.0,
+    "training_seconds": 112.78979301219806,
+    "wall_seconds": 117.63717750731546,
+    "expanded_val": 1.6385069688161213,
+    "sampled_train": 1.5288703838984172
+  },
+  "hybrid_c31": {
+    "label": "Middle KS2, full budget",
+    "parameters": 614552,
+    "per_middle_ffn_parameters": 73036,
+    "middle_ffn_fraction": 0.9906141493055556,
+    "mean_loss": 1.6611114740371704,
+    "std_loss": 0.005611823755883399,
+    "losses": [
+      1.6568009853363037,
+      1.6590765714645386,
+      1.667456865310669
+    ],
+    "paired_gaps": [
+      0.003313779830932617,
+      0.00924229621887207,
+      0.014485359191894531
+    ],
+    "gap_mean": 0.009013811747233072,
+    "gap_std": 0.005589293356042664,
+    "training_seconds": 149.78753672439294,
+    "wall_seconds": 155.44886446433762,
+    "expanded_val": 1.6487127542495728,
+    "sampled_train": 1.5351519584655762
+  },
+  "hybrid": {
+    "label": "Middle KS2, half budget",
+    "parameters": 543872,
+    "per_middle_ffn_parameters": 37696,
+    "middle_ffn_fraction": 0.5112847222222222,
+    "mean_loss": 1.6638333400090535,
+    "std_loss": 0.004347040657068194,
+    "losses": [
+      1.6637210845947266,
+      1.659543514251709,
+      1.668235421180725
+    ],
+    "paired_gaps": [
+      0.010233879089355469,
+      0.00970923900604248,
+      0.015263915061950684
+    ],
+    "gap_mean": 0.011735677719116211,
+    "gap_std": 0.003066782656919693,
+    "training_seconds": 140.167941265041,
+    "wall_seconds": 145.67356774265258,
+    "expanded_val": 1.654041091601054,
+    "sampled_train": 1.5431616306304932
+  },
+  "hybrid_c8": {
+    "label": "Middle KS2, quarter budget",
+    "parameters": 506176,
+    "per_middle_ffn_parameters": 18848,
+    "middle_ffn_fraction": 0.2556423611111111,
+    "mean_loss": 1.6671974658966064,
+    "std_loss": 0.006967541679857654,
+    "losses": [
+      1.6671509742736816,
+      1.6602532863616943,
+      1.6741881370544434
+    ],
+    "paired_gaps": [
+      0.013663768768310547,
+      0.010419011116027832,
+      0.021216630935668945
+    ],
+    "gap_mean": 0.015099803606669107,
+    "gap_std": 0.005540198144932298,
+    "training_seconds": 136.11781550055215,
+    "wall_seconds": 141.464233785014,
+    "expanded_val": 1.6573766469955444,
+    "sampled_train": 1.549302339553833
+  },
+  "hybrid_c4": {
+    "label": "Middle KS2, eighth budget",
+    "parameters": 487328,
+    "per_middle_ffn_parameters": 9424,
+    "middle_ffn_fraction": 0.12782118055555555,
+    "mean_loss": 1.6719484329223633,
+    "std_loss": 0.007163896501342729,
+    "losses": [
+      1.6792495250701904,
+      1.6649301052093506,
+      1.6716656684875488
+    ],
+    "paired_gaps": [
+      0.025762319564819336,
+      0.015095829963684082,
+      0.018694162368774414
+    ],
+    "gap_mean": 0.019850770632425945,
+    "gap_std": 0.005426491233701745,
+    "training_seconds": 134.62224057340063,
+    "wall_seconds": 139.98172091366723,
+    "expanded_val": 1.6619731585184734,
+    "sampled_train": 1.5534917116165161
+  },
+  "hybrid_c2": {
+    "label": "Middle KS2, sixteenth budget",
+    "parameters": 477904,
+    "per_middle_ffn_parameters": 4712,
+    "middle_ffn_fraction": 0.06391059027777778,
+    "mean_loss": 1.673730770746867,
+    "std_loss": 0.006914013882377412,
+    "losses": [
+      1.6815072298049927,
+      1.6714073419570923,
+      1.6682777404785156
+    ],
+    "paired_gaps": [
+      0.028020024299621582,
+      0.02157306671142578,
+      0.015306234359741211
+    ],
+    "gap_mean": 0.021633108456929524,
+    "gap_std": 0.006357107629830817,
+    "training_seconds": 135.37952215701807,
+    "wall_seconds": 140.70787075996245,
+    "expanded_val": 1.661133845647176,
+    "sampled_train": 1.5513780514399211
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "main_width": 96,
+  "side_width": 2048,
+  "input_widths": [
+    2144,
+    2336,
+    2528,
+    2720
+  ],
+  "output_width": 2144,
+  "charts": 64,
+  "rank": 8,
+  "steps": 15000,
+  "seed": 11,
+  "parameters": 567552,
+  "parameter_breakdown": {
+    "total": 567552,
+    "rwkv": 269568,
+    "embedding_and_head": 49152,
+    "ks2_geometry": 209920,
+    "output_gains": 8576,
+    "norms_and_ffn_mix": 30336
+  },
+  "benchmark_ms_per_step": 14.87402749946341,
+  "sustained_ms_per_step": 15.554944466155332,
+  "evaluation": {
+    "original_val": 1.708482027053833,
+    "expanded_val": 1.687241792678833,
+    "sampled_train": 1.5741981267929077
+  },
+  "tiled_evaluation": {
+    "arm": "fixed_both",
+    "seed": 11,
+    "loss": 1.6691116094589233,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.669081449508667
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.6693130731582642
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.6688657999038696
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.669185757637024
+      }
+    ],
+    "batch4_vs_batch64_max_loss_error": 5.960464477539062e-07
+  },
+  "comparison_no_history": {
+    "parameters": 564096,
+    "full_shard_loss": 1.6700959205627441,
+    "full_shard_loss_delta": -0.0009843111038208008,
+    "benchmark_ms_per_step": 14.752776249079034,
+    "sustained_ms_per_step": 15.419161548481013
+  },
+  "protocol": "Seed 11, 15k steps, same data, optimizer schedule and output-gain LR 5.5x. History contains separate 96D post-attention and post-FFN residuals from every strictly previous layer; all gradients retained. Expanded FFN LayerNorm/time mix. Baseline output matrices and geometry initialization preserved; input codes change with width. Same physical GPU0. One seed. Full-shard evaluation reuses the held-out shard at four overlapping offsets."
+}

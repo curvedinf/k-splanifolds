@@ -1,0 +1,3094 @@
+{
+  "0": [
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side0/fixed_both_11",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 11,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 0
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.645017623901367
+        },
+        {
+          "step": 100,
+          "train_loss": 2.428553819656372,
+          "gradient_norm": 3.4732275009155273,
+          "val_loss": 2.6374173164367676,
+          "training_seconds": 1.128837879979983
+        },
+        {
+          "step": 200,
+          "train_loss": 2.1911733150482178,
+          "gradient_norm": 68.65042877197266,
+          "val_loss": 2.489149570465088,
+          "training_seconds": 2.2595268649747595
+        },
+        {
+          "step": 500,
+          "train_loss": 2.0135490894317627,
+          "gradient_norm": 2.285034656524658,
+          "val_loss": 2.2986207008361816,
+          "training_seconds": 5.659114988986403
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9572864770889282,
+          "gradient_norm": 1.8764257431030273,
+          "val_loss": 2.171701669692993,
+          "training_seconds": 11.345935596968047
+        },
+        {
+          "step": 2000,
+          "train_loss": 3.531175136566162,
+          "gradient_norm": 117.68961334228516,
+          "val_loss": 2.034771680831909,
+          "training_seconds": 22.772724744863808
+        },
+        {
+          "step": 3000,
+          "train_loss": 1.8491029739379883,
+          "gradient_norm": 1.6034059524536133,
+          "val_loss": 1.9628196954727173,
+          "training_seconds": 34.25972232082859
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.7222716808319092,
+          "gradient_norm": 1.5242935419082642,
+          "val_loss": 1.9194962978363037,
+          "training_seconds": 45.79883862484712
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.9775632619857788,
+          "gradient_norm": 1.4523051977157593,
+          "val_loss": 1.8780715465545654,
+          "training_seconds": 57.40014847391285
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.7962218523025513,
+          "gradient_norm": 1.5455150604248047,
+          "val_loss": 1.837296724319458,
+          "training_seconds": 69.04871298884973
+        },
+        {
+          "step": 7000,
+          "train_loss": 2.087515115737915,
+          "gradient_norm": 1.450122356414795,
+          "val_loss": 1.8220293521881104,
+          "training_seconds": 80.73343150678556
+        },
+        {
+          "step": 8000,
+          "train_loss": 2.209191083908081,
+          "gradient_norm": 2.1988565921783447,
+          "val_loss": 1.798417568206787,
+          "training_seconds": 92.45907732285559
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.5491206645965576,
+          "gradient_norm": 1.3366755247116089,
+          "val_loss": 1.7735133171081543,
+          "training_seconds": 104.22357473080046
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.8086953163146973,
+          "gradient_norm": 1.8616783618927002,
+          "val_loss": 1.7604856491088867,
+          "training_seconds": 116.0271284438204
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.84716796875,
+          "gradient_norm": 1.7285693883895874,
+          "val_loss": 1.752374529838562,
+          "training_seconds": 127.87107919086702
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.662683129310608,
+          "gradient_norm": 1.7544149160385132,
+          "val_loss": 1.7391512393951416,
+          "training_seconds": 139.76310739980545
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.4601114988327026,
+          "gradient_norm": 1.9772886037826538,
+          "val_loss": 1.7345057725906372,
+          "training_seconds": 151.69575910572894
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.5052006244659424,
+          "gradient_norm": 1.6025134325027466,
+          "val_loss": 1.723649024963379,
+          "training_seconds": 163.66194876667578
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.7269591093063354,
+          "gradient_norm": 1.8573837280273438,
+          "val_loss": 1.7240440845489502,
+          "training_seconds": 175.6548068766715
+        }
+      ],
+      "parameters": 426368,
+      "ffn_parameters_by_layer": [
+        26336,
+        26336,
+        26336,
+        26336
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 175.6548068766715,
+      "wall_seconds": 181.79016498394776,
+      "benchmark_ms_per_step": 11.288899870123714,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 96,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 96 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 96 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7240440845489502,
+        "expanded_val": 1.7050166130065918,
+        "sampled_train": 1.595885157585144
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 426368,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 384,
+        "norms_and_ffn_mix": 2304
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6859052181243896,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6861635446548462
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6853482723236084
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6860772371292114
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6860313415527344
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 3.5762786865234375e-07
+      }
+    },
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side0/fixed_both_22",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 22,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 0
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.722241401672363
+        },
+        {
+          "step": 100,
+          "train_loss": 2.3732402324676514,
+          "gradient_norm": 2.938260078430176,
+          "val_loss": 2.6393868923187256,
+          "training_seconds": 1.196688044932671
+        },
+        {
+          "step": 200,
+          "train_loss": 2.387694835662842,
+          "gradient_norm": 3.1328563690185547,
+          "val_loss": 2.5025086402893066,
+          "training_seconds": 2.39533687394578
+        },
+        {
+          "step": 500,
+          "train_loss": 2.7171900272369385,
+          "gradient_norm": 30.533920288085938,
+          "val_loss": 2.302147388458252,
+          "training_seconds": 5.991592660895549
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9113043546676636,
+          "gradient_norm": 2.0778095722198486,
+          "val_loss": 2.190647602081299,
+          "training_seconds": 11.992284434847534
+        },
+        {
+          "step": 2000,
+          "train_loss": 1.756758451461792,
+          "gradient_norm": 1.6702839136123657,
+          "val_loss": 2.050515651702881,
+          "training_seconds": 24.01515543786809
+        },
+        {
+          "step": 3000,
+          "train_loss": 2.0605039596557617,
+          "gradient_norm": 1.730962872505188,
+          "val_loss": 1.9594929218292236,
+          "training_seconds": 36.06704973895103
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.7319846153259277,
+          "gradient_norm": 1.5515774488449097,
+          "val_loss": 1.9102938175201416,
+          "training_seconds": 48.14257728285156
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.6695806980133057,
+          "gradient_norm": 1.6833112239837646,
+          "val_loss": 1.8630433082580566,
+          "training_seconds": 60.23890287789982
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.6901793479919434,
+          "gradient_norm": 1.527402639389038,
+          "val_loss": 1.8301743268966675,
+          "training_seconds": 72.35546049789991
+        },
+        {
+          "step": 7000,
+          "train_loss": 2.1687605381011963,
+          "gradient_norm": 1.6806856393814087,
+          "val_loss": 1.810551404953003,
+          "training_seconds": 84.50356150884181
+        },
+        {
+          "step": 8000,
+          "train_loss": 1.4758225679397583,
+          "gradient_norm": 1.5602790117263794,
+          "val_loss": 1.7940740585327148,
+          "training_seconds": 96.70070724876132
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.5784809589385986,
+          "gradient_norm": 1.5084161758422852,
+          "val_loss": 1.7755612134933472,
+          "training_seconds": 108.95055910176598
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.541473150253296,
+          "gradient_norm": 1.5144809484481812,
+          "val_loss": 1.7623577117919922,
+          "training_seconds": 121.24242020072415
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.5079455375671387,
+          "gradient_norm": 1.6121431589126587,
+          "val_loss": 1.7394771575927734,
+          "training_seconds": 133.56609358568676
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.4670783281326294,
+          "gradient_norm": 1.5921142101287842,
+          "val_loss": 1.73453950881958,
+          "training_seconds": 145.91215089766774
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.5431857109069824,
+          "gradient_norm": 1.7455213069915771,
+          "val_loss": 1.7202730178833008,
+          "training_seconds": 158.27669665869325
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.6643288135528564,
+          "gradient_norm": 1.5248630046844482,
+          "val_loss": 1.7189347743988037,
+          "training_seconds": 170.66098215966485
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.5890679359436035,
+          "gradient_norm": 1.7441785335540771,
+          "val_loss": 1.7121275663375854,
+          "training_seconds": 183.06143378966954
+        }
+      ],
+      "parameters": 426368,
+      "ffn_parameters_by_layer": [
+        26336,
+        26336,
+        26336,
+        26336
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 183.06143378966954,
+      "wall_seconds": 189.345207393053,
+      "benchmark_ms_per_step": 11.942946650087833,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 96,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 96 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 96 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7121275663375854,
+        "expanded_val": 1.7041184902191162,
+        "sampled_train": 1.5923707485198975
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 426368,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 384,
+        "norms_and_ffn_mix": 2304
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 22,
+        "loss": 1.6846568584442139,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6845030784606934
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6843690872192383
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6849087476730347
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6848468780517578
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+      }
+    },
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side0/fixed_both_33",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 33,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 0
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.7316083908081055
+        },
+        {
+          "step": 100,
+          "train_loss": 2.449615001678467,
+          "gradient_norm": 3.2060458660125732,
+          "val_loss": 2.6602725982666016,
+          "training_seconds": 1.2234379349974915
+        },
+        {
+          "step": 200,
+          "train_loss": 2.362947463989258,
+          "gradient_norm": 2.3990871906280518,
+          "val_loss": 2.5224685668945312,
+          "training_seconds": 2.4488821629201993
+        },
+        {
+          "step": 500,
+          "train_loss": 2.1678736209869385,
+          "gradient_norm": 2.2043519020080566,
+          "val_loss": 2.2997851371765137,
+          "training_seconds": 6.131041516899131
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9336457252502441,
+          "gradient_norm": 2.0911431312561035,
+          "val_loss": 2.178770065307617,
+          "training_seconds": 12.277068151975982
+        },
+        {
+          "step": 2000,
+          "train_loss": 1.783172607421875,
+          "gradient_norm": 1.6968715190887451,
+          "val_loss": 2.0424137115478516,
+          "training_seconds": 24.592580125899985
+        },
+        {
+          "step": 3000,
+          "train_loss": 1.8761636018753052,
+          "gradient_norm": 1.5837860107421875,
+          "val_loss": 1.9617340564727783,
+          "training_seconds": 36.934031162876636
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.6035996675491333,
+          "gradient_norm": 1.554244041442871,
+          "val_loss": 1.9109625816345215,
+          "training_seconds": 49.29759353585541
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.6461631059646606,
+          "gradient_norm": 1.643837571144104,
+          "val_loss": 1.8693583011627197,
+          "training_seconds": 61.68027274881024
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.5715317726135254,
+          "gradient_norm": 1.5079259872436523,
+          "val_loss": 1.8559315204620361,
+          "training_seconds": 74.07900033483747
+        },
+        {
+          "step": 7000,
+          "train_loss": 1.7004942893981934,
+          "gradient_norm": 1.525093913078308,
+          "val_loss": 1.8202377557754517,
+          "training_seconds": 86.49709250684828
+        },
+        {
+          "step": 8000,
+          "train_loss": 1.6044334173202515,
+          "gradient_norm": 1.6169896125793457,
+          "val_loss": 1.7956559658050537,
+          "training_seconds": 98.93209714989644
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.8198041915893555,
+          "gradient_norm": 1.6081812381744385,
+          "val_loss": 1.7713556289672852,
+          "training_seconds": 111.3806747229537
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.6555556058883667,
+          "gradient_norm": 1.6516872644424438,
+          "val_loss": 1.765047550201416,
+          "training_seconds": 123.84900915494654
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.859364628791809,
+          "gradient_norm": 1.7119648456573486,
+          "val_loss": 1.7551438808441162,
+          "training_seconds": 136.33704756689258
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.3970298767089844,
+          "gradient_norm": 1.3220349550247192,
+          "val_loss": 1.734478235244751,
+          "training_seconds": 148.84509652585257
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.8264760971069336,
+          "gradient_norm": 2.0490148067474365,
+          "val_loss": 1.7294068336486816,
+          "training_seconds": 161.36957351176534
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.448409080505371,
+          "gradient_norm": 1.8231489658355713,
+          "val_loss": 1.724676489830017,
+          "training_seconds": 173.91685646469705
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.3768956661224365,
+          "gradient_norm": 1.6207531690597534,
+          "val_loss": 1.723003625869751,
+          "training_seconds": 186.48561477067415
+        }
+      ],
+      "parameters": 426368,
+      "ffn_parameters_by_layer": [
+        26336,
+        26336,
+        26336,
+        26336
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 186.48561477067415,
+      "wall_seconds": 192.7944196999306,
+      "benchmark_ms_per_step": 12.17807863955386,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 96,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 96 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 96 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.723003625869751,
+        "expanded_val": 1.7042895555496216,
+        "sampled_train": 1.5986796617507935
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 426368,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 384,
+        "norms_and_ffn_mix": 2304
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 33,
+        "loss": 1.683223843574524,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6830010414123535
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6831473112106323
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.682984471321106
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.683762788772583
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 3.5762786865234375e-07
+      }
+    }
+  ],
+  "32": [
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side32/fixed_both_11",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 11,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 32
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.645017623901367
+        },
+        {
+          "step": 100,
+          "train_loss": 2.4335923194885254,
+          "gradient_norm": 3.3296759128570557,
+          "val_loss": 2.6460835933685303,
+          "training_seconds": 1.137775975978002
+        },
+        {
+          "step": 200,
+          "train_loss": 2.2101640701293945,
+          "gradient_norm": 39.63140869140625,
+          "val_loss": 2.481534957885742,
+          "training_seconds": 2.2766981680179015
+        },
+        {
+          "step": 500,
+          "train_loss": 2.067979335784912,
+          "gradient_norm": 2.3185248374938965,
+          "val_loss": 2.3058643341064453,
+          "training_seconds": 5.696504462976009
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9693419933319092,
+          "gradient_norm": 1.8508899211883545,
+          "val_loss": 2.1669774055480957,
+          "training_seconds": 11.40342026995495
+        },
+        {
+          "step": 2000,
+          "train_loss": 3.4787302017211914,
+          "gradient_norm": 260.1172790527344,
+          "val_loss": 2.0389657020568848,
+          "training_seconds": 22.844865625025705
+        },
+        {
+          "step": 3000,
+          "train_loss": 1.8393239974975586,
+          "gradient_norm": 1.5945683717727661,
+          "val_loss": 1.9571616649627686,
+          "training_seconds": 34.323165923007764
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.7135639190673828,
+          "gradient_norm": 1.5183669328689575,
+          "val_loss": 1.9101338386535645,
+          "training_seconds": 45.84352531505283
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.9918053150177002,
+          "gradient_norm": 1.5428956747055054,
+          "val_loss": 1.8695224523544312,
+          "training_seconds": 57.40135035314597
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.786978840827942,
+          "gradient_norm": 1.5359281301498413,
+          "val_loss": 1.8308393955230713,
+          "training_seconds": 68.98844816314522
+        },
+        {
+          "step": 7000,
+          "train_loss": 2.071140766143799,
+          "gradient_norm": 1.515989065170288,
+          "val_loss": 1.8163944482803345,
+          "training_seconds": 80.59850319114048
+        },
+        {
+          "step": 8000,
+          "train_loss": 2.218548059463501,
+          "gradient_norm": 2.045482873916626,
+          "val_loss": 1.79363214969635,
+          "training_seconds": 92.2313581261551
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.547019600868225,
+          "gradient_norm": 1.3495043516159058,
+          "val_loss": 1.7714711427688599,
+          "training_seconds": 103.88788992818445
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.839153528213501,
+          "gradient_norm": 1.8180214166641235,
+          "val_loss": 1.7543152570724487,
+          "training_seconds": 115.56991909421049
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.8330488204956055,
+          "gradient_norm": 1.9179649353027344,
+          "val_loss": 1.7393370866775513,
+          "training_seconds": 127.27924425620586
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.6133451461791992,
+          "gradient_norm": 1.7048170566558838,
+          "val_loss": 1.7297492027282715,
+          "training_seconds": 139.01775678421836
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.4233086109161377,
+          "gradient_norm": 1.6071871519088745,
+          "val_loss": 1.7230677604675293,
+          "training_seconds": 150.78242684318684
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.532829761505127,
+          "gradient_norm": 1.663364291191101,
+          "val_loss": 1.714052677154541,
+          "training_seconds": 162.5686784061836
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.7511329650878906,
+          "gradient_norm": 1.8508323431015015,
+          "val_loss": 1.715332269668579,
+          "training_seconds": 174.3752078632824
+        }
+      ],
+      "parameters": 426880,
+      "ffn_parameters_by_layer": [
+        26368,
+        26368,
+        26368,
+        26368
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 174.3752078632824,
+      "wall_seconds": 180.61820023902692,
+      "benchmark_ms_per_step": 11.378303420497105,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 128,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 128 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 128 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.715332269668579,
+        "expanded_val": 1.702756404876709,
+        "sampled_train": 1.5909955501556396
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 426880,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 512,
+        "norms_and_ffn_mix": 2688
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6829200983047485,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6830148696899414
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.682659387588501
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.683007001876831
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6829993724822998
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+      }
+    },
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side32/fixed_both_22",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 22,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 32
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.722241401672363
+        },
+        {
+          "step": 100,
+          "train_loss": 2.393886089324951,
+          "gradient_norm": 2.8546910285949707,
+          "val_loss": 2.6395626068115234,
+          "training_seconds": 1.1799584629479796
+        },
+        {
+          "step": 200,
+          "train_loss": 2.34206485748291,
+          "gradient_norm": 2.5805399417877197,
+          "val_loss": 2.500359535217285,
+          "training_seconds": 2.3607688149204478
+        },
+        {
+          "step": 500,
+          "train_loss": 2.728494644165039,
+          "gradient_norm": 26.83495330810547,
+          "val_loss": 2.3101210594177246,
+          "training_seconds": 5.9057702489662915
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9180285930633545,
+          "gradient_norm": 2.095107078552246,
+          "val_loss": 2.1763198375701904,
+          "training_seconds": 11.817862650030293
+        },
+        {
+          "step": 2000,
+          "train_loss": 1.693613052368164,
+          "gradient_norm": 1.7966725826263428,
+          "val_loss": 2.0395007133483887,
+          "training_seconds": 23.660917953005992
+        },
+        {
+          "step": 3000,
+          "train_loss": 2.0874385833740234,
+          "gradient_norm": 1.7766916751861572,
+          "val_loss": 1.9588009119033813,
+          "training_seconds": 35.52732640306931
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.70670485496521,
+          "gradient_norm": 1.593469262123108,
+          "val_loss": 1.9099297523498535,
+          "training_seconds": 47.416926039149985
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.633880853652954,
+          "gradient_norm": 1.6707862615585327,
+          "val_loss": 1.8694615364074707,
+          "training_seconds": 59.32811002607923
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.7062244415283203,
+          "gradient_norm": 1.4840363264083862,
+          "val_loss": 1.8335727453231812,
+          "training_seconds": 71.25950552802533
+        },
+        {
+          "step": 7000,
+          "train_loss": 2.1245884895324707,
+          "gradient_norm": 1.6099849939346313,
+          "val_loss": 1.8152203559875488,
+          "training_seconds": 83.21066530595999
+        },
+        {
+          "step": 8000,
+          "train_loss": 1.5216913223266602,
+          "gradient_norm": 1.6355260610580444,
+          "val_loss": 1.7926604747772217,
+          "training_seconds": 95.1795859800186
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.615503191947937,
+          "gradient_norm": 1.6082814931869507,
+          "val_loss": 1.77970552444458,
+          "training_seconds": 107.16856027801987
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.535858392715454,
+          "gradient_norm": 1.5809909105300903,
+          "val_loss": 1.761803388595581,
+          "training_seconds": 119.16859805607237
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.582227349281311,
+          "gradient_norm": 1.6530671119689941,
+          "val_loss": 1.738407850265503,
+          "training_seconds": 131.1725684151752
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.4573990106582642,
+          "gradient_norm": 1.5657358169555664,
+          "val_loss": 1.7373652458190918,
+          "training_seconds": 143.1948300471995
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.5196056365966797,
+          "gradient_norm": 1.8887062072753906,
+          "val_loss": 1.7192041873931885,
+          "training_seconds": 155.23076005629264
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.683235764503479,
+          "gradient_norm": 1.598659634590149,
+          "val_loss": 1.7191393375396729,
+          "training_seconds": 167.28133903630078
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.6564912796020508,
+          "gradient_norm": 1.7778730392456055,
+          "val_loss": 1.7155448198318481,
+          "training_seconds": 179.3465976943262
+        }
+      ],
+      "parameters": 426880,
+      "ffn_parameters_by_layer": [
+        26368,
+        26368,
+        26368,
+        26368
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 179.3465976943262,
+      "wall_seconds": 185.59742860798724,
+      "benchmark_ms_per_step": 11.763414300512522,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 128,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 128 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 128 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7155448198318481,
+        "expanded_val": 1.698535442352295,
+        "sampled_train": 1.5895860195159912
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 426880,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 512,
+        "norms_and_ffn_mix": 2688
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 22,
+        "loss": 1.682454228401184,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6825544834136963
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6824092864990234
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6823457479476929
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6825072765350342
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+      }
+    },
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side32/fixed_both_33",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 33,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 32
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.7316083908081055
+        },
+        {
+          "step": 100,
+          "train_loss": 2.464588165283203,
+          "gradient_norm": 3.238999366760254,
+          "val_loss": 2.6632442474365234,
+          "training_seconds": 1.1951986530330032
+        },
+        {
+          "step": 200,
+          "train_loss": 2.334017515182495,
+          "gradient_norm": 2.232633113861084,
+          "val_loss": 2.5150866508483887,
+          "training_seconds": 2.3915608880342916
+        },
+        {
+          "step": 500,
+          "train_loss": 2.1206188201904297,
+          "gradient_norm": 2.0325281620025635,
+          "val_loss": 2.3061673641204834,
+          "training_seconds": 5.983488406054676
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.940946102142334,
+          "gradient_norm": 1.7783455848693848,
+          "val_loss": 2.175386428833008,
+          "training_seconds": 11.976419850019738
+        },
+        {
+          "step": 2000,
+          "train_loss": 1.7201683521270752,
+          "gradient_norm": 1.6645164489746094,
+          "val_loss": 2.034979820251465,
+          "training_seconds": 23.977034215116873
+        },
+        {
+          "step": 3000,
+          "train_loss": 1.9201910495758057,
+          "gradient_norm": 1.7013005018234253,
+          "val_loss": 1.9598630666732788,
+          "training_seconds": 35.9890786272008
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.5778868198394775,
+          "gradient_norm": 1.4120122194290161,
+          "val_loss": 1.911209225654602,
+          "training_seconds": 48.026483875117265
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.6595659255981445,
+          "gradient_norm": 1.6229710578918457,
+          "val_loss": 1.8683559894561768,
+          "training_seconds": 60.082946242182516
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.5594918727874756,
+          "gradient_norm": 1.4429229497909546,
+          "val_loss": 1.837846279144287,
+          "training_seconds": 72.15452589222696
+        },
+        {
+          "step": 7000,
+          "train_loss": 1.7389124631881714,
+          "gradient_norm": 1.6107263565063477,
+          "val_loss": 1.8080788850784302,
+          "training_seconds": 84.23894215130713
+        },
+        {
+          "step": 8000,
+          "train_loss": 1.6105444431304932,
+          "gradient_norm": 1.671220064163208,
+          "val_loss": 1.7789385318756104,
+          "training_seconds": 96.33491797337774
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.8148587942123413,
+          "gradient_norm": 1.6504852771759033,
+          "val_loss": 1.7658665180206299,
+          "training_seconds": 108.44146727933548
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.7088061571121216,
+          "gradient_norm": 1.574789047241211,
+          "val_loss": 1.7587168216705322,
+          "training_seconds": 120.55892658326775
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.9046335220336914,
+          "gradient_norm": 1.5981706380844116,
+          "val_loss": 1.7478268146514893,
+          "training_seconds": 132.68571622425225
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.3982336521148682,
+          "gradient_norm": 1.3524802923202515,
+          "val_loss": 1.7271931171417236,
+          "training_seconds": 144.82142363721505
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.7881171703338623,
+          "gradient_norm": 1.9604073762893677,
+          "val_loss": 1.721616506576538,
+          "training_seconds": 156.96427232131828
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.4595376253128052,
+          "gradient_norm": 1.6310023069381714,
+          "val_loss": 1.716761589050293,
+          "training_seconds": 169.11583284824155
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.3636523485183716,
+          "gradient_norm": 1.7038419246673584,
+          "val_loss": 1.709080696105957,
+          "training_seconds": 181.27282537624706
+        }
+      ],
+      "parameters": 426880,
+      "ffn_parameters_by_layer": [
+        26368,
+        26368,
+        26368,
+        26368
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 181.27282537624706,
+      "wall_seconds": 187.57852180604823,
+      "benchmark_ms_per_step": 11.921024520415813,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 128,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 128 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 128 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.709080696105957,
+        "expanded_val": 1.697284460067749,
+        "sampled_train": 1.5969732999801636
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 426880,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 512,
+        "norms_and_ffn_mix": 2688
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 33,
+        "loss": 1.6810537576675415,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6808054447174072
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6811940670013428
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.68126380443573
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6809523105621338
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 3.5762786865234375e-07
+      }
+    }
+  ],
+  "96": [
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side96/fixed_both_11",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 11,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 96
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.645017623901367
+        },
+        {
+          "step": 100,
+          "train_loss": 2.440361499786377,
+          "gradient_norm": 3.1012215614318848,
+          "val_loss": 2.642887830734253,
+          "training_seconds": 1.1521910820156336
+        },
+        {
+          "step": 200,
+          "train_loss": 2.1848678588867188,
+          "gradient_norm": 34.811275482177734,
+          "val_loss": 2.481353282928467,
+          "training_seconds": 2.305868926923722
+        },
+        {
+          "step": 500,
+          "train_loss": 2.0937747955322266,
+          "gradient_norm": 2.442626714706421,
+          "val_loss": 2.3149609565734863,
+          "training_seconds": 5.772151079960167
+        },
+        {
+          "step": 1000,
+          "train_loss": 2.0061848163604736,
+          "gradient_norm": 1.9963161945343018,
+          "val_loss": 2.1654727458953857,
+          "training_seconds": 11.56045678188093
+        },
+        {
+          "step": 2000,
+          "train_loss": 3.4635677337646484,
+          "gradient_norm": 123.90508270263672,
+          "val_loss": 2.040435791015625,
+          "training_seconds": 23.174341597943567
+        },
+        {
+          "step": 3000,
+          "train_loss": 1.8917126655578613,
+          "gradient_norm": 1.5430964231491089,
+          "val_loss": 1.9643275737762451,
+          "training_seconds": 34.848348786938004
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.7576111555099487,
+          "gradient_norm": 1.4269338846206665,
+          "val_loss": 1.9181071519851685,
+          "training_seconds": 46.605191640905105
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.9516531229019165,
+          "gradient_norm": 1.3536115884780884,
+          "val_loss": 1.8698488473892212,
+          "training_seconds": 58.413275296916254
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.7872776985168457,
+          "gradient_norm": 1.4003267288208008,
+          "val_loss": 1.8289148807525635,
+          "training_seconds": 70.2615588218905
+        },
+        {
+          "step": 7000,
+          "train_loss": 2.102527618408203,
+          "gradient_norm": 1.635869026184082,
+          "val_loss": 1.826270580291748,
+          "training_seconds": 82.15612250892445
+        },
+        {
+          "step": 8000,
+          "train_loss": 2.1717116832733154,
+          "gradient_norm": 2.1608028411865234,
+          "val_loss": 1.7895140647888184,
+          "training_seconds": 94.0953873579856
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.5545499324798584,
+          "gradient_norm": 1.3718219995498657,
+          "val_loss": 1.7657711505889893,
+          "training_seconds": 106.07287362089846
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.8552172183990479,
+          "gradient_norm": 1.9394911527633667,
+          "val_loss": 1.7568256855010986,
+          "training_seconds": 118.08602642593905
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.851233720779419,
+          "gradient_norm": 1.9305875301361084,
+          "val_loss": 1.7404427528381348,
+          "training_seconds": 130.14461201103404
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.689251184463501,
+          "gradient_norm": 1.6445387601852417,
+          "val_loss": 1.7338827848434448,
+          "training_seconds": 142.2413436990464
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.4599614143371582,
+          "gradient_norm": 1.7399709224700928,
+          "val_loss": 1.7254995107650757,
+          "training_seconds": 154.37100356200244
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.5065759420394897,
+          "gradient_norm": 1.614949345588684,
+          "val_loss": 1.7155708074569702,
+          "training_seconds": 166.5256981649436
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.746107578277588,
+          "gradient_norm": 1.8854012489318848,
+          "val_loss": 1.7114169597625732,
+          "training_seconds": 178.7064365990227
+        }
+      ],
+      "parameters": 427904,
+      "ffn_parameters_by_layer": [
+        26432,
+        26432,
+        26432,
+        26432
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 178.7064365990227,
+      "wall_seconds": 184.99408167996444,
+      "benchmark_ms_per_step": 11.512045529671013,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 192,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 192 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 192 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7114169597625732,
+        "expanded_val": 1.6993168592453003,
+        "sampled_train": 1.5957071781158447
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 427904,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 768,
+        "norms_and_ffn_mix": 3456
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.681176781654358,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6811847686767578
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6809090375900269
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6812015771865845
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6814122200012207
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+      }
+    },
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side96/fixed_both_22",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 22,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 96
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.722241401672363
+        },
+        {
+          "step": 100,
+          "train_loss": 2.364959955215454,
+          "gradient_norm": 3.0367915630340576,
+          "val_loss": 2.6276161670684814,
+          "training_seconds": 1.2166886560153216
+        },
+        {
+          "step": 200,
+          "train_loss": 2.341525077819824,
+          "gradient_norm": 2.976600170135498,
+          "val_loss": 2.4996211528778076,
+          "training_seconds": 2.4347801230615005
+        },
+        {
+          "step": 500,
+          "train_loss": 2.691969156265259,
+          "gradient_norm": 20.912843704223633,
+          "val_loss": 2.297250270843506,
+          "training_seconds": 6.091766434023157
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9031466245651245,
+          "gradient_norm": 1.9593873023986816,
+          "val_loss": 2.17277455329895,
+          "training_seconds": 12.192147742025554
+        },
+        {
+          "step": 2000,
+          "train_loss": 1.70281183719635,
+          "gradient_norm": 1.6736327409744263,
+          "val_loss": 2.044538974761963,
+          "training_seconds": 24.415325748967007
+        },
+        {
+          "step": 3000,
+          "train_loss": 2.066627025604248,
+          "gradient_norm": 1.6559371948242188,
+          "val_loss": 1.962153434753418,
+          "training_seconds": 36.66451838193461
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.6646807193756104,
+          "gradient_norm": 1.9194954633712769,
+          "val_loss": 1.9066364765167236,
+          "training_seconds": 48.93934418994468
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.6119740009307861,
+          "gradient_norm": 1.47160804271698,
+          "val_loss": 1.8706257343292236,
+          "training_seconds": 61.25370998994913
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.6555228233337402,
+          "gradient_norm": 1.5556217432022095,
+          "val_loss": 1.8448429107666016,
+          "training_seconds": 73.61735193990171
+        },
+        {
+          "step": 7000,
+          "train_loss": 2.1349382400512695,
+          "gradient_norm": 1.462030053138733,
+          "val_loss": 1.8182709217071533,
+          "training_seconds": 86.02661935589276
+        },
+        {
+          "step": 8000,
+          "train_loss": 1.514049768447876,
+          "gradient_norm": 2.3269920349121094,
+          "val_loss": 1.8010613918304443,
+          "training_seconds": 98.47108606994152
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.579145073890686,
+          "gradient_norm": 1.545017123222351,
+          "val_loss": 1.7824357748031616,
+          "training_seconds": 110.94429028988816
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.5754657983779907,
+          "gradient_norm": 1.5146565437316895,
+          "val_loss": 1.7661504745483398,
+          "training_seconds": 123.44146589795128
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.505608081817627,
+          "gradient_norm": 1.5744624137878418,
+          "val_loss": 1.7434890270233154,
+          "training_seconds": 135.96091216092464
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.506791591644287,
+          "gradient_norm": 1.6556415557861328,
+          "val_loss": 1.7371551990509033,
+          "training_seconds": 148.5001038549235
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.5313637256622314,
+          "gradient_norm": 1.7707984447479248,
+          "val_loss": 1.7238242626190186,
+          "training_seconds": 161.06001722393557
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.7020411491394043,
+          "gradient_norm": 1.5667318105697632,
+          "val_loss": 1.7219457626342773,
+          "training_seconds": 173.63573465286754
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.640876293182373,
+          "gradient_norm": 1.7473350763320923,
+          "val_loss": 1.7121543884277344,
+          "training_seconds": 186.186940786778
+        }
+      ],
+      "parameters": 427904,
+      "ffn_parameters_by_layer": [
+        26432,
+        26432,
+        26432,
+        26432
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 186.186940786778,
+      "wall_seconds": 192.54737247608136,
+      "benchmark_ms_per_step": 12.143556349910796,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 192,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 192 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 192 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7121543884277344,
+        "expanded_val": 1.7011113166809082,
+        "sampled_train": 1.591843605041504
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 427904,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 768,
+        "norms_and_ffn_mix": 3456
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 22,
+        "loss": 1.6832305192947388,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6829086542129517
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6833899021148682
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.683394193649292
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6832294464111328
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+      }
+    },
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side96/fixed_both_33",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 33,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 96
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.7316083908081055
+        },
+        {
+          "step": 100,
+          "train_loss": 2.4365992546081543,
+          "gradient_norm": 3.428121566772461,
+          "val_loss": 2.654008388519287,
+          "training_seconds": 1.2428203950403258
+        },
+        {
+          "step": 200,
+          "train_loss": 2.343161106109619,
+          "gradient_norm": 2.306398630142212,
+          "val_loss": 2.5239815711975098,
+          "training_seconds": 2.486995232058689
+        },
+        {
+          "step": 500,
+          "train_loss": 2.174065351486206,
+          "gradient_norm": 2.1981379985809326,
+          "val_loss": 2.311655044555664,
+          "training_seconds": 6.22222163900733
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9498324394226074,
+          "gradient_norm": 1.801517367362976,
+          "val_loss": 2.173213481903076,
+          "training_seconds": 12.455350546049885
+        },
+        {
+          "step": 2000,
+          "train_loss": 1.7277802228927612,
+          "gradient_norm": 1.7602179050445557,
+          "val_loss": 2.0324854850769043,
+          "training_seconds": 24.939502032124437
+        },
+        {
+          "step": 3000,
+          "train_loss": 1.9205207824707031,
+          "gradient_norm": 1.7414062023162842,
+          "val_loss": 1.9638192653656006,
+          "training_seconds": 37.44929658109322
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.5862250328063965,
+          "gradient_norm": 1.4273507595062256,
+          "val_loss": 1.9092470407485962,
+          "training_seconds": 49.97775026108138
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.6336615085601807,
+          "gradient_norm": 1.5555498600006104,
+          "val_loss": 1.8706867694854736,
+          "training_seconds": 62.52630535408389
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.6225190162658691,
+          "gradient_norm": 1.4925153255462646,
+          "val_loss": 1.843231439590454,
+          "training_seconds": 75.09329241712112
+        },
+        {
+          "step": 7000,
+          "train_loss": 1.7428654432296753,
+          "gradient_norm": 1.4700425863265991,
+          "val_loss": 1.8086421489715576,
+          "training_seconds": 87.67643742507789
+        },
+        {
+          "step": 8000,
+          "train_loss": 1.5962445735931396,
+          "gradient_norm": 1.634401798248291,
+          "val_loss": 1.782172441482544,
+          "training_seconds": 100.27535565313883
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.7834789752960205,
+          "gradient_norm": 1.5445845127105713,
+          "val_loss": 1.7644227743148804,
+          "training_seconds": 112.88804990111385
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.6681926250457764,
+          "gradient_norm": 1.4980382919311523,
+          "val_loss": 1.7533190250396729,
+          "training_seconds": 125.5180909280898
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.8820078372955322,
+          "gradient_norm": 1.757667899131775,
+          "val_loss": 1.7453993558883667,
+          "training_seconds": 138.16398156015202
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.427730917930603,
+          "gradient_norm": 1.4304141998291016,
+          "val_loss": 1.7252941131591797,
+          "training_seconds": 150.8241341151297
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.7440099716186523,
+          "gradient_norm": 1.6357531547546387,
+          "val_loss": 1.718867301940918,
+          "training_seconds": 163.5030878521502
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.5193015336990356,
+          "gradient_norm": 1.6649665832519531,
+          "val_loss": 1.7173490524291992,
+          "training_seconds": 176.20484271808527
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.3764989376068115,
+          "gradient_norm": 1.5282655954360962,
+          "val_loss": 1.7113382816314697,
+          "training_seconds": 188.92496451211628
+        }
+      ],
+      "parameters": 427904,
+      "ffn_parameters_by_layer": [
+        26432,
+        26432,
+        26432,
+        26432
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 188.92496451211628,
+      "wall_seconds": 195.42266168398783,
+      "benchmark_ms_per_step": 12.379245460033417,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 192,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 192 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 192 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7113382816314697,
+        "expanded_val": 1.6984922885894775,
+        "sampled_train": 1.5956069231033325
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 427904,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 768,
+        "norms_and_ffn_mix": 3456
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 33,
+        "loss": 1.681368350982666,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.681304693222046
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6811988353729248
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.681416392326355
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6815532445907593
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+      }
+    }
+  ],
+  "160": [
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side160/fixed_both_11",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 11,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 160
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.645017623901367
+        },
+        {
+          "step": 100,
+          "train_loss": 2.439823865890503,
+          "gradient_norm": 3.0826549530029297,
+          "val_loss": 2.639033317565918,
+          "training_seconds": 1.1668881049845368
+        },
+        {
+          "step": 200,
+          "train_loss": 2.216815948486328,
+          "gradient_norm": 25.022031784057617,
+          "val_loss": 2.494131565093994,
+          "training_seconds": 2.335168264922686
+        },
+        {
+          "step": 500,
+          "train_loss": 2.0762510299682617,
+          "gradient_norm": 2.369882583618164,
+          "val_loss": 2.3050122261047363,
+          "training_seconds": 5.843909242888913
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.95939302444458,
+          "gradient_norm": 1.8864502906799316,
+          "val_loss": 2.172980308532715,
+          "training_seconds": 11.702573294867761
+        },
+        {
+          "step": 2000,
+          "train_loss": 3.4914653301239014,
+          "gradient_norm": 135.60340881347656,
+          "val_loss": 2.039961814880371,
+          "training_seconds": 23.466589851886965
+        },
+        {
+          "step": 3000,
+          "train_loss": 1.8358314037322998,
+          "gradient_norm": 1.5406837463378906,
+          "val_loss": 1.9608193635940552,
+          "training_seconds": 35.293756529921666
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.723014235496521,
+          "gradient_norm": 1.4188050031661987,
+          "val_loss": 1.9046118259429932,
+          "training_seconds": 47.173142849933356
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.9931988716125488,
+          "gradient_norm": 1.424622893333435,
+          "val_loss": 1.8747217655181885,
+          "training_seconds": 59.09567386296112
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.7879011631011963,
+          "gradient_norm": 1.486951470375061,
+          "val_loss": 1.8326963186264038,
+          "training_seconds": 71.0620692159282
+        },
+        {
+          "step": 7000,
+          "train_loss": 2.128201961517334,
+          "gradient_norm": 1.6290507316589355,
+          "val_loss": 1.8243829011917114,
+          "training_seconds": 83.06642409297638
+        },
+        {
+          "step": 8000,
+          "train_loss": 2.1886253356933594,
+          "gradient_norm": 2.3134052753448486,
+          "val_loss": 1.7922393083572388,
+          "training_seconds": 95.11248175008222
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.5225086212158203,
+          "gradient_norm": 1.43312406539917,
+          "val_loss": 1.7700979709625244,
+          "training_seconds": 107.19227023713756
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.8210105895996094,
+          "gradient_norm": 1.659953236579895,
+          "val_loss": 1.7562572956085205,
+          "training_seconds": 119.302883706172
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.8509068489074707,
+          "gradient_norm": 1.8685420751571655,
+          "val_loss": 1.7456028461456299,
+          "training_seconds": 131.45432169013657
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.6553497314453125,
+          "gradient_norm": 1.874229073524475,
+          "val_loss": 1.7300195693969727,
+          "training_seconds": 143.64073611912318
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.4076600074768066,
+          "gradient_norm": 1.6470221281051636,
+          "val_loss": 1.7227885723114014,
+          "training_seconds": 155.85520923812874
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.4864821434020996,
+          "gradient_norm": 1.8122330904006958,
+          "val_loss": 1.713225245475769,
+          "training_seconds": 168.0950148361735
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.7568594217300415,
+          "gradient_norm": 1.8017398118972778,
+          "val_loss": 1.7149972915649414,
+          "training_seconds": 180.35876941215247
+        }
+      ],
+      "parameters": 428928,
+      "ffn_parameters_by_layer": [
+        26496,
+        26496,
+        26496,
+        26496
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 180.35876941215247,
+      "wall_seconds": 186.6653522180859,
+      "benchmark_ms_per_step": 11.672151879174635,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 256,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 256 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 256 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7149972915649414,
+        "expanded_val": 1.7007473707199097,
+        "sampled_train": 1.5912961959838867
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 428928,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 1024,
+        "norms_and_ffn_mix": 4224
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.684621810913086,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6849827766418457
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.684150218963623
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6846908330917358
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6846637725830078
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+      }
+    },
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side160/fixed_both_22",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 22,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 160
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.722241401672363
+        },
+        {
+          "step": 100,
+          "train_loss": 2.3721752166748047,
+          "gradient_norm": 2.77249813079834,
+          "val_loss": 2.626985549926758,
+          "training_seconds": 1.2218267330899835
+        },
+        {
+          "step": 200,
+          "train_loss": 2.3305702209472656,
+          "gradient_norm": 2.5431253910064697,
+          "val_loss": 2.4962775707244873,
+          "training_seconds": 2.444635473075323
+        },
+        {
+          "step": 500,
+          "train_loss": 2.6898393630981445,
+          "gradient_norm": 31.953630447387695,
+          "val_loss": 2.3041253089904785,
+          "training_seconds": 6.115520377992652
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9260547161102295,
+          "gradient_norm": 2.15055513381958,
+          "val_loss": 2.1840391159057617,
+          "training_seconds": 12.24091076804325
+        },
+        {
+          "step": 2000,
+          "train_loss": 1.7277135848999023,
+          "gradient_norm": 1.6122803688049316,
+          "val_loss": 2.0316994190216064,
+          "training_seconds": 24.512947394978255
+        },
+        {
+          "step": 3000,
+          "train_loss": 2.025519371032715,
+          "gradient_norm": 2.0338079929351807,
+          "val_loss": 1.9565927982330322,
+          "training_seconds": 36.81398752692621
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.7157673835754395,
+          "gradient_norm": 1.472481608390808,
+          "val_loss": 1.9071882963180542,
+          "training_seconds": 49.15053998993244
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.6065043210983276,
+          "gradient_norm": 1.597529649734497,
+          "val_loss": 1.8637373447418213,
+          "training_seconds": 61.532393559929915
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.7281596660614014,
+          "gradient_norm": 1.5613259077072144,
+          "val_loss": 1.8254599571228027,
+          "training_seconds": 73.94701679993887
+        },
+        {
+          "step": 7000,
+          "train_loss": 2.1186442375183105,
+          "gradient_norm": 1.5230143070220947,
+          "val_loss": 1.8045320510864258,
+          "training_seconds": 86.38998029998038
+        },
+        {
+          "step": 8000,
+          "train_loss": 1.5031789541244507,
+          "gradient_norm": 1.743651032447815,
+          "val_loss": 1.7831814289093018,
+          "training_seconds": 98.86042303498834
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.5926218032836914,
+          "gradient_norm": 1.4818366765975952,
+          "val_loss": 1.766695261001587,
+          "training_seconds": 111.35811161599122
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.5546247959136963,
+          "gradient_norm": 1.5194079875946045,
+          "val_loss": 1.75520658493042,
+          "training_seconds": 123.87792184995487
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.5234497785568237,
+          "gradient_norm": 1.6119242906570435,
+          "val_loss": 1.7324860095977783,
+          "training_seconds": 136.42406429199036
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.5024757385253906,
+          "gradient_norm": 1.6764864921569824,
+          "val_loss": 1.7281570434570312,
+          "training_seconds": 148.9880430289777
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.5000197887420654,
+          "gradient_norm": 1.694709300994873,
+          "val_loss": 1.7107343673706055,
+          "training_seconds": 161.5692169138929
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.7004823684692383,
+          "gradient_norm": 1.6393797397613525,
+          "val_loss": 1.709123134613037,
+          "training_seconds": 174.1640159758972
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.6391702890396118,
+          "gradient_norm": 1.832932710647583,
+          "val_loss": 1.7062387466430664,
+          "training_seconds": 186.7381798978895
+        }
+      ],
+      "parameters": 428928,
+      "ffn_parameters_by_layer": [
+        26496,
+        26496,
+        26496,
+        26496
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 186.7381798978895,
+      "wall_seconds": 193.0953398909187,
+      "benchmark_ms_per_step": 12.193024449516088,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 256,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 256 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 256 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7062387466430664,
+        "expanded_val": 1.6975359916687012,
+        "sampled_train": 1.5909929275512695
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 428928,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 1024,
+        "norms_and_ffn_mix": 4224
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 22,
+        "loss": 1.6819998025894165,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6819846630096436
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6816999912261963
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6821231842041016
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.682191014289856
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 9.5367431640625e-07
+      }
+    },
+    {
+      "arguments": {
+        "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+        "out": "experiments/rwkv7_ks2/gpu_runs/side_stream_short/side160/fixed_both_33",
+        "variant": "inner_ks2_ffn",
+        "width": 96,
+        "layers": 4,
+        "seed": 33,
+        "ffn_charts": 32,
+        "control_update_scale": true,
+        "steps": 15000,
+        "gpu": 0,
+        "side_width": 160
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_loss": 5.7316083908081055
+        },
+        {
+          "step": 100,
+          "train_loss": 2.455416440963745,
+          "gradient_norm": 3.86907958984375,
+          "val_loss": 2.6759533882141113,
+          "training_seconds": 1.2450227279914543
+        },
+        {
+          "step": 200,
+          "train_loss": 2.3607919216156006,
+          "gradient_norm": 2.276031970977783,
+          "val_loss": 2.525177478790283,
+          "training_seconds": 2.491117270081304
+        },
+        {
+          "step": 500,
+          "train_loss": 2.17146635055542,
+          "gradient_norm": 2.147646903991699,
+          "val_loss": 2.3193275928497314,
+          "training_seconds": 6.231659808079712
+        },
+        {
+          "step": 1000,
+          "train_loss": 1.9627500772476196,
+          "gradient_norm": 1.8138855695724487,
+          "val_loss": 2.1643495559692383,
+          "training_seconds": 12.472419865080155
+        },
+        {
+          "step": 2000,
+          "train_loss": 1.7027010917663574,
+          "gradient_norm": 1.66241455078125,
+          "val_loss": 2.0301594734191895,
+          "training_seconds": 24.973326556151733
+        },
+        {
+          "step": 3000,
+          "train_loss": 1.8809456825256348,
+          "gradient_norm": 1.538430094718933,
+          "val_loss": 1.9595487117767334,
+          "training_seconds": 37.49791672313586
+        },
+        {
+          "step": 4000,
+          "train_loss": 1.6177482604980469,
+          "gradient_norm": 1.463871955871582,
+          "val_loss": 1.901423454284668,
+          "training_seconds": 50.03938450303394
+        },
+        {
+          "step": 5000,
+          "train_loss": 1.66910982131958,
+          "gradient_norm": 1.6362792253494263,
+          "val_loss": 1.8670530319213867,
+          "training_seconds": 62.59692058397923
+        },
+        {
+          "step": 6000,
+          "train_loss": 1.5810356140136719,
+          "gradient_norm": 1.4899832010269165,
+          "val_loss": 1.830925464630127,
+          "training_seconds": 75.16604295303114
+        },
+        {
+          "step": 7000,
+          "train_loss": 1.7134275436401367,
+          "gradient_norm": 1.500927448272705,
+          "val_loss": 1.8059592247009277,
+          "training_seconds": 87.74984299496282
+        },
+        {
+          "step": 8000,
+          "train_loss": 1.6498684883117676,
+          "gradient_norm": 1.7508286237716675,
+          "val_loss": 1.778823971748352,
+          "training_seconds": 100.34443657193333
+        },
+        {
+          "step": 9000,
+          "train_loss": 1.7986624240875244,
+          "gradient_norm": 1.7514665126800537,
+          "val_loss": 1.7593120336532593,
+          "training_seconds": 112.95012737892102
+        },
+        {
+          "step": 10000,
+          "train_loss": 1.7082232236862183,
+          "gradient_norm": 1.56874418258667,
+          "val_loss": 1.7519631385803223,
+          "training_seconds": 125.56587402592413
+        },
+        {
+          "step": 11000,
+          "train_loss": 1.8065102100372314,
+          "gradient_norm": 1.57957124710083,
+          "val_loss": 1.7418454885482788,
+          "training_seconds": 138.1925210529007
+        },
+        {
+          "step": 12000,
+          "train_loss": 1.407252550125122,
+          "gradient_norm": 1.4514174461364746,
+          "val_loss": 1.7253749370574951,
+          "training_seconds": 150.82773720496334
+        },
+        {
+          "step": 13000,
+          "train_loss": 1.7784979343414307,
+          "gradient_norm": 1.7439862489700317,
+          "val_loss": 1.7211054563522339,
+          "training_seconds": 163.4718632469885
+        },
+        {
+          "step": 14000,
+          "train_loss": 1.5050482749938965,
+          "gradient_norm": 1.721959114074707,
+          "val_loss": 1.7205177545547485,
+          "training_seconds": 176.12412892701104
+        },
+        {
+          "step": 15000,
+          "train_loss": 1.3897510766983032,
+          "gradient_norm": 1.6577494144439697,
+          "val_loss": 1.7110986709594727,
+          "training_seconds": 188.78439000598155
+        }
+      ],
+      "parameters": 428928,
+      "ffn_parameters_by_layer": [
+        26496,
+        26496,
+        26496,
+        26496
+      ],
+      "ffn_types": [
+        "ks2",
+        "ks2",
+        "ks2",
+        "ks2"
+      ],
+      "training_seconds": 188.78439000598155,
+      "wall_seconds": 195.21503776300233,
+      "benchmark_ms_per_step": 12.405693620676175,
+      "invalid_steps": 0,
+      "data": {
+        "train": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+          "source_tokens": 1000000,
+          "bytes": 4468985,
+          "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+        },
+        "val": {
+          "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+          "source_tokens": 100000,
+          "bytes": 444316,
+          "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+        }
+      },
+      "torch": "2.11.0+rocm7.1",
+      "hip": "7.1.52802",
+      "device": "AMD Instinct MI100",
+      "source_hashes": {
+        "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+        "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+        "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+        "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+        "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+        "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+        "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+        "side_stream.py": "a4176867abcfa9687e0ee4fa2594a8394158a005c1c8035c7d8b181ea93aff67",
+        "run_side_gpu.py": "1012a00ec84a1d965817e0d8b5315490e599cf3d332a4ed0c364de0a2ac51320"
+      },
+      "precision": "FP32",
+      "batch_size": 4,
+      "sequence_length": 64,
+      "training_targets": 3840000,
+      "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+      "coding": "fixed_both",
+      "coding_protocol": {
+        "width": 256,
+        "charts": 32,
+        "rank": 8,
+        "view_seed": 103415,
+        "hadamard_width": 8,
+        "fold": "signed orthonormal 8-way Hadamard groups; sum groups / sqrt(group count)",
+        "input_coverage": "all 256 FFN inputs in every coordinate of all 32 subspaces",
+        "output": "fixed transpose with unit row norms and 256 zero-init learned gains per FFN",
+        "note": "32 independent fixed codes; main width 96; zero initial side stream bypasses attention; combined FFN LayerNorm/time mix; final side outputs discarded; all depth gradients retained."
+      },
+      "rhac_reference": {
+        "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+        "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+      },
+      "evaluation": {
+        "original_val": 1.7110986709594727,
+        "expanded_val": 1.698575735092163,
+        "sampled_train": 1.5956006050109863
+      },
+      "architecture": "four KS2 FFNs; 96D attention/embedding/head; FFN-only side residual",
+      "output_lr_multiplier": 5.5,
+      "parameter_breakdown": {
+        "total": 428928,
+        "rwkv": 269568,
+        "embedding_and_head": 49152,
+        "ks2_geometry": 104960,
+        "output_gains": 1024,
+        "norms_and_ffn_mix": 4224
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 33,
+        "loss": 1.680737853050232,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6811853647232056
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.680456280708313
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6803715229034424
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6809378862380981
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 3.5762786865234375e-07
+      }
+    }
+  ]
+}

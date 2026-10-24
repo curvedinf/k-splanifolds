@@ -1,0 +1,243 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/raw_mux_64/fixed_both_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 64,
+    "control_update_scale": true,
+    "steps": 15000,
+    "gpu": 0,
+    "history_mode": "embedding_then_each_post_attention_96_and_raw_ks2_coordinates"
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.71834135055542
+    },
+    {
+      "step": 100,
+      "train_loss": 2.4189696311950684,
+      "gradient_norm": 3.5246713161468506,
+      "val_loss": 2.6192963123321533,
+      "training_seconds": 1.361392560065724
+    },
+    {
+      "step": 200,
+      "train_loss": 2.1602330207824707,
+      "gradient_norm": 56.344295501708984,
+      "val_loss": 2.4634995460510254,
+      "training_seconds": 2.7237574780592695
+    },
+    {
+      "step": 500,
+      "train_loss": 2.0432040691375732,
+      "gradient_norm": 2.669093608856201,
+      "val_loss": 2.2773337364196777,
+      "training_seconds": 6.818166583077982
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.918220043182373,
+      "gradient_norm": 1.77217698097229,
+      "val_loss": 2.1337900161743164,
+      "training_seconds": 13.665315688005649
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.559325695037842,
+      "gradient_norm": 313.7496337890625,
+      "val_loss": 2.0005693435668945,
+      "training_seconds": 27.441848005983047
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.8270090818405151,
+      "gradient_norm": 1.6633915901184082,
+      "val_loss": 1.9271670579910278,
+      "training_seconds": 41.31212344998494
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.705515742301941,
+      "gradient_norm": 1.5432708263397217,
+      "val_loss": 1.8971006870269775,
+      "training_seconds": 55.2525233469205
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.920758843421936,
+      "gradient_norm": 1.4606999158859253,
+      "val_loss": 1.8549814224243164,
+      "training_seconds": 69.24457786488347
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.7664918899536133,
+      "gradient_norm": 1.4620195627212524,
+      "val_loss": 1.8189067840576172,
+      "training_seconds": 83.29992545989808
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.0492959022521973,
+      "gradient_norm": 1.5499403476715088,
+      "val_loss": 1.8026663064956665,
+      "training_seconds": 97.42188506096136
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.151174306869507,
+      "gradient_norm": 2.0725529193878174,
+      "val_loss": 1.776404857635498,
+      "training_seconds": 111.60434626089409
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.5467753410339355,
+      "gradient_norm": 1.3977071046829224,
+      "val_loss": 1.7564892768859863,
+      "training_seconds": 125.84000198286958
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.8305327892303467,
+      "gradient_norm": 1.7220711708068848,
+      "val_loss": 1.747359037399292,
+      "training_seconds": 140.13666534179356
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.8541063070297241,
+      "gradient_norm": 1.872460126876831,
+      "val_loss": 1.7355479001998901,
+      "training_seconds": 154.49357848986983
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.6155043840408325,
+      "gradient_norm": 1.6206728219985962,
+      "val_loss": 1.7128963470458984,
+      "training_seconds": 168.9069841018645
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.4277315139770508,
+      "gradient_norm": 1.454301118850708,
+      "val_loss": 1.719236135482788,
+      "training_seconds": 183.3602750649443
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.5189199447631836,
+      "gradient_norm": 1.6444671154022217,
+      "val_loss": 1.7119736671447754,
+      "training_seconds": 197.85529577196576
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.7422457933425903,
+      "gradient_norm": 1.8179975748062134,
+      "val_loss": 1.712196946144104,
+      "training_seconds": 212.39095723896753
+    }
+  ],
+  "parameters": 543136,
+  "ffn_parameters_by_layer": [
+    52480,
+    52480,
+    52480,
+    52480
+  ],
+  "ffn_types": [
+    "ks2",
+    "ks2",
+    "ks2",
+    "ks2"
+  ],
+  "training_seconds": 212.39095723896753,
+  "wall_seconds": 221.54919217992574,
+  "benchmark_ms_per_step": 13.5836809896864,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "raw_mux.py": "533e7dfcafe193e9249f84034c1b78bc6c92fe52431619b82ca67a9bd06397e2",
+    "run_raw_mux_gpu.py": "47d11270e460e978f8ed1b52bdf7c997bcb9e85660b20ae960e6e958712c29d9"
+  },
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "coding": "fixed_both",
+  "coding_protocol": {
+    "charts": 64,
+    "rank": 8,
+    "attention_view_charts": 12,
+    "attention_view_width": 96,
+    "attention_input_widths": [
+      96,
+      704,
+      1312,
+      1920
+    ],
+    "ffn_input_widths": [
+      192,
+      800,
+      1408,
+      2016
+    ],
+    "raw_output_width": 512,
+    "final_output_width": 96,
+    "view_seed": 103415,
+    "hadamard_width": 8,
+    "input_coverage": "Every history input enters every coordinate of every Hadamard view",
+    "output": "No intermediate demux or gains; final-only fixed row-normalized 512-to-96 projection with unit-init learned gains",
+    "note": "Embedding stays in history; append separate post-attention view+RWKV update and raw KS2 coordinates at each layer. KS2 reads history plus current post-attention state. All depth gradients retained. No 2048D side stream. Final head reads only final demux; no residual bypass. Initial logits differ from earlier residual models."
+  },
+  "rhac_reference": {
+    "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+    "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+  },
+  "evaluation": {
+    "original_val": 1.712196946144104,
+    "expanded_val": 1.6940251588821411,
+    "sampled_train": 1.583034634590149
+  },
+  "architecture": "Raw KS2 coordinate history; 96D Hadamard view before each RWKV; final-only 96D demux",
+  "output_lr_multiplier": 5.5,
+  "parameter_breakdown": {
+    "total": 543136,
+    "rwkv": 269568,
+    "embedding_and_head": 49152,
+    "ks2_geometry": 209920,
+    "final_demux_gains": 96,
+    "norms_and_ffn_mix": 14400
+  }
+}

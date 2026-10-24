@@ -1,0 +1,93 @@
+{
+  "architecture": "Raw KS2 coordinate history; 96D Hadamard view before each RWKV; final-only 96D demux; direct previous-attention-state addition before RWKV",
+  "charts": 64,
+  "rank": 8,
+  "layers": 4,
+  "attention_width": 96,
+  "attention_input_widths": [
+    96,
+    704,
+    1312,
+    1920
+  ],
+  "ffn_input_widths": [
+    192,
+    800,
+    1408,
+    2016
+  ],
+  "raw_output_width": 512,
+  "final_demux_width": 96,
+  "attention_skip_coefficient": 1,
+  "steps": 15000,
+  "seed": 11,
+  "parameters": 543136,
+  "parameter_breakdown": {
+    "total": 543136,
+    "rwkv": 269568,
+    "embedding_and_head": 49152,
+    "ks2_geometry": 209920,
+    "final_demux_gains": 96,
+    "norms_and_ffn_mix": 14400
+  },
+  "benchmark_ms_per_step": 13.647983740083873,
+  "sustained_ms_per_step": 14.233657540326627,
+  "evaluation": {
+    "original_val": 1.7090643644332886,
+    "expanded_val": 1.6971638202667236,
+    "sampled_train": 1.5840771198272705
+  },
+  "tiled_evaluation": {
+    "arm": "fixed_both",
+    "seed": 11,
+    "loss": 1.6779838800430298,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.6779987812042236
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.6776901483535767
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.6779104471206665
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.6783363819122314
+      }
+    ],
+    "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+  },
+  "comparisons": {
+    "raw_mux_no_skip": {
+      "parameters": 543136,
+      "full_shard_loss": 1.677181363105774,
+      "loss_delta": 0.0008025169372558594,
+      "benchmark_ms_per_step": 13.5836809896864,
+      "sustained_ms_per_step": 14.159397149264501
+    },
+    "demuxed_history": {
+      "parameters": 567552,
+      "full_shard_loss": 1.6691116094589233,
+      "loss_delta": 0.008872270584106445,
+      "benchmark_ms_per_step": 14.87402749946341,
+      "sustained_ms_per_step": 15.554944466155332
+    },
+    "side_stream_no_history": {
+      "parameters": 564096,
+      "full_shard_loss": 1.6700959205627441,
+      "loss_delta": 0.007887959480285645,
+      "benchmark_ms_per_step": 14.752776249079034,
+      "sustained_ms_per_step": 15.419161548481013
+    }
+  },
+  "protocol": "Same seed/data/15k-step FP32 schedule and physical GPU0 as raw-mux baseline. Only architectural change: layers 2-4 add previous post-attention 96D state to their Hadamard view before LayerNorm/RWKV; both terms also bypass RWKV in its residual addition. Previous attention remains in history as well. No detach or trainable skip coefficient. All initial parameters and buffers are identical to the raw-mux baseline; initial functions differ because of the new skip. Same raw 512D KS2 history and final-only demux. One seed; full-shard validation uses four overlapping offsets on the same held-out shard."
+}

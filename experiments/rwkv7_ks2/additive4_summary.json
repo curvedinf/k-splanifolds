@@ -1,0 +1,301 @@
+{
+  "steps": 105000,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "models": {
+    "mlp": {
+      "label": "All MLP",
+      "parameters": 615936,
+      "training_seconds_mean": 834.971336618842,
+      "monitor_loss": {
+        "mean": 1.560535470644633,
+        "std": 0.0028439381879223884,
+        "seeds": [
+          1.5637472867965698,
+          1.5583369731903076,
+          1.5595221519470215
+        ],
+        "start_mean": 1.6385069688161213,
+        "paired_gaps": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gap_mean": 0.0,
+        "gap_std": 0.0
+      },
+      "val_loss": {
+        "mean": 1.5665037234624226,
+        "std": 0.0068995337693914865,
+        "seeds": [
+          1.5717494487762451,
+          1.5690736770629883,
+          1.5586880445480347
+        ],
+        "start_mean": 1.6520976622899373,
+        "paired_gaps": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gap_mean": 0.0,
+        "gap_std": 0.0
+      },
+      "sampled_train_loss": {
+        "mean": 1.4069249629974365,
+        "std": 0.0036515925875449094,
+        "seeds": [
+          1.411039113998413,
+          1.4040682315826416,
+          1.4056675434112549
+        ],
+        "start_mean": 1.5288703838984172,
+        "paired_gaps": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gap_mean": 0.0,
+        "gap_std": 0.0
+      },
+      "tiled_validation": {
+        "mean": 1.5408791700998943,
+        "std": 0.003010326216356764,
+        "seeds": [
+          1.5443400144577026,
+          1.539429783821106,
+          1.538867712020874
+        ],
+        "paired_gaps": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gap_mean": 0.0,
+        "gap_std": 0.0
+      }
+    },
+    "hybrid_c16": {
+      "label": "Middle KS2: 1/2 budget",
+      "parameters": 543872,
+      "training_seconds_mean": 1030.0925118413288,
+      "monitor_loss": {
+        "mean": 1.5725091298421223,
+        "std": 0.0008444011389016685,
+        "seeds": [
+          1.5729081630706787,
+          1.573080062866211,
+          1.5715391635894775
+        ],
+        "start_mean": 1.654041091601054,
+        "paired_gaps": [
+          0.009160876274108887,
+          0.01474308967590332,
+          0.012017011642456055
+        ],
+        "gap_mean": 0.01197365919748942,
+        "gap_std": 0.0027913592014745764
+      },
+      "val_loss": {
+        "mean": 1.578159213066101,
+        "std": 0.00358628870253214,
+        "seeds": [
+          1.579932689666748,
+          1.5740317106246948,
+          1.5805132389068604
+        ],
+        "start_mean": 1.6638333400090535,
+        "paired_gaps": [
+          0.00818324089050293,
+          0.004958033561706543,
+          0.021825194358825684
+        ],
+        "gap_mean": 0.011655489603678385,
+        "gap_std": 0.008953639577489125
+      },
+      "sampled_train_loss": {
+        "mean": 1.4255913496017456,
+        "std": 0.0006229347896476786,
+        "seeds": [
+          1.4262089729309082,
+          1.425601840019226,
+          1.4249632358551025
+        ],
+        "start_mean": 1.5431616306304932,
+        "paired_gaps": [
+          0.015169858932495117,
+          0.021533608436584473,
+          0.019295692443847656
+        ],
+        "gap_mean": 0.018666386604309082,
+        "gap_std": 0.0032282110088185673
+      }
+    },
+    "hybrid_c2": {
+      "label": "Middle KS2: 1/16 budget",
+      "parameters": 477904,
+      "training_seconds_mean": 951.9486418064529,
+      "monitor_loss": {
+        "mean": 1.579495867093404,
+        "std": 0.004328509890753303,
+        "seeds": [
+          1.5753170251846313,
+          1.583959937095642,
+          1.579210638999939
+        ],
+        "start_mean": 1.661133845647176,
+        "paired_gaps": [
+          0.011569738388061523,
+          0.025622963905334473,
+          0.01968848705291748
+        ],
+        "gap_mean": 0.01896039644877116,
+        "gap_std": 0.007054847539509093
+      },
+      "val_loss": {
+        "mean": 1.5882922410964966,
+        "std": 0.004332764430551073,
+        "seeds": [
+          1.5919902324676514,
+          1.589361548423767,
+          1.5835249423980713
+        ],
+        "start_mean": 1.673730770746867,
+        "paired_gaps": [
+          0.02024078369140625,
+          0.02028787136077881,
+          0.02483689785003662
+        ],
+        "gap_mean": 0.021788517634073894,
+        "gap_std": 0.0026400796896981086
+      },
+      "sampled_train_loss": {
+        "mean": 1.4368738333384197,
+        "std": 0.0029830972641006334,
+        "seeds": [
+          1.4368681907653809,
+          1.4398597478866577,
+          1.4338935613632202
+        ],
+        "start_mean": 1.5513780514399211,
+        "paired_gaps": [
+          0.025829076766967773,
+          0.03579151630401611,
+          0.028226017951965332
+        ],
+        "gap_mean": 0.029948870340983074,
+        "gap_std": 0.005199876503157944
+      }
+    },
+    "additive": {
+      "label": "Full MLP + 1/16 KS2 in middle FFNs",
+      "parameters": 625360,
+      "training_seconds_mean": 1011.3383580070222,
+      "monitor_loss": {
+        "mean": 1.55740753809611,
+        "std": 0.0033537250030855827,
+        "seeds": [
+          1.5575895309448242,
+          1.560666561126709,
+          1.5539665222167969
+        ],
+        "start_mean": 1.6406830549240112,
+        "paired_gaps": [
+          -0.0061577558517456055,
+          0.002329587936401367,
+          -0.005555629730224609
+        ],
+        "gap_mean": -0.0031279325485229492,
+        "gap_std": 0.004735930357287878
+      },
+      "val_loss": {
+        "mean": 1.5694547494252522,
+        "std": 0.004210020601729466,
+        "seeds": [
+          1.5703315734863281,
+          1.5731573104858398,
+          1.5648753643035889
+        ],
+        "start_mean": 1.6567710240681965,
+        "paired_gaps": [
+          -0.0014178752899169922,
+          0.0040836334228515625,
+          0.006187319755554199
+        ],
+        "gap_mean": 0.00295102596282959,
+        "gap_std": 0.003927066037614845
+      },
+      "sampled_train_loss": {
+        "mean": 1.4081130822499592,
+        "std": 0.0011972278705388224,
+        "seeds": [
+          1.4091668128967285,
+          1.406811237335205,
+          1.4083611965179443
+        ],
+        "start_mean": 1.5298132101694744,
+        "paired_gaps": [
+          -0.0018723011016845703,
+          0.0027430057525634766,
+          0.002693653106689453
+        ],
+        "gap_mean": 0.0011881192525227864,
+        "gap_std": 0.0026505166438354436
+      },
+      "tiled_validation": {
+        "mean": 1.5402116378148396,
+        "std": 0.0032899102684158126,
+        "seeds": [
+          1.5391240119934082,
+          1.543907642364502,
+          1.5376032590866089
+        ],
+        "paired_gaps": [
+          -0.005216002464294434,
+          0.004477858543395996,
+          -0.0012644529342651367
+        ],
+        "gap_mean": -0.0006675322850545248,
+        "gap_std": 0.004874420068602597
+      }
+    }
+  },
+  "architecture": "Layers 1 and 4: full MLP. Layers 2 and 3: full MLP(h) + 2-subspace rank-8 KS2(h), sharing normalized, time-mixed input; no branch averaging or gating.",
+  "schedule": "First 15k steps cosine 0.001 to 0.0002; next 90k at base LR 0.0002. KS2 output-projection LR multiplier 5.5; inverse weight-decay scaling. All MLP parameters retain original LR.",
+  "evaluation": "Same fixed 65,536-byte validation and training samples, plus original 8,192-byte validation. Existing shards; not an independent test set.",
+  "tiled_validation_protocol": "Tile the held-out byte shard with 64-target windows, at offsets 0/16/32/48. State resets per window. Nearly all bytes evaluated four times with different contexts; overlapping visits are not independent samples. Same existing validation shard, not a separate test set. Last incomplete windows omitted. Batch size 64; padding excluded.",
+  "comparison_note": "Primary means use three paired seeds and reuse the historical controls. The extra MLP seed-11 repeat is a separate repeatability check. No parameter-matched wider-MLP control was trained.",
+  "added_ks2_disabled_at_evaluation": {
+    "mean_validation_loss": 1.5676988363265991,
+    "std_validation_loss": 0.0037142942284869923,
+    "mean_loss_increase": 0.010291298230489096,
+    "note": "Zero only the added KS2 outputs after training; this is an inference-only intervention on co-adapted weights, not retraining without KS2."
+  },
+  "mlp_replay": {
+    "max_parameter_difference": 1.3661575317382812,
+    "max_metric_difference": 0.012886285781860352,
+    "final_metrics": {
+      "step": 105000,
+      "train_loss": 1.321498155593872,
+      "gradient_norm": 1.5850809812545776,
+      "training_seconds": 834.9658001081552,
+      "base_lr": 0.0002,
+      "val_loss": 1.56618332862854,
+      "monitor_loss": 1.5584838390350342,
+      "sampled_train_loss": 1.4119150638580322
+    },
+    "tiled_validation_loss": 1.5424985885620117,
+    "tiled_validation_difference": -0.001841425895690918,
+    "final_differences": {
+      "val_loss": -0.005566120147705078,
+      "monitor_loss": -0.0052634477615356445,
+      "sampled_train_loss": 0.0008759498596191406
+    },
+    "note": "Same initialization, data, and sampler; not bit-reproducible from scratch. Repeated archived-model runs also diverged. See mlp_reproducibility.json."
+  },
+  "checks": "All final optimizer counters are 105k, all parameters finite, initial logits and sampler streams matched; additive GPU gradients and resumed Adam graph updates checked against references.",
+  "analysis_source_sha256": "d7faf569e0ea841810e46f437b267fa560e9a31a6a0ea1baa089c226866e403b"
+}

@@ -1,0 +1,89 @@
+{
+  "architecture": "One shared layer-entry mux; 64x8 geometry-only KS2 branch plus one 96D RWKV branch; final full-residual demux",
+  "parameters": 540000,
+  "parameter_breakdown": {
+    "total": 540000,
+    "rwkv": 269568,
+    "embedding_and_head": 49152,
+    "ks2_geometry": 209920,
+    "final_demux_gains": 96,
+    "norms_and_ffn_mix": 11264
+  },
+  "steps": 15000,
+  "seed": 11,
+  "input_widths": [
+    96,
+    704,
+    1312,
+    1920
+  ],
+  "mux_output_width": 608,
+  "ks2_coordinates": 512,
+  "rwkv_view": 96,
+  "final_demux_input": 608,
+  "final_demux_output": 96,
+  "benchmark_ms_same_gpu": {
+    "two_mux": 13.53855466004461,
+    "single_mux": 13.396902499953285
+  },
+  "sustained_ms_per_step": 13.966549241441923,
+  "benchmark_speedup_fraction": 0.01046287167635207,
+  "evaluation": {
+    "original_val": 1.7155349254608154,
+    "expanded_val": 1.7019453048706055,
+    "sampled_train": 1.5902647972106934
+  },
+  "tiled_evaluation": {
+    "arm": "fixed_both",
+    "seed": 11,
+    "loss": 1.6831072568893433,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.683416485786438
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.682874321937561
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.6831016540527344
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.683036208152771
+      }
+    ],
+    "batch4_vs_batch64_max_loss_error": 9.5367431640625e-07
+  },
+  "comparisons": {
+    "two_mux": {
+      "full_shard_loss": 1.677181363105774,
+      "loss_delta": 0.005925893783569336,
+      "historical_benchmark_ms": 13.5836809896864,
+      "historical_sustained_ms": 14.159397149264501,
+      "parameters": 543136
+    },
+    "demuxed_history": {
+      "full_shard_loss": 1.6691116094589233,
+      "loss_delta": 0.013995647430419922,
+      "historical_benchmark_ms": 14.87402749946341,
+      "historical_sustained_ms": 15.554944466155332,
+      "parameters": 567552
+    },
+    "side_stream": {
+      "full_shard_loss": 1.6700959205627441,
+      "loss_delta": 0.013011336326599121,
+      "historical_benchmark_ms": 14.752776249079034,
+      "historical_sustained_ms": 15.419161548481013,
+      "parameters": 564096
+    }
+  },
+  "protocol": "One layer-entry mux with parallel 64x8 KS2 coordinates and one 96D RWKV view. Shared input normalization; KS2 retains coordinate-wise causal time mix but no input/output projection. Attention state bypasses geometry within the full 608D layer residual. Both final branches feed the single 608-to-96 demux before logits. Same seed11/data/15k-step FP32 schedule; fresh sequential benchmarks on GPU0, warmup/benchmark updates reset. Architecture and initial function change from the mistaken two-mux versions. One seed; same held-out shard."
+}

@@ -1,0 +1,334 @@
+{
+  "steps": 15000,
+  "new_runs": 12,
+  "reference_runs": 2,
+  "attention_skip": false,
+  "independent_arms": [
+    {
+      "mode": "baseline",
+      "seed": 11,
+      "code_seed": 103415,
+      "parameters": 543136,
+      "full_shard_loss": 1.677181363105774,
+      "expanded_val": 1.6940251588821411,
+      "delta_vs_seed11_raw_baseline": 0.0,
+      "benchmark_ms": 13.5836809896864,
+      "sustained_ms": 14.159397149264501
+    },
+    {
+      "mode": "head_skip",
+      "seed": 11,
+      "code_seed": 103415,
+      "parameters": 543136,
+      "full_shard_loss": 1.676668643951416,
+      "expanded_val": 1.6934053897857666,
+      "delta_vs_seed11_raw_baseline": -0.0005127191543579102,
+      "benchmark_ms": 13.545638099312782,
+      "sustained_ms": 14.118871201140186
+    },
+    {
+      "mode": "output_gains",
+      "seed": 11,
+      "code_seed": 103415,
+      "parameters": 545184,
+      "full_shard_loss": 1.6798640489578247,
+      "expanded_val": 1.6971832513809204,
+      "delta_vs_seed11_raw_baseline": 0.0026826858520507812,
+      "benchmark_ms": 13.654553490923718,
+      "sustained_ms": 14.024194787566861
+    },
+    {
+      "mode": "persistent_state",
+      "seed": 11,
+      "code_seed": 103415,
+      "parameters": 543136,
+      "full_shard_loss": 1.6766716241836548,
+      "expanded_val": 1.6932049989700317,
+      "delta_vs_seed11_raw_baseline": -0.0005097389221191406,
+      "benchmark_ms": 13.564173940103501,
+      "sustained_ms": 14.169133177725598
+    },
+    {
+      "mode": "source_norm",
+      "seed": 11,
+      "code_seed": 103415,
+      "parameters": 543136,
+      "full_shard_loss": 1.67363440990448,
+      "expanded_val": 1.6908957958221436,
+      "delta_vs_seed11_raw_baseline": -0.0035469532012939453,
+      "benchmark_ms": 14.160275679314509,
+      "sustained_ms": 14.689030006869386
+    },
+    {
+      "mode": "demuxed_history",
+      "seed": 11,
+      "code_seed": 103415,
+      "parameters": 567552,
+      "full_shard_loss": 1.6691116094589233,
+      "expanded_val": 1.687241792678833,
+      "delta_vs_seed11_raw_baseline": -0.008069753646850586,
+      "benchmark_ms": 14.87402749946341,
+      "sustained_ms": 15.554944466155332
+    }
+  ],
+  "robustness": {
+    "training_seeds": {
+      "paired": [
+        {
+          "seed": 11,
+          "code_seed": 103415,
+          "raw_loss": 1.677181363105774,
+          "demuxed_history_loss": 1.6691116094589233,
+          "raw_minus_demuxed": 0.008069753646850586
+        },
+        {
+          "seed": 22,
+          "code_seed": 103415,
+          "raw_loss": 1.6742900609970093,
+          "demuxed_history_loss": 1.6669418811798096,
+          "raw_minus_demuxed": 0.007348179817199707
+        },
+        {
+          "seed": 33,
+          "code_seed": 103415,
+          "raw_loss": 1.6746349334716797,
+          "demuxed_history_loss": 1.6644701957702637,
+          "raw_minus_demuxed": 0.010164737701416016
+        }
+      ],
+      "summary": {
+        "raw_loss": {
+          "mean": 1.6753687858581543,
+          "sample_sd": 0.001579180630861329,
+          "min": 1.6742900609970093,
+          "max": 1.677181363105774
+        },
+        "demuxed_history_loss": {
+          "mean": 1.6668412288029988,
+          "sample_sd": 0.0023223433064552645,
+          "min": 1.6644701957702637,
+          "max": 1.6691116094589233
+        },
+        "raw_minus_demuxed": {
+          "mean": 0.008527557055155436,
+          "sample_sd": 0.0014630234274532023,
+          "min": 0.007348179817199707,
+          "max": 0.010164737701416016
+        }
+      }
+    },
+    "coding_seeds": {
+      "paired": [
+        {
+          "seed": 11,
+          "code_seed": 103415,
+          "raw_loss": 1.677181363105774,
+          "demuxed_history_loss": 1.6691116094589233,
+          "raw_minus_demuxed": 0.008069753646850586
+        },
+        {
+          "seed": 11,
+          "code_seed": 103416,
+          "raw_loss": 1.6792963743209839,
+          "demuxed_history_loss": 1.6659220457077026,
+          "raw_minus_demuxed": 0.01337432861328125
+        },
+        {
+          "seed": 11,
+          "code_seed": 103417,
+          "raw_loss": 1.6725130081176758,
+          "demuxed_history_loss": 1.6690573692321777,
+          "raw_minus_demuxed": 0.003455638885498047
+        }
+      ],
+      "summary": {
+        "raw_loss": {
+          "mean": 1.6763302485148113,
+          "sample_sd": 0.0034708516674237023,
+          "min": 1.6725130081176758,
+          "max": 1.6792963743209839
+        },
+        "demuxed_history_loss": {
+          "mean": 1.6680303414662678,
+          "sample_sd": 0.0018260390890497318,
+          "min": 1.6659220457077026,
+          "max": 1.6691116094589233
+        },
+        "raw_minus_demuxed": {
+          "mean": 0.008299907048543295,
+          "sample_sd": 0.004963348609582149,
+          "min": 0.003455638885498047,
+          "max": 0.01337432861328125
+        }
+      }
+    }
+  },
+  "source_probe": {
+    "protocol": "Trained raw-mux no-skip seed11 checkpoint, four validation windows of 64 tokens, sampler seed54321. RMS of raw history and each projected contribution before RWKV LayerNorm. Group energies exclude cross-group covariance; fractions are descriptive, not explained variance.",
+    "layers": [
+      {
+        "layer": 1,
+        "sources": [
+          {
+            "name": "embedding",
+            "width": 96,
+            "rms": 0.9242978692054749,
+            "projected_rms": 1.0880680084228516
+          }
+        ],
+        "group_projected_mean_square": {
+          "embedding": 1.1838921308517456
+        },
+        "group_energy_fraction": {
+          "embedding": 1.0
+        },
+        "actual_mux_mean_square": 1.1838921308517456
+      },
+      {
+        "layer": 2,
+        "sources": [
+          {
+            "name": "embedding",
+            "width": 96,
+            "rms": 0.9242978692054749,
+            "projected_rms": 0.3400585651397705
+          },
+          {
+            "name": "attention1",
+            "width": 96,
+            "rms": 1.1717467308044434,
+            "projected_rms": 0.4349619448184967
+          },
+          {
+            "name": "ks21",
+            "width": 512,
+            "rms": 0.8659012913703918,
+            "projected_rms": 0.7486603856086731
+          }
+        ],
+        "group_projected_mean_square": {
+          "embedding": 0.115639828145504,
+          "attention": 0.18919187784194946,
+          "ks2": 0.5604923963546753
+        },
+        "group_energy_fraction": {
+          "embedding": 0.13363759062356817,
+          "attention": 0.21863701395797647,
+          "ks2": 0.6477253954184554
+        },
+        "actual_mux_mean_square": 0.8929839134216309
+      },
+      {
+        "layer": 3,
+        "sources": [
+          {
+            "name": "embedding",
+            "width": 96,
+            "rms": 0.9242978692054749,
+            "projected_rms": 0.24232237040996552
+          },
+          {
+            "name": "attention1",
+            "width": 96,
+            "rms": 1.1717467308044434,
+            "projected_rms": 0.31109321117401123
+          },
+          {
+            "name": "ks21",
+            "width": 512,
+            "rms": 0.8659012913703918,
+            "projected_rms": 0.5385132431983948
+          },
+          {
+            "name": "attention2",
+            "width": 96,
+            "rms": 1.3854541778564453,
+            "projected_rms": 0.37199297547340393
+          },
+          {
+            "name": "ks22",
+            "width": 512,
+            "rms": 0.9575732946395874,
+            "projected_rms": 0.5781667828559875
+          }
+        ],
+        "group_projected_mean_square": {
+          "embedding": 0.05872013047337532,
+          "attention": 0.22830063104629517,
+          "ks2": 0.6175273656845093
+        },
+        "group_energy_fraction": {
+          "embedding": 0.06491653534773245,
+          "attention": 0.2523919116962163,
+          "ks2": 0.6826915529560512
+        },
+        "actual_mux_mean_square": 0.8954484462738037
+      },
+      {
+        "layer": 4,
+        "sources": [
+          {
+            "name": "embedding",
+            "width": 96,
+            "rms": 0.9242978692054749,
+            "projected_rms": 0.20456519722938538
+          },
+          {
+            "name": "attention1",
+            "width": 96,
+            "rms": 1.1717467308044434,
+            "projected_rms": 0.26793548464775085
+          },
+          {
+            "name": "ks21",
+            "width": 512,
+            "rms": 0.8659012913703918,
+            "projected_rms": 0.43657299876213074
+          },
+          {
+            "name": "attention2",
+            "width": 96,
+            "rms": 1.3854541778564453,
+            "projected_rms": 0.3116452693939209
+          },
+          {
+            "name": "ks22",
+            "width": 512,
+            "rms": 0.9575732946395874,
+            "projected_rms": 0.5004590153694153
+          },
+          {
+            "name": "attention3",
+            "width": 96,
+            "rms": 1.4091694355010986,
+            "projected_rms": 0.3216467499732971
+          },
+          {
+            "name": "ks23",
+            "width": 512,
+            "rms": 1.1068662405014038,
+            "projected_rms": 0.5859500169754028
+          }
+        ],
+        "group_projected_mean_square": {
+          "embedding": 0.04184691607952118,
+          "attention": 0.27549588680267334,
+          "ks2": 0.7897545695304871
+        },
+        "group_energy_fraction": {
+          "embedding": 0.03779876740952315,
+          "attention": 0.2488452178350754,
+          "ks2": 0.7133560147554014
+        },
+        "actual_mux_mean_square": 1.1263551712036133
+      }
+    ]
+  },
+  "limitations": [
+    "Four architectural changes have one seed each; robustness runs replicate the two baselines only.",
+    "Training-seed and coding-seed checks vary one axis at a time, not a full factorial; they share seed11/code103415.",
+    "Alternate code seeds redraw all fixed attention/input/final-output codes for raw and all input/output codes for demuxed history.",
+    "Fresh runs use all four GPUs concurrently; baseline timings came from earlier isolated runs.",
+    "Full-shard losses reuse the same held-out shard at four overlapping offsets, not independent test examples."
+  ]
+}

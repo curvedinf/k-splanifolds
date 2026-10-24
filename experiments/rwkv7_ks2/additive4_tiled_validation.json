@@ -1,0 +1,202 @@
+{
+  "protocol": "Tile the held-out byte shard with 64-target windows, at offsets 0/16/32/48. State resets per window. Nearly all bytes evaluated four times with different contexts; overlapping visits are not independent samples. Same existing validation shard, not a separate test set. Last incomplete windows omitted. Batch size 64; padding excluded.",
+  "rows": [
+    {
+      "run": "mlp_11",
+      "steps": 105000,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.5444353818893433
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.544103741645813
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.544124960899353
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.5446959733963013
+        }
+      ],
+      "targets": 1777024,
+      "loss": 1.5443400144577026
+    },
+    {
+      "run": "additive_11",
+      "steps": 105000,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.5395458936691284
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.53896164894104
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.5388306379318237
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.5391578674316406
+        }
+      ],
+      "targets": 1777024,
+      "loss": 1.5391240119934082
+    },
+    {
+      "run": "mlp_22",
+      "steps": 105000,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.539387822151184
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.5392756462097168
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.5393420457839966
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.5397138595581055
+        }
+      ],
+      "targets": 1777024,
+      "loss": 1.539429783821106
+    },
+    {
+      "run": "additive_22",
+      "steps": 105000,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.5442662239074707
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.5434558391571045
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.5436654090881348
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.5442432165145874
+        }
+      ],
+      "targets": 1777024,
+      "loss": 1.543907642364502
+    },
+    {
+      "run": "mlp_33",
+      "steps": 105000,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.53890860080719
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.538353443145752
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.5387355089187622
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.539473295211792
+        }
+      ],
+      "targets": 1777024,
+      "loss": 1.538867712020874
+    },
+    {
+      "run": "additive_33",
+      "steps": 105000,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.537647008895874
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.5374951362609863
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.5373609066009521
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.5379101037979126
+        }
+      ],
+      "targets": 1777024,
+      "loss": 1.5376032590866089
+    },
+    {
+      "run": "mlp_replay_11",
+      "steps": 105000,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.5428344011306763
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.542235016822815
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.541874885559082
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.5430500507354736
+        }
+      ],
+      "targets": 1777024,
+      "loss": 1.5424985885620117
+    }
+  ],
+  "batch_parity_max_per_window_loss_difference": 2.384185791015625e-07
+}

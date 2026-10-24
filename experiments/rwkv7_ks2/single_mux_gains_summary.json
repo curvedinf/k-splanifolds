@@ -1,0 +1,379 @@
+{
+  "historical_same_seed_repeats": {
+    "baseline": {
+      "previous_loss": 1.6831072568893433,
+      "fresh_loss": 1.685142993927002,
+      "fresh_minus_previous": 0.0020357370376586914
+    },
+    "demuxed_history": {
+      "previous_loss": 1.6691116094589233,
+      "fresh_loss": 1.6668686866760254,
+      "fresh_minus_previous": -0.0022429227828979492
+    }
+  },
+  "steps": 15000,
+  "seed": 11,
+  "batch_size": 4,
+  "sequence_length": 64,
+  "arms": {
+    "baseline": {
+      "parameters": 540000,
+      "full_shard_loss": 1.685142993927002,
+      "loss_delta_vs_single_mux": 0.0,
+      "benchmark_ms_per_step": 13.470230080420151,
+      "sustained_ms_per_step": 13.916444209349963,
+      "initial_validation_loss": 5.811769485473633,
+      "evaluation": {
+        "original_val": 1.7244126796722412,
+        "expanded_val": 1.6994843482971191,
+        "sampled_train": 1.591689944267273
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.685142993927002,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6851087808609009
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6850402355194092
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6851587295532227
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6852635145187378
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+      },
+      "physical_gpu": 3
+    },
+    "output": {
+      "parameters": 542432,
+      "full_shard_loss": 1.6834808588027954,
+      "loss_delta_vs_single_mux": -0.001662135124206543,
+      "benchmark_ms_per_step": 13.52606424014084,
+      "sustained_ms_per_step": 13.84899638874922,
+      "initial_validation_loss": 5.811769485473633,
+      "evaluation": {
+        "original_val": 1.725031852722168,
+        "expanded_val": 1.7008206844329834,
+        "sampled_train": 1.5890772342681885
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6834808588027954,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.683193325996399
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6834100484848022
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6838064193725586
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.68351411819458
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 7.152557373046875e-07
+      },
+      "physical_gpu": 1,
+      "learned_gain_statistics": [
+        {
+          "mean": 1.0273712873458862,
+          "std": 0.2220514714717865,
+          "minimum": 0.2965942919254303,
+          "maximum": 1.5817985534667969,
+          "rms": 1.0510938167572021,
+          "rms_change_from_one": 0.22373205423355103
+        },
+        {
+          "mean": 1.084688663482666,
+          "std": 0.2634707987308502,
+          "minimum": 0.1992785632610321,
+          "maximum": 1.9145622253417969,
+          "rms": 1.116228699684143,
+          "rms_change_from_one": 0.2767472565174103
+        },
+        {
+          "mean": 1.0990599393844604,
+          "std": 0.23902341723442078,
+          "minimum": 0.33513474464416504,
+          "maximum": 1.848406434059143,
+          "rms": 1.124751091003418,
+          "rms_change_from_one": 0.2587374448776245
+        },
+        {
+          "mean": 1.0420420169830322,
+          "std": 0.22179222106933594,
+          "minimum": 0.29545819759368896,
+          "maximum": 1.989951729774475,
+          "rms": 1.065384030342102,
+          "rms_change_from_one": 0.22574171423912048
+        }
+      ]
+    },
+    "input": {
+      "parameters": 544032,
+      "full_shard_loss": 1.6831001043319702,
+      "loss_delta_vs_single_mux": -0.0020428895950317383,
+      "benchmark_ms_per_step": 13.56569143012166,
+      "sustained_ms_per_step": 14.108964041069461,
+      "initial_validation_loss": 5.811769485473633,
+      "evaluation": {
+        "original_val": 1.7196393013000488,
+        "expanded_val": 1.6990201473236084,
+        "sampled_train": 1.5886327028274536
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6831001043319702,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6832547187805176
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6829074621200562
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6829696893692017
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.683268427848816
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 7.152557373046875e-07
+      },
+      "physical_gpu": 2,
+      "learned_gain_statistics": [
+        {
+          "mean": 1.0830146074295044,
+          "std": 0.1763700544834137,
+          "minimum": 0.5928388833999634,
+          "maximum": 1.3867894411087036,
+          "rms": 1.097281575202942,
+          "rms_change_from_one": 0.19493024051189423
+        },
+        {
+          "mean": 1.0498677492141724,
+          "std": 0.26189059019088745,
+          "minimum": 0.3433542549610138,
+          "maximum": 1.800455927848816,
+          "rms": 1.0820392370224,
+          "rms_change_from_one": 0.26659607887268066
+        },
+        {
+          "mean": 1.0334619283676147,
+          "std": 0.3050879240036011,
+          "minimum": -0.17183692753314972,
+          "maximum": 2.373591423034668,
+          "rms": 1.0775537490844727,
+          "rms_change_from_one": 0.3069174885749817
+        },
+        {
+          "mean": 0.9983107447624207,
+          "std": 0.29247036576271057,
+          "minimum": -0.0939071998000145,
+          "maximum": 1.9953478574752808,
+          "rms": 1.0402708053588867,
+          "rms_change_from_one": 0.29247525334358215
+        }
+      ]
+    },
+    "dynamic": {
+      "parameters": 562736,
+      "full_shard_loss": 1.6757992506027222,
+      "loss_delta_vs_single_mux": -0.009343743324279785,
+      "benchmark_ms_per_step": 16.59742593066767,
+      "sustained_ms_per_step": 17.37064861941617,
+      "initial_validation_loss": 5.703307151794434,
+      "evaluation": {
+        "original_val": 1.707148551940918,
+        "expanded_val": 1.6957263946533203,
+        "sampled_train": 1.580045461654663
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6757992506027222,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6756346225738525
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.675573706626892
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.675995945930481
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.6759926080703735
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+      },
+      "physical_gpu": 0,
+      "learned_gain_statistics": [
+        {
+          "mean": 0.0047972798347473145,
+          "std": 0.5613973736763,
+          "minimum": -2.269080400466919,
+          "maximum": 2.013950824737549,
+          "rms": 0.5614178776741028,
+          "per_vector_rms": [
+            0.5681660175323486,
+            0.5709678530693054,
+            0.5557590126991272,
+            0.5388325452804565,
+            0.5774493217468262,
+            0.5644549131393433,
+            0.5573095083236694,
+            0.5575335621833801
+          ]
+        },
+        {
+          "mean": -0.0004808278172276914,
+          "std": 0.5777584314346313,
+          "minimum": -1.8015737533569336,
+          "maximum": 1.758296012878418,
+          "rms": 0.5777586102485657,
+          "per_vector_rms": [
+            0.5757432579994202,
+            0.5825510025024414,
+            0.5640859007835388,
+            0.5960677266120911,
+            0.589412271976471,
+            0.5833659768104553,
+            0.562625527381897,
+            0.5673047304153442
+          ]
+        },
+        {
+          "mean": -0.002217801520600915,
+          "std": 0.5705233216285706,
+          "minimum": -2.0647120475769043,
+          "maximum": 1.8478100299835205,
+          "rms": 0.5705276131629944,
+          "per_vector_rms": [
+            0.5954786539077759,
+            0.5746456384658813,
+            0.5677197575569153,
+            0.5811057686805725,
+            0.5585024952888489,
+            0.5622409582138062,
+            0.5761055946350098,
+            0.5470597147941589
+          ]
+        },
+        {
+          "mean": -0.0036432193592190742,
+          "std": 0.5648730993270874,
+          "minimum": -2.042978525161743,
+          "maximum": 2.239985466003418,
+          "rms": 0.5648848414421082,
+          "per_vector_rms": [
+            0.5878991484642029,
+            0.559699296951294,
+            0.5731441378593445,
+            0.5736700892448425,
+            0.5620390772819519,
+            0.5424221754074097,
+            0.5672391057014465,
+            0.5517327785491943
+          ]
+        }
+      ]
+    },
+    "demuxed_history": {
+      "parameters": 567552,
+      "full_shard_loss": 1.6668686866760254,
+      "loss_delta_vs_single_mux": -0.018274307250976562,
+      "benchmark_ms_per_step": 15.301824170164764,
+      "sustained_ms_per_step": 15.636907217868915,
+      "initial_validation_loss": 5.645017623901367,
+      "evaluation": {
+        "original_val": 1.6972967386245728,
+        "expanded_val": 1.6825249195098877,
+        "sampled_train": 1.5748810768127441
+      },
+      "tiled_evaluation": {
+        "arm": "fixed_both",
+        "seed": 11,
+        "loss": 1.6668686866760254,
+        "targets": 1777024,
+        "by_offset": [
+          {
+            "offset": 0,
+            "targets": 444288,
+            "loss": 1.6669279336929321
+          },
+          {
+            "offset": 16,
+            "targets": 444288,
+            "loss": 1.6667555570602417
+          },
+          {
+            "offset": 32,
+            "targets": 444224,
+            "loss": 1.6670347452163696
+          },
+          {
+            "offset": 48,
+            "targets": 444224,
+            "loss": 1.666756272315979
+          }
+        ],
+        "batch4_vs_batch64_max_loss_error": 5.960464477539062e-07
+      },
+      "physical_gpu": 1
+    }
+  },
+  "protocol": "Three separate gain arms on the corrected single-mux architecture, plus fresh single-mux and demuxed-history controls. One GPU per independent job across four MI100s. Same byte data, samples, FP32 optimizer schedule, 64 rank-8 main KS2 subspaces, four layers, and 96D RWKV. Extra dynamic control view is local to each layer.",
+  "static_initialization": "Input and output gains start at one, preserving the CPU initial function exactly; GPU parity holds within FP32 rounding tolerance. Original learned weights and fixed main mux rows are paired in all three arms.",
+  "dynamic_formula": "z = KS2(extra_rank8_mux_view); g = sum_i(z_i * learned_vector_i); g = g / sqrt(max(mean(g*g),1e-8)); main_mux_output *= g. Normalize once across the 608 summed coordinates per token. No additive offset or separate static gains.",
+  "dynamic_initialization": "Eight nonzero random 608D vectors per layer, Normal(0,1/sqrt(8)); changes the initial function and adds 22,736 parameters. Vectors use 5.5x LR; extra geometry uses base LR.",
+  "evaluation": "Same held-out byte shard, four overlapping offsets, 1,777,024 target visits. Single seed; these visits are not independent data. GPU training is not bit deterministic, including the unchanged reference.",
+  "validation": "Routing, normalization-after-weighted-sum, finite nonzero gradients, optimizer groups, actual gain updates, and causality passed. Every training step finite; source hashes, checkpoint optimizer counters, restoration and full-shard batch-size parity checked."
+}

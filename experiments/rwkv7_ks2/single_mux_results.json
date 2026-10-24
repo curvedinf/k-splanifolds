@@ -1,0 +1,243 @@
+{
+  "arguments": {
+    "data": "/home/curved/k-splanifolds/experiments/rwkv7_ks2/gpu_runs/data",
+    "out": "experiments/rwkv7_ks2/gpu_runs/single_mux_64/fixed_both_11",
+    "variant": "inner_ks2_ffn",
+    "width": 96,
+    "layers": 4,
+    "seed": 11,
+    "ffn_charts": 64,
+    "control_update_scale": true,
+    "steps": 15000,
+    "gpu": 0,
+    "history_mode": "embedding_then_each_post_attention_96_and_raw_ks2_coordinates",
+    "muxes_per_layer": 1
+  },
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 5.811769485473633
+    },
+    {
+      "step": 100,
+      "train_loss": 2.4227139949798584,
+      "gradient_norm": 3.6977062225341797,
+      "val_loss": 2.6064186096191406,
+      "training_seconds": 1.342343128984794
+    },
+    {
+      "step": 200,
+      "train_loss": 2.1583662033081055,
+      "gradient_norm": 52.075721740722656,
+      "val_loss": 2.450455665588379,
+      "training_seconds": 2.68637657398358
+    },
+    {
+      "step": 500,
+      "train_loss": 2.047515630722046,
+      "gradient_norm": 2.1671242713928223,
+      "val_loss": 2.2837941646575928,
+      "training_seconds": 6.72408979292959
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.9170751571655273,
+      "gradient_norm": 1.7391475439071655,
+      "val_loss": 2.1343960762023926,
+      "training_seconds": 13.474919152911752
+    },
+    {
+      "step": 2000,
+      "train_loss": 3.6197853088378906,
+      "gradient_norm": 352.3741760253906,
+      "val_loss": 2.0163426399230957,
+      "training_seconds": 27.057005891925655
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.8448503017425537,
+      "gradient_norm": 1.5487395524978638,
+      "val_loss": 1.948951005935669,
+      "training_seconds": 40.731206762837246
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.7089309692382812,
+      "gradient_norm": 1.595001459121704,
+      "val_loss": 1.900952696800232,
+      "training_seconds": 54.48455651686527
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.939717411994934,
+      "gradient_norm": 1.4400848150253296,
+      "val_loss": 1.871495246887207,
+      "training_seconds": 68.30053083284292
+    },
+    {
+      "step": 6000,
+      "train_loss": 1.7861071825027466,
+      "gradient_norm": 1.4977247714996338,
+      "val_loss": 1.8275024890899658,
+      "training_seconds": 82.163777969894
+    },
+    {
+      "step": 7000,
+      "train_loss": 2.0604045391082764,
+      "gradient_norm": 1.656485915184021,
+      "val_loss": 1.8054006099700928,
+      "training_seconds": 96.09265619586222
+    },
+    {
+      "step": 8000,
+      "train_loss": 2.1743414402008057,
+      "gradient_norm": 2.026350736618042,
+      "val_loss": 1.7805442810058594,
+      "training_seconds": 110.07882839778904
+    },
+    {
+      "step": 9000,
+      "train_loss": 1.5610973834991455,
+      "gradient_norm": 1.4167479276657104,
+      "val_loss": 1.7640479803085327,
+      "training_seconds": 124.12077798671089
+    },
+    {
+      "step": 10000,
+      "train_loss": 1.8297569751739502,
+      "gradient_norm": 1.74051034450531,
+      "val_loss": 1.7502403259277344,
+      "training_seconds": 138.2137548016617
+    },
+    {
+      "step": 11000,
+      "train_loss": 1.8046987056732178,
+      "gradient_norm": 2.04343318939209,
+      "val_loss": 1.739469051361084,
+      "training_seconds": 152.36831985157914
+    },
+    {
+      "step": 12000,
+      "train_loss": 1.6819372177124023,
+      "gradient_norm": 1.7683916091918945,
+      "val_loss": 1.7191962003707886,
+      "training_seconds": 166.5844855166506
+    },
+    {
+      "step": 13000,
+      "train_loss": 1.420642614364624,
+      "gradient_norm": 1.5167204141616821,
+      "val_loss": 1.7244725227355957,
+      "training_seconds": 180.8497992445482
+    },
+    {
+      "step": 14000,
+      "train_loss": 1.4875013828277588,
+      "gradient_norm": 1.6096713542938232,
+      "val_loss": 1.7115521430969238,
+      "training_seconds": 195.1560316795949
+    },
+    {
+      "step": 15000,
+      "train_loss": 1.6939295530319214,
+      "gradient_norm": 1.7803128957748413,
+      "val_loss": 1.7155349254608154,
+      "training_seconds": 209.49823862162884
+    }
+  ],
+  "parameters": 540000,
+  "ffn_parameters_by_layer": [
+    52480,
+    52480,
+    52480,
+    52480
+  ],
+  "ffn_types": [
+    "ks2",
+    "ks2",
+    "ks2",
+    "ks2"
+  ],
+  "training_seconds": 209.49823862162884,
+  "wall_seconds": 218.35443815006875,
+  "benchmark_ms_per_step": 13.396902499953285,
+  "invalid_steps": 0,
+  "data": {
+    "train": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_train_000001.bin",
+      "source_tokens": 1000000,
+      "bytes": 4468985,
+      "sha256": "ef4111c31c902fce46b650cab7f0c93644992ed0041e32e5571d4fb9c7cbaed1"
+    },
+    "val": {
+      "source": "/home/curved/modded-nanogpt-ssinf/data/fineweb10B/fineweb_val_000000.bin",
+      "source_tokens": 100000,
+      "bytes": 444316,
+      "sha256": "d00cb39e9660eb1ac2ac3f82b0b794bcc33494783ab8033dbe069034e49ff737"
+    }
+  },
+  "torch": "2.11.0+rocm7.1",
+  "hip": "7.1.52802",
+  "device": "AMD Instinct MI100",
+  "source_hashes": {
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179",
+    "../common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "../common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+    "spread_projection.py": "8c4e6f97556458d044ed8746f3b9a024d8ee08903a436c2d4197257a4b99d89d",
+    "run_spread_gpu.py": "8a310c29b8e0366819d988e576865bfe8749c05b667af62f0265d60b48a9bccb",
+    "side_stream.py": "d51dc60210410081d67172678922c58da1d16d08dd2a58decb10740e85ffd3e0",
+    "raw_mux.py": "533e7dfcafe193e9249f84034c1b78bc6c92fe52431619b82ca67a9bd06397e2",
+    "run_raw_mux_gpu.py": "47d11270e460e978f8ed1b52bdf7c997bcb9e85660b20ae960e6e958712c29d9",
+    "single_mux.py": "69ce0a01ae7ea54372ba11e156fdf4bb4a26e670961d7d321e4da38ec72c2faa",
+    "run_single_mux_gpu.py": "3646106b78219daf8a682a0a3a4b08849a06f28ca48431a85eb43cd678a84517"
+  },
+  "precision": "FP32",
+  "batch_size": 4,
+  "sequence_length": 64,
+  "training_targets": 3840000,
+  "note": "Independent GPU runs; no tensor parallelism. Warmup/benchmark updates reset.",
+  "coding": "fixed_both",
+  "coding_protocol": {
+    "charts": 64,
+    "rank": 8,
+    "muxes_per_layer": 1,
+    "input_widths": [
+      96,
+      704,
+      1312,
+      1920
+    ],
+    "mux_output_width": 608,
+    "ks2_coordinates": 512,
+    "rwkv_view": 96,
+    "final_demux_input": 608,
+    "final_demux_output": 96,
+    "view_seed": 103415,
+    "attention_view_seed": 103479,
+    "attention_view": "One signed/permuted 96-way Hadamard view. Pad final group to 96 when needed; fold and normalize each row. All actual input features enter every coordinate; padded groups can break exact row orthogonality.",
+    "input": "Embedding plus all previous 96D post-attention and raw 512D KS2 states; no detach. Latest previous residual is already included once in this history.",
+    "branches": "One shared LayerNorm then one 608-row fixed matrix multiply. First 512 coordinates undergo coordinate-wise causal time mix then geometry only; final 96 feed normalized RWKV with view+update residual. No same-layer attention-to-KS2 projection.",
+    "output": "The 96 attention channels pass through the decoder unchanged alongside the 512 KS2 channels. Only the final full 608D residual demuxes to 96D, then output norm/head. No intermediate demux or attention pass-through between layers."
+  },
+  "rhac_reference": {
+    "path": "/home/curved/SDGraft/RHAC/src/rhac/rhac.py",
+    "sha256": "60a3d708b6e579d5800aaeb831b56e1ce63a0cf0cbc538c570dc207be3dd54d4"
+  },
+  "evaluation": {
+    "original_val": 1.7155349254608154,
+    "expanded_val": 1.7019453048706055,
+    "sampled_train": 1.5902647972106934
+  },
+  "architecture": "One shared layer-entry mux; 64x8 geometry-only KS2 branch plus one 96D RWKV branch; final full-residual demux",
+  "output_lr_multiplier": 5.5,
+  "parameter_breakdown": {
+    "total": 540000,
+    "rwkv": 269568,
+    "embedding_and_head": 49152,
+    "ks2_geometry": 209920,
+    "final_demux_gains": 96,
+    "norms_and_ffn_mix": 11264
+  }
+}

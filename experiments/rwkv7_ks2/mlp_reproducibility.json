@@ -1,0 +1,115 @@
+{
+  "steps": 1000,
+  "note": "Two repeated archived-Model runs and one current-Model run, same GPU, initialization, sampler, and GPU runner. A short repeatability diagnostic; cosine horizon is 1000 here, not the study 15000.",
+  "runs": {
+    "old_a": [
+      {
+        "step": 0,
+        "val_loss": 5.645017623901367
+      },
+      {
+        "step": 100,
+        "train_loss": 2.357140064239502,
+        "gradient_norm": 2.8173916339874268,
+        "val_loss": 2.5855424404144287,
+        "training_seconds": 1.4569364289054647
+      },
+      {
+        "step": 200,
+        "train_loss": 2.175898551940918,
+        "gradient_norm": 27.243961334228516,
+        "val_loss": 2.4393374919891357,
+        "training_seconds": 2.9149056788301095
+      },
+      {
+        "step": 500,
+        "train_loss": 1.9844181537628174,
+        "gradient_norm": 2.1056480407714844,
+        "val_loss": 2.233097553253174,
+        "training_seconds": 7.289326265919954
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.8636276721954346,
+        "gradient_norm": 2.029449939727783,
+        "val_loss": 2.0866990089416504,
+        "training_seconds": 14.557065782952122
+      }
+    ],
+    "old_b": [
+      {
+        "step": 0,
+        "val_loss": 5.645017623901367
+      },
+      {
+        "step": 100,
+        "train_loss": 2.35714054107666,
+        "gradient_norm": 2.8173911571502686,
+        "val_loss": 2.585542678833008,
+        "training_seconds": 1.4639426730573177
+      },
+      {
+        "step": 200,
+        "train_loss": 2.1778345108032227,
+        "gradient_norm": 30.702922821044922,
+        "val_loss": 2.439988374710083,
+        "training_seconds": 2.9301894480595365
+      },
+      {
+        "step": 500,
+        "train_loss": 2.0069854259490967,
+        "gradient_norm": 2.0712730884552,
+        "val_loss": 2.230501413345337,
+        "training_seconds": 7.3262875330401585
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.8683209419250488,
+        "gradient_norm": 2.0489559173583984,
+        "val_loss": 2.0833170413970947,
+        "training_seconds": 14.656430096016265
+      }
+    ],
+    "new": [
+      {
+        "step": 0,
+        "val_loss": 5.645017623901367
+      },
+      {
+        "step": 100,
+        "train_loss": 2.357142925262451,
+        "gradient_norm": 2.817394256591797,
+        "val_loss": 2.585543632507324,
+        "training_seconds": 1.463822384015657
+      },
+      {
+        "step": 200,
+        "train_loss": 2.1718974113464355,
+        "gradient_norm": 29.07588005065918,
+        "val_loss": 2.441145896911621,
+        "training_seconds": 2.9313452190253884
+      },
+      {
+        "step": 500,
+        "train_loss": 2.0061562061309814,
+        "gradient_norm": 1.9986375570297241,
+        "val_loss": 2.228219985961914,
+        "training_seconds": 7.329455628991127
+      },
+      {
+        "step": 1000,
+        "train_loss": 1.8624874353408813,
+        "gradient_norm": 2.152252674102783,
+        "val_loss": 2.0865063667297363,
+        "training_seconds": 14.673477462958544
+      }
+    ]
+  },
+  "source_hashes": {
+    "source_snapshots/pre_additive/run.py": "22700cbba64363e35a31449a9902e33416b4b72e3b86a2d73ed5e11e5ebc0c20",
+    "run.py": "881d65d2176ab8250a64e026aecde6d1d319daa840e9e1a10d9202f3be0b4dcf",
+    "run_gpu.py": "f1ab98eb78f34b9122c56adc4aa70da3b01fddd8a06c5594ebe6c3d240b2c05f",
+    "gpu_recurrence.py": "3916ee020fda93c23e43dc75410fca4206b2f5ae5573ef26e8aaef3bc1a80179"
+  },
+  "interpretation": "Repeated archived-model runs diverge despite identical seed and protocol: max observed final 1000-step original-validation difference 0.00338197 nats/byte. Exact initial weights/logits/gradients agree between archived and current MLP code in a separate check. Tiny final study differences should not be interpreted as a reliable architecture effect."
+}

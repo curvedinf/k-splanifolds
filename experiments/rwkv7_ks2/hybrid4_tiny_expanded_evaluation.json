@@ -1,0 +1,45 @@
+{
+  "protocol": "Fixed 256 batches x 4 sequences x 64 bytes per expanded split; same original shards, overlapping windows possible. Not an independent test set.",
+  "seeds": {
+    "expanded_val": 54321,
+    "sampled_train": 98765
+  },
+  "rows": [
+    {
+      "run": "hybrid_c2_11",
+      "original_val": 1.6815072298049927,
+      "expanded_val": 1.6615285873413086,
+      "sampled_train": 1.5519657135009766
+    },
+    {
+      "run": "hybrid_c2_22",
+      "original_val": 1.6714073419570923,
+      "expanded_val": 1.6620876789093018,
+      "sampled_train": 1.5526702404022217
+    },
+    {
+      "run": "hybrid_c2_33",
+      "original_val": 1.6682777404785156,
+      "expanded_val": 1.659785270690918,
+      "sampled_train": 1.549498200416565
+    },
+    {
+      "run": "hybrid_c4_11",
+      "original_val": 1.6792495250701904,
+      "expanded_val": 1.6682240962982178,
+      "sampled_train": 1.5569037199020386
+    },
+    {
+      "run": "hybrid_c4_22",
+      "original_val": 1.6649301052093506,
+      "expanded_val": 1.6571853160858154,
+      "sampled_train": 1.5502896308898926
+    },
+    {
+      "run": "hybrid_c4_33",
+      "original_val": 1.6716656684875488,
+      "expanded_val": 1.6605100631713867,
+      "sampled_train": 1.5532817840576172
+    }
+  ]
+}

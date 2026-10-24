@@ -1,0 +1,85 @@
+{
+  "architecture": "Raw KS2 coordinate history; 96D Hadamard view before each RWKV; final-only 96D demux",
+  "charts": 64,
+  "rank": 8,
+  "layers": 4,
+  "attention_width": 96,
+  "attention_input_widths": [
+    96,
+    704,
+    1312,
+    1920
+  ],
+  "ffn_input_widths": [
+    192,
+    800,
+    1408,
+    2016
+  ],
+  "raw_output_width": 512,
+  "final_demux_width": 96,
+  "steps": 15000,
+  "seed": 11,
+  "parameters": 543136,
+  "parameter_breakdown": {
+    "total": 543136,
+    "rwkv": 269568,
+    "embedding_and_head": 49152,
+    "ks2_geometry": 209920,
+    "final_demux_gains": 96,
+    "norms_and_ffn_mix": 14400
+  },
+  "benchmark_ms_per_step": 13.5836809896864,
+  "sustained_ms_per_step": 14.159397149264501,
+  "evaluation": {
+    "original_val": 1.712196946144104,
+    "expanded_val": 1.6940251588821411,
+    "sampled_train": 1.583034634590149
+  },
+  "tiled_evaluation": {
+    "arm": "fixed_both",
+    "seed": 11,
+    "loss": 1.677181363105774,
+    "targets": 1777024,
+    "by_offset": [
+      {
+        "offset": 0,
+        "targets": 444288,
+        "loss": 1.676987648010254
+      },
+      {
+        "offset": 16,
+        "targets": 444288,
+        "loss": 1.6770797967910767
+      },
+      {
+        "offset": 32,
+        "targets": 444224,
+        "loss": 1.6771360635757446
+      },
+      {
+        "offset": 48,
+        "targets": 444224,
+        "loss": 1.677521824836731
+      }
+    ],
+    "batch4_vs_batch64_max_loss_error": 7.152557373046875e-07
+  },
+  "comparisons": {
+    "no_history": {
+      "parameters": 564096,
+      "full_shard_loss": 1.6700959205627441,
+      "loss_delta": 0.007085442543029785,
+      "benchmark_ms_per_step": 14.752776249079034,
+      "sustained_ms_per_step": 15.419161548481013
+    },
+    "demuxed_history": {
+      "parameters": 567552,
+      "full_shard_loss": 1.6691116094589233,
+      "loss_delta": 0.008069753646850586,
+      "benchmark_ms_per_step": 14.87402749946341,
+      "sustained_ms_per_step": 15.554944466155332
+    }
+  },
+  "protocol": "Same seed/data/15k-step FP32 optimizer schedule and physical GPU0. All four KS2 FFNs emit raw 512D coordinates; history retains embedding and all prior 96D post-attention and 512D KS2 states without detach. RWKV reads a fixed Hadamard 96D view of history. Current post-attention state joins KS2 mux input. Only final layer demuxes to the logits head, with unit-init gains at 5.5x LR. No 2048D side stream or main-stream bypass. Initial logits differ; this is an architecture comparison, not an isolated change with paired initial functions. One seed; full-shard evaluation visits the same held-out bytes at four overlapping offsets."
+}

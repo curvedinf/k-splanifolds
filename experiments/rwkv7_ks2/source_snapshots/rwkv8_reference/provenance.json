@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/BlinkDL/RWKV-LM",
+  "commit": "20be0f8cf0bdf506d8c0030c87a9a3416f95b143",
+  "files": {
+    "251014_rosa_1bit_layer.py": "38b7bd7623e37a4b45c8f746d8692a8d4279d01fddf30a2b9bf9f6be706bf983",
+    "README.md": "c5781ae626a768d1d6359f4040e72394b656d011f6e96e5a52e4de7bfaffead5",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "251105_reverse_run.py": "aa206ebbe72715344252ae6a20bc810cd304660f3146cf7828b2e4d013f3ec3f"
+  },
+  "forward": "251105_reverse_run.py: samx_qkv_slow and parallel ROSA/RWKV residual paths.",
+  "backward": "Exact single-bit counterfactual credits; Bernoulli tau=1 credit-to-logit mapping. Independent short-window GPU implementation, informed by https://github.com/xiaoiecc/qkv-rosa-fast-exact-backward . Not an analytic derivative of the discontinuous forward."
+}

@@ -1,0 +1,353 @@
+{
+  "protocol": "Same held-out shard tiled into 64-target windows at offsets 0/16/32/48; nearly all bytes visited four times with different contexts, not independent test samples. State resets each window; batch size 64 checked against 4, padding excluded.",
+  "rows": [
+    {
+      "arm": "mlp",
+      "seed": 11,
+      "loss": 1.6232794523239136,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.623350977897644
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6231976747512817
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6231377124786377
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6234309673309326
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+    },
+    {
+      "arm": "mlp",
+      "seed": 22,
+      "loss": 1.6214910745620728,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6212977170944214
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6216676235198975
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6215614080429077
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6214367151260376
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    },
+    {
+      "arm": "mlp",
+      "seed": 33,
+      "loss": 1.6233967542648315,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6233271360397339
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6234811544418335
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.623247504234314
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6235311031341553
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+    },
+    {
+      "arm": "learned",
+      "seed": 11,
+      "loss": 1.6450939178466797,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6449120044708252
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6452534198760986
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.644960641860962
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6452499628067017
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+    },
+    {
+      "arm": "learned",
+      "seed": 22,
+      "loss": 1.6459861993789673,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.645998477935791
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6461875438690186
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6458314657211304
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.64592707157135
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    },
+    {
+      "arm": "learned",
+      "seed": 33,
+      "loss": 1.6443175077438354,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6445540189743042
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.643961787223816
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6441335678100586
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.644620418548584
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    },
+    {
+      "arm": "fixed_input",
+      "seed": 11,
+      "loss": 1.6519821882247925,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.652100920677185
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.651853322982788
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6521373987197876
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6518372297286987
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    },
+    {
+      "arm": "fixed_input",
+      "seed": 22,
+      "loss": 1.6489410400390625,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6489436626434326
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6487330198287964
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.64867103099823
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6494160890579224
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+    },
+    {
+      "arm": "fixed_input",
+      "seed": 33,
+      "loss": 1.6476484537124634,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6480140686035156
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6470273733139038
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.647566795349121
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6479859352111816
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    },
+    {
+      "arm": "fixed_both",
+      "seed": 11,
+      "loss": 1.6450926065444946,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6449906826019287
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.644927978515625
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6451494693756104
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.6453027725219727
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 4.76837158203125e-07
+    },
+    {
+      "arm": "fixed_both",
+      "seed": 22,
+      "loss": 1.6484509706497192,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.6484785079956055
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6482021808624268
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.648391842842102
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.648730993270874
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    },
+    {
+      "arm": "fixed_both",
+      "seed": 33,
+      "loss": 1.6469184160232544,
+      "targets": 1777024,
+      "by_offset": [
+        {
+          "offset": 0,
+          "targets": 444288,
+          "loss": 1.647180438041687
+        },
+        {
+          "offset": 16,
+          "targets": 444288,
+          "loss": 1.6469342708587646
+        },
+        {
+          "offset": 32,
+          "targets": 444224,
+          "loss": 1.6466320753097534
+        },
+        {
+          "offset": 48,
+          "targets": 444224,
+          "loss": 1.646926999092102
+        }
+      ],
+      "batch4_vs_batch64_max_loss_error": 2.384185791015625e-07
+    }
+  ]
+}

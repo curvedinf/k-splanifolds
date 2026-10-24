@@ -1,0 +1,30 @@
+{
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "executable": "/home/curved/int8-vllm/.venv/bin/python",
+  "torch": "2.11.0+rocm7.1",
+  "torch_hip_build": "7.1.52802",
+  "triton": "3.6.0",
+  "devices": [
+    "AMD Instinct MI100",
+    "AMD Instinct MI100",
+    "AMD Instinct MI100",
+    "AMD Instinct MI100"
+  ],
+  "runtime_libraries": {
+    "libhsa-runtime64.so": {
+      "path": "/home/curved/int8-vllm/.venv/lib/python3.12/site-packages/torch/lib/libhsa-runtime64.so",
+      "sha256": "843e549d187929cd884bad148a2faee67159eef1da67adf6320af7c37d9d7739"
+    },
+    "libamdhip64.so": {
+      "path": "/home/curved/int8-vllm/.venv/lib/python3.12/site-packages/torch/lib/libamdhip64.so",
+      "sha256": "220bc845a73e278c42e63e8dba61890ea2fdf3959941921b9447631f5675ced7"
+    }
+  },
+  "environment": {
+    "ROCM_PATH": "/opt/rocm",
+    "LD_LIBRARY_PATH": "/opt/rocm/lib",
+    "PYTORCH_ROCM_ARCH": "gfx908",
+    "GPU_ARCHS": "gfx908"
+  },
+  "gpu_checks": "check_gpu.py passed forward and all six recurrence gradients at lengths 1,7,64, plus complete-model logits and parameter gradients for mlp,ks2,ks2_ffn"
+}

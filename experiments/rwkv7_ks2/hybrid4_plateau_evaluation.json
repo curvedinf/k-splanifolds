@@ -1,0 +1,63 @@
+{
+  "protocol": "Fixed 256 batches x 4 sequences x 64 bytes per expanded split; same original shards, overlapping windows possible. Not an independent test set.",
+  "seeds": {
+    "expanded_val": 54321,
+    "sampled_train": 98765
+  },
+  "rows": [
+    {
+      "run": "hybrid_c16_11",
+      "original_val": 1.579932689666748,
+      "expanded_val": 1.5729081630706787,
+      "sampled_train": 1.4262089729309082
+    },
+    {
+      "run": "hybrid_c16_22",
+      "original_val": 1.5740317106246948,
+      "expanded_val": 1.573080062866211,
+      "sampled_train": 1.425601840019226
+    },
+    {
+      "run": "hybrid_c16_33",
+      "original_val": 1.5805132389068604,
+      "expanded_val": 1.5715391635894775,
+      "sampled_train": 1.4249632358551025
+    },
+    {
+      "run": "hybrid_c2_11",
+      "original_val": 1.5919902324676514,
+      "expanded_val": 1.5753170251846313,
+      "sampled_train": 1.4368681907653809
+    },
+    {
+      "run": "hybrid_c2_22",
+      "original_val": 1.589361548423767,
+      "expanded_val": 1.583959937095642,
+      "sampled_train": 1.4398597478866577
+    },
+    {
+      "run": "hybrid_c2_33",
+      "original_val": 1.5835249423980713,
+      "expanded_val": 1.579210638999939,
+      "sampled_train": 1.4338935613632202
+    },
+    {
+      "run": "mlp_11",
+      "original_val": 1.5717494487762451,
+      "expanded_val": 1.5637472867965698,
+      "sampled_train": 1.411039113998413
+    },
+    {
+      "run": "mlp_22",
+      "original_val": 1.5690736770629883,
+      "expanded_val": 1.5583369731903076,
+      "sampled_train": 1.4040682315826416
+    },
+    {
+      "run": "mlp_33",
+      "original_val": 1.5586880445480347,
+      "expanded_val": 1.5595221519470215,
+      "sampled_train": 1.4056675434112549
+    }
+  ]
+}
