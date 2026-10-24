@@ -72,6 +72,16 @@ python -m unittest discover -s experiments/common/tests -v
 python -m unittest discover -s experiments/nanogpt_ks2/tests -v
 ```
 
+The capacity-preserving [KS3 wall-clock study](reports/2026-10-24-ks3-wallclock/REPORT.md)
+optimizes complete training time against this directory's unchanged MLP control,
+retiming that control at four times as many steps after each replicated win.
+Its separate `wallclock.py` runner adds whole-model and optimizer graph replay,
+batched updates, local-window attention, and fused training-head loss. Training
+sequence length can increase while validation remains at 128 tokens. These are
+full-system research comparisons; the original runner and control stay intact.
+Research checkpoints require the adjacent `config.json` and
+`wallclock_evaluate.load_research_checkpoint` to restore their execution choices.
+
 
 A fixed-step convergence experiment derived from the current modded-nanoGPT speedrun. Only the feed-forward modules differ between the two experimental arms. The question is whether KS2 reaches lower **held-out next-token cross-entropy at the same optimizer step and token count**, with approximately one-quarter of the feed-forward parameters.
 

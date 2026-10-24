@@ -1,0 +1,31 @@
+{
+  "locked_at": "2026-10-24T02:21:46.994937+00:00",
+  "reserved_validation": {
+    "offset": 100000,
+    "tokens": 8192,
+    "context": 128
+  },
+  "groups": {
+    "selected_long": [
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/long/selected_long_11/ks3_11.pt",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/long/selected_long_22/ks3_22.pt",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/long/selected_long_33/ks3_33.pt"
+    ],
+    "mlp128000": [
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/stage128000_control/mlp128000_11/mlp_11.pt",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/stage128000_control/mlp128000_22/mlp_22.pt",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/stage128000_control/mlp128000_33/mlp_33.pt"
+    ],
+    "mlp32000": [
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/stage32000_control/mlp32000_11/mlp_11.pt",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/stage32000_control/mlp32000_22/mlp_22.pt",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/stage32000_control/mlp32000_33/mlp_33.pt"
+    ],
+    "local4096_1500": [
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/local_screen/local_zero4096_1500_11/ks3_11.pt",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/local_zero4096_1500_22/ks3_22.pt",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/local_zero4096_1500_33/ks3_33.pt"
+    ]
+  },
+  "rule": "Finalist configurations frozen before reserved evaluation. Primary comparison: selected long KS3 against unchanged MLP128000; secondary confirmation: the previously replicated32000-step milestone. Pending training completes the fixed configurations. No reserved scores have been read. Optional subsequent implementation-only tiling must prove numerical equivalence and is not a new quality selection."
+}

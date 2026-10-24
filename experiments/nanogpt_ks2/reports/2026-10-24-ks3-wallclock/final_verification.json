@@ -1,0 +1,8 @@
+{
+  "command": "python -m unittest experiments.nanogpt_ks2.tests.test_wallclock",
+  "tests": 11,
+  "seconds": 24.546,
+  "status": "passed before study stop",
+  "log": "verification.log",
+  "subsequent_change": "Removed the untested optional tiling path and restored the measured long-run source; no additional GPU tests after stop"
+}

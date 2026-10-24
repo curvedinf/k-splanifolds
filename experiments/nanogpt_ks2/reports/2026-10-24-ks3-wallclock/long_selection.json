@@ -1,0 +1,73 @@
+{
+  "rule": "Lowest screening loss among equal-token combined candidates; same FFN parameter budget. No reserved validation has been read.",
+  "selected": {
+    "optimizer_graph": true,
+    "whole_graph": true,
+    "batch_optimizer": true,
+    "fused_optimizer_adam": true,
+    "coefficient_init": 0.0,
+    "wall_budget": null,
+    "window_attention": true,
+    "fused_head_loss": true,
+    "head_fp16": true,
+    "gradient_scale": 64.0,
+    "scale_in_update": true,
+    "lr_scale": 0.8,
+    "sequence": 8192,
+    "steps": 12000
+  },
+  "training_tokens": 98304000,
+  "profile_returncode": 0,
+  "screen_results": [
+    {
+      "candidate": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "fused_head_loss": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "scale_in_update": true,
+        "lr_scale": 0.8,
+        "sequence": 8192,
+        "steps": 1500
+      },
+      "final_val_loss": 5.82751128077507,
+      "seconds": 190.4274754220387,
+      "counts": {
+        "total": 25526411,
+        "ffn": 741400
+      },
+      "training_tokens": 12288000
+    },
+    {
+      "candidate": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "fused_head_loss": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "scale_in_update": true,
+        "lr_scale": 0.8,
+        "sequence": 16384,
+        "steps": 750
+      },
+      "final_val_loss": 5.921893537044525,
+      "seconds": 219.60013432102278,
+      "counts": {
+        "total": 25526411,
+        "ffn": 741400
+      },
+      "training_tokens": 12288000
+    }
+  ]
+}

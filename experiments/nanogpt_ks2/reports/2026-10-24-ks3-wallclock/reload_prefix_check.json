@@ -1,0 +1,75 @@
+{
+  "offset": 0,
+  "tokens": 2048,
+  "context": 128,
+  "data_manifest": {
+    "fineweb_train_000001.bin": {
+      "sha256": "771fa4a99b9fe0946ffb6e848b4ba5c6a9b0fe87860ebf03bc2c1c7e45f8178e",
+      "tokens": 100000000,
+      "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_train_000001.bin"
+    },
+    "fineweb_val_000000.bin": {
+      "sha256": "5b95c8e0966f0861685b307b23dc5ae42b228ef74b28cb499784ae021f201640",
+      "tokens": 100000000,
+      "url": "https://huggingface.co/datasets/kjj0/fineweb10B-gpt2/resolve/889765ea1f903759787add96995d81171b632d0c/fineweb_val_000000.bin"
+    }
+  },
+  "results": [
+    {
+      "checkpoint": "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/fast1024_2500_11/ks3_11.pt",
+      "checkpoint_sha256": "4b4eb094c3ef9e206ec1d490ceabcf7d1733ae29da781b09b13be0adc5ef7554",
+      "loss": 6.62295900285244,
+      "steps": 2500,
+      "original_loss": 6.62295900285244,
+      "reload_loss_difference": 0.0
+    },
+    {
+      "checkpoint": "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/local_zero4096_1500_22/ks3_22.pt",
+      "checkpoint_sha256": "c447421015d43ed26095de5351ea56a7d5a7bead468749684aa300d763f9726c",
+      "loss": 6.312002405524254,
+      "steps": 1500,
+      "original_loss": 6.312002405524254,
+      "reload_loss_difference": 0.0
+    },
+    {
+      "checkpoint": "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/local_zero4096_1500_33/ks3_33.pt",
+      "checkpoint_sha256": "3d38b4c8f5ec1e68b2318428fbcb8ffe99b6c41d316827f815586c4052d750bc",
+      "loss": 6.301748052239418,
+      "steps": 1500,
+      "original_loss": 6.301748052239418,
+      "reload_loss_difference": 0.0
+    },
+    {
+      "checkpoint": "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/mixr16_1024_2500_11/ks3_11.pt",
+      "checkpoint_sha256": "d5e73e1de36e11f979efc07588f84784bb24648456ae94099f1cd57a131d6b36",
+      "loss": 6.612562790513039,
+      "steps": 2500,
+      "original_loss": 6.612562790513039,
+      "reload_loss_difference": 0.0
+    },
+    {
+      "checkpoint": "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/mixr4_1024_2500_11/ks3_11.pt",
+      "checkpoint_sha256": "6e3dca2970115bdbf9508a7f248df93b3e61146334f790e262a8b96ee638e5ea",
+      "loss": 6.608487024903297,
+      "steps": 2500,
+      "original_loss": 6.608487024903297,
+      "reload_loss_difference": 0.0
+    },
+    {
+      "checkpoint": "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/mixr8_1024_2500_11/ks3_11.pt",
+      "checkpoint_sha256": "ec1964239ccf9b6367c90e8bd6f78fa215e9267a81294f860786d1911c4b4958",
+      "loss": 6.599976763129234,
+      "steps": 2500,
+      "original_loss": 6.599976763129234,
+      "reload_loss_difference": 0.0
+    },
+    {
+      "checkpoint": "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/powerzero1024_2500_11/ks3_11.pt",
+      "checkpoint_sha256": "ab5dc9b7c407147a89e113dad7a15c242dd2e864e202d6d0cf3ae49e81c294ec",
+      "loss": 6.608839750289917,
+      "steps": 2500,
+      "original_loss": 6.608839750289917,
+      "reload_loss_difference": 0.0
+    }
+  ]
+}

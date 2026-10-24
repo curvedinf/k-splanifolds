@@ -1,0 +1,69 @@
+{
+  "selected_lr": 0.8,
+  "screen_results": [
+    {
+      "candidate": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "sequence": 8192,
+        "steps": 1500
+      },
+      "final_val_loss": 6.090572163462639,
+      "seconds": 267.04693704401143
+    },
+    {
+      "candidate": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "sequence": 8192,
+        "steps": 1500,
+        "lr_scale": 0.4
+      },
+      "final_val_loss": 5.939486280083656,
+      "seconds": 274.4037026190199
+    },
+    {
+      "candidate": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 8192,
+        "lr_scale": 0.6
+      },
+      "final_val_loss": 5.863017067313194,
+      "seconds": 271.38976904400624
+    },
+    {
+      "candidate": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 8192,
+        "lr_scale": 0.8
+      },
+      "final_val_loss": 5.814519166946411,
+      "seconds": 272.2977912639035
+    }
+  ],
+  "rule": "Lowest final screening loss among the matched 8192-token, 1500-step LR screens; combine with the validated fused implementation. Compare sequence lengths at identical training tokens."
+}

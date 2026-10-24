@@ -1,0 +1,65 @@
+{
+  "target": {
+    "steps": 8000,
+    "loss": 7.149650384982427,
+    "wall_budget": 617.3316002376378,
+    "seeds": [
+      {
+        "seed": 33,
+        "final_val_loss": 7.1654984056949615,
+        "seconds": 593.2390821389854
+      },
+      {
+        "seed": 11,
+        "final_val_loss": 7.172932669520378,
+        "seconds": 632.1127508589998
+      },
+      {
+        "seed": 22,
+        "final_val_loss": 7.110520079731941,
+        "seconds": 626.6429677149281
+      }
+    ]
+  },
+  "candidate": {
+    "optimizer_graph": true,
+    "whole_graph": true,
+    "batch_optimizer": true,
+    "fused_optimizer_adam": true,
+    "coefficient_init": 0.0,
+    "wall_budget": 617.3316002376378,
+    "sequence": 512,
+    "steps": 1500
+  },
+  "mean_loss": 6.986733436584473,
+  "mean_seconds": 42.431890380646415,
+  "seeds": [
+    {
+      "seed": 22,
+      "final_val_loss": 6.980031073093414,
+      "seconds": 42.10632810101379,
+      "counts": {
+        "total": 25526411,
+        "ffn": 741400
+      }
+    },
+    {
+      "seed": 33,
+      "final_val_loss": 6.990854918956757,
+      "seconds": 42.99097086896654,
+      "counts": {
+        "total": 25526411,
+        "ffn": 741400
+      }
+    },
+    {
+      "seed": 11,
+      "final_val_loss": 6.989314317703247,
+      "seconds": 42.19837217195891,
+      "counts": {
+        "total": 25526411,
+        "ffn": 741400
+      }
+    }
+  ]
+}

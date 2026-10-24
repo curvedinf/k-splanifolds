@@ -1,0 +1,1518 @@
+[
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_head_loss": true,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "lr_scale": 0.8,
+      "optimizer_graph": true,
+      "scale_in_update": true,
+      "sequence": 16384,
+      "steps": 750,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 750,
+    "sequence": 16384,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 5.921893537044525,
+    "seconds": 219.60013432102278,
+    "step_ms": 285.84907458970946,
+    "size_wall_cost": 5.489076724398208,
+    "size_step_cost": 3.7193712778870154,
+    "training_tokens": 12288000,
+    "tokens_per_second": 55956.2499266816
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_head_loss": true,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "lr_scale": 0.8,
+      "optimizer_graph": true,
+      "scale_in_update": true,
+      "sequence": 8192,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 8192,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 5.82751128077507,
+    "seconds": 190.4274754220387,
+    "step_ms": 123.07805485689703,
+    "size_wall_cost": 4.759883350057489,
+    "size_step_cost": 1.6014499358796421,
+    "training_tokens": 12288000,
+    "tokens_per_second": 64528.5034250781
+  },
+  {
+    "candidate": {
+      "amp": true,
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "optimizer_graph": true,
+      "sequence": 512,
+      "steps": 1500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 512,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.982697933912277,
+    "seconds": 51.11841930798255,
+    "step_ms": 29.992328464286402,
+    "size_wall_cost": 1.2777447813455787,
+    "size_step_cost": 0.3902500129032634,
+    "training_tokens": 768000,
+    "tokens_per_second": 15023.938736698587
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 1024,
+      "steps": 1500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 1024,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.7821656465530396,
+    "seconds": 68.40946523705497,
+    "step_ms": 41.848682364060856,
+    "size_wall_cost": 1.709947967574166,
+    "size_step_cost": 0.5445208714623848,
+    "training_tokens": 1536000,
+    "tokens_per_second": 22453.03328534139
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 2048,
+      "steps": 1500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 2048,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.552016645669937,
+    "seconds": 171.74300752102863,
+    "step_ms": 110.35807507912007,
+    "size_wall_cost": 4.292850494270289,
+    "size_step_cost": 1.4359418700981674,
+    "training_tokens": 3072000,
+    "tokens_per_second": 17887.191125518497
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "rank": 4,
+      "steps": 2500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 742390,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.3478230983018875,
+    "seconds": 54.92630747100338,
+    "step_ms": 18.44821190480143,
+    "size_wall_cost": 1.3747592013679704,
+    "size_step_cost": 0.24036241149309223,
+    "training_tokens": 320000,
+    "tokens_per_second": 5825.987850520152
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "steps": 2500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.336773499846458,
+    "seconds": 53.14824981498532,
+    "step_ms": 17.93044681875035,
+    "size_wall_cost": 1.3284819788655697,
+    "size_step_cost": 0.23330489697426327,
+    "training_tokens": 320000,
+    "tokens_per_second": 6020.8944060049735
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 256,
+      "steps": 2500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 256,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.1730975061655045,
+    "seconds": 57.40187452104874,
+    "step_ms": 19.638172224210575,
+    "size_wall_cost": 1.4348046477499425,
+    "size_step_cost": 0.2555252411635999,
+    "training_tokens": 640000,
+    "tokens_per_second": 11149.461674205742
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "lr_scale": 0.35,
+      "optimizer_graph": true,
+      "sequence": 256,
+      "steps": 2500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 256,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.195613190531731,
+    "seconds": 58.45778858603444,
+    "step_ms": 20.105611653393133,
+    "size_wall_cost": 1.4611980437967993,
+    "size_step_cost": 0.26160740459039766,
+    "training_tokens": 640000,
+    "tokens_per_second": 10948.070658849656
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 512,
+      "steps": 1500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 4,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 512,
+    "loss_sd": 0.005855307022717312,
+    "seconds_sd": 0.45110109443286084,
+    "cost_sd": 0.01127562387635991,
+    "loss": 6.986733436584473,
+    "seconds": 42.5997832659826,
+    "step_ms": 24.674554036723244,
+    "size_wall_cost": 1.0648148258774903,
+    "size_step_cost": 0.32105693436505317,
+    "training_tokens": 768000,
+    "tokens_per_second": 18030.4473813945
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_head_loss": true,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "optimizer_graph": true,
+      "scale_in_update": true,
+      "sequence": 4096,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 4096,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.303853154182434,
+    "seconds": 103.71763938595541,
+    "step_ms": 65.70995719428174,
+    "size_wall_cost": 2.5925033334939678,
+    "size_step_cost": 0.8549956924310265,
+    "training_tokens": 6144000,
+    "tokens_per_second": 59237.7539285952
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_head_loss": true,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "optimizer_graph": true,
+      "scale_in_update": true,
+      "sequence": 8192,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 8192,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.112928554415703,
+    "seconds": 189.05657093797345,
+    "step_ms": 121.87989822596622,
+    "size_wall_cost": 4.7256165226799824,
+    "size_step_cost": 1.5858599278801748,
+    "training_tokens": 12288000,
+    "tokens_per_second": 64996.41847429627
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_head_loss": true,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 4096,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 4096,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.301753550767899,
+    "seconds": 110.04548606392927,
+    "step_ms": 69.88401591319901,
+    "size_wall_cost": 2.750672799204999,
+    "size_step_cost": 0.9093071297992888,
+    "training_tokens": 6144000,
+    "tokens_per_second": 55831.45860640513
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "lr_scale": 0.6,
+      "optimizer_graph": true,
+      "sequence": 8192,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 8192,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 5.863017067313194,
+    "seconds": 271.38976904400624,
+    "step_ms": 176.92805084128244,
+    "size_wall_cost": 6.783599058831038,
+    "size_step_cost": 2.3021278326548402,
+    "training_tokens": 12288000,
+    "tokens_per_second": 45278.05172348808
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "lr_scale": 0.8,
+      "optimizer_graph": true,
+      "sequence": 8192,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 8192,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 5.814519166946411,
+    "seconds": 272.2977912639035,
+    "step_ms": 177.7101578481961,
+    "size_wall_cost": 6.806295782801108,
+    "size_step_cost": 2.3123043439551623,
+    "training_tokens": 12288000,
+    "tokens_per_second": 45127.06453829003
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 4096,
+      "steps": 100,
+      "whole_graph": true,
+      "window_attention": false
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 100,
+    "sequence": 4096,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.978175416588783,
+    "seconds": 43.91494300297927,
+    "step_ms": 390.047863679938,
+    "size_wall_cost": 1.0976882698010764,
+    "size_step_cost": 5.075170606218145,
+    "training_tokens": 409600,
+    "tokens_per_second": 9327.121293820464
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "lr_end": 0.0,
+      "optimizer_graph": true,
+      "sequence": 4096,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 4096,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.358500391244888,
+    "seconds": 142.47868044208735,
+    "step_ms": 91.54199725412764,
+    "size_wall_cost": 3.561365802237408,
+    "size_step_cost": 1.1911134426309302,
+    "training_tokens": 6144000,
+    "tokens_per_second": 43122.24103238606
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "full_vocab": true,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "optimizer_graph": true,
+      "sequence": 4096,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 4096,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.34837631881237,
+    "seconds": 255.40362257207744,
+    "step_ms": 166.82184932396436,
+    "size_wall_cost": 6.384012852824404,
+    "size_step_cost": 2.1706293637302734,
+    "training_tokens": 6144000,
+    "tokens_per_second": 24056.04093679643
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "optimizer_graph": true,
+      "sequence": 4096,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 4096,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.3019228130578995,
+    "seconds": 133.84560233505908,
+    "step_ms": 85.81264241148408,
+    "size_wall_cost": 3.3455752780479875,
+    "size_step_cost": 1.1165650192255443,
+    "training_tokens": 6144000,
+    "tokens_per_second": 45903.637421120264
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "optimizer_graph": true,
+      "sequence": 512,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 512,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.993877738714218,
+    "seconds": 39.199660372920334,
+    "step_ms": 22.83554761468743,
+    "size_wall_cost": 0.9798261008473031,
+    "size_step_cost": 0.2971284060821213,
+    "training_tokens": 768000,
+    "tokens_per_second": 19592.006478978194
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "optimizer_graph": true,
+      "sequence": 8192,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 8192,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.106587573885918,
+    "seconds": 276.5165795109933,
+    "step_ms": 180.5957354810865,
+    "size_wall_cost": 6.911747687208476,
+    "size_step_cost": 2.349850502127235,
+    "training_tokens": 12288000,
+    "tokens_per_second": 44438.56502829145
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 16384,
+      "steps": 1000,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1000,
+    "sequence": 16384,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.07397173345089,
+    "seconds": 414.0995344959665,
+    "step_ms": 408.41836408211384,
+    "size_wall_cost": 10.350741011219595,
+    "size_step_cost": 5.314201331275894,
+    "training_tokens": 16384000,
+    "tokens_per_second": 39565.366862685005
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 8192,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 8192,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.090572163462639,
+    "seconds": 267.04693704401143,
+    "step_ms": 174.3601035796261,
+    "size_wall_cost": 6.675046584021095,
+    "size_step_cost": 2.268714573221195,
+    "training_tokens": 12288000,
+    "tokens_per_second": 46014.38284976413
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "lr_scale": 0.4,
+      "optimizer_graph": true,
+      "sequence": 8192,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 8192,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 5.939486280083656,
+    "seconds": 274.4037026190199,
+    "step_ms": 179.18183883590004,
+    "size_wall_cost": 6.85893468049011,
+    "size_step_cost": 2.331453358181411,
+    "training_tokens": 12288000,
+    "tokens_per_second": 44780.73685857136
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 2048,
+      "steps": 10000,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 10000,
+    "sequence": 2048,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 5.972399994730949,
+    "seconds": 516.4824631130323,
+    "step_ms": 48.91647468222072,
+    "size_wall_cost": 12.909882207490979,
+    "size_step_cost": 0.6364845896726541,
+    "training_tokens": 20480000,
+    "tokens_per_second": 39652.84682960852
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 2048,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 2048,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.554367288947105,
+    "seconds": 73.13919348304626,
+    "step_ms": 45.419235167326406,
+    "size_wall_cost": 1.8281712159709416,
+    "size_step_cost": 0.5909796943979023,
+    "training_tokens": 3072000,
+    "tokens_per_second": 42002.10384753686
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 4096,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 4096,
+    "loss_sd": 0.00663641026207292,
+    "seconds_sd": 6.052384935209799,
+    "cost_sd": 0.15128408449146394,
+    "loss": 6.304442534844081,
+    "seconds": 134.7522599810036,
+    "step_ms": 86.3663735811133,
+    "size_wall_cost": 3.3682378934272497,
+    "size_step_cost": 1.1237699815328244,
+    "training_tokens": 6144000,
+    "tokens_per_second": 45657.78438765806
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 512,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 512,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.981609150767326,
+    "seconds": 37.96088981197681,
+    "step_ms": 21.45616866655958,
+    "size_wall_cost": 0.9488620639901825,
+    "size_step_cost": 0.2791803947116013,
+    "training_tokens": 768000,
+    "tokens_per_second": 20231.348732971295
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_head_loss": true,
+      "fused_optimizer_adam": true,
+      "gradient_scale": 64.0,
+      "head_fp16": true,
+      "lr_scale": 0.8,
+      "optimizer_graph": true,
+      "scale_in_update": true,
+      "sequence": 8192,
+      "steps": 12000,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 12000,
+    "sequence": 8192,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 5.430931925773621,
+    "seconds": 1514.844220729079,
+    "step_ms": 123.45526224566856,
+    "size_wall_cost": 37.864713420155255,
+    "size_step_cost": 1.6063580305782776,
+    "training_tokens": 98304000,
+    "tokens_per_second": 64893.801392124195
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 1024,
+      "steps": 2500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 1024,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.62295900285244,
+    "seconds": 86.0064163460629,
+    "step_ms": 31.363459791243077,
+    "size_wall_cost": 2.1497974924912455,
+    "size_step_cost": 0.40809070902240824,
+    "training_tokens": 2560000,
+    "tokens_per_second": 29765.221116752047
+  },
+  {
+    "candidate": {
+      "banks": [
+        [
+          211,
+          1
+        ],
+        [
+          8,
+          16
+        ]
+      ],
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 1024,
+      "steps": 2500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 743160,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 1024,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.612562790513039,
+    "seconds": 100.16625081805978,
+    "step_ms": 35.29381642723456,
+    "size_wall_cost": 2.5096771861375933,
+    "size_step_cost": 0.4603213405163544,
+    "training_tokens": 2560000,
+    "tokens_per_second": 25557.510429834685
+  },
+  {
+    "candidate": {
+      "banks": [
+        [
+          210,
+          1
+        ],
+        [
+          32,
+          4
+        ]
+      ],
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 1024,
+      "steps": 2500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741488,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 1024,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.608487024903297,
+    "seconds": 98.05162003508303,
+    "step_ms": 34.454622130747886,
+    "size_wall_cost": 2.451167663540269,
+    "size_step_cost": 0.4483650778105574,
+    "training_tokens": 2560000,
+    "tokens_per_second": 26108.696613926702
+  },
+  {
+    "candidate": {
+      "banks": [
+        [
+          211,
+          1
+        ],
+        [
+          16,
+          8
+        ]
+      ],
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 1024,
+      "steps": 2500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 743336,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 1024,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.599976763129234,
+    "seconds": 99.88384010398295,
+    "step_ms": 35.27158722900786,
+    "size_wall_cost": 2.5031940348871955,
+    "size_step_cost": 0.4601403627439544,
+    "training_tokens": 2560000,
+    "tokens_per_second": 25629.771515942328
+  },
+  {
+    "candidate": {
+      "basis": "power",
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 1024,
+      "steps": 2500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 1024,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 6.608839750289917,
+    "seconds": 88.72534004494082,
+    "step_ms": 32.156610431335864,
+    "size_wall_cost": 2.2177591120825535,
+    "size_step_cost": 0.4184109163347219,
+    "training_tokens": 2560000,
+    "tokens_per_second": 28853.08750243525
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "steps": 12000,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 12000,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.0223351418972015,
+    "seconds": 253.506694109994,
+    "step_ms": 18.235872895592667,
+    "size_wall_cost": 6.33659764562854,
+    "size_step_cost": 0.23727899757037524,
+    "training_tokens": 1536000,
+    "tokens_per_second": 6059.011598855631
+  },
+  {
+    "candidate": {
+      "kind": "mlp",
+      "steps": 2000
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 743424,
+    "kind": "mlp",
+    "steps": 2000,
+    "sequence": 128,
+    "loss_sd": 0.007181825560747521,
+    "seconds_sd": 0.7203751098543709,
+    "cost_sd": 0.018055494790836516,
+    "loss": 7.389839828014374,
+    "seconds": 159.54862368102962,
+    "step_ms": 77.37442523200298,
+    "size_wall_cost": 3.9989295914740075,
+    "size_step_cost": 1.0095182488593888,
+    "training_tokens": 256000,
+    "tokens_per_second": 1604.548360061981
+  },
+  {
+    "candidate": {
+      "coefficient_init": 0.0,
+      "optimizer_graph": true,
+      "steps": 2500
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 128,
+    "loss_sd": 0.0014265799149976086,
+    "seconds_sd": 3.031823284140421,
+    "cost_sd": 0.07578278889909847,
+    "loss": 7.337986141443253,
+    "seconds": 148.7065733979689,
+    "step_ms": 56.357782995250695,
+    "size_wall_cost": 3.7170368466649077,
+    "size_step_cost": 0.7333083714152098,
+    "training_tokens": 320000,
+    "tokens_per_second": 2152.482376649459
+  },
+  {
+    "candidate": {
+      "kind": "mlp",
+      "steps": 32000
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 743424,
+    "kind": "mlp",
+    "steps": 32000,
+    "sequence": 128,
+    "loss_sd": 0.04622628355768068,
+    "seconds_sd": 26.815337975098863,
+    "cost_sd": 0.672100116315509,
+    "loss": 6.940259546041489,
+    "seconds": 2384.569621456981,
+    "step_ms": 72.4663531083,
+    "size_wall_cost": 59.766896148462955,
+    "size_step_cost": 0.9454817360098323,
+    "training_tokens": 4096000,
+    "tokens_per_second": 1717.8558832583005
+  },
+  {
+    "candidate": {
+      "kind": "mlp",
+      "steps": 8000
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 743424,
+    "kind": "mlp",
+    "steps": 8000,
+    "sequence": 128,
+    "loss_sd": 0.03409109357887508,
+    "seconds_sd": 21.043210381527135,
+    "cost_sd": 0.5274274058454781,
+    "loss": 7.149650384982427,
+    "seconds": 617.3316002376378,
+    "step_ms": 75.02612092718482,
+    "size_wall_cost": 15.472810400907377,
+    "size_step_cost": 0.978879493967437,
+    "training_tokens": 1024000,
+    "tokens_per_second": 1660.0617998100358
+  },
+  {
+    "candidate": {
+      "coefficient_init": 0.0,
+      "optimizer_graph": true,
+      "steps": 12000,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 12000,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.046552613377571,
+    "seconds": 388.96614295605104,
+    "step_ms": 29.432467554492177,
+    "size_wall_cost": 9.722512276599328,
+    "size_step_cost": 0.3829652924944631,
+    "training_tokens": 1536000,
+    "tokens_per_second": 3948.929817713084
+  },
+  {
+    "candidate": {
+      "geometry_lr": 4.0
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.828691735863686,
+    "seconds": 33.448107121977955,
+    "step_ms": 62.86774334311485,
+    "size_wall_cost": 0.8360615390609567,
+    "size_step_cost": 0.8180137690897803,
+    "training_tokens": 64000,
+    "tokens_per_second": 1913.4117146481847
+  },
+  {
+    "candidate": {
+      "rank": 4
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 742390,
+    "kind": "ks3",
+    "steps": 500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.800608769059181,
+    "seconds": 40.02476879092865,
+    "step_ms": 75.60875371750444,
+    "size_wall_cost": 1.0017862425396635,
+    "size_step_cost": 0.9851091513534024,
+    "training_tokens": 64000,
+    "tokens_per_second": 1599.0098614762062
+  },
+  {
+    "candidate": {},
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.852084144949913,
+    "seconds": 39.64277348597534,
+    "step_ms": 75.11593424086459,
+    "size_wall_cost": 0.9909020588956265,
+    "size_step_cost": 0.9773830778641931,
+    "training_tokens": 64000,
+    "tokens_per_second": 1614.4178212617153
+  },
+  {
+    "candidate": {
+      "coefficient_init": 0.0
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.821689784526825,
+    "seconds": 38.828879542066716,
+    "step_ms": 73.47346322936937,
+    "size_wall_cost": 0.9705581446377847,
+    "size_step_cost": 0.9560118017329488,
+    "training_tokens": 64000,
+    "tokens_per_second": 1648.2577080459716
+  },
+  {
+    "candidate": {
+      "geometry_lr": 4.0,
+      "optimizer_graph": true,
+      "steps": 650
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 650,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.712653800845146,
+    "seconds": 41.14091427100357,
+    "step_ms": 59.79777181073307,
+    "size_wall_cost": 1.0283492569057548,
+    "size_step_cost": 0.7780683399927618,
+    "training_tokens": 83200,
+    "tokens_per_second": 2022.3177212821447
+  },
+  {
+    "candidate": {
+      "optimizer_graph": true,
+      "rank": 4,
+      "steps": 650
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 742390,
+    "kind": "ks3",
+    "steps": 650,
+    "sequence": 128,
+    "loss_sd": 0.038920872554925504,
+    "seconds_sd": 0.7966783022343459,
+    "cost_sd": 0.019940186714810165,
+    "loss": 7.675465300679207,
+    "seconds": 38.53567947032085,
+    "step_ms": 55.60500827301532,
+    "size_wall_cost": 0.9645155913813808,
+    "size_step_cost": 0.7244796378404982,
+    "training_tokens": 83200,
+    "tokens_per_second": 2159.6586071209986
+  },
+  {
+    "candidate": {
+      "optimizer_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.887130603194237,
+    "seconds": 28.623621917911805,
+    "step_ms": 52.722341301618144,
+    "size_wall_cost": 0.7154697665526104,
+    "size_step_cost": 0.6860052362305398,
+    "training_tokens": 64000,
+    "tokens_per_second": 2235.915503060454
+  },
+  {
+    "candidate": {
+      "coefficient_init": 0.0,
+      "optimizer_graph": true,
+      "steps": 650
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 650,
+    "sequence": 128,
+    "loss_sd": 0.027219479693991373,
+    "seconds_sd": 0.3409455391946206,
+    "cost_sd": 0.008522199812249498,
+    "loss": 7.683556626240413,
+    "seconds": 36.24126132732878,
+    "step_ms": 52.374490786773656,
+    "size_wall_cost": 0.9058786080880336,
+    "size_step_cost": 0.6814791232257389,
+    "training_tokens": 83200,
+    "tokens_per_second": 2295.8618577676075
+  },
+  {
+    "candidate": {
+      "basis": "power",
+      "optimizer_graph": true,
+      "steps": 2500
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.370771914720535,
+    "seconds": 151.67858658893965,
+    "step_ms": 57.28944803872146,
+    "size_wall_cost": 3.791324635611858,
+    "size_step_cost": 0.745430881198634,
+    "training_tokens": 320000,
+    "tokens_per_second": 2109.7243005515606
+  },
+  {
+    "candidate": {
+      "coefficient_init": 0.0,
+      "optimizer_graph": true,
+      "steps": 2500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11
+    ],
+    "runs": 1,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 2500,
+    "sequence": 128,
+    "loss_sd": null,
+    "seconds_sd": null,
+    "cost_sd": null,
+    "loss": 7.337375596165657,
+    "seconds": 80.38422347395681,
+    "step_ms": 28.590026091178878,
+    "size_wall_cost": 2.009266394321508,
+    "size_step_cost": 0.3720037296961716,
+    "training_tokens": 320000,
+    "tokens_per_second": 3980.880652578237
+  },
+  {
+    "candidate": {
+      "kind": "mlp",
+      "steps": 500
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 6,
+    "ffn": 743424,
+    "kind": "mlp",
+    "steps": 500,
+    "sequence": 128,
+    "loss_sd": 0.05698572951677038,
+    "seconds_sd": 0.2937386875192618,
+    "cost_sd": 0.007362271780105415,
+    "loss": 7.801634028553963,
+    "seconds": 39.8978326653208,
+    "step_ms": 76.64491511656281,
+    "size_wall_cost": 0.9999999999999999,
+    "size_step_cost": 1.0000001972285542,
+    "training_tokens": 64000,
+    "tokens_per_second": 1604.3590965325268
+  }
+]

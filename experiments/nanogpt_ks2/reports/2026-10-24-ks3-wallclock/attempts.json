@@ -1,0 +1,1296 @@
+[
+  {
+    "wave": "combined",
+    "job": {
+      "name": "combined8192_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "fused_head_loss": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "scale_in_update": true,
+        "lr_scale": 0.8,
+        "sequence": 8192,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "combined",
+    "job": {
+      "name": "combined16384_750",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "fused_head_loss": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "scale_in_update": true,
+        "lr_scale": 0.8,
+        "sequence": 16384,
+        "steps": 750
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "context_screen",
+    "job": {
+      "name": "amp_zero512_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 512,
+        "steps": 1500,
+        "amp": true,
+        "gradient_scale": 64.0
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "context_screen",
+    "job": {
+      "name": "fast_zero1024_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 1024,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "context_screen",
+    "job": {
+      "name": "fast_zero2048_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 2048,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "context_screen",
+    "job": {
+      "name": "fast_zero4096_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 4096,
+        "steps": 1500
+      }
+    },
+    "status": "failed",
+    "returncode": 1,
+    "gpu": 3
+  },
+  {
+    "wave": "fast_screen1",
+    "job": {
+      "name": "fast_zero2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "steps": 2500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fast_screen1",
+    "job": {
+      "name": "fast_zero256_2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "steps": 2500,
+        "sequence": 256
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fast_screen1",
+    "job": {
+      "name": "fast_zero512_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "steps": 1500,
+        "sequence": 512
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fast_screen1",
+    "job": {
+      "name": "fast_zero256lr35_2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "steps": 2500,
+        "sequence": 256,
+        "lr_scale": 0.35
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fast_screen1",
+    "job": {
+      "name": "fast_rank4_2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "steps": 2500,
+        "rank": 4
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fusedloss",
+    "job": {
+      "name": "fusedloss4096_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "fused_head_loss": true,
+        "steps": 1500,
+        "sequence": 4096
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fusedloss",
+    "job": {
+      "name": "fusedloss16_4096_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "fused_head_loss": true,
+        "steps": 1500,
+        "sequence": 4096,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "scale_in_update": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fusedloss",
+    "job": {
+      "name": "fusedloss16_8192_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "fused_head_loss": true,
+        "steps": 1500,
+        "sequence": 8192,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "scale_in_update": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fusedloss",
+    "job": {
+      "name": "local8192lr60_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 8192,
+        "lr_scale": 0.6
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "fusedloss",
+    "job": {
+      "name": "local8192lr80_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 8192,
+        "lr_scale": 0.8
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "dense4096_memory100",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": false,
+        "sequence": 4096,
+        "steps": 100
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "head16_local512_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "sequence": 512,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "head16_local4096_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "sequence": 4096,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "local8192_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "sequence": 8192,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "local8192lr40_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "sequence": 8192,
+        "steps": 1500,
+        "lr_scale": 0.4
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "local16384_1000",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "sequence": 16384,
+        "steps": 1000
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "head16_local8192_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "sequence": 8192,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "head16_full4096_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "sequence": 4096,
+        "steps": 1500,
+        "full_vocab": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "large_context",
+    "job": {
+      "name": "head16_cool4096_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "head_fp16": true,
+        "gradient_scale": 64.0,
+        "sequence": 4096,
+        "steps": 1500,
+        "lr_end": 0.0
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "local_screen",
+    "job": {
+      "name": "local_zero512_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 512
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "local_screen",
+    "job": {
+      "name": "local_zero2048_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 2048
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "local_screen",
+    "job": {
+      "name": "local_zero4096_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 4096
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "local_screen",
+    "job": {
+      "name": "local_zero2048_10000",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 10000,
+        "sequence": 2048
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "mixed_screen",
+    "job": {
+      "name": "fast1024_2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 1024,
+        "steps": 2500,
+        "window_attention": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "mixed_screen",
+    "job": {
+      "name": "mixr8_1024_2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 1024,
+        "steps": 2500,
+        "banks": [
+          [
+            211,
+            1
+          ],
+          [
+            16,
+            8
+          ]
+        ],
+        "window_attention": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "mixed_screen",
+    "job": {
+      "name": "mixr16_1024_2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 1024,
+        "steps": 2500,
+        "banks": [
+          [
+            211,
+            1
+          ],
+          [
+            8,
+            16
+          ]
+        ],
+        "window_attention": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "mixed_screen",
+    "job": {
+      "name": "mixr4_1024_2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 1024,
+        "steps": 2500,
+        "banks": [
+          [
+            210,
+            1
+          ],
+          [
+            32,
+            4
+          ]
+        ],
+        "window_attention": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "mixed_screen",
+    "job": {
+      "name": "powerzero1024_2500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "sequence": 1024,
+        "steps": 2500,
+        "basis": "power",
+        "window_attention": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "mixed_screen",
+    "job": {
+      "name": "local_zero4096_1500",
+      "seed": 22,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 4096
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "mixed_screen",
+    "job": {
+      "name": "local_zero4096_1500",
+      "seed": 33,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": null,
+        "window_attention": true,
+        "steps": 1500,
+        "sequence": 4096
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "rep8000",
+    "job": {
+      "name": "fast_zero512_1500",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": 617.3316002376378,
+        "sequence": 512,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 0
+  },
+  {
+    "wave": "rep8000",
+    "job": {
+      "name": "fast_zero512_1500",
+      "seed": 22,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": 617.3316002376378,
+        "sequence": 512,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 1
+  },
+  {
+    "wave": "rep8000",
+    "job": {
+      "name": "fast_zero512_1500",
+      "seed": 33,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": 617.3316002376378,
+        "sequence": 512,
+        "steps": 1500
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 2
+  },
+  {
+    "wave": "rep8000",
+    "job": {
+      "name": "fast_zero12000",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "batch_optimizer": true,
+        "fused_optimizer_adam": true,
+        "coefficient_init": 0.0,
+        "wall_budget": 617.3316002376378,
+        "steps": 12000
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "stage2000_control",
+    "job": {
+      "name": "mlp2000",
+      "seed": 11,
+      "config": {
+        "kind": "mlp",
+        "steps": 2000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 0
+  },
+  {
+    "wave": "stage2000_control",
+    "job": {
+      "name": "mlp2000",
+      "seed": 22,
+      "config": {
+        "kind": "mlp",
+        "steps": 2000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 1
+  },
+  {
+    "wave": "stage2000_control",
+    "job": {
+      "name": "mlp2000",
+      "seed": 33,
+      "config": {
+        "kind": "mlp",
+        "steps": 2000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 2
+  },
+  {
+    "wave": "stage2000_control",
+    "job": {
+      "name": "zero2500",
+      "seed": 11,
+      "config": {
+        "steps": 2500,
+        "coefficient_init": 0.0,
+        "optimizer_graph": true,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "stage32000_control",
+    "job": {
+      "name": "mlp32000",
+      "seed": 11,
+      "config": {
+        "kind": "mlp",
+        "steps": 32000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 0
+  },
+  {
+    "wave": "stage32000_control",
+    "job": {
+      "name": "mlp32000",
+      "seed": 22,
+      "config": {
+        "kind": "mlp",
+        "steps": 32000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 1
+  },
+  {
+    "wave": "stage32000_control",
+    "job": {
+      "name": "mlp32000",
+      "seed": 33,
+      "config": {
+        "kind": "mlp",
+        "steps": 32000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 2
+  },
+  {
+    "wave": "stage8000_control",
+    "job": {
+      "name": "mlp8000",
+      "seed": 11,
+      "config": {
+        "kind": "mlp",
+        "steps": 8000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 0
+  },
+  {
+    "wave": "stage8000_control",
+    "job": {
+      "name": "mlp8000",
+      "seed": 22,
+      "config": {
+        "kind": "mlp",
+        "steps": 8000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 1
+  },
+  {
+    "wave": "stage8000_control",
+    "job": {
+      "name": "mlp8000",
+      "seed": 33,
+      "config": {
+        "kind": "mlp",
+        "steps": 8000,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 2
+  },
+  {
+    "wave": "stage8000_control",
+    "job": {
+      "name": "whole_zero12000",
+      "seed": 11,
+      "config": {
+        "steps": 12000,
+        "coefficient_init": 0.0,
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "wall_budget": null
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "wave1",
+    "job": {
+      "name": "reference",
+      "seed": 11,
+      "config": {}
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 0
+  },
+  {
+    "wave": "wave1",
+    "job": {
+      "name": "zero_geometry",
+      "seed": 11,
+      "config": {
+        "coefficient_init": 0.0
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 1
+  },
+  {
+    "wave": "wave1",
+    "job": {
+      "name": "fast_geometry",
+      "seed": 11,
+      "config": {
+        "geometry_lr": 4.0
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 2
+  },
+  {
+    "wave": "wave1",
+    "job": {
+      "name": "rank4",
+      "seed": 11,
+      "config": {
+        "rank": 4
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "wave2",
+    "job": {
+      "name": "graph_reference",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 0
+  },
+  {
+    "wave": "wave2",
+    "job": {
+      "name": "graph_zero650",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "coefficient_init": 0.0,
+        "steps": 650
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 1
+  },
+  {
+    "wave": "wave2",
+    "job": {
+      "name": "graph_rank4_650",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "rank": 4,
+        "steps": 650
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 2
+  },
+  {
+    "wave": "wave2",
+    "job": {
+      "name": "graph_geo4_650",
+      "seed": 11,
+      "config": {
+        "optimizer_graph": true,
+        "geometry_lr": 4.0,
+        "steps": 650
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "wave3",
+    "job": {
+      "name": "zero650",
+      "seed": 22,
+      "config": {
+        "optimizer_graph": true,
+        "coefficient_init": 0.0,
+        "steps": 650
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 0
+  },
+  {
+    "wave": "wave3",
+    "job": {
+      "name": "zero650",
+      "seed": 33,
+      "config": {
+        "optimizer_graph": true,
+        "coefficient_init": 0.0,
+        "steps": 650
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 1
+  },
+  {
+    "wave": "wave3",
+    "job": {
+      "name": "rank4_650",
+      "seed": 22,
+      "config": {
+        "optimizer_graph": true,
+        "rank": 4,
+        "steps": 650
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 2
+  },
+  {
+    "wave": "wave3",
+    "job": {
+      "name": "rank4_650",
+      "seed": 33,
+      "config": {
+        "optimizer_graph": true,
+        "rank": 4,
+        "steps": 650
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  },
+  {
+    "wave": "wave4",
+    "job": {
+      "name": "zero2500",
+      "seed": 22,
+      "config": {
+        "steps": 2500,
+        "coefficient_init": 0.0,
+        "optimizer_graph": true,
+        "wall_budget": 159.54862368102962
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 0
+  },
+  {
+    "wave": "wave4",
+    "job": {
+      "name": "zero2500",
+      "seed": 33,
+      "config": {
+        "steps": 2500,
+        "coefficient_init": 0.0,
+        "optimizer_graph": true,
+        "wall_budget": 159.54862368102962
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 1
+  },
+  {
+    "wave": "wave4",
+    "job": {
+      "name": "power2500",
+      "seed": 11,
+      "config": {
+        "steps": 2500,
+        "basis": "power",
+        "optimizer_graph": true,
+        "wall_budget": 159.54862368102962
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 2
+  },
+  {
+    "wave": "whole_probe",
+    "job": {
+      "name": "whole_zero2500",
+      "seed": 11,
+      "config": {
+        "steps": 2500,
+        "coefficient_init": 0.0,
+        "optimizer_graph": true,
+        "whole_graph": true,
+        "wall_budget": 159.54862368102962
+      }
+    },
+    "status": "complete",
+    "returncode": 0,
+    "gpu": 3
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "target": {
+    "steps": 32000,
+    "loss": 6.940259546041489,
+    "wall_budget": 2384.569621456981,
+    "seeds": [
+      {
+        "seed": 11,
+        "final_val_loss": 6.952978119254112,
+        "seconds": 2406.422117371927
+      },
+      {
+        "seed": 22,
+        "final_val_loss": 6.889005407691002,
+        "seconds": 2392.6411014540354
+      },
+      {
+        "seed": 33,
+        "final_val_loss": 6.978795111179352,
+        "seconds": 2354.6456455449807
+      }
+    ]
+  },
+  "candidate": {
+    "optimizer_graph": true,
+    "whole_graph": true,
+    "batch_optimizer": true,
+    "fused_optimizer_adam": true,
+    "coefficient_init": 0.0,
+    "window_attention": true,
+    "steps": 1500,
+    "sequence": 4096
+  },
+  "replicated_win": true,
+  "mean_loss": 6.304442534844081,
+  "mean_seconds": 134.7522599810036,
+  "sources": [
+    "experiments/nanogpt_ks2/runs/wallclock_20261023/local_screen/local_zero4096_1500_11/result.json",
+    "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/local_zero4096_1500_22/result.json",
+    "experiments/nanogpt_ks2/runs/wallclock_20261023/mixed_screen/local_zero4096_1500_33/result.json"
+  ],
+  "seeds": [
+    {
+      "seed": 11,
+      "final_val_loss": 6.29957714676857,
+      "seconds": 127.78218278801069,
+      "counts": {
+        "total": 25526411,
+        "ffn": 741400
+      }
+    },
+    {
+      "seed": 22,
+      "final_val_loss": 6.312002405524254,
+      "seconds": 137.79584490298294,
+      "counts": {
+        "total": 25526411,
+        "ffn": 741400
+      }
+    },
+    {
+      "seed": 33,
+      "final_val_loss": 6.301748052239418,
+      "seconds": 138.67875225201715,
+      "counts": {
+        "total": 25526411,
+        "ffn": 741400
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "zero650": {
+    "loss": 7.683556626240413,
+    "seconds": 36.24126132732878,
+    "max_seconds": 36.51324940496124,
+    "ffn_parameters": 741400,
+    "evidence": [
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/wave2/graph_zero650_11/result.json",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/wave3/zero650_22/result.json",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/wave3/zero650_33/result.json"
+    ]
+  },
+  "rank4_650": {
+    "loss": 7.675465300679207,
+    "seconds": 38.53567947032085,
+    "max_seconds": 39.19176964904182,
+    "ffn_parameters": 742390,
+    "evidence": [
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/wave2/graph_rank4_650_11/result.json",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/wave3/rank4_650_22/result.json",
+      "experiments/nanogpt_ks2/runs/wallclock_20261023/wave3/rank4_650_33/result.json"
+    ]
+  }
+}

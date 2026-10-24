@@ -1,0 +1,119 @@
+[
+  {
+    "candidate": {
+      "coefficient_init": 0.0,
+      "optimizer_graph": true,
+      "steps": 650
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 650,
+    "sequence": 128,
+    "loss_sd": 0.027219479693991373,
+    "seconds_sd": 0.3409455391946206,
+    "cost_sd": 0.008522199812249498,
+    "loss": 7.683556626240413,
+    "seconds": 36.24126132732878,
+    "step_ms": 52.374490786773656,
+    "size_wall_cost": 0.9058786080880336,
+    "size_step_cost": 0.6814791232257389,
+    "training_tokens": 83200,
+    "tokens_per_second": 2295.8618577676075
+  },
+  {
+    "candidate": {
+      "optimizer_graph": true,
+      "rank": 4,
+      "steps": 650
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 742390,
+    "kind": "ks3",
+    "steps": 650,
+    "sequence": 128,
+    "loss_sd": 0.038920872554925504,
+    "seconds_sd": 0.7966783022343459,
+    "cost_sd": 0.019940186714810165,
+    "loss": 7.675465300679207,
+    "seconds": 38.53567947032085,
+    "step_ms": 55.60500827301532,
+    "size_wall_cost": 0.9645155913813808,
+    "size_step_cost": 0.7244796378404982,
+    "training_tokens": 83200,
+    "tokens_per_second": 2159.6586071209986
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 512,
+      "steps": 1500,
+      "whole_graph": true
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 4,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 512,
+    "loss_sd": 0.005855307022717312,
+    "seconds_sd": 0.45110109443286084,
+    "cost_sd": 0.01127562387635991,
+    "loss": 6.986733436584473,
+    "seconds": 42.5997832659826,
+    "step_ms": 24.674554036723244,
+    "size_wall_cost": 1.0648148258774903,
+    "size_step_cost": 0.32105693436505317,
+    "training_tokens": 768000,
+    "tokens_per_second": 18030.4473813945
+  },
+  {
+    "candidate": {
+      "batch_optimizer": true,
+      "coefficient_init": 0.0,
+      "fused_optimizer_adam": true,
+      "optimizer_graph": true,
+      "sequence": 4096,
+      "steps": 1500,
+      "whole_graph": true,
+      "window_attention": true
+    },
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "runs": 3,
+    "ffn": 741400,
+    "kind": "ks3",
+    "steps": 1500,
+    "sequence": 4096,
+    "loss_sd": 0.00663641026207292,
+    "seconds_sd": 6.052384935209799,
+    "cost_sd": 0.15128408449146394,
+    "loss": 6.304442534844081,
+    "seconds": 134.7522599810036,
+    "step_ms": 86.3663735811133,
+    "size_wall_cost": 3.3682378934272497,
+    "size_step_cost": 1.1237699815328244,
+    "training_tokens": 6144000,
+    "tokens_per_second": 45657.78438765806
+  }
+]

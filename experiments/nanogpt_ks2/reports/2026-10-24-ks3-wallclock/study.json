@@ -1,0 +1,19 @@
+{
+  "start": "2026-10-23T23:44:32+00:00",
+  "stop_new_experiments": "2026-10-24T03:44:32+00:00",
+  "wall_budget_seconds": 39.8978326653208,
+  "target_loss": 7.8016,
+  "minimum_ffn_parameters": 741400,
+  "maximum_ffn_parameters": 743424,
+  "control": "Original nanoGPT MLP, 500 steps, seeds 11/22/33; do not tune",
+  "validation": "Original 2048-token prefix for screening; reserve token offset 100000, length 8192 until finalists are selected",
+  "prior_turn": "Progress: inspected authoritative controls and previous research; no running jobs before this study",
+  "status": "stopped_by_user",
+  "escalation": "After replicated KS3 win, rerun unchanged MLP at 4x previous steps and target its measured mean loss/time. Repeat within four-hour window.",
+  "active_target": {
+    "steps": 128000,
+    "status": "interrupted; no completed target"
+  },
+  "stopped_at": "2026-10-24T02:38:52.294587+00:00",
+  "stop_reason": "User requested: stop work and write report so far"
+}
