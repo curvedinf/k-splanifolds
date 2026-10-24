@@ -1,0 +1,25 @@
+legend  %n value   R[..] array   {a} axis consumed   a axis broadcast over
+
+in    %0 : R[i]
+out   %1 : R[o]
+ops   1x AdditionOp, 2x Einops, 4x GenericOperator, 2x Linear
+
+Standalone KS2 maps K input coordinates directly to N outputs. C_spine has shape [6,N], C_t [6,K,N], and C_x [4,K,N]. The spine and longitudinal edge factor share Phi and its warp. There is no projection, coordinate bypass, ReLU or iteration. {
+  Take t=mean(x). The first four terms are the unbounded cubic Hermite basis h00,h01,h10,h11. The last two are T2(z) and T3(z), with z=tanh((softplus(a)+1e-4)*(t+0.5*tanh(b))). {
+    %2 = GenericOperator<\Phi>(%0[{i}]) : R[{b}]
+  }
+  %3 = Linear<C{\rm spine}>(%2[{b}]) : R[{o}]
+  %4 = Linear<Ct>(%2[{b}]) : R[{i}, {o}]
+  Warp each input coordinate with a second learned scale and shift. Evaluate T0,T1,T2,T3 and contract their four coefficients separately for each input/output coordinate pair. These weights are not shared between input coordinates. {
+    %5 = GenericOperator<E_x>(%0[{i}]) : R[{i}, {o}]
+  }
+  Let total=sum(x), t=mean(x), delta=x-t. Use w=x/total unless abs(total)<1e-6, when w=1/K. Both damping strengths use softplus. This is the original ks2.py denominator, not the stabilized variant. {
+    %6 = GenericOperator<\mathrm{Den}_2>(%0[{i}]) : R[{i}, {o}]
+  }
+  %7 = Einops(%4[i, o], %5[i, o]) : R[i, o]
+  Elementwise division before reducing input coordinates. {
+    %8 = GenericOperator<\mathrm{Divide}>(%7[{i}, {o}], %6[{i}, {o}]) : R[{i}, {o}]
+  }
+  %9 = Einops(%8[{i}, o]) : R[o]
+  %1 = AdditionOp<+>(%3[o], %9[o]) : R[o]
+}

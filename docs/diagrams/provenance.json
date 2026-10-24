@@ -1,0 +1,32 @@
+{
+  "reference": "https://github.com/curvedinf/SDGraft/tree/d093ec868246ba86155a7f9d8039c4bec61d9e51/RHAC/docs/diagrams",
+  "inspected_project_revision": "198183cbd21e212e6ad9cc11030979836bda6020",
+  "checkout_revision_at_generation": "198183cbd21e212e6ad9cc11030979836bda6020",
+  "pyncd_commit": "a051f8f2df12be97bb438a7b19980513fbe11c36",
+  "tsncd_commit": "70034600050b8297a3fe91ca7b6cc75c1d26bbc2",
+  "source_sha256": {
+    "experiments/common/splanifold.py": "0a174c1e6399ef36005a14b26c3a16774925f38ea9ad6057c71969a0188b9fd7",
+    "experiments/denoising/run.py": "d797fa22ef501afc2c0781eb4a2465687b14a71d4dff69bdebe4575f9ba163d7",
+    "experiments/common/ks2.py": "eab7060c42e75deeb668e6c0b838ea8c945a61e888c735911afbabe89add2cf6",
+    "experiments/common/ks2_stabilized.py": "f1576dcbaaae5f32739c60a99096d07bf2f9437bac4549ea86fa61ba82d24411",
+    "experiments/common/ks3.py": "81efd8fd89bd37a6dd7e75a9101fc67b1408a9ee16377a841a0e1f729c471080"
+  },
+  "python_packages": {
+    "websockets": "17.3",
+    "playwright": "1.64.1",
+    "ipython": "9.17.1",
+    "pandas": "3.1.0",
+    "pillow": "13.0.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0"
+  },
+  "figures": [
+    "ks1-map",
+    "ks1-block",
+    "ks2-map",
+    "ks2-block",
+    "ks3-block"
+  ],
+  "gpu_used": false
+}

@@ -1,0 +1,30 @@
+legend  %n value   R[..] array   {a} axis consumed   a axis broadcast over
+
+in    %0 : R[d]
+out   %1 : R[e]
+ops   2x AdditionOp, 6x GenericOperator, 2x Linear
+
+KS3 supports any positive chart rank R, including the selected rank-one configuration. It has no KS2 edges or edge damping and no repeated geometry loop. Features are flattened and cast to up.weight.dtype before the up projection. Normalization, attention, time mixing and the outer residual are outside KS3. {
+  %2 = Linear<W{\rm down}>(%0[{d}]) : R[{s}, {r}]
+  After the down projection, geometry is FP32 for ordinary/FP16/BF16 inputs, or FP64 for a double model. Clamp coordinates to [-65504,65504]. The bypass below carries these clamped coordinates. {
+    %3 = GenericOperator<\mathrm{Clamp}>(%2[{s}, {r}]) : R[{s}, {r}]
+  }
+  Reduce only the coordinate axis within each chart, then apply the smooth cap. For rank one this is 4*tanh(c/4). {
+    %4 = GenericOperator<\mathrm{MeanCap}>(%3[s, {r}]) : R[s, {t}]
+  }
+  Four trainable Hermite coefficients per output coordinate, independently for each chart. Horner evaluation preserves the Hermite parameterization. t is bounded to (-4,4), not to the interpolation interval [0,1]. {
+    %5 = GenericOperator<H_{\theta_s}>(%4[s, {t}]) : R[s, {r}]
+  }
+  One raw scale and shift per chart; the resulting warped scalar is shared by all output coordinates in that chart. {
+    %6 = GenericOperator<\mathrm{Warp}_s>(%4[s, {t}]) : R[s, {t}]
+  }
+  The remaining two coefficients p4 and p5 are independent per chart and output coordinate. T2(z)=2z^2-1 and T3(z)=4z^3-3z. {
+    %7 = GenericOperator<C_{\theta_s}>(%6[s, {t}]) : R[s, {r}]
+  }
+  %8 = AdditionOp<+>(%5[s, r], %7[s, r]) : R[s, r]
+  %9 = AdditionOp<+>(%3[s, r], %8[s, r]) : R[s, r]
+  Apply ReLU and square after adding the clamped coordinate bypass, the Hermite cubic and the two warped terms. {
+    %10 = GenericOperator<\mathrm{ReLU}^2>(%9[s, {r}]) : R[s, {r}]
+  }
+  %1 = Linear<W{\rm up}>(%10[{s}, {r}]) : R[{e}]
+}

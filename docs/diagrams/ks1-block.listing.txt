@@ -1,0 +1,17 @@
+legend  %n value   R[..] array   {a} axis consumed   a axis broadcast over
+
+in    %0 : R[d]
+out   %1 : R[e]
+ops   1x AdditionOp, 2x GenericOperator, 2x Linear
+
+Exact wrapper structure of KS1Denoiser: d=e=169, rank R=8, configurable chart count S. Both projections have no bias. The bypass carries raw projected coordinates c, not the squashed map inputs. It is not an outer x+y residual. {
+  %2 = Linear<W{\rm down}>(%0[{d}]) : R[{s}, {r}]
+  The denoiser maps each projected coordinate into (0,1) before KS1. {
+    %3 = GenericOperator<\mathrm{Unit}>(%2[s, {r}]) : R[s, {r}]
+  }
+  Each chart owns separate anchors, bases and tangent control points. The map above is evaluated with K=N=8, sigma=1 and extrapolation=0. {
+    %4 = GenericOperator<f_{1,s}>(%3[s, {r}]) : R[s, {r}]
+  }
+  %5 = AdditionOp<+>(%2[s, r], %4[s, r]) : R[s, r]
+  %1 = Linear<W{\rm up}>(%5[{s}, {r}]) : R[{e}]
+}

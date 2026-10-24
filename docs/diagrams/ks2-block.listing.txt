@@ -1,0 +1,18 @@
+legend  %n value   R[..] array   {a} axis consumed   a axis broadcast over
+
+in    %0 : R[d]
+out   %1 : R[e]
+ops   2x AdditionOp, 2x GenericOperator, 2x Linear
+
+The default KS2Cell has S=4, R=8 and geo_steps=2. Each addition is inside chart space. Geometry parameters differ between charts but are shared between steps. Projections have no bias. No outer residual or ReLU is included. {
+  %2 = Linear<W{\rm down}>(%0[{d}]) : R[{s}, {r}]
+  Same equations as the direct map, with K=N=R and independent parameters per chart. The same chart parameters are reused at every geometry step. {
+    %3 = GenericOperator<G_{2,s}>(%2[s, {r}]) : R[s, {r}]
+  }
+  %4 = AdditionOp<+>(%2[s, r], %3[s, r]) : R[s, r]
+  Same equations as the direct map, with K=N=R and independent parameters per chart. The same chart parameters are reused at every geometry step. {
+    %5 = GenericOperator<G_{2,s}>(%4[s, {r}]) : R[s, {r}]
+  }
+  %6 = AdditionOp<+>(%4[s, r], %5[s, r]) : R[s, r]
+  %1 = Linear<W{\rm up}>(%6[{s}, {r}]) : R[{e}]
+}

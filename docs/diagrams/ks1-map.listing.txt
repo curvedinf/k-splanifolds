@@ -1,0 +1,18 @@
+legend  %n value   R[..] array   {a} axis consumed   a axis broadcast over
+
+in    %0 : R[i]
+out   %1 : R[o]
+ops   1x AdditionOp, 3x GenericOperator
+
+The repository calls this function splanifold_map. Input r has K coordinates and output has N coordinates. The map itself has no learned projection or residual bypass. Batch axes are omitted. {
+  Apply extrapolation, then compute the mean, deviations and signed coordinate weights. Only an exactly zero coordinate sum uses uniform weights. Outputs are t, delta and w, in that order. {
+    %2, %3, %4 = GenericOperator<\mathrm{Coords}_1>(%0[{i}]) : R[{t}], R[{i}], R[{i}]
+  }
+  The anchors are a0 and a1. The position-tangent control points P0 and P1 produce endpoint tangents v0 and v1 using the coordinate weights. H is the cubic Hermite interpolant, with arguments (p0,p1,v0,v1;t). {
+    %5 = GenericOperator<\mathrm{Spine}_1>(%2[{t}], %4[{i}]) : R[{o}]
+  }
+  Deviations contract with endpoint basis vectors B0/B1 and their tangent control points Q0/Q1. This is a second Hermite interpolant, not the damped factorized edge construction used by KS2. {
+    %6 = GenericOperator<\mathrm{Disp}_1>(%2[{t}], %3[{i}]) : R[{o}]
+  }
+  %1 = AdditionOp<+>(%5[o], %6[o]) : R[o]
+}

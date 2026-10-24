@@ -2,6 +2,11 @@
 
 This repo contains the K‑Splanifolds paper plus the code and data used to generate its comparative experiments.
 
+The [KS1, KS2 and KS3 diagram notebook](docs/diagrams/ks-blocks.ipynb) explains the
+geometric maps and projected blocks with saved PyNCD figures, equations and source
+links. Its [interactive companion](docs/diagrams/comparison/index.html) offers
+hover explanations and tensor-axis or box-and-arrow views; download it to open locally.
+
 **KS3** generalizes the selected spine FFN to configurable subspace ranks: learned input/output projections,
 a bounded Hermite cubic plus two warped Chebyshev terms, a coordinate bypass,
 and ReLU². At width 96 with 368 rank-1 subspaces it has **73,600 parameters per FFN**.
