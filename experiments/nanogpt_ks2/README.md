@@ -1,4 +1,43 @@
-# Small FP32 modded-nanoGPT: MLP vs quarter-budget fast KS2
+# Reduced modded-nanoGPT: MLP, KS2, and KS3
+
+## Latest KS3 results — October 24, 2026
+
+The capacity-preserving wall-clock study reached **6.3044 validation CE in
+134.75 seconds with KS3**, versus **6.9403 in 2,384.57 seconds with the unchanged
+MLP control**, averaged across three seeds. KS3 finished **17.7× sooner at lower
+loss**. These are complete training-run times on MI100 GPUs.
+
+Both models have a **96D residual stream and eleven FFNs**. KS3 has
+**25,526,411 total parameters**, including **741,400 FFN parameters**; MLP has
+**25,528,435 total**, including **743,424 FFN parameters**. The KS3 FFNs use
+337 rank-1 charts each, with GS32 W8A8 projections and FP16 nonlinearities.
+
+After each replicated win, the original MLP was retimed at four times as many
+steps. Completed comparisons, each averaged over seeds 11, 22, and 33:
+
+| MLP steps | MLP CE | MLP seconds | KS3 steps × tokens/step | KS3 CE | KS3 seconds |
+|---:|---:|---:|---:|---:|---:|
+| 500 | 7.801634 | 39.90 | 650 × 128 | 7.683557 | 36.24 |
+| 2,000 | 7.389840 | 159.55 | 2,500 × 128 | 7.337986 | 148.71 |
+| 8,000 | 7.149650 | 617.33 | 1,500 × 512 | 6.986733 | 42.43 |
+| 32,000 | 6.940260 | 2,384.57 | 1,500 × 4,096 | 6.304443 | 134.75 |
+
+The lowest completed final loss was **5.4309 in 25.25 minutes**, from a
+**single seed** trained for 12,000 steps at 8,192 tokens per step. Its replication
+and the 128,000-step MLP controls were interrupted when the user stopped the
+study. Reserved validation was not run, and **3.28 has not been reached**.
+
+The speedup belongs to the complete KS3 training system: graph replay,
+optimizer batching/fusion, local-window attention, and larger training batches
+substantially improved throughput. It does not isolate an intrinsic KS3-cell
+advantage over an equivalently optimized MLP. All reported losses use the same
+2,048-token validation prefix, 128-token evaluation context, and full vocabulary.
+The report records token budgets, timing definitions, and the early evaluation
+cadence difference.
+
+[Full report and reproduction instructions](reports/2026-10-24-ks3-wallclock/REPORT.md)
+· [Combined size × time versus loss plot](reports/2026-10-24-ks3-wallclock/size_wall_loss.png)
+· [Raw measurements](reports/2026-10-24-ks3-wallclock/runs.csv)
 
 ## KS3 GPU backend
 
